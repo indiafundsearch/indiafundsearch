@@ -103,6 +103,12 @@ export const glossaryTermBySlugQuery = groq`
   }
 `
 
+export const allGlossarySlugsQuery = groq`
+  *[_type == "glossaryTerm" && defined(slug.current)] {
+    "slug": slug.current
+  }
+`
+
 export const articlesIndexQuery = groq`
   *[_type == "article" && defined(publishedAt)] | order(publishedAt desc) {
     _id,
