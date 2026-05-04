@@ -13,7 +13,7 @@ import {
 import { FeeXRayInputs } from './fee-x-ray/FeeXRayInputs'
 import { FeeDragChart } from './fee-x-ray/FeeDragChart'
 import { FeeWaterfall } from './fee-x-ray/FeeWaterfall'
-import { cn } from '@/lib/utils'
+import { EmailCaptureModal } from '@/components/shared/EmailCaptureModal'
 
 const DEFAULT_FEES: FeeStructure = { ...FEE_PRESETS.hybrid }
 
@@ -26,6 +26,7 @@ export function FeeXRay() {
   const [years, setYears] = useState<number>(10)
   const [preset, setPreset] = useState<FeePresetKey | 'custom'>(initial.preset ?? 'hybrid')
   const [fees, setFees] = useState<FeeStructure>(initial.fees ?? DEFAULT_FEES)
+  const [emailOpen, setEmailOpen] = useState(false)
   const fundLabel = initial.fund
 
   const result = useMemo(
@@ -81,11 +82,8 @@ export function FeeXRay() {
       <div className="flex flex-wrap items-center gap-3 border-t border-card-border pt-6">
         <button
           type="button"
-          disabled
-          title="Email capture lands in Phase 3 step 16"
-          className={cn(
-            'inline-flex items-center gap-2 rounded-button border border-card-border bg-card px-4 py-2 text-sm font-medium text-text-muted opacity-60',
-          )}
+          onClick={() => setEmailOpen(true)}
+          className="inline-flex items-center gap-2 rounded-button bg-text-primary px-4 py-2 text-sm font-medium text-white shadow-card hover:opacity-90 hover:shadow-card-hover"
         >
           <Mail size={16} aria-hidden />
           Email this analysis to yourself →
@@ -103,6 +101,25 @@ export function FeeXRay() {
       <p className="text-xs text-text-muted">
         Calculations are estimates based on inputs provided. Actual fees vary by fund and structure. The brokerage proxy (0.5% of AUM) and custody / audit flat (₹25,000/year) are illustrative — verify with the provider's disclosure document.
       </p>
+
+      <EmailCaptureModal
+        open={emailOpen}
+        onClose={() => setEmailOpen(false)}
+        source="Fee X-Ray"
+        headline="Email your Fee X-Ray analysis"
+        subtext="A clean copy of your inputs and the headline numbers — straight to your inbox."
+        payload={{
+          fundLabel,
+          feeXRayInputs: {
+            amount,
+            feeType: preset,
+            expectedReturn: grossCAGR,
+            timeHorizon: years,
+            totalFees: result.summary.totalFees,
+            breakevenAlpha: result.summary.breakevenAlpha,
+          },
+        }}
+      />
     </div>
   )
 }

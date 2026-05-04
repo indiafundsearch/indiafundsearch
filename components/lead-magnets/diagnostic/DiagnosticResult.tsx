@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { Mail, RefreshCcw } from 'lucide-react'
 import {
@@ -9,6 +9,7 @@ import {
   type Dimension,
 } from '@/lib/utils/diagnosticScoring'
 import { DiagnosticRadar } from './DiagnosticRadar'
+import { EmailCaptureModal } from '@/components/shared/EmailCaptureModal'
 import { cn } from '@/lib/utils'
 
 type Props = {
@@ -25,6 +26,7 @@ const TONE_STYLES: Record<DiagnosticResultData['verdict']['tone'], string> = {
 
 export function DiagnosticResult({ result, onReset }: Props) {
   const { verdict, score, dimensionScores, weakestDimensions } = result
+  const [emailOpen, setEmailOpen] = useState(false)
 
   return (
     <div className="space-y-8">
@@ -80,9 +82,8 @@ export function DiagnosticResult({ result, onReset }: Props) {
       <div className="flex flex-wrap items-center gap-3 border-t border-card-border pt-6">
         <button
           type="button"
-          disabled
-          title="Email capture lands in Phase 3 step 16"
-          className="inline-flex items-center gap-2 rounded-button bg-text-primary px-4 py-2 text-sm font-medium text-white opacity-60"
+          onClick={() => setEmailOpen(true)}
+          className="inline-flex items-center gap-2 rounded-button bg-text-primary px-4 py-2 text-sm font-medium text-white shadow-card hover:opacity-90 hover:shadow-card-hover"
         >
           <Mail size={16} aria-hidden />
           Download full report →
@@ -100,6 +101,18 @@ export function DiagnosticResult({ result, onReset }: Props) {
       <p className="text-xs text-text-muted">
         This assessment is for educational purposes only and does not constitute financial advice. Consult a SEBI-registered advisor before acting on it.
       </p>
+
+      <EmailCaptureModal
+        open={emailOpen}
+        onClose={() => setEmailOpen(false)}
+        source="Diagnostic"
+        headline="Email your Diagnostic verdict"
+        subtext="Phone and city help us tailor the report — both are optional."
+        payload={{
+          diagnosticVerdict: verdict.headline,
+          diagnosticScore: score,
+        }}
+      />
     </div>
   )
 }

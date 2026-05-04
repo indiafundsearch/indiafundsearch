@@ -10,6 +10,7 @@ import {
 } from '@/lib/utils/fdCalculations'
 import { formatINR } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
+import { EmailCaptureModal } from '@/components/shared/EmailCaptureModal'
 
 const FD_AMOUNTS = [
   { label: '₹25 L', value: 25_00_000 },
@@ -106,6 +107,7 @@ function ResultPanel({
 }) {
   const erosion = amount - realValue
   const isShrinking = realValue < amount
+  const [emailOpen, setEmailOpen] = useState(false)
 
   return (
     <motion.div
@@ -143,9 +145,8 @@ function ResultPanel({
         <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-card-border pt-6">
           <button
             type="button"
-            disabled
-            title="Email capture lands in Phase 3"
-            className="rounded-button border border-card-border bg-card px-4 py-2 text-sm font-medium text-text-muted opacity-60"
+            onClick={() => setEmailOpen(true)}
+            className="rounded-button border border-card-border bg-card px-4 py-2 text-sm font-medium text-text-primary shadow-card hover:shadow-card-hover"
           >
             Email this to yourself →
           </button>
@@ -162,6 +163,22 @@ function ResultPanel({
           Calculations are estimates based on inputs provided. Actual returns vary by fund, market, and tax treatment. Consult a SEBI-registered advisor before investing.
         </p>
       </div>
+
+      <EmailCaptureModal
+        open={emailOpen}
+        onClose={() => setEmailOpen(false)}
+        source="FD Visualiser"
+        headline="Email this FD analysis"
+        subtext="We'll send a clean copy of your numbers — no marketing follow-up."
+        collectExtras={false}
+        payload={{
+          fdInputs: {
+            amount,
+            taxBracket: bracket,
+            realValue: Math.round(realValue),
+          },
+        }}
+      />
     </motion.div>
   )
 }
