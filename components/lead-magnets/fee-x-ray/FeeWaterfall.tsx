@@ -75,7 +75,7 @@ export function FeeWaterfall({ buckets, totalFees }: Props) {
                 boxShadow: '0 4px 20px rgba(0,0,0,0.10)',
                 fontSize: 13,
               }}
-              formatter={(value: number) => [formatINR(value), 'Total over horizon']}
+              formatter={(value) => [formatINR(Number(value ?? 0)), 'Total over horizon']}
             />
             <Bar dataKey="amount" radius={[6, 6, 6, 6]}>
               {showing.map((bucket) => (

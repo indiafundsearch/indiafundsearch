@@ -6,7 +6,7 @@ import { FundCard, type FundCardData } from './FundCard'
 export async function FundPreviewRow() {
   let funds: FundCardData[] = []
   try {
-    const data = await client.fetch<FundCardData[]>(allFundsQuery, undefined, {
+    const data = await client.fetch<FundCardData[]>(allFundsQuery, {}, {
       next: { revalidate: 300, tags: ['fund'] },
     })
     funds = data?.slice(0, 6) ?? []

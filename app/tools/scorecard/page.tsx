@@ -14,7 +14,7 @@ export const revalidate = 600
 
 async function fetchFundNames(): Promise<string[]> {
   try {
-    const rows = await client.fetch<{ name: string }[]>(allFundNamesQuery, undefined, {
+    const rows = await client.fetch<{ name: string }[]>(allFundNamesQuery, {}, {
       next: { tags: ['fund'] },
     })
     return rows.map((r) => r.name).filter(Boolean)

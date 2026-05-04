@@ -1,9 +1,14 @@
-import imageUrlBuilder from '@sanity/image-url'
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { createImageUrlBuilder } from '@sanity/image-url'
 import { client } from './client'
 
-const builder = imageUrlBuilder(client)
+const builder = createImageUrlBuilder(client)
 
-export function urlFor(source: SanityImageSource) {
-  return builder.image(source)
+/** Loose type — Sanity image source covers asset refs, full asset docs, and URLs. */
+export type ImageSource =
+  | { asset?: { _ref?: string; url?: string } | null; alt?: string }
+  | { _ref?: string }
+  | string
+
+export function urlFor(source: ImageSource) {
+  return builder.image(source as never)
 }

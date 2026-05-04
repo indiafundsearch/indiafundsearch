@@ -1,4 +1,4 @@
-import { defineField, defineType, type Rule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'article',
@@ -9,14 +9,14 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (rule: Rule) => rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: { source: 'title', maxLength: 96 },
-      validation: (rule: Rule) => rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({ name: 'author', title: 'Author', type: 'string', initialValue: 'IndiaFundSearch' }),
     defineField({ name: 'publishedAt', title: 'Published Date', type: 'datetime' }),

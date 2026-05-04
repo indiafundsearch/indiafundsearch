@@ -142,9 +142,9 @@ export function EmailCaptureModal({
               type="button"
               aria-label="Close"
               onClick={() => status !== 'submitting' && onClose()}
-              className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-button text-text-muted hover:bg-black/5"
+              className="absolute right-2 top-2 inline-flex h-10 w-10 items-center justify-center rounded-button text-text-muted hover:bg-black/5"
             >
-              <X size={16} />
+              <X size={18} />
             </button>
 
             {status === 'success' ? (

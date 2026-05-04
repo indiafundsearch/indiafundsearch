@@ -1,4 +1,4 @@
-import { defineField, defineType, type Rule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'glossaryTerm',
@@ -9,14 +9,14 @@ export default defineType({
       name: 'term',
       title: 'Term',
       type: 'string',
-      validation: (rule: Rule) => rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: { source: 'term', maxLength: 96 },
-      validation: (rule: Rule) => rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'simpleDefinition',

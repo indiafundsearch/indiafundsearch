@@ -14,7 +14,7 @@ export const revalidate = 600
 export default async function KnowledgePage() {
   let terms: GlossaryTerm[] = []
   try {
-    terms = await client.fetch<GlossaryTerm[]>(allGlossaryTermsQuery, undefined, {
+    terms = await client.fetch<GlossaryTerm[]>(allGlossaryTermsQuery, {}, {
       next: { tags: ['glossaryTerm'] },
     })
   } catch (error) {

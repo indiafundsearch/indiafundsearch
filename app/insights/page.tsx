@@ -14,7 +14,7 @@ export const revalidate = 600
 export default async function InsightsPage() {
   let articles: ArticleSummary[] = []
   try {
-    articles = await client.fetch<ArticleSummary[]>(articlesIndexQuery, undefined, {
+    articles = await client.fetch<ArticleSummary[]>(articlesIndexQuery, {}, {
       next: { tags: ['article'] },
     })
   } catch (error) {

@@ -16,7 +16,7 @@ export const revalidate = 300
 export default async function ExplorePage() {
   let funds: FundCardData[] = []
   try {
-    funds = await client.fetch<FundCardData[]>(allFundsQuery, undefined, {
+    funds = await client.fetch<FundCardData[]>(allFundsQuery, {}, {
       next: { tags: ['fund'] },
     })
   } catch (error) {

@@ -60,7 +60,7 @@ export function FeeDragChart({ data, totalFees, years }: Props) {
                 boxShadow: '0 4px 20px rgba(0,0,0,0.10)',
                 fontSize: 13,
               }}
-              formatter={(value: number, name: string) => [formatINR(value), labelFor(name)]}
+              formatter={(value, name) => [formatINR(Number(value ?? 0)), labelFor(String(name))]}
               labelFormatter={(year) => `Year ${year}`}
             />
             <Line

@@ -160,10 +160,10 @@ function ScoreBadge({ score }: { score: number }) {
   return (
     <div className="text-right">
       <p className="text-xs uppercase tracking-widest text-text-muted">Overall</p>
-      <motion.p className="text-4xl font-semibold tabular-nums text-text-primary">
-        {display}
+      <p className="text-4xl font-semibold tabular-nums text-text-primary">
+        <motion.span>{display}</motion.span>
         <span className="text-base font-medium text-text-muted">/100</span>
-      </motion.p>
+      </p>
     </div>
   )
 }

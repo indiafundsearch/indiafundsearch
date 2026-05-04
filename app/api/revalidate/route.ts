@@ -23,7 +23,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing _type in payload' }, { status: 400 })
     }
 
-    revalidateTag(body._type)
+    // Next 16 signature: revalidateTag(tag, cacheLifeProfile)
+    revalidateTag(body._type, 'default')
     if (body.slug?.current) {
       revalidatePath(routeFor(body._type, body.slug.current))
     }

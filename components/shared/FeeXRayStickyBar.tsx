@@ -53,7 +53,8 @@ export function FeeXRayStickyBar({ href = '/tools/fee-x-ray' }: Props) {
             <Calculator size={18} />
           </span>
           <p className="flex-1 text-sm text-text-primary">
-            Comparing options? See what you'll actually pay.
+            <span className="hidden sm:inline">Comparing options? See what you&apos;ll actually pay.</span>
+            <span className="sm:hidden">See what you&apos;ll actually pay.</span>
           </p>
           <Link
             href={href}
@@ -65,7 +66,7 @@ export function FeeXRayStickyBar({ href = '/tools/fee-x-ray' }: Props) {
             type="button"
             aria-label="Dismiss"
             onClick={dismiss}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-button text-text-muted hover:bg-black/5"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-button text-text-muted hover:bg-black/5"
           >
             <X size={16} />
           </button>
