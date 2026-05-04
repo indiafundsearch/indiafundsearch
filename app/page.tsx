@@ -20,7 +20,7 @@ export default function HomePage() {
             headline="Should you even look at PMS or AIF?"
             subtext="Most people aren't ready. Find out in 3 minutes."
             ctaLabel="Take the Diagnostic →"
-            ctaHref="/about"
+            ctaHref="/diagnostic"
             microcopy="12 questions · 4 verdicts · No sales pitch"
           />
         </section>
