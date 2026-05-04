@@ -1,21 +1,12 @@
 import Link from 'next/link'
-import { FOOTER_DISCLAIMER, NAV_LINKS, TRUST_STRIP_ITEMS } from '@/lib/constants'
+import { FOOTER_DISCLAIMER, NAV_LINKS } from '@/lib/constants'
+import { TrustStrip } from '@/components/shared/TrustStrip'
 
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-card-border bg-background">
       <div className="container-grid py-12">
-        <ul
-          aria-label="Trust commitments"
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-text-muted"
-        >
-          {TRUST_STRIP_ITEMS.map((item) => (
-            <li key={item} className="inline-flex items-center gap-2">
-              <span aria-hidden className="text-gold">✦</span>
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TrustStrip />
 
         <div className="mt-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
           <div>
