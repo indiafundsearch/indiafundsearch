@@ -138,13 +138,31 @@ function fdVisualiserEmail(payload: LeadCapturePayload): RenderedEmail {
 
 function scorecardEmail(payload: LeadCapturePayload): RenderedEmail {
   const pms = String(payload.scorecardPMS ?? '')
+  const overall = numOrNull(payload.scorecardOverall)
+  const dims = (payload.scorecardDimensions as Record<string, number> | undefined) ?? {}
+
+  const rows: [string, string][] = []
+  if (overall != null) rows.push(['Overall score', `${Math.round(overall)}/100`])
+  const dimLabels: Record<string, string> = {
+    manager: 'Manager Quality',
+    performance: 'Performance Integrity',
+    fees: 'Fee Fairness',
+    operations: 'Operational Robustness',
+    fit: 'Suitability Fit',
+  }
+  for (const [key, label] of Object.entries(dimLabels)) {
+    const v = numOrNull(dims[key])
+    if (v != null) rows.push([label, `${Math.round(v)}/100`])
+  }
+
   return template({
     subject: pms ? `Your scorecard for ${pms}` : 'Your PMS scorecard',
     eyebrow: 'Scorecard',
     headline: pms ? `Your scorecard for ${pms}` : 'Your PMS scorecard',
-    leadParagraph: 'Twenty criteria across manager quality, performance integrity, fee fairness, operational robustness, and suitability fit.',
-    rows: [],
-    cta: { label: 'Score another', href: 'https://indiafundsearch.com/explore' },
+    leadParagraph:
+      'Twenty criteria across five dimensions. Use the lowest-scoring rows as the agenda for your first conversation with the manager.',
+    rows,
+    cta: { label: 'Score another', href: 'https://indiafundsearch.com/tools/scorecard' },
   })
 }
 

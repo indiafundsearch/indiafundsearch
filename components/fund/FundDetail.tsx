@@ -185,6 +185,7 @@ function Manager({ fund }: Props) {
 }
 
 function Scorecard({ fund }: Props) {
+  const href = `/tools/scorecard?fund=${encodeURIComponent(fund.name)}`
   return (
     <section className="mt-12 rounded-card border border-card-border border-l-4 border-l-gold bg-card p-6 shadow-card md:p-8">
       <span className="inline-flex items-center rounded-pill bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-gold">
@@ -194,15 +195,13 @@ function Scorecard({ fund }: Props) {
       <p className="mt-2 max-w-prose text-base text-text-muted">
         Walk through 20 criteria across manager quality, performance integrity, fee fairness, operational robustness, and suitability fit.
       </p>
-      <button
-        type="button"
-        disabled
-        title="Scorecard tool lands in Phase 3"
-        className="mt-5 inline-flex items-center gap-2 rounded-button bg-text-primary px-5 py-3 text-sm font-medium text-white opacity-60"
+      <Link
+        href={href}
+        className="mt-5 inline-flex items-center gap-2 rounded-button bg-text-primary px-5 py-3 text-sm font-medium text-white shadow-card hover:opacity-90 hover:shadow-card-hover"
       >
         <ClipboardCheck size={16} aria-hidden />
         Open the Scorecard →
-      </button>
+      </Link>
       <p className="mt-3 text-xs text-text-muted">5 dimensions · 4 criteria each · No sales pitch</p>
     </section>
   )
