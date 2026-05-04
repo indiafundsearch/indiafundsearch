@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   buildTracks,
   HORIZON_YEARS,
@@ -11,6 +11,7 @@ import {
 import { formatINR } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
 import { EmailCaptureModal } from '@/components/shared/EmailCaptureModal'
+import { FDErosionBar } from './fd-visualiser/FDErosionBar'
 
 const FD_AMOUNTS = [
   { label: '₹25 L', value: 25_00_000 },
@@ -117,28 +118,26 @@ function ResultPanel({
       className="mt-10"
     >
       <div className="rounded-card border border-card-border bg-card p-6 shadow-card md:p-10">
-        <p className="text-sm font-medium uppercase tracking-widest text-text-muted">
-          Real value after {HORIZON_YEARS} years
+        <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+          Tax + inflation, peeled away
         </p>
-        <AnimatedAmount value={realValue} />
-        <p
-          className={cn(
-            'mt-3 text-base',
-            isShrinking ? 'text-error' : 'text-text-muted',
-          )}
-        >
+        <h2 className="mt-1 text-2xl font-semibold leading-snug text-text-primary md:text-3xl">
           {isShrinking ? (
             <>
-              You'd lose <strong>{formatINR(erosion)}</strong> in real purchasing power on{' '}
-              <strong>{formatINR(amount)}</strong>.
+              On <span className="tabular-nums">{formatINR(amount)}</span>, you&rsquo;d lose{' '}
+              <span className="text-error tabular-nums">{formatINR(erosion)}</span> in real value over {HORIZON_YEARS} years.
             </>
           ) : (
             <>
-              You'd net just <strong>{formatINR(realValue - amount)}</strong> in real purchasing power on{' '}
-              <strong>{formatINR(amount)}</strong> — barely keeping pace with inflation.
+              On <span className="tabular-nums">{formatINR(amount)}</span>, you&rsquo;d net just{' '}
+              <span className="tabular-nums">{formatINR(realValue - amount)}</span> in real value — barely keeping pace.
             </>
           )}
-        </p>
+        </h2>
+
+        <div className="mt-7">
+          <FDErosionBar principal={amount} taxBracket={bracket} />
+        </div>
 
         <ComparisonTable amount={amount} tracks={tracks} bracketLabel={`${(bracket * 100).toFixed(0)}% slab`} />
 
@@ -232,22 +231,6 @@ function ComparisonTable({
         Real value = post-tax compounded over {HORIZON_YEARS} years, deflated by 5.5% inflation. FD &amp; Debt MF taxed at {bracketLabel}; PMS taxed at 12.5% LTCG.
       </p>
     </div>
-  )
-}
-
-function AnimatedAmount({ value }: { value: number }) {
-  const motionValue = useMotionValue(0)
-  const display = useTransform(motionValue, (latest) => formatINR(latest))
-
-  useEffect(() => {
-    const controls = animate(motionValue, value, { duration: 1.4, ease: 'easeOut' })
-    return controls.stop
-  }, [motionValue, value])
-
-  return (
-    <motion.p className="mt-2 text-4xl font-semibold tracking-tight text-text-primary md:text-5xl">
-      {display}
-    </motion.p>
   )
 }
 

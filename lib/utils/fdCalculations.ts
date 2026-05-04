@@ -28,6 +28,34 @@ export const HORIZON_YEARS = 10
 
 export type TaxBracket = 0.2 | 0.3
 
+/**
+ * Nominal compound value before tax / inflation: principal × (1+r)^n.
+ */
+export function grossValueAfter(
+  principal: number,
+  grossRate: number,
+  years: number = HORIZON_YEARS,
+) {
+  return principal * (1 + grossRate) ** years
+}
+
+/**
+ * Compound value after slab-rate tax on each year's interest, before inflation.
+ */
+export function netOfTaxValueAfter(
+  principal: number,
+  grossRate: number,
+  taxRate: number,
+  years: number = HORIZON_YEARS,
+) {
+  const postTaxRate = grossRate * (1 - taxRate)
+  return principal * (1 + postTaxRate) ** years
+}
+
+/**
+ * Real (purchasing-power) value: net-of-tax compounded then deflated by inflation.
+ * Uses the exact deflation form: P × (1 + r_post_tax)^n / (1 + i)^n.
+ */
 export function realValueAfter(
   principal: number,
   grossRate: number,
@@ -35,9 +63,8 @@ export function realValueAfter(
   inflation: number = INFLATION,
   years: number = HORIZON_YEARS,
 ) {
-  const postTax = grossRate * (1 - taxRate)
-  const real = postTax - inflation
-  return principal * (1 + real) ** years
+  const nominal = netOfTaxValueAfter(principal, grossRate, taxRate, years)
+  return nominal / (1 + inflation) ** years
 }
 
 export type Track = {
