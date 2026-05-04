@@ -1,5 +1,11 @@
 import { groq } from 'next-sanity'
 
+export const allFundSlugsQuery = groq`
+  *[_type == "fund" && status == "Active" && defined(slug.current)] {
+    "slug": slug.current
+  }
+`
+
 export const allFundsQuery = groq`
   *[_type == "fund" && status == "Active"] | order(name asc) {
     _id,

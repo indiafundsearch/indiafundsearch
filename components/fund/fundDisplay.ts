@@ -25,6 +25,16 @@ export type FundCardData = {
   sebiRegistration?: string
 }
 
+export type FundDetailData = FundCardData & {
+  simpleDescription?: string
+  proDescription?: string
+  fundManager?: string
+  fundManagerBio?: string
+  benchmark?: string
+  inceptionDate?: string
+  status?: 'Active' | 'Closed' | 'Upcoming' | string
+}
+
 export function categoryLabelFor(fund: FundCardData, mode: Mode): string {
   if (mode === 'simple' && fund.simpleCategoryName) return fund.simpleCategoryName
   if (fund.category) {
