@@ -42,10 +42,6 @@ yarn-error.log*
 .sanity/
 dist/
 
-# next-sitemap (regenerated at every build)
-/public/sitemap.xml
-/public/sitemap-*.xml
-/public/robots.txt
 
 # typescript
 *.tsbuildinfo
