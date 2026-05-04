@@ -134,6 +134,7 @@ function Fees({ fund }: Props) {
     { label: 'Exit load', value: fund.fees?.exitLoad, suffix: '%' },
   ]
   const headline = feeHeadlineFor(fund.fees)
+  const xrayHref = buildFeeXRayHref(fund)
   return (
     <section className="mt-12 rounded-card border border-card-border bg-card p-6 shadow-card md:p-8">
       <div className="flex flex-wrap items-end justify-between gap-4">
@@ -141,15 +142,13 @@ function Fees({ fund }: Props) {
           <h2 className="text-2xl">Fee structure</h2>
           <p className="mt-1 text-sm text-text-muted">Headline: <span className="font-medium text-text-primary">{headline}</span></p>
         </div>
-        <button
-          type="button"
-          disabled
-          title="Fee X-Ray Calculator lands in Phase 3"
-          className="inline-flex items-center gap-2 rounded-button bg-text-primary/90 px-4 py-2 text-sm font-medium text-white opacity-60"
+        <Link
+          href={xrayHref}
+          className="inline-flex items-center gap-2 rounded-button bg-text-primary px-4 py-2 text-sm font-medium text-white shadow-card hover:opacity-90 hover:shadow-card-hover"
         >
           <CalculatorIcon size={16} aria-hidden />
           Calculate your real cost →
-        </button>
+        </Link>
       </div>
       <dl className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
         {lines.map((line) => (
@@ -207,6 +206,18 @@ function Scorecard({ fund }: Props) {
       <p className="mt-3 text-xs text-text-muted">5 dimensions · 4 criteria each · No sales pitch</p>
     </section>
   )
+}
+
+function buildFeeXRayHref(fund: FundDetailData): string {
+  const params = new URLSearchParams()
+  if (fund.fees?.managementFee != null) params.set('mgmt', String(fund.fees.managementFee))
+  if (fund.fees?.performanceFee != null) params.set('perf', String(fund.fees.performanceFee))
+  if (fund.fees?.hurdleRate != null) params.set('hurdle', String(fund.fees.hurdleRate))
+  if (fund.fees?.exitLoad != null) params.set('exit', String(fund.fees.exitLoad))
+  if (fund.minInvestment != null) params.set('amount', String(fund.minInvestment))
+  if (fund.name) params.set('fund', fund.name)
+  const query = params.toString()
+  return query ? `/tools/fee-x-ray?${query}` : '/tools/fee-x-ray'
 }
 
 function Disclaimer() {

@@ -12,11 +12,10 @@ type Props = {
 }
 
 /**
- * Sticky bottom prompt on /explore. Per CLAUDE.md spec the destination is the
- * Fee X-Ray Calculator (Phase 3); for now it links to /explore (no-op) and
- * shows a small "soon" hint. Dismissal is remembered for the session.
+ * Sticky bottom prompt on /explore. Links to the Fee X-Ray Calculator.
+ * Dismissal is remembered for the session.
  */
-export function FeeXRayStickyBar({ href = '#fee-x-ray-soon' }: Props) {
+export function FeeXRayStickyBar({ href = '/tools/fee-x-ray' }: Props) {
   const [dismissed, setDismissed] = useState(false)
   const [hydrated, setHydrated] = useState(false)
 
