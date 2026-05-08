@@ -13,10 +13,7 @@ export const PRIMARY_CATEGORIES = ['PMS', 'AIF', 'SIF'] as const
  */
 export const SUBCATEGORIES: Record<(typeof PRIMARY_CATEGORIES)[number], readonly string[]> = {
   PMS: ['Equity', 'Multi-Cap', 'Small-Mid Cap', 'Thematic', 'Sector'],
-  AIF: [
-    'Real Estate', 'Infra Debt', 'Pre-IPO', 'Private Equity', 'Credit',
-    'Long-Short', 'Quant', 'Multi-Strategy', 'Venture Capital', 'Social Impact', 'SME',
-  ],
+  AIF: ['Real Estate', 'Infra Debt', 'Pre-IPO', 'Long-Short', 'Credit', 'Private Equity'],
   SIF: ['Equity', 'Multi-Strategy'],
 }
 
