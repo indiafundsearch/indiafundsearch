@@ -1,22 +1,18 @@
 import { client } from '@/lib/sanity/client'
-import { allGlossaryTermsQuery, learnArticlesQuery } from '@/lib/sanity/queries'
+import { learnArticlesQuery } from '@/lib/sanity/queries'
 import { Translator } from '@/components/lead-magnets/Translator'
 import { LearnArticlesGrid, type LearnArticle } from '@/components/learn/LearnArticlesGrid'
-import type { GlossaryTerm } from '@/components/knowledge/glossaryTypes'
 
 export const metadata = {
   title: 'Learn — PMS, AIF, SIF, GIFT City explained',
   description:
-    'Evergreen guides to PMS, AIF, SIF, and GIFT City. Plus a free, ungated glossary, product map, and 3-question Pathfinder. The Morningstar of Indian alternatives.',
+    'Evergreen guides to PMS, AIF, SIF, and GIFT City. Plus a product map and 3-question Pathfinder. The Morningstar of Indian alternatives.',
 }
 
 export const revalidate = 600
 
 export default async function KnowledgePage() {
-  const [terms, articles] = await Promise.all([
-    fetchGlossary(),
-    fetchLearnArticles(),
-  ])
+  const articles = await fetchLearnArticles()
 
   return (
     <div className="container-grid pt-12 pb-20 md:pt-20">
@@ -41,21 +37,10 @@ export default async function KnowledgePage() {
       <hr className="mt-20 border-card-border md:mt-28" />
 
       <div className="mt-16 md:mt-20">
-        <Translator terms={terms} />
+        <Translator />
       </div>
     </div>
   )
-}
-
-async function fetchGlossary(): Promise<GlossaryTerm[]> {
-  try {
-    return await client.fetch<GlossaryTerm[]>(allGlossaryTermsQuery, {}, {
-      next: { tags: ['glossaryTerm'] },
-    })
-  } catch (error) {
-    console.error('KnowledgePage: glossary fetch failed', error)
-    return []
-  }
 }
 
 async function fetchLearnArticles(): Promise<LearnArticle[]> {

@@ -129,6 +129,50 @@ const ARTICLES = [
     ],
   },
   {
+    id: 'article-gift-city-for-nris',
+    slug: 'gift-city-for-nris',
+    title: 'GIFT City for NRIs',
+    publishedAt: '__PUBLISHED_AT__',
+    seoTitle: 'GIFT City for NRIs — what it is and what\'s available',
+    seoDescription:
+      'India built a financial centre for overseas Indians. What GIFT City IFSC actually is, why NRIs care, and what funds are accessible there today.',
+    sections: [
+      {
+        paragraphs: [
+          'GIFT City — Gujarat International Finance Tec-City — hosts India\'s only International Financial Services Centre (IFSC). For NRIs, it is the closest India has come to building a regulated, USD-denominated, tax-friendly bridge between offshore capital and Indian markets.',
+        ],
+      },
+      {
+        heading: 'What it is, in one paragraph',
+        paragraphs: [
+          'IFSC is a special zone regulated by IFSCA (not SEBI) that lets fund houses set up vehicles which hold and transact in USD, register with simpler KYC than mainland India, and offer tax treatment specifically calibrated for non-residents. It is onshore from a sovereignty perspective and offshore from a tax-and-currency perspective.',
+        ],
+      },
+      {
+        heading: 'Why NRIs care',
+        paragraphs: [
+          'Three reasons matter most. First, you can subscribe in USD without converting and re-converting INR — that removes a layer of FX cost and FEMA paperwork. Second, IFSC funds can offer pass-through or fund-level tax structures designed for the NRI tax position, which often beats parallel mainland mutual fund options on net return. Third, repatriation is built in: capital flows out of India through IFSC channels with materially less friction than the mainland repatriation route.',
+          'For an NRI deciding between a mainland PMS and an IFSC vehicle for the same strategy, the IFSC version usually wins on tax + paperwork unless the underlying mandate forces mainland-only access.',
+        ],
+      },
+      {
+        heading: 'What\'s available there today',
+        paragraphs: [
+          'Two main shapes. NRI India Access funds — IFSC-domiciled vehicles that invest into Indian markets on your behalf, in USD. Global Market Access funds — IFSC-domiciled vehicles that let an NRI (or eventually, an Indian resident under LRS) deploy USD into global equities and credit without setting up an offshore brokerage account.',
+          'Both shapes are still small in number — IFSC is a young market — but the AMCs that already operate mainland mutual funds and PMS are moving fastest. Mirae, ICICI, Kotak, 360 ONE, and Edelweiss have all crossed into the IFSC over the last 18 months.',
+        ],
+      },
+      {
+        heading: 'Before you allocate',
+        paragraphs: [
+          'IFSC tax law is evolving — exemptions and pass-through rules have changed twice since 2022, and may change again. Read the current Private Placement Memorandum and the latest IFSCA circular before signing.',
+          'Also: not every IFSC fund is genuinely structured for NRI tax efficiency. A few are mainland strategies that put a USD wrapper around the same vehicle without rethinking the tax position. Compare the headline expense ratio against a comparable mainland option, then ask the manager to walk you through the after-tax math for a non-resident allocator. The number that matters is what hits your account, not what the wrapper claims.',
+          'For a guided product map of the full IFSC universe and a 3-question Pathfinder built specifically for NRI allocators, see the GIFT City page in our nav.',
+        ],
+      },
+    ],
+  },
+  {
     id: 'article-aif-categories-decoded',
     slug: 'aif-categories-decoded',
     title: 'AIF Categories Decoded',

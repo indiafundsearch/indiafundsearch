@@ -36,7 +36,7 @@ const CARDS: Card[] = [
     title: 'GIFT City for NRIs',
     teaser: 'India built a financial centre for overseas Indians.',
     minutes: 9,
-    href: '/gift-city',
+    href: '/insights/gift-city-for-nris',
   },
   {
     number: '05',
