@@ -11,6 +11,7 @@ export type FundCardData = {
   name: string
   slug: string
   provider?: string
+  providerLogoUrl?: string
   category?: FundCategory
   subcategory?: string
   simpleCategoryName?: string
