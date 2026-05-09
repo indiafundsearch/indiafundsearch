@@ -1,5 +1,7 @@
 import { CATEGORY_LABELS, type FundCategory, type Mode } from '@/lib/constants'
 
+export type FundStatus = 'Active' | 'Closed' | 'Upcoming'
+
 export type FundCardData = {
   _id: string
   name: string
@@ -8,6 +10,8 @@ export type FundCardData = {
   category?: FundCategory
   subcategory?: string
   simpleCategoryName?: string
+  simpleDescription?: string
+  proDescription?: string
   returns?: {
     oneYear?: number
     threeYear?: number
@@ -23,16 +27,14 @@ export type FundCardData = {
   minInvestment?: number
   aum?: number
   sebiRegistration?: string
+  fundManager?: string
+  inceptionDate?: string
+  status?: FundStatus | string
 }
 
 export type FundDetailData = FundCardData & {
-  simpleDescription?: string
-  proDescription?: string
-  fundManager?: string
   fundManagerBio?: string
   benchmark?: string
-  inceptionDate?: string
-  status?: 'Active' | 'Closed' | 'Upcoming' | string
 }
 
 export function categoryLabelFor(fund: FundCardData, mode: Mode): string {

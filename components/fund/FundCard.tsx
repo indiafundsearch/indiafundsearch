@@ -5,7 +5,6 @@ import { useMode } from '@/components/shared/SimpleProToggle'
 import { formatINR } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
 import {
-  categoryLabelFor,
   feeHeadlineFor,
   formatPercent,
   type FundCardData,
@@ -23,112 +22,87 @@ export type { FundCardData }
 
 export function FundCard({ fund, variant = 'preview', className }: Props) {
   const { mode } = useMode()
-  const categoryLabel = categoryLabelFor(fund, mode)
+  const description = mode === 'simple' ? fund.simpleDescription : fund.proDescription
   const feeHeadline = feeHeadlineFor(fund.fees)
+  const returnLine = formatReturnLine(fund.returns)
 
   return (
     <Link
       href={`/explore/${fund.slug}`}
       className={cn(
-        'group flex h-full flex-col rounded-card border border-card-border bg-card p-5 shadow-card transition-shadow hover:shadow-card-hover',
+        'group flex h-full flex-col rounded-card border border-card-border bg-card p-5 shadow-card transition-shadow hover:shadow-card-hover md:p-6',
         variant === 'preview' ? 'min-w-[280px] max-w-[320px]' : 'w-full',
         className,
       )}
     >
-      {categoryLabel ? (
-        <span className="inline-flex w-fit items-center rounded-pill bg-text-primary/5 px-2.5 py-1 text-xs font-medium text-text-primary">
-          {categoryLabel}
-        </span>
-      ) : null}
+      <div className="flex flex-wrap items-center gap-2">
+        {fund.subcategory ? (
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-gold">
+            {fund.subcategory}
+          </span>
+        ) : null}
+        <StatusBadge status={fund.status} />
+      </div>
 
-      <h3 className="mt-3 text-lg font-semibold leading-tight text-text-primary">
+      <h3 className="mt-2 text-base font-semibold leading-snug tracking-tight text-text-primary md:text-lg">
         {fund.name}
       </h3>
-      {fund.provider ? (
-        <p className="mt-1 text-sm text-text-muted">{fund.provider}</p>
+      {fund.provider || fund.fundManager ? (
+        <p className="mt-1 text-xs text-text-muted">
+          {fund.provider}
+          {fund.provider && fund.fundManager ? ' · ' : ''}
+          {fund.fundManager}
+        </p>
       ) : null}
 
-      {variant === 'preview' ? (
-        <PreviewBody fund={fund} feeHeadline={feeHeadline} />
-      ) : (
-        <DetailedBody fund={fund} feeHeadline={feeHeadline} />
-      )}
+      {description ? (
+        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-text-muted">
+          {description}
+        </p>
+      ) : null}
 
-      <span className="mt-auto pt-5 text-sm font-medium text-text-primary group-hover:text-gold">
-        View details →
-      </span>
+      <dl className="mt-4 grid grid-cols-2 gap-3 border-t border-card-border pt-4 text-sm">
+        <div>
+          <dt className="text-[10px] font-semibold uppercase tracking-widest text-text-muted">Fee</dt>
+          <dd className="mt-1 font-medium text-gold tabular-nums">{feeHeadline}</dd>
+        </div>
+        <div>
+          <dt className="text-[10px] font-semibold uppercase tracking-widest text-text-muted">Returns</dt>
+          <dd className="mt-1 font-medium text-text-primary tabular-nums">{returnLine}</dd>
+        </div>
+      </dl>
+
+      <div className="mt-auto flex items-center justify-between gap-3 border-t border-card-border pt-4">
+        <span className="text-xs text-text-muted">
+          {fund.minInvestment ? `Min ${formatINR(fund.minInvestment, { compact: true })}` : ''}
+        </span>
+        <span className="text-sm font-medium text-text-primary group-hover:text-gold">
+          View details →
+        </span>
+      </div>
     </Link>
   )
 }
 
-function PreviewBody({
-  fund,
-  feeHeadline,
-}: {
-  fund: FundCardData
-  feeHeadline: string
-}) {
+function StatusBadge({ status }: { status?: string }) {
+  if (!status) return null
+  const palette =
+    status === 'Active'
+      ? 'bg-gold/10 text-gold'
+      : status === 'Closed'
+        ? 'bg-error/10 text-error'
+        : 'bg-text-primary/5 text-text-muted'
   return (
-    <>
-      <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-card-border pt-4">
-        <div>
-          <dt className="text-xs uppercase tracking-wide text-text-muted">3Y CAGR</dt>
-          <dd className="mt-1 text-base font-semibold tabular-nums text-text-primary">
-            {formatPercent(fund.returns?.threeYear)}
-          </dd>
-        </div>
-        <div>
-          <dt className="text-xs uppercase tracking-wide text-text-muted">Fees</dt>
-          <dd className="mt-1 text-base font-medium text-text-primary">{feeHeadline}</dd>
-        </div>
-      </dl>
-      {fund.minInvestment ? (
-        <p className="mt-4 text-xs text-text-muted">
-          Min. investment {formatINR(fund.minInvestment, { compact: true })}
-        </p>
-      ) : null}
-    </>
+    <span className={cn('rounded-pill px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide', palette)}>
+      {status}
+    </span>
   )
 }
 
-function DetailedBody({
-  fund,
-  feeHeadline,
-}: {
-  fund: FundCardData
-  feeHeadline: string
-}) {
-  return (
-    <>
-      <dl className="mt-5 grid grid-cols-3 gap-3 border-t border-card-border pt-4 text-center">
-        <ReturnCell label="1Y" value={fund.returns?.oneYear} />
-        <ReturnCell label="3Y" value={fund.returns?.threeYear} />
-        <ReturnCell label="5Y" value={fund.returns?.fiveYear} />
-      </dl>
-
-      <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-card-border pt-4">
-        <div>
-          <dt className="text-xs uppercase tracking-wide text-text-muted">Fees</dt>
-          <dd className="mt-1 text-sm font-medium text-text-primary">{feeHeadline}</dd>
-        </div>
-        <div>
-          <dt className="text-xs uppercase tracking-wide text-text-muted">Min. invest</dt>
-          <dd className="mt-1 text-sm font-medium text-text-primary">
-            {fund.minInvestment ? formatINR(fund.minInvestment, { compact: true }) : '—'}
-          </dd>
-        </div>
-      </dl>
-    </>
-  )
-}
-
-function ReturnCell({ label, value }: { label: string; value?: number }) {
-  return (
-    <div>
-      <dt className="text-xs uppercase tracking-wide text-text-muted">{label}</dt>
-      <dd className="mt-1 text-base font-semibold tabular-nums text-text-primary">
-        {formatPercent(value)}
-      </dd>
-    </div>
-  )
+function formatReturnLine(returns: FundCardData['returns']): string {
+  const parts: string[] = []
+  if (returns?.threeYear) parts.push(`3Y ${formatPercent(returns.threeYear)}`)
+  else if (returns?.oneYear) parts.push(`1Y ${formatPercent(returns.oneYear)}`)
+  if (returns?.fiveYear) parts.push(`5Y ${formatPercent(returns.fiveYear)}`)
+  return parts.length ? parts.join(' · ') : '—'
 }

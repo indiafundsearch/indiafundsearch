@@ -13,7 +13,7 @@ export const allFundSlugsQuery = groq`
 `
 
 export const allFundsQuery = groq`
-  *[_type == "fund" && status == "Active"] | order(name asc) {
+  *[_type == "fund"] | order(name asc) {
     _id,
     name,
     "slug": slug.current,
@@ -27,7 +27,10 @@ export const allFundsQuery = groq`
     returns,
     minInvestment,
     aum,
-    sebiRegistration
+    sebiRegistration,
+    fundManager,
+    inceptionDate,
+    status
   }
 `
 
