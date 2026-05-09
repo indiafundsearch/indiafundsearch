@@ -124,3 +124,41 @@ h3 {
   transform-box: fill-box;
   animation: halo-pulse 700ms ease-out both;
 }
+
+/* --- Marquee ----------------------------------------------------------- */
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Soft horizontal mask so marquee items fade in/out at the edges instead
+   of clipping abruptly. */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Honor the OS-level pref — kill marquee + halo cycles. */
+  [style*="animation"] {
+    animation: none !important;
+  }
+  .product-map .pf-halo,
+  .recharts-symbols {
+    animation: none !important;
+    transition: none !important;
+  }
+}

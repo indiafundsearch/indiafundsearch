@@ -3,9 +3,17 @@
 import { motion, type Variants } from 'framer-motion'
 import type { ReactNode } from 'react'
 
+// Atomic-style fade-up — matches the gsap.batch + data-fade pattern
+// (y: 60 → 0, blurred-out → sharp, opacity 0 → 1, easeOutQuint).
+const easeOutQuint = [0.16, 1, 0.3, 1] as const
+
 const variants: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 48 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: easeOutQuint },
+  },
 }
 
 type Props = {

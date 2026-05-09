@@ -10,6 +10,7 @@ import { NewsletterSignup } from '@/components/home/NewsletterSignup'
 import { TryAToolStrip } from '@/components/home/TryAToolStrip'
 import { PerformanceLeaderboard } from '@/components/home/PerformanceLeaderboard'
 import { FundOfTheYear } from '@/components/home/FundOfTheYear'
+import { PinnedWealthStory } from '@/components/home/PinnedWealthStory'
 
 export default function HomePage() {
   return (
@@ -31,6 +32,8 @@ export default function HomePage() {
       <FadeInOnScroll>
         <FundOfTheYear />
       </FadeInOnScroll>
+
+      <PinnedWealthStory />
 
       <FadeInOnScroll>
         <LearnSection />
