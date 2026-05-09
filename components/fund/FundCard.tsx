@@ -39,11 +39,15 @@ export function FundCard({
   const description = mode === 'simple' ? fund.simpleDescription : fund.proDescription
   const feeHeadline = feeHeadlineFor(fund.fees)
   const returnLine = formatReturnLine(fund.returns)
-  const tags = (fund.tags ?? []).slice(0, 2)
   const subcategoryLabel = fund.subcategory
     ? SUBCATEGORY_LABELS[fund.subcategory]?.[mode] ?? fund.subcategory
     : null
-  const extraTags = (fund.tags ?? []).slice(0, 6)
+  const allTags = fund.tags ?? []
+  // Show up to 2 tags inline in the banner; rest collapse into the +N counter.
+  const inlineTags = allTags.slice(0, 2)
+  const overflowTags = allTags.slice(2)
+  // Active is the default state — only surface non-default statuses to keep the banner tidy.
+  const showStatus = !!fund.status && fund.status !== 'Active'
 
   return (
     <Link
@@ -54,8 +58,8 @@ export function FundCard({
         className,
       )}
     >
-      {/* Dark header band — logo + category pill + extra-tag counter */}
-      <div className="flex items-center justify-between gap-3 bg-text-primary px-4 py-3 md:px-5 md:py-4">
+      {/* Dark header band — logo + every category/tag pill */}
+      <div className="flex items-start justify-between gap-3 bg-text-primary px-4 py-3 md:px-5 md:py-4">
         <ProviderLogo src={fund.providerLogoUrl} provider={fund.provider} size={56} />
         <div className="flex flex-wrap items-center justify-end gap-1.5">
           {subcategoryLabel ? (
@@ -63,31 +67,20 @@ export function FundCard({
               {subcategoryLabel}
             </span>
           ) : null}
-          <TagCounter tags={extraTags} />
+          {showStatus ? <StatusBadge status={fund.status} /> : null}
+          <RiskBadge level={fund.risk} />
+          {inlineTags.map((t) => (
+            <Tag key={t} label={t} variant="dark" />
+          ))}
+          <TagCounter tags={overflowTags} />
         </div>
       </div>
 
-      {/* Body — existing content preserved */}
+      {/* Body — content only: name, description, fee/returns, footer */}
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <div className="flex flex-wrap items-center gap-2">
-          {subcategoryLabel ? (
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-gold">
-              {subcategoryLabel}
-            </span>
-          ) : null}
-          <StatusBadge status={fund.status} />
-        </div>
-
-        <h3 className="mt-2 text-base font-semibold leading-snug tracking-tight text-text-primary md:text-lg">
+        <h3 className="text-base font-semibold leading-snug tracking-tight text-text-primary md:text-lg">
           {fund.name}
         </h3>
-        {fund.provider || fund.fundManager ? (
-          <p className="mt-1 text-xs text-text-muted">
-            {fund.provider}
-            {fund.provider && fund.fundManager ? ' · ' : ''}
-            {fund.fundManager}
-          </p>
-        ) : null}
 
         {description ? (
           <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-text-muted">
@@ -105,15 +98,6 @@ export function FundCard({
             <dd className="mt-1 font-medium text-text-primary tabular-nums">{returnLine}</dd>
           </div>
         </dl>
-
-        {(fund.risk || tags.length > 0) ? (
-          <div className="mt-3 flex flex-wrap items-center gap-1.5">
-            <RiskBadge level={fund.risk} />
-            {tags.map((t) => (
-              <Tag key={t} label={t} />
-            ))}
-          </div>
-        ) : null}
 
         <div className="mt-auto flex items-center justify-between gap-3 border-t border-card-border pt-4">
           <span className="text-xs text-text-muted">
