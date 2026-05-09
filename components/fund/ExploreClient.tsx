@@ -12,10 +12,11 @@ type View = 'grid' | 'list'
 
 type Props = {
   funds: FundCardData[]
+  initialPrimary?: PrimaryFilter
 }
 
-export function ExploreClient({ funds }: Props) {
-  const [primary, setPrimary] = useState<PrimaryFilter>('All')
+export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
+  const [primary, setPrimary] = useState<PrimaryFilter>(initialPrimary)
   const [subcategory, setSubcategory] = useState<string | null>(null)
   const [view, setView] = useState<View>('grid')
 

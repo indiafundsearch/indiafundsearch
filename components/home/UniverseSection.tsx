@@ -28,7 +28,7 @@ const CATEGORIES: Category[] = [
       { label: 'Balanced Portfolios', count: 1 },
     ],
     ctaLabel: 'Explore Managed Portfolios',
-    href: '/explore',
+    href: '/explore?cat=PMS',
   },
   {
     title: 'Alternative Funds',
@@ -43,7 +43,7 @@ const CATEGORIES: Category[] = [
       { label: 'Hedge Funds', count: 2 },
     ],
     ctaLabel: 'Explore Alternative Funds',
-    href: '/explore',
+    href: '/explore?cat=AIF',
   },
   {
     title: 'NRI & Global Access',
@@ -71,12 +71,13 @@ export function UniverseSection() {
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {CATEGORIES.map((category) => (
-          <article
+          <Link
             key={category.title}
-            className="flex flex-col rounded-card border border-card-border bg-card p-6 shadow-card md:p-7"
+            href={category.href}
+            className="group flex flex-col rounded-card border border-card-border bg-card p-6 shadow-card transition-all hover:shadow-card-hover md:p-7"
           >
             <div className="flex items-baseline justify-between gap-3">
-              <h3 className="text-xl font-semibold tracking-tight text-text-primary md:text-2xl">
+              <h3 className="text-xl font-semibold tracking-tight text-text-primary group-hover:text-gold md:text-2xl">
                 {category.title}
               </h3>
               <span className="text-2xl font-semibold tabular-nums text-gold md:text-3xl">
@@ -97,14 +98,15 @@ export function UniverseSection() {
               ))}
             </ul>
 
-            <Link
-              href={category.href}
-              className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-text-primary hover:text-gold"
-            >
+            <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-text-primary group-hover:text-gold">
               {category.ctaLabel}
-              <ArrowRight size={14} aria-hidden />
-            </Link>
-          </article>
+              <ArrowRight
+                size={14}
+                aria-hidden
+                className="transition-transform group-hover:translate-x-0.5"
+              />
+            </span>
+          </Link>
         ))}
       </div>
     </section>
