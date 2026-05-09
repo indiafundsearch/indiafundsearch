@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ModeProvider } from '@/components/shared/SimpleProToggle'
 import { Analytics } from '@/components/shared/Analytics'
+import { SmoothScrollProvider } from '@/components/shared/SmoothScrollProvider'
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -104,11 +105,13 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-text-primary">
         <Analytics />
-        <ModeProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ModeProvider>
+        <SmoothScrollProvider>
+          <ModeProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </ModeProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   )

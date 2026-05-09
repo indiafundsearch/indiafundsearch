@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { CountUp } from '@/components/shared/CountUp'
+import { Marquee } from '@/components/shared/Marquee'
 
 type SubLine = { label: string; count: number }
 
@@ -11,6 +13,25 @@ type Category = {
   ctaLabel: string
   href: string
 }
+
+/** Wordmarks shown in the continuous marquee — all real names from
+ * the seeded universe so the strip feels authentic. */
+const PROVIDER_WORDMARKS = [
+  '360 ONE Asset',
+  'ASK Investment Managers',
+  'Blackstone',
+  'Blume Ventures',
+  'Edelweiss Alternatives',
+  'ICICI Prudential',
+  'IIFL Asset Management',
+  'Marcellus',
+  'Mirae Asset',
+  'Motilal Oswal',
+  'Nepean Capital',
+  'Niveshaay',
+  'True Beacon',
+  'White Oak Capital',
+]
 
 /**
  * Universe section copy. Headline counts are platform-tier aspirational
@@ -69,7 +90,20 @@ export function UniverseSection() {
         </p>
       </header>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-10">
+        <Marquee speed={60} pauseOnHover>
+          {PROVIDER_WORDMARKS.map((name) => (
+            <span
+              key={name}
+              className="mx-7 select-none whitespace-nowrap text-sm font-semibold uppercase tracking-[0.18em] text-text-muted/70 md:mx-10 md:text-base"
+            >
+              {name}
+            </span>
+          ))}
+        </Marquee>
+      </div>
+
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
         {CATEGORIES.map((category) => (
           <Link
             key={category.title}
@@ -80,9 +114,10 @@ export function UniverseSection() {
               <h3 className="text-xl font-semibold tracking-tight text-text-primary group-hover:text-gold md:text-2xl">
                 {category.title}
               </h3>
-              <span className="text-2xl font-semibold tabular-nums text-gold md:text-3xl">
-                {category.totalCount.toLocaleString('en-IN')}
-              </span>
+              <CountUp
+                to={category.totalCount}
+                className="text-2xl font-semibold tabular-nums text-gold md:text-3xl"
+              />
             </div>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">{category.description}</p>
 

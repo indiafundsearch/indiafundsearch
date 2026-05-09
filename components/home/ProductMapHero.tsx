@@ -30,6 +30,8 @@ import {
 } from '@/lib/constants'
 import { useMode } from '@/components/shared/SimpleProToggle'
 import { cn } from '@/lib/utils'
+import { HeroWordReveal } from '@/components/shared/HeroWordReveal'
+import { motion } from 'framer-motion'
 import { PathfinderQuiz } from './PathfinderQuiz'
 import { PathfinderResults } from './PathfinderResults'
 import {
@@ -144,15 +146,27 @@ export function ProductMapHero() {
   return (
     <section className="container-grid pt-12 pb-12 md:pt-20 md:pb-20">
       <div className="max-w-3xl">
-        <p className="text-sm font-medium uppercase tracking-widest text-gold">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="text-sm font-medium uppercase tracking-widest text-gold"
+        >
           Where each product sits
-        </p>
-        <h1 className="mt-2">The Indian alternatives universe — at a glance.</h1>
-        <p className="mt-4 max-w-prose text-base text-text-muted md:text-lg">
+        </motion.p>
+        <HeroWordReveal as="h1" className="mt-2" delay={0.15}>
+          The Indian alternatives universe — at a glance.
+        </HeroWordReveal>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-4 max-w-prose text-base text-text-muted md:text-lg"
+        >
           Each bubble is a product subcategory, plotted by typical return and the time you should
           commit. Answer four quick questions and we&rsquo;ll spotlight the buckets that fit. Switch
           lenses to recolor the map by goal or liquidity.
-        </p>
+        </motion.p>
       </div>
 
       <div className="mt-8 rounded-card border border-card-border bg-card p-4 shadow-card md:mt-10 md:p-6">
