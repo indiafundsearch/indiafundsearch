@@ -1,9 +1,10 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { LayoutGrid, List, Search, SlidersHorizontal, X, Info } from 'lucide-react'
 import { FundCard } from './FundCard'
 import { FundRow } from './FundRow'
+import { CompareModal } from './CompareModal'
 import type { PrimaryFilter } from './FundFilters'
 import type { FundCardData } from './fundDisplay'
 import {
@@ -41,6 +42,22 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
   const [vintageMin, setVintageMin] = useState(2000)
   const [minAUM, setMinAUM] = useState(0)
   const [risk, setRisk] = useState<string>('All')
+  const [compareIds, setCompareIds] = useState<string[]>([])
+  const [showCompare, setShowCompare] = useState(false)
+
+  const toggleCompare = useCallback((id: string) => {
+    setCompareIds((prev) => {
+      if (prev.includes(id)) return prev.filter((x) => x !== id)
+      // Cap at 3 — drop oldest when full.
+      if (prev.length >= 3) return [...prev.slice(1), id]
+      return [...prev, id]
+    })
+  }, [])
+
+  const compareFunds = useMemo(
+    () => compareIds.map((id) => funds.find((f) => f._id === id)).filter(Boolean) as FundCardData[],
+    [compareIds, funds],
+  )
 
   const counts = useMemo(() => countByPrimary(funds), [funds])
   const subCounts = useMemo(
@@ -127,7 +144,13 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
       ) : view === 'grid' ? (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((fund) => (
-            <FundCard key={fund._id} fund={fund} variant="detailed" />
+            <FundCard
+              key={fund._id}
+              fund={fund}
+              variant="detailed"
+              inCompare={compareIds.includes(fund._id)}
+              onToggleCompare={toggleCompare}
+            />
           ))}
         </div>
       ) : (
@@ -137,7 +160,66 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
           ))}
         </div>
       )}
+
+      {compareIds.length > 0 ? (
+        <CompareBar
+          count={compareIds.length}
+          onOpen={() => setShowCompare(true)}
+          onClear={() => setCompareIds([])}
+        />
+      ) : null}
+
+      {showCompare && compareFunds.length > 0 ? (
+        <CompareModal
+          funds={compareFunds}
+          onRemove={(id) => {
+            const next = compareIds.filter((x) => x !== id)
+            setCompareIds(next)
+            if (next.length === 0) setShowCompare(false)
+          }}
+          onClearAll={() => {
+            setCompareIds([])
+            setShowCompare(false)
+          }}
+          onClose={() => setShowCompare(false)}
+        />
+      ) : null}
     </>
+  )
+}
+
+function CompareBar({
+  count,
+  onOpen,
+  onClear,
+}: {
+  count: number
+  onOpen: () => void
+  onClear: () => void
+}) {
+  return (
+    <div className="fixed inset-x-0 bottom-4 z-30 flex justify-center px-4">
+      <div className="flex items-center gap-3 rounded-pill border border-card-border bg-card px-4 py-2 shadow-card-hover">
+        <span className="text-xs font-medium text-text-muted">
+          {count} selected · max 3
+        </span>
+        <button
+          type="button"
+          onClick={onClear}
+          className="text-xs font-medium text-text-muted hover:text-text-primary"
+        >
+          Clear
+        </button>
+        <button
+          type="button"
+          onClick={onOpen}
+          disabled={count < 2}
+          className="inline-flex items-center gap-1 rounded-pill bg-text-primary px-4 py-1.5 text-sm font-medium text-white shadow-card transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Compare {count} →
+        </button>
+      </div>
+    </div>
   )
 }
 

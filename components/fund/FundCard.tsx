@@ -20,11 +20,19 @@ type Props = {
   fund: FundCardData
   variant?: Variant
   className?: string
+  inCompare?: boolean
+  onToggleCompare?: (id: string) => void
 }
 
 export type { FundCardData }
 
-export function FundCard({ fund, variant = 'preview', className }: Props) {
+export function FundCard({
+  fund,
+  variant = 'preview',
+  className,
+  inCompare = false,
+  onToggleCompare,
+}: Props) {
   const { mode } = useMode()
   const description = mode === 'simple' ? fund.simpleDescription : fund.proDescription
   const feeHeadline = feeHeadlineFor(fund.fees)
@@ -92,9 +100,30 @@ export function FundCard({ fund, variant = 'preview', className }: Props) {
             ? `Min ${formatMoney(fund.minInvestment, fund.currency, { compact: true })}`
             : ''}
         </span>
-        <span className="text-sm font-medium text-text-primary group-hover:text-gold">
-          View details →
-        </span>
+        <div className="flex items-center gap-3">
+          {onToggleCompare ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                onToggleCompare(fund._id)
+              }}
+              aria-pressed={inCompare}
+              className={cn(
+                'rounded-pill border px-2.5 py-1 text-xs font-medium transition-colors',
+                inCompare
+                  ? 'border-gold bg-gold/10 text-gold'
+                  : 'border-card-border bg-card text-text-muted hover:border-text-primary hover:text-text-primary',
+              )}
+            >
+              {inCompare ? '✓ Comparing' : '+ Compare'}
+            </button>
+          ) : null}
+          <span className="text-sm font-medium text-text-primary group-hover:text-gold">
+            View details →
+          </span>
+        </div>
       </div>
     </Link>
   )
