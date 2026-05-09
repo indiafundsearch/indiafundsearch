@@ -1,13 +1,21 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import Link from 'next/link'
 import { LayoutGrid, List, Search, SlidersHorizontal, X, Info } from 'lucide-react'
 import { FundCard } from './FundCard'
 import { FundRow } from './FundRow'
 import type { PrimaryFilter } from './FundFilters'
 import type { FundCardData } from './fundDisplay'
-import { FUND_SORTS, type FundSort, SUB_INFO, SUBCATEGORIES } from '@/lib/constants'
+import {
+  FUND_SORTS,
+  PRIMARY_LABELS,
+  SUB_INFO,
+  SUBCATEGORIES,
+  SUBCATEGORY_LABELS,
+  type FundSort,
+  type Mode,
+  type PrimaryCategory,
+} from '@/lib/constants'
 import { useMode } from '@/components/shared/SimpleProToggle'
 import { cn } from '@/lib/utils'
 
@@ -59,13 +67,14 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
   return (
     <>
       <div className="space-y-4">
-        <PrimaryPills primary={primary} counts={counts} onChange={(p) => { setPrimary(p); setSubcategory(null) }} />
+        <PrimaryPills primary={primary} counts={counts} mode={mode} onChange={(p) => { setPrimary(p); setSubcategory(null) }} />
 
         {primary !== 'All' ? (
           <SubcategoryPills
             primary={primary}
             active={subcategory}
             counts={subCounts}
+            mode={mode}
             onChange={setSubcategory}
           />
         ) : null}
@@ -103,6 +112,7 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
         primary={primary}
         subcategory={subcategory}
         sort={sort}
+        mode={mode}
       />
 
       {filtered.length === 0 ? (
@@ -139,6 +149,8 @@ function matches(
   if (f.primary !== 'All') {
     if (f.primary === 'AIF') {
       if (!cat.startsWith('AIF')) return false
+    } else if (f.primary === 'GIFT City') {
+      if (cat !== 'GIFT City') return false
     } else if (cat !== f.primary) {
       return false
     }
@@ -201,11 +213,12 @@ function vintage(f: FundCardData): number {
 }
 
 function countByPrimary(funds: FundCardData[]): Record<string, number> {
-  const out: Record<string, number> = { All: funds.length, PMS: 0, AIF: 0 }
+  const out: Record<string, number> = { All: funds.length, PMS: 0, AIF: 0, 'GIFT City': 0 }
   for (const f of funds) {
     const c = f.category ?? ''
     if (c === 'PMS') out.PMS += 1
     else if (c.startsWith('AIF')) out.AIF += 1
+    else if (c === 'GIFT City') out['GIFT City'] += 1
   }
   return out
 }
@@ -214,7 +227,7 @@ function countBySubcategory(
   funds: FundCardData[],
   primary: PrimaryFilter,
 ): Record<string, number> {
-  const subs = primary !== 'All' ? SUBCATEGORIES[primary] ?? [] : []
+  const subs = primary !== 'All' ? SUBCATEGORIES[primary as PrimaryCategory] ?? [] : []
   const total = funds.filter((f) => {
     if (primary === 'All') return true
     if (primary === 'AIF') return (f.category ?? '').startsWith('AIF')
@@ -230,29 +243,22 @@ function countBySubcategory(
 function PrimaryPills({
   primary,
   counts,
+  mode,
   onChange,
 }: {
   primary: PrimaryFilter
   counts: Record<string, number>
+  mode: Mode
   onChange: (p: PrimaryFilter) => void
 }) {
+  const opts: PrimaryFilter[] = ['All', 'PMS', 'AIF', 'GIFT City']
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Pill active={primary === 'All'} onClick={() => onChange('All')}>
-        All funds <Count>{counts.All ?? 0}</Count>
-      </Pill>
-      <Pill active={primary === 'PMS'} onClick={() => onChange('PMS')}>
-        PMS <Count>{counts.PMS ?? 0}</Count>
-      </Pill>
-      <Pill active={primary === 'AIF'} onClick={() => onChange('AIF')}>
-        AIF <Count>{counts.AIF ?? 0}</Count>
-      </Pill>
-      <Link
-        href="/gift-city"
-        className="rounded-pill border border-card-border bg-card px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-text-primary hover:text-text-primary"
-      >
-        GIFT City <span aria-hidden className="ml-1 opacity-60">→</span>
-      </Link>
+      {opts.map((opt) => (
+        <Pill key={opt} active={primary === opt} onClick={() => onChange(opt)}>
+          {PRIMARY_LABELS[opt][mode]} <Count>{counts[opt] ?? 0}</Count>
+        </Pill>
+      ))}
     </div>
   )
 }
@@ -261,18 +267,20 @@ function SubcategoryPills({
   primary,
   active,
   counts,
+  mode,
   onChange,
 }: {
   primary: Exclude<PrimaryFilter, 'All'>
   active: string | null
   counts: Record<string, number>
+  mode: Mode
   onChange: (next: string | null) => void
 }) {
-  const subs = SUBCATEGORIES[primary] ?? []
+  const subs = SUBCATEGORIES[primary as PrimaryCategory] ?? []
   return (
     <div className="flex flex-wrap items-center gap-2 border-t border-card-border pt-4">
       <SmallPill active={active === null} gold onClick={() => onChange(null)}>
-        All {primary} <Count>{counts.All ?? 0}</Count>
+        All sub-categories <Count>{counts.All ?? 0}</Count>
       </SmallPill>
       {subs.map((sub) => (
         <SmallPill
@@ -281,7 +289,7 @@ function SubcategoryPills({
           active={active === sub}
           onClick={() => onChange(sub)}
         >
-          {sub} <Count>{counts[sub] ?? 0}</Count>
+          {SUBCATEGORY_LABELS[sub]?.[mode] ?? sub} <Count>{counts[sub] ?? 0}</Count>
         </SmallPill>
       ))}
     </div>
@@ -523,25 +531,29 @@ function ResultLine({
   primary,
   subcategory,
   sort,
+  mode,
 }: {
   count: number
   primary: PrimaryFilter
   subcategory: string | null
   sort: FundSort
+  mode: Mode
 }) {
   const sortLabel = FUND_SORTS.find((s) => s.value === sort)?.label
+  const subLabel = subcategory ? SUBCATEGORY_LABELS[subcategory]?.[mode] ?? subcategory : null
+  const primaryLabel = primary !== 'All' ? PRIMARY_LABELS[primary][mode] : null
   return (
     <div className="mt-6 mb-3 flex flex-wrap items-baseline gap-x-2 text-sm text-text-muted">
       <span>
         <strong className="text-text-primary tabular-nums">{count}</strong> {count === 1 ? 'fund' : 'funds'}
       </span>
-      {subcategory ? (
+      {subLabel ? (
         <span>
-          in <strong className="text-text-primary">{subcategory}</strong>
+          in <strong className="text-text-primary">{subLabel}</strong>
         </span>
-      ) : primary !== 'All' ? (
+      ) : primaryLabel ? (
         <span>
-          in <strong className="text-text-primary">{primary}</strong>
+          in <strong className="text-text-primary">{primaryLabel}</strong>
         </span>
       ) : null}
       {sort !== 'default' && sortLabel ? (

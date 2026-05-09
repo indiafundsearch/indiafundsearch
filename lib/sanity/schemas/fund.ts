@@ -29,6 +29,7 @@ export default defineType({
           { title: 'AIF Cat I', value: 'AIF Cat I' },
           { title: 'AIF Cat II', value: 'AIF Cat II' },
           { title: 'AIF Cat III', value: 'AIF Cat III' },
+          { title: 'GIFT City', value: 'GIFT City' },
         ],
         layout: 'radio',
       },
@@ -39,10 +40,18 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          'Equity', 'Multi-Cap', 'Small-Mid Cap', 'Thematic', 'Sector',
-          'Real Estate', 'Infra Debt', 'Pre-IPO', 'Private Equity', 'Credit',
-          'Long-Short', 'Quant', 'Multi-Strategy',
-          'Venture Capital', 'Social Impact', 'SME',
+          // PMS
+          'Equity', 'Debt', 'Multi Asset',
+          // AIF
+          'Cat I — VC',
+          'Cat II — PE',
+          'Cat II — Credit',
+          'Cat II — RE & Infra',
+          'Cat II — Pre-IPO',
+          'Cat III — Long Short',
+          // GIFT City
+          'Inbound — India',
+          'Outbound — Global',
         ].map((value) => ({ title: value, value })),
       },
     }),

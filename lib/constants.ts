@@ -1,4 +1,4 @@
-export type FundCategory = 'PMS' | 'AIF Cat I' | 'AIF Cat II' | 'AIF Cat III'
+export type FundCategory = 'PMS' | 'AIF Cat I' | 'AIF Cat II' | 'AIF Cat III' | 'GIFT City'
 
 export type Mode = 'simple' | 'pro'
 
@@ -6,25 +6,70 @@ export type Mode = 'simple' | 'pro'
  * Top-level filter buckets shown on /explore.
  * "All" is rendered separately.
  */
-export const PRIMARY_CATEGORIES = ['PMS', 'AIF'] as const
+export const PRIMARY_CATEGORIES = ['PMS', 'AIF', 'GIFT City'] as const
+
+export type PrimaryCategory = (typeof PRIMARY_CATEGORIES)[number]
 
 /**
- * Subcategory options per primary category, used for the level-2 filter bar.
+ * Display labels for the primary pill row, switched by Simple/Pro toggle.
  */
-export const SUBCATEGORIES: Record<(typeof PRIMARY_CATEGORIES)[number], readonly string[]> = {
-  PMS: ['Equity', 'Multi-Cap', 'Small-Mid Cap', 'Thematic', 'Sector'],
-  AIF: ['Real Estate', 'Infra Debt', 'Pre-IPO', 'Long-Short', 'Credit', 'Private Equity'],
+export const PRIMARY_LABELS: Record<PrimaryCategory | 'All', { simple: string; pro: string }> = {
+  All: { simple: 'All funds', pro: 'All funds' },
+  PMS: { simple: 'Managed Portfolios', pro: 'PMS' },
+  AIF: { simple: 'Alternative Funds', pro: 'AIF' },
+  'GIFT City': { simple: 'NRI & Global Access', pro: 'GIFT City' },
 }
 
 /**
- * Display label per category, switched by Simple/Pro toggle.
- * Keep keys here in sync with the `category` field in the fund schema.
+ * Subcategory options per primary category, used for the level-2 filter
+ * row. Stored values are the canonical/Pro names; SUBCATEGORY_LABELS
+ * maps each to a Simple display variant.
+ */
+export const SUBCATEGORIES: Record<PrimaryCategory, readonly string[]> = {
+  PMS: ['Equity', 'Debt', 'Multi Asset'],
+  AIF: [
+    'Cat I — VC',
+    'Cat II — PE',
+    'Cat II — Credit',
+    'Cat II — RE & Infra',
+    'Cat II — Pre-IPO',
+    'Cat III — Long Short',
+  ],
+  'GIFT City': ['Inbound — India', 'Outbound — Global'],
+}
+
+/**
+ * Display labels per subcategory, switched by Simple/Pro toggle.
+ * Keys must match the canonical (Pro) values in SUBCATEGORIES.
+ */
+export const SUBCATEGORY_LABELS: Record<string, { simple: string; pro: string }> = {
+  // PMS
+  Equity: { simple: 'Stock Portfolios', pro: 'Equity' },
+  Debt: { simple: 'Lending & Bond Portfolios', pro: 'Debt' },
+  'Multi Asset': { simple: 'Balanced Portfolios', pro: 'Multi Asset' },
+  // AIF
+  'Cat I — VC': { simple: 'Startup Investing', pro: 'Cat I — VC' },
+  'Cat II — PE': { simple: 'Private Company Investing', pro: 'Cat II — PE' },
+  'Cat II — Credit': { simple: 'Private Lending', pro: 'Cat II — Credit' },
+  'Cat II — RE & Infra': { simple: 'Real Estate & Infra Funds', pro: 'Cat II — RE & Infra' },
+  'Cat II — Pre-IPO': { simple: 'Pre-IPO Investing', pro: 'Cat II — Pre-IPO' },
+  'Cat III — Long Short': { simple: 'Hedge Funds', pro: 'Cat III — Long Short' },
+  // GIFT City
+  'Inbound — India': { simple: 'NRI India Access (USD)', pro: 'Inbound — India' },
+  'Outbound — Global': { simple: 'Global Market Access', pro: 'Outbound — Global' },
+}
+
+/**
+ * Display label per fund-category (the granular value stored on a fund
+ * document), switched by Simple/Pro. Used for fund-detail headers and
+ * any place that needs the category name as opposed to the primary pill.
  */
 export const CATEGORY_LABELS: Record<FundCategory, { simple: string; pro: string }> = {
   PMS: { simple: 'Stock Picking Funds', pro: 'PMS' },
   'AIF Cat I': { simple: 'Early-Stage Funds', pro: 'AIF Category I' },
   'AIF Cat II': { simple: 'Private Deals Fund', pro: 'AIF Category II' },
   'AIF Cat III': { simple: 'Hedge Funds', pro: 'AIF Category III — Long Short' },
+  'GIFT City': { simple: 'NRI & Global Access', pro: 'GIFT City' },
 }
 
 /**
@@ -57,57 +102,57 @@ export const NAV_LINKS = [
 export const MODE_STORAGE_KEY = 'ifs:mode'
 
 /**
- * Subcategory educational copy. Surfaces as a banner on /explore when a
- * specific subcategory filter is active. Switched by Simple/Pro toggle.
- *
- * Keys must exactly match the values in SUBCATEGORIES above.
+ * Educational copy surfaced as a banner on /explore when a specific
+ * subcategory filter is active. Switched by Simple/Pro toggle. Keys
+ * match the canonical (Pro) values in SUBCATEGORIES.
  */
 export const SUB_INFO: Record<string, { simple: string; pro: string }> = {
-  // PMS subs
+  // PMS
   Equity: {
-    simple: 'Stock Portfolios = a pro picks Indian stocks for your demat account. Min ₹50L. You see every name.',
+    simple: 'Stock Portfolios = a pro picks Indian stocks for your demat account. Min ₹50L. You own every share.',
     pro: 'PMS Equity = SEBI-regulated discretionary management of listed Indian equities held in client demat. Min ₹50L.',
   },
-  'Multi-Cap': {
-    simple: 'Multi-Cap = large, mid and small companies in one strategy. The manager flexes to where the opportunity is.',
-    pro: 'PMS Multi-Cap = discretionary mandate spanning large-/mid-/small-cap with no fixed bucket weights. Active sizing by manager.',
+  Debt: {
+    simple: 'Lending Portfolios = your money lends to solid companies. Aim is regular interest, not stock-market gains.',
+    pro: 'PMS Debt = performing credit and structured paper, managed in client demat. Steady-income mandate.',
   },
-  'Small-Mid Cap': {
-    simple: 'Small-Mid Cap = smaller, less-followed companies. Higher upside, higher swings.',
-    pro: 'PMS Small-Mid Cap = concentrated exposure to companies ranked below the top 100 by market cap. Higher dispersion, longer holds.',
+  'Multi Asset': {
+    simple: 'Balanced Portfolios = mix of stocks, bonds and gold, rebalanced as markets shift.',
+    pro: 'PMS Multi Asset = dynamic allocation across equity, debt, gold and arbitrage in client demat.',
   },
-  Thematic: {
-    simple: 'Thematic = a bet on a single idea (consumption, manufacturing, etc.). Win big or lose if the theme shifts.',
-    pro: 'PMS Thematic = concentrated portfolio aligned to a single sector or megatrend thesis. Higher tracking error.',
+  // AIF
+  'Cat I — VC': {
+    simple: 'Startup Investing = backing tiny companies. Most fail. The few winners can return many times your money.',
+    pro: 'AIF Cat I = SEBI-regulated venture capital. Long lock-up, J-curve, 1–2 winners drive returns.',
   },
-  Sector: {
-    simple: 'Sector = a bet on one industry — banking, IT, pharma. Best for someone with an already-balanced core.',
-    pro: 'PMS Sector = single-sector mandate with concentrated industry exposure. Suits investors with a diversified core elsewhere.',
+  'Cat II — PE': {
+    simple: 'Private Company Investing = big stakes in profitable companies that aren\'t on the stock market yet.',
+    pro: 'AIF Cat II PE = growth-stage private equity. 5–8 year hold. IPO / strategic exits.',
   },
-  // AIF subs
-  'Real Estate': {
-    simple: 'Real Estate Funds = pool money to back buildings, projects and rental income. Long lock-up, real assets behind your money.',
-    pro: 'AIF Cat II Real Estate = pooled vehicle in stabilized assets, development equity or yield debt. Closed-ended, 5–8 year lock-up.',
+  'Cat II — Credit': {
+    simple: 'Private Lending = lending to companies that don\'t want to use big banks. Higher interest for the extra work.',
+    pro: 'AIF Cat II Credit = senior-secured private debt to mid-market corporates. Yield > public credit.',
   },
-  'Infra Debt': {
-    simple: 'Infra Debt = lend to big infrastructure projects (power, roads). Aim is steady yield over years.',
-    pro: 'AIF Cat II Infra Debt = senior-secured infra loans with rated underlying. Yield-driven, longer-duration instruments.',
+  'Cat II — RE & Infra': {
+    simple: 'Real Estate & Infra = funds that buy buildings, roads, power lines. Long timelines, real assets behind your money.',
+    pro: 'AIF Cat II RE/Infra = project-level real estate equity and operating infrastructure debt.',
   },
-  'Pre-IPO': {
-    simple: 'Pre-IPO = buy shares in companies just before they list on the stock market. Lock-up ends at IPO.',
-    pro: 'AIF Cat II Pre-IPO = late-stage equity 12–24 months from listing. Liquidity tied to IPO event; valuation via 409A.',
+  'Cat II — Pre-IPO': {
+    simple: 'Pre-IPO Investing = buying shares in companies just before they list on the stock market.',
+    pro: 'AIF Cat II Pre-IPO = late-stage equity 12–24 months from listing. Lock-up tied to IPO event.',
   },
-  'Long-Short': {
-    simple: 'Long-Short = bet on stocks rising AND falling. Try to make money even when the market drops.',
-    pro: 'AIF Cat III Long-Short = hedge-style strategy using leverage and derivatives. Absolute-return or market-neutral mandates.',
+  'Cat III — Long Short': {
+    simple: 'Hedge Funds = try to make money whether markets go up or down. Bets on some stocks rising and others falling.',
+    pro: 'AIF Cat III = hedge-style long-short with derivatives. Absolute-return / market-neutral mandates.',
   },
-  Credit: {
-    simple: 'Private Credit = lend to companies that want flexible terms. Higher interest, more diligence required up front.',
-    pro: 'AIF Cat II Credit = senior-secured private debt to mid-market corporates. Yield premium over public credit.',
+  // GIFT City
+  'Inbound — India': {
+    simple: 'NRI India Access = if you live abroad, invest in Indian stocks in dollars without rupee paperwork.',
+    pro: 'GIFT IFSC Inbound = USD-denominated India equity vehicles for NRIs. IFSCA-regulated, tax-efficient, repatriable.',
   },
-  'Private Equity': {
-    simple: 'Private Equity = buy big stakes in private companies. 5–10 year hold. Exit via IPO or strategic sale.',
-    pro: 'AIF Cat II PE = growth-stage private equity with control or significant minority positions. IPO / M&A exits.',
+  'Outbound — Global': {
+    simple: 'Global Market Access = Indians can invest in US, Europe and other markets — legally, in USD, from India.',
+    pro: 'GIFT IFSC Outbound = Indian residents access global equities through the IFSC liberalised remittance route.',
   },
 }
 

@@ -11,7 +11,7 @@ export const metadata = {
     'Browse PMS, AIF, and GIFT City funds in India. Filter by category and subcategory. Education-first — no commissions, no login.',
 }
 
-const VALID_PRIMARIES: PrimaryFilter[] = ['All', 'PMS', 'AIF']
+const VALID_PRIMARIES: PrimaryFilter[] = ['All', 'PMS', 'AIF', 'GIFT City']
 
 type Props = { searchParams: Promise<{ cat?: string }> }
 

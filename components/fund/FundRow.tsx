@@ -1,8 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import { useMode } from '@/components/shared/SimpleProToggle'
 import { formatINR } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
+import { SUBCATEGORY_LABELS } from '@/lib/constants'
 import {
   feeHeadlineFor,
   formatPercent,
@@ -15,6 +17,7 @@ type Props = {
 }
 
 export function FundRow({ fund, className }: Props) {
+  const { mode } = useMode()
   const feeHeadline = feeHeadlineFor(fund.fees)
 
   return (
@@ -29,7 +32,7 @@ export function FundRow({ fund, className }: Props) {
         <div className="flex flex-wrap items-center gap-2">
           {fund.subcategory ? (
             <span className="text-[10px] font-semibold uppercase tracking-widest text-gold">
-              {fund.subcategory}
+              {SUBCATEGORY_LABELS[fund.subcategory]?.[mode] ?? fund.subcategory}
             </span>
           ) : null}
           <StatusBadge status={fund.status} />
