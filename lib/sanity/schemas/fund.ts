@@ -20,6 +20,14 @@ export default defineType({
     }),
     defineField({ name: 'provider', title: 'Provider', type: 'string' }),
     defineField({
+      name: 'providerLogo',
+      title: 'Provider Logo',
+      type: 'image',
+      description:
+        'Square logo for the provider (200×200+ recommended). Falls back to a monogram tile if missing.',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',

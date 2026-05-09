@@ -12,6 +12,7 @@ import {
 } from './fundDisplay'
 import { StatusBadge } from './badges/StatusBadge'
 import { RiskBadge } from './badges/RiskBadge'
+import { ProviderLogo } from './ProviderLogo'
 
 type Props = {
   fund: FundCardData
@@ -26,10 +27,17 @@ export function FundRow({ fund, className }: Props) {
     <Link
       href={`/explore/${fund.slug}`}
       className={cn(
-        'group grid grid-cols-1 gap-4 rounded-card border border-card-border bg-card p-5 shadow-card transition-shadow hover:shadow-card-hover md:grid-cols-[2fr_1fr_1fr_1.2fr_0.8fr_auto] md:items-center md:px-6',
+        'group grid grid-cols-1 gap-4 rounded-card border border-card-border bg-card p-5 shadow-card transition-shadow hover:shadow-card-hover md:grid-cols-[auto_2fr_1fr_1fr_1.2fr_0.8fr_auto] md:items-center md:px-6',
         className,
       )}
     >
+      <ProviderLogo
+        src={fund.providerLogoUrl}
+        provider={fund.provider}
+        size={44}
+        className="hidden border border-card-border md:flex"
+      />
+
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
           {fund.subcategory ? (
