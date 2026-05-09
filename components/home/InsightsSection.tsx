@@ -92,11 +92,11 @@ export async function InsightsSection() {
 
       <dl className="mt-12 grid grid-cols-2 gap-6 rounded-card border border-card-border bg-card px-6 py-8 shadow-card md:mt-16 md:grid-cols-4 md:gap-4 md:px-10 md:py-10">
         {INDUSTRY_STATS.map((stat) => (
-          <div key={stat.label}>
-            <dt className="text-xs uppercase tracking-wide text-text-muted md:order-2 md:mt-2">
+          <div key={stat.label} className="flex flex-col">
+            <dt className="order-2 mt-2 text-xs uppercase tracking-wide text-text-muted">
               {stat.label}
             </dt>
-            <dd className="text-3xl font-semibold tabular-nums text-text-primary md:order-1 md:text-4xl">
+            <dd className="order-1 whitespace-nowrap text-2xl font-semibold tabular-nums text-text-primary md:text-4xl">
               {stat.value}
             </dd>
           </div>
