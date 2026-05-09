@@ -50,7 +50,7 @@ export const FOOTER_DISCLAIMER =
  */
 export const NAV_LINKS = [
   { href: '/explore', label: 'Explore' },
-  { href: '/knowledge', label: 'Knowledge' },
+  { href: '/knowledge', label: 'Learn' },
   { href: '/insights', label: 'Insights' },
   { href: '/gift-city', label: 'GIFT City' },
   { href: '/about', label: 'About' },

@@ -59,7 +59,7 @@ export default async function GlossaryTermPage({ params }: Props) {
           href="/knowledge"
           className="inline-flex items-center text-xs font-medium uppercase tracking-widest text-text-muted hover:text-text-primary"
         >
-          ← Knowledge Centre
+          ← Learn
         </Link>
         <h1 className="mt-3">{term.term}</h1>
         {term.whyItMatters ? (

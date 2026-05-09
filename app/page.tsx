@@ -3,7 +3,7 @@ import { FundPreviewRow } from '@/components/fund/FundPreviewRow'
 import { CTACard } from '@/components/shared/CTACard'
 import { TrustStrip } from '@/components/shared/TrustStrip'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
-import { KnowledgeCentreSection } from '@/components/home/KnowledgeCentreSection'
+import { LearnSection } from '@/components/home/LearnSection'
 import { UniverseSection } from '@/components/home/UniverseSection'
 import { InsightsSection } from '@/components/home/InsightsSection'
 
@@ -17,7 +17,7 @@ export default function HomePage() {
       </FadeInOnScroll>
 
       <FadeInOnScroll>
-        <KnowledgeCentreSection />
+        <LearnSection />
       </FadeInOnScroll>
 
       <FadeInOnScroll>

@@ -15,21 +15,21 @@ const CARDS: Card[] = [
     title: 'What is PMS?',
     teaser: 'Like hiring a personal chef for your investments.',
     minutes: 6,
-    href: '/knowledge/pms',
+    href: '/insights/what-is-pms',
   },
   {
     number: '02',
     title: 'What is AIF?',
     teaser: 'The VIP section of investing — decoded.',
     minutes: 8,
-    href: '/knowledge/aif',
+    href: '/insights/what-is-aif',
   },
   {
     number: '03',
     title: 'PMS vs AIF',
     teaser: 'Different tools for different jobs.',
     minutes: 6,
-    href: '/knowledge',
+    href: '/insights/pms-vs-aif',
   },
   {
     number: '04',
@@ -43,16 +43,16 @@ const CARDS: Card[] = [
     title: 'AIF Categories Decoded',
     teaser: 'Cat I, II, III — each completely different.',
     minutes: 7,
-    href: '/knowledge/aif',
+    href: '/insights/aif-categories-decoded',
   },
 ]
 
-export function KnowledgeCentreSection() {
+export function LearnSection() {
   return (
     <section className="container-grid py-16 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-sm font-medium uppercase tracking-widest text-gold">Knowledge Centre</p>
+          <p className="text-sm font-medium uppercase tracking-widest text-gold">Learn</p>
           <h2 className="mt-2 max-w-2xl">Start with the fundamentals.</h2>
         </div>
         <Link

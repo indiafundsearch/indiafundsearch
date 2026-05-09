@@ -4,7 +4,7 @@ import { Translator } from '@/components/lead-magnets/Translator'
 import type { GlossaryTerm } from '@/components/knowledge/glossaryTypes'
 
 export const metadata = {
-  title: 'Knowledge Centre — PMS, AIF, SIF, GIFT City explained',
+  title: 'Learn — PMS, AIF, SIF, GIFT City explained',
   description:
     'Free, ungated glossary, product map, and 3-question Pathfinder for India\'s alternatives — PMS, AIF, SIF, and GIFT City. The Morningstar of Indian alternatives.',
 }
@@ -25,7 +25,7 @@ export default async function KnowledgePage() {
     <div className="container-grid pt-12 pb-20 md:pt-20">
       <header className="max-w-3xl">
         <p className="text-sm font-medium uppercase tracking-widest text-gold">
-          Knowledge Centre
+          Learn
         </p>
         <h1 className="mt-2">Translator: every term, every product, no jargon.</h1>
         <p className="mt-4 max-w-prose text-lg text-text-muted">
