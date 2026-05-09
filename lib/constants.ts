@@ -188,6 +188,11 @@ export const PRIMARY_CURRENCY: Record<PrimaryCategory, '₹' | '$'> = {
  * hero scatter chart. Numbers are illustrative orientation aids, not
  * forecasts.
  */
+export type LockIn = 'none' | 'soft' | 'hard'
+export type RiskTier = 'low' | 'medium' | 'high'
+export type GoalBucket = 'Wealth Creation' | 'Income' | 'Capital Preservation'
+export type Listing = 'Listed' | 'Unlisted' | 'Mixed'
+
 export type ProductMapPoint = {
   primary: PrimaryCategory
   subcategory: string
@@ -195,26 +200,214 @@ export type ProductMapPoint = {
   expectedReturn: number
   /** Typical investment horizon, in years. */
   horizon: number
+  /** Display string for the minimum ticket (e.g. "₹50L", "$150K"). */
   minTicket: string
+  /** Indian-rupee-equivalent of the minimum ticket, used for budget filtering. */
+  minTicketAmount: number
   blurb: string
+  /**
+   * Illustrative weight (1-10) of capital parked in this subcategory in
+   * the Indian alternatives universe. Drives bubble size on the
+   * homepage product map. Not an AUM source of truth.
+   */
+  weight: number
+  /**
+   * Practical liquidity profile.
+   * 'none' = daily/weekly redemption (PMS, GIFT City).
+   * 'soft' = 1-2 year exit windows or open-ended with notice.
+   * 'hard' = multi-year contractual lock (most Cat I/II AIFs).
+   */
+  lockIn: LockIn
+  /** True if the product distributes regular income / coupons / dividends. */
+  incomeOriented: boolean
+  /** Coarse risk tier for the Pathfinder filter. */
+  riskTier: RiskTier
+  /** Investor-facing goal bucket — drives the "Goal" lens on the chart. */
+  goal: GoalBucket
+  /** Whether the underlying instruments are listed, unlisted, or mixed. */
+  listing: Listing
+  /** One-line tax treatment hint, surfaced in the tooltip. */
+  taxNote: string
+  /**
+   * Illustrative sub-strategy variants within this subcategory. The
+   * spread between the lowest and highest variant is the IRR range
+   * shown in the "Inside your shortlist" panel and as whiskers on the
+   * chart. Numbers are typical-case orientations, not forecasts.
+   */
+  variants: ProductVariant[]
+}
+
+export type ProductVariant = {
+  name: string
+  expectedReturn: number
 }
 
 export const PRODUCT_MAP_POINTS: ProductMapPoint[] = [
   // PMS
-  { primary: 'PMS', subcategory: 'Equity',         expectedReturn: 17, horizon: 5, minTicket: '₹50L',  blurb: 'Direct equity in your demat, manager-picked.' },
-  { primary: 'PMS', subcategory: 'Debt',           expectedReturn: 10, horizon: 3, minTicket: '₹50L',  blurb: 'Performing credit and structured paper.' },
-  { primary: 'PMS', subcategory: 'Multi Asset',    expectedReturn: 13, horizon: 4, minTicket: '₹50L',  blurb: 'Dynamic equity / debt / gold blend.' },
+  {
+    primary: 'PMS', subcategory: 'Equity', expectedReturn: 17, horizon: 5,
+    minTicket: '₹50L', minTicketAmount: 5_000_000, weight: 10,
+    lockIn: 'none', incomeOriented: false, riskTier: 'high',
+    goal: 'Wealth Creation', listing: 'Listed',
+    taxNote: 'LTCG 12.5% (>1y) · STCG 20%',
+    blurb: 'Direct equity in your demat, manager-picked.',
+    variants: [
+      { name: 'Large-cap', expectedReturn: 12 },
+      { name: 'Multi-cap', expectedReturn: 15 },
+      { name: 'Thematic',  expectedReturn: 18 },
+      { name: 'Small-cap', expectedReturn: 22 },
+    ],
+  },
+  {
+    primary: 'PMS', subcategory: 'Debt', expectedReturn: 10, horizon: 3,
+    minTicket: '₹50L', minTicketAmount: 5_000_000, weight: 5,
+    lockIn: 'none', incomeOriented: true, riskTier: 'low',
+    goal: 'Income', listing: 'Mixed',
+    taxNote: 'Slab rate · indexation removed',
+    blurb: 'Performing credit and structured paper.',
+    variants: [
+      { name: 'Senior secured',     expectedReturn: 9 },
+      { name: 'Performing credit',  expectedReturn: 11 },
+      { name: 'High-yield',         expectedReturn: 13 },
+    ],
+  },
+  {
+    primary: 'PMS', subcategory: 'Multi Asset', expectedReturn: 13, horizon: 4,
+    minTicket: '₹50L', minTicketAmount: 5_000_000, weight: 6,
+    lockIn: 'none', incomeOriented: false, riskTier: 'medium',
+    goal: 'Wealth Creation', listing: 'Mixed',
+    taxNote: 'Treated per underlying holding',
+    blurb: 'Dynamic equity / debt / gold blend.',
+    variants: [
+      { name: 'Conservative', expectedReturn: 11 },
+      { name: 'Balanced',     expectedReturn: 13 },
+      { name: 'Aggressive',   expectedReturn: 16 },
+    ],
+  },
   // AIF
-  { primary: 'AIF', subcategory: 'Cat I — VC',          expectedReturn: 25, horizon: 8, minTicket: '₹1Cr',  blurb: 'Early-stage venture. J-curve, 1–2 winners drive returns.' },
-  { primary: 'AIF', subcategory: 'Cat II — PE',          expectedReturn: 20, horizon: 7, minTicket: '₹1Cr',  blurb: 'Growth-stage private equity, control or near-control stakes.' },
-  { primary: 'AIF', subcategory: 'Cat II — Credit',      expectedReturn: 13, horizon: 4, minTicket: '₹1Cr',  blurb: 'Senior-secured private debt.' },
-  { primary: 'AIF', subcategory: 'Cat II — RE & Infra',  expectedReturn: 15, horizon: 6, minTicket: '₹1Cr',  blurb: 'Real estate equity / infra debt.' },
-  { primary: 'AIF', subcategory: 'Cat II — Pre-IPO',     expectedReturn: 18, horizon: 5, minTicket: '₹1Cr',  blurb: 'Late-stage equity tied to IPO event.' },
-  { primary: 'AIF', subcategory: 'Cat III — Long Short', expectedReturn: 14, horizon: 3, minTicket: '₹1Cr',  blurb: 'Hedge-style absolute / market-neutral.' },
+  {
+    primary: 'AIF', subcategory: 'Cat I — VC', expectedReturn: 25, horizon: 8,
+    minTicket: '₹1Cr', minTicketAmount: 10_000_000, weight: 4,
+    lockIn: 'hard', incomeOriented: false, riskTier: 'high',
+    goal: 'Wealth Creation', listing: 'Unlisted',
+    taxNote: 'Pass-through · LTCG on equity exits',
+    blurb: 'Early-stage venture. J-curve, 1–2 winners drive returns.',
+    variants: [
+      { name: 'Late VC',   expectedReturn: 18 },
+      { name: 'Series A',  expectedReturn: 25 },
+      { name: 'Seed',      expectedReturn: 32 },
+    ],
+  },
+  {
+    primary: 'AIF', subcategory: 'Cat II — PE', expectedReturn: 20, horizon: 7,
+    minTicket: '₹1Cr', minTicketAmount: 10_000_000, weight: 7,
+    lockIn: 'hard', incomeOriented: false, riskTier: 'high',
+    goal: 'Wealth Creation', listing: 'Unlisted',
+    taxNote: 'Pass-through · LTCG on equity exits',
+    blurb: 'Growth-stage private equity, control or near-control stakes.',
+    variants: [
+      { name: 'Late stage', expectedReturn: 16 },
+      { name: 'Growth',     expectedReturn: 20 },
+      { name: 'Buyout',     expectedReturn: 24 },
+    ],
+  },
+  {
+    primary: 'AIF', subcategory: 'Cat II — Credit', expectedReturn: 13, horizon: 4,
+    minTicket: '₹1Cr', minTicketAmount: 10_000_000, weight: 6,
+    lockIn: 'hard', incomeOriented: true, riskTier: 'medium',
+    goal: 'Income', listing: 'Unlisted',
+    taxNote: 'Pass-through · interest at slab',
+    blurb: 'Senior-secured private debt.',
+    variants: [
+      { name: 'Senior secured',     expectedReturn: 11 },
+      { name: 'Performing credit',  expectedReturn: 14 },
+      { name: 'Mezzanine / hi-yld', expectedReturn: 22 },
+    ],
+  },
+  {
+    primary: 'AIF', subcategory: 'Cat II — RE & Infra', expectedReturn: 15, horizon: 6,
+    minTicket: '₹1Cr', minTicketAmount: 10_000_000, weight: 5,
+    lockIn: 'hard', incomeOriented: true, riskTier: 'medium',
+    goal: 'Income', listing: 'Unlisted',
+    taxNote: 'Pass-through · rental at slab',
+    blurb: 'Real estate equity / infra debt.',
+    variants: [
+      { name: 'Infra debt',     expectedReturn: 12 },
+      { name: 'Stabilized RE',  expectedReturn: 14 },
+      { name: 'Opportunistic',  expectedReturn: 19 },
+    ],
+  },
+  {
+    primary: 'AIF', subcategory: 'Cat II — Pre-IPO', expectedReturn: 18, horizon: 5,
+    minTicket: '₹1Cr', minTicketAmount: 10_000_000, weight: 4,
+    lockIn: 'hard', incomeOriented: false, riskTier: 'high',
+    goal: 'Wealth Creation', listing: 'Unlisted',
+    taxNote: 'Pass-through · LTCG on IPO exit',
+    blurb: 'Late-stage equity tied to IPO event.',
+    variants: [
+      { name: 'Pre-IPO 2-3y', expectedReturn: 15 },
+      { name: 'Pre-IPO 1y',   expectedReturn: 18 },
+      { name: 'Hot tech IPO', expectedReturn: 23 },
+    ],
+  },
+  {
+    primary: 'AIF', subcategory: 'Cat III — Long Short', expectedReturn: 14, horizon: 3,
+    minTicket: '₹1Cr', minTicketAmount: 10_000_000, weight: 5,
+    lockIn: 'soft', incomeOriented: false, riskTier: 'medium',
+    goal: 'Capital Preservation', listing: 'Listed',
+    taxNote: 'Fund-level · max marginal rate',
+    blurb: 'Hedge-style absolute / market-neutral.',
+    variants: [
+      { name: 'Market neutral', expectedReturn: 10 },
+      { name: 'Equity LS',      expectedReturn: 14 },
+      { name: 'Multi-strategy', expectedReturn: 18 },
+    ],
+  },
   // GIFT City
-  { primary: 'GIFT City', subcategory: 'Inbound — India',    expectedReturn: 14, horizon: 5, minTicket: '$150K', blurb: 'USD India equity for NRIs from IFSC.' },
-  { primary: 'GIFT City', subcategory: 'Outbound — Global',  expectedReturn: 12, horizon: 5, minTicket: '$150K', blurb: 'IFSC-route global equity for residents.' },
+  {
+    primary: 'GIFT City', subcategory: 'Inbound — India', expectedReturn: 14, horizon: 5,
+    minTicket: '$150K', minTicketAmount: 12_500_000, weight: 3,
+    lockIn: 'none', incomeOriented: false, riskTier: 'high',
+    goal: 'Wealth Creation', listing: 'Listed',
+    taxNote: 'IFSC: tax-free for NRIs',
+    blurb: 'USD India equity for NRIs from IFSC.',
+    variants: [
+      { name: 'ETF / passive',  expectedReturn: 10 },
+      { name: 'Active equity',  expectedReturn: 14 },
+      { name: 'Concentrated',   expectedReturn: 18 },
+    ],
+  },
+  {
+    primary: 'GIFT City', subcategory: 'Outbound — Global', expectedReturn: 12, horizon: 5,
+    minTicket: '$150K', minTicketAmount: 12_500_000, weight: 3,
+    lockIn: 'none', incomeOriented: false, riskTier: 'medium',
+    goal: 'Wealth Creation', listing: 'Listed',
+    taxNote: 'LRS route · LTCG 12.5%',
+    blurb: 'IFSC-route global equity for residents.',
+    variants: [
+      { name: 'US large-cap',     expectedReturn: 10 },
+      { name: 'Global thematic',  expectedReturn: 14 },
+    ],
+  },
 ]
+
+/**
+ * Color tokens for the Goal lens on the homepage product map. Aligned
+ * with the design system: gold for the aspirational growth bucket,
+ * success-green for cashflow, muted neutral for capital preservation.
+ */
+export const GOAL_COLORS: Record<GoalBucket, string> = {
+  'Wealth Creation': '#b8960c',
+  Income: '#1a7f4d',
+  'Capital Preservation': '#5b6470',
+}
+
+/** Color tokens for the Liquidity lens. */
+export const LOCKIN_COLORS: Record<LockIn, string> = {
+  none: '#1a7f4d',
+  soft: '#d97706',
+  hard: '#1d1d1f',
+}
 
 /**
  * Sort options surfaced in the /explore sort dropdown.
