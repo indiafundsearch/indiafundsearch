@@ -9,7 +9,6 @@ import {
 } from '@/lib/constants'
 import { useMode } from '@/components/shared/SimpleProToggle'
 import { buildExploreHref } from '@/lib/pathfinder'
-import { ShortlistRanges } from './ShortlistRanges'
 
 type Props = {
   matched: ProductMapPoint[]
@@ -79,8 +78,6 @@ export function PathfinderResults({ matched, totalCount, active, onChipClick }: 
           </div>
         </div>
       </div>
-
-      <ShortlistRanges matched={matched} />
     </div>
   )
 }
