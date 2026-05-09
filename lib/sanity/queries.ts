@@ -134,6 +134,21 @@ export const articlesIndexQuery = groq`
   }
 `
 
+// Learn page: evergreen fundamentals, ordered for educational progression.
+// Body included so we can compute section count and reading time without
+// a second round-trip.
+export const learnArticlesQuery = groq`
+  *[_type == "article" && category == "Education" && defined(publishedAt)] | order(publishedAt asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    category,
+    seoDescription,
+    body
+  }
+`
+
 export const articleBySlugQuery = groq`
   *[_type == "article" && slug.current == $slug][0] {
     _id,

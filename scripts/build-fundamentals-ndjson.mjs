@@ -15,7 +15,7 @@ const ARTICLES = [
     id: 'article-what-is-pms',
     slug: 'what-is-pms',
     title: 'What is PMS?',
-    publishedAt: '2026-05-01T09:00:00.000Z',
+    publishedAt: '__PUBLISHED_AT__',
     seoTitle: 'What is PMS? A plain-English guide to Portfolio Management Services',
     seoDescription:
       'Portfolio Management Services explained without jargon — what they are, who they\'re for, and how they actually differ from a mutual fund.',
@@ -53,7 +53,7 @@ const ARTICLES = [
     id: 'article-what-is-aif',
     slug: 'what-is-aif',
     title: 'What is AIF?',
-    publishedAt: '2026-05-01T09:00:00.000Z',
+    publishedAt: '__PUBLISHED_AT__',
     seoTitle: 'What is AIF? Alternative Investment Funds, decoded',
     seoDescription:
       'Alternative Investment Funds — what they are, the three SEBI categories, and what AIFs can do that mutual funds and PMS cannot.',
@@ -94,7 +94,7 @@ const ARTICLES = [
     id: 'article-pms-vs-aif',
     slug: 'pms-vs-aif',
     title: 'PMS vs AIF',
-    publishedAt: '2026-05-01T09:00:00.000Z',
+    publishedAt: '__PUBLISHED_AT__',
     seoTitle: 'PMS vs AIF — which is the right structure for you?',
     seoDescription:
       'PMS and AIF are both HNI products but they solve different problems. A practical comparison of structure, liquidity, fees, and fit.',
@@ -132,7 +132,7 @@ const ARTICLES = [
     id: 'article-aif-categories-decoded',
     slug: 'aif-categories-decoded',
     title: 'AIF Categories Decoded',
-    publishedAt: '2026-05-01T09:00:00.000Z',
+    publishedAt: '__PUBLISHED_AT__',
     seoTitle: 'AIF Cat I, II, III — decoded',
     seoDescription:
       'The three AIF categories sound similar but behave like different products. What each can do, lock-ups, tax, and how to pick.',
@@ -207,14 +207,22 @@ function buildPortableText(sections) {
   return blocks
 }
 
-const out = ARTICLES.map((article) => {
+// Stagger publishedAt by one hour per article so the natural ascending
+// sort gives the intended educational progression: PMS → AIF → PMS vs AIF
+// → AIF Categories Decoded. The base is intentionally earlier than the
+// other Education-category articles so the fundamentals lead the Learn
+// page when sorted ascending.
+const BASE_TIMESTAMP = new Date('2026-03-15T09:00:00.000Z')
+
+const out = ARTICLES.map((article, index) => {
+  const ts = new Date(BASE_TIMESTAMP.getTime() + index * 60 * 60 * 1000).toISOString()
   const doc = {
     _type: 'article',
     _id: article.id,
     title: article.title,
     slug: { _type: 'slug', current: article.slug },
     author: 'IndiaFundSearch',
-    publishedAt: article.publishedAt,
+    publishedAt: ts,
     category: 'Education',
     seoTitle: article.seoTitle,
     seoDescription: article.seoDescription,
