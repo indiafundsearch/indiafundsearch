@@ -25,7 +25,7 @@ export default defineType({
       title: 'Category',
       type: 'string',
       options: {
-        list: ['Market Commentary', 'Education', 'Fund Analysis', 'Regulation'].map((value) => ({
+        list: ['Market Commentary', 'Education', 'Fund Analysis', 'Regulation', 'Ask the Manager'].map((value) => ({
           title: value,
           value,
         })),

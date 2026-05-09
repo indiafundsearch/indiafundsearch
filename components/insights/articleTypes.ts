@@ -1,10 +1,16 @@
-export type ArticleCategory = 'Market Commentary' | 'Education' | 'Fund Analysis' | 'Regulation'
+export type ArticleCategory =
+  | 'Market Commentary'
+  | 'Education'
+  | 'Fund Analysis'
+  | 'Regulation'
+  | 'Ask the Manager'
 
 export const ARTICLE_CATEGORIES: ArticleCategory[] = [
   'Market Commentary',
   'Education',
   'Fund Analysis',
   'Regulation',
+  'Ask the Manager',
 ]
 
 export type ArticleSummary = {

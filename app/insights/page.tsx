@@ -4,9 +4,9 @@ import { InsightsClient } from '@/components/insights/InsightsClient'
 import type { ArticleSummary } from '@/components/insights/articleTypes'
 
 export const metadata = {
-  title: 'Insights — market commentary, education, fund analysis, regulation',
+  title: 'Insights — market commentary, fund analysis, Ask the Manager',
   description:
-    'Long-form essays on PMS, AIF, and GIFT City investing in India. Education-first, never sponsored, never gated.',
+    'Long-form essays plus the Ask the Manager series — Q&As with PMS / AIF / GIFT City fund managers in their own words. Education-first, never sponsored, never gated.',
 }
 
 export const revalidate = 600
@@ -27,7 +27,7 @@ export default async function InsightsPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-gold">Insights</p>
         <h1 className="mt-2">Long-form thinking on Indian alternatives.</h1>
         <p className="mt-4 max-w-prose text-lg text-text-muted">
-          Market commentary, fund analysis, regulatory shifts, and the occasional explainer. Never sponsored. Never gated.
+          Market commentary, fund analysis, regulatory shifts, plus the Ask the Manager series — Q&amp;As with the people actually running PMS / AIF / GIFT City strategies. Never sponsored. Never gated.
         </p>
       </header>
 
