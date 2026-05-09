@@ -93,6 +93,7 @@ export const FOOTER_DISCLAIMER =
  */
 export const NAV_LINKS = [
   { href: '/explore', label: 'Explore' },
+  { href: '/tools', label: 'Tools' },
   { href: '/knowledge', label: 'Learn' },
   { href: '/insights', label: 'Insights' },
   { href: '/gift-city', label: 'GIFT City' },

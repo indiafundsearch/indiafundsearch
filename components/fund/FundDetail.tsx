@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CalculatorIcon } from 'lucide-react'
+import { CalculatorIcon, ClipboardCheck, ScanLine } from 'lucide-react'
 import { CategoryBadge } from './CategoryBadge'
 import { StrategyDescription } from './StrategyDescription'
 import { feeHeadlineFor, formatPercent, type FundDetailData } from './fundDisplay'
@@ -49,7 +49,31 @@ function Header({ fund }: Props) {
         <p className="mt-2 text-lg text-text-muted">{fund.provider}</p>
       ) : null}
       <MetaStrip fund={fund} />
+      <ToolQuickActions fund={fund} />
     </header>
+  )
+}
+
+function ToolQuickActions({ fund }: Props) {
+  const xrayHref = buildFeeXRayHref(fund)
+  const scoreHref = `/tools/scorecard?fund=${encodeURIComponent(fund.name)}`
+  return (
+    <div className="mt-6 flex flex-wrap gap-2">
+      <Link
+        href={xrayHref}
+        className="inline-flex items-center gap-1.5 rounded-button border border-card-border bg-card px-3.5 py-2 text-sm font-medium text-text-primary transition-colors hover:border-text-primary"
+      >
+        <ScanLine size={14} aria-hidden />
+        Run Fee X-Ray
+      </Link>
+      <Link
+        href={scoreHref}
+        className="inline-flex items-center gap-1.5 rounded-button border border-card-border bg-card px-3.5 py-2 text-sm font-medium text-text-primary transition-colors hover:border-text-primary"
+      >
+        <ClipboardCheck size={14} aria-hidden />
+        Score this fund
+      </Link>
+    </div>
   )
 }
 

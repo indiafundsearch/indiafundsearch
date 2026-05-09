@@ -7,6 +7,8 @@ import { LearnSection } from '@/components/home/LearnSection'
 import { UniverseSection } from '@/components/home/UniverseSection'
 import { InsightsSection } from '@/components/home/InsightsSection'
 import { NewsletterSignup } from '@/components/home/NewsletterSignup'
+import { TryAToolStrip } from '@/components/home/TryAToolStrip'
+import { PerformanceLeaderboard } from '@/components/home/PerformanceLeaderboard'
 
 export default function HomePage() {
   return (
@@ -14,7 +16,15 @@ export default function HomePage() {
       <FDVisualiser />
 
       <FadeInOnScroll>
+        <TryAToolStrip />
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
         <FundPreviewRow />
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <PerformanceLeaderboard />
       </FadeInOnScroll>
 
       <FadeInOnScroll>

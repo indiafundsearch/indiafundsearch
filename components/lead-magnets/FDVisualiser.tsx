@@ -45,7 +45,7 @@ export function FDVisualiser() {
   }, [amount, bracket])
 
   return (
-    <section className="container-grid pt-12 pb-16 md:pt-20 md:pb-24">
+    <section id="fd-visualiser" className="container-grid pt-12 pb-16 md:pt-20 md:pb-24">
       <div className="max-w-3xl">
         <h1>Your ₹1 Crore FD isn't growing. It's quietly shrinking.</h1>
         <p className="mt-5 max-w-prose text-lg text-text-muted">
