@@ -29,7 +29,6 @@ export default defineType({
           { title: 'AIF Cat I', value: 'AIF Cat I' },
           { title: 'AIF Cat II', value: 'AIF Cat II' },
           { title: 'AIF Cat III', value: 'AIF Cat III' },
-          { title: 'SIF', value: 'SIF' },
         ],
         layout: 'radio',
       },

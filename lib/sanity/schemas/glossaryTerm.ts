@@ -44,7 +44,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        list: ['PMS', 'AIF', 'SIF', 'GIFT City', 'All'].map((value) => ({ title: value, value })),
+        list: ['PMS', 'AIF', 'GIFT City', 'All'].map((value) => ({ title: value, value })),
       },
     }),
     defineField({

@@ -7,7 +7,7 @@ const CONTACT_EMAIL = 'hello@indiafundsearch.com'
 export const metadata = {
   title: 'Contact a Beyond Wealth advisor',
   description:
-    'Beyond Wealth is a fee-only advisory practice in Vadodara. We don\'t distribute. When you\'re ready for a real conversation about PMS, AIF, SIF, or GIFT City, we advise.',
+    'Beyond Wealth is a fee-only advisory practice in Vadodara. We don\'t distribute. When you\'re ready for a real conversation about PMS, AIF, or GIFT City, we advise.',
 }
 
 export default function ContactPage() {
@@ -30,7 +30,7 @@ export default function ContactPage() {
           Email us with a one-line context.
         </h2>
         <p className="mt-3 max-w-prose text-base text-text-muted">
-          Tell us roughly: investable surplus range, what you&rsquo;re considering (PMS / AIF / SIF / GIFT City), and a good window for a 30-minute call. We&rsquo;ll write back with a slot or a clarifying question.
+          Tell us roughly: investable surplus range, what you&rsquo;re considering (PMS / AIF / GIFT City), and a good window for a 30-minute call. We&rsquo;ll write back with a slot or a clarifying question.
         </p>
         <a
           href={`mailto:${CONTACT_EMAIL}?subject=Advisory%20enquiry%20%E2%80%94%20IndiaFundSearch`}

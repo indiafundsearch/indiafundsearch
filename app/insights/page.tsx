@@ -6,7 +6,7 @@ import type { ArticleSummary } from '@/components/insights/articleTypes'
 export const metadata = {
   title: 'Insights — market commentary, education, fund analysis, regulation',
   description:
-    'Long-form essays on PMS, AIF, SIF, and GIFT City investing in India. Education-first, never sponsored, never gated.',
+    'Long-form essays on PMS, AIF, and GIFT City investing in India. Education-first, never sponsored, never gated.',
 }
 
 export const revalidate = 600

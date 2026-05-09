@@ -5,7 +5,7 @@ import { TrustStrip } from '@/components/shared/TrustStrip'
 export const metadata = {
   title: 'Fee X-Ray Calculator — what you actually pay',
   description:
-    'See exactly what PMS, AIF, and SIF fees cost you over time. Year-by-year breakdown of management, performance, brokerage, GST, and custody. Free, ungated.',
+    'See exactly what PMS and AIF fees cost you over time. Year-by-year breakdown of management, performance, brokerage, GST, and custody. Free, ungated.',
 }
 
 export default function FeeXRayPage() {

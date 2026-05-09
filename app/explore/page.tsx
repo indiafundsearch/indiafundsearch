@@ -6,12 +6,12 @@ import type { FundCardData } from '@/components/fund/fundDisplay'
 import { FeeXRayStickyBar } from '@/components/shared/FeeXRayStickyBar'
 
 export const metadata = {
-  title: 'Explore PMS, AIF, SIF & GIFT City funds',
+  title: 'Explore PMS, AIF & GIFT City funds',
   description:
-    'Browse PMS, AIF, SIF, and GIFT City funds in India. Filter by category and subcategory. Education-first — no commissions, no login.',
+    'Browse PMS, AIF, and GIFT City funds in India. Filter by category and subcategory. Education-first — no commissions, no login.',
 }
 
-const VALID_PRIMARIES: PrimaryFilter[] = ['All', 'PMS', 'AIF', 'SIF']
+const VALID_PRIMARIES: PrimaryFilter[] = ['All', 'PMS', 'AIF']
 
 type Props = { searchParams: Promise<{ cat?: string }> }
 
@@ -37,7 +37,7 @@ export default async function ExplorePage({ searchParams }: Props) {
           <p className="text-sm font-medium uppercase tracking-widest text-gold">
             Explore
           </p>
-          <h1 className="mt-2">PMS, AIF, SIF & GIFT City — all in one place.</h1>
+          <h1 className="mt-2">PMS, AIF & GIFT City — all in one place.</h1>
           <p className="mt-4 max-w-prose text-lg text-text-muted">
             We don't recommend, we don't distribute. We help you understand what's out there so you can ask the right questions.
           </p>

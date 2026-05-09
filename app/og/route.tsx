@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   const eyebrow = params.get('eyebrow') ?? 'IndiaFundSearch'
   const title =
     params.get('title') ?? 'The Morningstar of Indian alternatives.'
-  const subtitle = params.get('subtitle') ?? 'PMS · AIF · SIF · GIFT City — education first.'
+  const subtitle = params.get('subtitle') ?? 'PMS · AIF · GIFT City — education first.'
 
   return new ImageResponse(
     (

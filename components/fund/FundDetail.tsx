@@ -218,12 +218,10 @@ function strategyGlossarySlug(category: string | undefined): string {
   if (!category) return 'pms'
   if (category === 'PMS') return 'pms'
   if (category.startsWith('AIF')) return 'aif'
-  if (category === 'SIF') return 'sif'
   return 'pms'
 }
 
 function strategyLearnLabel(category: string | undefined): string {
-  if (category === 'SIF') return 'Learn more about the SIF strategy'
   if (category && category.startsWith('AIF')) return 'Learn more about the AIF strategy'
   return 'Learn more about the PMS strategy'
 }

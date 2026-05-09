@@ -4,9 +4,9 @@ import { Translator } from '@/components/lead-magnets/Translator'
 import { LearnArticlesGrid, type LearnArticle } from '@/components/learn/LearnArticlesGrid'
 
 export const metadata = {
-  title: 'Learn — PMS, AIF, SIF, GIFT City explained',
+  title: 'Learn — PMS, AIF, GIFT City explained',
   description:
-    'Evergreen guides to PMS, AIF, SIF, and GIFT City. Plus a product map and 3-question Pathfinder. The Morningstar of Indian alternatives.',
+    'Evergreen guides to PMS, AIF, and GIFT City. Plus a product map and 3-question Pathfinder. The Morningstar of Indian alternatives.',
 }
 
 export const revalidate = 600

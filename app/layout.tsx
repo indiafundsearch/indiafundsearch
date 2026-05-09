@@ -18,22 +18,22 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://indiafundsearch.com
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'IndiaFundSearch — PMS, AIF, SIF & GIFT City explained',
+    default: 'IndiaFundSearch — PMS, AIF & GIFT City explained',
     template: '%s · IndiaFundSearch',
   },
   description:
-    'The Morningstar of Indian alternatives. Education-first discovery for PMS, AIF, SIF, and GIFT City investments. No login. No commissions.',
+    'The Morningstar of Indian alternatives. Education-first discovery for PMS, AIF, and GIFT City investments. No login. No commissions.',
   applicationName: 'IndiaFundSearch',
   authors: [{ name: 'IndiaFundSearch' }],
   keywords: [
-    'PMS', 'AIF', 'SIF', 'GIFT City', 'Indian alternatives',
+    'PMS', 'AIF', 'GIFT City', 'Indian alternatives',
     'PMS vs AIF', 'best PMS India', 'PMS fees explained', 'what is AIF',
     'SEBI PMS', 'Indian wealth advisory',
   ],
   openGraph: {
     title: 'IndiaFundSearch',
     description:
-      'Education-first discovery for PMS, AIF, SIF, and GIFT City investments in India.',
+      'Education-first discovery for PMS, AIF, and GIFT City investments in India.',
     url: siteUrl,
     siteName: 'IndiaFundSearch',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IndiaFundSearch',
     description:
-      'Education-first discovery for PMS, AIF, SIF, and GIFT City investments in India.',
+      'Education-first discovery for PMS, AIF, and GIFT City investments in India.',
     images: ['/og'],
   },
   robots: { index: true, follow: true },
@@ -71,7 +71,7 @@ const organizationJsonLd = {
   name: 'IndiaFundSearch',
   url: siteUrl,
   description:
-    'Education-first platform for PMS, AIF, SIF, and GIFT City investments in India. Run by Beyond Wealth, a SEBI-aware advisory practice.',
+    'Education-first platform for PMS, AIF, and GIFT City investments in India. Run by Beyond Wealth, a SEBI-aware advisory practice.',
   logo: `${siteUrl}/og`,
 }
 

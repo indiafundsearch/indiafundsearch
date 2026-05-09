@@ -1,4 +1,4 @@
-export type RelatedProduct = 'PMS' | 'AIF' | 'SIF' | 'GIFT City' | 'All'
+export type RelatedProduct = 'PMS' | 'AIF' | 'GIFT City' | 'All'
 
 export type GlossaryTerm = {
   _id: string

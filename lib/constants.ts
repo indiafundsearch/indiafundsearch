@@ -1,4 +1,4 @@
-export type FundCategory = 'PMS' | 'AIF Cat I' | 'AIF Cat II' | 'AIF Cat III' | 'SIF'
+export type FundCategory = 'PMS' | 'AIF Cat I' | 'AIF Cat II' | 'AIF Cat III'
 
 export type Mode = 'simple' | 'pro'
 
@@ -6,7 +6,7 @@ export type Mode = 'simple' | 'pro'
  * Top-level filter buckets shown on /explore.
  * "All" is rendered separately.
  */
-export const PRIMARY_CATEGORIES = ['PMS', 'AIF', 'SIF'] as const
+export const PRIMARY_CATEGORIES = ['PMS', 'AIF'] as const
 
 /**
  * Subcategory options per primary category, used for the level-2 filter bar.
@@ -14,7 +14,6 @@ export const PRIMARY_CATEGORIES = ['PMS', 'AIF', 'SIF'] as const
 export const SUBCATEGORIES: Record<(typeof PRIMARY_CATEGORIES)[number], readonly string[]> = {
   PMS: ['Equity', 'Multi-Cap', 'Small-Mid Cap', 'Thematic', 'Sector'],
   AIF: ['Real Estate', 'Infra Debt', 'Pre-IPO', 'Long-Short', 'Credit', 'Private Equity'],
-  SIF: ['Equity', 'Multi-Strategy'],
 }
 
 /**
@@ -26,7 +25,6 @@ export const CATEGORY_LABELS: Record<FundCategory, { simple: string; pro: string
   'AIF Cat I': { simple: 'Early-Stage Funds', pro: 'AIF Category I' },
   'AIF Cat II': { simple: 'Private Deals Fund', pro: 'AIF Category II' },
   'AIF Cat III': { simple: 'Hedge Funds', pro: 'AIF Category III — Long Short' },
-  SIF: { simple: 'New ₹10L Funds', pro: 'Specialised Investment Funds' },
 }
 
 /**

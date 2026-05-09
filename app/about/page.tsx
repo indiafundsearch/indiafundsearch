@@ -14,7 +14,7 @@ export default function AboutPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-gold">About</p>
         <h1 className="mt-2">We don&rsquo;t distribute. We educate. When you&rsquo;re ready, we advise.</h1>
         <p className="mt-5 text-lg text-text-muted">
-          IndiaFundSearch is run by Beyond Wealth — a wealth advisory practice based in Vadodara. The site is the product we wish existed when our clients first asked about PMS, AIF, SIF, and GIFT City. So we built it.
+          IndiaFundSearch is run by Beyond Wealth — a wealth advisory practice based in Vadodara. The site is the product we wish existed when our clients first asked about PMS, AIF, and GIFT City. So we built it.
         </p>
         <div className="mt-6">
           <TrustStrip variant="inline" />
@@ -26,7 +26,7 @@ export default function AboutPage() {
           Why education-first?
         </h2>
         <p className="text-base leading-relaxed text-text-primary">
-          India&rsquo;s alternatives market is growing faster than its investor literacy. PMS AUM is up 28% year-on-year. AIF commitments are at a record. The new SIF category brought ₹6,000 Cr in 14 months. Most investors who allocate are working from glossy decks and word-of-mouth.
+          India&rsquo;s alternatives market is growing faster than its investor literacy. PMS AUM is up 28% year-on-year. AIF commitments are at a record. GIFT City has crossed its first ₹10,000 Cr mark for NRI-targeted funds. Most investors who allocate are working from glossy decks and word-of-mouth.
         </p>
         <p className="text-base leading-relaxed text-text-primary">
           That&rsquo;s the gap. We don&rsquo;t fill it by selling products — distributors do that, and they earn commissions for it. We fill it by writing tools that explain, model, and compare without ever placing you with a fund.

@@ -46,7 +46,6 @@ export function evaluatePathfinder(answer: PathfinderAnswer): Record<string, Ver
     fd: pickFD(goal, horizonY),
     'debt-mf': pickDebtMF(goal, horizonY),
     'equity-mf': pickEquityMF(goal, horizonY),
-    sif: pickSIF(surplusL, goal, horizonY),
     pms: pickPMS(surplusL, goal, horizonY),
     'aif-2': pickAIFCatII(surplusL, goal, horizonY),
     'aif-3': pickAIFCatIII(surplusL, goal, horizonY),
@@ -71,14 +70,6 @@ function pickEquityMF(goal: Goal, horizon: number): Verdict {
   if (horizon < 3) return 'not-fit'
   if (goal === 'growth' || goal === 'inflation') return 'fit'
   if (goal === 'upside') return 'partial'
-  return 'not-fit'
-}
-
-function pickSIF(surplus: number, goal: Goal, horizon: number): Verdict {
-  if (surplus < 10) return 'not-fit'
-  if (horizon < 3) return 'partial'
-  if (goal === 'growth' || goal === 'upside') return 'fit'
-  if (goal === 'inflation') return 'partial'
   return 'not-fit'
 }
 

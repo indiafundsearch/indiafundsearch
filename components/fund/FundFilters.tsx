@@ -13,7 +13,7 @@ type Props = {
   resultCount?: number
 }
 
-const PRIMARY_OPTIONS: PrimaryFilter[] = ['All', 'PMS', 'AIF', 'SIF']
+const PRIMARY_OPTIONS: PrimaryFilter[] = ['All', 'PMS', 'AIF']
 
 export function FundFilters({
   primary,

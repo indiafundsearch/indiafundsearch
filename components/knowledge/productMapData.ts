@@ -38,15 +38,6 @@ export const STAGES: Stage[] = [
       'Pooled equity exposure. Daily NAV, broad diversification, LTCG 12.5% > 1y. Best entry product for most investors building a portfolio.',
   },
   {
-    key: 'sif',
-    label: 'SIF',
-    minTicket: '₹10 L',
-    complexity: 'Medium',
-    summary:
-      'Specialised Investment Fund. New SEBI 2025 category for sophisticated mutual-fund-style strategies (long-short, derivatives, concentrated).',
-    learnMoreSlug: 'sif',
-  },
-  {
     key: 'pms',
     label: 'PMS',
     minTicket: '₹50 L',

@@ -10,7 +10,7 @@ type Props = {
   terms: GlossaryTerm[]
 }
 
-const PRODUCT_FILTERS = ['All', 'PMS', 'AIF', 'SIF', 'GIFT City'] as const
+const PRODUCT_FILTERS = ['All', 'PMS', 'AIF', 'GIFT City'] as const
 type ProductFilter = (typeof PRODUCT_FILTERS)[number]
 
 export function GlossaryBrowser({ terms }: Props) {
