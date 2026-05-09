@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useMode } from '@/components/shared/SimpleProToggle'
-import { formatINR } from '@/lib/utils/formatCurrency'
+import { formatMoney } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
 import { SUBCATEGORY_LABELS } from '@/lib/constants'
 import {
@@ -10,6 +10,8 @@ import {
   formatPercent,
   type FundCardData,
 } from './fundDisplay'
+import { StatusBadge } from './badges/StatusBadge'
+import { RiskBadge } from './badges/RiskBadge'
 
 type Props = {
   fund: FundCardData
@@ -36,6 +38,7 @@ export function FundRow({ fund, className }: Props) {
             </span>
           ) : null}
           <StatusBadge status={fund.status} />
+          <RiskBadge level={fund.risk} />
         </div>
         <p className="mt-1.5 truncate text-base font-semibold leading-tight text-text-primary">
           {fund.name}
@@ -60,7 +63,7 @@ export function FundRow({ fund, className }: Props) {
       <div>
         <p className="text-[10px] font-semibold uppercase tracking-widest text-text-muted">Min</p>
         <p className="mt-1 text-sm font-medium text-text-primary tabular-nums">
-          {fund.minInvestment ? formatINR(fund.minInvestment, { compact: true }) : '—'}
+          {fund.minInvestment ? formatMoney(fund.minInvestment, fund.currency, { compact: true }) : '—'}
         </p>
       </div>
 
@@ -68,21 +71,6 @@ export function FundRow({ fund, className }: Props) {
         View →
       </span>
     </Link>
-  )
-}
-
-function StatusBadge({ status }: { status?: string }) {
-  if (!status) return null
-  const palette =
-    status === 'Active'
-      ? 'bg-gold/10 text-gold'
-      : status === 'Closed'
-        ? 'bg-error/10 text-error'
-        : 'bg-text-primary/5 text-text-muted'
-  return (
-    <span className={cn('rounded-pill px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide', palette)}>
-      {status}
-    </span>
   )
 }
 

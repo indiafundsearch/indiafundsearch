@@ -56,6 +56,37 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'risk',
+      title: 'Risk level',
+      type: 'string',
+      options: {
+        list: ['Low', 'Low-Medium', 'Medium', 'Medium-High', 'High', 'Very High'].map((value) => ({ title: value, value })),
+        layout: 'radio',
+      },
+    }),
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      description: 'Free-form chips shown on the fund card (e.g., NRI, USD, Lock-up). Open-ended.',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { layout: 'tags' },
+    }),
+    defineField({
+      name: 'currency',
+      title: 'Currency',
+      description: 'Display currency for minInvestment + AUM. Defaults to INR.',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'INR (₹)', value: 'INR' },
+          { title: 'USD ($)', value: 'USD' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'INR',
+    }),
+    defineField({
       name: 'simpleDescription',
       title: 'Simple Description (12-year-old language)',
       type: 'text',

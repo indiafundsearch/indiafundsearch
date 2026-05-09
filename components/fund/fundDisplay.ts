@@ -2,6 +2,10 @@ import { CATEGORY_LABELS, type FundCategory, type Mode } from '@/lib/constants'
 
 export type FundStatus = 'Active' | 'Closed' | 'Upcoming'
 
+export type RiskLevel = 'Low' | 'Low-Medium' | 'Medium' | 'Medium-High' | 'High' | 'Very High'
+
+export type FundCurrency = 'INR' | 'USD'
+
 export type FundCardData = {
   _id: string
   name: string
@@ -30,6 +34,9 @@ export type FundCardData = {
   fundManager?: string
   inceptionDate?: string
   status?: FundStatus | string
+  risk?: RiskLevel | string
+  tags?: string[]
+  currency?: FundCurrency | string
 }
 
 export type FundDetailData = FundCardData & {

@@ -30,7 +30,10 @@ export const allFundsQuery = groq`
     sebiRegistration,
     fundManager,
     inceptionDate,
-    status
+    status,
+    risk,
+    tags,
+    currency
   }
 `
 
@@ -54,7 +57,10 @@ export const fundBySlugQuery = groq`
     benchmark,
     sebiRegistration,
     inceptionDate,
-    status
+    status,
+    risk,
+    tags,
+    currency
   }
 `
 

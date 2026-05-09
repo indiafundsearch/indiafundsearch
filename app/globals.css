@@ -17,6 +17,8 @@
   --color-card: #ffffff;
   --color-card-border: rgb(0 0 0 / 0.08);
   --color-error: #c0392b;
+  --color-success: #1a7f4d;
+  --color-warning: #d97706;
 
   --radius-card: 12px;
   --radius-button: 8px;

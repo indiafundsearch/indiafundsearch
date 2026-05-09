@@ -157,6 +157,31 @@ export const SUB_INFO: Record<string, { simple: string; pro: string }> = {
 }
 
 /**
+ * Risk ladder. Stored on each fund as `risk`. Filtered via the advanced
+ * drawer; surfaced as a colored chip on the fund card.
+ */
+export const RISK_LEVELS = [
+  'Low',
+  'Low-Medium',
+  'Medium',
+  'Medium-High',
+  'High',
+  'Very High',
+] as const
+
+export type RiskLevel = (typeof RISK_LEVELS)[number]
+
+/**
+ * Currency symbol per primary category. Used to mark each pill (₹/$)
+ * so the user knows which products are INR-denominated vs USD.
+ */
+export const PRIMARY_CURRENCY: Record<PrimaryCategory, '₹' | '$'> = {
+  PMS: '₹',
+  AIF: '₹',
+  'GIFT City': '$',
+}
+
+/**
  * Sort options surfaced in the /explore sort dropdown.
  */
 export const FUND_SORTS = [

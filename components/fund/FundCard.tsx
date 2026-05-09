@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useMode } from '@/components/shared/SimpleProToggle'
-import { formatINR } from '@/lib/utils/formatCurrency'
+import { formatMoney } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
 import { SUBCATEGORY_LABELS } from '@/lib/constants'
 import {
@@ -10,6 +10,9 @@ import {
   formatPercent,
   type FundCardData,
 } from './fundDisplay'
+import { StatusBadge } from './badges/StatusBadge'
+import { RiskBadge } from './badges/RiskBadge'
+import { Tag } from './badges/Tag'
 
 type Variant = 'preview' | 'detailed'
 
@@ -26,6 +29,7 @@ export function FundCard({ fund, variant = 'preview', className }: Props) {
   const description = mode === 'simple' ? fund.simpleDescription : fund.proDescription
   const feeHeadline = feeHeadlineFor(fund.fees)
   const returnLine = formatReturnLine(fund.returns)
+  const tags = (fund.tags ?? []).slice(0, 2)
 
   return (
     <Link
@@ -73,30 +77,26 @@ export function FundCard({ fund, variant = 'preview', className }: Props) {
         </div>
       </dl>
 
+      {(fund.risk || tags.length > 0) ? (
+        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+          <RiskBadge level={fund.risk} />
+          {tags.map((t) => (
+            <Tag key={t} label={t} />
+          ))}
+        </div>
+      ) : null}
+
       <div className="mt-auto flex items-center justify-between gap-3 border-t border-card-border pt-4">
         <span className="text-xs text-text-muted">
-          {fund.minInvestment ? `Min ${formatINR(fund.minInvestment, { compact: true })}` : ''}
+          {fund.minInvestment
+            ? `Min ${formatMoney(fund.minInvestment, fund.currency, { compact: true })}`
+            : ''}
         </span>
         <span className="text-sm font-medium text-text-primary group-hover:text-gold">
           View details →
         </span>
       </div>
     </Link>
-  )
-}
-
-function StatusBadge({ status }: { status?: string }) {
-  if (!status) return null
-  const palette =
-    status === 'Active'
-      ? 'bg-gold/10 text-gold'
-      : status === 'Closed'
-        ? 'bg-error/10 text-error'
-        : 'bg-text-primary/5 text-text-muted'
-  return (
-    <span className={cn('rounded-pill px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide', palette)}>
-      {status}
-    </span>
   )
 }
 

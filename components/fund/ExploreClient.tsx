@@ -8,7 +8,9 @@ import type { PrimaryFilter } from './FundFilters'
 import type { FundCardData } from './fundDisplay'
 import {
   FUND_SORTS,
+  PRIMARY_CURRENCY,
   PRIMARY_LABELS,
+  RISK_LEVELS,
   SUB_INFO,
   SUBCATEGORIES,
   SUBCATEGORY_LABELS,
@@ -38,6 +40,7 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
   const [showAdv, setShowAdv] = useState(false)
   const [vintageMin, setVintageMin] = useState(2000)
   const [minAUM, setMinAUM] = useState(0)
+  const [risk, setRisk] = useState<string>('All')
 
   const counts = useMemo(() => countByPrimary(funds), [funds])
   const subCounts = useMemo(
@@ -48,18 +51,20 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
   const filtered = useMemo(() => {
     return sortFunds(
       funds.filter((fund) =>
-        matches(fund, { primary, subcategory, status, query, vintageMin, minAUM }),
+        matches(fund, { primary, subcategory, status, query, vintageMin, minAUM, risk }),
       ),
       sort,
     )
-  }, [funds, primary, subcategory, status, query, vintageMin, minAUM, sort])
+  }, [funds, primary, subcategory, status, query, vintageMin, minAUM, risk, sort])
 
   const activeAdv = [
+    risk !== 'All' ? `Risk: ${risk}` : null,
     vintageMin > 2000 ? `Vintage: ${vintageMin}+` : null,
     minAUM > 0 ? `AUM ≥ ₹${minAUM} Cr` : null,
   ].filter(Boolean) as string[]
 
   const clearAdv = () => {
+    setRisk('All')
     setVintageMin(2000)
     setMinAUM(0)
   }
@@ -93,8 +98,10 @@ export function ExploreClient({ funds, initialPrimary = 'All' }: Props) {
 
         {showAdv ? (
           <AdvancedDrawer
+            risk={risk}
             vintageMin={vintageMin}
             minAUM={minAUM}
+            onRisk={setRisk}
             onVintage={setVintageMin}
             onMinAUM={setMinAUM}
             activeFilters={activeAdv}
@@ -143,6 +150,7 @@ function matches(
     query: string
     vintageMin: number
     minAUM: number
+    risk: string
   },
 ): boolean {
   const cat = fund.category ?? ''
@@ -157,6 +165,7 @@ function matches(
   }
   if (f.subcategory && fund.subcategory !== f.subcategory) return false
   if (f.status !== 'All' && fund.status !== f.status) return false
+  if (f.risk !== 'All' && fund.risk !== f.risk) return false
 
   if (f.vintageMin > 2000 && fund.inceptionDate) {
     const year = new Date(fund.inceptionDate).getFullYear()
@@ -254,11 +263,19 @@ function PrimaryPills({
   const opts: PrimaryFilter[] = ['All', 'PMS', 'AIF', 'GIFT City']
   return (
     <div className="flex flex-wrap items-center gap-2">
-      {opts.map((opt) => (
-        <Pill key={opt} active={primary === opt} onClick={() => onChange(opt)}>
-          {PRIMARY_LABELS[opt][mode]} <Count>{counts[opt] ?? 0}</Count>
-        </Pill>
-      ))}
+      {opts.map((opt) => {
+        const symbol = opt !== 'All' ? PRIMARY_CURRENCY[opt as PrimaryCategory] : null
+        return (
+          <Pill key={opt} active={primary === opt} onClick={() => onChange(opt)}>
+            {symbol ? (
+              <span aria-hidden className="mr-1 opacity-50">
+                {symbol}
+              </span>
+            ) : null}
+            {PRIMARY_LABELS[opt][mode]} <Count>{counts[opt] ?? 0}</Count>
+          </Pill>
+        )
+      })}
     </div>
   )
 }
@@ -447,15 +464,19 @@ function ViewButton({
 }
 
 function AdvancedDrawer({
+  risk,
   vintageMin,
   minAUM,
+  onRisk,
   onVintage,
   onMinAUM,
   activeFilters,
   onClear,
 }: {
+  risk: string
   vintageMin: number
   minAUM: number
+  onRisk: (r: string) => void
   onVintage: (v: number) => void
   onMinAUM: (v: number) => void
   activeFilters: string[]
@@ -463,7 +484,24 @@ function AdvancedDrawer({
 }) {
   return (
     <div className="rounded-card border border-card-border bg-card p-5 shadow-card md:p-6">
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-3">
+        <div>
+          <label className="text-xs font-semibold uppercase tracking-widest text-text-muted">
+            Risk level
+          </label>
+          <select
+            value={risk}
+            onChange={(e) => onRisk(e.target.value)}
+            className="mt-2 w-full rounded-button border border-card-border bg-background px-3 py-2 text-sm text-text-primary focus:outline-none"
+          >
+            <option value="All">All risk levels</option>
+            {RISK_LEVELS.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+        </div>
         <div>
           <label className="text-xs font-semibold uppercase tracking-widest text-text-muted">
             Vintage from <span className="text-gold">{vintageMin}</span>
