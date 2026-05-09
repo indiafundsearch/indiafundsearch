@@ -1,4 +1,4 @@
-import { FDVisualiser } from '@/components/lead-magnets/FDVisualiser'
+import { ProductMapHero } from '@/components/home/ProductMapHero'
 import { FundPreviewRow } from '@/components/fund/FundPreviewRow'
 import { CTACard } from '@/components/shared/CTACard'
 import { TrustStrip } from '@/components/shared/TrustStrip'
@@ -9,11 +9,12 @@ import { InsightsSection } from '@/components/home/InsightsSection'
 import { NewsletterSignup } from '@/components/home/NewsletterSignup'
 import { TryAToolStrip } from '@/components/home/TryAToolStrip'
 import { PerformanceLeaderboard } from '@/components/home/PerformanceLeaderboard'
+import { FundOfTheYear } from '@/components/home/FundOfTheYear'
 
 export default function HomePage() {
   return (
     <>
-      <FDVisualiser />
+      <ProductMapHero />
 
       <FadeInOnScroll>
         <TryAToolStrip />
@@ -25,6 +26,10 @@ export default function HomePage() {
 
       <FadeInOnScroll>
         <PerformanceLeaderboard />
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <FundOfTheYear />
       </FadeInOnScroll>
 
       <FadeInOnScroll>

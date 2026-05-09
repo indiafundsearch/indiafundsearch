@@ -183,6 +183,40 @@ export const PRIMARY_CURRENCY: Record<PrimaryCategory, '₹' | '$'> = {
 }
 
 /**
+ * Product positioning map — each subcategory plotted by typical
+ * return potential and recommended time horizon. Powers the homepage
+ * hero scatter chart. Numbers are illustrative orientation aids, not
+ * forecasts.
+ */
+export type ProductMapPoint = {
+  primary: PrimaryCategory
+  subcategory: string
+  /** Typical CAGR midpoint, in %. */
+  expectedReturn: number
+  /** Typical investment horizon, in years. */
+  horizon: number
+  minTicket: string
+  blurb: string
+}
+
+export const PRODUCT_MAP_POINTS: ProductMapPoint[] = [
+  // PMS
+  { primary: 'PMS', subcategory: 'Equity',         expectedReturn: 17, horizon: 5, minTicket: '₹50L',  blurb: 'Direct equity in your demat, manager-picked.' },
+  { primary: 'PMS', subcategory: 'Debt',           expectedReturn: 10, horizon: 3, minTicket: '₹50L',  blurb: 'Performing credit and structured paper.' },
+  { primary: 'PMS', subcategory: 'Multi Asset',    expectedReturn: 13, horizon: 4, minTicket: '₹50L',  blurb: 'Dynamic equity / debt / gold blend.' },
+  // AIF
+  { primary: 'AIF', subcategory: 'Cat I — VC',          expectedReturn: 25, horizon: 8, minTicket: '₹1Cr',  blurb: 'Early-stage venture. J-curve, 1–2 winners drive returns.' },
+  { primary: 'AIF', subcategory: 'Cat II — PE',          expectedReturn: 20, horizon: 7, minTicket: '₹1Cr',  blurb: 'Growth-stage private equity, control or near-control stakes.' },
+  { primary: 'AIF', subcategory: 'Cat II — Credit',      expectedReturn: 13, horizon: 4, minTicket: '₹1Cr',  blurb: 'Senior-secured private debt.' },
+  { primary: 'AIF', subcategory: 'Cat II — RE & Infra',  expectedReturn: 15, horizon: 6, minTicket: '₹1Cr',  blurb: 'Real estate equity / infra debt.' },
+  { primary: 'AIF', subcategory: 'Cat II — Pre-IPO',     expectedReturn: 18, horizon: 5, minTicket: '₹1Cr',  blurb: 'Late-stage equity tied to IPO event.' },
+  { primary: 'AIF', subcategory: 'Cat III — Long Short', expectedReturn: 14, horizon: 3, minTicket: '₹1Cr',  blurb: 'Hedge-style absolute / market-neutral.' },
+  // GIFT City
+  { primary: 'GIFT City', subcategory: 'Inbound — India',    expectedReturn: 14, horizon: 5, minTicket: '$150K', blurb: 'USD India equity for NRIs from IFSC.' },
+  { primary: 'GIFT City', subcategory: 'Outbound — Global',  expectedReturn: 12, horizon: 5, minTicket: '$150K', blurb: 'IFSC-route global equity for residents.' },
+]
+
+/**
  * Sort options surfaced in the /explore sort dropdown.
  */
 export const FUND_SORTS = [
