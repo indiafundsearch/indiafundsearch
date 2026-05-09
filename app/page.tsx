@@ -6,6 +6,7 @@ import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { LearnSection } from '@/components/home/LearnSection'
 import { UniverseSection } from '@/components/home/UniverseSection'
 import { InsightsSection } from '@/components/home/InsightsSection'
+import { NewsletterSignup } from '@/components/home/NewsletterSignup'
 
 export default function HomePage() {
   return (
@@ -26,6 +27,10 @@ export default function HomePage() {
 
       <FadeInOnScroll>
         <InsightsSection />
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <NewsletterSignup />
       </FadeInOnScroll>
 
       <FadeInOnScroll>

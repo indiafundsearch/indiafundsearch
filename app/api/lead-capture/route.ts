@@ -13,6 +13,7 @@ const VALID_SOURCES: LeadSource[] = [
   'Scorecard',
   'FD Visualiser',
   'Translator Pathfinder',
+  'Newsletter',
 ]
 
 /**

@@ -11,6 +11,7 @@ export type LeadSource =
   | 'Scorecard'
   | 'FD Visualiser'
   | 'Translator Pathfinder'
+  | 'Newsletter'
 
 type Props = {
   open: boolean

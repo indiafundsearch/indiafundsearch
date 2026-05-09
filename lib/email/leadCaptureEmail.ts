@@ -12,6 +12,7 @@ export type LeadSource =
   | 'Scorecard'
   | 'FD Visualiser'
   | 'Translator Pathfinder'
+  | 'Newsletter'
 
 export type LeadCapturePayload = Record<string, unknown> & {
   diagnosticVerdict?: string
@@ -61,6 +62,8 @@ export function renderLeadCaptureEmail(
       return fdVisualiserEmail(payload)
     case 'Scorecard':
       return scorecardEmail(payload)
+    case 'Newsletter':
+      return newsletterEmail()
     default:
       return genericEmail(source)
   }
@@ -163,6 +166,18 @@ function scorecardEmail(payload: LeadCapturePayload): RenderedEmail {
       'Twenty criteria across five dimensions. Use the lowest-scoring rows as the agenda for your first conversation with the manager.',
     rows,
     cta: { label: 'Score another', href: 'https://indiafundsearch.com/tools/scorecard' },
+  })
+}
+
+function newsletterEmail(): RenderedEmail {
+  return template({
+    subject: 'You\'re on the IndiaFundSearch alerts list',
+    eyebrow: 'Newsletter',
+    headline: 'You\'re on the alerts list.',
+    leadParagraph:
+      'You\'ll get a note when something changes on a fund worth knowing about — manager moves, AUM swings, fee structure tweaks, SEBI observations — plus a Friday digest of what actually moved Indian alternatives this week. No filler, no sales pitch.',
+    rows: [],
+    cta: { label: 'Browse the universe', href: 'https://indiafundsearch.com/explore' },
   })
 }
 

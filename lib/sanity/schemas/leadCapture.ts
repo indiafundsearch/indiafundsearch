@@ -13,7 +13,7 @@ export default defineType({
       title: 'Lead Magnet Source',
       type: 'string',
       options: {
-        list: ['Fee X-Ray', 'Diagnostic', 'Scorecard', 'FD Visualiser', 'Translator Pathfinder'].map(
+        list: ['Fee X-Ray', 'Diagnostic', 'Scorecard', 'FD Visualiser', 'Translator Pathfinder', 'Newsletter'].map(
           (value) => ({ title: value, value }),
         ),
       },
