@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { CalculatorIcon, ClipboardCheck } from 'lucide-react'
+import { CalculatorIcon } from 'lucide-react'
 import { CategoryBadge } from './CategoryBadge'
 import { StrategyDescription } from './StrategyDescription'
 import { feeHeadlineFor, formatPercent, type FundDetailData } from './fundDisplay'
 import { formatINR, formatIndianNumber } from '@/lib/utils/formatCurrency'
 import { cn } from '@/lib/utils'
+import { CTALadder } from '@/components/shared/CTALadder'
 
 type Props = { fund: FundDetailData }
 
@@ -16,7 +17,7 @@ export function FundDetail({ fund }: Props) {
       <Returns fund={fund} />
       <Fees fund={fund} />
       <Manager fund={fund} />
-      <Scorecard fund={fund} />
+      <NextSteps fund={fund} />
       <Disclaimer />
     </article>
   )
@@ -184,27 +185,47 @@ function Manager({ fund }: Props) {
   )
 }
 
-function Scorecard({ fund }: Props) {
-  const href = `/tools/scorecard?fund=${encodeURIComponent(fund.name)}`
+function NextSteps({ fund }: Props) {
+  const strategySlug = strategyGlossarySlug(fund.category)
+  const strategyLabel = strategyLearnLabel(fund.category)
+
   return (
-    <section className="mt-12 rounded-card border border-card-border border-l-4 border-l-gold bg-card p-6 shadow-card md:p-8">
-      <span className="inline-flex items-center rounded-pill bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-gold">
-        20-criteria check
-      </span>
-      <h2 className="mt-3 text-2xl">Score {fund.name} before you commit.</h2>
-      <p className="mt-2 max-w-prose text-base text-text-muted">
-        Walk through 20 criteria across manager quality, performance integrity, fee fairness, operational robustness, and suitability fit.
-      </p>
-      <Link
-        href={href}
-        className="mt-5 inline-flex items-center gap-2 rounded-button bg-text-primary px-5 py-3 text-sm font-medium text-white shadow-card hover:opacity-90 hover:shadow-card-hover"
-      >
-        <ClipboardCheck size={16} aria-hidden />
-        Open the Scorecard →
-      </Link>
-      <p className="mt-3 text-xs text-text-muted">5 dimensions · 4 criteria each · No sales pitch</p>
-    </section>
+    <CTALadder
+      level1={{
+        label: strategyLabel,
+        href: `/knowledge/${strategySlug}`,
+      }}
+      level2={{
+        label: `Score ${fund.name} on 20 criteria`,
+        subtext:
+          'Five dimensions, four criteria each. Highlights strengths, watch areas, and the red flags worth a second look before you commit.',
+        href: `/tools/scorecard?fund=${encodeURIComponent(fund.name)}`,
+        microcopy: '5 dimensions · 4 criteria each · No sales pitch',
+      }}
+      level3={{
+        headline: 'Talk to a Beyond Wealth advisor.',
+        subtext:
+          'Fee-only, by appointment, never ending in a product pitch. Bring your Diagnostic verdict and a Fee X-Ray run on the funds you’re weighing.',
+        ctaLabel: 'Talk to a Beyond Wealth advisor →',
+        ctaHref: '/contact',
+        microcopy: 'No commissions. No distribution. Initial conversation is complimentary.',
+      }}
+    />
   )
+}
+
+function strategyGlossarySlug(category: string | undefined): string {
+  if (!category) return 'pms'
+  if (category === 'PMS') return 'pms'
+  if (category.startsWith('AIF')) return 'aif'
+  if (category === 'SIF') return 'sif'
+  return 'pms'
+}
+
+function strategyLearnLabel(category: string | undefined): string {
+  if (category === 'SIF') return 'Learn more about the SIF strategy'
+  if (category && category.startsWith('AIF')) return 'Learn more about the AIF strategy'
+  return 'Learn more about the PMS strategy'
 }
 
 function buildFeeXRayHref(fund: FundDetailData): string {
