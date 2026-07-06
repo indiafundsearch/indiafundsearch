@@ -6,17 +6,15 @@ export const runtime = 'edge'
 const SIZE = { width: 1200, height: 630 }
 
 /**
- * Branded Open Graph image generator.
+ * Branded Open Graph image — drawing-set style.
  * Usage: <meta property="og:image" content="/og?title=Foo&eyebrow=Bar" />
- *
- * Defaults to the site brand if no params are passed.
  */
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams
-  const eyebrow = params.get('eyebrow') ?? 'IndiaFundSearch'
-  const title =
-    params.get('title') ?? 'The Morningstar of Indian alternatives.'
-  const subtitle = params.get('subtitle') ?? 'PMS · AIF · GIFT City — education first.'
+  const eyebrow = params.get('eyebrow') ?? 'IndiaFundSearch · A Beyond Initiative'
+  const title = params.get('title') ?? 'The Architecture of Alternatives.'
+  const subtitle =
+    params.get('subtitle') ?? 'PMS · AIF · SIF · GIFT City — explained the way a good advisor would.'
 
   return new ImageResponse(
     (
@@ -26,19 +24,20 @@ export async function GET(request: NextRequest) {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          padding: '80px',
-          background: '#fafafa',
+          padding: '72px',
+          background: '#f5f4ee',
           fontFamily: 'sans-serif',
+          border: '16px solid #013528',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: 600,
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
-            color: '#b8960c',
+            color: '#c05c08',
           }}
         >
           {eyebrow}
@@ -47,13 +46,13 @@ export async function GET(request: NextRequest) {
         <div
           style={{
             display: 'flex',
-            marginTop: 32,
+            marginTop: 28,
             fontSize: 72,
             fontWeight: 700,
             lineHeight: 1.05,
-            color: '#1d1d1f',
-            letterSpacing: '-0.02em',
-            maxWidth: 1040,
+            color: '#013528',
+            letterSpacing: '-0.01em',
+            maxWidth: 1000,
           }}
         >
           {title}
@@ -67,14 +66,7 @@ export async function GET(request: NextRequest) {
             alignItems: 'flex-end',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 22,
-              color: '#86868b',
-              maxWidth: 800,
-            }}
-          >
+          <div style={{ display: 'flex', fontSize: 24, color: '#587067', maxWidth: 780 }}>
             {subtitle}
           </div>
           <div
@@ -82,20 +74,12 @@ export async function GET(request: NextRequest) {
               display: 'flex',
               alignItems: 'center',
               gap: 12,
-              fontSize: 18,
-              fontWeight: 500,
-              color: '#1d1d1f',
+              fontSize: 20,
+              fontWeight: 600,
+              color: '#013528',
             }}
           >
-            <span
-              style={{
-                display: 'flex',
-                width: 12,
-                height: 12,
-                background: '#b8960c',
-                borderRadius: 999,
-              }}
-            />
+            <span style={{ display: 'flex', width: 14, height: 14, background: '#ff862f' }} />
             indiafundsearch.com
           </div>
         </div>

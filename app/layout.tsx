@@ -1,41 +1,53 @@
 import type { Metadata, Viewport } from 'next'
-import { Outfit } from 'next/font/google'
+import { Space_Grotesk, Newsreader, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { ModeProvider } from '@/components/shared/SimpleProToggle'
 import { Analytics } from '@/components/shared/Analytics'
+import { SITE } from '@/lib/constants'
 
-const outfit = Outfit({
-  variable: '--font-outfit',
+const grotesk = Space_Grotesk({
+  variable: '--font-grotesk',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '700'],
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://indiafundsearch.com'
+const newsreader = Newsreader({
+  variable: '--font-newsreader',
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+})
+
+const plexMono = IBM_Plex_Mono({
+  variable: '--font-plex-mono',
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE.url),
   title: {
-    default: 'IndiaFundSearch — PMS, AIF & GIFT City explained',
+    default: 'IndiaFundSearch — The Architecture of Alternatives',
     template: '%s · IndiaFundSearch',
   },
-  description:
-    'The Morningstar of Indian alternatives. Education-first discovery for PMS, AIF, and GIFT City investments. No login. No commissions.',
-  applicationName: 'IndiaFundSearch',
-  authors: [{ name: 'IndiaFundSearch' }],
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: 'IndiaFundSearch' }, { name: 'Beyond' }],
   keywords: [
-    'PMS', 'AIF', 'GIFT City', 'Indian alternatives',
-    'PMS vs AIF', 'best PMS India', 'PMS fees explained', 'what is AIF',
-    'SEBI PMS', 'Indian wealth advisory',
+    'PMS', 'AIF', 'SIF', 'GIFT City', 'GIFT City funds', 'Indian alternatives',
+    'PMS vs AIF', 'AIF categories explained', 'PMS taxation India',
+    'GIFT City inbound fund', 'GIFT City outbound', 'NRI investment India',
+    'private credit India', 'pre-IPO investing',
   ],
   openGraph: {
-    title: 'IndiaFundSearch',
-    description:
-      'Education-first discovery for PMS, AIF, and GIFT City investments in India.',
-    url: siteUrl,
-    siteName: 'IndiaFundSearch',
+    title: 'IndiaFundSearch — The Architecture of Alternatives',
+    description: SITE.description,
+    url: SITE.url,
+    siteName: SITE.name,
     type: 'website',
     locale: 'en_IN',
     images: [
@@ -43,24 +55,22 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'IndiaFundSearch — the Morningstar of Indian alternatives.',
+        alt: 'IndiaFundSearch — The Architecture of Alternatives',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IndiaFundSearch',
-    description:
-      'Education-first discovery for PMS, AIF, and GIFT City investments in India.',
+    title: 'IndiaFundSearch — The Architecture of Alternatives',
+    description: SITE.description,
     images: ['/og'],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: siteUrl },
   icons: { icon: '/favicon.ico' },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#fafafa',
+  themeColor: '#f5f4ee',
   width: 'device-width',
   initialScale: 1,
 }
@@ -68,47 +78,31 @@ export const viewport: Viewport = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'IndiaFundSearch',
-  url: siteUrl,
-  description:
-    'Education-first platform for PMS, AIF, and GIFT City investments in India. Run by Beyond Wealth, a SEBI-aware advisory practice.',
-  logo: `${siteUrl}/og`,
-}
-
-const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'IndiaFundSearch',
-  url: siteUrl,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${siteUrl}/knowledge?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  logo: `${SITE.url}/og`,
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${grotesk.variable} ${newsreader.variable} ${plexMono.variable} h-full`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-text-primary">
+      <body className="min-h-full flex flex-col">
         <Analytics />
-        <ModeProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ModeProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )
