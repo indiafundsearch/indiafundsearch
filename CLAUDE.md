@@ -25,6 +25,32 @@ tools:
 
 ## Amendment Log
 
+- **v2.0.0 (2026-07-06)** — FULL REBUILD, approved by owner. The site is now
+  **"The Architecture of Alternatives"** — an education-first drawing-set-styled
+  platform co-branded **IndiaFundSearch · A Beyond Initiative**:
+  - **Design system replaced.** The Apple "Quiet Luxury" / Outfit / gold system below
+    is RETIRED. New system: paper cream `#F5F4EE` + deep ink green `#013528` +
+    bronze `#C05C08` / signal orange `#FF862F`; fonts **Space Grotesk** (structure),
+    **Newsreader** (editorial serif), **IBM Plex Mono** (annotation). Grid-paper
+    background, corner registration marks, sheet-number nav. Tokens in
+    `app/globals.css` `@theme`. Any design rule below that conflicts is void.
+  - **IA replaced.** Routes: `/` (interactive Spectrum), `/learn` (+ 13
+    `/learn/[slug]` product pages), `/fit-finder` (7-question quiz, gated report),
+    `/tax`, `/gift-city` (+ `/inbound`, `/outbound` hubs), `/contact`, `/studio`.
+    Old routes 301-redirect in `next.config.ts`. Old lead magnets retired.
+  - **Content source of truth:** `lib/content/*` (extracted from the Beyond
+    "Architecture of Alternatives R3" drawing set). Desk/RM-only content must
+    NEVER ship to the public site.
+  - **Products:** education covers all 13 SEBI/IFSCA-regulated structures; the
+    only *explorable product shelf* is GIFT City (inbound + outbound), managed
+    via the `giftProduct` Sanity schema with an in-code placeholder seed fallback.
+  - **Positioning update:** Beyond operates on a distributor/referral model —
+    commission disclosure lives in `lib/constants.ts` (`DISCLOSURE`) and the
+    footer. The old "we do not distribute" rule is superseded. Education content
+    remains independent and jargon-free; the Learn content stays ungated.
+  - **Placeholders to replace before launch:** WhatsApp number, Calendly URL,
+    desk email, registration number — all in `lib/constants.ts`.
+
 - **v1.1.0 (2026-05-04)** — adapted to scaffold reality:
   - Next.js pinned to **16+** (was "14+"). Scaffolded with `create-next-app@latest` which installed 16.2.4. Note: Next 16 has breaking changes from 14 — `params` and `searchParams` are async in route handlers and dynamic pages, caching defaults shifted, server-action conventions changed. When in doubt, read `node_modules/next/dist/docs/` rather than relying on training-data memory.
   - React **19** (Next 16 dependency).

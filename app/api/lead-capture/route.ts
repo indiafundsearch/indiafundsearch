@@ -7,14 +7,7 @@ import {
   type LeadSource,
 } from '@/lib/email/leadCaptureEmail'
 
-const VALID_SOURCES: LeadSource[] = [
-  'Fee X-Ray',
-  'Diagnostic',
-  'Scorecard',
-  'FD Visualiser',
-  'Translator Pathfinder',
-  'Newsletter',
-]
+const VALID_SOURCES: LeadSource[] = ['Fit Finder', 'GIFT City Enquiry', 'Contact']
 
 /**
  * POST /api/lead-capture
@@ -35,7 +28,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Valid email required.' }, { status: 400 })
   }
   if (typeof body.source !== 'string' || !VALID_SOURCES.includes(body.source as LeadSource)) {
-    return NextResponse.json({ error: 'Lead magnet source required.' }, { status: 400 })
+    return NextResponse.json({ error: 'Lead source required.' }, { status: 400 })
   }
 
   const source = body.source as LeadSource
@@ -52,11 +45,18 @@ export async function POST(request: NextRequest) {
       phone,
       city,
       source,
-      diagnosticVerdict: typeof body.diagnosticVerdict === 'string' ? body.diagnosticVerdict : undefined,
-      diagnosticScore: typeof body.diagnosticScore === 'number' ? body.diagnosticScore : undefined,
-      feeXRayInputs: body.feeXRayInputs,
-      scorecardPMS: typeof body.scorecardPMS === 'string' ? body.scorecardPMS : undefined,
-      investableSurplus: typeof body.investableSurplus === 'string' ? body.investableSurplus : undefined,
+      fitObjective: typeof body.fitObjective === 'string' ? body.fitObjective : undefined,
+      fitHorizon: typeof body.fitHorizon === 'string' ? body.fitHorizon : undefined,
+      fitShortlist: Array.isArray(body.fitShortlist)
+        ? body.fitShortlist
+            .slice(0, 6)
+            .map((s) => `${s.fitIndex} · ${s.name} (${s.badge})`)
+            .join(' | ')
+        : undefined,
+      giftProduct: typeof body.giftProduct === 'string' ? body.giftProduct : undefined,
+      giftDirection: typeof body.giftDirection === 'string' ? body.giftDirection : undefined,
+      interest: typeof body.interest === 'string' ? body.interest : undefined,
+      message: typeof body.message === 'string' ? body.message.slice(0, 2000) : undefined,
       createdAt: new Date().toISOString(),
     })
     leadId = doc._id

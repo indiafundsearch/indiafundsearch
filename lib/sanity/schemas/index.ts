@@ -1,6 +1,5 @@
-import fund from './fund'
-import glossaryTerm from './glossaryTerm'
 import article from './article'
+import giftProduct from './giftProduct'
 import leadCapture from './leadCapture'
 
-export const schemaTypes = [fund, glossaryTerm, article, leadCapture]
+export const schemaTypes = [giftProduct, leadCapture, article]

@@ -25,7 +25,12 @@ export async function POST(request: NextRequest) {
 
     // Next 16 signature: revalidateTag(tag, cacheLifeProfile)
     revalidateTag(body._type, 'default')
-    if (body.slug?.current) {
+    if (body._type === 'giftProduct') {
+      // Direction isn't reliable in the payload — refresh the whole section
+      revalidatePath('/gift-city')
+      revalidatePath('/gift-city/inbound')
+      revalidatePath('/gift-city/outbound')
+    } else if (body.slug?.current) {
       revalidatePath(routeFor(body._type, body.slug.current))
     }
 
@@ -38,12 +43,8 @@ export async function POST(request: NextRequest) {
 
 function routeFor(type: string, slug: string): string {
   switch (type) {
-    case 'fund':
-      return `/explore/${slug}`
-    case 'glossaryTerm':
-      return `/knowledge/${slug}`
     case 'article':
-      return `/insights/${slug}`
+      return `/learn/${slug}`
     default:
       return '/'
   }

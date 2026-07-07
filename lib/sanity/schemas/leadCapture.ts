@@ -10,29 +10,25 @@ export default defineType({
     defineField({ name: 'city', title: 'City', type: 'string' }),
     defineField({
       name: 'source',
-      title: 'Lead Magnet Source',
+      title: 'Lead Source',
       type: 'string',
       options: {
-        list: ['Fee X-Ray', 'Diagnostic', 'Scorecard', 'FD Visualiser', 'Translator Pathfinder', 'Newsletter'].map(
-          (value) => ({ title: value, value }),
-        ),
+        list: ['Fit Finder', 'GIFT City Enquiry', 'Contact'].map((value) => ({
+          title: value,
+          value,
+        })),
       },
     }),
-    defineField({ name: 'diagnosticVerdict', title: 'Diagnostic Verdict', type: 'string' }),
-    defineField({ name: 'diagnosticScore', title: 'Diagnostic Score', type: 'number' }),
-    defineField({
-      name: 'feeXRayInputs',
-      title: 'Fee X-Ray Inputs',
-      type: 'object',
-      fields: [
-        { name: 'amount', title: 'Investment Amount', type: 'number' },
-        { name: 'feeType', title: 'Fee Structure Type', type: 'string' },
-        { name: 'expectedReturn', title: 'Expected Return %', type: 'number' },
-        { name: 'timeHorizon', title: 'Time Horizon (years)', type: 'number' },
-      ],
-    }),
-    defineField({ name: 'scorecardPMS', title: 'PMS Evaluated (Scorecard)', type: 'string' }),
-    defineField({ name: 'investableSurplus', title: 'Investable Surplus Range', type: 'string' }),
+    // Fit Finder
+    defineField({ name: 'fitObjective', title: 'Fit Finder — Objective', type: 'string' }),
+    defineField({ name: 'fitHorizon', title: 'Fit Finder — Horizon', type: 'string' }),
+    defineField({ name: 'fitShortlist', title: 'Fit Finder — Shortlist', type: 'string' }),
+    // GIFT City enquiry
+    defineField({ name: 'giftProduct', title: 'GIFT Product Enquired', type: 'string' }),
+    defineField({ name: 'giftDirection', title: 'GIFT Direction', type: 'string' }),
+    // Contact form
+    defineField({ name: 'interest', title: 'Interest Area', type: 'string' }),
+    defineField({ name: 'message', title: 'Message', type: 'text', rows: 4 }),
     defineField({
       name: 'createdAt',
       title: 'Captured At',
