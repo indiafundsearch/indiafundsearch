@@ -8,6 +8,8 @@ import { GiftEnquiryForm } from './GiftEnquiryForm'
 interface GiftRepositoryTableProps {
   products: GiftProduct[]
   curatedAsOf?: string
+  /** preferred group ordering; unknown groups append in data order */
+  groupOrder?: readonly string[]
 }
 
 /**
@@ -15,10 +17,14 @@ interface GiftRepositoryTableProps {
  * sections, ★ recommended-core rows, orange * for lower accredited
  * minimums, theme chips. Rows expand for detail + enquiry.
  */
-export function GiftRepositoryTable({ products, curatedAsOf }: GiftRepositoryTableProps) {
+export function GiftRepositoryTable({
+  products,
+  curatedAsOf,
+  groupOrder = OUTBOUND_GROUP_ORDER,
+}: GiftRepositoryTableProps) {
   const [openId, setOpenId] = useState<string | null>(null)
 
-  const groups = [...OUTBOUND_GROUP_ORDER, ...products.map((p) => p.group ?? 'Other')]
+  const groups = [...groupOrder, ...products.map((p) => p.group ?? 'Other')]
     .filter((g, i, arr) => arr.indexOf(g) === i)
     .map((g) => ({ name: g, rows: products.filter((p) => (p.group ?? 'Other') === g) }))
     .filter((g) => g.rows.length > 0)
@@ -119,8 +125,13 @@ export function GiftRepositoryTable({ products, curatedAsOf }: GiftRepositoryTab
                               >
                                 <div className="px-5 py-5 max-w-[860px]">
                                   <p className="text-[15px] text-ink-soft">{p.description}</p>
+                                  {p.eligibility && (
+                                    <p className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-slate mt-2.5">
+                                      Eligibility — {p.eligibility}
+                                    </p>
+                                  )}
                                   {p.manager && (
-                                    <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-2.5">
+                                    <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-1.5">
                                       Manager — {p.manager}
                                     </p>
                                   )}
@@ -140,16 +151,22 @@ export function GiftRepositoryTable({ products, curatedAsOf }: GiftRepositoryTab
         </table>
       </div>
 
-      {/* Footnotes — as on the desk one-pager */}
-      <div className="bg-bronze-wash border border-bronze-soft px-5 py-3.5 mt-5 text-[14px] text-ink-soft">
-        <b className="font-sans text-bronze">Accredited Investor advantage:</b> funds marked{' '}
-        <span className="text-signal font-bold">*</span> carry materially lower minimums for
-        Accredited Investors — per each fund&apos;s PPM.
-      </div>
+      {/* Footnotes — as on the desk one-pager; shown only when applicable */}
+      {products.some((p) => p.lowerMinForAccredited) && (
+        <div className="bg-bronze-wash border border-bronze-soft px-5 py-3.5 mt-5 text-[14px] text-ink-soft">
+          <b className="font-sans text-bronze">Accredited Investor advantage:</b> funds marked{' '}
+          <span className="text-signal font-bold">*</span> carry materially lower minimums for
+          Accredited Investors — per each fund&apos;s PPM.
+        </div>
+      )}
       <p className="font-serif text-[13.5px] text-slate mt-3">
-        <span className="text-signal">★</span> = Recommended core. Access route, domicile and
-        minimums for private-market strategies are confirmed against the relevant PPM at
-        onboarding. Tap any row for the full note and to ask the desk.
+        {products.some((p) => p.recommendedCore) && (
+          <>
+            <span className="text-signal">★</span> = Recommended core.{' '}
+          </>
+        )}
+        Access route, domicile and minimums are confirmed against the relevant PPM at onboarding.
+        Tap any row for the full note and to ask the desk.
       </p>
     </div>
   )

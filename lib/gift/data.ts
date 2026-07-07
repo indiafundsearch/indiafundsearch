@@ -35,68 +35,142 @@ export const OUTBOUND_GROUP_ORDER = [
   'Alternatives & Absolute Return',
 ] as const
 
+export const INBOUND_GROUP_ORDER = [
+  'India Equity — Long Only',
+  'Bonds & Structured Income',
+  'Private Markets & Absolute Return',
+] as const
+
 const DIRECTION_VALUES: Record<GiftDirection, string> = {
   inbound: 'Inbound — Into India',
   outbound: 'Outbound — Global',
 }
 
 /**
- * ⚠️ PLACEHOLDER SHELF (inbound) — representative product shapes, not real
- * offers. Shown only while the Sanity dataset has no inbound giftProduct
- * documents. Replace by adding real products in /studio.
+ * Inbound repository — desk-provided list ("Gift inbound.xlsx", July 2026).
+ * Real distributable routes for NRIs/overseas investors into India.
+ * Internal desk fields (trail/commission) are intentionally NOT included here.
+ * Sanity documents override when present.
  */
-const INBOUND_SEED: GiftProduct[] = [
-  {
-    _id: 'seed-in-1',
-    name: 'India Long-Only Equity AIF — Series I',
+type InboundOverrides = Partial<Omit<GiftProduct, '_id' | 'name' | 'thesis' | 'direction'>>
+
+function inboundFund(
+  id: string,
+  name: string,
+  thesis: string,
+  overrides: InboundOverrides = {},
+): GiftProduct {
+  return {
+    _id: `in-${id}`,
+    name,
     direction: 'inbound',
-    structure: 'GIFT AIF Cat III',
-    manager: 'Representative example',
-    thesis: 'Concentrated Indian listed equity, held in USD — the clean NRI route into the India story.',
-    description:
-      'A GIFT IFSC-domiciled fund running a concentrated Indian equity strategy. Overseas investors subscribe in US dollars without opening Indian bank accounts or resident-style tax filings; the fund handles India access under the IFSCA framework.',
-    minInvestment: 'US $150,000',
-    indicativeReturn: '14–18% p.a. in USD terms (indicative)',
-    liquidity: 'Quarterly windows after 1-year soft lock',
+    structure: 'GIFT City',
+    thesis,
+    description: `${thesis} Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed.`,
+    minInvestment: '$150K',
     currency: 'USD',
-    eligibility: 'NRIs, OCIs & foreign investors (not resident Indians)',
-    taxNote: 'IFSC structures can offer simplified treatment for non-residents — verified per fund before commitment.',
     status: 'Open',
-  },
-  {
-    _id: 'seed-in-2',
-    name: 'India Market-Neutral Fund (GIFT)',
-    direction: 'inbound',
-    structure: 'GIFT AIF Cat III',
-    manager: 'Representative example',
-    thesis: 'Long-short engine aiming for steady positive USD returns whether the index rises or falls.',
+    group: 'India Equity — Long Only',
+    ...overrides,
+  }
+}
+
+const INBOUND_REPOSITORY: GiftProduct[] = [
+  // ---- India Equity — Long Only ----
+  inboundFund('alchemy-lt', 'Alchemy India Long Term Fund', 'Long-only Indian listed equity with a long-term compounding mandate.', {
+    theme: 'LONG-TERM EQUITY',
+    eligibility: 'US — Yes (K-1 available) · Canada — Yes (K-3 available) · UK — HMRC registered',
+  }),
+  inboundFund('absl-flexicap', 'ABSL India Flexicap Fund', 'Long-only Indian listed equity across market caps.', {
+    theme: 'FLEXICAP',
+    minInvestment: 'Ask the desk',
+  }),
+  inboundFund('mirae-equity-allocation', 'Mirae Asset India Equity Allocation Fund', 'Long-only allocation across Indian listed equity.', {
+    theme: 'EQUITY ALLOCATION',
+    eligibility: 'US — No · Canada — No',
+  }),
+  inboundFund('motilal-growth-anchor', 'Motilal Growth Anchor Plus Fund', 'Long-only Indian growth equity with an anchor sleeve.', {
+    theme: 'GROWTH',
+    eligibility: 'US — Yes (K-1 filed with IRS, non-PFIC) · UK — HMRC compliant',
+  }),
+  inboundFund('motilal-fof', 'Motilal Oswal Fund of Fund', 'Fund-of-fund route into Motilal Oswal Indian equity strategies.', {
+    theme: 'FUND OF FUND',
+    minInvestment: 'Ask the desk',
+    eligibility: 'US — Yes (K-1 filed with IRS, non-PFIC) · UK — Yes',
+  }),
+  inboundFund('hdfc-flexicap', 'HDFC India Flexicap Fund', 'Long-only Indian equity across large, mid and small caps.', {
+    theme: 'FLEXICAP',
+    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
+  }),
+  inboundFund('hdfc-midcap', 'HDFC India Midcap Opportunities Fund', 'Long-only Indian midcap equity.', {
+    theme: 'MIDCAP',
+    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
+  }),
+  inboundFund('hdfc-smallcap', 'HDFC India Smallcap Fund', 'Long-only Indian smallcap equity.', {
+    theme: 'SMALLCAP',
+    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
+  }),
+  inboundFund('hdfc-baf', 'HDFC India Balanced Advantage Fund', 'Dynamic equity-debt balance on Indian markets.', {
+    theme: 'BALANCED ADVANTAGE',
+    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
+  }),
+  inboundFund('carnelian-amritkaal', 'Carnelian India Amritkaal Fund', 'Long-only Indian equity built around the decade-of-India thesis.', {
+    theme: 'MULTICAP GROWTH',
+    eligibility: 'US — Yes (K-1 available) · Canada — Yes (K-3 available) · UK — Yes (not yet HMRC registered)',
+  }),
+  inboundFund('ashoka-multicap', 'Ashoka WhiteOak India Multicap Fund', 'Long-only Indian multicap equity, WhiteOak process.', {
+    theme: 'MULTICAP',
+    eligibility: 'US — No · Canada — No',
     description:
-      'Pairs long and short Indian equity positions to strip out market direction — debt-plus outcomes from an equity engine, built inside GIFT specifically for overseas investors who want India exposure without full market beta.',
-    minInvestment: 'US $150,000',
-    indicativeReturn: '8–12% p.a. in USD terms (indicative)',
-    liquidity: 'Monthly windows (typical)',
-    currency: 'USD',
-    eligibility: 'NRIs, OCIs & foreign investors',
-    taxNote: 'Often cleaner than the domestic Cat III route for non-residents — fund-level treatment verified per scheme.',
-    status: 'Open',
-  },
-  {
-    _id: 'seed-in-3',
-    name: 'India Private Credit Fund (GIFT)',
-    direction: 'inbound',
-    structure: 'GIFT AIF Cat II',
-    manager: 'Representative example',
-    thesis: 'Secured lending to performing Indian companies — USD cashflow from Indian credit spreads.',
-    description:
-      'Lends directly to performing companies and real-estate projects in India — secured, covenant-protected loans. Interest returns as regular USD payouts; principal returns as loans mature. Built for overseas investors seeking income.',
-    minInvestment: 'US $150,000',
-    indicativeReturn: '9–12% p.a. in USD terms (indicative)',
-    liquidity: '3–5 year tenor, locked',
-    currency: 'USD',
-    eligibility: 'NRIs, OCIs & foreign investors',
-    taxNote: 'Distribution TDS mechanics differ from domestic AIFs — reviewed per fund and treaty position.',
-    status: 'Open',
-  },
+      'Long-only Indian multicap equity run on the WhiteOak process. Minimum can be committed as 25% upfront plus three tranches within two years (lumpsum accepted). Subscribed in US dollars via the GIFT IFSC.',
+  }),
+  inboundFund('bandhan-large-mid', 'Bandhan Large & Midcap Fund', 'Long-only Indian large & midcap equity.', {
+    theme: 'LARGE & MIDCAP',
+    eligibility: 'US — Yes (K-1 available) · Canada — Not yet · UK — Yes (not yet HMRC registered)',
+  }),
+  inboundFund('bandhan-smallcap', 'Bandhan Smallcap Fund', 'Long-only Indian smallcap equity.', {
+    theme: 'SMALLCAP',
+    eligibility: 'US — Yes (K-1 available) · Canada — Not yet · UK — Yes (not yet HMRC registered)',
+  }),
+  inboundFund('valuequest-gift', 'ValueQuest India GIFT Fund', 'Long-only Indian listed equity, ValueQuest process.', {
+    theme: 'LISTED EQUITY',
+  }),
+  inboundFund('icici-smart-navigator', 'ICICI Smart Navigator', 'Long-only Indian equity with dynamic navigation.', {
+    theme: 'DYNAMIC EQUITY',
+    eligibility: 'US — Yes (no K-1) · Canada — No · UK — No',
+  }),
+  inboundFund('sundaram-midcap', 'Sundaram Midcap Fund', 'Long-only Indian midcap equity at a retail-scheme minimum.', {
+    theme: 'MIDCAP',
+    minInvestment: '$5K',
+    eligibility: 'US — No',
+  }),
+  inboundFund('edelweiss-multimanager', 'Edelweiss India Multimanager Equity Fund — Series 1', 'Multi-manager Indian equity — several managers, one commitment.', {
+    theme: 'MULTI-MANAGER',
+    eligibility: 'US — Yes (K-1 available) · Canada — No · UK — Yes (not yet HMRC registered)',
+  }),
+  // ---- Bonds & Structured Income ----
+  inboundFund('bandhan-gsec', 'Bandhan Govt Securities Investment Plan', 'Indian government securities — sovereign INR yield in a GIFT wrapper.', {
+    group: 'Bonds & Structured Income',
+    theme: 'GOVT SECURITIES',
+    eligibility: 'US — Yes (K-1 available) · Canada — Not yet · UK — Yes (not yet HMRC registered)',
+  }),
+  // ---- Private Markets & Absolute Return ----
+  inboundFund('neo-secondaries', 'NEO Secondaries Fund', 'Private-equity secondaries — seasoned fund stakes, often at a discount.', {
+    group: 'Private Markets & Absolute Return',
+    theme: 'PE SECONDARIES',
+  }),
+  inboundFund('neo-infra-2', 'NEO Infra Fund II', 'Senior secured lending to operating Indian infrastructure.', {
+    group: 'Private Markets & Absolute Return',
+    theme: 'INFRA DEBT',
+  }),
+  inboundFund('ask-re-3', 'ASK Real Estate Fund III', 'Secured real-estate debt across Indian developers.', {
+    group: 'Private Markets & Absolute Return',
+    theme: 'REAL ESTATE DEBT',
+  }),
+  inboundFund('whitespace-alpha', 'Whitespace Alpha Debt Plus', 'Market-neutral Indian equity engine targeting debt-plus outcomes.', {
+    group: 'Private Markets & Absolute Return',
+    theme: 'MARKET NEUTRAL',
+  }),
 ]
 
 /**
@@ -292,10 +366,9 @@ const GIFT_QUERY = `*[_type == "giftProduct" && direction == $direction && statu
 }`
 
 /**
- * Fetch the shelf for one direction. Sanity documents take over when present;
- * otherwise inbound falls back to a representative seed (isSeed: true) and
- * outbound to the desk-curated Global Fund Repository (isSeed: false — real
- * curated routes).
+ * Fetch the shelf for one direction. Sanity documents take over when
+ * present; otherwise the desk-curated in-code repository is used (both
+ * directions are real curated routes).
  */
 export async function getGiftProducts(direction: GiftDirection): Promise<{
   products: GiftProduct[]
@@ -313,8 +386,8 @@ export async function getGiftProducts(direction: GiftDirection): Promise<{
   } catch (error) {
     console.warn('gift: Sanity fetch failed, using in-code shelf', error)
   }
-  if (direction === 'inbound') {
-    return { products: INBOUND_SEED, isSeed: true }
+  return {
+    products: direction === 'inbound' ? INBOUND_REPOSITORY : OUTBOUND_REPOSITORY,
+    isSeed: false,
   }
-  return { products: OUTBOUND_REPOSITORY, isSeed: false }
 }

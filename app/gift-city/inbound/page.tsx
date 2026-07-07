@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { GiftShelf } from '@/components/gift/GiftShelf'
-import { getGiftProducts } from '@/lib/gift/data'
+import { GiftRepositoryTable } from '@/components/gift/GiftRepositoryTable'
+import { INBOUND_GROUP_ORDER, getGiftProducts } from '@/lib/gift/data'
 import { DISCLOSURE, SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function GiftInboundPage() {
-  const { products, isSeed } = await getGiftProducts('inbound')
+  const { products } = await getGiftProducts('inbound')
 
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
@@ -34,11 +34,16 @@ export default async function GiftInboundPage() {
           account, no currency conversion, no resident-style tax filings.{' '}
           <em className="text-bronze italic">
             For NRIs, frequently the cleanest route into Indian strategies.
-          </em>
+          </em>{' '}
+          Below is the desk&apos;s working repository, organised by the role each fund plays.
         </p>
       </header>
 
-      <GiftShelf products={products} isSeed={isSeed} />
+      <GiftRepositoryTable
+        products={products}
+        curatedAsOf="July 2026"
+        groupOrder={INBOUND_GROUP_ORDER}
+      />
 
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Eligibility, in one line —</b> inbound GIFT funds are built for
