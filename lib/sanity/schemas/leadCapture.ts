@@ -5,15 +5,22 @@ export default defineType({
   title: 'Lead Captures',
   type: 'document',
   fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
     defineField({ name: 'email', title: 'Email', type: 'string' }),
     defineField({ name: 'phone', title: 'Phone', type: 'string' }),
-    defineField({ name: 'city', title: 'City', type: 'string' }),
+    defineField({ name: 'city', title: 'City / Location', type: 'string' }),
+    defineField({
+      name: 'emailVerified',
+      title: 'Email Verified (OTP)',
+      type: 'boolean',
+      initialValue: false,
+    }),
     defineField({
       name: 'source',
       title: 'Lead Source',
       type: 'string',
       options: {
-        list: ['Fit Finder', 'GIFT City Enquiry', 'Contact'].map((value) => ({
+        list: ['Site Gate', 'Fit Finder', 'GIFT City Enquiry', 'Contact'].map((value) => ({
           title: value,
           value,
         })),

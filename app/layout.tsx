@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Analytics } from '@/components/shared/Analytics'
+import { LeadGate } from '@/components/gate/LeadGate'
 import { SITE } from '@/lib/constants'
 
 const grotesk = Space_Grotesk({
@@ -99,6 +100,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Analytics />
+        <LeadGate />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

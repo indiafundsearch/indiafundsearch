@@ -38,6 +38,24 @@ export const DISCLOSURE = {
   tax: 'Tax rates summarised as of FY 2026–27. Actual liability depends on residency, treaty position and income mix — always confirm with your Chartered Accountant.',
 } as const
 
+export const GATE = {
+  enabled: true,
+  /** seconds of visible on-page time before the gate appears */
+  delaySeconds: 20,
+  /**
+   * 'hard' — gate every page (owner's choice; note: intrusive-interstitial
+   *          risk for mobile SEO).
+   * 'soft' — gate everything except /learn so the SEO engine stays
+   *          friction-free (recommended).
+   * Flip this one value to switch.
+   */
+  mode: 'hard' as 'hard' | 'soft',
+  /** paths never gated (CMS admin must stay reachable) */
+  exemptPaths: ['/studio'],
+  /** days a verified visitor stays ungated on this device */
+  verifiedDays: 90,
+} as const
+
 export const NAV_LINKS = [
   { href: '/', label: 'The Spectrum', no: '01' },
   { href: '/learn', label: 'Learn', no: '02' },
