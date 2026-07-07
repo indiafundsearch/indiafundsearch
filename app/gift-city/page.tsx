@@ -16,7 +16,13 @@ const ROUTES = [
     no: 'Route A',
     title: 'Inbound — Into India',
     who: 'For NRIs, OCIs & foreign investors',
-    text: 'Indian strategies — concentrated equity, market-neutral, private credit — housed inside GIFT IFSC so you can subscribe in US dollars. No Indian bank account, no resident-style filings, often the cleanest tax route into India.',
+    bullets: [
+      ['Invest in US dollars', 'no NRE/NRO bank account needed'],
+      ['Full repatriation', 'capital and gains move freely, no FEMA friction'],
+      ['No Indian tax filing', 'most IFSC funds handle tax at the fund level'],
+      ['Indian strategies, offshore wrapper', 'concentrated equity, market-neutral, private credit'],
+      ['One relationship', 'dollar statements, single point of contact'],
+    ],
     chips: ['USD SUBSCRIPTION', 'IFSCA REGULATED', 'NRI-FIRST TAX TREATMENT'],
   },
   {
@@ -24,7 +30,13 @@ const ROUTES = [
     no: 'Route B',
     title: 'Outbound — Go Global',
     who: 'For resident Indians via LRS',
-    text: 'Global equity, US tech, USD income — reached through the RBI’s LRS route (US $250,000 per person per year) with GIFT-domiciled structures that cut the paperwork of direct overseas accounts.',
+    bullets: [
+      ['A currency hedge that pays', 'dollar assets against long-run rupee depreciation'],
+      ['Themes India doesn’t list', 'GenAI & semis, Greater China, EM ex-India, global macro'],
+      ['Multi-geography allocation', 'US, Europe & emerging markets in one sleeve'],
+      ['LRS route', 'US $2,50,000 per person per year'],
+      ['Indian paperwork, familiar KYC', 'no foreign brokerage account to maintain'],
+    ],
     chips: ['LRS ROUTE', 'DOLLAR ASSETS', 'INDIAN PAPERWORK'],
   },
 ] as const
@@ -61,7 +73,17 @@ export default function GiftCityPage() {
                 {r.title}
               </h2>
               <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-1">{r.who}</p>
-              <p className="font-serif text-[16.5px] text-ink-soft mt-4">{r.text}</p>
+              <ul className="mt-4 space-y-0.5">
+                {r.bullets.map(([lead, rest]) => (
+                  <li
+                    key={lead}
+                    className="relative py-1.5 pl-[22px] text-[15.5px] leading-snug before:content-[''] before:absolute before:left-0.5 before:top-[14px] before:w-2.5 before:h-[1.5px] before:bg-signal"
+                  >
+                    <b className="font-sans font-semibold text-ink">{lead}</b>
+                    <span className="font-serif text-ink-soft"> — {rest}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="flex gap-2 flex-wrap mt-5 font-mono text-[9.5px] tracking-[0.08em]">
                 {r.chips.map((c) => (
                   <span key={c} className="border border-bronze-soft text-bronze bg-bronze-wash px-2 py-1 rounded-[2px]">

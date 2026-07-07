@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { GiftShelf } from '@/components/gift/GiftShelf'
+import { GiftRepositoryTable } from '@/components/gift/GiftRepositoryTable'
 import { getGiftProducts } from '@/lib/gift/data'
 import { DISCLOSURE, SITE } from '@/lib/constants'
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function GiftOutboundPage() {
-  const { products, isSeed } = await getGiftProducts('outbound')
+  const { products } = await getGiftProducts('outbound')
 
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
@@ -29,10 +29,11 @@ export default async function GiftOutboundPage() {
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
           Resident Indians can invest globally through the RBI&apos;s LRS route —{' '}
-          <b>US $2,50,000 per person per year</b>. GIFT-domiciled outbound structures put dollar
-          assets inside Indian paperwork: global equity, US technology, USD income —{' '}
+          <b>US $2,50,000 per person per year</b>. Below is our{' '}
+          <b>Curated Global Fund Repository</b>: a working shortlist of GIFT City-accessible
+          routes, organised by the role each plays in a global sleeve.{' '}
           <em className="text-bronze italic">
-            geographic and currency diversification in a single, regulated wrapper.
+            Starred (★) lines form the recommended core.
           </em>
         </p>
         <Link
@@ -43,7 +44,7 @@ export default async function GiftOutboundPage() {
         </Link>
       </header>
 
-      <GiftShelf products={products} isSeed={isSeed} />
+      <GiftRepositoryTable products={products} curatedAsOf="June 2026" />
 
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Tax, in one line —</b> GIFT/global fund units held by residents:

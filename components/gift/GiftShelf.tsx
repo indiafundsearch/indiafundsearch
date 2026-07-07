@@ -49,15 +49,19 @@ export function GiftShelf({ products, isSeed }: { products: GiftProduct[]; isSee
                 <p className="font-serif italic text-[15px] text-ink-soft mt-1.5">{p.thesis}</p>
 
                 <div className="flex gap-2 flex-wrap mt-3.5 font-mono text-[10px] tracking-[0.06em] uppercase">
-                  <span className="border border-bronze-soft text-bronze bg-bronze-wash px-2 py-1 rounded-[2px]">
-                    {p.indicativeReturn.split('(')[0].trim()}
-                  </span>
+                  {p.indicativeReturn && (
+                    <span className="border border-bronze-soft text-bronze bg-bronze-wash px-2 py-1 rounded-[2px]">
+                      {p.indicativeReturn.split('(')[0].trim()}
+                    </span>
+                  )}
                   <span className="border border-line text-slate bg-paper px-2 py-1 rounded-[2px]">
                     MIN {p.minInvestment}
                   </span>
-                  <span className="border border-line text-slate bg-paper px-2 py-1 rounded-[2px]">
-                    {p.currency}
-                  </span>
+                  {p.currency && (
+                    <span className="border border-line text-slate bg-paper px-2 py-1 rounded-[2px]">
+                      {p.currency}
+                    </span>
+                  )}
                 </div>
 
                 <AnimatePresence initial={false}>
@@ -74,8 +78,8 @@ export function GiftShelf({ products, isSeed }: { products: GiftProduct[]; isSee
                         <tbody>
                           {(
                             [
-                              ['Liquidity', p.liquidity],
-                              ['Who can invest', p.eligibility],
+                              p.liquidity ? (['Liquidity', p.liquidity] as [string, string]) : null,
+                              p.eligibility ? (['Who can invest', p.eligibility] as [string, string]) : null,
                               p.manager ? (['Manager', p.manager] as [string, string]) : null,
                             ].filter(Boolean) as [string, string][]
                           ).map(([k, v]) => (
