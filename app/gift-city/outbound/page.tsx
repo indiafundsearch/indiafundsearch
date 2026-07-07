@@ -35,6 +35,12 @@ export default async function GiftOutboundPage() {
             geographic and currency diversification in a single, regulated wrapper.
           </em>
         </p>
+        <Link
+          href="/learn#gift-city-outbound"
+          className="inline-block mt-4 font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft"
+        >
+          New to outbound? Read the 3-minute explainer →
+        </Link>
       </header>
 
       <GiftShelf products={products} isSeed={isSeed} />

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { NAV_LINKS, SITE } from '@/lib/constants'
+import { Logo } from '@/components/shared/Logo'
 
 function isActive(pathname: string, href: string): boolean {
   if (href === '/') return pathname === '/'
@@ -23,9 +24,7 @@ export function Header() {
           className="flex items-center gap-3.5 py-3 pr-5 border-r border-line shrink-0"
           onClick={() => setOpen(false)}
         >
-          <span className="font-sans font-bold text-[19px] tracking-tight leading-none">
-            IndiaFundSearch
-          </span>
+          <Logo size={34} />
           <span className="hidden sm:block font-mono text-[10px] tracking-[0.08em] uppercase text-slate leading-[1.3] border-l border-line pl-3.5">
             {SITE.initiative}
             <br />

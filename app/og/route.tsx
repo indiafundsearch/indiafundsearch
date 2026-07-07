@@ -30,17 +30,28 @@ export async function GET(request: NextRequest) {
           border: '16px solid #013528',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            fontSize: 20,
-            fontWeight: 600,
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            color: '#c05c08',
-          }}
-        >
-          {eyebrow}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          <svg width="56" height="56" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="7" width="34" height="34" fill="none" stroke="#013528" strokeWidth="2.5" />
+            <path d="M2 8 v-6 h6" fill="none" stroke="#FF862F" strokeWidth="2.5" />
+            <path d="M40 2 h6 v6" fill="none" stroke="#FF862F" strokeWidth="2.5" />
+            <path d="M46 40 v6 h-6" fill="none" stroke="#FF862F" strokeWidth="2.5" />
+            <path d="M8 46 h-6 v-6" fill="none" stroke="#FF862F" strokeWidth="2.5" />
+            <path d="M12 34 L21 26 L27 29.5 L35 15" fill="none" stroke="#013528" strokeWidth="2.5" />
+            <circle cx="35" cy="15" r="4" fill="#FF862F" stroke="#013528" strokeWidth="1.8" />
+          </svg>
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 20,
+              fontWeight: 600,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#c05c08',
+            }}
+          >
+            {eyebrow}
+          </div>
         </div>
 
         <div

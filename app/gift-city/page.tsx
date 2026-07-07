@@ -105,6 +105,9 @@ export default function GiftCityPage() {
           <Link href="/learn#gift-city-for-nris" className="font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft">
             Read: GIFT City for NRIs →
           </Link>
+          <Link href="/learn#gift-city-outbound" className="font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft">
+            Read: GIFT City Outbound →
+          </Link>
           <Link href="/learn/gift-city-global-usd" className="font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft">
             The full material specification →
           </Link>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CONTACT, DISCLOSURE, NAV_LINKS, SITE, whatsappHref } from '@/lib/constants'
+import { Logo } from '@/components/shared/Logo'
 
 export function Footer() {
   return (
@@ -8,8 +9,8 @@ export function Footer() {
         {/* Brand row */}
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="font-sans font-bold text-xl tracking-tight">IndiaFundSearch</p>
-            <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-bronze-soft mt-1">
+            <Logo tone="paper" size={36} />
+            <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-bronze-soft mt-2">
               {SITE.initiative} · {SITE.tagline}
             </p>
             <p className="mt-4 max-w-prose text-[15px] text-[#c7d6ce] leading-relaxed">
