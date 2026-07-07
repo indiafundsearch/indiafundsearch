@@ -66,6 +66,34 @@ const giftProduct = {
       initialValue: 'Open',
     },
     {
+      name: 'productGroup',
+      title: 'Repository Group',
+      type: 'string',
+      description: 'The role this fund plays in the sleeve (drives the grouped table on outbound)',
+      options: {
+        list: ['Innovation & Growth', 'Diversification & INR Hedge', 'Alternatives & Absolute Return'],
+      },
+    },
+    {
+      name: 'theme',
+      title: 'Theme Chip',
+      type: 'string',
+      description: 'Short uppercase theme, e.g. "SEMIS · ROBOTICS · AI"',
+    },
+    {
+      name: 'recommendedCore',
+      title: '★ Recommended Core',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      name: 'lowerMinForAccredited',
+      title: 'Lower Minimum for Accredited Investors (*)',
+      type: 'boolean',
+      description: 'Shows the orange asterisk on the minimum — per the fund PPM',
+      initialValue: false,
+    },
+    {
       name: 'order',
       title: 'Display Order',
       type: 'number',
