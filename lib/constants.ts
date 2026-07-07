@@ -49,7 +49,7 @@ export const GATE = {
    *          friction-free (recommended).
    * Flip this one value to switch.
    */
-  mode: 'hard' as 'hard' | 'soft',
+  mode: 'soft' as 'hard' | 'soft',
   /** paths never gated (CMS admin must stay reachable) */
   exemptPaths: ['/studio'],
   /** days a verified visitor stays ungated on this device */
