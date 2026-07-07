@@ -15,22 +15,21 @@ export const SITE = {
 } as const
 
 export const CONTACT = {
-  /** TODO: replace with the real desk WhatsApp number (country code, no +) */
-  whatsappNumber: '919999999999',
+  /** Desk WhatsApp (country code, no +) */
+  whatsappNumber: '919898424577',
   whatsappMessage:
     'Hi Beyond — I was reading IndiaFundSearch and would like to talk about alternatives.',
-  /** TODO: replace with the real booking link */
-  calendlyUrl: 'https://calendly.com/beyond-desk/conversation',
-  /** TODO: replace with the real desk email */
-  email: 'desk@indiafundsearch.com',
+  /** Booking link — leave empty until a Calendly/Cal.com link exists; the
+   *  "Book a conversation" CTAs hide themselves while this is blank. */
+  calendlyUrl: '',
+  /** Desk email — also receives instant new-lead notifications. */
+  email: 'hello@jslwealth.in',
 } as const
 
 export const whatsappHref = (message: string = CONTACT.whatsappMessage) =>
   `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(message)}`
 
 export const DISCLOSURE = {
-  /** TODO: replace with Beyond's actual registration number(s) */
-  registrationLine: 'Beyond · [REGISTRATION NO. — AMFI ARN / other]',
   commission:
     'Beyond may earn distribution or referral fees from product providers when you invest through us. This is disclosed before any transaction. Our education content is written independently of these arrangements.',
   education:

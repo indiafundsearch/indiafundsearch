@@ -53,16 +53,18 @@ export function Footer() {
                   WhatsApp the desk ↗
                 </a>
               </li>
-              <li>
-                <a
-                  href={CONTACT.calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#c7d6ce] hover:text-white-warm transition-colors"
-                >
-                  Book a conversation ↗
-                </a>
-              </li>
+              {CONTACT.calendlyUrl && (
+                <li>
+                  <a
+                    href={CONTACT.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#c7d6ce] hover:text-white-warm transition-colors"
+                  >
+                    Book a conversation ↗
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={`mailto:${CONTACT.email}`}
@@ -77,9 +79,6 @@ export function Footer() {
 
         {/* Disclosure block */}
         <div className="mt-12 border-t border-[rgba(252,251,248,0.15)] pt-6 space-y-3">
-          <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-bronze-soft">
-            {DISCLOSURE.registrationLine}
-          </p>
           <p className="text-[12.5px] leading-relaxed text-[#9db5aa]">{DISCLOSURE.commission}</p>
           <p className="text-[12.5px] leading-relaxed text-[#9db5aa]">{DISCLOSURE.education}</p>
           <p className="font-mono text-[10px] tracking-[0.06em] text-[#9db5aa] pt-2">

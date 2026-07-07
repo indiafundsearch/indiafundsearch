@@ -83,7 +83,6 @@ const INBOUND_REPOSITORY: GiftProduct[] = [
   }),
   inboundFund('absl-flexicap', 'ABSL India Flexicap Fund', 'Long-only Indian listed equity across market caps.', {
     theme: 'FLEXICAP',
-    minInvestment: 'Ask the desk',
   }),
   inboundFund('mirae-equity-allocation', 'Mirae Asset India Equity Allocation Fund', 'Long-only allocation across Indian listed equity.', {
     theme: 'EQUITY ALLOCATION',
@@ -95,7 +94,6 @@ const INBOUND_REPOSITORY: GiftProduct[] = [
   }),
   inboundFund('motilal-fof', 'Motilal Oswal Fund of Fund', 'Fund-of-fund route into Motilal Oswal Indian equity strategies.', {
     theme: 'FUND OF FUND',
-    minInvestment: 'Ask the desk',
     eligibility: 'US — Yes (K-1 filed with IRS, non-PFIC) · UK — Yes',
   }),
   inboundFund('hdfc-flexicap', 'HDFC India Flexicap Fund', 'Long-only Indian equity across large, mid and small caps.', {

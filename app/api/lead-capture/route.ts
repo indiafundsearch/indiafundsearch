@@ -6,6 +6,7 @@ import {
   type LeadCapturePayload,
   type LeadSource,
 } from '@/lib/email/leadCaptureEmail'
+import { notifyDesk } from '@/lib/email/deskNotify'
 
 const VALID_SOURCES: LeadSource[] = ['Fit Finder', 'GIFT City Enquiry', 'Contact']
 
@@ -65,8 +66,24 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Could not save lead.' }, { status: 500 })
   }
 
-  // Send branded email — best-effort.
-  const emailResult = await sendLeadEmail(email, source, body)
+  // Notify the desk instantly + send the visitor's branded confirmation.
+  // Both best-effort — the lead is already saved.
+  const [, emailResult] = await Promise.all([
+    notifyDesk({
+      source,
+      email,
+      phone,
+      location: city,
+      details: {
+        Interest: typeof body.interest === 'string' ? body.interest : undefined,
+        Product: typeof body.giftProduct === 'string' ? body.giftProduct : undefined,
+        Route: typeof body.giftDirection === 'string' ? body.giftDirection : undefined,
+        Objective: typeof body.fitObjective === 'string' ? body.fitObjective : undefined,
+        Message: typeof body.message === 'string' ? body.message.slice(0, 500) : undefined,
+      },
+    }),
+    sendLeadEmail(email, source, body),
+  ])
 
   return NextResponse.json({ ok: true, id: leadId, emailSent: emailResult.sent })
 }

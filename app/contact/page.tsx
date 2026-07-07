@@ -43,20 +43,22 @@ export default function ContactPage() {
             </p>
           </a>
 
-          <a
-            href={CONTACT.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block plot-card px-6 py-6 hover:shadow-plot-hover transition-shadow"
-          >
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
-              Structured
-            </span>
-            <span className="font-sans font-bold text-[18px]">Book a conversation →</span>
-            <p className="text-[14px] text-slate mt-1.5">
-              Pick a slot that suits you. 30 minutes, agenda yours.
-            </p>
-          </a>
+          {CONTACT.calendlyUrl && (
+            <a
+              href={CONTACT.calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block plot-card px-6 py-6 hover:shadow-plot-hover transition-shadow"
+            >
+              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
+                Structured
+              </span>
+              <span className="font-sans font-bold text-[18px]">Book a conversation →</span>
+              <p className="text-[14px] text-slate mt-1.5">
+                Pick a slot that suits you. 30 minutes, agenda yours.
+              </p>
+            </a>
+          )}
 
           <a
             href={`mailto:${CONTACT.email}`}

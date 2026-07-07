@@ -50,6 +50,13 @@ export function renderLeadCaptureEmail(
   }
 }
 
+/** Prefer the booking link; fall back to WhatsApp while it's unset. */
+function deskCta(): { label: string; href: string } {
+  return CONTACT.calendlyUrl
+    ? { label: 'Book a conversation', href: CONTACT.calendlyUrl }
+    : { label: 'WhatsApp the desk', href: `https://wa.me/${CONTACT.whatsappNumber}` }
+}
+
 // ---------- Templates ----------
 
 function fitFinderEmail(payload: LeadCapturePayload): RenderedEmail {
@@ -66,7 +73,7 @@ function fitFinderEmail(payload: LeadCapturePayload): RenderedEmail {
     leadParagraph:
       'These are the structures whose shape fits your seven answers — a starting point for a real conversation, not a recommendation. The desk will reach out; or skip the queue below.',
     rows,
-    cta: { label: 'Book a conversation', href: CONTACT.calendlyUrl },
+    cta: deskCta(),
   })
 }
 
@@ -81,7 +88,7 @@ function giftEnquiryEmail(payload: LeadCapturePayload): RenderedEmail {
     leadParagraph:
       'The desk reviews your enquiry, checks eligibility for the route you asked about (residency, FEMA status, ticket size), and comes back within one working day with the honest picture — including whether this product is wrong for you.',
     rows,
-    cta: { label: 'Book a conversation', href: CONTACT.calendlyUrl },
+    cta: deskCta(),
   })
 }
 

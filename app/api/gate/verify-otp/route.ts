@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { writeClient } from '@/lib/sanity/client'
 import { verifyOtpToken } from '@/lib/gate/otp'
+import { notifyDesk } from '@/lib/email/deskNotify'
 
 export const runtime = 'nodejs'
 
@@ -45,6 +46,15 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('gate: Sanity lead write failed', error)
   }
+
+  // Instant desk notification — best-effort.
+  await notifyDesk({
+    source: 'Site Gate',
+    email,
+    name: typeof body?.name === 'string' ? body.name.slice(0, 120) : undefined,
+    phone: typeof body?.phone === 'string' ? body.phone.slice(0, 32) : undefined,
+    location: typeof body?.location === 'string' ? body.location.slice(0, 120) : undefined,
+  })
 
   return NextResponse.json({ ok: true })
 }
