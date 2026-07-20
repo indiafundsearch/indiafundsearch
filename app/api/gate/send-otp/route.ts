@@ -29,13 +29,21 @@ export async function POST(request: NextRequest) {
 
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
+    if (process.env.NODE_ENV === 'production') {
+      // Fail loudly instead of a silent dead-end: without a key no email can
+      // be sent, so the visitor would otherwise wait forever on the code screen.
+      console.error('gate: RESEND_API_KEY missing in production — OTP cannot be sent')
+      return NextResponse.json(
+        {
+          error: 'We couldn’t send your code right now. Please WhatsApp or email the desk.',
+          reason: 'email-not-configured',
+        },
+        { status: 503 },
+      )
+    }
+    // Local dev only: expose the code so testing works without Resend.
     console.warn(`gate: RESEND_API_KEY not set — OTP for ${email} is ${code} (dev only)`)
-    return NextResponse.json({
-      ok: true,
-      token,
-      // Never exposed in production builds
-      ...(process.env.NODE_ENV !== 'production' ? { devCode: code } : {}),
-    })
+    return NextResponse.json({ ok: true, token, devCode: code })
   }
 
   const from = process.env.RESEND_FROM_EMAIL ?? 'IndiaFundSearch <hello@indiafundsearch.com>'
@@ -62,12 +70,19 @@ export async function POST(request: NextRequest) {
       text: `Your ${SITE.name} verification code is ${code}. Valid for 10 minutes.`,
     })
     if ('error' in result && result.error) {
-      console.error('gate: Resend error', result.error)
-      return NextResponse.json({ error: 'Could not send the code — try again.' }, { status: 502 })
+      // Almost always: the "from" domain isn't verified in Resend yet.
+      console.error('gate: Resend rejected the send', result.error)
+      return NextResponse.json(
+        { error: 'Could not send the code — try again shortly.', reason: 'resend-rejected' },
+        { status: 502 },
+      )
     }
   } catch (error) {
     console.error('gate: send failed', error)
-    return NextResponse.json({ error: 'Could not send the code — try again.' }, { status: 502 })
+    return NextResponse.json(
+      { error: 'Could not send the code — try again shortly.', reason: 'send-exception' },
+      { status: 502 },
+    )
   }
 
   return NextResponse.json({ ok: true, token })
