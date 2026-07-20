@@ -38,7 +38,9 @@ export const DISCLOSURE = {
 } as const
 
 export const GATE = {
-  enabled: true,
+  // Popup disabled for now — flip back to true (once Resend is configured in
+  // production) to re-enable the 20s OTP lead gate. All gate code stays intact.
+  enabled: false,
   /** seconds of visible on-page time before the gate appears */
   delaySeconds: 20,
   /**
