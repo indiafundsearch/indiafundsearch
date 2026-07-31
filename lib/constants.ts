@@ -18,7 +18,7 @@ export const CONTACT = {
   /** Desk WhatsApp (country code, no +) */
   whatsappNumber: '919898424577',
   whatsappMessage:
-    "Hi Beyond, I found you through IndiaFundSearch and I'd like to understand my options in alternative investments (PMS / AIF / GIFT City). When would be a good time to talk?",
+    "Hello team, I found IndiaFundSearch and I'm interested in GIFT City / global investing options. Could we set up a quick call?",
   /** Booking link — leave empty until a Calendly/Cal.com link exists; the
    *  "Book a conversation" CTAs hide themselves while this is blank. */
   calendlyUrl: '',
