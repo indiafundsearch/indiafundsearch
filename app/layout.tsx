@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Analytics } from '@/components/shared/Analytics'
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 import { LeadGate } from '@/components/gate/LeadGate'
 import { SITE } from '@/lib/constants'
 
@@ -100,6 +101,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Analytics />
+        <VercelAnalytics />
         <LeadGate />
         <Header />
         <main className="flex-1">{children}</main>
