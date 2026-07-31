@@ -18,7 +18,7 @@ export const CONTACT = {
   /** Desk WhatsApp (country code, no +) */
   whatsappNumber: '919898424577',
   whatsappMessage:
-    'Hi Beyond — I was reading IndiaFundSearch and would like to talk about alternatives.',
+    "Hi Beyond, I found you through IndiaFundSearch and I'd like to understand my options in alternative investments (PMS / AIF / GIFT City). When would be a good time to talk?",
   /** Booking link — leave empty until a Calendly/Cal.com link exists; the
    *  "Book a conversation" CTAs hide themselves while this is blank. */
   calendlyUrl: '',
@@ -38,9 +38,9 @@ export const DISCLOSURE = {
 } as const
 
 export const GATE = {
-  // Popup disabled for now — flip back to true (once Resend is configured in
-  // production) to re-enable the 20s OTP lead gate. All gate code stays intact.
-  enabled: false,
+  // 20s OTP lead gate — live (Resend configured in production). Set to false
+  // to switch the popup off site-wide without removing any gate code.
+  enabled: true,
   /** seconds of visible on-page time before the gate appears */
   delaySeconds: 20,
   /**
