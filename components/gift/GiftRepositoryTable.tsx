@@ -3,6 +3,7 @@
 import { Fragment, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { OUTBOUND_GROUP_ORDER, type GiftProduct } from '@/lib/gift/data'
+import { GIFT_SHELF } from '@/lib/constants'
 import { GiftEnquiryForm } from './GiftEnquiryForm'
 
 interface GiftRepositoryTableProps {
@@ -34,7 +35,7 @@ export function GiftRepositoryTable({
     <div>
       {curatedAsOf && (
         <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-slate text-right mb-2">
-          Curated as of <b className="text-ink">{curatedAsOf}</b>
+          Curated as of <b className="text-ink">{curatedAsOf}</b> · {GIFT_SHELF.reviewCadence}
         </p>
       )}
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact/ContactForm'
-import { CONTACT, DISCLOSURE, SITE, whatsappHref } from '@/lib/constants'
+import { CONTACT, DISCLOSURE, SHEETS, SITE, whatsappHref } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Talk to the desk — Beyond',
@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <div className="mb-10 max-w-[720px]">
-        <div className="eyebrow mb-3.5">Sheet 07 — Site Office</div>
+        <div className="eyebrow mb-3.5">Sheet {SHEETS.contact.no} — Site Office</div>
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
           Talk to the desk.
         </h1>

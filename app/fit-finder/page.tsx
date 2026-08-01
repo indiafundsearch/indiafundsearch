@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FitFinder } from '@/components/fit/FitFinder'
-import { SITE } from '@/lib/constants'
+import { SHEETS, SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Fit Finder — which alternative investment fits you?',
@@ -14,7 +14,7 @@ export default function FitFinderPage() {
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <div className="mb-10 text-center max-w-[760px] mx-auto">
         <div className="eyebrow mb-3.5 justify-center before:content-[''] before:h-px before:flex-1 before:bg-line before:max-w-[120px]">
-          Sheet 04 — Load Calculation
+          Sheet {SHEETS.fitFinder.no} — Load Calculation
         </div>
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
           Seven questions. A shortlist, not a sales pitch.

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PRODUCTS, productBySlug } from '@/lib/content/products'
 import { FD_PATH_5Y, formatCr } from '@/lib/content/format'
-import { DISCLOSURE, SITE } from '@/lib/constants'
+import { DISCLOSURE, SHEETS, SITE } from '@/lib/constants'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 
 interface PageProps {
@@ -78,7 +78,7 @@ export default async function ProductPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
-        <Link href="/learn" className="hover:text-ink">Sheet 03 — Materials</Link>
+        <Link href="/learn" className="hover:text-ink">Sheet {SHEETS.materials.no} — Materials</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">Specification {String(index + 1).padStart(2, '0')}</span>
       </nav>

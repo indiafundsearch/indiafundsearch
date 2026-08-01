@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
-import { SITE } from '@/lib/constants'
+import { SHEETS, SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'GIFT City investments — inbound & outbound, explained',
@@ -47,7 +47,7 @@ export default function GiftCityPage() {
     <div className="pb-24">
       {/* Hero */}
       <section className="mx-auto max-w-[1180px] px-[22px] pt-14 max-sm:pt-9">
-        <div className="eyebrow mb-3.5">Sheet 06 — The Second Passport for Capital</div>
+        <div className="eyebrow mb-3.5">Sheet {SHEETS.giftCity.no} — The Second Passport for Capital</div>
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,48px)] tracking-[-0.01em] leading-[1.06] max-w-[860px]">
           GIFT City. Legally India.
           <br />

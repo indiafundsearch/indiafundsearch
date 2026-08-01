@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GiftGate } from '@/components/gift/GiftGate'
 import { INBOUND_GROUP_ORDER } from '@/lib/gift/data'
-import { DISCLOSURE } from '@/lib/constants'
+import { DISCLOSURE, GIFT_SHELF } from '@/lib/constants'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function GiftInboundPage() {
 
       <UsPersonWarning className="mb-8 max-w-[860px]" />
 
-      <GiftGate direction="inbound" curatedAsOf="July 2026" groupOrder={INBOUND_GROUP_ORDER} />
+      <GiftGate direction="inbound" curatedAsOf={GIFT_SHELF.curatedAsOf} groupOrder={INBOUND_GROUP_ORDER} />
 
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Eligibility, in one line —</b> inbound GIFT funds are built for

@@ -72,3 +72,28 @@ export const NAV_LINKS = [
   { href: '/gift-city', label: 'GIFT City', no: '05', highlight: true },
   { href: '/contact', label: 'Talk to Us', no: '06' },
 ] as const
+
+/**
+ * Drawing-set sheet numbers — the SINGLE source of truth (P2-13). Every
+ * "Sheet NN — …" eyebrow imports its number from here, so the sequence can
+ * never drift (previously the homepage's Fit-Finder block said Sheet 03 while
+ * /fit-finder said Sheet 04).
+ */
+export const SHEETS = {
+  spectrum: { no: '01', title: 'Site Plan' },
+  fundamentals: { no: '02', title: 'First Principles' },
+  materials: { no: '03', title: 'Material Specifications' },
+  fitFinder: { no: '04', title: 'Load Calculation' },
+  tax: { no: '05', title: 'Compliance Schedule' },
+  giftCity: { no: '06', title: 'GIFT City' },
+  contact: { no: '07', title: 'Site Office' },
+} as const
+
+/**
+ * Curation currency for both GIFT shelves (P2-20) — one field drives both so
+ * they can't disagree. Keep `curatedAsOf` current when the desk reviews them.
+ */
+export const GIFT_SHELF = {
+  curatedAsOf: 'July 2026',
+  reviewCadence: 'Reviewed monthly',
+} as const

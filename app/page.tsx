@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { SpectrumExplorer } from '@/components/spectrum/SpectrumExplorer'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES } from '@/lib/content/articles'
-import { SITE } from '@/lib/constants'
+import { SHEETS, SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'The Spectrum — every SEBI-regulated alternative, mapped',
@@ -21,7 +21,7 @@ export default function HomePage() {
       {/* ============ HERO / SHEET 01 ============ */}
       <section className="mx-auto max-w-[1180px] px-[22px] pt-14 pb-20 max-sm:pt-9">
         <div className="mb-10">
-          <div className="eyebrow mb-3.5">Sheet 01 — Site Plan</div>
+          <div className="eyebrow mb-3.5">Sheet {SHEETS.spectrum.no} — Site Plan</div>
           <h1 className="font-sans font-bold text-[clamp(32px,5vw,52px)] tracking-[-0.01em] leading-[1.06] max-w-[820px]">
             Every alternative in Indian investing.
             <br />
@@ -93,7 +93,7 @@ export default function HomePage() {
       {/* ============ FUNDAMENTALS TEASER ============ */}
       <section className="mx-auto max-w-[1180px] px-[22px] py-20">
         <FadeInOnScroll>
-          <div className="eyebrow mb-3.5">Sheet 02 — First Principles</div>
+          <div className="eyebrow mb-3.5">Sheet {SHEETS.fundamentals.no} — First Principles</div>
           <h2 className="font-sans font-bold text-[clamp(26px,3.6vw,38px)] tracking-[-0.01em]">
             Start with the fundamentals.
           </h2>
@@ -141,7 +141,7 @@ export default function HomePage() {
           <span className="corner corner-bl" />
           <span className="corner corner-br" />
           <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-bronze mb-3">
-            Sheet 03 — Load Calculation
+            Sheet {SHEETS.fitFinder.no} — Load Calculation
           </div>
           <h2 className="font-sans font-bold text-[clamp(24px,3.2vw,34px)] tracking-[-0.01em]">
             Seven questions. A shortlist, not a sales pitch.

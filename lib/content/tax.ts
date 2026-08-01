@@ -67,7 +67,7 @@ export const TAX_ROWS: { res: TaxRow[]; nri: TaxRow[] } = {
       "—",
       "—",
       "—",
-      "Taxed at the fund level at maximum marginal rate; you receive post-tax NAV"
+      "Typically taxed at the fund level at maximum marginal rate (scheme-specific — depends on trust determinacy and income character); you receive post-tax NAV"
     ],
     [
       "Private Credit / PE — Cat II AIF",

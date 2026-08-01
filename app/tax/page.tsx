@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { TaxTables } from '@/components/tax/TaxTables'
-import { SITE } from '@/lib/constants'
+import { SHEETS, SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Taxation of PMS, AIF, SIF & GIFT City — FY 2026–27',
@@ -13,7 +13,7 @@ export default function TaxPage() {
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <div className="mb-10">
-        <div className="eyebrow mb-3.5">Sheet 05 — Compliance Schedule</div>
+        <div className="eyebrow mb-3.5">Sheet {SHEETS.tax.no} — Compliance Schedule</div>
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[800px]">
           How each structure is taxed. FY 2026–27.
         </h1>

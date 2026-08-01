@@ -180,11 +180,11 @@ export const PRODUCTS: Product[] = [
       "Drawdowns designed to stay shallow"
     ],
     "risks": [
-      "Fund-level tax at the maximum marginal rate eats into gross returns",
+      "Fund-level tax typically at the maximum marginal rate (scheme-specific) eats into gross returns",
       "Results depend entirely on manager skill",
       "Stress periods can break long-short relationships for a while"
     ],
-    "tax": "Cat III AIFs are taxed at the fund level at the maximum marginal rate; you receive post-tax NAV. No further tax in your hands.",
+    "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
     "slug": "market-neutral-funds",
     "nriNote": "GIFT inbound market-neutral structures exist specifically for overseas investors — often cleaner than the domestic Cat III route."
   },
@@ -286,7 +286,7 @@ export const PRODUCTS: Product[] = [
       "Funding future USD expenses like children’s education"
     ],
     "benefits": [
-      "Currency diversification — the rupee has fallen ~3–4% p.a. against the USD over long periods",
+      "Currency diversification — the rupee has tended to depreciate against the USD over long periods",
       "World-class companies not listed on NSE/BSE",
       "GIFT structures cut paperwork vs direct overseas accounts"
     ],
@@ -328,11 +328,11 @@ export const PRODUCTS: Product[] = [
       "Pooled scale can secure anchor access no individual gets"
     ],
     "risks": [
-      "Fund-level tax at the maximum marginal rate is a real drag on gross returns",
+      "Fund-level tax typically at the maximum marginal rate (scheme-specific) is a real drag on gross returns",
       "The pre-IPO sleeve is illiquid inside an otherwise liquid book",
       "High conviction cuts both ways in a drawdown"
     ],
-    "tax": "Cat III AIFs are taxed at the fund level at the maximum marginal rate; you receive post-tax NAV. No further tax in your hands.",
+    "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
     "slug": "long-only-equity-aif",
     "nriNote": "GIFT inbound long-only AIFs are frequently the most tax-efficient NRI route into concentrated Indian equity."
   },

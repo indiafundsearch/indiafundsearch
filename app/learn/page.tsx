@@ -5,7 +5,7 @@ import { ComparisonTable } from '@/components/learn/ComparisonTable'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES } from '@/lib/content/articles'
 import { PRODUCTS } from '@/lib/content/products'
-import { SITE } from '@/lib/constants'
+import { SHEETS, SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Learn — PMS, AIF, SIF & GIFT City fundamentals',
@@ -19,7 +19,7 @@ export default function LearnPage() {
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       {/* Sheet 02 — Fundamentals */}
       <div className="mb-10">
-        <div className="eyebrow mb-3.5">Sheet 02 — First Principles</div>
+        <div className="eyebrow mb-3.5">Sheet {SHEETS.fundamentals.no} — First Principles</div>
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[800px]">
           Start with the fundamentals.
         </h1>
@@ -42,7 +42,7 @@ export default function LearnPage() {
 
       {/* Sheet 03 — The Materials */}
       <div className="mt-20 mb-9">
-        <div className="eyebrow mb-3.5">Sheet 03 — Material Specifications</div>
+        <div className="eyebrow mb-3.5">Sheet {SHEETS.materials.no} — Material Specifications</div>
         <h2 className="font-sans font-bold text-[clamp(26px,3.8vw,38px)] tracking-[-0.01em] leading-[1.1] max-w-[800px]">
           The thirteen materials of a modern portfolio.
         </h2>

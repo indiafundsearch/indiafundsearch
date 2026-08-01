@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GiftGate } from '@/components/gift/GiftGate'
 import { OUTBOUND_GROUP_ORDER } from '@/lib/gift/data'
-import { DISCLOSURE } from '@/lib/constants'
+import { DISCLOSURE, GIFT_SHELF } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'GIFT City outbound — global investing for resident Indians (LRS)',
@@ -29,8 +29,9 @@ export default function GiftOutboundPage() {
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
           Resident Indians can invest globally through the RBI&apos;s LRS route —{' '}
           <b>US $2,50,000 per person per year</b>. Below is our{' '}
-          <b>Curated Global Fund Repository</b>: a working reference list of GIFT City-accessible
-          routes, organised by the role each plays in a global sleeve.{' '}
+          <b>Curated Global Fund Repository</b>: a working reference list of{' '}
+          <b>global routes — GIFT City and offshore</b> (the domicile of each is shown in the table),
+          organised by the role each plays in a global sleeve.{' '}
           <em className="text-bronze italic">
             A reference list for eligible investors — not investment advice.
           </em>
@@ -43,7 +44,7 @@ export default function GiftOutboundPage() {
         </Link>
       </header>
 
-      <GiftGate direction="outbound" curatedAsOf="June 2026" groupOrder={OUTBOUND_GROUP_ORDER} />
+      <GiftGate direction="outbound" curatedAsOf={GIFT_SHELF.curatedAsOf} groupOrder={OUTBOUND_GROUP_ORDER} />
 
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Tax, in one line —</b> GIFT/global fund units held by residents:
