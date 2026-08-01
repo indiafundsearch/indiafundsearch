@@ -9,7 +9,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/studio', '/studio/', '/api/', '/og'],
+        // NOTE: /og is intentionally NOT disallowed — og:image points at it and
+        // robots-respecting scrapers (LinkedInBot, Twitterbot) must be able to
+        // fetch the share-card image. Keep only true admin/API paths blocked.
+        disallow: ['/studio', '/studio/', '/api/'],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
