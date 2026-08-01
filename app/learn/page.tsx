@@ -41,9 +41,9 @@ export default function LearnPage() {
         Structural comparison, simplified for conversation. Category rules per SEBI; individual schemes vary.
       </p>
 
-      {/* Sheet 03 — The Materials */}
+      {/* Materials — the second section of the Learn sheet (Sheet 02) */}
       <div className="mt-20 mb-9">
-        <div className="eyebrow mb-3.5">Sheet {SHEETS.materials.no} — Material Specifications</div>
+        <div className="eyebrow mb-3.5">Material Specifications</div>
         <h2 className="font-sans font-bold text-[clamp(26px,3.8vw,38px)] tracking-[-0.01em] leading-[1.1] max-w-[800px]">
           The thirteen materials of a modern portfolio.
         </h2>

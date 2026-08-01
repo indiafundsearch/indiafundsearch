@@ -82,12 +82,14 @@ export const NAV_LINKS = [
  */
 export const SHEETS = {
   spectrum: { no: '01', title: 'Site Plan' },
+  // Learn is one sheet (02); "First Principles" and "The Materials" are its two
+  // sections — so the sheet numbers line up 1:1 with the six nav tabs.
   fundamentals: { no: '02', title: 'First Principles' },
-  materials: { no: '03', title: 'Material Specifications' },
-  fitFinder: { no: '04', title: 'Load Calculation' },
-  tax: { no: '05', title: 'Compliance Schedule' },
-  giftCity: { no: '06', title: 'GIFT City' },
-  contact: { no: '07', title: 'Site Office' },
+  materials: { no: '02', title: 'Material Specifications' },
+  fitFinder: { no: '03', title: 'Load Calculation' },
+  tax: { no: '04', title: 'Compliance Schedule' },
+  giftCity: { no: '05', title: 'GIFT City' },
+  contact: { no: '06', title: 'Site Office' },
 } as const
 
 /**
