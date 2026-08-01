@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GiftGate } from '@/components/gift/GiftGate'
 import { INBOUND_GROUP_ORDER } from '@/lib/gift/data'
 import { DISCLOSURE } from '@/lib/constants'
+import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 
 export const metadata: Metadata = {
   title: 'GIFT City inbound funds — NRI investing into India (USD)',
@@ -37,6 +38,8 @@ export default function GiftInboundPage() {
           Below is the desk&apos;s working repository, organised by the role each fund plays.
         </p>
       </header>
+
+      <UsPersonWarning className="mb-8 max-w-[860px]" />
 
       <GiftGate direction="inbound" curatedAsOf="July 2026" groupOrder={INBOUND_GROUP_ORDER} />
 

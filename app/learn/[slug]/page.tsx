@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { PRODUCTS, productBySlug } from '@/lib/content/products'
 import { FD_PATH_5Y, formatCr } from '@/lib/content/format'
 import { DISCLOSURE, SITE } from '@/lib/constants'
+import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -145,7 +146,24 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="bg-bronze-wash border border-bronze-soft border-l-4 border-l-bronze px-5 py-4.5">
               <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2">If you are an NRI</h2>
               <p className="text-[15px] text-ink-soft">{p.nriNote}</p>
+              <UsPersonWarning className="mt-3.5" />
             </div>
+          )}
+
+          {/* STT-on-hedged cross-link (P1-8) — market-neutral + long-short */}
+          {(p.id === 'mn' || p.id === 'lssif') && (
+            <Link
+              href="/tax#stt-hedged"
+              className="block bg-white-warm border border-line border-l-4 border-l-signal px-5 py-4.5 hover:bg-paper transition-colors"
+            >
+              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
+                Cost watch — 2026 STT hike
+              </span>
+              <span className="font-sans text-[14.5px] font-semibold text-ink">
+                The April 2026 STT rise hits high-turnover hedged books hardest. See what it does to
+                the net spread →
+              </span>
+            </Link>
           )}
 
           {isGift && (

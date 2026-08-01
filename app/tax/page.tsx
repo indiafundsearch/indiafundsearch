@@ -18,8 +18,9 @@ export default function TaxPage() {
           How each structure is taxed. FY 2026–27.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-3.5">
-          Post-tax return is the only return that reaches you. Union Budget 2026 left the
-          capital-gains framework unchanged — the schedule below reflects the law as it stands.{' '}
+          Post-tax return is the only return that reaches you. Union Budget 2026 left the headline
+          capital-gains rates unchanged, but changed two things that matter to this audience —
+          buyback taxation and securities transaction tax (both below).{' '}
           <em className="text-bronze italic">Always confirm with your Chartered Accountant before acting.</em>
         </p>
       </div>
@@ -30,7 +31,9 @@ export default function TaxPage() {
         <b className="font-sans">Recent changes worth knowing —</b>
         <ul className="mt-2 space-y-1">
           {[
-            <><b>Budget 2026 (Feb 2026):</b> LTCG rates unchanged at 12.5%. Buyback proceeds are now taxed as capital gains for all shareholder categories. STT on commodity futures raised to 0.05%.</>,
+            <><b>Budget 2026 — LTCG:</b> headline rates unchanged at 12.5%.</>,
+            <><b>Budget 2026 — buyback (buybacks on/after 1 Apr 2026):</b> capital-gains treatment is restored for shareholders (reversing the Oct 2024 deemed-dividend regime) — <b>but a separate additional buyback tax now applies</b>, and it captures <b>promoters</b> as well as shareholders above the prescribed holding threshold. See the Promoters note below. <span className="text-alert">[Figures/threshold per Budget 2026 — confirm against the final Finance Bill 2026 and your CA before relying on them.]</span></>,
+            <><b>Budget 2026 — STT (from 1 Apr 2026):</b> transaction tax raised across equity <b>derivatives</b>, not just commodities — futures 0.02% → 0.05%, options premium 0.10% → 0.15% (and exercise to 0.15%). This lands hardest on high-turnover hedged strategies — see the note below.</>,
             <><b>Since July 2024:</b> uniform 12.5% LTCG across asset classes (no indexation); listed assets turn long-term at 12 months, unlisted at 24 months; equity STCG at 20%.</>,
             <><b>Debt mutual funds</b> purchased after 1 Apr 2023 are taxed at slab rate irrespective of holding period.</>,
             <><b>FDs, corporate bonds/deposits and Debt PMS</b> in this framework are treated at slab rate throughout — <b>no long-term capital-gains concession</b> is assumed on the debt sleeve.</>,
@@ -41,6 +44,57 @@ export default function TaxPage() {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* P1-7 — dedicated Promoters note */}
+      <div className="bg-white-warm border border-line border-l-4 border-l-bronze px-6 py-5 mt-[22px] text-[15px] text-ink-soft max-w-[860px]">
+        <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2">
+          Promoters — the buyback carve-out
+        </div>
+        <p>
+          Budget 2026 restored capital-gains treatment on buybacks for shareholders, but it did{' '}
+          <b>not</b> make buybacks tax-neutral for promoters. A separate <b>additional buyback tax</b>{' '}
+          applies to persons classified as <b>promoters</b> — and to shareholders above the prescribed
+          holding threshold — producing an effective rate materially higher than the headline 12.5%,
+          reported around <b>~22% for corporate promoters</b> and <b>~30% for non-corporate
+          promoters</b>, for buybacks on or after <b>1 Apr 2026</b>.
+        </p>
+        <p className="mt-2 font-serif italic text-[13.5px] text-slate">
+          These figures follow Budget 2026 as summarised for this audience; the exact rate, the
+          promoter definition and the holding threshold must be confirmed against the final Finance
+          Bill 2026 text and your Chartered Accountant before you act. If a family business buyback is
+          on the table, this is a conversation to have <em>before</em> the resolution, not after.
+        </p>
+      </div>
+
+      {/* P1-8 — STT impact on hedged strategies */}
+      <div id="stt-hedged" className="scroll-mt-28 bg-ink text-white-warm px-6 py-6 mt-[22px] max-w-[860px]">
+        <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-signal mb-2">
+          What the 2026 STT hike does to hedged strategies
+        </div>
+        <p className="text-[15.5px] text-[#c7d6ce]">
+          Securities transaction tax is charged on <b className="text-white-warm">every trade</b>, so
+          its cost scales with turnover. Directional, low-churn portfolios barely feel a rate change.
+          But <b className="text-white-warm">hedged strategies trade constantly</b> — a market-neutral
+          book runs matched long and short legs and re-balances them; a long-short SIF rolls index
+          futures and options to manage its hedge. From <b className="text-white-warm">1 Apr 2026</b>,
+          futures STT rose 0.02% → 0.05% and options-premium STT 0.10% → 0.15%, so the transaction-cost
+          base of exactly these strategies stepped up — a permanent drag that comes straight out of the
+          spread they are trying to harvest.
+        </p>
+        <p className="text-[14.5px] text-[#9db5aa] mt-3">
+          The takeaway is not &ldquo;avoid them&rdquo; — it is that the <b className="text-white-warm">net</b>{' '}
+          (after-STT, after-fee) spread is what matters, and it just got thinner. Ask any Cat III
+          market-neutral or long-short manager how the April 2026 STT change moved their gross-to-net.
+        </p>
+        <div className="flex gap-4 flex-wrap mt-4 font-sans text-[13px] font-medium tracking-[0.06em] uppercase">
+          <a href="/learn/market-neutral-funds" className="text-signal border-b-[1.5px] border-signal/50 hover:border-signal">
+            Market-Neutral Funds →
+          </a>
+          <a href="/learn/long-short-sif" className="text-signal border-b-[1.5px] border-signal/50 hover:border-signal">
+            Long-Short SIFs →
+          </a>
+        </div>
       </div>
 
       <div className="bg-white-warm border border-line border-l-4 border-l-alert px-6 py-5 mt-[22px] text-[15px] text-ink-soft">

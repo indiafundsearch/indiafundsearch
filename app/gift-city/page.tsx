@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
+import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default function GiftCityPage() {
           <em className="text-bronze italic">out</em> to global markets — both without the old
           friction. We currently curate products on both routes.
         </p>
+        <UsPersonWarning className="mt-7 max-w-[720px]" />
       </section>
 
       {/* Two routes */}
