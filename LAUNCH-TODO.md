@@ -1,54 +1,44 @@
-# Launch TODO — owner / adviser actions
+# IndiaFundSearch — Launch status & handoff
 
-Code is live; these need a human with the right authority before the flagged
-content can be treated as final.
+**Status: LIVE at https://www.indiafundsearch.com** — domain + SSL, leads saving,
+email alerts + OTP working, analytics on, all P0/P1/P2/P3 work shipped and
+QC-verified. Safe to promote. This file is the running handoff — read it first
+in any new session.
 
-## 🔴 Tax figures — confirm against Finance Bill 2026 + CA (post-cutoff, unverified)
+---
 
-All Budget-2026 figures on the site are ticket-provided and flagged in-page.
-None should be relied on until confirmed:
+## ✅ Done (nothing needed)
+Domain/SSL · leads → Sanity + email alerts to hello@jslwealth.in · OTP gate
+(now GIFT-hub only) · Vercel Analytics ON · Resend verified/working · SEO
+(per-page OG, schema, hreflang, sitemap, robots, brand title) · money-keyword
+pages · Privacy Policy (/privacy) · tax figures confirmed by owner (caveats
+softened) · fund repository cleared for display · registration line removed by
+choice · booking CTAs hidden by choice (WhatsApp + forms used instead) ·
+nav/sheet numbers aligned 1:1.
 
-- **`/tax` — buyback (P1-7):** the additional buyback tax rates
-  (~22% corporate promoters / ~30% non-corporate), the promoter definition
-  and the holding threshold. Confirm against the final Finance Bill 2026 text.
-- **`/tax` — STT (P1-8):** futures 0.02→0.05%, options premium 0.10→0.15%,
-  exercise 0.15%, effective 1 Apr 2026.
+---
 
-## 🔴 US-person module — fill + un-gate (P1-10)
+## ⏳ Pending FROM OWNER (none block promotion)
 
-`/learn/us-nri-pfic` is currently `noindex` with visible `[COPY NEEDED]`
-blocks (search the file for `CopyNeeded`). With US-qualified counsel:
+1. **`/learn/us-nri-pfic`** — get **US-qualified tax counsel** to write the three
+   `[COPY NEEDED]` blocks (search `CopyNeeded` in `app/learn/us-nri-pfic/page.tsx`):
+   QEF/Form-8621 per fund, FBAR/8938 thresholds + Canada, and which shelf funds
+   accept US persons. Then remove its `noindex` to publish. *Currently hidden;
+   the general warning + "talk to desk" already works.*
+2. **`/privacy`** — have your compliance/legal adviser glance at it (it's live and
+   substantively accurate; just wants a sign-off).
+3. **`/about`** — DEFERRED by owner. When ready: supply photo + bio + credentials
+   + 1992 lineage + empanelment set (fill `CopyNeeded` blocks in
+   `app/about/page.tsx`), then remove its `noindex`. Byline currently → /contact.
+4. **Booking link** — optional. If you set up cal.com/Calendly, paste the URL and
+   the "Book a conversation" CTAs turn back on (`CONTACT.calendlyUrl`).
+5. **Real GIFT products** — optional. Add final fund data in `/studio` (overrides
+   the in-code list).
 
-1. Replace each `[COPY NEEDED]` block (QEF/8621 per-fund, FBAR/8938 thresholds
-   + Canadian T1135, and which shelf products are open to US persons).
-2. Remove `robots: { index: false, follow: false }` from the page metadata to
-   turn it into the indexed, high-value page.
+## 🔁 Recurring / ops
+- **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
+- **Google Search Console** — sitemap submitted + indexing requested; just monitor.
+- **Curation date** — bump `GIFT_SHELF.curatedAsOf` monthly (currently August 2026).
 
-## 🟡 Contact / config placeholders (if any remain)
-
-- Booking link (`CONTACT.calendlyUrl` in `lib/constants.ts`) is blank — the
-  "Book a conversation" CTAs stay hidden until it's set.
-
-## 🔴 About page — fill + un-index (P3-26, E-E-A-T)
-
-`/about` is live but `noindex` with `[COPY NEEDED]` blocks. With the owner:
-
-1. Supply a professional photograph of Yash Jhaveri, the bio + credentials,
-   the 1992 firm lineage, and the empanelment set (AMCs + any AMFI ARN /
-   IFSCA ref). Replace each `CopyNeeded` block in `app/about/page.tsx`.
-2. Remove `robots: { index: false, follow: false }` so it becomes the
-   authorship/E-E-A-T asset Google can see.
-3. Confirm the byline "Reviewed by the IndiaFundSearch desk" wording, and
-   set the real reviewer if a named, credentialled reviewer is preferred
-   (`components/shared/Byline.tsx`).
-
-## 🟡 SEO — later phase (P3-29)
-
-- Region-specific NRI-corridor landing routes (US / UAE / UK). hreflang is
-  already emitted (`en-IN/en-AE/en-US/x-default`) but currently self-refers;
-  its value unlocks once corridor pages exist.
-
-## 🟡 Shelf currency
-
-- Keep `GIFT_SHELF.curatedAsOf` in `lib/constants.ts` current when the desk
-  reviews the inbound/outbound shelves.
+## 🔮 Deferred features (also saved in memory — will remind next update)
+- NRI-corridor landing routes (US / UAE / UK) — makes hreflang pay off.
