@@ -1,19 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { GiftRepositoryTable } from '@/components/gift/GiftRepositoryTable'
-import { getGiftProducts } from '@/lib/gift/data'
-import { DISCLOSURE, SITE } from '@/lib/constants'
+import { GiftGate } from '@/components/gift/GiftGate'
+import { OUTBOUND_GROUP_ORDER } from '@/lib/gift/data'
+import { DISCLOSURE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'GIFT City outbound — global investing for resident Indians (LRS)',
   description:
-    'Curated GIFT IFSC outbound products for resident Indians: global equity, US technology and USD income strategies via the RBI LRS route (US $250,000/year). Minimums, liquidity and tax notes.',
-  alternates: { canonical: `${SITE.url}/gift-city/outbound` },
+    'How resident Indians access global markets through GIFT City under the LRS route. Eligibility-gated reference shelf.',
+  // Named private-placement shelf — keep it out of the index (P0-5).
+  robots: { index: false, follow: false },
 }
 
-export default async function GiftOutboundPage() {
-  const { products } = await getGiftProducts('outbound')
-
+export default function GiftOutboundPage() {
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
@@ -30,10 +29,10 @@ export default async function GiftOutboundPage() {
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
           Resident Indians can invest globally through the RBI&apos;s LRS route —{' '}
           <b>US $2,50,000 per person per year</b>. Below is our{' '}
-          <b>Curated Global Fund Repository</b>: a working shortlist of GIFT City-accessible
+          <b>Curated Global Fund Repository</b>: a working reference list of GIFT City-accessible
           routes, organised by the role each plays in a global sleeve.{' '}
           <em className="text-bronze italic">
-            Starred (★) lines form the recommended core.
+            A reference list for eligible investors — not investment advice.
           </em>
         </p>
         <Link
@@ -44,7 +43,7 @@ export default async function GiftOutboundPage() {
         </Link>
       </header>
 
-      <GiftRepositoryTable products={products} curatedAsOf="June 2026" />
+      <GiftGate direction="outbound" curatedAsOf="June 2026" groupOrder={OUTBOUND_GROUP_ORDER} />
 
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Tax, in one line —</b> GIFT/global fund units held by residents:

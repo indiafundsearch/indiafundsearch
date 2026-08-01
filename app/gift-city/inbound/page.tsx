@@ -1,19 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { GiftRepositoryTable } from '@/components/gift/GiftRepositoryTable'
-import { INBOUND_GROUP_ORDER, getGiftProducts } from '@/lib/gift/data'
-import { DISCLOSURE, SITE } from '@/lib/constants'
+import { GiftGate } from '@/components/gift/GiftGate'
+import { INBOUND_GROUP_ORDER } from '@/lib/gift/data'
+import { DISCLOSURE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'GIFT City inbound funds — NRI investing into India (USD)',
   description:
-    'Curated GIFT IFSC inbound funds for NRIs and foreign investors: Indian equity, market-neutral and private credit strategies, subscribed in US dollars under IFSCA. Minimums, liquidity and tax notes.',
-  alternates: { canonical: `${SITE.url}/gift-city/inbound` },
+    'How NRIs and foreign investors access Indian strategies through GIFT City in US dollars. Eligibility-gated reference shelf.',
+  // Named private-placement shelf — keep it out of the index (P0-5).
+  robots: { index: false, follow: false },
 }
 
-export default async function GiftInboundPage() {
-  const { products } = await getGiftProducts('inbound')
-
+export default function GiftInboundPage() {
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
@@ -39,11 +38,7 @@ export default async function GiftInboundPage() {
         </p>
       </header>
 
-      <GiftRepositoryTable
-        products={products}
-        curatedAsOf="July 2026"
-        groupOrder={INBOUND_GROUP_ORDER}
-      />
+      <GiftGate direction="inbound" curatedAsOf="July 2026" groupOrder={INBOUND_GROUP_ORDER} />
 
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Eligibility, in one line —</b> inbound GIFT funds are built for

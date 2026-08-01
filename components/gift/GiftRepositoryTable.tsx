@@ -13,9 +13,10 @@ interface GiftRepositoryTableProps {
 }
 
 /**
- * Curated repository table — the desk one-pager format: grouped role
- * sections, ★ recommended-core rows, orange * for lower accredited
- * minimums, theme chips. Rows expand for detail + enquiry.
+ * Curated repository table — grouped role sections, factual theme chips,
+ * and an orange * for lower accredited-investor minimums (a PPM fact, not a
+ * recommendation). Rows expand for detail + enquiry. No evaluative signals:
+ * this is an education/reference surface, not investment advice.
  */
 export function GiftRepositoryTable({
   products,
@@ -70,24 +71,14 @@ export function GiftRepositoryTable({
                 </tr>
                 {g.rows.map((p) => {
                   const open = openId === p._id
-                  const core = p.recommendedCore
                   return (
                     <Fragment key={p._id}>
                       <tr
                         onClick={() => setOpenId(open ? null : p._id)}
                         aria-expanded={open}
-                        className={`cursor-pointer align-top transition-colors ${
-                          core
-                            ? 'bg-bronze-wash [&>td:first-child]:border-l-[3px] [&>td:first-child]:border-l-signal'
-                            : 'bg-white-warm hover:bg-paper'
-                        } ${core ? 'hover:bg-[#fbe6d2]' : ''}`}
+                        className="cursor-pointer align-top transition-colors bg-white-warm hover:bg-paper"
                       >
                         <td className="px-5 py-4 border-b border-line-soft font-sans font-bold text-[15.5px] min-w-[200px]">
-                          {core && (
-                            <span className="text-signal mr-1.5" title="Recommended core" aria-label="Recommended core">
-                              ★
-                            </span>
-                          )}
                           {p.name}
                         </td>
                         <td className="px-5 py-4 border-b border-line-soft font-serif text-[14.5px] text-ink-soft max-w-[380px]">
@@ -115,7 +106,7 @@ export function GiftRepositoryTable({
                       <AnimatePresence initial={false}>
                         {open && (
                           <tr>
-                            <td colSpan={5} className={`border-b border-line-soft p-0 ${core ? 'bg-bronze-wash' : 'bg-white-warm'}`}>
+                            <td colSpan={5} className="border-b border-line-soft p-0 bg-white-warm">
                               <motion.div
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: 'auto', opacity: 1 }}
@@ -160,13 +151,8 @@ export function GiftRepositoryTable({
         </div>
       )}
       <p className="font-serif text-[13.5px] text-slate mt-3">
-        {products.some((p) => p.recommendedCore) && (
-          <>
-            <span className="text-signal">★</span> = Recommended core.{' '}
-          </>
-        )}
         Access route, domicile and minimums are confirmed against the relevant PPM at onboarding.
-        Tap any row for the full note and to ask the desk.
+        This is a reference list, not a recommendation. Tap any row for the full note and to ask the desk.
       </p>
     </div>
   )

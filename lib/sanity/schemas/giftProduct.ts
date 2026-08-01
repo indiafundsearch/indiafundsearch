@@ -81,12 +81,6 @@ const giftProduct = {
       description: 'Short uppercase theme, e.g. "SEMIS · ROBOTICS · AI"',
     },
     {
-      name: 'recommendedCore',
-      title: '★ Recommended Core',
-      type: 'boolean',
-      initialValue: false,
-    },
-    {
       name: 'lowerMinForAccredited',
       title: 'Lower Minimum for Accredited Investors (*)',
       type: 'boolean',

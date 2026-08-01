@@ -7,9 +7,10 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/learn', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/fit-finder', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/tax', priority: 0.8, changeFrequency: 'monthly' },
+  // /gift-city hub stays indexed (the SEO asset). The inbound/outbound fund
+  // shelves are intentionally excluded — they are noindex, eligibility-gated
+  // private-placement references (P0-5).
   { path: '/gift-city', priority: 0.9, changeFrequency: 'weekly' },
-  { path: '/gift-city/inbound', priority: 0.9, changeFrequency: 'weekly' },
-  { path: '/gift-city/outbound', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/contact', priority: 0.6, changeFrequency: 'monthly' },
 ]
 

@@ -23,9 +23,8 @@ export interface GiftProduct {
   group?: string
   /** theme chip, e.g. "SEMIS · ROBOTICS · AI" */
   theme?: string
-  /** ★ — part of the recommended core */
-  recommendedCore?: boolean
-  /** orange * — materially lower minimum for Accredited Investors (per PPM) */
+  /** orange * — materially lower minimum for Accredited Investors (per PPM).
+   *  A factual, non-evaluative disclosure — not a recommendation. */
   lowerMinForAccredited?: boolean
 }
 
@@ -208,7 +207,6 @@ const OUTBOUND_REPOSITORY: GiftProduct[] = [
     status: 'Open',
     group: 'Innovation & Growth',
     theme: 'SEMIS · ROBOTICS · AI',
-    recommendedCore: true,
   },
   {
     _id: 'out-ashoka-whiteoak-em',
@@ -224,7 +222,6 @@ const OUTBOUND_REPOSITORY: GiftProduct[] = [
     status: 'Open',
     group: 'Innovation & Growth',
     theme: 'EM EX-INDIA',
-    recommendedCore: true,
     lowerMinForAccredited: true,
   },
   {
@@ -241,7 +238,6 @@ const OUTBOUND_REPOSITORY: GiftProduct[] = [
     status: 'Open',
     group: 'Innovation & Growth',
     theme: 'GREATER CHINA',
-    recommendedCore: true,
   },
   {
     _id: 'out-dsp-global-equity',
@@ -273,7 +269,6 @@ const OUTBOUND_REPOSITORY: GiftProduct[] = [
     status: 'Open',
     group: 'Diversification & INR Hedge',
     theme: 'MULTI-ASSET CORE',
-    recommendedCore: true,
     lowerMinForAccredited: true,
   },
   {
@@ -360,7 +355,7 @@ const OUTBOUND_REPOSITORY: GiftProduct[] = [
 const GIFT_QUERY = `*[_type == "giftProduct" && direction == $direction && status != "Closed"] | order(order asc, name asc) {
   _id, name, direction, structure, manager, thesis, description,
   minInvestment, indicativeReturn, liquidity, currency, eligibility, taxNote, status,
-  "group": productGroup, theme, recommendedCore, lowerMinForAccredited
+  "group": productGroup, theme, lowerMinForAccredited
 }`
 
 /**
