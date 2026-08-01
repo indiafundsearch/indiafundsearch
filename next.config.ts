@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       { source: "/diagnostic", destination: "/fit-finder", permanent: true },
       { source: "/tools", destination: "/fit-finder", permanent: true },
       { source: "/tools/:slug", destination: "/fit-finder", permanent: true },
-      { source: "/about", destination: "/contact", permanent: true },
+      // NOTE: /about is now a real E-E-A-T page (P3-26) — no longer redirected.
     ];
   },
 };

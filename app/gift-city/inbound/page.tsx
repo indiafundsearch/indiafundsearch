@@ -4,14 +4,16 @@ import { GiftGate } from '@/components/gift/GiftGate'
 import { INBOUND_GROUP_ORDER } from '@/lib/gift/data'
 import { DISCLOSURE, GIFT_SHELF } from '@/lib/constants'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+// Named private-placement shelf — keep it out of the index (P0-5).
+export const metadata: Metadata = pageMeta({
   title: 'GIFT City inbound funds — NRI investing into India (USD)',
   description:
     'How NRIs and foreign investors access Indian strategies through GIFT City in US dollars. Eligibility-gated reference shelf.',
-  // Named private-placement shelf — keep it out of the index (P0-5).
-  robots: { index: false, follow: false },
-}
+  path: '/gift-city/inbound',
+  noindex: true,
+})
 
 export default function GiftInboundPage() {
   return (

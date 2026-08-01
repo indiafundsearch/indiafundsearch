@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact/ContactForm'
-import { CONTACT, DISCLOSURE, SHEETS, SITE, whatsappHref } from '@/lib/constants'
+import { CONTACT, DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Talk to the desk — Beyond',
   description:
     'Start a conversation with the Beyond desk about PMS, AIF, SIF or GIFT City investments. WhatsApp, book a call, or write to us — reply within one working day.',
-  alternates: { canonical: `${SITE.url}/contact` },
-}
+  path: '/contact',
+})
 
 export default function ContactPage() {
   return (

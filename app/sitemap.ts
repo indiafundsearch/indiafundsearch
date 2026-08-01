@@ -12,6 +12,10 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   // private-placement references (P0-5).
   { path: '/gift-city', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/contact', priority: 0.6, changeFrequency: 'monthly' },
+  // Standalone money-keyword guides (P3-25)
+  { path: '/learn/what-is-pms', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/learn/what-is-aif', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/learn/pms-vs-aif', priority: 0.9, changeFrequency: 'monthly' },
 ]
 
 export const revalidate = 3600

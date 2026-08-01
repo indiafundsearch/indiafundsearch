@@ -3,14 +3,16 @@ import Link from 'next/link'
 import { GiftGate } from '@/components/gift/GiftGate'
 import { OUTBOUND_GROUP_ORDER } from '@/lib/gift/data'
 import { DISCLOSURE, GIFT_SHELF } from '@/lib/constants'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+// Named private-placement shelf — keep it out of the index (P0-5).
+export const metadata: Metadata = pageMeta({
   title: 'GIFT City outbound — global investing for resident Indians (LRS)',
   description:
-    'How resident Indians access global markets through GIFT City under the LRS route. Eligibility-gated reference shelf.',
-  // Named private-placement shelf — keep it out of the index (P0-5).
-  robots: { index: false, follow: false },
-}
+    'How resident Indians access global markets through GIFT City and offshore routes under the LRS route. Eligibility-gated reference shelf.',
+  path: '/gift-city/outbound',
+  noindex: true,
+})
 
 export default function GiftOutboundPage() {
   return (

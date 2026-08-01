@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer'
 import { Analytics } from '@/components/shared/Analytics'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 import { LeadGate } from '@/components/gate/LeadGate'
+import { JsonLd } from '@/components/shared/JsonLd'
+import { organizationJsonLd, personJsonLd } from '@/lib/seo'
 import { SITE } from '@/lib/constants'
 
 const grotesk = Space_Grotesk({
@@ -38,13 +40,9 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   applicationName: SITE.name,
-  authors: [{ name: 'IndiaFundSearch' }, { name: 'Beyond' }],
-  keywords: [
-    'PMS', 'AIF', 'SIF', 'GIFT City', 'GIFT City funds', 'Indian alternatives',
-    'PMS vs AIF', 'AIF categories explained', 'PMS taxation India',
-    'GIFT City inbound fund', 'GIFT City outbound', 'NRI investment India',
-    'private credit India', 'pre-IPO investing',
-  ],
+  // Per-route keyword targeting lives in each page's title/description/H1
+  // (the real ranking signals) — the ignored meta-keywords tag is removed (P3-30).
+  authors: [{ name: 'Yash Jhaveri', url: `${SITE.url}/about` }],
   openGraph: {
     title: 'IndiaFundSearch — The Architecture of Alternatives',
     description: SITE.description,
@@ -76,15 +74,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: SITE.name,
-  url: SITE.url,
-  description: SITE.description,
-  logo: `${SITE.url}/og`,
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -94,10 +83,7 @@ export default function RootLayout({
       className={`${grotesk.variable} ${newsreader.variable} ${plexMono.variable} h-full`}
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={[organizationJsonLd(), personJsonLd()]} />
       </head>
       <body className="min-h-full flex flex-col">
         <Analytics />

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { FitFinder } from '@/components/fit/FitFinder'
-import { SHEETS, SITE } from '@/lib/constants'
+import { SHEETS } from '@/lib/constants'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Fit Finder — which alternative investment fits you?',
   description:
     'Seven questions narrow thirteen SEBI-regulated structures — PMS, AIF, SIF, REITs, private credit, GIFT City — to a personal shortlist. Free, on screen, no login.',
-  alternates: { canonical: `${SITE.url}/fit-finder` },
-}
+  path: '/fit-finder',
+})
 
 export default function FitFinderPage() {
   return (

@@ -1,13 +1,34 @@
 import type { Metadata } from 'next'
 import { TaxTables } from '@/components/tax/TaxTables'
-import { SHEETS, SITE } from '@/lib/constants'
+import { JsonLd } from '@/components/shared/JsonLd'
+import { SHEETS } from '@/lib/constants'
+import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Taxation of PMS, AIF, SIF & GIFT City — FY 2026–27',
   description:
     'How every Indian alternative investment structure is taxed in FY 2026–27 — PMS, AIF Cat I/II/III, SIF, REITs, debt MF, GIFT City funds. Resident and NRI schedules, post-Budget 2026.',
-  alternates: { canonical: `${SITE.url}/tax` },
-}
+  path: '/tax',
+})
+
+const TAX_FAQ = [
+  {
+    q: 'How is PMS taxed in India?',
+    a: 'A PMS holds shares directly in your own demat account, so gains are taxed exactly like buying shares yourself — the manager’s churn creates capital gains in your ledger each year. Listed equity: STCG 20% under 12 months, LTCG 12.5% beyond 12 months (₹1.25 L exempt per year).',
+  },
+  {
+    q: 'How is an AIF taxed?',
+    a: 'It depends on the category. Cat I and Cat II AIFs are pass-through — income is taxed in your hands as if you held the underlying. Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific), and you receive a post-tax NAV.',
+  },
+  {
+    q: 'Do NRIs pay tax differently on these structures?',
+    a: 'Often yes — TDS is deducted at source and treaty relief may apply, so the effective rate and filing differ from a resident’s. GIFT City (IFSC) structures can be materially cleaner for non-residents. Treatment is fund- and residency-specific; confirm with your CA.',
+  },
+  {
+    q: 'What changed for buybacks and STT in Budget 2026?',
+    a: 'Budget 2026 restored capital-gains treatment on buybacks for shareholders but added a separate additional buyback tax capturing promoters; and it raised STT across equity derivatives (futures and options), effective 1 Apr 2026. Confirm the exact figures against the final Finance Bill and your CA.',
+  },
+]
 
 export default function TaxPage() {
   return (
@@ -104,6 +125,29 @@ export default function TaxPage() {
         disclosed and discussed before any transaction. Please verify with your Chartered
         Accountant.
       </div>
+
+      {/* FAQ (P3-27 — matches the FAQPage schema below) */}
+      <div className="mt-16">
+        <div className="dim mb-8"><span>Frequently asked</span></div>
+        <div className="space-y-5 max-w-[820px]">
+          {TAX_FAQ.map((f) => (
+            <div key={f.q}>
+              <h2 className="font-sans font-bold text-[18px]">{f.q}</h2>
+              <p className="font-serif text-[16px] text-ink-soft mt-1.5">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <JsonLd
+        data={[
+          faqJsonLd(TAX_FAQ),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Taxation', path: '/tax' },
+          ]),
+        ]}
+      />
     </div>
   )
 }

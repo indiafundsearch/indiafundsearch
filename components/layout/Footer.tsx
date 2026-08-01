@@ -35,6 +35,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="font-sans text-[14px] text-[#c7d6ce] hover:text-white-warm transition-colors"
+                >
+                  <span className="font-mono text-[10px] text-bronze-soft mr-2">07</span>
+                  About
+                </Link>
+              </li>
             </ul>
           </nav>
 

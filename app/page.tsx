@@ -3,15 +3,17 @@ import Link from 'next/link'
 import { SpectrumExplorer } from '@/components/spectrum/SpectrumExplorer'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES } from '@/lib/content/articles'
-import { SHEETS, SITE } from '@/lib/constants'
+import { SHEETS } from '@/lib/constants'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'The Spectrum — every SEBI-regulated alternative, mapped',
+export const metadata: Metadata = pageMeta({
+  title: 'IndiaFundSearch — Every SEBI-Regulated Alternative Investment in India, Mapped',
+  absoluteTitle: true,
   description:
-    'An interactive map of thirteen investment structures — PMS, AIF, SIF, REITs, private credit, GIFT City — by risk, liquidity, outcome and objective. ' +
-    SITE.description,
-  alternates: { canonical: SITE.url },
-}
+    'An interactive map of every SEBI-regulated alternative in India — PMS, AIF, SIF, REITs, private credit, GIFT City — by risk, liquidity, outcome and objective. Education-first, no login.',
+  path: '/',
+  ogTitle: 'Every SEBI-Regulated Alternative in India, Mapped',
+})
 
 export default function HomePage() {
   const featured = ARTICLES.slice(0, 3)

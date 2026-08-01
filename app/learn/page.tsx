@@ -5,14 +5,15 @@ import { ComparisonTable } from '@/components/learn/ComparisonTable'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES } from '@/lib/content/articles'
 import { PRODUCTS } from '@/lib/content/products'
-import { SHEETS, SITE } from '@/lib/constants'
+import { SHEETS } from '@/lib/constants'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Learn — PMS, AIF, SIF & GIFT City fundamentals',
   description:
     'Plain-English fundamentals of Indian alternative investing: what is PMS, what is AIF, PMS vs AIF, AIF categories decoded, GIFT City for NRIs — plus the thirteen materials of a modern portfolio.',
-  alternates: { canonical: `${SITE.url}/learn` },
-}
+  path: '/learn',
+})
 
 export default function LearnPage() {
   return (

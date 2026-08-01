@@ -3,8 +3,11 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PRODUCTS, productBySlug } from '@/lib/content/products'
 import { FD_PATH_5Y, formatCr } from '@/lib/content/format'
-import { DISCLOSURE, SHEETS, SITE } from '@/lib/constants'
+import { DISCLOSURE, SHEETS } from '@/lib/constants'
+import { pageMeta, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
+import { JsonLd } from '@/components/shared/JsonLd'
+import { Byline } from '@/components/shared/Byline'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -18,11 +21,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const p = productBySlug(slug)
   if (!p) return {}
-  return {
+  return pageMeta({
     title: `${p.name} — what it is, costs, taxation`,
     description: `${p.name} (${p.badge}) explained: ${p.analogy.slice(0, 140)}…`,
-    alternates: { canonical: `${SITE.url}/learn/${p.slug}` },
-  }
+    path: `/learn/${p.slug}`,
+    ogTitle: p.name,
+  })
 }
 
 function SpecList({ title, items }: { title: string; items: string[] }) {
@@ -63,19 +67,22 @@ export default async function ProductPage({ params }: PageProps) {
     ['Horizon', p.horizon],
   ]
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: `${p.name} — what it is, costs, taxation`,
-    description: p.analogy,
-    author: { '@type': 'Organization', name: SITE.name },
-    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-    mainEntityOfPage: `${SITE.url}/learn/${p.slug}`,
-  }
-
   return (
     <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: `${p.name} — what it is, costs, taxation`,
+            description: p.analogy,
+            path: `/learn/${p.slug}`,
+          }),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Learn', path: '/learn' },
+            { name: p.name, path: `/learn/${p.slug}` },
+          ]),
+        ]}
+      />
 
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/learn" className="hover:text-ink">Sheet {SHEETS.materials.no} — Materials</Link>
@@ -96,6 +103,9 @@ export default async function ProductPage({ params }: PageProps) {
         <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[760px]">
           {p.analogy}
         </p>
+        <div className="mt-5">
+          <Byline />
+        </div>
       </header>
 
       {/* Spec strip */}

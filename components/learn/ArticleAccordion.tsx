@@ -1,12 +1,17 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Article } from '@/lib/content/types'
 
 interface ArticleAccordionProps {
   articles: Article[]
 }
+
+/** Articles that also have a standalone, indexable route (P3-25) — the
+ *  accordion links through instead of duplicating the full body. */
+const STANDALONE = new Set(['what-is-pms', 'what-is-aif', 'pms-vs-aif'])
 
 /** Expandable fundamentals reads — deep-linkable via #slug. */
 export function ArticleAccordion({ articles }: ArticleAccordionProps) {
@@ -60,11 +65,23 @@ export function ArticleAccordion({ articles }: ArticleAccordionProps) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <div
-                    className="article-body border-t border-line px-7 py-7 max-sm:px-4"
-                    // In-house authored content from lib/content — not user input
-                    dangerouslySetInnerHTML={{ __html: a.bodyHtml }}
-                  />
+                  {STANDALONE.has(a.slug) ? (
+                    <div className="border-t border-line px-7 py-7 max-sm:px-4">
+                      <p className="font-serif text-[17px] text-ink-soft max-w-[720px]">{a.sub}</p>
+                      <Link
+                        href={`/learn/${a.slug}`}
+                        className="inline-block mt-4 font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft hover:text-ink transition-colors"
+                      >
+                        Read the full guide →
+                      </Link>
+                    </div>
+                  ) : (
+                    <div
+                      className="article-body border-t border-line px-7 py-7 max-sm:px-4"
+                      // In-house authored content from lib/content — not user input
+                      dangerouslySetInnerHTML={{ __html: a.bodyHtml }}
+                    />
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>

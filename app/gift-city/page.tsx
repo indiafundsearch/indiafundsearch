@@ -2,14 +2,16 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
-import { SHEETS, SITE } from '@/lib/constants'
+import { JsonLd } from '@/components/shared/JsonLd'
+import { SHEETS } from '@/lib/constants'
+import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'GIFT City investments — inbound & outbound, explained',
   description:
-    'GIFT City (GIFT IFSC) explained in plain English: inbound USD funds for NRIs investing into Indian strategies, and outbound LRS-route products for residents going global. Curated shelf by Beyond.',
-  alternates: { canonical: `${SITE.url}/gift-city` },
-}
+    'GIFT City (GIFT IFSC) explained in plain English: inbound USD funds for NRIs investing into Indian strategies, and outbound LRS-route products for residents going global.',
+  path: '/gift-city',
+})
 
 const ROUTES = [
   {
@@ -45,6 +47,12 @@ const ROUTES = [
 export default function GiftCityPage() {
   return (
     <div className="pb-24">
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'GIFT City', path: '/gift-city' },
+        ])}
+      />
       {/* Hero */}
       <section className="mx-auto max-w-[1180px] px-[22px] pt-14 max-sm:pt-9">
         <div className="eyebrow mb-3.5">Sheet {SHEETS.giftCity.no} — The Second Passport for Capital</div>
