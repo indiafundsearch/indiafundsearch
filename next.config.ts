@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "indiafundsearch.vercel.app" }],
         destination: "https://www.indiafundsearch.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       { source: "/knowledge", destination: "/learn", permanent: true },
       { source: "/knowledge/:slug", destination: "/learn", permanent: true },
