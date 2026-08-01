@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { PRODUCTS } from '@/lib/content/products'
+import { SITE } from '@/lib/constants'
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
   { path: '', priority: 1.0, changeFrequency: 'weekly' },
@@ -15,7 +16,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
 export const revalidate = 3600
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://indiafundsearch.com'
+  const siteUrl = SITE.url
   const now = new Date()
 
   return [

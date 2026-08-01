@@ -9,7 +9,14 @@ export const SITE = {
   name: 'IndiaFundSearch',
   initiative: 'A Beyond Initiative',
   tagline: 'The Architecture of Alternatives',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://indiafundsearch.com',
+  /**
+   * Canonical production origin — hardcoded on purpose. This is the primary
+   * domain (apex 301-redirects to www), so every canonical, og:url, og:image,
+   * sitemap and robots URL must use it. It is NOT read from an env var: a wrong
+   * NEXT_PUBLIC_SITE_URL (e.g. the *.vercel.app alias) previously leaked into
+   * all SEO tags and split ranking signals. Change here if the domain ever moves.
+   */
+  url: 'https://www.indiafundsearch.com',
   description:
     'Every SEBI-regulated alternative investment in India — PMS, AIF, SIF, REITs, private credit, GIFT City — explained the way a good advisor would across a table.',
 } as const
