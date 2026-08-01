@@ -39,10 +39,11 @@ export function LeadGate() {
   const [done, setDone] = useState(false)
   const secondsVisible = useRef(0)
 
+  const gated = GATE.gatedPaths.some((p) => pathname.startsWith(p))
   const exempt =
     !GATE.enabled ||
-    GATE.exemptPaths.some((p) => pathname.startsWith(p)) ||
-    (GATE.mode === 'soft' && pathname.startsWith('/learn'))
+    !gated ||
+    GATE.exemptPaths.some((p) => pathname.startsWith(p))
 
   // Count only seconds the tab is actually visible, across route changes.
   useEffect(() => {

@@ -11,7 +11,7 @@ export function Byline({ reviewed = 'July 2026' }: { reviewed?: string }) {
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10.5px] tracking-[0.08em] uppercase text-slate">
       <span>
         By{' '}
-        <Link href="/about" className="text-bronze hover:text-ink border-b border-bronze-soft">
+        <Link href="/contact" className="text-bronze hover:text-ink border-b border-bronze-soft">
           {AUTHOR.name}
         </Link>
       </span>

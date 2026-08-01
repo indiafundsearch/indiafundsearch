@@ -45,21 +45,22 @@ export const DISCLOSURE = {
 } as const
 
 export const GATE = {
-  // 20s OTP lead gate — live (Resend configured in production). Set to false
-  // to switch the popup off site-wide without removing any gate code.
+  // 20s OTP lead popup — live (Resend configured in production). Set to false
+  // to switch it off entirely without removing any gate code.
   enabled: true,
-  /** seconds of visible on-page time before the gate appears */
+  /** seconds of visible on-page time before the popup appears */
   delaySeconds: 20,
   /**
-   * 'hard' — gate every page (owner's choice; note: intrusive-interstitial
-   *          risk for mobile SEO).
-   * 'soft' — gate everything except /learn so the SEO engine stays
-   *          friction-free (recommended).
-   * Flip this one value to switch.
+   * The popup fires ONLY on these high-intent path prefixes (the GIFT City
+   * section). All education (home, /learn, /tax, /fit-finder, /contact) stays
+   * open so cold traffic and shared links are friction-free.
    */
-  mode: 'soft' as 'hard' | 'soft',
-  /** paths never gated (CMS admin must stay reachable) */
-  exemptPaths: ['/studio'],
+  gatedPaths: ['/gift-city'] as string[],
+  /**
+   * Never popped — /studio (CMS), and the two fund shelves which already have
+   * their own eligibility interstitial (no double-gating).
+   */
+  exemptPaths: ['/studio', '/gift-city/inbound', '/gift-city/outbound'] as string[],
   /** days a verified visitor stays ungated on this device */
   verifiedDays: 90,
 } as const
@@ -94,6 +95,7 @@ export const SHEETS = {
  * they can't disagree. Keep `curatedAsOf` current when the desk reviews them.
  */
 export const GIFT_SHELF = {
-  curatedAsOf: 'July 2026',
+  // Bump monthly when the desk reviews the shelves (keeps "Reviewed monthly" honest).
+  curatedAsOf: 'August 2026',
   reviewCadence: 'Reviewed monthly',
 } as const

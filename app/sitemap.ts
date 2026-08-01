@@ -16,6 +16,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/learn/what-is-pms', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/learn/what-is-aif', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/learn/pms-vs-aif', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/privacy', priority: 0.2, changeFrequency: 'monthly' },
 ]
 
 export const revalidate = 3600

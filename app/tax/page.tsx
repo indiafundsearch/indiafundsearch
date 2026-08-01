@@ -26,7 +26,7 @@ const TAX_FAQ = [
   },
   {
     q: 'What changed for buybacks and STT in Budget 2026?',
-    a: 'Budget 2026 restored capital-gains treatment on buybacks for shareholders but added a separate additional buyback tax capturing promoters; and it raised STT across equity derivatives (futures and options), effective 1 Apr 2026. Confirm the exact figures against the final Finance Bill and your CA.',
+    a: 'Budget 2026 restored capital-gains treatment on buybacks for shareholders but added a separate additional buyback tax capturing promoters; and it raised STT across equity derivatives (futures and options), effective 1 Apr 2026. Your specific position depends on your facts — confirm it with your CA.',
   },
 ]
 
@@ -53,7 +53,7 @@ export default function TaxPage() {
         <ul className="mt-2 space-y-1">
           {[
             <><b>Budget 2026 — LTCG:</b> headline rates unchanged at 12.5%.</>,
-            <><b>Budget 2026 — buyback (buybacks on/after 1 Apr 2026):</b> capital-gains treatment is restored for shareholders (reversing the Oct 2024 deemed-dividend regime) — <b>but a separate additional buyback tax now applies</b>, and it captures <b>promoters</b> as well as shareholders above the prescribed holding threshold. See the Promoters note below. <span className="text-alert">[Figures/threshold per Budget 2026 — confirm against the final Finance Bill 2026 and your CA before relying on them.]</span></>,
+            <><b>Budget 2026 — buyback (buybacks on/after 1 Apr 2026):</b> capital-gains treatment is restored for shareholders (reversing the Oct 2024 deemed-dividend regime) — <b>but a separate additional buyback tax now applies</b>, and it captures <b>promoters</b> as well as shareholders above the prescribed holding threshold. See the Promoters note below.</>,
             <><b>Budget 2026 — STT (from 1 Apr 2026):</b> transaction tax raised across equity <b>derivatives</b>, not just commodities — futures 0.02% → 0.05%, options premium 0.10% → 0.15% (and exercise to 0.15%). This lands hardest on high-turnover hedged strategies — see the note below.</>,
             <><b>Since July 2024:</b> uniform 12.5% LTCG across asset classes (no indexation); listed assets turn long-term at 12 months, unlisted at 24 months; equity STCG at 20%.</>,
             <><b>Debt mutual funds</b> purchased after 1 Apr 2023 are taxed at slab rate irrespective of holding period.</>,
@@ -81,10 +81,10 @@ export default function TaxPage() {
           promoters</b>, for buybacks on or after <b>1 Apr 2026</b>.
         </p>
         <p className="mt-2 font-serif italic text-[13.5px] text-slate">
-          These figures follow Budget 2026 as summarised for this audience; the exact rate, the
-          promoter definition and the holding threshold must be confirmed against the final Finance
-          Bill 2026 text and your Chartered Accountant before you act. If a family business buyback is
-          on the table, this is a conversation to have <em>before</em> the resolution, not after.
+          Your exact position — the applicable rate, whether you meet the promoter definition, and the
+          holding threshold — depends on facts specific to you; confirm it with your Chartered
+          Accountant. If a family business buyback is on the table, this is a conversation to have{' '}
+          <em>before</em> the resolution, not after.
         </p>
       </div>
 
