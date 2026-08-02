@@ -5,7 +5,7 @@
 
 import { CONTACT, DISCLOSURE, SITE } from '@/lib/constants'
 
-export type LeadSource = 'Fit Finder' | 'GIFT City Enquiry' | 'Contact'
+export type LeadSource = 'Fit Finder' | 'GIFT City Enquiry' | 'Contact' | 'Corridor Access List'
 
 export type LeadCapturePayload = Record<string, unknown> & {
   /** Fit Finder */
@@ -47,6 +47,8 @@ export function renderLeadCaptureEmail(
       return giftEnquiryEmail(payload)
     case 'Contact':
       return contactEmail(payload)
+    case 'Corridor Access List':
+      return corridorAccessEmail(payload)
   }
 }
 
@@ -103,6 +105,21 @@ function contactEmail(payload: LeadCapturePayload): RenderedEmail {
       'Your note is with the desk. Expect a reply within one working day. If it is time-sensitive, WhatsApp is faster.',
     rows,
     cta: { label: 'WhatsApp the desk', href: `https://wa.me/${CONTACT.whatsappNumber}` },
+  })
+}
+
+function corridorAccessEmail(payload: LeadCapturePayload): RenderedEmail {
+  const corridor = payload.interest ? String(payload.interest) : 'your corridor'
+  const rows: [string, string][] = []
+  if (payload.interest) rows.push(['Corridor', corridor])
+  return template({
+    subject: `Your access list — who onboards investors in ${corridor}`,
+    eyebrow: 'Corridor desk',
+    headline: 'Request logged. The list comes from a human, not a database.',
+    leadParagraph:
+      'Which houses accept investors from your country changes month to month, and no public source tracks it — so we check against our own empanelments before sending anything. Expect the current list within one working day, with minimums and the route each house accepts. If the honest answer is that very little is open to you right now, we will say that too.',
+    rows,
+    cta: deskCta(),
   })
 }
 

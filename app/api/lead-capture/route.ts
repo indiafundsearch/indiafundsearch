@@ -8,7 +8,12 @@ import {
 } from '@/lib/email/leadCaptureEmail'
 import { notifyDesk } from '@/lib/email/deskNotify'
 
-const VALID_SOURCES: LeadSource[] = ['Fit Finder', 'GIFT City Enquiry', 'Contact']
+const VALID_SOURCES: LeadSource[] = [
+  'Fit Finder',
+  'GIFT City Enquiry',
+  'Contact',
+  'Corridor Access List',
+]
 
 /**
  * POST /api/lead-capture

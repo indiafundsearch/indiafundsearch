@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
+import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
@@ -69,6 +70,13 @@ export default function GiftCityPage() {
           friction. We currently curate products on both routes.
         </p>
         <UsPersonWarning className="mt-7 max-w-[720px]" />
+        <p className="text-[16.5px] text-ink-soft max-w-[720px] mt-5">
+          Where you are tax-resident changes the answer more than which fund you pick.{' '}
+          <Link href="/nri" className="text-bronze border-b-[1.5px] border-bronze-soft hover:text-ink">
+            Read the corridor guide for your country
+          </Link>{' '}
+          — the US, the UAE and the UK each work differently.
+        </p>
       </section>
 
       {/* Two routes */}
@@ -147,6 +155,8 @@ export default function GiftCityPage() {
             Tax schedule (Resident / NRI) →
           </Link>
         </div>
+
+        <CorridorSwitcher />
       </FadeInOnScroll>
     </div>
   )
