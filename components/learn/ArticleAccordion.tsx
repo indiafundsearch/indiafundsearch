@@ -48,7 +48,7 @@ export function ArticleAccordion({ articles }: ArticleAccordionProps) {
               href={`/learn/${a.slug}`}
               className="inline-block mt-5 font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft hover:text-ink transition-colors"
             >
-              Open as its own page →
+              Read the full guide →
             </Link>
           )}
         </Disclosure>

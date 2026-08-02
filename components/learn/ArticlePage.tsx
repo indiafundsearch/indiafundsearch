@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Article } from '@/lib/content/types'
+import { guideBySlug, guideReadingTime } from '@/lib/content/guides'
 import { DISCLOSURE } from '@/lib/constants'
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
@@ -40,14 +41,19 @@ export function ArticlePage({ article }: { article: Article }) {
         <p className="font-serif italic text-[19px] text-ink-soft mt-3">{article.sub}</p>
         <div className="mt-4 flex items-center gap-3 flex-wrap">
           <Byline />
-          <span className="font-mono text-[10.5px] text-slate">· {article.min}</span>
+          <span className="font-mono text-[10.5px] text-slate">
+            · {guideReadingTime(article.slug) ?? article.min}
+          </span>
         </div>
       </header>
 
+      {/* The long-form guide where one exists, otherwise the short answer. The
+          two are deliberately different content: /learn shows the summary, this
+          page carries the depth, so the same copy isn't served at two URLs. */}
       <div
         className="article-body max-w-[820px]"
         // In-house authored content from lib/content — not user input
-        dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+        dangerouslySetInnerHTML={{ __html: guideBySlug(article.slug) ?? article.bodyHtml }}
       />
 
       {/* CTA */}
