@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import type { Article } from '@/lib/content/types'
 import { guideBySlug, guideReadingTime } from '@/lib/content/guides'
-import { DISCLOSURE } from '@/lib/constants'
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { Byline } from '@/components/shared/Byline'
+import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 /**
  * Standalone article page (P3-25) — gives the high-volume money keywords
@@ -72,9 +72,7 @@ export function ArticlePage({ article }: { article: Article }) {
         </Link>
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[820px]">
-        {DISCLOSURE.education}
-      </p>
+      <DisclosureLine />
     </article>
   )
 }

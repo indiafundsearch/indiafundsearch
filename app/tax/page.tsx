@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { TaxTables } from '@/components/tax/TaxTables'
 import { JsonLd } from '@/components/shared/JsonLd'
+import { Disclosure } from '@/components/shared/Disclosure'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 
@@ -109,12 +111,18 @@ export default function TaxPage() {
           market-neutral or long-short manager how the April 2026 STT change moved their gross-to-net.
         </p>
         <div className="flex gap-4 flex-wrap mt-4 font-sans text-[13px] font-medium tracking-[0.06em] uppercase">
-          <a href="/learn/market-neutral-funds" className="text-signal border-b-[1.5px] border-signal/50 hover:border-signal">
+          <Link
+            href="/learn/market-neutral-funds"
+            className="text-bronze-soft border-b-[1.5px] border-bronze-soft/50 hover:border-bronze-soft"
+          >
             Market-Neutral Funds →
-          </a>
-          <a href="/learn/long-short-sif" className="text-signal border-b-[1.5px] border-signal/50 hover:border-signal">
+          </Link>
+          <Link
+            href="/learn/long-short-sif"
+            className="text-bronze-soft border-b-[1.5px] border-bronze-soft/50 hover:border-bronze-soft"
+          >
             Long-Short SIFs →
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -129,12 +137,17 @@ export default function TaxPage() {
       {/* FAQ (P3-27 — matches the FAQPage schema below) */}
       <div className="mt-16">
         <div className="dim mb-8"><span>Frequently asked</span></div>
-        <div className="space-y-5 max-w-[820px]">
-          {TAX_FAQ.map((f) => (
-            <div key={f.q}>
-              <h2 className="font-sans font-bold text-[18px]">{f.q}</h2>
-              <p className="font-serif text-[16px] text-ink-soft mt-1.5">{f.a}</p>
-            </div>
+        <div className="grid gap-3 max-w-[820px]">
+          {TAX_FAQ.map((f, i) => (
+            <Disclosure
+              key={f.q}
+              defaultOpen={i === 0}
+              title={
+                <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">{f.q}</h2>
+              }
+            >
+              <p className="font-serif text-[16.5px] text-ink-soft leading-[1.6]">{f.a}</p>
+            </Disclosure>
           ))}
         </div>
       </div>

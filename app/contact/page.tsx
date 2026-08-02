@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact/ContactForm'
+import { DisclosureLine } from '@/components/shared/DisclosureLine'
 import { CONTACT, DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
@@ -74,9 +75,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[860px]">
-        {DISCLOSURE.commission}
-      </p>
+      <DisclosureLine />
     </div>
   )
 }

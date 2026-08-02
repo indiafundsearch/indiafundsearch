@@ -78,10 +78,14 @@ export function Footer() {
         </div>
 
         {/* Disclosure block */}
-        <div className="mt-12 border-t border-[rgba(252,251,248,0.15)] pt-6 space-y-3">
-          <p className="text-[12.5px] leading-relaxed text-[#9db5aa]">{DISCLOSURE.commission}</p>
-          <p className="text-[12.5px] leading-relaxed text-[#9db5aa]">{DISCLOSURE.education}</p>
-          <p className="font-mono text-[10px] tracking-[0.06em] text-[#9db5aa] pt-2">
+        <div className="mt-12 border-t border-[rgba(252,251,248,0.15)] pt-6">
+          <p className="text-[12.5px] leading-relaxed text-[#9db5aa]">
+            {DISCLOSURE.short}{' '}
+            <Link href="/disclosures" className="hover:text-white-warm underline underline-offset-2">
+              Full disclosures
+            </Link>
+          </p>
+          <p className="font-mono text-[10px] tracking-[0.06em] text-[#9db5aa] pt-3">
             © {new Date().getFullYear()} {SITE.name} · All rights reserved ·{' '}
             <Link href="/privacy" className="hover:text-white-warm underline underline-offset-2">
               Privacy Policy

@@ -255,6 +255,26 @@ body {
   color: var(--color-ink);
 }
 
+/* Fit Finder question transition. Deliberately CSS rather than framer-motion:
+   an AnimatePresence mode="wait" swap costs a full exit plus enter (~560ms)
+   before the next question is readable, which is too slow for a tool whose
+   whole point is that answering advances you. CSS also keeps working when the
+   tab is backgrounded, where requestAnimationFrame — and therefore framer's
+   exit callback — is paused. */
+@keyframes question-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.question-in {
+  animation: question-in 0.22s ease-out both;
+}
+
 /* ---------- Motion preferences ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {

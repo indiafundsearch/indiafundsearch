@@ -148,7 +148,7 @@ export default function UsNriPficPage() {
             'PMS / managed accounts — you hold the securities directly, so there is no PFIC "fund" wrapper',
             'Partnership-structured GIFT Cat III vehicles that are transparent for US tax (fact-specific)',
           ].map((x) => (
-            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-signal">
+            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
               {x}
             </li>
           ))}

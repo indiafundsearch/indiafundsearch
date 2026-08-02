@@ -58,7 +58,7 @@ export default function LearnPage() {
           <FadeInOnScroll key={p.id} delay={(i % 3) * 0.06}>
             <Link
               href={`/learn/${p.slug}`}
-              className="plot-card block p-6 h-full relative hover:shadow-plot-hover transition-shadow group before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-signal"
+              className="plot-card block p-6 h-full relative hover:shadow-plot-hover transition-shadow group before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-bronze-soft"
             >
               <div className="flex items-baseline justify-between gap-2">
                 <span className="font-mono text-[11px] text-bronze font-semibold">

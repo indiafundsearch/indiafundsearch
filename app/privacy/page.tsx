@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             'A one-time verification code (OTP) sent to your email to confirm it is yours.',
             'Basic, privacy-friendly usage analytics (pages viewed, approximate location, device type) — collected without advertising cookies.',
           ].map((x) => (
-            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-signal">
+            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
               {x}
             </li>
           ))}
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
             'To let our desk follow up on a lead you started.',
             'To understand, in aggregate, which content is useful — so we can improve it.',
           ].map((x) => (
-            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-signal">
+            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
               {x}
             </li>
           ))}
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
             'Resend (email delivery) — sends confirmation and verification emails to you, and lead alerts to our desk.',
             'Vercel (hosting & privacy-friendly analytics) — serves the website and provides aggregate, cookieless usage stats.',
           ].map((x) => (
-            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-signal">
+            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
               {x}
             </li>
           ))}

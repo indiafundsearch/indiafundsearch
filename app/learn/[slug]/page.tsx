@@ -3,11 +3,12 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PRODUCTS, productBySlug } from '@/lib/content/products'
 import { FD_PATH_5Y, formatCr } from '@/lib/content/format'
-import { DISCLOSURE, SHEETS } from '@/lib/constants'
+import { SHEETS } from '@/lib/constants'
 import { pageMeta, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { Byline } from '@/components/shared/Byline'
+import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -39,7 +40,7 @@ function SpecList({ title, items }: { title: string; items: string[] }) {
         {items.map((it) => (
           <li
             key={it}
-            className="relative py-1.5 pl-[22px] text-[16px] text-ink-soft before:content-[''] before:absolute before:left-0.5 before:top-[15px] before:w-2.5 before:h-[1.5px] before:bg-signal"
+            className="relative py-1.5 pl-[22px] text-[16px] text-ink-soft before:content-[''] before:absolute before:left-0.5 before:top-[15px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft"
           >
             {it}
           </li>
@@ -220,9 +221,7 @@ export default async function ProductPage({ params }: PageProps) {
         ))}
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[820px]">
-        {DISCLOSURE.education}
-      </p>
+      <DisclosureLine />
     </article>
   )
 }

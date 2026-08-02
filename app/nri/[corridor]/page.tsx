@@ -11,6 +11,7 @@ import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
 import { CorridorAccessForm } from '@/components/nri/CorridorAccessForm'
 import { Disclosure } from '@/components/shared/Disclosure'
+import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 interface PageProps {
   params: Promise<{ corridor: string }>
@@ -259,7 +260,7 @@ export default async function CorridorPage({ params }: PageProps) {
         {c.checklist.map((item) => (
           <li
             key={item}
-            className="relative py-2 pl-[22px] text-[16.5px] text-ink-soft before:content-[''] before:absolute before:left-0.5 before:top-[18px] before:w-2.5 before:h-[1.5px] before:bg-signal"
+            className="relative py-2 pl-[22px] text-[16.5px] text-ink-soft before:content-[''] before:absolute before:left-0.5 before:top-[18px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft"
           >
             {item}
           </li>
@@ -287,40 +288,35 @@ export default async function CorridorPage({ params }: PageProps) {
           <p className="font-sans font-bold text-[20px]">
             Working out what actually fits from {c.country}?
           </p>
-          <p className="font-serif italic text-[15.5px] text-slate mt-1">
+          <p className="font-serif italic text-[15.5px] text-slate mt-1 max-w-[520px]">
             Tell us where you are tax-resident and we will tell you what is open to you — including
-            when the answer is nothing yet.
+            when the answer is nothing yet. Or{' '}
+            <Link href="/fit-finder" className="text-bronze border-b border-bronze-soft hover:text-ink">
+              run the Fit Finder
+            </Link>{' '}
+            first.
           </p>
         </div>
-        <div className="flex gap-3 flex-wrap">
-          <a
-            href={whatsappHref(
-              `Hello team, I'm an NRI resident in ${c.label} and I'd like to understand which Indian structures are open to me.`,
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-sans text-[14px] font-medium tracking-[0.08em] uppercase px-6 py-3 rounded-[3px] bg-ink text-white-warm border-[1.5px] border-ink hover:bg-bronze hover:border-bronze transition-colors"
-          >
-            Talk to the desk →
-          </a>
-          <Link
-            href="/fit-finder"
-            className="font-sans text-[14px] font-medium tracking-[0.08em] uppercase px-6 py-3 rounded-[3px] border-[1.5px] border-ink text-ink hover:bg-paper-2 transition-colors"
-          >
-            Run the Fit Finder
-          </Link>
-        </div>
+        <a
+          href={whatsappHref(
+            `Hello team, I'm an NRI resident in ${c.label} and I'd like to understand which Indian structures are open to me.`,
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-sans text-[14px] font-medium tracking-[0.08em] uppercase px-6 py-3 rounded-[3px] bg-ink text-white-warm border-[1.5px] border-ink hover:bg-bronze hover:border-bronze transition-colors shrink-0"
+        >
+          Talk to the desk →
+        </a>
       </div>
 
       <div className="mt-12 max-w-[820px]">
         <SourceList sources={c.sources} label="Every source cited on this page" />
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-8 border-t border-line pt-5 max-w-[820px]">
-        {DISCLOSURE.education} {DISCLOSURE.tax} Cross-border tax positions turn on your own
-        residence, day counts and holdings — this page is a starting point for that conversation,
-        not a substitute for advice from a professional qualified in {c.country}.
-      </p>
+      <DisclosureLine
+        className="mt-8"
+        extra={`Cross-border positions turn on your own residence and day counts — confirm anything here with a professional qualified in ${c.country}.`}
+      />
     </article>
   )
 }

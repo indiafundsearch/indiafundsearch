@@ -37,6 +37,14 @@ export const whatsappHref = (message: string = CONTACT.whatsappMessage) =>
   `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(message)}`
 
 export const DISCLOSURE = {
+  /**
+   * The one line that appears on every page. The full text lives at
+   * /disclosures — repeating ~60 words of legalese at the foot of all eleven
+   * pages made the loudest element on each page a compliance block, which is
+   * the opposite of the tone this site is going for. One quiet line plus a
+   * link keeps the position visible without shouting it.
+   */
+  short: 'Education, not advice. We may earn referral fees when you invest through us.',
   commission:
     'Beyond may earn distribution or referral fees from product providers when you invest through us. This is disclosed before any transaction. Our education content is written independently of these arrangements.',
   education:

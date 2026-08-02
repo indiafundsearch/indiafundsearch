@@ -88,7 +88,7 @@ export default function GiftCityPage() {
                 {r.bullets.map(([lead, rest]) => (
                   <li
                     key={lead}
-                    className="relative py-1.5 pl-[22px] text-[15.5px] leading-snug before:content-[''] before:absolute before:left-0.5 before:top-[14px] before:w-2.5 before:h-[1.5px] before:bg-signal"
+                    className="relative py-1.5 pl-[22px] text-[15.5px] leading-snug before:content-[''] before:absolute before:left-0.5 before:top-[14px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft"
                   >
                     <b className="font-sans font-semibold text-ink">{lead}</b>
                     <span className="font-serif text-ink-soft"> — {rest}</span>

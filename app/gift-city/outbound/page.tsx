@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GiftGate } from '@/components/gift/GiftGate'
+import { DisclosureLine } from '@/components/shared/DisclosureLine'
 import { OUTBOUND_GROUP_ORDER } from '@/lib/gift/data'
-import { DISCLOSURE, GIFT_SHELF } from '@/lib/constants'
+import { GIFT_SHELF } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
 // Named private-placement shelf — keep it out of the index (P0-5).
@@ -57,9 +58,7 @@ export default function GiftOutboundPage() {
         </Link>
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-10 border-t border-line pt-5 max-w-[860px]">
-        {DISCLOSURE.commission} {DISCLOSURE.education}
-      </p>
+      <DisclosureLine />
     </div>
   )
 }

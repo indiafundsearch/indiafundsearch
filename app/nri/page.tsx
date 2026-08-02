@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CORRIDORS } from '@/lib/content/corridors'
-import { DISCLOSURE, SHEETS } from '@/lib/constants'
+import { SHEETS } from '@/lib/constants'
 import { pageMeta, breadcrumbJsonLd, nriHreflang } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { Byline } from '@/components/shared/Byline'
+import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 export const metadata: Metadata = pageMeta({
   title: 'NRI investing by corridor — US, UAE and UK',
@@ -70,7 +71,7 @@ export default function NriHubPage() {
                 {c.facts.slice(0, 3).map(([label, value]) => (
                   <li
                     key={label}
-                    className="relative py-1.5 pl-[22px] text-[14.5px] leading-snug before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-signal"
+                    className="relative py-1.5 pl-[22px] text-[14.5px] leading-snug before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft"
                   >
                     <b className="font-sans font-semibold text-ink">{label}</b>
                     <span className="font-serif text-ink-soft"> — {value}</span>
@@ -120,9 +121,7 @@ export default function NriHubPage() {
           </Link>
         </div>
 
-        <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[820px]">
-          {DISCLOSURE.education}
-        </p>
+        <DisclosureLine />
       </FadeInOnScroll>
     </div>
   )

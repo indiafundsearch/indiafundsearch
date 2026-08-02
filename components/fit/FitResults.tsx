@@ -99,7 +99,7 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
               {r.why.length > 0 && (
                 <ul className="mt-2">
                   {r.why.map((w) => (
-                    <li key={w} className="relative py-1 pl-[22px] text-[14.5px] text-ink-soft before:content-[''] before:absolute before:left-0.5 before:top-3 before:w-2.5 before:h-[1.5px] before:bg-signal">
+                    <li key={w} className="relative py-1 pl-[22px] text-[14.5px] text-ink-soft before:content-[''] before:absolute before:left-0.5 before:top-3 before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
                       {w}
                     </li>
                   ))}
