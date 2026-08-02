@@ -14,7 +14,9 @@ Domain/SSL · leads → Sanity + email alerts to hello@jslwealth.in · OTP gate
 pages · Privacy Policy (/privacy) · tax figures confirmed by owner (caveats
 softened) · fund repository cleared for display · registration line removed by
 choice · booking CTAs hidden by choice (WhatsApp + forms used instead) ·
-nav/sheet numbers aligned 1:1.
+nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
+(`/nri`, `/nri/us`, `/nri/uae`, `/nri/uk`) with a real hreflang cluster and the
+`Corridor Access List` lead magnet.
 
 ---
 
@@ -45,6 +47,10 @@ nav/sheet numbers aligned 1:1.
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
 - **Google Search Console** — sitemap submitted + indexing requested; just monitor.
+  *After 2026-08-02: request indexing for the four new `/nri` URLs.*
+- **Corridor pages are dated content.** UK rates, the FIG/TRF deadlines and the
+  HMRC reporting-funds list all move. Re-check `lib/content/corridors.ts` and
+  bump each corridor's `reviewed` field when you do — the date is on the page.
 - **Curation date** — bump `GIFT_SHELF.curatedAsOf` monthly (currently August 2026).
 
 ## 🔮 Deferred features
