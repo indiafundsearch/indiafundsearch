@@ -10,6 +10,7 @@ import { Byline } from '@/components/shared/Byline'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
 import { CorridorAccessForm } from '@/components/nri/CorridorAccessForm'
+import { Disclosure } from '@/components/shared/Disclosure'
 
 interface PageProps {
   params: Promise<{ corridor: string }>
@@ -181,18 +182,34 @@ export default async function CorridorPage({ params }: PageProps) {
         <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[820px]">{c.table.note}</p>
       )}
 
-      {/* Question-shaped sections */}
-      <div className="max-w-[820px]">
-        {c.qas.map((qa) => (
-          <section key={qa.q}>
-            <H>{qa.q}</H>
-            {qa.a.map((para) => (
-              <p key={para.slice(0, 40)} className="text-[17px] text-ink-soft mt-3 leading-[1.62]">
+      {/* Question-shaped sections. Collapsed for readability, but rendered into
+          the DOM via native <details> so every answer stays crawlable. */}
+      <H id="questions">Questions people in {c.country} actually ask</H>
+      <p className="text-[16.5px] text-slate max-w-[820px] mb-5">
+        Open whichever applies to you. Each answer stands on its own, with the primary sources it
+        rests on.
+      </p>
+      <div className="grid gap-3 max-w-[820px]">
+        {c.qas.map((qa, i) => (
+          <Disclosure
+            key={qa.q}
+            defaultOpen={i === 0}
+            title={
+              <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
+                {qa.q}
+              </h2>
+            }
+          >
+            {qa.a.map((para, j) => (
+              <p
+                key={para.slice(0, 40)}
+                className={`text-[16.5px] text-ink-soft leading-[1.62] ${j > 0 ? 'mt-3' : ''}`}
+              >
                 {para}
               </p>
             ))}
             {qa.sources && <SourceList sources={qa.sources} />}
-          </section>
+          </Disclosure>
         ))}
       </div>
 
@@ -210,18 +227,31 @@ export default async function CorridorPage({ params }: PageProps) {
       </div>
 
       {/* Mistakes — problem-shaped headings rank for problem-shaped queries. */}
-      <H id="mistakes">Five mistakes that cost money in this corridor</H>
-      <ol className="max-w-[820px] mt-4 space-y-4">
-        {c.mistakes.map((mi, i) => (
-          <li key={mi.m} className="border-l-[3px] border-l-alert/60 pl-4">
-            <h3 className="font-sans font-semibold text-[16.5px] text-ink">
-              <span className="font-mono text-[11px] text-alert mr-2">{String(i + 1).padStart(2, '0')}</span>
-              {mi.m}
-            </h3>
-            <p className="text-[15.5px] text-ink-soft mt-1">{mi.why}</p>
-          </li>
-        ))}
-      </ol>
+      <div className="grid gap-3 max-w-[820px] mt-3">
+        <Disclosure
+          id="mistakes"
+          meta={`${c.mistakes.length} to avoid`}
+          title={
+            <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
+              Five mistakes that cost money in this corridor
+            </h2>
+          }
+        >
+          <ol className="space-y-4">
+            {c.mistakes.map((mi, i) => (
+              <li key={mi.m} className="border-l-[3px] border-l-alert/60 pl-4">
+                <h3 className="font-sans font-semibold text-[16.5px] text-ink">
+                  <span className="font-mono text-[11px] text-alert mr-2">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {mi.m}
+                </h3>
+                <p className="text-[15.5px] text-ink-soft mt-1">{mi.why}</p>
+              </li>
+            ))}
+          </ol>
+        </Disclosure>
+      </div>
 
       {/* Checklist */}
       <H id="checklist">What to do, in order</H>

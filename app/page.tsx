@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SpectrumExplorer } from '@/components/spectrum/SpectrumExplorer'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
-import { ARTICLES } from '@/lib/content/articles'
+import { ARTICLES, articleHref } from '@/lib/content/articles'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
@@ -110,7 +110,7 @@ export default function HomePage() {
           {featured.map((a, i) => (
             <FadeInOnScroll key={a.slug} delay={i * 0.08}>
               <Link
-                href={`/learn#${a.slug}`}
+                href={articleHref(a.slug)}
                 className="plot-card block p-6 h-full hover:shadow-plot-hover transition-shadow group"
               >
                 <div className="font-mono text-[10px] tracking-[0.16em] uppercase text-bronze font-semibold">

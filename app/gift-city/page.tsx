@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
-import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
+import { CORRIDORS } from '@/lib/content/corridors'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
@@ -70,13 +70,6 @@ export default function GiftCityPage() {
           friction. We currently curate products on both routes.
         </p>
         <UsPersonWarning className="mt-7 max-w-[720px]" />
-        <p className="text-[16.5px] text-ink-soft max-w-[720px] mt-5">
-          Where you are tax-resident changes the answer more than which fund you pick.{' '}
-          <Link href="/nri" className="text-bronze border-b-[1.5px] border-bronze-soft hover:text-ink">
-            Read the corridor guide for your country
-          </Link>{' '}
-          — the US, the UAE and the UK each work differently.
-        </p>
       </section>
 
       {/* Two routes */}
@@ -117,6 +110,46 @@ export default function GiftCityPage() {
         ))}
       </section>
 
+      {/* Corridor guides — surfaced high, because residence changes the answer
+          more than the fund choice does. */}
+      <FadeInOnScroll as="section" className="mx-auto max-w-[1180px] px-[22px] mt-14">
+        <div className="bg-ink text-white-warm px-9 py-9 relative max-sm:px-5">
+          <span className="corner corner-tl" /><span className="corner corner-tr" />
+          <span className="corner corner-bl" /><span className="corner corner-br" />
+          <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal font-semibold">
+            Start here — where are you tax-resident?
+          </div>
+          <h2 className="font-sans text-[clamp(23px,3vw,30px)] font-bold mt-2.5 max-w-[760px] leading-[1.15]">
+            The same GIFT City fund is treated three different ways.
+          </h2>
+          <p className="font-serif text-[17px] text-[#c7d6ce] mt-3 max-w-[720px]">
+            India&rsquo;s exemptions are designed for investors taxed nowhere else. Whether that
+            helps you — or quietly costs you — depends on the country you file in, not on the fund.
+            Read your corridor before you read the shelf.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-3 mt-7">
+            {CORRIDORS.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/nri/${c.slug}`}
+                className="block border border-[rgba(252,251,248,0.25)] px-5 py-4 hover:bg-[rgba(252,251,248,0.08)] hover:border-signal transition-colors group"
+              >
+                <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-[#9db5aa]">
+                  <span className="mr-1.5 text-[12px]" aria-hidden="true">{c.flag}</span>
+                  Corridor {c.code}
+                </span>
+                <span className="font-sans text-[17px] font-bold block mt-1 group-hover:text-signal transition-colors">
+                  NRIs in {c.label}
+                </span>
+                <span className="font-serif text-[14px] text-[#c7d6ce] block mt-1.5 leading-snug">
+                  {c.facts[0][1]}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </FadeInOnScroll>
+
       {/* Why GIFT exists — condensed education */}
       <FadeInOnScroll as="section" className="mx-auto max-w-[1180px] px-[22px] mt-16">
         <div className="dim mb-10"><span>Why this jurisdiction exists</span></div>
@@ -156,7 +189,6 @@ export default function GiftCityPage() {
           </Link>
         </div>
 
-        <CorridorSwitcher />
       </FadeInOnScroll>
     </div>
   )

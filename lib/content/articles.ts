@@ -55,3 +55,17 @@ export const ARTICLES: Article[] = [
 
 export const articleBySlug = (slug: string): Article | undefined =>
   ARTICLES.find((a) => a.slug === slug);
+
+/** Articles that also have a standalone route under /learn/[slug] (P3-25).
+ *  Single source of truth — the homepage links straight to these pages, and the
+ *  Learn accordion offers them as "open as its own page". */
+export const STANDALONE_ARTICLE_SLUGS = new Set([
+  'what-is-pms',
+  'what-is-aif',
+  'pms-vs-aif',
+]);
+
+/** Where a fundamentals card should point: the dedicated page when one exists,
+ *  otherwise the deep-linked accordion entry on /learn. */
+export const articleHref = (slug: string): string =>
+  STANDALONE_ARTICLE_SLUGS.has(slug) ? `/learn/${slug}` : `/learn#${slug}`;
