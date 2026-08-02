@@ -89,6 +89,10 @@ export const SHEETS = {
   fitFinder: { no: '03', title: 'Load Calculation' },
   tax: { no: '04', title: 'Compliance Schedule' },
   giftCity: { no: '05', title: 'GIFT City' },
+  // The NRI corridor guides share sheet 05 with GIFT City — same audience,
+  // same tab — exactly as "First Principles" and "The Materials" both sit on
+  // 02. This keeps the six nav tabs and six sheet numbers aligned 1:1.
+  nri: { no: '05', title: 'Corridors' },
   contact: { no: '06', title: 'Site Office' },
 } as const
 

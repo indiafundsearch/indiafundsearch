@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SITE } from './constants'
+import { CORRIDORS } from './content/corridors'
 
 /** Named author + publisher for E-E-A-T (P3-26). */
 export const AUTHOR = {
@@ -8,9 +9,26 @@ export const AUTHOR = {
   url: `${SITE.url}/about`,
 } as const
 
-/** hreflang corridors for the NRI thesis (P3-29). All point at the same
- *  English page today; region-specific landing routes are a later phase. */
+/** Site-wide hreflang corridors for the NRI thesis (P3-29). For a page with no
+ *  region-specific variant these all resolve to the same URL — self-referential
+ *  and harmless. The /nri corridor cluster overrides them with real per-region
+ *  URLs via `languages` below. */
 export const HREFLANG = ['en-IN', 'en-AE', 'en-US'] as const
+
+/**
+ * The one genuine hreflang cluster on the site: the /nri hub is the generic
+ * (x-default and en-IN) version, and each corridor page is the regional variant
+ * for its own market. Every page in the cluster declares the identical set, so
+ * the annotations are reciprocal — which is what makes Google honour them.
+ */
+export function nriHreflang(): Record<string, string> {
+  const languages: Record<string, string> = {
+    'x-default': '/nri',
+    'en-IN': '/nri',
+  }
+  for (const c of CORRIDORS) languages[c.hreflang] = `/nri/${c.slug}`
+  return languages
+}
 
 /** Dynamic branded OG image via the /og route, titled per page. */
 function ogImage(title: string, subtitle: string) {
@@ -33,6 +51,12 @@ interface PageMetaInput {
   /** use the title verbatim (skip the "· IndiaFundSearch" template) */
   absoluteTitle?: boolean
   noindex?: boolean
+  /**
+   * Override the hreflang alternates with a real cluster — a map of locale to
+   * site-relative path (see `nriHreflang`). Omit for ordinary pages, which get
+   * the self-referential site-wide set.
+   */
+  languages?: Record<string, string>
 }
 
 /**
@@ -40,10 +64,25 @@ interface PageMetaInput {
  * twitter from the page's own title/description (no more identical cards), sets
  * a self-canonical, a per-page branded OG image, and hreflang alternates.
  */
-export function pageMeta({ title, description, path, ogTitle, absoluteTitle, noindex }: PageMetaInput): Metadata {
+export function pageMeta({
+  title,
+  description,
+  path,
+  ogTitle,
+  absoluteTitle,
+  noindex,
+  languages: languageOverride,
+}: PageMetaInput): Metadata {
   const url = `${SITE.url}${path}`
-  const languages: Record<string, string> = { 'x-default': url }
-  for (const lang of HREFLANG) languages[lang] = url
+  let languages: Record<string, string>
+  if (languageOverride) {
+    languages = Object.fromEntries(
+      Object.entries(languageOverride).map(([locale, p]) => [locale, `${SITE.url}${p}`]),
+    )
+  } else {
+    languages = { 'x-default': url }
+    for (const lang of HREFLANG) languages[lang] = url
+  }
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
