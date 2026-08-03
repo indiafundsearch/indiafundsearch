@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { SITE } from './constants'
+import { CONTACT, SITE } from './constants'
 import { CORRIDORS } from './content/corridors'
 
 /** Named author + publisher for E-E-A-T (P3-26). */
@@ -109,15 +109,41 @@ export function pageMeta({
 
 // ---------- JSON-LD builders (P3-27) ----------
 
+/**
+ * Entity building. Google has to work out that "IndiaFundSearch", "Beyond" and
+ * "JSL Wealth Management" are one organisation, and that the byline author is a
+ * real person attached to it. Left to itself it often does not. `sameAs` is the
+ * standard way to say so: each URL is a corroborating profile Google already
+ * knows, so the entity resolves instead of floating.
+ *
+ * Add more as they exist — a company LinkedIn page, Crunchbase, a Wikidata
+ * Q-ID. Only ever list profiles that genuinely belong to the entity; a wrong
+ * sameAs is worse than none.
+ */
+const PERSON_PROFILES = ['https://www.linkedin.com/in/yash-jhaveri-/']
+
 export function organizationJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE.url}/#organization`,
     name: SITE.name,
+    alternateName: ['Beyond', SITE.legalEntity],
+    legalName: SITE.legalEntity,
     url: SITE.url,
     description: SITE.description,
     logo: `${SITE.url}/og`,
-    founder: { '@type': 'Person', name: AUTHOR.name },
+    email: CONTACT.email,
+    areaServed: 'IN',
+    knowsAbout: [
+      'Portfolio Management Services',
+      'Alternative Investment Funds',
+      'Specialised Investment Funds',
+      'GIFT City IFSC',
+      'NRI investing in India',
+    ],
+    founder: { '@type': 'Person', '@id': `${SITE.url}/#person` },
+    sameAs: PERSON_PROFILES,
   }
 }
 
@@ -125,10 +151,18 @@ export function personJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${SITE.url}/#person`,
     name: AUTHOR.name,
     jobTitle: 'Founder & Principal Adviser',
     url: AUTHOR.url,
-    worksFor: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    sameAs: PERSON_PROFILES,
+    worksFor: {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      legalName: SITE.legalEntity,
+      url: SITE.url,
+    },
   }
 }
 
