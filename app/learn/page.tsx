@@ -25,8 +25,8 @@ export default function LearnPage() {
           Start with the fundamentals.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-3.5">
-          Six short reads that make everything else in this drawing set obvious — written the way
-          we would explain it across a table.{' '}
+          Six short reads that make the rest of this drawing set obvious. Written the way we would
+          explain it to you across a table.{' '}
           <em className="text-bronze italic">No jargon survives past the first sentence.</em>
         </p>
       </div>
@@ -48,8 +48,8 @@ export default function LearnPage() {
           The thirteen materials of a modern portfolio.
         </h2>
         <p className="font-serif text-[18px] text-ink-soft max-w-[700px] mt-3">
-          From the familiar to the frontier — what each structure is, the job it does, what it
-          costs to enter, and how the taxman treats it.
+          From the familiar to the frontier. What each one is, the job it does, what it costs to
+          get in, and how the taxman treats it.
         </p>
       </div>
 

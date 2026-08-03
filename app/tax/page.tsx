@@ -41,9 +41,9 @@ export default function TaxPage() {
           How each structure is taxed. FY 2026–27.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-3.5">
-          Post-tax return is the only return that reaches you. Union Budget 2026 left the headline
-          capital-gains rates unchanged, but changed two things that matter to this audience —
-          buyback taxation and securities transaction tax (both below).{' '}
+          The post-tax number is the only one that actually reaches you. Union Budget 2026 left the
+          headline capital-gains rates alone but changed two things that matter here: buyback
+          taxation and securities transaction tax. Both are covered below.{' '}
           <em className="text-bronze italic">Always confirm with your Chartered Accountant before acting.</em>
         </p>
       </div>
@@ -77,7 +77,7 @@ export default function TaxPage() {
         <p>
           Budget 2026 restored capital-gains treatment on buybacks for shareholders, but it did{' '}
           <b>not</b> make buybacks tax-neutral for promoters. A separate <b>additional buyback tax</b>{' '}
-          applies to persons classified as <b>promoters</b> — and to shareholders above the prescribed
+          applies to persons classified as <b>promoters</b>, and to shareholders above the prescribed
           holding threshold — producing an effective rate materially higher than the headline 12.5%,
           reported around <b>~22% for corporate promoters</b> and <b>~30% for non-corporate
           promoters</b>, for buybacks on or after <b>1 Apr 2026</b>.
@@ -129,7 +129,7 @@ export default function TaxPage() {
       <div className="bg-white-warm border border-line border-l-4 border-l-alert px-6 py-5 mt-[22px] text-[15px] text-ink-soft">
         <b className="font-sans">This schedule is a simplified summary.</b> Actual liability depends
         on residency, treaty position, income mix, and the specific structure of each fund. The tax
-        impact of any switch — including exit loads and crystallised gains on the way out — is
+        impact of any switch, including exit loads and crystallised gains on the way out — is
         disclosed and discussed before any transaction. Please verify with your Chartered
         Accountant.
       </div>

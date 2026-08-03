@@ -289,7 +289,7 @@ export default async function CorridorPage({ params }: PageProps) {
             Working out what actually fits from {c.country}?
           </p>
           <p className="font-serif italic text-[15.5px] text-slate mt-1 max-w-[520px]">
-            Tell us where you are tax-resident and we will tell you what is open to you — including
+            Tell us where you are tax-resident and we will tell you what is open to you, including
             when the answer is nothing yet. Or{' '}
             <Link href="/fit-finder" className="text-bronze border-b border-bronze-soft hover:text-ink">
               run the Fit Finder

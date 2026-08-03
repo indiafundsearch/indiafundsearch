@@ -34,16 +34,16 @@ export default function NriHubPage() {
           <em className="font-serif italic font-medium text-bronze">three different answers.</em>
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[760px] mt-4">
-          Indian regulation barely distinguishes between non-resident investors. Your country of
-          residence does. The same Indian fund can be a sensible holding in Dubai, a reporting
-          headache in London and a genuine tax trap in New Jersey — and nothing on the fund
-          factsheet tells you which.
+          Indian regulation barely distinguishes between one non-resident investor and another. Your
+          country of residence does. The same fund can be a sensible holding in Dubai, a reporting
+          headache in London and a real tax trap in New Jersey. Nothing on the factsheet tells you
+          which one you are looking at.
         </p>
         <p className="text-[17px] text-ink-soft max-w-[760px] mt-4">
-          These three guides start from your tax residence rather than from the product shelf. Each
-          one is written against the primary sources that actually govern you — the IRS, HMRC, the
-          UAE Federal Tax Authority — and each says plainly where the law is unsettled rather than
-          rounding it to a confident answer.
+          These three guides start from where you file your taxes, not from the product shelf. Each is
+          written against the rules that actually govern you, published by the IRS, HMRC and the UAE
+          Federal Tax Authority. Where the law is unsettled, we say so instead of rounding it off
+          into a confident answer.
         </p>
         <div className="mt-6">
           <Byline reviewed="August 2026" />

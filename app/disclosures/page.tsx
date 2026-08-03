@@ -60,6 +60,11 @@ export default function DisclosuresPage() {
         The short version sits at the foot of every page. This is the long version, in one place, so
         it does not have to be repeated eleven times.
       </p>
+      <p className="text-[17px] text-ink-soft max-w-[820px] mt-5">
+        <b>{SITE.name}</b> and <b>Beyond</b> are brands of <b>{SITE.legalEntity}</b>. That company
+        operates this website, holds the distribution and referral arrangements described below, and
+        is who you are dealing with when you contact the desk.
+      </p>
 
       <div className="mt-12 max-w-[820px] space-y-10">
         {SECTIONS.map((s) => (
@@ -77,7 +82,7 @@ export default function DisclosuresPage() {
       </div>
 
       <p className="font-mono text-[11px] tracking-[0.04em] text-slate mt-14 border-t border-line pt-4 max-w-[820px]">
-        {SITE.name} · {SITE.initiative} ·{' '}
+        {SITE.legalEntity} · Operator of {SITE.name} ·{' '}
         <Link href="/privacy" className="text-bronze border-b border-bronze-soft hover:text-ink">
           Privacy Policy
         </Link>{' '}

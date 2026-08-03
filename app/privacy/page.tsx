@@ -28,9 +28,15 @@ export default function PrivacyPage() {
 
       <div className="text-[16.5px] text-ink-soft mt-6 space-y-3">
         <p>
-          This policy explains how {SITE.name} ({SITE.initiative}) collects, uses, stores and
-          protects your personal data when you use this website. We aim to be plain and honest — the
-          same way we write everything else here.
+          This policy explains how {SITE.name} collects, uses, stores and protects your personal
+          data when you use this website. It is written in plain language, the same way we write
+          everything else here.
+        </p>
+        <p>
+          <b>Who we are.</b> {SITE.name} and Beyond are brands of{' '}
+          <b>{SITE.legalEntity}</b>, the company that operates this website and is the data
+          fiduciary for the personal data described below. Where this policy says
+          &ldquo;we&rdquo;, it means that company.
         </p>
 
         <H>What we collect</H>
@@ -129,10 +135,8 @@ export default function PrivacyPage() {
           .
         </p>
 
-        <p className="font-serif italic text-[13.5px] text-slate mt-8 border-t border-line pt-5">
-          This policy is provided in good faith and in plain language; it is not legal advice. It
-          should be reviewed by your compliance/legal adviser before being relied on as your final
-          published policy.
+        <p className="font-mono text-[11px] tracking-[0.04em] text-slate mt-8 border-t border-line pt-4">
+          {SITE.legalEntity} · Operator of {SITE.name}
         </p>
       </div>
     </article>

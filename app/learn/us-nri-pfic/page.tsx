@@ -49,7 +49,7 @@ export default function UsNriPficPage() {
           Most GIFT City and pooled Indian fund structures are built for NRIs, OCIs and foreign
           investors <em className="text-bronze italic">who are not US persons</em>. If you hold a US
           or Canadian passport or green card, the same fund that is efficient for other NRIs can be{' '}
-          <b>actively punitive</b> — and simply subscribing can create reporting obligations back
+          <b>actively punitive</b>, and simply subscribing can create reporting obligations back
           home. Read this before you shortlist anything.
         </p>
       </header>
@@ -57,7 +57,7 @@ export default function UsNriPficPage() {
       <div className="bg-white-warm border border-line border-l-4 border-l-alert px-6 py-5 max-w-[820px] text-[15px] text-ink-soft">
         <b className="font-sans">Who this is for:</b> US citizens, US green-card holders and US tax
         residents; and Canadian residents. If any of these describe you (or a joint holder), the
-        rules below apply <b>regardless of where the fund sits</b> — including inside GIFT IFSC.
+        rules below apply <b>regardless of where the fund sits</b>, including inside GIFT IFSC.
       </div>
 
       {/* PFIC */}
@@ -72,7 +72,7 @@ export default function UsNriPficPage() {
         <p>
           The US taxes PFICs harshly by default: under the &ldquo;excess distribution&rdquo; regime,
           gains can be taxed at the highest ordinary rates with an interest charge for each year you
-          held the fund — often erasing the return advantage entirely. It is one of the least
+          held the fund, often erasing the return advantage entirely. It is one of the least
           favourable regimes in the US code, and it is aimed squarely at exactly the kind of pooled
           non-US fund on a typical GIFT shelf.
         </p>
@@ -100,7 +100,7 @@ export default function UsNriPficPage() {
           the election is unavailable and you are back in the punitive default regime.
         </p>
         <CopyNeeded>
-          [COPY NEEDED] — Fund-by-fund: which shelf funds provide a PFIC Annual Information Statement
+          [COPY NEEDED]. Fund-by-fund: which shelf funds provide a PFIC Annual Information Statement
           (QEF-eligible), which support mark-to-market, and the practical filing burden (Form 8621
           per fund, per year). Do not state per-fund positions until confirmed with US counsel.
         </CopyNeeded>
@@ -118,7 +118,7 @@ export default function UsNriPficPage() {
           the investment itself is modest.
         </p>
         <CopyNeeded>
-          [COPY NEEDED] — Exact thresholds and the filing checklist for FBAR / Form 8938 / Form 8621,
+          [COPY NEEDED]. Exact thresholds and the filing checklist for FBAR / Form 8938 / Form 8621,
           and the Canadian equivalents (T1135 foreign-income verification, PFIC-parallel rules). Do
           not publish specific thresholds or positions without review.
         </CopyNeeded>
@@ -130,7 +130,7 @@ export default function UsNriPficPage() {
         <p>
           Many GIFT and offshore funds are offered under <b>Regulation S</b>, a US securities-law
           safe harbour for offerings made <b>outside the United States to non-US persons</b>.
-          Accepting a US person can break the Reg S exemption for the whole fund — so most managers
+          Accepting a US person can break the Reg S exemption for the whole fund, so most managers
           simply <b>exclude US persons</b> at onboarding. That is why a fund can be perfect for one
           NRI and closed to another.
         </p>
@@ -140,7 +140,7 @@ export default function UsNriPficPage() {
       <H>Which structures can work for US persons</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          There are routes that can be workable — typically those giving <b>direct ownership</b> or
+          There are routes that can be workable, typically those giving <b>direct ownership</b> or
           US-transparent treatment rather than opaque pooled units:
         </p>
         <ul className="space-y-1.5">
@@ -154,7 +154,7 @@ export default function UsNriPficPage() {
           ))}
         </ul>
         <CopyNeeded>
-          [COPY NEEDED] — The specific shelf products (if any) that are open to US persons and the
+          [COPY NEEDED]. The specific shelf products (if any) that are open to US persons and the
           basis for each (PMS direct ownership, partnership transparency, QEF availability). This is
           a legal conclusion per fund — confirm with US-qualified counsel before naming any.
         </CopyNeeded>

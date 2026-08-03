@@ -17,6 +17,14 @@ export const SITE = {
    * all SEO tags and split ranking signals. Change here if the domain ever moves.
    */
   url: 'https://www.indiafundsearch.com',
+  /**
+   * The operating company behind both brands. IndiaFundSearch and Beyond are
+   * brands; this is the legal person a reader (or a regulator) needs named in
+   * the privacy policy and the disclosures. TODO: add CIN and registered
+   * address once the owner supplies them — a DPDP-era policy should identify
+   * the data fiduciary properly, not just by trading name.
+   */
+  legalEntity: 'JSL Wealth Management Private Limited',
   description:
     'Every SEBI-regulated alternative investment in India — PMS, AIF, SIF, REITs, private credit, GIFT City — explained the way a good advisor would across a table.',
 } as const

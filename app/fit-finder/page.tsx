@@ -22,8 +22,8 @@ export default function FitFinderPage() {
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
           An architect asks what the building is <em className="text-bronze italic">for</em> before
-          drawing it. Answer seven questions — the tool narrows thirteen structures down to the few
-          worth a serious conversation.
+          drawing it. Answer seven questions and the tool narrows thirteen structures down to the
+          few worth a serious conversation.
         </p>
         <p className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-slate mt-4">
           About 90 seconds · No email needed to see your shortlist

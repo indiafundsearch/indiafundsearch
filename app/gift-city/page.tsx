@@ -63,8 +63,8 @@ export default function GiftCityPage() {
           <em className="font-serif italic font-medium text-bronze">Financially, the world.</em>
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[720px] mt-4">
-          <b>GIFT City (Gujarat International Finance Tec-City)</b> is a special jurisdiction —
-          legally inside India, but operating in <b>US dollars</b> under its own regulator (IFSCA).
+          <b>GIFT City (Gujarat International Finance Tec-City)</b> is a special jurisdiction. It sits
+          legally inside India, but works in <b>US dollars</b> under its own regulator, the IFSCA.
           Money can flow <em className="text-bronze italic">in</em> from overseas investors and{' '}
           <em className="text-bronze italic">out</em> to global markets — both without the old
           friction. We currently curate products on both routes.
@@ -123,9 +123,9 @@ export default function GiftCityPage() {
             The same GIFT City fund is treated three different ways.
           </h2>
           <p className="font-serif text-[17px] text-[#c7d6ce] mt-3 max-w-[720px]">
-            India&rsquo;s exemptions are designed for investors taxed nowhere else. Whether that
-            helps you — or quietly costs you — depends on the country you file in, not on the fund.
-            Read your corridor before you read the shelf.
+            India&rsquo;s exemptions were designed for investors who are taxed nowhere else. Whether
+            they help you, or quietly cost you, depends on where you file your taxes rather than on
+            the fund itself. Read your corridor before you read the shelf.
           </p>
           <div className="grid gap-3 sm:grid-cols-3 mt-7">
             {CORRIDORS.map((c) => (
@@ -161,11 +161,11 @@ export default function GiftCityPage() {
             },
             {
               h: 'The GIFT answer',
-              p: 'Funds domiciled in GIFT IFSC operate in US dollars under IFSCA. Overseas money reaches Indian strategies — and Indian money reaches global markets — inside one clean, regulated wrapper.',
+              p: 'Funds domiciled in GIFT IFSC operate in US dollars under IFSCA. Overseas money reaches Indian strategies, and Indian money reaches global markets — inside one clean, regulated wrapper.',
             },
             {
               h: 'The honest caveat',
-              p: 'Tax treatment is fund-specific and residency-specific. Every GIFT decision here ends with one conversation with your CA — but it starts from a far simpler place than the old maze.',
+              p: 'Tax treatment is fund-specific and residency-specific. Every GIFT decision here ends with one conversation with your CA, but it starts from a far simpler place than the old maze.',
             },
           ].map((b) => (
             <div key={b.h}>

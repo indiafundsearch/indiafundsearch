@@ -5,7 +5,7 @@
  * Each of these three articles is published at two URLs: as a panel on /learn,
  * and as its own page. Serving identical copy at both invites Google to
  * consolidate them and pick the hub — whose title targets "fundamentals", not
- * "what is PMS" — so the page built for the money keyword never gets its shot.
+ * "what is PMS", so the page built for the money keyword never gets its shot.
  *
  * So the two are given different jobs rather than different lengths of the same
  * job. `Article.bodyHtml` stays the short, self-contained ~200-word answer that
@@ -55,7 +55,7 @@ export const GUIDE_HTML: Record<string, string> = {
 </tbody>
 </table>
 </div>
-<p>The concentration is the point. A manager running twenty-five positions instead of eighty can size a conviction so that it actually moves the portfolio. That is where the extra return potential comes from — and it is exactly where the extra risk lives. A concentrated portfolio falls harder, and it falls for longer, than an index.</p>
+<p>The concentration is the point. A manager running twenty-five positions instead of eighty can size a conviction so that it actually moves the portfolio. That is where the extra return potential comes from, and it is exactly where the extra risk lives. A concentrated portfolio falls harder, and it falls for longer, than an index.</p>
 
 <h2>What does a PMS actually cost?</h2>
 <p>Fee structures are commercial, not regulated, so they vary by house. Two shapes dominate: a <b>fixed fee only</b>, typically around 2–2.5% of assets a year; or a <b>hybrid</b>, with a lower fixed fee plus a share of profits above a hurdle rate. Both attract GST, and both sit on top of brokerage, custody and audit costs.</p>
@@ -98,7 +98,7 @@ export const GUIDE_HTML: Record<string, string> = {
 <h3>How quickly can I get my money out?</h3>
 <p>Most equity mandates carry no lock-in, and proceeds typically settle within days of the positions being sold. Some strategies apply an exit load in the early period, so read the agreement.</p>
 
-<p>Still deciding between structures? The next question is usually whether you want a managed account at all, or a pooled fund that can reach places listed equity cannot — which is what <a href="/learn/pms-vs-aif">PMS versus AIF</a> is really about.</p>
+<p>Still deciding between structures? The next question is usually whether you want a managed account at all, or a pooled fund that can reach places listed equity cannot, which is what <a href="/learn/pms-vs-aif">PMS versus AIF</a> is really about.</p>
 `,
 
   // ───────────────────────────────────────────────────────────── what-is-aif
@@ -109,7 +109,7 @@ export const GUIDE_HTML: Record<string, string> = {
 
 <h2>What is an AIF, exactly?</h2>
 <p>An <b>Alternative Investment Fund</b> is a privately pooled investment vehicle registered with SEBI, which collects money from sophisticated investors and invests it according to a stated policy. You hold <b>units</b> of the fund — unlike a PMS, you do not own the underlying assets directly.</p>
-<p>Two structural facts shape everything else. AIFs may only raise money by <b>private placement</b> — they cannot advertise to the public — and a scheme is capped at <b>1,000 investors</b>, with accredited investors excluded from that count. That combination is why AIFs feel invisible until someone shows you one.</p>
+<p>Two structural facts shape everything else. AIFs may only raise money by <b>private placement</b> — they cannot advertise to the public, and a scheme is capped at <b>1,000 investors</b>, with accredited investors excluded from that count. That combination is why AIFs feel invisible until someone shows you one.</p>
 <p>On who may invest, the regulations are unusually direct. <a href="${SEBI_AIF}" target="_blank" rel="noopener noreferrer">Regulation 10(a)</a> states that an AIF "may raise funds from any investor whether <b>Indian, foreign or non-resident Indians</b>". There is no nationality or residence bar in the text.</p>
 
 <h2>What are the three categories?</h2>
@@ -128,7 +128,7 @@ export const GUIDE_HTML: Record<string, string> = {
 <h2>What does it cost to get in?</h2>
 <p>Under <a href="${SEBI_AIF}" target="_blank" rel="noopener noreferrer">Regulation 10(c)</a>, an AIF cannot accept less than <b>₹1 crore</b> from an investor. Employees and directors of the fund or its manager may come in at ₹25 lakh, and the minimum does not apply to accredited investors at all. Each scheme must also reach a corpus of at least ₹20 crore before it can operate.</p>
 <p>Critically, the ₹1 crore is usually a <b>commitment, not a cheque</b>. In most closed-ended funds, capital is drawn down over several years as deals are found. You should plan for the calls, because failing to meet one can carry punitive consequences under the fund documents.</p>
-<p>Fees typically comprise a management fee — often around 2%, and worth checking whether it is charged on <em>committed</em> or <em>invested</em> capital, which can differ substantially in the early years — plus <b>carried interest</b>, a share of profits above a hurdle. The carry is where the real money is, and where the documentation matters most.</p>
+<p>Fees typically comprise a management fee, often around 2%, and worth checking whether it is charged on <em>committed</em> or <em>invested</em> capital, which can differ substantially in the early years — plus <b>carried interest</b>, a share of profits above a hurdle. The carry is where the real money is, and where the documentation matters most.</p>
 <div class="worked">
 <p><b>Worked example — why "20% over a 10% hurdle" can mean two very different things.</b></p>
 <p>You commit ₹1 crore. Six years later the fund returns ₹2 crore, so the gross profit is ₹1 crore.</p>
@@ -145,7 +145,7 @@ export const GUIDE_HTML: Record<string, string> = {
 
 <h2>What does the manager have at stake?</h2>
 <p>More than in most structures, and this is a genuinely useful thing to check. <a href="${SEBI_AIF}" target="_blank" rel="noopener noreferrer">Regulation 10(d)</a> requires the manager or sponsor to maintain a continuing interest in the fund: at least <b>2.5% of the corpus or ₹5 crore, whichever is lower</b> — rising to <b>5% or ₹10 crore</b> for Category III. It cannot be met through a waiver of fees.</p>
-<p>That is the regulator forcing co-investment. When you meet a manager, asking how much of their own money sits in the fund — and whether it is merely the regulatory minimum or meaningfully more — tells you more about alignment than any pitch deck.</p>
+<p>That is the regulator forcing co-investment. When you meet a manager, asking how much of their own money sits in the fund, and whether it is merely the regulatory minimum or meaningfully more — tells you more about alignment than any pitch deck.</p>
 
 <h2>Who is an AIF for?</h2>
 <p>Someone who already has a functioning liquid portfolio and is adding an allocation they can genuinely leave alone for the fund's full life. The honest test is not whether you can find ₹1 crore; it is whether you can commit ₹1 crore, meet capital calls on someone else's timetable, and be unable to access any of it for five to eight years without that affecting a single decision you make in the meantime.</p>
@@ -166,7 +166,7 @@ export const GUIDE_HTML: Record<string, string> = {
 <h3>Can NRIs invest in an AIF?</h3>
 <p>Yes — the regulations expressly permit Indian, foreign and non-resident investors. The work sits in the exchange-control route you use, which determines whether your money and gains are repatriable, and in your own country's tax treatment. Start with the corridor guide for <a href="/nri/us">the US</a>, <a href="/nri/uae">the UAE</a> or <a href="/nri/uk">the UK</a>.</p>
 <h3>What is the difference between Category II and Category III?</h3>
-<p>Category II holds assets — private companies, loans, real-estate credit — and generally does not use leverage. Category III trades strategies, often in listed markets, and may use leverage and derivatives. They also differ fundamentally in tax treatment, as above.</p>
+<p>Category II holds assets — private companies, loans, real-estate credit, and generally does not use leverage. Category III trades strategies, often in listed markets, and may use leverage and derivatives. They also differ fundamentally in tax treatment, as above.</p>
 <h3>Are angel funds still ₹25 lakh?</h3>
 <p>No. Angel funds were changed in September 2025: they now raise only from accredited investors, and no minimum investment applies to them at all.</p>
 <h3>Is an AIF riskier than a PMS?</h3>
@@ -214,7 +214,7 @@ export const GUIDE_HTML: Record<string, string> = {
 <p>The practical trap: comparing a Category III post-tax return against a PMS gross return, or against a Category II pre-tax figure, is not comparing like with like. Establish which number you are being shown before you compare anything. The <a href="/tax">tax schedule</a> sets out all of them together.</p>
 
 <h2>Liquidity: days versus years</h2>
-<p>Most equity PMS mandates have no lock-in. Exiting means the manager sells your positions and the proceeds settle in days — though "liquid" still means selling into whatever market exists that week, which in a concentrated small-cap portfolio is not always a comfortable exercise.</p>
+<p>Most equity PMS mandates have no lock-in. Exiting means the manager sells your positions and the proceeds settle in days, though "liquid" still means selling into whatever market exists that week, which in a concentrated small-cap portfolio is not always a comfortable exercise.</p>
 <p>AIFs are built for the opposite. Closed-ended Category I and II funds typically run five to eight years, with capital drawn down over the first few and returned as exits happen. There is no meaningful secondary market. Open-ended Category III funds sit in between, with periodic redemption windows.</p>
 <p>If there is a realistic chance you need the money back on your own schedule, that single consideration should settle the question before any discussion of returns.</p>
 
@@ -226,11 +226,11 @@ export const GUIDE_HTML: Record<string, string> = {
 <li><b>You want to reduce your dependence on Indian equity beta</b> — that points to Category II or III AIFs, not to a second PMS, which would simply concentrate the same risk further</li>
 <li><b>You are not sure you can leave the money untouched for five years</b> — that points to a PMS, or to neither yet</li>
 </ul>
-<p>They are also not mutually exclusive. A common shape for a larger portfolio is a PMS for listed equity alongside one or two AIF commitments for exposures the listed market cannot provide. Our <a href="/fit-finder">Fit Finder</a> works through seven questions and produces a shortlist across all thirteen structures — including telling you when the honest answer is that neither belongs in your portfolio yet.</p>
+<p>They are also not mutually exclusive. A common shape for a larger portfolio is a PMS for listed equity alongside one or two AIF commitments for exposures the listed market cannot provide. Our <a href="/fit-finder">Fit Finder</a> works through seven questions and produces a shortlist across all thirteen structures, including telling you when the honest answer is that neither belongs in your portfolio yet.</p>
 
 <h2>Questions people ask</h2>
 <h3>Can I invest in both?</h3>
-<p>Yes, and for portfolios above a few crore it is common. They are separate structures with separate minimums — ₹50 lakh and ₹1 crore respectively — so each must be met on its own.</p>
+<p>Yes, and for portfolios above a few crore it is common. They are separate structures with separate minimums — ₹50 lakh and ₹1 crore respectively, so each must be met on its own.</p>
 <h3>Which one has higher fees?</h3>
 <p>Headline management fees are broadly similar, often around 2%. The difference is in the profit share: AIF carried interest, particularly with a catch-up provision, can be substantially more expensive than a typical PMS performance fee. Read how the profit share is calculated, not just its percentage.</p>
 <h3>Can NRIs invest in both?</h3>

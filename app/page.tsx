@@ -30,10 +30,11 @@ export default function HomePage() {
             <em className="font-serif italic font-medium text-bronze">Drawn to scale.</em>
           </h1>
           <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-4">
-            Three ways to read the same landscape: <em className="text-bronze italic">position</em>{' '}
-            (risk against liquidity), <em className="text-bronze italic">outcome</em> (what ₹1 Cr
-            becomes against the FD path), and <em className="text-bronze italic">objective</em>{' '}
-            (which structure does which job). Tap any block or bubble to inspect it.
+            One landscape, three ways to read it. By{' '}
+            <em className="text-bronze italic">position</em>, risk against liquidity. By{' '}
+            <em className="text-bronze italic">outcome</em>, what ₹1 crore becomes next to the FD
+            you already have. By <em className="text-bronze italic">objective</em>, which structure
+            does which job. Tap any block or bubble to open it up.
           </p>
         </div>
 
@@ -51,10 +52,11 @@ export default function HomePage() {
               The second passport for capital.
             </h2>
             <p className="font-serif text-[18px] text-[#c7d6ce] mt-4 max-w-[560px]">
-              India built an international financial centre so overseas money could reach Indian
-              strategies — and Indian money could reach the world — without the old friction. We
-              currently curate <b className="text-white-warm">inbound</b> funds for NRIs and{' '}
-              <b className="text-white-warm">outbound</b> USD routes for residents.
+              India built its own international financial centre for a simple reason. Money from
+              abroad should be able to reach Indian strategies, and Indian money should be able to
+              reach the world, without the paperwork that used to make both a chore. We curate{' '}
+              <b className="text-white-warm">inbound</b> funds for NRIs and{' '}
+              <b className="text-white-warm">outbound</b> dollar routes for residents.
             </p>
             <div className="flex gap-3 flex-wrap mt-7">
               <Link
@@ -100,8 +102,7 @@ export default function HomePage() {
             Start with the fundamentals.
           </h2>
           <p className="font-serif text-[18px] text-ink-soft max-w-[640px] mt-3">
-            Short reads that make everything else obvious — written the way we would explain it
-            across a table.{' '}
+            Short reads, written the way we would explain it to you across a table.{' '}
             <em className="text-bronze italic">No jargon survives past the first sentence.</em>
           </p>
         </FadeInOnScroll>
