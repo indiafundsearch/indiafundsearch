@@ -11,7 +11,7 @@ import { DisclosureLine } from '@/components/shared/DisclosureLine'
 export const metadata: Metadata = pageMeta({
   title: 'NRI investing by corridor — US, UAE and UK',
   description:
-    'Where you are tax-resident changes which Indian structures make sense — not just the paperwork. Corridor guides for NRIs and OCIs in the United States, the UAE and the United Kingdom, covering PMS, AIFs and GIFT City.',
+    'Where you are tax-resident changes which Indian structures make sense, not just the paperwork. Corridor guides for NRIs and OCIs in the United States, the UAE and the United Kingdom, covering PMS, AIFs and GIFT City.',
   path: '/nri',
   languages: nriHreflang(),
 })
@@ -92,11 +92,11 @@ export default function NriHubPage() {
           {[
             {
               h: 'India does not restrict you',
-              p: 'Portfolio management regulations carry no residency condition at all, and the AIF regulations expressly permit foreign and non-resident investors. Where a house declines you, that is its own commercial decision — usually driven by your country\'s rules, not India\'s.',
+              p: 'Portfolio management regulations carry no residency condition at all, and the AIF regulations expressly permit foreign and non-resident investors. Where a house declines you, that is its own commercial decision, usually driven by your country\'s rules, not India\'s.',
             },
             {
               h: 'The structure decides the tax',
-              p: 'A managed account holding shares in your own name and a fund issuing you units are treated very differently in all three corridors — sometimes as the difference between a capital gain and income. It is the first question to ask, not the last.',
+              p: 'A managed account holding shares in your own name and a fund issuing you units are treated very differently in all three corridors, sometimes as the difference between a capital gain and income. It is the first question to ask, not the last.',
             },
             {
               h: 'Indian law changed underneath everyone',

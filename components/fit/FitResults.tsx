@@ -129,7 +129,7 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
           <div className="text-center py-4">
             <p className="font-sans text-xl font-bold">✓ Blueprint on its way.</p>
             <p className="font-serif italic text-[15.5px] text-slate mt-2">
-              Check your inbox — and the desk will reach out within one working day.
+              Check your inbox, and the desk will reach out within one working day.
             </p>
           </div>
         ) : (

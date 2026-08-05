@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { SpectrumExplorer } from '@/components/spectrum/SpectrumExplorer'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES, articleHref } from '@/lib/content/articles'
-import { SHEETS } from '@/lib/constants'
+import { SHEETS, SITE } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
@@ -35,6 +35,9 @@ export default function HomePage() {
             <em className="text-bronze italic">outcome</em>, what ₹1 crore becomes next to the FD
             you already have. By <em className="text-bronze italic">objective</em>, which structure
             does which job. Tap any block or bubble to open it up.
+          </p>
+          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-5">
+            {SITE.lineage} · {SITE.city}, {SITE.state} · Architecture, not salesmanship
           </p>
         </div>
 

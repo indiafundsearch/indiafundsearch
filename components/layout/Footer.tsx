@@ -14,8 +14,13 @@ export function Footer() {
               {SITE.initiative} · {SITE.tagline}
             </p>
             <p className="mt-4 max-w-prose text-[15px] text-[#c7d6ce] leading-relaxed">
-              Every SEBI-regulated alternative, explained the way we would across a
-              table — no jargon survives past the first sentence.
+              Every SEBI-regulated alternative, explained the way we would across a table. No
+              jargon survives past the first sentence.
+            </p>
+            <p className="mt-4 font-mono text-[10.5px] tracking-[0.1em] uppercase text-bronze-soft leading-relaxed">
+              {SITE.lineage}
+              <br />
+              {SITE.city}, {SITE.state}
             </p>
           </div>
 

@@ -301,7 +301,7 @@ export const FIT_QUESTIONS: FitQuestion[] = [
   {
     "k": "lock",
     "q": "How much lock-in can this capital genuinely accept?",
-    "why": "Illiquidity is the price of several premium return streams — but only if it is affordable.",
+    "why": "Illiquidity is the price of several premium return streams, but only if it is affordable.",
     "opts": [
       [
         4,

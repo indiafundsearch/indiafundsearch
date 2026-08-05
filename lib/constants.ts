@@ -25,6 +25,15 @@ export const SITE = {
    * the data fiduciary properly, not just by trading name.
    */
   legalEntity: 'JSL Wealth Management Private Limited',
+  /**
+   * Two facts that were sitting only in the founder's LinkedIn headline and
+   * nowhere on the site. For a reader deciding whether to hand over ₹50 lakh, a
+   * 1992 lineage is the strongest trust signal the business owns, and being in
+   * Gujarat is an asset rather than a footnote — GIFT City is in Gandhinagar.
+   */
+  lineage: 'Built on Jhaveri Securities Ltd, est. 1992',
+  city: 'Vadodara',
+  state: 'Gujarat',
   description:
     'Every SEBI-regulated alternative investment in India — PMS, AIF, SIF, REITs, private credit, GIFT City — explained the way a good advisor would across a table.',
 } as const

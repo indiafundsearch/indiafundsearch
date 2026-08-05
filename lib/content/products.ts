@@ -20,7 +20,7 @@ export const PRODUCTS: Product[] = [
     "horizon": "3–7+ yrs",
     "cashflow": false,
     "analogy": "The base layer of most portfolios — pooled, professionally managed, easy to enter and exit. Comfortable and liquid, but built for the many, not tailored to you.",
-    "what": "A SEBI-regulated pooled fund that spreads money across 40–80 securities under strict diversification rules. The most liquid and most regulated structure in Indian investing — and the benchmark every alternative has to beat.",
+    "what": "A SEBI-regulated pooled fund that spreads money across 40–80 securities under strict diversification rules. The most liquid and most regulated structure in Indian investing, and the benchmark every alternative has to beat.",
     "solves": [
       "Long-term compounding with full liquidity",
       "Disciplined investing through SIP",
@@ -145,7 +145,7 @@ export const PRODUCTS: Product[] = [
     "risks": [
       "Unit prices move with markets and interest rates",
       "Occupancy and rental cycles affect payouts",
-      "Payout mix — and its tax — varies trust to trust"
+      "Payout mix, and its tax — varies trust to trust"
     ],
     "tax": "Distributions taxed component-wise — interest and rental at slab, some components exempt or as capital return. Units: STCG 20% under 12 months, LTCG 12.5% beyond.",
     "slug": "reits-invits",
@@ -186,7 +186,7 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
     "slug": "market-neutral-funds",
-    "nriNote": "GIFT inbound market-neutral structures exist specifically for overseas investors — often cleaner than the domestic Cat III route."
+    "nriNote": "GIFT inbound market-neutral structures exist specifically for overseas investors, often cleaner than the domestic Cat III route."
   },
   {
     "id": "lssif",
@@ -204,7 +204,7 @@ export const PRODUCTS: Product[] = [
     "ret": "10–14% p.a. with lower drawdowns (indicative)",
     "horizon": "3–5 yrs",
     "cashflow": false,
-    "analogy": "An equity fund built with brakes. It won’t top the charts in a strong bull run — the hedges cost some upside — but it is designed to fall far less when markets drop.",
+    "analogy": "An equity fund built with brakes. It won’t top the charts in a strong bull run — the hedges cost some upside, but it is designed to fall far less when markets drop.",
     "what": "Specified Investment Funds — SEBI’s newest category, live since 2025 — that can go long the stocks they like and short the ones they don’t. The aim is equity-like returns with much smaller falls: hedge-fund technique, mutual-fund tax and rules, ₹10 L entry.",
     "solves": [
       "Staying in equity without full drawdown exposure",
@@ -426,7 +426,7 @@ export const PRODUCTS: Product[] = [
     "ret": "22–28% p.a. (indicative, wide dispersion)",
     "horizon": "3–7 yrs",
     "cashflow": false,
-    "analogy": "Buying the flat at the excavation stage. The discount to the finished price is real — and so is the risk that the project is delayed, redesigned, or never built. You are paid for waiting and for uncertainty.",
+    "analogy": "Buying the flat at the excavation stage. The discount to the finished price is real, and so is the risk that the project is delayed, redesigned, or never built. You are paid for waiting and for uncertainty.",
     "what": "Buying shares of companies before they list — late-stage private companies via unlisted-share platforms or Cat II funds. The idea: enter at private valuations, exit at public ones. Some of India’s best-known listings rewarded pre-IPO holders handsomely; others listed below their private rounds.",
     "solves": [
       "Access to growth that happens before the IPO pop",
@@ -463,7 +463,7 @@ export const PRODUCTS: Product[] = [
     "ret": "25–32% p.a. targeted (indicative, power-law)",
     "horizon": "8–12 yrs",
     "cashflow": false,
-    "analogy": "Planting an orchard, not buying fruit. Most saplings won’t make it. The few that do bear fruit for a generation — and one great tree can pay for the whole orchard.",
+    "analogy": "Planting an orchard, not buying fruit. Most saplings won’t make it. The few that do bear fruit for a generation, and one great tree can pay for the whole orchard.",
     "what": "Category I AIFs (VC and angel funds) investing in early-stage companies. Returns follow a power law: many investments fail, most muddle through, and one or two winners are expected to return the whole fund. Patient, decade-long capital at the frontier of risk.",
     "solves": [
       "Participation in India’s startup ecosystem with professional selection",

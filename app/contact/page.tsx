@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact/ContactForm'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
-import { CONTACT, DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
+import { CONTACT, DISCLOSURE, SHEETS, whatsappHref, SITE } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
@@ -20,9 +20,12 @@ export default function ContactPage() {
           Talk to the desk.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
-          No pitch decks, no pressure. A conversation about your architecture — including, when
-          it&apos;s the honest answer,{' '}
+          No pitch decks, no pressure. A conversation about your architecture, including the
+          answer nobody else gives you:{' '}
           <em className="text-bronze italic">&ldquo;you don&apos;t need any of this yet.&rdquo;</em>
+        </p>
+        <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-4">
+          {SITE.city}, {SITE.state} · {SITE.lineage}
         </p>
       </div>
 

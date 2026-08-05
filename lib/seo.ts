@@ -135,6 +135,12 @@ export function organizationJsonLd() {
     logo: `${SITE.url}/og`,
     email: CONTACT.email,
     areaServed: 'IN',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: SITE.city,
+      addressRegion: SITE.state,
+      addressCountry: 'IN',
+    },
     knowsAbout: [
       'Portfolio Management Services',
       'Alternative Investment Funds',
