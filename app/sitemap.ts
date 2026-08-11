@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { PRODUCTS } from '@/lib/content/products'
 import { CORRIDORS } from '@/lib/content/corridors'
+import { ANSWER_SLUGS } from '@/lib/content/answers'
 import { SITE } from '@/lib/constants'
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
@@ -47,6 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
+    })),
+    // Long-tail answer pages — one question each.
+    ...ANSWER_SLUGS.map((slug) => ({
+      url: `${siteUrl}/learn/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
   ]
 }

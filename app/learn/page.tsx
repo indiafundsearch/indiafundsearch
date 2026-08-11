@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArticleAccordion } from '@/components/learn/ArticleAccordion'
+import { ANSWERS } from '@/lib/content/answers'
 import { ComparisonTable } from '@/components/learn/ComparisonTable'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES } from '@/lib/content/articles'
@@ -32,6 +33,28 @@ export default function LearnPage() {
       </div>
 
       <ArticleAccordion articles={[...ARTICLES]} />
+
+      {/* Straight answers — the long-tail pages. Linked from here so they get
+          internal links and a reader can find them without searching. */}
+      <div className="dim my-11">
+        <span>Straight answers to the questions we get asked</span>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {ANSWERS.map((a) => (
+          <Link
+            key={a.slug}
+            href={`/learn/${a.slug}`}
+            className="plot-card px-5 py-4 hover:shadow-plot-hover transition-shadow group"
+          >
+            <span className="font-sans text-[15.5px] font-semibold leading-snug group-hover:text-bronze transition-colors">
+              {a.question}
+            </span>
+            <span className="font-serif text-[14px] text-slate block mt-1.5 leading-snug">
+              {a.answer.split('. ').slice(0, 1).join('. ')}.
+            </span>
+          </Link>
+        ))}
+      </div>
 
       <div className="dim my-11">
         <span>Reference — the four structures, side by side</span>
