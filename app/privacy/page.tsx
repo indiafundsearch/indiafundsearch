@@ -38,6 +38,11 @@ export default function PrivacyPage() {
           fiduciary for the personal data described below. Where this policy says
           &ldquo;we&rdquo;, it means that company.
         </p>
+        <p className="font-mono text-[13px] leading-relaxed">
+          CIN {SITE.cin}
+          <br />
+          Registered office: {SITE.registeredAddress}
+        </p>
 
         <H>What we collect</H>
         <p>We only collect what you choose to give us. Depending on how you use the site, that can include:</p>

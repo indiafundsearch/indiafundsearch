@@ -938,6 +938,259 @@ export const ANSWERS: Answer[] = [
     sources: [SEBI_PMS],
     reviewed: REVIEWED,
   },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'which-amcs-accept-us-nri',
+    question: 'Which Indian mutual funds accept US and Canadian NRIs?',
+    answer:
+      'Only a minority of Indian AMCs accept US or Canadian residents, and those that do usually insist on offline paperwork and extra declarations. The list changes, so nobody should publish a stale one. The bigger question is whether you should buy an Indian mutual fund at all, because for a US taxpayer it is almost certainly a PFIC.',
+    metaTitle: 'Which Indian mutual funds accept US NRIs? And whether you should',
+    metaDescription:
+      'Why most Indian AMCs decline US and Canadian residents, what the ones that accept you will ask for, and the tax reason a US taxpayer may not want an Indian mutual fund even when one says yes.',
+    sections: [
+      {
+        h: 'Why most houses say no',
+        body: [
+          'Not Indian law. American law.',
+          'Accepting your subscription can pull the fund inside US securities rules. A foreign fund publicly offering into the United States needs a registration that is expensive and, in practice, almost never granted. Declining is cheaper than complying.',
+          'Canada creates a similar problem through its own provincial registration rules.',
+        ],
+      },
+      {
+        h: 'What the ones that accept you will ask for',
+        body: ['Expect more friction than a resident gets.'],
+        points: [
+          'Paper application rather than an online one',
+          'An additional declaration about your US or Canadian status',
+          'US tax documentation, usually a W-9',
+          'Sometimes an in-person or in-India signature',
+        ],
+      },
+      {
+        h: 'We are deliberately not publishing a list',
+        body: [
+          'Which houses accept you changes month to month, and it changes without announcement. A list published today is wrong within a quarter, and a wrong list on this subject wastes your time and damages ours.',
+          'We keep a current one from our own empanelments and send it on request. Ask the desk and you get what is true this week, not what was true last year.',
+        ],
+      },
+      {
+        h: 'The question worth asking first',
+        body: [
+          'Before hunting for a house that will take you, decide whether you want the product.',
+          'For a US taxpayer, an Indian mutual fund is almost always a PFIC. That means tax at the top marginal rate with an interest charge, and a Form 8621 for every fund, every year. A fund saying yes does not make that go away.',
+          'There is a structure that avoids it. A PMS holds operating-company shares directly in your own name, and operating companies are not PFICs. Same market, same manager skill, completely different US tax outcome.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'Are Indian mutual funds PFICs?', href: '/learn/are-indian-mutual-funds-pfic' },
+      { label: 'NRIs in the United States', href: '/nri/us' },
+      { label: 'Can an NRI invest in PMS?', href: '/learn/can-nri-invest-in-pms' },
+      { label: 'PMS vs mutual fund', href: '/learn/pms-vs-mutual-fund' },
+    ],
+    sources: [
+      { label: '17 CFR 230.902 — Regulation S definitions', url: 'https://www.law.cornell.edu/cfr/text/17/230.902' },
+      { label: 'Investment Company Act §7(d)', url: 'https://www.law.cornell.edu/uscode/text/15/80a-7' },
+      SEBI_PMS,
+    ],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'gift-city-vs-mutual-fund-for-nri',
+    question: 'GIFT City fund or Indian mutual fund: which is better for an NRI?',
+    answer:
+      'It depends entirely on where you pay tax. A GIFT City fund lets you invest in dollars with no Indian bank account and usually no Indian filing. But India\'s exemptions are built for investors taxed nowhere else. If your own country taxes you anyway, that exemption can be worth nothing to you.',
+    metaTitle: 'GIFT City vs Indian mutual fund for NRIs — which actually wins',
+    metaDescription:
+      'GIFT City funds versus Indian mutual funds for NRIs: currency, paperwork and repatriation compared, plus the tax question that decides it and why the answer differs in the US, UAE and UK.',
+    sections: [
+      {
+        h: 'What GIFT City actually changes',
+        body: [
+          'GIFT City sits legally inside India but operates in US dollars under its own regulator, the IFSCA.',
+          'The practical differences are about plumbing rather than performance.',
+        ],
+        points: [
+          '<b>Currency.</b> You subscribe in dollars. No forced rupee conversion on the way in.',
+          '<b>Accounts.</b> No NRE or NRO account needed.',
+          '<b>Repatriation.</b> Capital and gains move without the usual friction.',
+          '<b>Filing.</b> For many structures, Indian tax is settled at fund level and you file nothing in India.',
+        ],
+      },
+      {
+        h: 'The question that actually decides it',
+        body: [
+          'Not which fund performs better. Where you file your taxes.',
+          'India\'s IFSC exemptions were designed for investors who are taxed nowhere else. If your own country taxes your worldwide income anyway, an Indian exemption simply removes the foreign tax credit you would otherwise have claimed. The saving passes to your own government, not to you.',
+        ],
+      },
+      {
+        h: 'How the answer differs by country',
+        body: [],
+        points: [
+          '<b>UAE.</b> The strongest case. You are taxed nowhere else, so the exemption is real money. And GIFT treatment is statutory rather than resting on a litigated treaty reading.',
+          '<b>United States.</b> Weakest. The treaty gives no relief on capital gains, so an Indian exemption leaves the whole burden on your US return. The classification of the vehicle matters far more than the exemption.',
+          '<b>United Kingdom.</b> Depends on one thing: whether that share class holds HMRC reporting fund status. Without it, your gain is taxed as income at up to 45% rather than as a capital gain.',
+        ],
+      },
+      {
+        h: 'Where an Indian mutual fund still wins',
+        body: [
+          'Cost and access. A mutual fund starts at a few hundred rupees and gives you daily liquidity. GIFT City restricted schemes start at US $150,000.',
+          'If you already have Indian rupee income to deploy, and you are in a corridor where the tax outcome is similar, the simpler product is often the better one.',
+        ],
+      },
+      {
+        h: 'The one thing to check either way',
+        body: [
+          'Ask how the vehicle is structured, not just what it invests in.',
+          'For a US taxpayer, whether it is a corporation, a partnership or a trust changes your filing completely. For a UK resident, whether your share class is on HMRC\'s list changes your rate by twenty points. Neither question is answered on a factsheet.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'GIFT City explained', href: '/gift-city' },
+      { label: 'GIFT City minimum investment', href: '/learn/gift-city-minimum-investment' },
+      { label: 'NRIs in the UAE', href: '/nri/uae' },
+      { label: 'NRIs in the United Kingdom', href: '/nri/uk' },
+      { label: 'NRIs in the United States', href: '/nri/us' },
+    ],
+    sources: [IFSCA, ITA_2025],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'aif-categories-explained',
+    question: 'AIF Category I, II and III: what is the difference?',
+    answer:
+      'The number describes what the fund is allowed to do, not how risky it is. Category I backs startups and infrastructure. Category II holds private equity, private credit and real-estate debt, and is the largest by far. Category III trades listed markets and may use leverage. They are also taxed completely differently.',
+    metaTitle: 'AIF Category I, II and III explained — and why the tax differs',
+    metaDescription:
+      'The difference between AIF Category I, II and III: what each holds, typical lock-ins, and the tax split that matters most — Category I and II pass income through to you, Category III is taxed inside the fund.',
+    sections: [
+      {
+        h: 'The categories are strategy buckets, not risk grades',
+        body: [
+          'People read the number as a rating. It is not. A Category I venture fund is far riskier than a Category II private credit fund.',
+          'The number tells you what the fund may invest in and how it may operate.',
+        ],
+      },
+      {
+        h: 'Category I, the nursery',
+        body: [
+          'Funds the regulator wants to encourage: venture capital, angel funds, infrastructure, social ventures.',
+          'Early-stage money. The longest horizons, typically 8 to 12 years. The highest single-investment risk, with returns following a power law where one or two winners carry the fund.',
+        ],
+      },
+      {
+        h: 'Category II, the workhorse',
+        body: [
+          'Everything that is neither venture nor trading, and that does not use significant leverage. Private equity, private credit, real-estate debt, pre-IPO.',
+          'This is where most serious alternatives money in India sits. Usually closed-ended, 3 to 10 years, with returns that are contracted or event-driven rather than market-driven.',
+        ],
+      },
+      {
+        h: 'Category III, the trading desk',
+        body: [
+          'Complex strategies in listed markets: long-short, market neutral, concentrated books using derivatives. It may borrow.',
+          'This is closest to what the rest of the world calls a hedge fund. Liquidity is better than Category I or II, often with periodic exit windows rather than a decade-long lock.',
+        ],
+      },
+      {
+        h: 'The tax split is the part that matters',
+        body: [
+          'This is the practical difference, and it catches people out.',
+        ],
+        points: [
+          '<b>Category I and II are pass-through.</b> Income is taxed in your hands, as though you had made the investments directly, and it keeps its original character. The fund sends you a statement and you report it.',
+          '<b>Category III is not.</b> Tax is generally settled inside the fund, so what reaches you is already post-tax and you report nothing further on it.',
+        ],
+      },
+      {
+        h: 'What this means when you compare funds',
+        body: [
+          'A Category II gross return and a Category III post-tax return are not the same number. Comparing them directly will mislead you every time.',
+          'Establish which one you are being shown before you compare anything.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'What is AIF?', href: '/learn/what-is-aif' },
+      { label: 'AIF minimum investment', href: '/learn/aif-minimum-investment' },
+      { label: 'PMS vs AIF', href: '/learn/pms-vs-aif' },
+      { label: 'Tax schedule, all structures', href: '/tax' },
+    ],
+    sources: [SEBI_AIF],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'pms-fees-explained',
+    question: 'How much does a PMS actually cost?',
+    answer:
+      'Two shapes are common. A flat fee of about 2 to 2.5% a year, or a lower flat fee plus a share of profits above a hurdle. Most people assume the profit-share is cheaper. On typical terms the crossover is around a 16.7% gross return. Above that, the flat fee costs you less.',
+    metaTitle: 'PMS fees explained — flat fee vs profit share, with the arithmetic',
+    metaDescription:
+      'What a PMS really costs: flat fee versus profit share worked through on ₹50 lakh, where the crossover sits, and the three clauses to check before you sign — hurdle, high-water mark and how gains are counted.',
+    sections: [
+      {
+        h: 'The two shapes',
+        body: [
+          'Fees are commercial, not regulated, so they vary by house. Two structures dominate.',
+        ],
+        points: [
+          '<b>Flat fee only.</b> Typically 2 to 2.5% of assets a year.',
+          '<b>Flat plus profit share.</b> A lower fixed fee, plus a cut of gains above a hurdle rate.',
+        ],
+      },
+      {
+        h: 'Run the numbers before you assume',
+        body: [
+          'Take ₹50 lakh over one year.',
+          'On a <b>flat 2.5%</b>, you pay ₹1,25,000. Good year or bad.',
+          'On <b>1.5% plus 15% above a 10% hurdle</b>, at an 18% return your gain is ₹9,00,000. The hurdle absorbs the first ₹5,00,000. Of the remaining ₹4,00,000 the manager takes 15%, or ₹60,000. Add the ₹75,000 fixed fee and you pay ₹1,35,000.',
+          '<b>The crossover sits around 16.7%.</b> Below that the profit share is cheaper. Above it, the flat fee is.',
+          'So a profit share does not mean you only pay when things go well. It means you pay less in bad years and more in very good ones.',
+        ],
+      },
+      {
+        h: 'Three clauses to check before signing',
+        body: [],
+        points: [
+          '<b>The hurdle.</b> What return must the manager clear before taking a share?',
+          '<b>The high-water mark.</b> Without one you can be charged twice for recovering the same loss.',
+          '<b>Realised or notional.</b> Is the profit share charged on gains actually booked, or on paper gains?',
+        ],
+      },
+      {
+        h: 'What sits on top',
+        body: [
+          'The headline fee is not the whole cost. Add GST on the fee, plus brokerage, custody and audit charges.',
+          'And add the cost nobody quotes: tax on churn. A PMS holds shares in your own name, so every sale the manager makes is your taxable disposal that year. A high-turnover manager hands you a tax bill annually even if you withdraw nothing.',
+        ],
+      },
+      {
+        h: 'The number to ask for',
+        body: [
+          'Portfolio turnover, alongside performance.',
+          'Two managers can report identical gross returns and leave you with materially different money once fees and churn tax are through. The second number tells you how much of the first you actually keep.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'What is PMS?', href: '/learn/what-is-pms' },
+      { label: 'PMS minimum investment', href: '/learn/pms-minimum-investment' },
+      { label: 'PMS vs mutual fund', href: '/learn/pms-vs-mutual-fund' },
+      { label: 'Run the Fit Finder', href: '/fit-finder' },
+    ],
+    sources: [SEBI_PMS],
+    reviewed: REVIEWED,
+  },
 ]
 
 export const answerBySlug = (slug: string): Answer | undefined =>

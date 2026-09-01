@@ -19,12 +19,24 @@ export const SITE = {
   url: 'https://www.indiafundsearch.com',
   /**
    * The operating company behind both brands. IndiaFundSearch and Beyond are
-   * brands; this is the legal person a reader (or a regulator) needs named in
-   * the privacy policy and the disclosures. TODO: add CIN and registered
-   * address once the owner supplies them — a DPDP-era policy should identify
-   * the data fiduciary properly, not just by trading name.
+   * brands; this is the legal person a reader, or a regulator, needs named in
+   * the privacy policy and the disclosures. Taken from the certificate of
+   * incorporation.
    */
-  legalEntity: 'JSL Wealth Management Private Limited',
+  /**
+   * NOTE THE SPELLING. The company is registered with the MCA as
+   * "JSL WEALTH MANAGMENT PRIVATE LIMITED" — "Managment", without the second
+   * E. That is the legal name on the certificate of incorporation dated
+   * 13 January 2023, so it is what the legal pages must say. Do not silently
+   * "correct" it: a privacy policy naming a company that does not exist is
+   * worse than an odd-looking spelling. The CIN below is the unambiguous
+   * identifier either way. If the owner files a name correction with the MCA,
+   * update both together.
+   */
+  legalEntity: 'JSL Wealth Managment Private Limited',
+  cin: 'U67110GJ2023PTC138431',
+  registeredAddress: '136/137, Paradise Complex, Sayajigunj, Vadodara, Gujarat 390020, India',
+  incorporated: '13 January 2023',
   /**
    * Two facts that were sitting only in the founder's LinkedIn headline and
    * nowhere on the site. For a reader deciding whether to hand over ₹50 lakh, a

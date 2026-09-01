@@ -135,10 +135,16 @@ export function organizationJsonLd() {
     logo: `${SITE.url}/og`,
     email: CONTACT.email,
     areaServed: 'IN',
+    // Corporate identity number is the unambiguous identifier for the entity,
+    // which matters more than the trading name given the registered spelling.
+    identifier: SITE.cin,
+    foundingDate: '2023-01-13',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '136/137, Paradise Complex, Sayajigunj',
       addressLocality: SITE.city,
       addressRegion: SITE.state,
+      postalCode: '390020',
       addressCountry: 'IN',
     },
     knowsAbout: [

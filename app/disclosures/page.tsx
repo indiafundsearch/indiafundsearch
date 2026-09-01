@@ -65,6 +65,11 @@ export default function DisclosuresPage() {
         operates this website, holds the distribution and referral arrangements described below, and
         is who you are dealing with when you contact the desk.
       </p>
+      <p className="font-mono text-[13px] text-slate leading-relaxed max-w-[820px] mt-3">
+        CIN {SITE.cin} · Incorporated {SITE.incorporated}
+        <br />
+        Registered office: {SITE.registeredAddress}
+      </p>
 
       <div className="mt-12 max-w-[820px] space-y-10">
         {SECTIONS.map((s) => (
