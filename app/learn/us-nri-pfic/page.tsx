@@ -1,15 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { DISCLOSURE } from '@/lib/constants'
+import { pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+// Routed through pageMeta so canonical / og tags are right when this is
+// published. Previously a bare Metadata object, so it emitted no canonical.
+export const metadata: Metadata = pageMeta({
   title: 'US & Canadian NRIs — PFIC, FATCA, FBAR & Reg S',
   description:
     'Why a US or Canadian passport changes GIFT City and pooled-fund investing materially: PFIC exposure, the QEF / mark-to-market problem, FATCA and FBAR reporting, and Reg S eligibility.',
+  path: '/learn/us-nri-pfic',
+  ogTitle: 'US & Canadian NRIs',
   // Draft: fund-specific positions are being finalised with US-qualified tax
   // counsel. Keep out of the index until the [COPY NEEDED] blocks are approved.
-  robots: { index: false, follow: false },
-}
+  noindex: true,
+})
 
 /** Visible, honest placeholder for content pending professional review. */
 function CopyNeeded({ children }: { children: React.ReactNode }) {

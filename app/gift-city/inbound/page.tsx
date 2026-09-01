@@ -4,6 +4,7 @@ import { GiftGate } from '@/components/gift/GiftGate'
 import { INBOUND_GROUP_ORDER } from '@/lib/gift/data'
 import { GIFT_SHELF } from '@/lib/constants'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
+import { CORRIDORS } from '@/lib/content/corridors'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 import { pageMeta } from '@/lib/seo'
 
@@ -43,6 +44,46 @@ export default function GiftInboundPage() {
       </header>
 
       <UsPersonWarning className="mb-8 max-w-[860px]" />
+
+      {/* Corridor gate. The shelf below is the same for everyone; the tax
+          outcome is not. Someone filing in New Jersey and someone filing in
+          Dubai should not read this list the same way, so the question comes
+          before the funds rather than after them. */}
+      <section className="mb-10 bg-ink text-white-warm px-8 py-7 relative max-w-[860px] max-sm:px-5">
+        <span className="corner corner-tl" /><span className="corner corner-tr" />
+        <span className="corner corner-bl" /><span className="corner corner-br" />
+        <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal font-semibold">
+          Before you read the shelf
+        </div>
+        <h2 className="font-sans text-[clamp(20px,2.6vw,26px)] font-bold mt-2 leading-[1.15] max-w-[620px]">
+          Where you file your taxes changes what these funds are worth to you.
+        </h2>
+        <p className="font-serif text-[16px] text-[#c7d6ce] mt-2.5 max-w-[660px]">
+          India&rsquo;s IFSC exemptions were written for investors who are taxed nowhere else. If
+          your own country taxes you anyway, an Indian exemption can quietly leave you worse off,
+          not better. Same fund, three different answers.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-3 mt-6">
+          {CORRIDORS.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/nri/${c.slug}`}
+              className="block border border-[rgba(252,251,248,0.25)] px-4 py-3.5 hover:bg-[rgba(252,251,248,0.08)] hover:border-signal transition-colors group"
+            >
+              <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-[#9db5aa]">
+                <span className="mr-1.5 text-[12px]" aria-hidden="true">{c.flag}</span>
+                Corridor {c.code}
+              </span>
+              <span className="font-sans text-[16px] font-bold block mt-1 group-hover:text-signal transition-colors">
+                NRIs in {c.label}
+              </span>
+              <span className="font-serif text-[13.5px] text-[#c7d6ce] block mt-1.5 leading-snug">
+                {c.hook}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <GiftGate direction="inbound" curatedAsOf={GIFT_SHELF.curatedAsOf} groupOrder={INBOUND_GROUP_ORDER} />
 

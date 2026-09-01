@@ -1,17 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { DISCLOSURE, SITE } from '@/lib/constants'
-import { AUTHOR, personJsonLd } from '@/lib/seo'
+import { AUTHOR, pageMeta, personJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 
-export const metadata: Metadata = {
+// Routed through pageMeta like every other page so the canonical, og:url and
+// og:image are correct the moment the noindex comes off. Previously this used a
+// bare Metadata object and therefore emitted no canonical at all.
+export const metadata: Metadata = pageMeta({
   title: 'About — Yash Jhaveri & IndiaFundSearch',
   description:
     'Who is behind IndiaFundSearch: Yash Jhaveri and the Beyond advisory practice — the people, the lineage and the empanelments behind the education.',
-  // Draft: real credentials, photo, lineage and empanelment set are pending
-  // the owner. Keep out of the index until the [COPY NEEDED] blocks are filled.
-  robots: { index: false, follow: false },
-}
+  path: '/about',
+  ogTitle: 'About IndiaFundSearch',
+  // Draft: real credentials and photo are pending the owner. Keep out of the
+  // index until the [COPY NEEDED] blocks are filled.
+  noindex: true,
+})
 
 function CopyNeeded({ children }: { children: React.ReactNode }) {
   return (
