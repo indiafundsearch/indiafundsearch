@@ -16,19 +16,19 @@ export const metadata: Metadata = pageMeta({
 const TAX_FAQ = [
   {
     q: 'How is PMS taxed in India?',
-    a: 'A PMS holds shares directly in your own demat account, so gains are taxed exactly like buying shares yourself — the manager’s churn creates capital gains in your ledger each year. Listed equity: STCG 20% under 12 months, LTCG 12.5% beyond 12 months (₹1.25 L exempt per year).',
+    a: 'A PMS holds shares directly in your own demat account. So gains are taxed exactly as if you had bought the shares yourself. Every trade the manager makes lands in your ledger that year. Listed equity: 20% under 12 months, 12.5% beyond, with ₹1.25 lakh of gains exempt each year.',
   },
   {
     q: 'How is an AIF taxed?',
-    a: 'It depends on the category. Cat I and Cat II AIFs are pass-through — income is taxed in your hands as if you held the underlying. Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific), and you receive a post-tax NAV.',
+    a: 'It depends on the category. Cat I and Cat II are pass-through: income is taxed in your hands, as if you held the underlying yourself. Cat III is usually taxed inside the fund at the maximum marginal rate, so what reaches you is already post-tax. The mechanics vary by scheme.',
   },
   {
     q: 'Do NRIs pay tax differently on these structures?',
-    a: 'Often yes — TDS is deducted at source and treaty relief may apply, so the effective rate and filing differ from a resident’s. GIFT City (IFSC) structures can be materially cleaner for non-residents. Treatment is fund- and residency-specific; confirm with your CA.',
+    a: 'Often yes. Tax is deducted at source, and a treaty may reduce the rate, so both the effective rate and the filing differ from a resident’s. GIFT City structures can be materially cleaner for non-residents. It is fund-specific and residency-specific, so confirm yours with your CA.',
   },
   {
     q: 'What changed for buybacks and STT in Budget 2026?',
-    a: 'Budget 2026 restored capital-gains treatment on buybacks for shareholders but added a separate additional buyback tax capturing promoters; and it raised STT across equity derivatives (futures and options), effective 1 Apr 2026. Your specific position depends on your facts — confirm it with your CA.',
+    a: 'Two things. Budget 2026 restored capital-gains treatment on buybacks for shareholders, but added a separate buyback tax that catches promoters. And it raised STT across equity derivatives from 1 April 2026. Your own position turns on your facts, so confirm it with your CA.',
   },
 ]
 
@@ -75,17 +75,17 @@ export default function TaxPage() {
           Promoters — the buyback carve-out
         </div>
         <p>
-          Budget 2026 restored capital-gains treatment on buybacks for shareholders, but it did{' '}
-          <b>not</b> make buybacks tax-neutral for promoters. A separate <b>additional buyback tax</b>{' '}
+          Budget 2026 restored capital-gains treatment on buybacks for shareholders. It did{' '}
+          <b>not</b> make them tax-neutral for promoters. A separate <b>additional buyback tax</b>{' '}
           applies to persons classified as <b>promoters</b>, and to shareholders above the prescribed
-          holding threshold — producing an effective rate materially higher than the headline 12.5%,
-          reported around <b>~22% for corporate promoters</b> and <b>~30% for non-corporate
-          promoters</b>, for buybacks on or after <b>1 Apr 2026</b>.
+          holding threshold. The effective rate lands well above the headline 12.5%: reported at
+          around <b>22% for corporate promoters</b> and <b>30% for non-corporate promoters</b>, on
+          buybacks from <b>1 Apr 2026</b>.
         </p>
         <p className="mt-2 font-serif italic text-[13.5px] text-slate">
-          Your exact position — the applicable rate, whether you meet the promoter definition, and the
-          holding threshold — depends on facts specific to you; confirm it with your Chartered
-          Accountant. If a family business buyback is on the table, this is a conversation to have{' '}
+          Three things turn on your own facts: the applicable rate, whether you meet the promoter
+          definition, and the holding threshold. Confirm all three with your Chartered Accountant.
+          If a family business buyback is on the table, have that conversation{' '}
           <em>before</em> the resolution, not after.
         </p>
       </div>
@@ -96,19 +96,20 @@ export default function TaxPage() {
           What the 2026 STT hike does to hedged strategies
         </div>
         <p className="text-[15.5px] text-[#c7d6ce]">
-          Securities transaction tax is charged on <b className="text-white-warm">every trade</b>, so
-          its cost scales with turnover. Directional, low-churn portfolios barely feel a rate change.
-          But <b className="text-white-warm">hedged strategies trade constantly</b> — a market-neutral
-          book runs matched long and short legs and re-balances them; a long-short SIF rolls index
-          futures and options to manage its hedge. From <b className="text-white-warm">1 Apr 2026</b>,
-          futures STT rose 0.02% → 0.05% and options-premium STT 0.10% → 0.15%, so the transaction-cost
-          base of exactly these strategies stepped up — a permanent drag that comes straight out of the
-          spread they are trying to harvest.
+          Securities transaction tax is charged on <b className="text-white-warm">every trade</b>. So
+          its cost scales with turnover. A directional, low-churn portfolio barely feels a rate change.
+          But <b className="text-white-warm">hedged strategies trade constantly</b>. A market-neutral
+          book runs matched long and short legs and rebalances them. A long-short SIF rolls index
+          futures and options to hold its hedge. From <b className="text-white-warm">1 Apr 2026</b>,
+          futures STT rose 0.02% to 0.05%, and options-premium STT 0.10% to 0.15%. The transaction-cost
+          base of exactly these strategies stepped up. That is a permanent drag, taken straight out of
+          the spread they are trying to harvest.
         </p>
         <p className="text-[14.5px] text-[#9db5aa] mt-3">
-          The takeaway is not &ldquo;avoid them&rdquo; — it is that the <b className="text-white-warm">net</b>{' '}
-          (after-STT, after-fee) spread is what matters, and it just got thinner. Ask any Cat III
-          market-neutral or long-short manager how the April 2026 STT change moved their gross-to-net.
+          The takeaway is not &ldquo;avoid them&rdquo;. It is that the{' '}
+          <b className="text-white-warm">net</b> spread, after STT and after fees, is what matters,
+          and it just got thinner. Ask any Cat III market-neutral or long-short manager how the April
+          2026 change moved their gross-to-net.
         </p>
         <div className="flex gap-4 flex-wrap mt-4 font-sans text-[13px] font-medium tracking-[0.06em] uppercase">
           <Link

@@ -753,6 +753,191 @@ export const ANSWERS: Answer[] = [
     sources: [RBI_FI, ITA_2025],
     reviewed: REVIEWED,
   },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'nre-vs-nro-account',
+    question: 'NRE or NRO account: which one do you need?',
+    answer:
+      'NRE is for money you earned abroad. It is fully repatriable and the interest is exempt from Indian tax. NRO is for money you earn in India, like rent or dividends. Its interest is taxable, and you can send out up to US $1 million a year. Most NRIs end up needing both.',
+    metaTitle: 'NRE vs NRO account — which one an NRI actually needs',
+    metaDescription:
+      'The difference between NRE and NRO accounts: what each is for, which is repatriable, how the interest is taxed in India and abroad, and which one your Indian investments should be routed through.',
+    sections: [
+      {
+        h: 'The one-line difference',
+        body: [
+          '<b>NRE</b> holds money you earned outside India. <b>NRO</b> holds money you earn inside India.',
+          'Both are rupee accounts. The source of the money is what separates them, and that source decides how they behave.',
+        ],
+      },
+      {
+        h: 'How they differ in practice',
+        body: [],
+        points: [
+          '<b>Repatriation.</b> NRE money moves out freely. NRO money is capped at US $1 million per financial year, with documentation.',
+          '<b>Indian tax on interest.</b> NRE interest is exempt. NRO interest is taxable, and tax is deducted at source.',
+          '<b>What goes in.</b> NRE takes foreign earnings. NRO takes Indian rent, dividends, pension and proceeds from assets you already held.',
+          '<b>Joint holding.</b> An NRE account can generally be held jointly with another non-resident. NRO is more flexible on resident joint holders.',
+        ],
+      },
+      {
+        h: 'Which one should your investments run through?',
+        body: [
+          'This is the part that actually matters, and it follows from the route you choose rather than from the account.',
+          'Investing on a <b>repatriable</b> basis means the money comes from abroad or from your NRE account, and the proceeds can go back out. Investing on a <b>non-repatriable</b> basis runs through NRO, and the investment is treated as domestic money.',
+          'Decide this before you invest. Changing route afterwards usually means selling and re-buying, with the tax and cost that follows.',
+        ],
+      },
+      {
+        h: 'A trap for people who file taxes abroad',
+        body: [
+          'NRE interest being exempt in India does not make it tax-free.',
+          'If you are tax resident somewhere that taxes worldwide income, the UK for example, that interest is fully taxable there. And because no Indian tax was paid, there is usually no foreign tax credit to claim against it.',
+          'So the Indian exemption benefits your other country\'s revenue, not you. Worth knowing before you park a large balance there.',
+        ],
+      },
+      {
+        h: 'What about FCNR?',
+        body: [
+          'A third account type worth knowing. FCNR is a term deposit held in foreign currency rather than rupees, so you carry no rupee exchange risk on it. The interest is exempt from Indian tax, like NRE.',
+          'It suits money you know you will need in dollars, pounds or dirhams rather than rupees.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'How much can an NRI send out of India?', href: '/learn/nri-repatriation-limit' },
+      { label: 'Can an NRI invest in PMS?', href: '/learn/can-nri-invest-in-pms' },
+      { label: 'NRIs in the United Kingdom', href: '/nri/uk' },
+      { label: 'NRIs in the UAE', href: '/nri/uae' },
+    ],
+    sources: [RBI_FI, ITA_2025],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'sif-minimum-investment',
+    question: 'What is a SIF, and what is the minimum investment?',
+    answer:
+      'A Specialised Investment Fund is SEBI\'s newest category, sitting between mutual funds and AIFs. The minimum is ₹10 lakh, measured at PAN level across every strategy of that fund. It can go long and short, but it keeps mutual-fund style rules, disclosure and tax.',
+    metaTitle: 'SIF minimum investment — ₹10 lakh, and what a Specialised Investment Fund is',
+    metaDescription:
+      'Specialised Investment Funds explained: the ₹10 lakh minimum measured at PAN level, how SIFs differ from mutual funds and AIFs, what they can hold, and how they are taxed.',
+    sections: [
+      {
+        h: 'What is a SIF?',
+        body: [
+          'A Specialised Investment Fund is a category SEBI created to sit between a mutual fund and an AIF.',
+          'It can do things a mutual fund cannot. It can go long the stocks it likes and short the ones it does not, which is hedge-fund technique. But it keeps mutual-fund style rules, disclosure and tax treatment, and a far lower entry point than an AIF.',
+        ],
+      },
+      {
+        h: 'What is the minimum?',
+        body: [
+          '<b>₹10 lakh.</b> Against ₹50 lakh for a PMS and ₹1 crore for an AIF, that is a large drop in the entry ticket for a strategy of this kind.',
+          'Two details people miss.',
+        ],
+        points: [
+          'It is measured <b>at PAN level, across all strategies</b> of that fund. You cannot split ₹10 lakh across two of its strategies.',
+          'Your ordinary mutual fund holdings with the same AMC do not count towards it.',
+          'Accredited investors are exempt from the minimum.',
+        ],
+      },
+      {
+        h: 'What happens if your balance falls below ₹10 lakh?',
+        body: [
+          'It depends on why.',
+          'If the value drops because markets fell, that is not your doing and it is not treated as a breach. If you cause it, by redeeming part of your holding, the units are frozen and you get 30 days to rebalance back above the floor.',
+        ],
+      },
+      {
+        h: 'How is a SIF taxed?',
+        body: [
+          'Like a mutual fund, which is the point of the structure.',
+          'An equity-oriented SIF is taxed as equity: 20% on gains under 12 months, 12.5% beyond, with ₹1.25 lakh exempt each year. Compare that with a Category III AIF, where tax is generally settled inside the fund at the maximum marginal rate.',
+          'For many investors that difference matters more than the strategy.',
+        ],
+      },
+      {
+        h: 'What should make you cautious?',
+        body: [
+          'The category went live in 2025, so track records are short. There is no long-run evidence yet on how these strategies behave through a full cycle in Indian markets.',
+          'And hedged strategies trade constantly, so the securities transaction tax increase from April 2026 lands harder on them than on a low-churn portfolio. Ask any manager how that change moved their gross-to-net.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'PMS vs AIF', href: '/learn/pms-vs-aif' },
+      { label: 'What is AIF?', href: '/learn/what-is-aif' },
+      { label: 'AIF minimum investment', href: '/learn/aif-minimum-investment' },
+      { label: 'Tax schedule, all structures', href: '/tax' },
+    ],
+    sources: [SEBI_AIF, SEBI_PMS],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'pms-vs-mutual-fund',
+    question: 'PMS or mutual fund: what is the real difference?',
+    answer:
+      'A mutual fund gives you units of a pool. A PMS puts the actual shares in your own demat account. That changes everything downstream: how concentrated it can be, what you can see, and crucially who pays tax on the churn. In a PMS, that is you, every year.',
+    metaTitle: 'PMS vs mutual fund — ownership, concentration and the tax difference',
+    metaDescription:
+      'The real difference between a PMS and a mutual fund: who owns the shares, how concentrated the portfolio can be, what you can see, and why a high-turnover PMS creates a tax bill every year.',
+    sections: [
+      {
+        h: 'The difference that drives all the others',
+        body: [
+          'In a mutual fund you own <b>units of a pool</b>. In a PMS you own <b>the shares themselves</b>, in your own demat account.',
+          'That is not a marketing line. SEBI requires that a portfolio manager must not hold client securities in its own name. So you can log in any morning and count what you own.',
+        ],
+      },
+      {
+        h: 'Side by side',
+        body: [],
+        points: [
+          '<b>Minimum.</b> A few hundred rupees for a mutual fund. ₹50 lakh for a PMS.',
+          '<b>Holdings.</b> Typically 50 to 80 stocks in a fund. 15 to 30 in a PMS.',
+          '<b>Visibility.</b> A monthly factsheet, against every share on any day.',
+          '<b>Customisation.</b> None in a fund. In a PMS you can exclude a sector or a stock.',
+          '<b>Tax on churn.</b> Paid inside the fund. Paid by you, every year, in a PMS.',
+        ],
+      },
+      {
+        h: 'The tax point people underestimate',
+        body: [
+          'In a mutual fund, the manager can trade all year and you are taxed only when you redeem. The churn happens inside a wrapper.',
+          'In a PMS there is no wrapper. <b>Every sale the manager makes is your sale, in your return, that year.</b> A high-turnover PMS bills you tax annually even if you never withdraw a rupee.',
+          'So two managers can report identical gross returns and leave you with visibly different money. Ask for portfolio turnover alongside performance. The second number tells you how much of the first you keep.',
+        ],
+      },
+      {
+        h: 'When is a PMS actually the better tool?',
+        body: [
+          'When you specifically want concentration and can live with what it does.',
+          'A manager running twenty-five positions instead of eighty can size a conviction so it moves the portfolio. That is where the extra return can come from. It is also why the portfolio falls harder, and stays down longer, than an index.',
+          'If you cannot articulate why you want concentration, the mutual fund is the better answer. That is not a consolation prize. It is cheaper, more liquid and more diversified.',
+        ],
+      },
+      {
+        h: 'And the honest caveat',
+        body: [
+          'Manager dispersion in PMS is much wider than in mutual funds. The gap between the best and worst performer in the same category is large.',
+          'So picking the manager is not a detail in PMS. It is the whole decision.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'What is PMS?', href: '/learn/what-is-pms' },
+      { label: 'PMS minimum investment', href: '/learn/pms-minimum-investment' },
+      { label: 'PMS vs AIF', href: '/learn/pms-vs-aif' },
+      { label: 'Run the Fit Finder', href: '/fit-finder' },
+    ],
+    sources: [SEBI_PMS],
+    reviewed: REVIEWED,
+  },
 ]
 
 export const answerBySlug = (slug: string): Answer | undefined =>

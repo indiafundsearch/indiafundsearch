@@ -51,10 +51,10 @@ export default function UsNriPficPage() {
           A US or Canadian passport changes everything.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-4">
-          Most GIFT City and pooled Indian fund structures are built for NRIs, OCIs and foreign
-          investors <em className="text-bronze italic">who are not US persons</em>. If you hold a US
-          or Canadian passport or green card, the same fund that is efficient for other NRIs can be{' '}
-          <b>actively punitive</b>, and simply subscribing can create reporting obligations back
+          Most GIFT City and pooled Indian funds are built for NRIs and foreign investors{' '}
+          <em className="text-bronze italic">who are not US persons</em>. If you hold a US or
+          Canadian passport or a green card, the same fund that works well for other NRIs can be{' '}
+          <b>actively punitive</b> for you. Simply subscribing can create reporting duties back
           home. Read this before you shortlist anything.
         </p>
       </header>
@@ -69,17 +69,16 @@ export default function UsNriPficPage() {
       <H>What a PFIC is</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          A <b>Passive Foreign Investment Company (PFIC)</b> is a US tax classification. Broadly, a
-          non-US pooled vehicle whose income or assets are mostly passive (interest, dividends,
-          capital gains) is a PFIC in the eyes of the US IRS. <b>Most non-US mutual funds, AIFs and
-          pooled structures are PFICs.</b>
+          A <b>Passive Foreign Investment Company (PFIC)</b> is a US tax classification. Broadly,
+          any non-US pooled vehicle whose income or assets are mostly passive is a PFIC. Passive
+          means interest, dividends and capital gains. <b>Most non-US mutual funds, AIFs and pooled
+          structures are PFICs.</b>
         </p>
         <p>
-          The US taxes PFICs harshly by default: under the &ldquo;excess distribution&rdquo; regime,
-          gains can be taxed at the highest ordinary rates with an interest charge for each year you
-          held the fund, often erasing the return advantage entirely. It is one of the least
-          favourable regimes in the US code, and it is aimed squarely at exactly the kind of pooled
-          non-US fund on a typical GIFT shelf.
+          The default treatment is harsh. Under the excess distribution regime, gains are taxed at
+          the highest ordinary rates, with an interest charge for every year you held the fund. That
+          often erases the return advantage entirely. It is one of the least favourable regimes in
+          the US code, and it is aimed at exactly the kind of fund on a typical GIFT shelf.
         </p>
       </div>
 
@@ -87,11 +86,11 @@ export default function UsNriPficPage() {
       <H>Why a pooled non-US fund triggers it</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          When you hold <b>units of a pooled fund</b> (a mutual fund, most AIFs, a feeder), you own
-          a slice of a foreign corporation that holds passive assets — the textbook PFIC. When you
-          hold securities <b>directly in your own name</b> (as in a PMS / managed account, or a
-          partnership-structured vehicle that is transparent for US tax), the PFIC analysis can be
-          different. Structure is everything, and it must be confirmed per fund.
+          Hold <b>units of a pooled fund</b>, whether a mutual fund, most AIFs or a feeder, and you
+          own a slice of a foreign corporation holding passive assets. That is the textbook PFIC.
+          Hold securities <b>directly in your own name</b>, as in a PMS or managed account, or
+          through a partnership that is transparent for US tax, and the analysis can be different.
+          Structure is everything here, and it has to be confirmed fund by fund.
         </p>
       </div>
 
@@ -99,10 +98,10 @@ export default function UsNriPficPage() {
       <H>The QEF / mark-to-market election problem</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          US investors can sometimes soften PFIC treatment by electing <b>QEF (Qualified Electing
-          Fund)</b> or <b>mark-to-market</b> treatment. But QEF only works if the fund provides an
-          annual <b>PFIC Annual Information Statement</b> — many Indian/GIFT funds do not. Without it,
-          the election is unavailable and you are back in the punitive default regime.
+          Two elections can soften PFIC treatment: <b>QEF</b>, the qualified electing fund route,
+          and <b>mark-to-market</b>. QEF only works if the fund gives you an annual <b>PFIC Annual
+          Information Statement</b>. Many Indian and GIFT funds do not produce one. Without it the
+          election is unavailable, and you are back in the punitive default.
         </p>
         <CopyNeeded>
           [COPY NEEDED]. Fund-by-fund: which shelf funds provide a PFIC Annual Information Statement
