@@ -112,8 +112,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Am I a "US person" for this? I am on an H-1B, not a citizen',
         a: [
-          'Yes, almost certainly. The trigger is US tax residency, not citizenship or a green card. You are a US tax resident if you hold a green card, or if you meet the substantial presence test — 31 days in the current year, and 183 days counting the current year in full, one-third of last year and one-sixth of the year before.',
-          'H-1B and L-1 holders meet this quickly and are fully within the PFIC, FBAR and Form 8938 rules. Certain students and teachers on F and J visas are excluded for a limited number of years. This surprises people every year, and it is the single most common reason a first Form 8621 arrives late.',
+          "Yes, almost certainly. The trigger is US tax residency. Not citizenship, not a green card.",
+          "You are a US tax resident if you hold a green card. Or if you meet the substantial presence test: 31 days this year, and 183 days counting this year in full, a third of last year, and a sixth of the year before.",
+          "H-1B and L-1 holders cross that line quickly. Once you do, the PFIC, FBAR and Form 8938 rules all apply to you. Some students and teachers on F and J visas are excluded for a few years.",
+          "This catches people every year. It is the single most common reason a first Form 8621 arrives late.",
         ],
         sources: [
           { label: 'IRC §7701 — definition of resident alien', url: 'https://www.law.cornell.edu/uscode/text/26/7701' },
@@ -122,9 +124,11 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'What is a PFIC, and why does it matter so much?',
         a: [
-          'A PFIC is a passive foreign investment company: any foreign corporation where 75% or more of gross income is passive, or 50% or more of assets on average produce passive income. A pooled Indian fund is not named in the statute — it gets there because a foreign vehicle whose investors all have limited liability is treated by default as a corporation for US tax purposes. That default is why practitioners treat Indian mutual funds and most AIFs as PFICs.',
-          'The consequence is what matters. Under the default regime, your gain is spread back across the whole holding period and each earlier year is taxed at that year\'s top marginal rate — 37% today, with no capital-gains rate and no offsetting deductions — plus interest compounding daily at the IRS underpayment rate, currently 7%. You also file a separate Form 8621 for each PFIC, and for each PFIC held inside another one.',
-          'And the assessment clock does not start until that form is filed. A normal return closes after three years; an unfiled PFIC year stays open indefinitely.',
+          "A PFIC is a passive foreign investment company. Any foreign corporation where 75% or more of gross income is passive, or 50% or more of assets produce passive income.",
+          "Indian funds are not named in the US statute. They get there by default. A foreign vehicle whose investors all have limited liability is treated as a corporation for US tax purposes unless someone elects otherwise. Nobody does. So it is a foreign corporation earning passive income.",
+          "The cost is the point. Under the default regime your gain is spread back across the whole holding period. Each earlier year is taxed at that year's top marginal rate, 37% today. No capital-gains rate. No deductions. Then interest is added, compounding daily.",
+          "You also file a separate Form 8621 for each PFIC, and for each PFIC held inside another one.",
+          "And the clock never starts. A normal return closes after three years. A year with an unfiled PFIC form stays open indefinitely.",
         ],
         sources: [
           { label: 'IRC §1297 — PFIC definition', url: 'https://www.law.cornell.edu/uscode/text/26/1297' },
@@ -137,10 +141,11 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Can a US-resident NRI invest in Indian PMS, and is it really PFIC-free?',
         a: [
-          'Yes to the first, and largely yes to the second. This is the most useful thing on this page and almost nobody says it.',
-          'Indian regulation places no residency restriction on PMS clients. More importantly, SEBI requires that a portfolio manager must not hold client securities in its own name, so a PMS client holds listed Indian shares directly, in their own demat account. It is a managed account, not a fund.',
-          'The PFIC rules reach foreign corporations. Shares in ordinary Indian operating companies are not PFICs, because a manufacturer or a bank fails both the income and the asset test. So a PMS invested in operating equities generates no PFIC exposure at all. You still report the account on the FBAR and on Form 8938, and every sale the manager makes is your own taxable disposal, but the punitive regime does not apply.',
-          'The exception: if the mandate holds mutual fund units or other pooled vehicles, PFIC exposure comes back for those holdings. Ask for the mandate in writing.',
+          "Yes to the first, and largely yes to the second. This is the most useful thing on this page and almost nobody says it.",
+          "Indian rules place no residency restriction on PMS clients. More importantly, SEBI requires that a portfolio manager must not hold client securities in its own name. So you hold listed Indian shares directly, in your own demat account. It is a managed account, not a fund.",
+          "The PFIC rules reach foreign corporations. An ordinary Indian operating company, a bank or a manufacturer, fails both tests. So its shares are not a PFIC.",
+          "That means a PMS invested in operating equities creates no PFIC exposure at all. You still report the account on the FBAR and Form 8938. Every sale the manager makes is still your own taxable disposal. But the punitive regime does not apply.",
+          "One exception. If the mandate holds mutual fund units or other pooled vehicles, PFIC comes back for those holdings. Ask for the mandate in writing.",
         ],
         sources: [
           { label: 'SEBI (Portfolio Managers) Regulations, 2020 — Reg. 24(15), securities not held in the manager\'s name', url: 'https://www.sebi.gov.in/legal/regulations/sep-2025/securities-and-exchange-board-of-india-portfolio-managers-regulations-2020-last-amended-on-september-03-2025-_96560.html' },
@@ -149,9 +154,13 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Does a GIFT City fund solve the PFIC problem?',
         a: [
-          'Sometimes, and the honest answer is that you cannot tell from the brochure. The PFIC rules apply only to foreign corporations. A vehicle that is genuinely a partnership, or an eligible Indian entity that has validly filed IRS Form 8832 to be taxed as a pass-through, is not itself a PFIC. Helpfully, no Indian trust, LLP or private limited company appears on the IRS list of entities that are automatically corporations; only "India, Public Limited Company" is listed.',
-          'Three cautions, all of which matter more than the headline. First, a Schedule K-1 does not end the analysis: you remain an indirect PFIC shareholder for any PFIC the fund itself holds, so a fund-of-funds structure can multiply your filings rather than remove them. Second, if the vehicle is classified as a trust rather than a business entity, you land in the foreign non-grantor trust throwback rules, which carry their own interest charge and their own forms — structurally about as punitive as the PFIC regime. Third, the election belongs to the fund, not to you; one investor cannot make a fund check the box.',
-          'So ask the fund three questions in writing, before you subscribe. Have you filed Form 8832, and what classification did you elect? Will you issue me a Schedule K-1? Do you provide annual US tax reporting, and for every underlying vehicle? If the answer to any of them is vague, price the investment as though it is a PFIC.',
+          "Sometimes. And you cannot tell from the brochure.",
+          "PFIC rules apply only to foreign corporations. A vehicle that is genuinely a partnership, or one that has validly filed IRS Form 8832 to be taxed as a pass-through, is not itself a PFIC. Helpfully, no Indian trust, LLP or private limited company sits on the IRS list of automatic corporations. Only \\'India, Public Limited Company\\' is listed.",
+          "Three cautions matter more than that headline.",
+          "First, a Schedule K-1 does not end the analysis. You stay an indirect PFIC shareholder for any PFIC the fund itself holds, so a fund-of-funds can multiply your filings rather than remove them.",
+          "Second, if the vehicle is classified as a trust rather than a business entity, you land in the foreign non-grantor trust throwback rules. Those carry their own interest charge and their own forms, and are about as punitive as PFIC.",
+          "Third, the election belongs to the fund, not to you. One investor cannot make a fund check the box.",
+          "So ask three questions in writing before you subscribe. Have you filed Form 8832, and what did you elect? Will you issue me a K-1? Do you provide annual US tax reporting, for every underlying vehicle? If any answer is vague, price it as a PFIC.",
         ],
         sources: [
           { label: 'Treas. Reg. §301.7701-3 — entity classification election', url: 'https://www.law.cornell.edu/cfr/text/26/301.7701-3' },
@@ -162,10 +171,12 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Do the India–US treaty and GIFT City exemptions reduce my US tax?',
         a: [
-          'On capital gains, no, and this is the most widely repeated error in NRI content. Article 13 of the India–US treaty says in its entirety that each country may tax capital gains under its own domestic law. There is no cap and no allocation. Relief comes only afterwards, as a US foreign tax credit for Indian tax you actually paid.',
-          'The dividend article is also usually misreported. Its 15% cap applies to a company owning at least 10% of the voting stock. An individual falls under the 25% limit, which is above what India withholds anyway, so for you the dividend article does nothing.',
-          'That last point has a sharp consequence for GIFT City. India\'s IFSC exemptions are designed for investors who are taxed nowhere else. If India exempts the income, there is no Indian tax for the US to credit, so the whole burden lands on your US return. For a US person, an Indian exemption can leave you worse off than an Indian-taxed structure, not better.',
-          'Layer on the 3.8% net investment income tax above $200,000 of modified AGI single, or $250,000 joint. The foreign tax credit does not generally reach it.',
+          "On capital gains, no. This is the most widely repeated error in NRI content.",
+          "Article 13 of the India-US treaty says, in its entirety, that each country may tax capital gains under its own domestic law. No cap. No allocation. Relief comes afterwards, as a US foreign tax credit for Indian tax you actually paid.",
+          "The dividend article is misreported too. Its 15% cap applies to a company owning at least 10% of the voting stock. As an individual you fall under the 25% limit, which is above what India withholds anyway. So it does nothing for you.",
+          "That has a sharp consequence for GIFT City. India's IFSC exemptions are built for investors taxed nowhere else. If India exempts the income, there is no Indian tax for the US to credit. The whole burden lands on your US return.",
+          "So for a US person, an Indian exemption can leave you worse off than an Indian-taxed structure.",
+          "Add the 3.8% net investment income tax above $200,000 of modified AGI single, $250,000 joint. The foreign tax credit does not generally reach it.",
         ],
         sources: [
           { label: 'India–US tax treaty, full text (IRS)', url: 'https://www.irs.gov/pub/irs-trty/india.pdf' },
@@ -175,8 +186,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Why do so many Indian funds simply refuse US investors?',
         a: [
-          'Two US statutes, not one. Taking your subscription pushes the offering outside the Regulation S safe harbour, because the rules count any natural person resident in the United States as a "US person". More fundamentally, the Investment Company Act bars a foreign investment company from publicly offering its securities into the United States without an SEC order that is essentially never granted.',
-          'So when an AMC says "we do not accept US persons", it is not applying Indian law and it is not making a judgement about you. It is avoiding US registration. That is also why the houses which do accept US persons often insist on offline paperwork and extra declarations.',
+          "Two US statutes, not one.",
+          "Taking your subscription pushes the offering outside the Regulation S safe harbour, because the rules count any natural person resident in the United States as a US person. More fundamentally, the Investment Company Act bars a foreign investment company from publicly offering securities into the United States without an SEC order that is essentially never granted.",
+          "So when an AMC says it does not accept US persons, it is not applying Indian law and it is not judging you. It is avoiding US registration.",
+          "That is also why the houses that do accept US persons often insist on offline paperwork and extra declarations.",
         ],
         sources: [
           { label: '17 CFR 230.902 — Regulation S definitions', url: 'https://www.law.cornell.edu/cfr/text/17/230.902' },
@@ -186,10 +199,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'What do I have to report every year?',
         a: [
-          'Three regimes stack on the same assets, to two different agencies, with different thresholds. They are cumulative, not alternative.',
-          'The FBAR (FinCEN Form 114) is due once your foreign accounts together exceed $10,000 at any point in the year, including demat, PMS and brokerage accounts. It is due 15 April with an automatic extension to 15 October. The maximum non-willful penalty is $16,536 per report, not per account, following the Supreme Court in Bittner.',
-          'Form 8938 goes with your tax return once specified foreign financial assets exceed $50,000 at year end or $75,000 at any time if you are single and living in the US — $100,000 and $150,000 filing jointly, and far higher thresholds if you live abroad.',
-          'Form 8621 is separate again, one for each PFIC, and one for each PFIC held through another. A small-holdings exception exists at $25,000 aggregate ($50,000 jointly), but it disappears the moment you sell or receive a distribution.',
+          "Three regimes stack on the same assets, filed to two different agencies, at different thresholds. They are cumulative, not alternatives.",
+          "<b>FBAR</b> (FinCEN Form 114) is due once your foreign accounts together top $10,000 at any point in the year. That includes demat, PMS and brokerage accounts. Due 15 April, automatically extended to 15 October. The maximum non-wilful penalty is $16,536 per report, not per account, following the Supreme Court in Bittner.",
+          "<b>Form 8938</b> goes with your tax return once specified foreign financial assets pass $50,000 at year end, or $75,000 at any point, if you are single and living in the US. It is $100,000 and $150,000 filing jointly, and much higher if you live abroad.",
+          "<b>Form 8621</b> is separate again. One for each PFIC, and one for each PFIC held through another. A small-holdings exception exists at $25,000 aggregate, $50,000 jointly, but it disappears the moment you sell or take a distribution.",
         ],
         sources: [
           { label: 'IRS — Report of Foreign Bank and Financial Accounts (FBAR)', url: 'https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar' },
@@ -200,8 +213,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'I have held Indian funds for years and never filed any of this. What now?',
         a: [
-          'You are not unusual, and there is a defined route back. The IRS Streamlined Filing Compliance Procedures exist for taxpayers whose failure was non-willful. For someone residing in the US, that means three years of amended returns, six years of FBARs, a non-willfulness certification, and a 5% penalty on the highest aggregate value of the foreign financial assets across the covered period. For those residing abroad, the penalty version is different again.',
-          'Two things worth knowing before you decide. Because the PFIC limitation clock never started, those years remain open regardless of how long ago they were, so waiting does not help. And the certification is made under penalty of perjury, so this is a conversation to have with a US tax professional, not something to self-file from a blog post. Bring the fund statements; the analysis is per fund, per year.',
+          "You are not unusual, and there is a defined route back.",
+          "The IRS Streamlined Filing Compliance Procedures exist for taxpayers whose failure was not wilful. Living in the US, that means three years of amended returns, six years of FBARs, a non-wilfulness certification, and a 5% penalty on the highest aggregate value of the foreign assets across the covered period. Living abroad, the penalty version differs.",
+          "Two things before you decide. The PFIC clock never started, so those years are still open however long ago they were. Waiting does not help.",
+          "And the certification is made under penalty of perjury. This is a conversation with a US tax professional, not something to self-file off a blog post. Bring the fund statements. The analysis is per fund, per year.",
         ],
         sources: [
           { label: 'IRS — Streamlined Filing Compliance Procedures', url: 'https://www.irs.gov/individuals/international-taxpayers/streamlined-filing-compliance-procedures' },
@@ -315,9 +330,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Is my Indian investment income really tax-free in the UAE?',
         a: [
-          'On the UAE side, yes, and this is one of the few genuinely simple answers on this page. The UAE levies no personal income tax. Its 9% corporate tax, which applies above AED 375,000 of taxable income, expressly does not treat a natural person\'s personal investment income as a business activity — regardless of amount.',
-          'One condition attaches. The exclusion covers investment conducted for your own personal account that neither requires nor is conducted through a licence, and does not amount to a commercial business. Ordinary portfolio investing is comfortably inside that. If you are managing money in a way that looks like a business, take advice.',
-          'The UAE\'s domestic minimum top-up tax, introduced for financial years from January 2025, applies only to constituent entities of very large multinational groups. It has nothing to do with individuals.',
+          "On the UAE side, yes. This is one of the few genuinely simple answers on this page.",
+          "The UAE levies no personal income tax. Its 9% corporate tax, which applies above AED 375,000 of taxable income, expressly does not treat a natural person's personal investment income as a business activity. That holds regardless of amount.",
+          "One condition attaches. The exclusion covers investment for your own personal account that neither requires nor uses a licence, and does not amount to a commercial business. Ordinary portfolio investing sits comfortably inside that. If you are managing money in a way that looks like a business, take advice.",
+          "The UAE's domestic minimum top-up tax, running from January 2025, applies only to very large multinational groups. It has nothing to do with individuals.",
         ],
         sources: [
           { label: 'UAE Cabinet Decision No. 49 of 2023 — personal investment income excluded', url: 'https://mof.gov.ae/wp-content/uploads/2023/05/Cabinet-Decision-No.-49-of-2023.pdf' },
@@ -328,9 +344,11 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'What does India need before it will honour the treaty?',
         a: [
-          'Two documents, and neither is optional. First, a Tax Residency Certificate issued by the UAE Federal Tax Authority. Second, an Indian information form — historically Form 10F, and now Form 41 following India\'s new Income-tax Act.',
-          'The mechanics of that Indian form changed in a way most pages have not caught up with. It must be filed online; the concession that let non-residents without a PAN file on paper expired on 30 September 2023 and was never reopened. If you do not hold a PAN and are not required to, you register on the Indian e-filing portal under a separate non-resident category and receive an NR ID instead of a PAN. Verification is by one-time password sent to your email and mobile — you do not need an Indian digital signature certificate.',
-          'That last detail is worth knowing, because "you need a DSC" is the reason a lot of UAE investors abandon the process and simply accept the withholding.',
+          "Two documents. Neither is optional.",
+          "First, a Tax Residency Certificate from the UAE Federal Tax Authority. Second, an Indian information form. That used to be Form 10F. It is now Form 41, after India replaced its income tax law.",
+          "The mechanics of the Indian form changed in a way most pages have not caught up with. It must be filed online. The concession that let non-residents without a PAN file on paper expired on 30 September 2023 and was never reopened.",
+          "If you have no PAN and are not required to have one, you register on the Indian e-filing portal under a separate non-resident category. You get an NR ID instead of a PAN.",
+          "Verification is by one-time password to your email and mobile. <b>You do not need an Indian digital signature.</b> That myth is why a lot of UAE investors give up and simply accept the withholding.",
         ],
         sources: [
           { label: 'UAE Federal Tax Authority — Tax Residency Certificate', url: 'https://tax.gov.ae/en/services/issuance.of.tax.certificates.aspx' },
@@ -340,9 +358,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'How many days do I need to spend in the UAE?',
         a: [
-          'For the India treaty specifically: 183 days in the calendar year. That number does not come from UAE law — it is written into the treaty\'s own definition of a UAE resident individual, and it runs on the calendar year, not on India\'s April-to-March year and not on a rolling twelve months.',
-          'This matters because UAE domestic law offers easier routes to residency, including a 90-day test for permit holders with a home or a business in the country, and a test based on your centre of financial and personal interests. Those are perfectly valid for UAE purposes. They do not, on their own, satisfy what the India treaty asks for.',
-          'So you can be comfortably UAE-resident and still fail the test India applies. Count the days on a calendar year, keep the evidence, and apply for the certificate for the right period — it cannot be issued for a future period and cannot exceed twelve months.',
+          "For the India treaty: 183 days in the calendar year.",
+          "That number does not come from UAE law. It is written into the treaty's own definition of a UAE-resident individual. And it runs on the calendar year, not a rolling twelve months, and not India's April-to-March year.",
+          "This matters because UAE domestic law offers easier routes. There is a 90-day test for permit holders with a home or business here, and a test based on your centre of financial and personal interests. Both are valid for UAE purposes. Neither, on its own, satisfies what the India treaty asks for.",
+          "So you can be comfortably UAE-resident and still fail India's test. Count days on a calendar year and keep the evidence. Apply for the certificate for the right period. It cannot be issued for a future period, and cannot exceed twelve months.",
         ],
         sources: [
           { label: 'UAE Cabinet Decision No. 85 of 2022 — determination of tax residency', url: 'https://tax.gov.ae/Datafolder/Files/Legislation/Corporate%20Tax/Cabinet%20Decision%2085%20of%202022%20-%20For%20publishing.pdf' },
@@ -352,9 +371,11 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Is the "no Indian tax on mutual funds" position actually settled?',
         a: [
-          'No, and you should treat anyone who tells you otherwise with caution. The favourable reading rests on Income Tax Appellate Tribunal decisions, most directly a 2019 Cochin Tribunal ruling which held that units of Indian mutual funds are not "shares" — because Indian mutual funds are constituted as trusts rather than companies, and because Indian securities law lists shares and units as separate things. A Delhi Tribunal decision in October 2024 reached a compatible result, though its own operative holding was about treaty eligibility rather than the shares question.',
-          'What that means practically: no High Court and no Supreme Court has ruled on the point, the Revenue has contested it repeatedly, and the treaty also contains an anti-abuse article which India itself has notified to the OECD as a main-purpose rule. A Tribunal line of authority is a reasonable basis for a position. It is not the same as certainty, and it is worth knowing which one you are relying on.',
-          'This is also why GIFT City reads differently for UAE investors than the marketing suggests. Its attraction is not a bigger exemption — it is that the treatment is statutory rather than litigated.',
+          "No. Treat anyone who tells you otherwise with caution.",
+          "The favourable reading rests on Income Tax Appellate Tribunal decisions. Most directly, a 2019 Cochin Tribunal ruling that units of Indian mutual funds are not shares, because Indian mutual funds are trusts rather than companies, and because Indian securities law lists shares and units separately. A Delhi Tribunal decision in October 2024 reached a compatible result, though its own holding was about treaty eligibility rather than the shares question.",
+          "What that means in practice. No High Court and no Supreme Court has ruled. The Revenue has contested the point repeatedly. And the treaty contains an anti-abuse article that India itself has notified to the OECD as a main-purpose rule.",
+          "A line of Tribunal authority is a reasonable basis for a position. It is not certainty. Know which one you are relying on.",
+          "This is also why GIFT City reads differently here than the marketing suggests. Its attraction is not a bigger exemption. It is that the treatment is statutory rather than litigated.",
         ],
         sources: [
           { label: 'DCIT v. K.E. Faizal, ITAT Cochin, ITA 423/Coch/2018 (2019)', url: 'https://indiankanoon.org/doc/16452218/' },
@@ -365,27 +386,31 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Can I actually invest, and how does the money come back?',
         a: [
-          'Access is not the constraint. Indian portfolio management regulations contain no residency restriction at all, and the AIF regulations state expressly that a fund may raise money from any investor, whether Indian, foreign or non-resident Indian. GIFT City goes further: its rules list persons resident outside India and non-resident Indians as eligible investors, and you are not subject to the annual remittance cap that constrains India-resident investors.',
-          'The exchange-control layer is where the planning sits. Listed-share purchases on a repatriable basis run through a designated bank branch, with an individual limit of under 10% of a company and 24% for all non-resident individuals together. Investments on a non-repatriable basis are treated as domestic investment. Units of investment vehicles such as AIFs have their own route.',
-          'Money in an NRO account can be remitted out up to one million US dollars per financial year, with documentation. If repatriability matters to you, decide the route before you invest, not afterwards — moving between them later is the expensive way to do it.',
+          "Access is not the constraint.",
+          "Indian portfolio management rules carry no residency restriction. The AIF rules say a fund may raise money from any investor, whether Indian, foreign or non-resident Indian. GIFT City goes further: its rules list persons resident outside India and NRIs as eligible, and you are not subject to the annual remittance cap that constrains residents.",
+          "The planning sits in the exchange-control layer. Listed-share purchases on a repatriable basis run through a designated bank branch, with an individual limit of under 10% of a company and 24% for all non-resident individuals together. Investments on a non-repatriable basis are treated as domestic money. Units of investment vehicles such as AIFs have their own route.",
+          "From an NRO account you can remit up to <b>US $1 million per financial year</b>, with documentation.",
+          "Decide repatriable or non-repatriable before you invest. Changing route afterwards is the expensive way to do it.",
         ],
         sources: INDIAN_MINIMUMS,
       },
       {
         q: 'What are the minimums?',
         a: [
-          'In India: a PMS requires ₹50 lakh, and an AIF ₹1 crore, though accredited investors are exempt from both. The newer Specialised Investment Fund category starts at ₹10 lakh, measured across all strategies of that fund at PAN level.',
-          'In GIFT City the thresholds are set in dollars and are often lower than people expect: a restricted (non-retail) scheme takes investors from US $150,000, a venture capital scheme from US $250,000, and an IFSC portfolio management mandate from US $75,000. Retail schemes have no per-investor minimum.',
-          'One warning: accreditation regimes are not interchangeable. Being an accredited investor under SEBI does not make you one under IFSCA, and vice versa.',
+          "In India: a PMS needs ₹50 lakh, an AIF ₹1 crore. Accredited investors are exempt from both. The newer Specialised Investment Fund category starts at ₹10 lakh, measured across all strategies of that fund at PAN level.",
+          "In GIFT City the thresholds are in dollars, and often lower than people expect. A restricted, non-retail scheme takes investors from US $150,000. A venture capital scheme from US $250,000. An IFSC portfolio management mandate from US $75,000. Retail schemes have no per-investor minimum.",
+          "One warning. Accreditation regimes are not interchangeable. Being an accredited investor under SEBI does not make you one under IFSCA, or the other way round.",
         ],
         sources: INDIAN_MINIMUMS,
       },
       {
         q: 'Is there anything that could pull me back into the Indian tax net?',
         a: [
-          'India has a deemed-residency rule aimed at people who are not liable to tax anywhere, which, by design, is a description of a UAE resident. It turns on Indian citizenship and on Indian-source income above a threshold.',
-          'We are deliberately not publishing the mechanics here, for two reasons. The rule is framed around Indian citizens, and Overseas Citizen of India status is expressly not citizenship, so many readers assume it catches them when it may not. And the consequence is routinely overstated: where the rule does bite it generally produces a "not ordinarily resident" status, under which Indian-source income is taxable rather than your worldwide income.',
-          'India also replaced its entire income tax statute with effect from 1 April 2026, so any page quoting section numbers for this is quoting a repealed Act. Take this one to your Chartered Accountant with your actual day counts and income figures. It is a five-minute question for someone with the current text in front of them, and a genuinely bad thing to guess at.',
+          "India has a deemed-residency rule aimed at people not liable to tax anywhere. By design, that describes a UAE resident. It turns on Indian citizenship and on Indian-source income above a threshold.",
+          "We are deliberately not publishing the mechanics, for two reasons.",
+          "The rule is framed around Indian <em>citizens</em>, and Overseas Citizen of India status is expressly not citizenship. So many readers assume it catches them when it may not.",
+          "And the consequence is routinely overstated. Where the rule bites it generally produces a \\'not ordinarily resident\\' status, under which Indian-source income is taxable rather than your worldwide income.",
+          "India also replaced its entire income tax statute on 1 April 2026, so any page quoting section numbers for this is quoting a repealed Act. Take it to your Chartered Accountant with your actual day counts and income figures. It is a five-minute question for someone with the current text in front of them, and a bad thing to guess at.",
         ],
         sources: [
           { label: 'India — Income-tax Act, 2025, in force 1 April 2026', url: 'https://www.incometaxindia.gov.in/income-tax-act-2025' },
@@ -498,9 +523,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'What is an offshore income gain, and why does it cost so much?',
         a: [
-          'If you dispose of an interest in an offshore fund that does not hold HMRC reporting fund status, or that lacked it at any point while you held it — your profit is not treated as a capital gain. It is treated as income arising at the time of disposal, and charged at your marginal income tax rate, so up to 45%.',
-          'Three consequences follow, and each one costs money. There is no capital gains annual exempt amount to set against it. The dividend and savings allowances do not apply either. And if the investment loses money, the relief is asymmetric: no loss arises for these purposes, and any loss you do have can only be relieved as a capital loss, so it cannot be set against the income charge on the one that worked.',
-          'Against a capital gains rate of 18% or 24%, the difference on a meaningful holding is not a rounding error.',
+          "If you sell an interest in an offshore fund that does not hold HMRC reporting fund status, your profit is not a capital gain. It is treated as income arising on disposal, charged at your marginal rate. So up to 45%.",
+          "Three consequences, each costing money.",
+          "There is no capital gains annual exempt amount to set against it. The dividend and savings allowances do not apply either. And if the investment loses money, the relief is asymmetric: no loss arises for these purposes, and any loss you do have is a capital loss, so it cannot offset the income charge on the one that worked.",
+          "Against a capital gains rate of 18% or 24%, on a meaningful holding that is not a rounding error.",
         ],
         sources: [
           { label: 'HMRC Investment Funds Manual IFM13412 — charge to tax on offshore income gains', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm13412' },
@@ -510,9 +536,12 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Are any Indian or GIFT City funds actually on HMRC\'s reporting list?',
         a: [
-          'Yes — more than the usual advice suggests, and this is worth checking rather than assuming. HMRC publishes the list monthly. India-domiciled entries include several GIFT City and IFSC funds, a handful of Indian AIFs, and share classes from mainstream Indian fund houses. One GIFT City manager has gone as far as creating dedicated UK unit classes.',
-          'Three caveats decide whether that helps you. Status is granted per share class, so holding the wrong class of a listed fund gives you nothing. Status runs from a stated date, and most Indian entries only appear from April 2025 onwards, so a longer-held investment may have been in a non-reporting fund for part of its life, which is enough to taint the disposal. And status can cease: at least one GIFT City fund class came off the list on 31 March 2026.',
-          'The list is a published, searchable file. Check the exact share class and its dates before you subscribe, and check again before you sell.',
+          "Yes, and more than the usual advice suggests. We parsed HMRC's own file and counted 18 India-domiciled or GIFT City parent funds holding status across 69 share classes, including DSP, HDFC, ICICI Prudential, Kotak and Quantum. The full table is on our reporting-status page.",
+          "Three caveats decide whether that helps you.",
+          "Status is granted <b>per share class</b>. Holding the wrong class of a listed fund gives you nothing.",
+          "Status runs <b>from a date</b>, and most Indian entries only start in April 2025. A longer-held investment may have been non-reporting for part of its life, which is enough to taint the disposal.",
+          "Status can <b>cease</b>. One GIFT City class came off the list on 31 March 2026.",
+          "The list is published and searchable. Check your exact class and its dates before you subscribe, and again before you sell.",
         ],
         sources: [
           { label: 'HMRC — Offshore funds: list of reporting funds (updated monthly)', url: 'https://www.gov.uk/government/publications/offshore-funds-list-of-reporting-funds' },
@@ -521,8 +550,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Is reporting fund status simply better, then?',
         a: [
-          'Better on disposal, but not free. A UK investor in a reporting fund must return the fund\'s reported income each year — both the distributions actually received and the undistributed excess reported income. In an accumulating fund that pays nothing out, you can owe income tax on money you have not seen.',
-          'So the right framing is not "reporting good, non-reporting bad". It is that a reporting fund converts an unpredictable, high-rate charge on exit into a smaller, annual, administratively fiddly one, and preserves capital gains treatment for the growth. For most long-horizon holders that is a clearly better trade, but it does mean an annual filing obligation you should price in before you commit.',
+          "Better on disposal. Not free.",
+          "A UK investor in a reporting fund must declare the fund's reported income every year. That means both the distributions you received and the undistributed excess reported income. In an accumulating fund you can owe tax on money you have never seen.",
+          "So the framing is not reporting good, non-reporting bad. A reporting fund converts an unpredictable high-rate charge on exit into a smaller annual administrative one, and keeps capital gains treatment for the growth.",
+          "For most long-horizon holders that is clearly the better trade. It just brings an annual filing job you should price in first.",
         ],
         sources: [
           { label: 'HMRC IFM12146 — UK investors in reporting funds', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm12146' },
@@ -531,9 +562,11 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Does a PMS avoid all of this?',
         a: [
-          'Probably, and for a structural reason. The UK offshore-fund rules bite on a non-UK body corporate, on property held on trust, or on arrangements creating rights in the nature of co-ownership. A genuine Indian discretionary PMS is none of those: SEBI requires that the manager must not hold client securities in its own name, so you hold listed Indian shares directly, in your own account, alongside nobody. On that basis your gains should be capital gains.',
-          'Two honest caveats. HMRC has published no guidance on managed or segregated accounts, so this is a well-supported reading rather than settled law, and it turns on how your particular mandate is legally constituted — some products marketed as "PMS" are pooled.',
-          'And the good tax answer carries the worst administrative burden on this page. If the offshore-fund rules do not apply, then every trade your manager makes is your own UK disposal. An active mandate can generate hundreds of disposals a year, each needing share-pooling treatment and a sterling conversion at the transaction date. Ask your manager whether they will provide UK-basis reporting before you assume this is the easy route.',
+          "Probably, for a structural reason.",
+          "The UK offshore-fund rules bite on a non-UK body corporate, on property held on trust, or on arrangements creating rights in the nature of co-ownership. A genuine Indian discretionary PMS is none of those. SEBI requires that the manager must not hold client securities in its own name, so you hold listed Indian shares directly, in your own account, alongside nobody. On that basis your gains should be capital gains.",
+          "Two honest caveats. HMRC has published no guidance on managed or segregated accounts, so this is a well-supported reading rather than settled law. And it turns on how your particular mandate is constituted. Some products marketed as PMS are pooled.",
+          "The good tax answer also carries the worst admin burden on this page. If the offshore-fund rules do not apply, every trade your manager makes is your own UK disposal. An active mandate can generate hundreds a year, each needing share-pooling treatment and a sterling conversion at the transaction date.",
+          "Ask your manager whether they provide UK-basis reporting before you assume this is the easy route.",
         ],
         sources: [
           { label: 'HMRC IFM12220 — definition of an offshore fund', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm12220' },
@@ -543,9 +576,11 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'I have just moved to the UK. Is there a window before this applies?',
         a: [
-          'There may be, and it is the single most valuable piece of planning available in this corridor. The remittance basis was abolished on 6 April 2025 and replaced by the four-year foreign income and gains regime. If you are UK resident and were non-UK resident for each of the ten preceding tax years, you can claim relief on qualifying foreign income and gains for your first four years of UK residence.',
-          'Crucially for this page, offshore income gains are within scope. So a returning NRI who qualifies can dispose of non-reporting Indian funds inside that window without the 45% charge — an outcome unavailable to them a year later.',
-          'It is not free. Claiming forfeits your personal allowance and your capital gains annual exempt amount, even where the claim covers foreign income only. The claim must be quantified to be valid. And a further condition was added in March 2026. If you are within four years of arriving, this is worth proper advice immediately rather than at the next tax return — the window closes on a date, not on a transaction.',
+          "There may be, and it is the most valuable planning available in this corridor.",
+          "The remittance basis was abolished on 6 April 2025 and replaced by the four-year foreign income and gains regime. If you are UK resident and were non-UK resident for each of the ten preceding tax years, you can claim relief on qualifying foreign income and gains for your first four years here.",
+          "Offshore income gains are within scope. So a returning NRI who qualifies can sell non-reporting Indian funds inside that window without the 45% charge. A year later, they cannot.",
+          "It is not free. Claiming forfeits your personal allowance and your capital gains annual exempt amount, even where the claim covers foreign income only. The claim must be quantified to be valid. A further condition was added in March 2026.",
+          "If you are within four years of arriving, get advice now rather than at the next tax return. The window closes on a date, not on a transaction.",
         ],
         sources: [
           { label: 'GOV.UK — check if you can claim the 4-year foreign income and gains regime', url: 'https://www.gov.uk/guidance/check-if-you-can-claim-the-4-year-foreign-income-and-gains-regime' },
@@ -556,9 +591,9 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'What about money I built up before April 2025?',
         a: [
-          'The Temporary Repatriation Facility lets former remittance-basis users designate pre-6 April 2025 foreign income and gains and pay a flat charge, after which that money can be brought to the UK without further income tax. The rate is 12% for 2025-26 and 2026-27, rising to 15% for 2027-28.',
-          'Watch the two different dates, because most summaries only give one. The last tax year the facility covers ends on 5 April 2028, but the deadline for actually making a designation election runs to 31 January 2030. Publishing only the earlier date understates your window by nearly two years.',
-          'The trade-off is that a designation cannot be undone once the amendment window closes, and overpayment relief is not available. So "designate early to lock in 12%" is real advice, but it is irreversible advice.',
+          "The Temporary Repatriation Facility lets former remittance-basis users designate pre-6 April 2025 foreign income and gains and pay a flat charge. After that, the money can come to the UK without further income tax. The rate is 12% for 2025-26 and 2026-27, rising to 15% for 2027-28.",
+          "Watch two different dates, because most summaries give only one. The last tax year the facility covers ends on 5 April 2028. But the deadline for making a designation election runs to 31 January 2030. Quoting only the earlier date understates your window by nearly two years.",
+          "The trade-off: a designation cannot be undone once the amendment window closes, and overpayment relief is not available. So designating early to lock in 12% is real advice, but it is irreversible advice.",
         ],
         sources: [
           { label: 'HMRC HS264 — remittance basis and the Temporary Repatriation Facility', url: 'https://www.gov.uk/government/publications/remittance-basis-hs264-self-assessment-helpsheet/hs264-remittance-of-pre-6-april-2025-foreign-income-and-gains-and-the-temporary-repatriation-facility-trf' },
@@ -568,9 +603,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Is my NRE interest taxable in the UK?',
         a: [
-          'Yes. NRE interest is exempt from Indian tax, but a UK resident is taxed on worldwide income, so it is fully taxable here as foreign interest. And because no Indian tax was actually paid, there is normally no foreign tax credit to claim — the exemption benefits nobody but the UK Exchequer.',
-          'The India–UK treaty does contain a tax-sparing provision, under which credit can sometimes be given for tax that was spared rather than paid. Do not assume it rescues this. The provision is time-limited per source, HMRC\'s dedicated guidance page on Indian spared tax has been archived, and the surviving manual material does not address NRE interest. Treat it as unsettled and get advice before claiming it.',
-          'The same logic explains why GIFT City on its own does not help a UK resident. India exempting the income simply removes the credit; the UK still taxes the whole amount. If the fund also lacks reporting status, the outcome is worse than neutral.',
+          "Yes. NRE interest is exempt from Indian tax, but a UK resident is taxed on worldwide income. So it is fully taxable here as foreign interest.",
+          "And because no Indian tax was paid, there is normally no foreign tax credit to claim. The Indian exemption benefits nobody but the UK Exchequer.",
+          "The India-UK treaty does contain a tax-sparing provision, giving credit for tax spared rather than paid. Do not assume it rescues this. It is time-limited per source, HMRC's dedicated guidance page on Indian spared tax has been archived, and the surviving manual material does not address NRE interest. Treat it as unsettled and get advice before claiming.",
+          "The same logic explains GIFT City. India exempting the income simply removes the credit, and the UK still taxes the whole amount. If the fund also lacks reporting status, the outcome is worse than neutral.",
         ],
         sources: [
           { label: 'GOV.UK — tax on foreign income', url: 'https://www.gov.uk/tax-foreign-income' },
@@ -581,9 +617,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'How likely is HMRC to know about my Indian accounts?',
         a: [
-          'It already does. India and the UK both exchange financial account information under the Common Reporting Standard, and India is listed as both a participating and a reportable jurisdiction in HMRC\'s own manuals. Your Indian bank and fund accounts are reported.',
-          'If something has gone unreported, the route back is the Worldwide Disclosure Facility, which remains open and gives 90 days from HMRC\'s acknowledgement to file and pay. One detail is worth knowing and is almost never mentioned: offshore penalties are set by a territory categorisation that has not been revised since 2013, and India sits in the middle category, carrying a higher maximum penalty than assets held in Switzerland or the United States.',
-          'There is also a strict liability criminal offence for failing to declare offshore income above a threshold, where no intent needs to be shown. This is a corridor where getting ahead of the problem is materially cheaper than waiting.',
+          "It already does. India and the UK both exchange financial account information under the Common Reporting Standard, and India is listed in HMRC's own manuals as both a participating and a reportable jurisdiction. Your Indian bank and fund accounts are reported.",
+          "If something has gone unreported, the route back is the Worldwide Disclosure Facility. It remains open and gives 90 days from HMRC's acknowledgement to file and pay.",
+          "One detail almost nobody mentions. Offshore penalties are set by a territory categorisation that has not been revised since 2013, and India sits in the middle category. That carries a higher maximum penalty than assets held in Switzerland or the United States.",
+          "There is also a strict liability criminal offence for failing to declare offshore income above a threshold, where no intent needs to be shown. This is a corridor where getting ahead of the problem is much cheaper than waiting.",
         ],
         sources: [
           { label: 'HMRC IEIM400090 — CRS participating jurisdictions', url: 'https://www.gov.uk/hmrc-internal-manuals/international-exchange-of-information/ieim400090' },
@@ -594,9 +631,10 @@ export const CORRIDORS: Corridor[] = [
       {
         q: 'Does UK law stop me investing in India at all?',
         a: [
-          'No, and this is where the UK differs sharply from the US. UK law places no restriction on you as an investor. The rules bind the provider: an Indian house cannot lawfully promote to you in the UK, or carry on regulated business here, without UK authorisation or an approved promotion.',
-          'So when an Indian fund declines a UK-resident applicant, that is the provider\'s own commercial and compliance decision, not a legal bar on you. There is a narrow route where you approach the provider entirely on your own initiative, but it collapses the moment the contact forms part of an organised marketing campaign, which is exactly why the answer varies house by house rather than following a rule.',
-          'On the Indian side there is no barrier either. Portfolio management regulations contain no residency restriction, the AIF regulations expressly permit foreign and non-resident investors, and GIFT City\'s rules list persons resident outside India as eligible.',
+          "No. This is where the UK differs sharply from the US.",
+          "UK law places no restriction on you as an investor. The rules bind the provider. An Indian house cannot lawfully promote to you in the UK, or carry on regulated business here, without UK authorisation or an approved promotion.",
+          "So when an Indian fund declines a UK-resident applicant, that is the provider's own commercial and compliance decision, not a legal bar on you. There is a narrow route where you approach them entirely on your own initiative, but it collapses the moment the contact is part of an organised marketing campaign. That is why the answer varies house by house rather than following a rule.",
+          "On the Indian side there is no barrier either. Portfolio management rules carry no residency restriction, the AIF rules expressly permit foreign and non-resident investors, and GIFT City lists persons resident outside India as eligible.",
         ],
         sources: [
           { label: 'FSMA 2000 s.21 — restrictions on financial promotion', url: 'https://www.legislation.gov.uk/ukpga/2000/8/section/21' },
