@@ -506,6 +506,253 @@ export const ANSWERS: Answer[] = [
     sources: [SEBI_PMS, SEBI_AIF, IFSCA],
     reviewed: REVIEWED,
   },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'can-nri-invest-in-aif',
+    question: 'Can an NRI invest in an AIF in India?',
+    answer:
+      'Yes, and the rules say so explicitly. SEBI\'s AIF regulations state a fund may raise money from any investor, whether Indian, foreign or non-resident Indian. The minimum is ₹1 crore. The real work is choosing your exchange-control route, because that decides whether your money can leave India again.',
+    metaTitle: 'Can an NRI invest in an AIF? Rules, minimum and repatriation',
+    metaDescription:
+      'NRIs can invest in Indian AIFs. SEBI expressly permits foreign and non-resident investors. The ₹1 crore minimum, the repatriable and non-repatriable routes under FEMA, and what changes for Category III.',
+    sections: [
+      {
+        h: 'Do the rules actually allow it?',
+        body: [
+          'Yes, and unusually bluntly. The AIF regulations say a fund "may raise funds from any investor whether <b>Indian, foreign or non-resident Indians</b>".',
+          'There is no nationality test and no residency test. Compare that with the portfolio management rules, which simply say nothing about residence at all.',
+        ],
+      },
+      {
+        h: 'What does it cost to get in?',
+        body: [
+          'The minimum is <b>₹1 crore</b>. Employees and directors of the fund or its manager can come in at ₹25 lakh. Accredited investors have no minimum.',
+          'Usually that ₹1 crore is a commitment rather than a cheque. Closed-ended funds draw it down over several years as deals appear. Plan for the calls, because missing one can be costly under the fund documents.',
+        ],
+      },
+      {
+        h: 'How does the money get in, and back out?',
+        body: [
+          'This is the part that actually needs a decision, and it is easier to get right at the start than to fix later.',
+          'Units of an investment vehicle, which is what an AIF is, have their own route under India\'s exchange-control rules. Investing on a <b>repatriable</b> basis means your capital and gains can go back out. Investing on a <b>non-repatriable</b> basis means the investment is treated as domestic money, which is simpler but leaves proceeds in India.',
+          'Some funds actively prefer non-repatriable money, because it is not counted as foreign investment and so does not trigger downstream restrictions on what the fund can buy.',
+          'From an NRO account you can remit up to <b>US $1 million per financial year</b>, with documentation.',
+        ],
+      },
+      {
+        h: 'Does the category change anything for me?',
+        body: [
+          'Yes, in two ways.',
+        ],
+        points: [
+          '<b>Tax.</b> Categories I and II pass income through to you, keeping its character, and you report it. Category III generally settles tax inside the fund, so you receive a post-tax return.',
+          '<b>What it can hold.</b> A Category III AIF that has taken foreign investment is restricted to instruments an FPI is allowed to hold. So your money arriving can narrow what the fund may buy.',
+        ],
+      },
+      {
+        h: 'Will a fund actually accept you?',
+        body: [
+          'That is a separate question from whether the law allows it.',
+          'Access is a commercial decision by each house, and your country of residence drives it. US residents are frequently declined, because taking the subscription drags the fund into US securities law. UK and UAE residents face fewer obstacles, but the tax outcome differs sharply between them.',
+          'Read the guide for the country you file in before you approach anyone.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'What is AIF?', href: '/learn/what-is-aif' },
+      { label: 'What is the minimum investment in an AIF?', href: '/learn/aif-minimum-investment' },
+      { label: 'Can an NRI invest in PMS?', href: '/learn/can-nri-invest-in-pms' },
+      { label: 'NRIs in the United States', href: '/nri/us' },
+      { label: 'NRIs in the UAE', href: '/nri/uae' },
+    ],
+    sources: [SEBI_AIF, RBI_FI],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'aif-minimum-investment',
+    question: 'What is the minimum investment in an AIF?',
+    answer:
+      '₹1 crore. SEBI sets it, and an AIF cannot accept less from an investor. Employees and directors of the fund or its manager can come in at ₹25 lakh, and accredited investors have no minimum at all. In most funds the ₹1 crore is a commitment drawn down over years, not a single cheque.',
+    metaTitle: 'AIF minimum investment in India — ₹1 crore, and what it really means',
+    metaDescription:
+      'The minimum investment in an AIF is ₹1 crore, set by SEBI. Why it is usually a commitment rather than a cheque, who is exempt, why angel funds no longer have a minimum, and how it compares with PMS and GIFT City.',
+    sections: [
+      {
+        h: 'What is the rule?',
+        body: [
+          'An AIF shall not accept from an investor an investment of value less than <b>one crore rupees</b>.',
+          'Two carve-outs sit in the same provision. Employees and directors of the AIF or its manager may invest ₹25 lakh. And the clause does not apply to accredited investors at all, so they have no floor.',
+        ],
+      },
+      {
+        h: 'Is ₹1 crore payable upfront?',
+        body: [
+          'Usually not, and this catches people out.',
+          'In most closed-ended funds you sign a commitment. The manager then draws the money down in tranches over several years as deals are found. You may pay 20% in year one and nothing for eighteen months.',
+          'Plan for the calls rather than the headline. Failing to meet one can carry punitive consequences under the fund documents, sometimes including forfeiting part of what you have already put in.',
+          'Open-ended Category III funds are more likely to take the whole amount at once.',
+        ],
+      },
+      {
+        h: 'What else has a minimum?',
+        body: ['A few other thresholds sit alongside it and are worth knowing.'],
+        points: [
+          '<b>Scheme corpus:</b> at least ₹20 crore before a scheme can operate, ₹5 crore for a social impact fund',
+          '<b>Investor cap:</b> 1,000 investors per scheme, with accredited investors excluded from the count',
+          '<b>Manager skin in the game:</b> at least 2.5% of the corpus or ₹5 crore, whichever is lower. For Category III it is 5% or ₹10 crore',
+        ],
+      },
+      {
+        h: 'Are angel funds still ₹25 lakh?',
+        body: [
+          'No. That figure is out of date and still repeated everywhere.',
+          'Since September 2025, angel funds raise only from accredited investors, and <b>no minimum investment applies to them at all</b>. The old ₹25 lakh angel minimum was removed.',
+        ],
+      },
+      {
+        h: 'How does it compare?',
+        body: ['Minimums are the fastest way to see where a structure sits.'],
+        points: [
+          '<b>AIF:</b> ₹1 crore, usually committed and drawn down',
+          '<b>PMS:</b> ₹50 lakh, paid upfront',
+          '<b>SIF:</b> ₹10 lakh, measured across all strategies of that fund at PAN level',
+          '<b>GIFT City restricted scheme:</b> from US $150,000',
+          '<b>Mutual fund:</b> a few hundred rupees',
+        ],
+      },
+    ],
+    related: [
+      { label: 'What is AIF?', href: '/learn/what-is-aif' },
+      { label: 'Can an NRI invest in an AIF?', href: '/learn/can-nri-invest-in-aif' },
+      { label: 'PMS minimum investment', href: '/learn/pms-minimum-investment' },
+      { label: 'PMS vs AIF', href: '/learn/pms-vs-aif' },
+    ],
+    sources: [SEBI_AIF, SEBI_PMS],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'gift-city-minimum-investment',
+    question: 'What is the minimum investment in a GIFT City fund?',
+    answer:
+      'It depends on the scheme type, and the numbers are in dollars. A restricted, non-retail scheme takes investors from US $150,000. A venture capital scheme from US $250,000. An IFSC portfolio management mandate from US $75,000. Retail schemes have no per-investor minimum at all.',
+    metaTitle: 'GIFT City fund minimum investment — the IFSCA thresholds in full',
+    metaDescription:
+      'Minimum investment in GIFT City funds: US $150,000 for a restricted scheme, $250,000 for venture capital, $75,000 for IFSC portfolio management, and no minimum for retail schemes. Plus who counts as an eligible investor.',
+    sections: [
+      {
+        h: 'The thresholds, by scheme type',
+        body: [
+          'GIFT City runs under its own regulator, the IFSCA, and its minimums are set in US dollars rather than rupees.',
+        ],
+        points: [
+          '<b>Restricted (non-retail) scheme:</b> from US $150,000. US $40,000 for employees and directors of the manager. Capped at 1,000 investors',
+          '<b>Venture capital scheme:</b> from US $250,000. US $60,000 for employees and directors. Capped at 50 investors',
+          '<b>IFSC portfolio management:</b> from US $75,000, reduced from $150,000 under the older rules',
+          '<b>Retail scheme:</b> no per-investor minimum',
+        ],
+      },
+      {
+        h: 'One trap in the numbers',
+        body: [
+          'You will sometimes see US $10,000 quoted as "the GIFT City minimum". That figure is real but narrow: it applies only to close-ended retail schemes investing more than 15% in unlisted securities. It is not a general retail minimum.',
+        ],
+      },
+      {
+        h: 'Who is allowed to invest?',
+        body: [
+          'The rules list eligible investors directly. A person resident outside India. A non-resident Indian. A non-individual resident in India eligible under exchange-control rules to invest offshore. And an individual resident in India, to the extent allowed under the liberalised remittance scheme.',
+          'That last line matters. A resident Indian is capped by the annual remittance allowance of US $250,000. <b>An NRI investing as a non-resident is not.</b>',
+        ],
+      },
+      {
+        h: 'Accreditation does not carry across',
+        body: [
+          'IFSCA has its own accredited investor definition, and it is a different regime from SEBI\'s.',
+          'Being accredited under SEBI does not make you accredited in GIFT City, or the other way round. Never assume one status does the work of the other.',
+        ],
+      },
+      {
+        h: 'Does a lower minimum mean lower risk?',
+        body: [
+          'No. A minimum tells you who the regulator thinks should be in the room, not how the strategy behaves.',
+          'A US $75,000 IFSC mandate can hold a far more concentrated book than a ₹1 crore Indian AIF. Read what it invests in, not what it costs to enter.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'GIFT City explained', href: '/gift-city' },
+      { label: 'PMS minimum investment', href: '/learn/pms-minimum-investment' },
+      { label: 'AIF minimum investment', href: '/learn/aif-minimum-investment' },
+      { label: 'NRIs in the UAE', href: '/nri/uae' },
+    ],
+    sources: [IFSCA, SEBI_AIF],
+    reviewed: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'nri-repatriation-limit',
+    question: 'How much money can an NRI send out of India each year?',
+    answer:
+      'Up to US $1 million per financial year from an NRO account, with documentation. Money held on a repatriable basis, in an NRE account or bought through the repatriable route, is not capped at all. Which one applies depends on a choice you made when you invested.',
+    metaTitle: 'NRI repatriation limit — the US $1 million rule, and when it does not apply',
+    metaDescription:
+      'How much an NRI can remit out of India: US $1 million per financial year from an NRO account, and no cap on money held on a repatriable basis. How the two routes differ and why the choice matters at the time you invest.',
+    sections: [
+      {
+        h: 'The headline number',
+        body: [
+          'From an NRO account, an NRI or person of Indian origin may remit up to <b>US $1 million per financial year</b>. That covers balances, sale proceeds and inherited assets, on documentary evidence plus an undertaking your bank will ask for.',
+          'This is the figure people mean when they say "the NRI repatriation limit".',
+        ],
+      },
+      {
+        h: 'When the cap does not apply',
+        body: [
+          'Money held on a <b>repatriable</b> basis is not subject to it.',
+          'If you invested through the repatriable route, your capital and gains can move out without that annual ceiling. The same is true of funds in an NRE account.',
+          'So the cap is not really a limit on NRIs. It is a limit on one specific route.',
+        ],
+      },
+      {
+        h: 'Which route are you on?',
+        body: [
+          'You chose this when you invested, whether you realised it or not.',
+        ],
+        points: [
+          '<b>Repatriable.</b> Money comes in from abroad or from an NRE account. Listed-share purchases run through a designated bank branch. Proceeds can go back out freely.',
+          '<b>Non-repatriable.</b> The investment is treated as domestic money, on a par with a resident\'s. Simpler to operate, and some funds prefer it because it is not counted as foreign investment. But proceeds stay in India unless you use the US $1 million allowance.',
+        ],
+      },
+      {
+        h: 'Why this needs deciding before you invest',
+        body: [
+          'Because changing route afterwards usually means selling and re-buying, with the tax and costs that follow.',
+          'If there is any chance you will want this money outside India, say so at account-opening. It is a five-minute conversation then and an expensive one later.',
+        ],
+      },
+      {
+        h: 'What about tax on the way out?',
+        body: [
+          'Repatriation is not itself a taxable event. What matters is the tax on the underlying gain, which is deducted at source when you sell.',
+          'If a treaty gives you a lower rate, claiming it needs a residency certificate from your own country plus an Indian information form, now called Form 41. Your bank will also want certification that taxes have been dealt with before it releases the remittance.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'Can an NRI invest in PMS?', href: '/learn/can-nri-invest-in-pms' },
+      { label: 'Can an NRI invest in an AIF?', href: '/learn/can-nri-invest-in-aif' },
+      { label: 'Form 10F, now Form 41', href: '/learn/form-10f-for-nri' },
+      { label: 'NRIs in the UAE', href: '/nri/uae' },
+    ],
+    sources: [RBI_FI, ITA_2025],
+    reviewed: REVIEWED,
+  },
 ]
 
 export const answerBySlug = (slug: string): Answer | undefined =>
