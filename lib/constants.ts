@@ -20,20 +20,17 @@ export const SITE = {
   /**
    * The operating company behind both brands. IndiaFundSearch and Beyond are
    * brands; this is the legal person a reader, or a regulator, needs named in
-   * the privacy policy and the disclosures. Taken from the certificate of
-   * incorporation.
+   * the privacy policy and the disclosures.
+   *
+   * SPELLING, for the record. The 2023 certificate of incorporation reads
+   * "JSL WEALTH MANAGMENT PRIVATE LIMITED" — Managment, missing the second E.
+   * The owner confirmed (2026-08-05) that the spelling was corrected in the
+   * MCA records afterwards, so the site uses the corrected form. If anyone
+   * later compares this against that original certificate and thinks it is a
+   * typo on our side: it is not, it is the current registered name. The CIN
+   * below identifies the entity unambiguously regardless of spelling.
    */
-  /**
-   * NOTE THE SPELLING. The company is registered with the MCA as
-   * "JSL WEALTH MANAGMENT PRIVATE LIMITED" — "Managment", without the second
-   * E. That is the legal name on the certificate of incorporation dated
-   * 13 January 2023, so it is what the legal pages must say. Do not silently
-   * "correct" it: a privacy policy naming a company that does not exist is
-   * worse than an odd-looking spelling. The CIN below is the unambiguous
-   * identifier either way. If the owner files a name correction with the MCA,
-   * update both together.
-   */
-  legalEntity: 'JSL Wealth Managment Private Limited',
+  legalEntity: 'JSL Wealth Management Private Limited',
   cin: 'U67110GJ2023PTC138431',
   registeredAddress: '136/137, Paradise Complex, Sayajigunj, Vadodara, Gujarat 390020, India',
   incorporated: '13 January 2023',

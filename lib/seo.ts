@@ -116,11 +116,17 @@ export function pageMeta({
  * standard way to say so: each URL is a corroborating profile Google already
  * knows, so the entity resolves instead of floating.
  *
- * Add more as they exist — a company LinkedIn page, Crunchbase, a Wikidata
- * Q-ID. Only ever list profiles that genuinely belong to the entity; a wrong
- * sameAs is worse than none.
+ * Add more as they exist: Crunchbase, a Wikidata Q-ID, an MCA listing. Only
+ * ever list profiles that genuinely belong to the entity; a wrong sameAs is
+ * worse than none, so each one here has been opened and checked.
  */
 const PERSON_PROFILES = ['https://www.linkedin.com/in/yash-jhaveri-/']
+
+/** The company page, "Beyond | JSL Wealth Management". Verified 2026-08-05. */
+const ORG_PROFILES = [
+  'https://www.linkedin.com/company/beyond-jsl/',
+  ...PERSON_PROFILES,
+]
 
 export function organizationJsonLd() {
   return {
@@ -135,8 +141,8 @@ export function organizationJsonLd() {
     logo: `${SITE.url}/og`,
     email: CONTACT.email,
     areaServed: 'IN',
-    // Corporate identity number is the unambiguous identifier for the entity,
-    // which matters more than the trading name given the registered spelling.
+    // The CIN identifies the entity unambiguously, independent of how the
+    // trading name is written on any given page.
     identifier: SITE.cin,
     foundingDate: '2023-01-13',
     address: {
@@ -155,7 +161,7 @@ export function organizationJsonLd() {
       'NRI investing in India',
     ],
     founder: { '@type': 'Person', '@id': `${SITE.url}/#person` },
-    sameAs: PERSON_PROFILES,
+    sameAs: ORG_PROFILES,
   }
 }
 
