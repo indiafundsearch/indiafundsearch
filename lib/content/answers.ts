@@ -219,10 +219,10 @@ export const ANSWERS: Answer[] = [
     slug: 'hmrc-reporting-fund-status-india',
     question: 'Do Indian funds have HMRC reporting fund status?',
     answer:
-      'Most do not. A few do, including several GIFT City funds. HMRC publishes the list monthly. If your share class is not on it, your profit on sale is taxed as income at up to 45% rather than as a capital gain at 24%, and the loss relief does not come back.',
+      'Some do. As at 4 August 2026, 18 India-domiciled or GIFT City parent funds hold HMRC reporting fund status across 69 share classes. Most Indian funds still do not. If yours does not, your profit on sale is taxed as income at up to 45% rather than as a capital gain at 24%.',
     metaTitle: 'HMRC reporting fund status and Indian funds — what UK residents pay',
     metaDescription:
-      'Which Indian and GIFT City funds hold HMRC reporting fund status, why it decides whether you pay 24% or 45%, and how to check your exact share class before you buy or sell.',
+      'The full list of India-domiciled and GIFT City funds holding HMRC reporting fund status, parsed from HMRC\'s own file and dated. Why status decides whether you pay 24% or 45%, and how to check your own share class.',
     sections: [
       {
         h: 'What is reporting fund status?',
@@ -245,7 +245,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Are any Indian funds actually on the list?',
         body: [
-          'Yes, more than the usual advice suggests. India-domiciled entries include several GIFT City and IFSC funds, a handful of Indian AIFs, and share classes from mainstream Indian houses. One GIFT City manager has created dedicated UK unit classes.',
+          'Yes, and more than the usual advice suggests. We parsed HMRC\'s published file and counted <b>18 parent funds across 69 share classes</b>, including mainstream houses like DSP, HDFC, ICICI Prudential, Kotak and Quantum, and five GIFT City or IFSC funds. The full table is below.',
           'Three things decide whether that helps you.',
         ],
         points: [

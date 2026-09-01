@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { AnswerPage } from '@/components/learn/AnswerPage'
 import { answerBySlug } from '@/lib/content/answers'
 import { pageMeta } from '@/lib/seo'
+import { HmrcFundTable } from '@/components/learn/HmrcFundTable'
 
 const SLUG = 'hmrc-reporting-fund-status-india'
 const answer = answerBySlug(SLUG)
@@ -19,5 +20,9 @@ export const metadata: Metadata = answer
 export default function Page() {
   const a = answerBySlug(SLUG)
   if (!a) notFound()
-  return <AnswerPage answer={a} />
+  return (
+    <AnswerPage answer={a}>
+      <HmrcFundTable />
+    </AnswerPage>
+  )
 }

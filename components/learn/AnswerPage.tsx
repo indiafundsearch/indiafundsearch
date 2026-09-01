@@ -12,7 +12,14 @@ import { DisclosureLine } from '@/components/shared/DisclosureLine'
  * loads. The capsule under the H1 carries the answer on its own, before any
  * context, because that is the passage search and answer engines quote.
  */
-export function AnswerPage({ answer }: { answer: Answer }) {
+export function AnswerPage({
+  answer,
+  children,
+}: {
+  answer: Answer
+  /** Optional extra block rendered after the sections, before the sources. */
+  children?: React.ReactNode
+}) {
   const path = `/learn/${answer.slug}`
 
   return (
@@ -73,6 +80,8 @@ export function AnswerPage({ answer }: { answer: Answer }) {
           </section>
         ))}
       </div>
+
+      {children}
 
       {/* Sources */}
       <div className="max-w-[820px] mt-10 border-t border-line-soft pt-4">

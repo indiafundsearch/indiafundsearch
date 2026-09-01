@@ -69,6 +69,9 @@ export default function GiftCityPage() {
           <em className="text-bronze italic">out</em> to global markets — both without the old
           friction. We currently curate products on both routes.
         </p>
+        <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-5">
+          We are in Vadodara, about two hours from GIFT City itself
+        </p>
         <UsPersonWarning className="mt-7 max-w-[720px]" />
       </section>
 
