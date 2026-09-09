@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { FitFinder } from '@/components/fit/FitFinder'
-import { SHEETS } from '@/lib/constants'
+import { FIT_FINDER, SHEETS } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'Fit Finder — which alternative investment fits you?',
+  title: "Fit Finder: Which Investment Structure Suits You",
   description:
-    'Seven questions narrow thirteen SEBI-regulated structures — PMS, AIF, SIF, REITs, private credit, GIFT City — to a personal shortlist. Free, on screen, no login.',
+    "Seven questions narrow thirteen SEBI-regulated structures to a personal shortlist. Free, on screen, no login, and it says when the answer is none of them.",
   path: '/fit-finder',
 })
 
@@ -26,7 +26,7 @@ export default function FitFinderPage() {
           few worth a serious conversation.
         </p>
         <p className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-slate mt-4">
-          About 90 seconds · No email needed to see your shortlist
+          About {FIT_FINDER.durationShort} · No email needed to see your shortlist
         </p>
       </div>
 

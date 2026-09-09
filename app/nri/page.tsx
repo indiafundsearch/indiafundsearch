@@ -9,9 +9,9 @@ import { Byline } from '@/components/shared/Byline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 export const metadata: Metadata = pageMeta({
-  title: 'NRI investing by corridor — US, UAE and UK',
+  title: "NRI Investing in India: US, UK and UAE Corridors",
   description:
-    'Where you are tax-resident changes which Indian structures make sense, not just the paperwork. Corridor guides for NRIs and OCIs in the United States, the UAE and the United Kingdom, covering PMS, AIFs and GIFT City.',
+    "Where you are tax-resident changes which Indian structures make sense, not just the paperwork. Corridor guides for NRIs in the US, the UAE and the UK.",
   path: '/nri',
   languages: nriHreflang(),
 })

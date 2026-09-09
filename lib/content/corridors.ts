@@ -252,9 +252,9 @@ export const CORRIDORS: Corridor[] = [
       'For a GIFT City fund, get the Form 8832 position, the K-1 answer and the US reporting commitment in writing before subscribing.',
       'If you are already behind on filings, speak to a US tax professional about the streamlined procedures before you make any new investment.',
     ],
-    metaTitle: 'NRI investing from the US — PMS, AIF & GIFT City, PFIC rules explained',
+    metaTitle: "NRI Investing from the US: PFIC and Access Rules",
     metaDescription:
-      'What US-resident NRIs need to know before investing in Indian PMS, AIFs and GIFT City funds: the PFIC regime, Form 8621, FBAR and FATCA thresholds, why the treaty does not help on gains, and the one structure that avoids PFIC entirely.',
+      "What US-resident NRIs face before investing in Indian PMS, AIFs and GIFT City funds: the PFIC regime, FBAR and FATCA, and the structure that avoids PFIC.",
     reviewed: REVIEWED,
     sources: [
       { label: 'IRC §1297 — PFIC definition', url: 'https://www.law.cornell.edu/uscode/text/26/1297' },
@@ -446,9 +446,9 @@ export const CORRIDORS: Corridor[] = [
       'Before you invest, decide repatriable or non-repatriable. Changing route afterwards is expensive.',
       'Ask specifically how your chosen structure is treated: shares held in your name, units of a trust, or an IFSC scheme. The answer changes the tax outcome.',
     ],
-    metaTitle: 'NRI investing from the UAE — PMS, AIF & GIFT City, treaty and TRC rules',
+    metaTitle: "NRI Investing from the UAE: Treaty and TRC Rules",
     metaDescription:
-      'What UAE-resident NRIs need before investing in Indian PMS, AIFs and GIFT City funds: how the India–UAE treaty actually works, why PMS and mutual funds sit under different articles, the 183-day calendar-year test, and the residency certificate process.',
+      "What UAE-resident NRIs need before investing in India: how the treaty works, why PMS and mutual funds sit under different articles, and the 183-day test.",
     reviewed: REVIEWED,
     sources: [
       { label: 'UAE Cabinet Decision No. 49 of 2023 — personal investment income', url: 'https://mof.gov.ae/wp-content/uploads/2023/05/Cabinet-Decision-No.-49-of-2023.pdf' },
@@ -672,9 +672,9 @@ export const CORRIDORS: Corridor[] = [
       'For a PMS, confirm in writing whether the manager provides UK-basis reporting — you will need it for every trade.',
       'If anything has gone unreported, deal with it deliberately. India sits in a higher penalty category than most people assume.',
     ],
-    metaTitle: 'NRI investing from the UK — reporting fund status, PMS, AIF & GIFT City',
+    metaTitle: "NRI Investing from the UK: Reporting Fund Status",
     metaDescription:
-      'Why UK-resident NRIs get taxed at up to 45% on Indian funds instead of 24%: HMRC reporting fund status explained, which Indian and GIFT City funds hold it, the four-year FIG window, the repatriation facility deadlines, and how PMS is treated differently.',
+      "Why UK-resident NRIs can pay 45% on Indian funds instead of 24%, which funds hold HMRC reporting status, and the four-year window for recent arrivals.",
     reviewed: REVIEWED,
     sources: [
       { label: 'HMRC — Offshore funds: list of reporting funds', url: 'https://www.gov.uk/government/publications/offshore-funds-list-of-reporting-funds' },

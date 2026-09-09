@@ -5,9 +5,9 @@ import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 
 export const metadata: Metadata = pageMeta({
-  title: 'Disclosures',
+  title: "Disclosures | IndiaFundSearch",
   description:
-    'How IndiaFundSearch is paid, what this site is and is not, and the limits of the tax information published here.',
+    "How IndiaFundSearch is paid, what this site is and is not, and the limits of the tax information published here.",
   path: '/disclosures',
 })
 

@@ -8,9 +8,9 @@ import { SHEETS } from '@/lib/constants'
 import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'GIFT City investments — inbound & outbound, explained',
+  title: "GIFT City Investments: Inbound and Outbound Routes",
   description:
-    'GIFT City (GIFT IFSC) explained in plain English: inbound USD funds for NRIs investing into Indian strategies, and outbound LRS-route products for residents going global.',
+    "GIFT City explained in plain English: inbound dollar funds for NRIs investing into Indian strategies, and outbound routes for residents investing globally.",
   path: '/gift-city',
 })
 

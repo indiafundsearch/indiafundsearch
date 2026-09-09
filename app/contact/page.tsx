@@ -5,9 +5,9 @@ import { CONTACT, DISCLOSURE, SHEETS, whatsappHref, SITE } from '@/lib/constants
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'Talk to the desk — Beyond',
+  title: "Talk to the Desk | IndiaFundSearch",
   description:
-    'Start a conversation with the Beyond desk about PMS, AIF, SIF or GIFT City investments. WhatsApp, book a call, or write to us — reply within one working day.',
+    "Start a conversation about PMS, AIF, SIF or GIFT City investments. WhatsApp or write to us, and expect a reply within one working day.",
   path: '/contact',
 })
 

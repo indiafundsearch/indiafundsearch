@@ -5,9 +5,9 @@ import { articleBySlug } from '@/lib/content/articles'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'PMS vs AIF — which is right for you? Key differences explained',
+  title: "PMS vs AIF: Ownership, Tax and Liquidity Compared",
   description:
-    'PMS vs AIF: a plain-English comparison for Indian investors — direct ownership vs pooled units, ₹50 L vs ₹1 Cr minimums, transparency, liquidity, taxation, and which job each tool does.',
+    "Direct ownership against pooled units, ₹50 lakh against ₹1 crore, and the tax difference that decides it. Which structure does which job, and when.",
   path: '/learn/pms-vs-aif',
   ogTitle: 'PMS vs AIF',
 })

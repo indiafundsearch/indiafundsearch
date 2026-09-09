@@ -78,9 +78,9 @@ export const ANSWERS: Answer[] = [
     question: 'Can an NRI invest in PMS in India?',
     answer:
       'Yes. SEBI\'s portfolio management rules contain no residency condition at all. The minimum is ₹50 lakh, the same as for a resident. What actually decides it is your bank and demat setup under FEMA, and each PMS house\'s own policy. Many decline US and Canadian residents.',
-    metaTitle: 'Can an NRI invest in PMS in India? Rules, minimum and routes',
+    metaTitle: "Can an NRI Invest in PMS in India? Rules & Routes",
     metaDescription:
-      'Yes, NRIs can invest in Indian PMS. SEBI imposes no residency bar. What you actually need: the ₹50 lakh minimum, an NRE or NRO route under FEMA, and a house that accepts your country of residence.',
+      "SEBI sets no residency bar on PMS. The ₹50 lakh minimum, the repatriable and non-repatriable routes under FEMA, and why some houses still decline you.",
     sections: [
       {
         h: 'Does SEBI stop an NRI from investing in a PMS?',
@@ -147,9 +147,9 @@ export const ANSWERS: Answer[] = [
     question: 'Are Indian mutual funds PFICs?',
     answer:
       'If you are a US taxpayer, almost always yes. A foreign pooled fund is treated as a corporation by default, and one earning mostly passive income is a PFIC. That means tax at the top rate plus an interest charge, and a separate Form 8621 for every fund, every year.',
-    metaTitle: 'Are Indian mutual funds PFICs? What US taxpayers need to know',
+    metaTitle: "Are Indian Mutual Funds PFICs? US Taxpayer Guide",
     metaDescription:
-      'Indian mutual funds are almost always PFICs for a US taxpayer. What that costs you, why the assessment clock never starts, which election may be available, and the one Indian structure that avoids PFIC entirely.',
+      "Why Indian mutual funds are almost always PFICs for a US taxpayer, what the default regime costs, which election may apply, and the structure that avoids it.",
     sections: [
       {
         h: 'What makes something a PFIC?',
@@ -220,9 +220,9 @@ export const ANSWERS: Answer[] = [
     question: 'Do Indian funds have HMRC reporting fund status?',
     answer:
       'Some do. As at 4 August 2026, 18 India-domiciled or GIFT City parent funds hold HMRC reporting fund status across 69 share classes. Most Indian funds still do not. If yours does not, your profit on sale is taxed as income at up to 45% rather than as a capital gain at 24%.',
-    metaTitle: 'HMRC reporting fund status and Indian funds — what UK residents pay',
+    metaTitle: "HMRC Reporting Fund Status: Indian Funds & UK Tax",
     metaDescription:
-      'The full list of India-domiciled and GIFT City funds holding HMRC reporting fund status, parsed from HMRC\'s own file and dated. Why status decides whether you pay 24% or 45%, and how to check your own share class.',
+      "Which India-domiciled and GIFT City funds hold HMRC reporting fund status, parsed from HMRC's own file and dated, and why status decides 24% or 45%.",
     sections: [
       {
         h: 'What is reporting fund status?',
@@ -296,9 +296,9 @@ export const ANSWERS: Answer[] = [
     question: 'Form 10F for NRIs: what it is, and what changed',
     answer:
       'Form 10F is now Form 41. India replaced its entire income tax law on 1 April 2026 and renumbered the forms. You still need it, along with a tax residency certificate, to claim treaty relief. It must be filed online. You do not need a digital signature.',
-    metaTitle: 'Form 10F for NRIs — now Form 41. How to file it without a PAN',
+    metaTitle: "Form 10F for NRIs: How to File Without a PAN",
     metaDescription:
-      'Form 10F became Form 41 when India replaced its income tax law on 1 April 2026. What it is for, why you also need a tax residency certificate, and how a non-resident without a PAN files it online.',
+      "Form 10F became Form 41 when India replaced its income tax law. What it is for, how a non-resident without a PAN files it online, and why no DSC is needed.",
     sections: [
       {
         h: 'What is the form for?',
@@ -363,9 +363,9 @@ export const ANSWERS: Answer[] = [
     question: 'How does a UAE resident get a TRC for Indian treaty relief?',
     answer:
       'You apply to the UAE Federal Tax Authority through the EmaraTax portal. For the India treaty specifically, you must have been physically in the UAE for at least 183 days in the calendar year. The UAE\'s easier 90-day domestic test does not satisfy what the India treaty asks for.',
-    metaTitle: 'Tax residency certificate UAE — the 183-day rule India actually applies',
+    metaTitle: "Tax Residency Certificate UAE: The 183-Day Rule",
     metaDescription:
-      'How UAE residents get a tax residency certificate for India treaty relief: the EmaraTax process, fees and timelines, and why the treaty\'s own 183-day calendar-year test is stricter than UAE domestic rules.',
+      "How a UAE resident gets a TRC for India treaty relief: the EmaraTax process, fees and timelines, and why the treaty's own 183-day test is stricter.",
     sections: [
       {
         h: 'Why do you need one?',
@@ -444,9 +444,9 @@ export const ANSWERS: Answer[] = [
     question: 'What is the minimum investment in PMS?',
     answer:
       '₹50 lakh. SEBI sets it, and a portfolio manager cannot accept less than that from a client. Accredited investors are exempt. The minimum applies per portfolio manager, so splitting money across two houses means meeting ₹50 lakh with each of them.',
-    metaTitle: 'PMS minimum investment in India — ₹50 lakh, and the exemptions',
+    metaTitle: "PMS Minimum Investment in India: ₹50 Lakh Rule",
     metaDescription:
-      'The minimum investment in PMS is ₹50 lakh, set by SEBI. Whether it applies per manager or in total, who is exempt, how top-ups are treated, and how it compares with AIF, SIF and GIFT City minimums.',
+      "The SEBI minimum for PMS is ₹50 lakh per portfolio manager. Who is exempt, how top-ups are treated, and how it compares with AIF, SIF and GIFT City.",
     sections: [
       {
         h: 'What exactly is the rule?',
@@ -513,9 +513,9 @@ export const ANSWERS: Answer[] = [
     question: 'Can an NRI invest in an AIF in India?',
     answer:
       'Yes, and the rules say so explicitly. SEBI\'s AIF regulations state a fund may raise money from any investor, whether Indian, foreign or non-resident Indian. The minimum is ₹1 crore. The real work is choosing your exchange-control route, because that decides whether your money can leave India again.',
-    metaTitle: 'Can an NRI invest in an AIF? Rules, minimum and repatriation',
+    metaTitle: "Can an NRI Invest in an AIF? Rules and Limits",
     metaDescription:
-      'NRIs can invest in Indian AIFs. SEBI expressly permits foreign and non-resident investors. The ₹1 crore minimum, the repatriable and non-repatriable routes under FEMA, and what changes for Category III.',
+      "SEBI expressly permits foreign and non-resident investors in AIFs. The ₹1 crore minimum, the repatriable and non-repatriable routes, and Cat III limits.",
     sections: [
       {
         h: 'Do the rules actually allow it?',
@@ -576,9 +576,9 @@ export const ANSWERS: Answer[] = [
     question: 'What is the minimum investment in an AIF?',
     answer:
       '₹1 crore. SEBI sets it, and an AIF cannot accept less from an investor. Employees and directors of the fund or its manager can come in at ₹25 lakh, and accredited investors have no minimum at all. In most funds the ₹1 crore is a commitment drawn down over years, not a single cheque.',
-    metaTitle: 'AIF minimum investment in India — ₹1 crore, and what it really means',
+    metaTitle: "AIF Minimum Investment in India: ₹1 Crore Rule",
     metaDescription:
-      'The minimum investment in an AIF is ₹1 crore, set by SEBI. Why it is usually a commitment rather than a cheque, who is exempt, why angel funds no longer have a minimum, and how it compares with PMS and GIFT City.',
+      "The AIF minimum is ₹1 crore, usually committed and drawn down rather than paid at once. Who is exempt, the corpus floor, and why angel funds now have none.",
     sections: [
       {
         h: 'What is the rule?',
@@ -640,9 +640,9 @@ export const ANSWERS: Answer[] = [
     question: 'What is the minimum investment in a GIFT City fund?',
     answer:
       'It depends on the scheme type, and the numbers are in dollars. A restricted, non-retail scheme takes investors from US $150,000. A venture capital scheme from US $250,000. An IFSC portfolio management mandate from US $75,000. Retail schemes have no per-investor minimum at all.',
-    metaTitle: 'GIFT City fund minimum investment — the IFSCA thresholds in full',
+    metaTitle: "GIFT City Fund Minimum Investment: IFSCA Limits",
     metaDescription:
-      'Minimum investment in GIFT City funds: US $150,000 for a restricted scheme, $250,000 for venture capital, $75,000 for IFSC portfolio management, and no minimum for retail schemes. Plus who counts as an eligible investor.',
+      "The IFSCA minimum investment thresholds for GIFT City funds, by scheme type and investor class, with the governing regulation for each.",
     sections: [
       {
         h: 'The thresholds, by scheme type',
@@ -700,9 +700,9 @@ export const ANSWERS: Answer[] = [
     question: 'How much money can an NRI send out of India each year?',
     answer:
       'Up to US $1 million per financial year from an NRO account, with documentation. Money held on a repatriable basis, in an NRE account or bought through the repatriable route, is not capped at all. Which one applies depends on a choice you made when you invested.',
-    metaTitle: 'NRI repatriation limit — the US $1 million rule, and when it does not apply',
+    metaTitle: "NRI Repatriation Limit: The US $1 Million Rule",
     metaDescription:
-      'How much an NRI can remit out of India: US $1 million per financial year from an NRO account, and no cap on money held on a repatriable basis. How the two routes differ and why the choice matters at the time you invest.',
+      "An NRI may remit US $1 million a year from an NRO account. Money held on a repatriable basis has no cap. How the two routes differ, and when to choose.",
     sections: [
       {
         h: 'The headline number',
@@ -760,9 +760,9 @@ export const ANSWERS: Answer[] = [
     question: 'NRE or NRO account: which one do you need?',
     answer:
       'NRE is for money you earned abroad. It is fully repatriable and the interest is exempt from Indian tax. NRO is for money you earn in India, like rent or dividends. Its interest is taxable, and you can send out up to US $1 million a year. Most NRIs end up needing both.',
-    metaTitle: 'NRE vs NRO account — which one an NRI actually needs',
+    metaTitle: "NRE vs NRO Account: Which One an NRI Needs",
     metaDescription:
-      'The difference between NRE and NRO accounts: what each is for, which is repatriable, how the interest is taxed in India and abroad, and which one your Indian investments should be routed through.',
+      "NRE holds money earned abroad and is fully repatriable. NRO holds Indian income and is capped. How each is taxed, and which your investments should run through.",
     sections: [
       {
         h: 'The one-line difference',
@@ -821,9 +821,9 @@ export const ANSWERS: Answer[] = [
     question: 'What is a SIF, and what is the minimum investment?',
     answer:
       'A Specialised Investment Fund is SEBI\'s newest category, sitting between mutual funds and AIFs. The minimum is ₹10 lakh, measured at PAN level across every strategy of that fund. It can go long and short, but it keeps mutual-fund style rules, disclosure and tax.',
-    metaTitle: 'SIF minimum investment — ₹10 lakh, and what a Specialised Investment Fund is',
+    metaTitle: "SIF Minimum Investment: ₹10 Lakh, and What a SIF Is",
     metaDescription:
-      'Specialised Investment Funds explained: the ₹10 lakh minimum measured at PAN level, how SIFs differ from mutual funds and AIFs, what they can hold, and how they are taxed.',
+      "Specialised Investment Funds start at ₹10 lakh, measured at PAN level across all strategies. How SIFs differ from mutual funds and AIFs, and how they are taxed.",
     sections: [
       {
         h: 'What is a SIF?',
@@ -883,9 +883,9 @@ export const ANSWERS: Answer[] = [
     question: 'PMS or mutual fund: what is the real difference?',
     answer:
       'A mutual fund gives you units of a pool. A PMS puts the actual shares in your own demat account. That changes everything downstream: how concentrated it can be, what you can see, and crucially who pays tax on the churn. In a PMS, that is you, every year.',
-    metaTitle: 'PMS vs mutual fund — ownership, concentration and the tax difference',
+    metaTitle: "PMS vs Mutual Fund: Ownership and Tax Compared",
     metaDescription:
-      'The real difference between a PMS and a mutual fund: who owns the shares, how concentrated the portfolio can be, what you can see, and why a high-turnover PMS creates a tax bill every year.',
+      "A mutual fund gives you units. A PMS puts the shares in your own demat. What that changes for concentration, visibility and who pays tax on the churn each year.",
     sections: [
       {
         h: 'The difference that drives all the others',
@@ -945,9 +945,9 @@ export const ANSWERS: Answer[] = [
     question: 'Which Indian mutual funds accept US and Canadian NRIs?',
     answer:
       'Only a minority of Indian AMCs accept US or Canadian residents, and those that do usually insist on offline paperwork and extra declarations. The list changes, so nobody should publish a stale one. The bigger question is whether you should buy an Indian mutual fund at all, because for a US taxpayer it is almost certainly a PFIC.',
-    metaTitle: 'Which Indian mutual funds accept US NRIs? And whether you should',
+    metaTitle: "Which Indian Mutual Funds Accept US NRIs?",
     metaDescription:
-      'Why most Indian AMCs decline US and Canadian residents, what the ones that accept you will ask for, and the tax reason a US taxpayer may not want an Indian mutual fund even when one says yes.',
+      "Why most Indian AMCs decline US and Canadian residents, what the ones that accept you require, and the tax reason to question the product before the access.",
     sections: [
       {
         h: 'Why most houses say no',
@@ -1003,9 +1003,9 @@ export const ANSWERS: Answer[] = [
     question: 'GIFT City fund or Indian mutual fund: which is better for an NRI?',
     answer:
       'It depends entirely on where you pay tax. A GIFT City fund lets you invest in dollars with no Indian bank account and usually no Indian filing. But India\'s exemptions are built for investors taxed nowhere else. If your own country taxes you anyway, that exemption can be worth nothing to you.',
-    metaTitle: 'GIFT City vs Indian mutual fund for NRIs — which actually wins',
+    metaTitle: "GIFT City vs Indian Mutual Fund for NRIs",
     metaDescription:
-      'GIFT City funds versus Indian mutual funds for NRIs: currency, paperwork and repatriation compared, plus the tax question that decides it and why the answer differs in the US, UAE and UK.',
+      "Currency, paperwork and repatriation compared, plus the tax question that actually decides it and why the answer differs in the US, the UAE and the UK.",
     sections: [
       {
         h: 'What GIFT City actually changes',
@@ -1068,9 +1068,9 @@ export const ANSWERS: Answer[] = [
     question: 'AIF Category I, II and III: what is the difference?',
     answer:
       'The number describes what the fund is allowed to do, not how risky it is. Category I backs startups and infrastructure. Category II holds private equity, private credit and real-estate debt, and is the largest by far. Category III trades listed markets and may use leverage. They are also taxed completely differently.',
-    metaTitle: 'AIF Category I, II and III explained — and why the tax differs',
+    metaTitle: "AIF Category I, II & III: Rules, Tax and Minimums",
     metaDescription:
-      'The difference between AIF Category I, II and III: what each holds, typical lock-ins, and the tax split that matters most — Category I and II pass income through to you, Category III is taxed inside the fund.',
+      "What each AIF category may hold, typical lock-ins, and the tax split that matters most: Cat I and II pass income through, Cat III is taxed inside the fund.",
     sections: [
       {
         h: 'The categories are strategy buckets, not risk grades',
@@ -1134,9 +1134,9 @@ export const ANSWERS: Answer[] = [
     question: 'How much does a PMS actually cost?',
     answer:
       'Two shapes are common. A flat fee of about 2 to 2.5% a year, or a lower flat fee plus a share of profits above a hurdle. Most people assume the profit-share is cheaper. On typical terms the crossover is around a 16.7% gross return. Above that, the flat fee costs you less.',
-    metaTitle: 'PMS fees explained — flat fee vs profit share, with the arithmetic',
+    metaTitle: "PMS Fees in India: Flat Fee vs Profit Share",
     metaDescription:
-      'What a PMS really costs: flat fee versus profit share worked through on ₹50 lakh, where the crossover sits, and the three clauses to check before you sign — hurdle, high-water mark and how gains are counted.',
+      "What a PMS costs, worked through on ₹50 lakh: where the flat-fee and profit-share crossover sits, and the three clauses to check before you sign.",
     sections: [
       {
         h: 'The two shapes',

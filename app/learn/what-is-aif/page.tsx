@@ -5,9 +5,9 @@ import { articleBySlug } from '@/lib/content/articles'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'What is an AIF? Alternative Investment Funds in India, explained',
+  title: "What Is an AIF? Alternative Investment Funds India",
   description:
-    'What is an Alternative Investment Fund (AIF)? Plain-English guide to AIFs in India — the ₹1 Cr minimum, Categories I/II/III, what they can invest in, liquidity and taxation.',
+    "How AIFs work in India: the ₹1 crore minimum, Categories I, II and III, what each can invest in, liquidity, and the tax split between the categories.",
   path: '/learn/what-is-aif',
   ogTitle: 'What is an AIF?',
 })

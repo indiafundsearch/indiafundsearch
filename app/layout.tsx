@@ -35,8 +35,12 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'IndiaFundSearch — The Architecture of Alternatives',
-    template: '%s · IndiaFundSearch',
+    default: 'IndiaFundSearch: Indian Alternative Investments Mapped',
+    // No brand suffix. On a zero-authority domain the brand buys nothing and
+    // eats ~18 characters of Google's pixel budget, which was truncating 42 of
+    // 49 titles. The four pages that should carry the brand (home, contact,
+    // privacy, disclosures) write it into their own title string.
+    template: '%s',
   },
   description: SITE.description,
   applicationName: SITE.name,

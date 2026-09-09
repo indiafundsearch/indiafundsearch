@@ -30,6 +30,10 @@ export interface Product {
   risks: string[];
   tax: string;
   nriNote?: string;
+  /** Search title, <=60 chars, keyword-first, no brand suffix. */
+  seoTitle: string;
+  /** Search description, <=155 chars. States what the page answers. */
+  seoDescription: string;
 }
 
 export interface Article {

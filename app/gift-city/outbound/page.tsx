@@ -8,9 +8,9 @@ import { pageMeta } from '@/lib/seo'
 
 // Named private-placement shelf — keep it out of the index (P0-5).
 export const metadata: Metadata = pageMeta({
-  title: 'GIFT City outbound — global investing for resident Indians (LRS)',
+  title: "GIFT City Outbound: Global Investing Under LRS",
   description:
-    'How resident Indians access global markets through GIFT City and offshore routes under the LRS route. Eligibility-gated reference shelf.',
+    "How resident Indians reach global markets in US dollars through GIFT City under the liberalised remittance scheme. Eligibility-gated reference shelf.",
   path: '/gift-city/outbound',
   noindex: true,
 })

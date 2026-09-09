@@ -3,9 +3,9 @@ import { CONTACT, SITE } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'Privacy Policy',
+  title: "Privacy Policy | IndiaFundSearch",
   description:
-    'How IndiaFundSearch collects, uses, stores and protects your personal data — what we collect, why, who processes it, how long we keep it, and your rights under India’s DPDP Act 2023.',
+    "How IndiaFundSearch collects, uses, stores and protects your personal data, who processes it, how long we keep it, and your rights under the DPDP Act 2023.",
   path: '/privacy',
 })
 

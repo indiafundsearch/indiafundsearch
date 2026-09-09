@@ -6,9 +6,9 @@ import { pageMeta } from '@/lib/seo'
 // Routed through pageMeta so canonical / og tags are right when this is
 // published. Previously a bare Metadata object, so it emitted no canonical.
 export const metadata: Metadata = pageMeta({
-  title: 'US & Canadian NRIs — PFIC, FATCA, FBAR & Reg S',
+  title: "US and Canadian NRIs: PFIC, FATCA and FBAR",
   description:
-    'Why a US or Canadian passport changes GIFT City and pooled-fund investing materially: PFIC exposure, the QEF / mark-to-market problem, FATCA and FBAR reporting, and Reg S eligibility.',
+    "Why a US or Canadian passport changes pooled-fund investing materially: PFIC exposure, the QEF and mark-to-market problem, and the reporting you owe anyway.",
   path: '/learn/us-nri-pfic',
   ogTitle: 'US & Canadian NRIs',
   // Draft: fund-specific positions are being finalised with US-qualified tax

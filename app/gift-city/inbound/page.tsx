@@ -10,9 +10,9 @@ import { pageMeta } from '@/lib/seo'
 
 // Named private-placement shelf — keep it out of the index (P0-5).
 export const metadata: Metadata = pageMeta({
-  title: 'GIFT City inbound funds — NRI investing into India (USD)',
+  title: "GIFT City Inbound Funds: NRI Investing Into India",
   description:
-    'How NRIs and foreign investors access Indian strategies through GIFT City in US dollars. Eligibility-gated reference shelf.',
+    "How NRIs and foreign investors reach Indian strategies through GIFT City in US dollars, without an Indian bank account. Eligibility-gated reference shelf.",
   path: '/gift-city/inbound',
   noindex: true,
 })

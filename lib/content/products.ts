@@ -38,7 +38,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Equity funds: STCG 20% under 12 months; LTCG 12.5% beyond 12 months (₹1.25 L exempt/yr). Debt funds (bought after Apr 2023): slab rate.",
     "slug": "mutual-funds",
-    "nriNote": "US/Canada-resident NRIs face AMC-level restrictions on many schemes (FATCA); several fund houses do accept them. Investments via NRE/NRO."
+    "nriNote": "US/Canada-resident NRIs face AMC-level restrictions on many schemes (FATCA); several fund houses do accept them. Investments via NRE/NRO.",
+    "seoTitle": "Mutual Funds in India: Structure, Costs, Taxation",
+    "seoDescription": "How Indian mutual funds are structured, what they cost, the minimum to start, and how equity and debt funds are taxed. The benchmark alternatives must beat."
   },
   {
     "id": "fdplus",
@@ -75,7 +77,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Interest and any bond gains are taxed at slab rate. No long-term capital-gains concession on this sleeve.",
     "slug": "fd-plus-structured-debt",
-    "nriNote": "Corporate FDs/bonds available via NRO (and selectively NRE); interest on NRO is fully taxable with TDS."
+    "nriNote": "Corporate FDs/bonds available via NRO (and selectively NRE); interest on NRO is fully taxable with TDS.",
+    "seoTitle": "FD Plus and Structured Debt: Structure and Costs",
+    "seoDescription": "Corporate deposits, high-grade bonds and short debt strategies used as a capital-protective anchor. What they hold, how liquid they are, and how they are taxed."
   },
   {
     "id": "dpms",
@@ -112,7 +116,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Coupons and bond gains are taxed at slab rate in your hands. No long-term capital-gains concession.",
     "slug": "debt-pms",
-    "nriNote": "Debt PMS available to NRIs via NRO; coupon TDS applies — obtain a CA computation."
+    "nriNote": "Debt PMS available to NRIs via NRO; coupon TDS applies — obtain a CA computation.",
+    "seoTitle": "Debt PMS in India: Structure, Costs, Taxation",
+    "seoDescription": "A debt PMS holds high-yield corporate bonds directly in your demat. The ₹50 lakh minimum, how coupons reach you, credit risk, and how gains are taxed."
   },
   {
     "id": "reit",
@@ -149,7 +155,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Distributions taxed component-wise — interest and rental at slab, some components exempt or as capital return. Units: STCG 20% under 12 months, LTCG 12.5% beyond.",
     "slug": "reits-invits",
-    "nriNote": "Fully open to NRIs on-exchange; TDS applies on distributions."
+    "nriNote": "Fully open to NRIs on-exchange; TDS applies on distributions.",
+    "seoTitle": "REITs and InvITs in India: Income and Taxation",
+    "seoDescription": "Listed trusts owning rent-earning property or infrastructure. The 90% payout requirement, exchange liquidity, and how each component of a distribution is taxed."
   },
   {
     "id": "mn",
@@ -186,7 +194,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
     "slug": "market-neutral-funds",
-    "nriNote": "GIFT inbound market-neutral structures exist specifically for overseas investors, often cleaner than the domestic Cat III route."
+    "nriNote": "GIFT inbound market-neutral structures exist specifically for overseas investors, often cleaner than the domestic Cat III route.",
+    "seoTitle": "Market Neutral Funds in India: How They Work",
+    "seoDescription": "Paired long and short positions that strip out market direction. How the strategy works, the Category III structure it sits in, and how returns are taxed."
   },
   {
     "id": "lssif",
@@ -223,7 +233,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Equity-oriented SIFs are taxed like equity mutual funds — STCG 20%, LTCG 12.5% beyond 12 months. A structural tax edge over Cat III AIFs.",
     "slug": "long-short-sif",
-    "nriNote": "SIF availability to NRIs is scheme-specific and evolving — confirm before shortlisting."
+    "nriNote": "SIF availability to NRIs is scheme-specific and evolving — confirm before shortlisting.",
+    "seoTitle": "Long-Short SIF: SEBI's New Fund Category Explained",
+    "seoDescription": "Specialised Investment Funds can go long and short while keeping mutual-fund rules and tax. The ₹10 lakh entry, what they hold, and what to be cautious about."
   },
   {
     "id": "pcredit",
@@ -260,7 +272,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Cat II AIFs are tax pass-through — interest income is taxed in your hands at slab rate; capital gains as per the underlying asset. Fund deducts TDS on distributions.",
     "slug": "private-credit-real-estate-debt",
-    "nriNote": "NRIs can invest in AIFs; TDS on distributions applies at treaty/act rates. GIFT inbound versions often simplify this further."
+    "nriNote": "NRIs can invest in AIFs; TDS on distributions applies at treaty/act rates. GIFT inbound versions often simplify this further.",
+    "seoTitle": "Private Credit and Real Estate Debt in India",
+    "seoDescription": "Category II AIFs lending directly to companies and property projects. Security and covenants, how interest reaches you, lock-in periods, and the tax treatment."
   },
   {
     "id": "gift",
@@ -297,7 +311,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Unlisted overseas/GIFT fund units: LTCG 12.5% after 24 months; slab rate if sooner. Foreign assets must be reported in Schedule FA. NRI treatment differs — confirm with your CA.",
     "slug": "gift-city-global-usd",
-    "nriNote": "For NRIs, GIFT City funds are often the cleanest route into India-linked strategies — IFSC structures can offer simplified tax treatment for non-residents. Verify fund-specific rules."
+    "nriNote": "For NRIs, GIFT City funds are often the cleanest route into India-linked strategies — IFSC structures can offer simplified tax treatment for non-residents. Verify fund-specific rules.",
+    "seoTitle": "GIFT City and Global USD Investing: How It Works",
+    "seoDescription": "Investing in global markets in US dollars through GIFT City or the remittance route. Who can use each, the annual limit for residents, and the reporting duties."
   },
   {
     "id": "loaif",
@@ -334,7 +350,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
     "slug": "long-only-equity-aif",
-    "nriNote": "GIFT inbound long-only AIFs are frequently the most tax-efficient NRI route into concentrated Indian equity."
+    "nriNote": "GIFT inbound long-only AIFs are frequently the most tax-efficient NRI route into concentrated Indian equity.",
+    "seoTitle": "Long-Only Equity AIF: Structure, Costs, Taxation",
+    "seoDescription": "A Category III AIF blending a concentrated listed book with a pre-IPO sleeve. The ₹1 crore minimum, what it holds, and why Cat III tax differs."
   },
   {
     "id": "pms",
@@ -371,7 +389,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Taxed exactly like direct equity in your hands — STCG 20% under 12 months, LTCG 12.5% beyond (₹1.25 L exemption). Review the strategy’s turnover.",
     "slug": "equity-pms",
-    "nriNote": "Available to NRIs via NRE/NRO with a PIS-linked setup; US/Canada residency needs manager-level confirmation."
+    "nriNote": "Available to NRIs via NRE/NRO with a PIS-linked setup; US/Canada residency needs manager-level confirmation.",
+    "seoTitle": "Equity PMS in India: Structure, Costs, Taxation",
+    "seoDescription": "A concentrated equity portfolio held in your own demat account. The ₹50 lakh SEBI minimum, typical fee structures, liquidity, and why churn creates annual tax."
   },
   {
     "id": "pe",
@@ -408,7 +428,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Cat II AIFs are tax pass-through — gains taxed in your hands per the underlying (unlisted: LTCG 12.5% after 24 months). Fund deducts TDS on distributions.",
     "slug": "private-equity-funds",
-    "nriNote": "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment."
+    "nriNote": "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment.",
+    "seoTitle": "Private Equity Funds in India: Access and Minimums",
+    "seoDescription": "Category II AIFs investing in late-stage private companies. The ₹1 crore commitment, how capital is drawn down, typical fund life, and how returns are taxed."
   },
   {
     "id": "preipo",
@@ -445,7 +467,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Unlisted shares: LTCG 12.5% after 24 months; slab-rate STCG before that. Buyback proceeds now taxed as capital gains (Budget 2026). Take CA guidance on exit timing.",
     "slug": "pre-ipo-unlisted-shares",
-    "nriNote": "Unlisted purchases by NRIs involve FEMA pricing and reporting rules — always structured with professional guidance."
+    "nriNote": "Unlisted purchases by NRIs involve FEMA pricing and reporting rules — always structured with professional guidance.",
+    "seoTitle": "Pre-IPO and Unlisted Shares in India: How to Buy",
+    "seoDescription": "Buying shares before a company lists, through unlisted platforms or Category II funds. How access works, the holding period for tax, and the real risks."
   },
   {
     "id": "vc",
@@ -482,7 +506,9 @@ export const PRODUCTS: Product[] = [
     ],
     "tax": "Cat I AIFs are tax pass-through — gains taxed in your hands per the underlying (unlisted: LTCG 12.5% after 24 months). Fund deducts TDS on income distributed.",
     "slug": "angel-vc-funds",
-    "nriNote": "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment."
+    "nriNote": "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment.",
+    "seoTitle": "Angel and VC Funds in India: Access and Minimums",
+    "seoDescription": "Category I AIFs backing early-stage companies. Why returns follow a power law, the decade-long horizon, and why angel funds no longer carry a minimum."
   }
 ];
 

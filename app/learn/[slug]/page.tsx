@@ -23,8 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const p = productBySlug(slug)
   if (!p) return {}
   return pageMeta({
-    title: `${p.name} — what it is, costs, taxation`,
-    description: `${p.name} (${p.badge}) explained: ${p.analogy.slice(0, 140)}…`,
+    // Per-product, keyword-first, no brand suffix. The old generated pattern
+    // ("<name> — what it is, costs, taxation · IndiaFundSearch") produced
+    // near-identical 60-80 char titles that Google truncated.
+    title: p.seoTitle,
+    description: p.seoDescription,
     path: `/learn/${p.slug}`,
     ogTitle: p.name,
   })

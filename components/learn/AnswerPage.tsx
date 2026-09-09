@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Answer } from '@/lib/content/answers'
-import { SHEETS } from '@/lib/constants'
+import { FIT_FINDER, SHEETS } from '@/lib/constants'
 import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { Byline } from '@/components/shared/Byline'
@@ -125,7 +125,7 @@ export function AnswerPage({
         <div>
           <p className="font-sans font-bold text-[20px]">Not sure this applies to you?</p>
           <p className="font-serif italic text-[15.5px] text-slate mt-1 max-w-[460px]">
-            Seven questions, ninety seconds. It will tell you which structures fit, including when
+            Seven questions, {FIT_FINDER.durationShort}. It will tell you which structures fit, including when
             the answer is none of them yet.
           </p>
         </div>

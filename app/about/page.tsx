@@ -8,9 +8,9 @@ import { JsonLd } from '@/components/shared/JsonLd'
 // og:image are correct the moment the noindex comes off. Previously this used a
 // bare Metadata object and therefore emitted no canonical at all.
 export const metadata: Metadata = pageMeta({
-  title: 'About — Yash Jhaveri & IndiaFundSearch',
+  title: "About Yash Jhaveri and the Beyond Desk",
   description:
-    'Who is behind IndiaFundSearch: Yash Jhaveri and the Beyond advisory practice — the people, the lineage and the empanelments behind the education.',
+    "Who is behind IndiaFundSearch: the people, the 1992 lineage and the empanelments behind the education.",
   path: '/about',
   ogTitle: 'About IndiaFundSearch',
   // Draft: real credentials and photo are pending the owner. Keep out of the

@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { SpectrumExplorer } from '@/components/spectrum/SpectrumExplorer'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES, articleHref } from '@/lib/content/articles'
-import { SHEETS, SITE } from '@/lib/constants'
+import { FIT_FINDER, SHEETS, SITE } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
-  title: 'IndiaFundSearch — Every SEBI-Regulated Alternative Investment in India, Mapped',
+  title: "IndiaFundSearch: Indian Alternative Investments Mapped",
   absoluteTitle: true,
   description:
-    'An interactive map of every SEBI-regulated alternative in India — PMS, AIF, SIF, REITs, private credit, GIFT City — by risk, liquidity, outcome and objective. Education-first, no login.',
+    "An interactive map of every SEBI-regulated alternative in India: PMS, AIF, SIF, REITs, private credit and GIFT City, by risk, liquidity, outcome and objective.",
   path: '/',
   ogTitle: 'Every SEBI-Regulated Alternative in India, Mapped',
 })
@@ -164,7 +164,7 @@ export default function HomePage() {
             Run the Fit Finder →
           </Link>
           <p className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-slate mt-4">
-            No login · Results on screen · 3 minutes
+            No login · Results on screen · {FIT_FINDER.durationShort}
           </p>
         </div>
       </FadeInOnScroll>

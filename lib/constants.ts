@@ -99,6 +99,20 @@ export const GATE = {
   verifiedDays: 90,
 } as const
 
+/**
+ * Fit Finder facts, stated once. The homepage said "3 minutes" while the tool
+ * itself said "90 seconds" — two different promises for the same thing. Seven
+ * questions that auto-advance on selection is about ninety seconds, so that is
+ * the number everywhere.
+ */
+export const FIT_FINDER = {
+  questions: 7,
+  /** sentence-case, for prose */
+  duration: 'about 90 seconds',
+  /** for the mono micro-copy line */
+  durationShort: '90 seconds',
+} as const
+
 export const NAV_LINKS = [
   { href: '/', label: 'The Spectrum', no: '01' },
   { href: '/learn', label: 'Learn', no: '02' },
