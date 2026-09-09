@@ -45,10 +45,18 @@ export interface Answer {
   sections: AnswerSection[]
   related: { label: string; href: string }[]
   sources: Source[]
+  /** Visible "Last reviewed" (Phase 2, Task 2.3). */
   reviewed: string
+  /** Visible "Published". Defaults to the reviewed date when absent. */
+  published?: string
+  /** Only where the page states a regulatory position. */
+  regulatoryAsAt?: string
+  /** Visible FAQ block plus matching FAQPage JSON-LD (Phase 3, Task 3.3). */
+  faqs?: { q: string; a: string }[]
 }
 
-const REVIEWED = 'August 2026'
+const PUBLISHED = 'August 2026'
+const REVIEWED = 'September 2026'
 
 const SEBI_PMS: Source = {
   label: 'SEBI (Portfolio Managers) Regulations, 2020',
@@ -138,7 +146,16 @@ export const ANSWERS: Answer[] = [
       { label: 'NRIs in the United Kingdom', href: '/nri/uk' },
     ],
     sources: [SEBI_PMS, RBI_FI],
+    faqs: [
+      { q: "Does SEBI stop NRIs from investing in PMS?", a: "No. The portfolio management regulations contain no residency condition at all; searching the consolidated text for 'non-resident' returns nothing." },
+      { q: "What is the minimum for an NRI?", a: "₹50 lakh, the same as for a resident, and it applies per portfolio manager rather than across all of them." },
+      { q: "Why do some houses decline me?", a: "Because of your country's rules rather than India's. Taking a US resident's money can pull the house into US securities law, so many decline." },
+      { q: "Repatriable or non-repatriable?", a: "Decide before you invest. Repatriable money can leave India freely; non-repatriable is treated as domestic money and is capped by your annual remittance allowance." },
+      { q: "How is it taxed for an NRI?", a: "Every sale the manager makes is your disposal in your Indian return that year. Tax is deducted at source, and treaty relief needs a residency certificate plus Form 41." },
+    ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -211,7 +228,16 @@ export const ANSWERS: Answer[] = [
       { label: 'Instructions for Form 8621', url: 'https://www.irs.gov/pub/irs-pdf/i8621.pdf' },
       { label: 'IRS — Streamlined Filing Compliance Procedures', url: 'https://www.irs.gov/individuals/international-taxpayers/streamlined-filing-compliance-procedures' },
     ],
+    faqs: [
+      { q: "Is every Indian mutual fund a PFIC?", a: "Almost always, for a US taxpayer. A foreign pooled vehicle is treated as a corporation by default, and one whose income is mostly passive meets the PFIC test." },
+      { q: "Does a PMS avoid PFIC?", a: "Yes, where it holds operating-company shares directly in your own name. Ordinary Indian operating companies fail both PFIC tests, so no PFIC exposure arises." },
+      { q: "Can I make a QEF election?", a: "Rarely. QEF requires the fund to issue an annual information statement in US form. Indian AMCs do not generally produce one." },
+      { q: "What about mark-to-market?", a: "Often available, because most Indian mutual funds redeem at a published daily NAV. You pay tax on the paper gain each year as ordinary income." },
+      { q: "I never filed Form 8621. Is it too late?", a: "No, and waiting does not help. Where the form was never filed the assessment period never began, so those years remain open. The IRS streamlined procedures exist for non-wilful cases." },
+    ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -287,7 +313,16 @@ export const ANSWERS: Answer[] = [
       { label: 'HMRC IFM13412 — offshore income gains', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm13412' },
       { label: 'HMRC IFM12220 — definition of an offshore fund', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm12220' },
     ],
+    faqs: [
+      { q: "Do any Indian funds hold HMRC reporting fund status?", a: "Yes. As at 4 August 2026, 18 India-domiciled or GIFT City parent funds held it across 69 share classes, including mainstream Indian houses." },
+      { q: "What happens without reporting status?", a: "Your profit on sale is an offshore income gain, charged to income tax at up to 45% rather than as a capital gain, with no annual exempt amount." },
+      { q: "Is status per fund or per share class?", a: "Per share class, and from a stated date. Finding the fund name on HMRC's list is not the check; the class and its dates are." },
+      { q: "Can a fund lose reporting status?", a: "Yes. One GIFT City share class came off HMRC's list on 31 March 2026, which is why the date matters as much as the name." },
+      { q: "Is reporting status simply better?", a: "Better on disposal, but it brings an annual obligation to declare the fund's reported income, including amounts not paid out to you." },
+    ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -354,7 +389,16 @@ export const ANSWERS: Answer[] = [
       { label: 'Tax schedule, resident and NRI', href: '/tax' },
     ],
     sources: [ITA_2025],
+    faqs: [
+      { q: "Is Form 10F still called Form 10F?", a: "No. India replaced its income tax law on 1 April 2026 and renumbered the forms. What was Form 10F is now Form 41. The purpose is unchanged: it accompanies your residency certificate when you claim treaty relief." },
+      { q: "Can I file it without a PAN?", a: "Yes. If you do not hold a PAN and are not required to, you register on the Indian e-filing portal under a separate non-resident category and receive an NR ID instead." },
+      { q: "Do I need an Indian digital signature?", a: "No. Filing under the non-resident login is verified by a one-time password sent to your email and mobile. A digital signature applies only to PAN holders who choose that route." },
+      { q: "Can I still file on paper?", a: "No. The concession allowing non-residents without a PAN to file on paper expired on 30 September 2023 and was never reopened. Filing is online only." },
+      { q: "What happens if I skip it?", a: "Tax is deducted at the ordinary Indian rate rather than the treaty rate. You can file an Indian return and claim the difference back, but you are out of pocket in the meantime." },
+    ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -436,6 +480,8 @@ export const ANSWERS: Answer[] = [
       ITA_2025,
     ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -505,6 +551,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_PMS, SEBI_AIF, IFSCA],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -568,6 +616,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_AIF, RBI_FI],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -632,6 +682,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_AIF, SEBI_PMS],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -691,7 +743,16 @@ export const ANSWERS: Answer[] = [
       { label: 'NRIs in the UAE', href: '/nri/uae' },
     ],
     sources: [IFSCA, SEBI_AIF],
+    faqs: [
+      { q: "What is the minimum for a GIFT City restricted scheme?", a: "US $150,000, or US $40,000 for employees and directors of the manager. The scheme is capped at 1,000 investors." },
+      { q: "Is there a minimum for a retail scheme?", a: "No per-investor minimum applies to a retail scheme. The US $10,000 figure sometimes quoted applies only to close-ended retail schemes holding more than 15% unlisted." },
+      { q: "What about a venture capital scheme?", a: "From US $250,000, or US $60,000 for employees and directors, with a maximum of 50 investors." },
+      { q: "Can an NRI invest without the remittance cap?", a: "Yes. The annual remittance cap constrains India-resident investors. An NRI investing as a non-resident is not subject to it." },
+      { q: "Does SEBI accreditation carry into GIFT City?", a: "No. IFSCA runs its own accredited investor regime. Being accredited under SEBI does not make you accredited in GIFT City, or the reverse." },
+    ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -752,6 +813,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [RBI_FI, ITA_2025],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -813,6 +876,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [RBI_FI, ITA_2025],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -875,6 +940,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_AIF, SEBI_PMS],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -937,6 +1004,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_PMS],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -995,6 +1064,8 @@ export const ANSWERS: Answer[] = [
       SEBI_PMS,
     ],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -1060,6 +1131,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [IFSCA, ITA_2025],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -1126,6 +1199,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_AIF],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 
   // ───────────────────────────────────────────────────────────────────────
@@ -1190,6 +1265,8 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_PMS],
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
   },
 ]
 

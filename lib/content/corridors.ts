@@ -27,7 +27,8 @@ import type { Corridor } from './types'
  * Verified 1 August 2026.
  */
 
-const REVIEWED = 'August 2026'
+const PUBLISHED = 'August 2026'
+const REVIEWED = 'September 2026'
 
 /** Shared across corridors — the access rules are Indian-side and identical. */
 const INDIAN_MINIMUMS: Corridor['sources'] = [
@@ -256,6 +257,8 @@ export const CORRIDORS: Corridor[] = [
     metaDescription:
       "What US-resident NRIs face before investing in Indian PMS, AIFs and GIFT City funds: the PFIC regime, FBAR and FATCA, and the structure that avoids PFIC.",
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
     sources: [
       { label: 'IRC §1297 — PFIC definition', url: 'https://www.law.cornell.edu/uscode/text/26/1297' },
       { label: 'IRC §1291 — excess distribution regime', url: 'https://www.law.cornell.edu/uscode/text/26/1291' },
@@ -450,6 +453,8 @@ export const CORRIDORS: Corridor[] = [
     metaDescription:
       "What UAE-resident NRIs need before investing in India: how the treaty works, why PMS and mutual funds sit under different articles, and the 183-day test.",
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
     sources: [
       { label: 'UAE Cabinet Decision No. 49 of 2023 — personal investment income', url: 'https://mof.gov.ae/wp-content/uploads/2023/05/Cabinet-Decision-No.-49-of-2023.pdf' },
       { label: 'UAE Cabinet Decision No. 85 of 2022 — tax residency', url: 'https://tax.gov.ae/Datafolder/Files/Legislation/Corporate%20Tax/Cabinet%20Decision%2085%20of%202022%20-%20For%20publishing.pdf' },
@@ -676,6 +681,8 @@ export const CORRIDORS: Corridor[] = [
     metaDescription:
       "Why UK-resident NRIs can pay 45% on Indian funds instead of 24%, which funds hold HMRC reporting status, and the four-year window for recent arrivals.",
     reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
     sources: [
       { label: 'HMRC — Offshore funds: list of reporting funds', url: 'https://www.gov.uk/government/publications/offshore-funds-list-of-reporting-funds' },
       { label: 'HMRC IFM13412 — offshore income gains', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm13412' },

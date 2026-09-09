@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CORRIDORS } from '@/lib/content/corridors'
+import { NRI_SPOKES } from '@/lib/content/hubs'
+import { HubSpokes } from '@/components/eeat/HubSpokes'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, breadcrumbJsonLd, nriHreflang } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
-import { Byline } from '@/components/shared/Byline'
+import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 export const metadata: Metadata = pageMeta({
@@ -45,9 +47,7 @@ export default function NriHubPage() {
           Federal Tax Authority. Where the law is unsettled, we say so instead of rounding it off
           into a confident answer.
         </p>
-        <div className="mt-6">
-          <Byline reviewed="August 2026" />
-        </div>
+        <AuthorByline className="mt-6" reviewed="September 2026" regulatoryAsAt="September 2026" />
       </section>
 
       <section className="mx-auto max-w-[1180px] px-[22px] mt-12 grid gap-6 lg:grid-cols-3">
@@ -119,6 +119,10 @@ export default function NriHubPage() {
           <Link href="/learn" className="font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft">
             All thirteen structures →
           </Link>
+        </div>
+
+        <div className="mt-16">
+          <HubSpokes links={NRI_SPOKES} heading="Straight answers for NRIs" />
         </div>
 
         <DisclosureLine />

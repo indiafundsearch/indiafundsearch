@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { PRODUCTS } from '@/lib/content/products'
 import { CORRIDORS } from '@/lib/content/corridors'
 import { ANSWER_SLUGS } from '@/lib/content/answers'
+import { AUTHORS } from '@/lib/content/authors'
 import { SITE } from '@/lib/constants'
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
@@ -22,6 +23,9 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/learn/pms-vs-aif', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/privacy', priority: 0.2, changeFrequency: 'monthly' },
   { path: '/disclosures', priority: 0.3, changeFrequency: 'monthly' },
+  // NOTE: /about, /learn/us-nri-pfic and both /gift-city shelves are noindex by
+  // design and are deliberately absent (Phase 7, Task 7.3). Author bio pages
+  // are appended below.
 ]
 
 export const revalidate = 3600
@@ -50,6 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     })),
     // Long-tail answer pages — one question each.
+    ...AUTHORS.map((a) => ({
+      url: `${siteUrl}/about/${a.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
     ...ANSWER_SLUGS.map((slug) => ({
       url: `${siteUrl}/learn/${slug}`,
       lastModified: now,

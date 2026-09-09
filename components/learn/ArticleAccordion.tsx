@@ -32,7 +32,7 @@ export function ArticleAccordion({ articles }: ArticleAccordionProps) {
                 {a.no}
               </span>
               <span className="min-w-0">
-                <span className="font-sans text-xl font-bold block max-sm:text-lg">{a.title}</span>
+                <h2 className="font-sans text-xl font-bold block max-sm:text-lg">{a.title}</h2>
                 <span className="font-serif italic text-[15px] text-slate">{a.sub}</span>
               </span>
             </span>

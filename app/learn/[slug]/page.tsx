@@ -7,7 +7,7 @@ import { SHEETS } from '@/lib/constants'
 import { pageMeta, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { JsonLd } from '@/components/shared/JsonLd'
-import { Byline } from '@/components/shared/Byline'
+import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 interface PageProps {
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: p.seoDescription,
     path: `/learn/${p.slug}`,
     ogTitle: p.name,
+    dynamicOg: true,
   })
 }
 
@@ -108,7 +109,7 @@ export default async function ProductPage({ params }: PageProps) {
           {p.analogy}
         </p>
         <div className="mt-5">
-          <Byline />
+          <AuthorByline reviewed="September 2026" regulatoryAsAt="September 2026" />
         </div>
       </header>
 

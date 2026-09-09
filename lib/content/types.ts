@@ -82,6 +82,12 @@ export type TaxRow = [string, string, string, string, string, string];
 export interface Source {
   label: string;
   url: string;
+  /** Issuing body, e.g. "SEBI", "HMRC", "IRS". Shown under the link. */
+  issuer?: string;
+  /** Regulation, circular or form number where one exists. */
+  documentNumber?: string;
+  /** Date of the document or the version cited. */
+  date?: string;
 }
 
 /** One question-shaped section. `q` becomes an <h2>; `a` must answer it
@@ -132,5 +138,9 @@ export interface Corridor {
   metaDescription: string;
   /** Visible "last reviewed" — a YMYL and freshness signal. Keep honest. */
   reviewed: string;
+  /** Visible "Published" date (Phase 2, Task 2.3). */
+  published?: string;
+  /** Visible "Regulatory position as at" date. */
+  regulatoryAsAt?: string;
   sources: Source[];
 }

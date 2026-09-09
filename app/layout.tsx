@@ -56,7 +56,9 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     images: [
       {
-        url: '/og',
+        // Static, not the /og edge route: a cold edge render was failing to
+        // produce a WhatsApp preview on first paste (Phase 7, Task 7.1).
+        url: '/og-default.png',
         width: 1200,
         height: 630,
         alt: 'IndiaFundSearch — The Architecture of Alternatives',
@@ -67,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IndiaFundSearch — The Architecture of Alternatives',
     description: SITE.description,
-    images: ['/og'],
+    images: ['/og-default.png'],
   },
   robots: { index: true, follow: true },
 }

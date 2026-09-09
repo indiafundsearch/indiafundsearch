@@ -3,7 +3,10 @@ import type { Answer } from '@/lib/content/answers'
 import { FIT_FINDER, SHEETS } from '@/lib/constants'
 import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
-import { Byline } from '@/components/shared/Byline'
+import { AuthorByline } from '@/components/eeat/AuthorByline'
+import { Sources } from '@/components/eeat/Sources'
+import { RelatedReading } from '@/components/eeat/RelatedReading'
+import { Disclosure } from '@/components/shared/Disclosure'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 /**
@@ -32,9 +35,11 @@ export function AnswerPage({
             { name: 'Learn', path: '/learn' },
             { name: answer.question, path },
           ]),
+          // Mirrors what is visible on the page and nothing else.
           faqJsonLd([
             { q: answer.question, a: answer.answer },
             ...answer.sections.map((s) => ({ q: s.h, a: [...s.body, ...(s.points ?? [])].join(' ') })),
+            ...(answer.faqs ?? []),
           ]),
         ]}
       />
@@ -58,9 +63,12 @@ export function AnswerPage({
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{answer.answer}</p>
         </div>
 
-        <div className="mt-5">
-          <Byline reviewed={answer.reviewed} />
-        </div>
+        <AuthorByline
+          className="mt-6"
+          published={answer.published}
+          reviewed={answer.reviewed}
+          regulatoryAsAt={answer.regulatoryAsAt}
+        />
       </header>
 
       <div className="max-w-[820px] article-body mt-4">
@@ -83,42 +91,31 @@ export function AnswerPage({
 
       {children}
 
-      {/* Sources */}
-      <div className="max-w-[820px] mt-10 border-t border-line-soft pt-4">
-        <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-slate block mb-1.5">
-          Sources
-        </span>
-        <ul className="space-y-1">
-          {answer.sources.map((s) => (
-            <li key={s.url} className="text-[13.5px] leading-snug">
-              <a
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-bronze hover:text-ink border-b border-bronze-soft/60"
+      {answer.faqs && (
+        <section className="max-w-[820px] mt-12">
+          <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] mb-4">
+            Common questions
+          </h2>
+          <div className="grid gap-3">
+            {answer.faqs.map((f) => (
+              <Disclosure
+                key={f.q}
+                title={
+                  <h3 className="font-sans font-semibold text-[16.5px] leading-snug text-ink">
+                    {f.q}
+                  </h3>
+                }
               >
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <p className="text-[16px] text-ink-soft leading-[1.6]">{f.a}</p>
+              </Disclosure>
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* Related — internal depth, and the next question a reader has */}
-      <div className="dim my-11"><span>Next questions</span></div>
-      <div className="grid gap-3 sm:grid-cols-2 max-w-[820px]">
-        {answer.related.map((r) => (
-          <Link
-            key={r.href}
-            href={r.href}
-            className="plot-card px-5 py-4 hover:shadow-plot-hover transition-shadow group"
-          >
-            <span className="font-sans text-[15.5px] font-semibold group-hover:text-bronze transition-colors">
-              {r.label} →
-            </span>
-          </Link>
-        ))}
-      </div>
+      <Sources sources={answer.sources} />
+
+      <RelatedReading links={answer.related} heading="Next questions" />
 
       {/* One CTA */}
       <div className="mt-14 plot-card px-8 py-8 flex items-center justify-between gap-6 flex-wrap max-w-[860px] max-sm:px-5">

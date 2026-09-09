@@ -13,6 +13,7 @@ export const metadata: Metadata = answer
       description: answer.metaDescription,
       path: `/learn/${SLUG}`,
       ogTitle: answer.question,
+      dynamicOg: true,
     })
   : {}
 

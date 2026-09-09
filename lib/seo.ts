@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { CONTACT, SITE } from './constants'
 import { CORRIDORS } from './content/corridors'
+import { PRIMARY_AUTHOR } from './content/authors'
 
 /** Named author + publisher for E-E-A-T (P3-26). */
 export const AUTHOR = {
@@ -30,6 +31,20 @@ export function nriHreflang(): Record<string, string> {
   return languages
 }
 
+/**
+ * Static default share card (Phase 7, Task 7.1). The dynamic /og edge route
+ * renders fine on a warm request but was failing to produce a WhatsApp preview
+ * on first fetch, which is exactly when a link is pasted into a chat. A static
+ * PNG has no cold start. Article-level pages opt back into the dynamic card,
+ * where a per-page headline is worth the risk.
+ */
+const STATIC_OG = {
+  url: '/og-default.png',
+  width: 1200,
+  height: 630,
+  alt: 'IndiaFundSearch — every SEBI-regulated alternative in India, mapped',
+}
+
 /** Dynamic branded OG image via the /og route, titled per page. */
 function ogImage(title: string, subtitle: string) {
   const q = new URLSearchParams({ title, subtitle: subtitle.slice(0, 120) })
@@ -51,6 +66,8 @@ interface PageMetaInput {
   /** use the title verbatim (skip the "· IndiaFundSearch" template) */
   absoluteTitle?: boolean
   noindex?: boolean
+  /** Article-level pages use the per-page dynamic card; everything else the static one. */
+  dynamicOg?: boolean
   /**
    * Override the hreflang alternates with a real cluster — a map of locale to
    * site-relative path (see `nriHreflang`). Omit for ordinary pages, which get
@@ -71,6 +88,7 @@ export function pageMeta({
   ogTitle,
   absoluteTitle,
   noindex,
+  dynamicOg,
   languages: languageOverride,
 }: PageMetaInput): Metadata {
   const url = `${SITE.url}${path}`
@@ -95,13 +113,13 @@ export function pageMeta({
       siteName: SITE.name,
       type: 'website',
       locale: 'en_IN',
-      images: [ogImage(ogTitle ?? title, description)],
+      images: [dynamicOg ? ogImage(ogTitle ?? title, description) : STATIC_OG],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [`/og?title=${encodeURIComponent(ogTitle ?? title)}`],
+      images: [dynamicOg ? `/og?title=${encodeURIComponent(ogTitle ?? title)}` : STATIC_OG.url],
     },
     ...(noindex ? { robots: { index: false, follow: false } } : {}),
   }
@@ -131,7 +149,10 @@ const ORG_PROFILES = [
 export function organizationJsonLd() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    // FinancialService rather than bare Organization (Phase 3, Task 3.1): it is
+    // the specific type for a firm in this business and gives Google a clearer
+    // entity to resolve.
+    '@type': ['Organization', 'FinancialService'],
     '@id': `${SITE.url}/#organization`,
     name: SITE.name,
     alternateName: ['Beyond', SITE.legalEntity],
@@ -184,6 +205,38 @@ export function personJsonLd() {
   }
 }
 
+/** Person schema for an author bio page (Phase 2, Task 2.2). */
+export function authorJsonLd(a: {
+  slug: string
+  name: string
+  role: string
+  credential: string
+  arn: string | null
+  linkedInUrl: string
+  expertise: string[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE.url}/about/${a.slug}#person`,
+    name: a.name,
+    jobTitle: a.role,
+    description: a.credential,
+    url: `${SITE.url}/about/${a.slug}`,
+    sameAs: [a.linkedInUrl],
+    knowsAbout: a.expertise,
+    // ARN omitted while null — a blank identifier is worse than none.
+    ...(a.arn ? { identifier: a.arn } : {}),
+    worksFor: {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      legalName: SITE.legalEntity,
+      url: SITE.url,
+    },
+  }
+}
+
 export function articleJsonLd(input: {
   title: string
   description: string
@@ -197,9 +250,13 @@ export function articleJsonLd(input: {
     headline: input.title,
     description: input.description,
     mainEntityOfPage: `${SITE.url}${input.path}`,
-    author: { '@type': 'Person', name: AUTHOR.name, url: AUTHOR.url },
+    // Reference the same Person and Organization nodes the site declares
+    // elsewhere, rather than repeating loose name strings. That is what lets
+    // Google join an article to its author and publisher as one graph.
+    author: { '@type': 'Person', '@id': `${SITE.url}/about/${PRIMARY_AUTHOR.slug}#person`, name: PRIMARY_AUTHOR.name },
     publisher: {
       '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
       name: SITE.name,
       url: SITE.url,
       logo: { '@type': 'ImageObject', url: `${SITE.url}/og` },

@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { CORRIDORS, corridorBySlug } from '@/lib/content/corridors'
-import type { Corridor, Source } from '@/lib/content/types'
+import type { Corridor } from '@/lib/content/types'
 import { DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
 import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd, nriHreflang } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
-import { Byline } from '@/components/shared/Byline'
+import { AuthorByline } from '@/components/eeat/AuthorByline'
+import { Sources } from '@/components/eeat/Sources'
+import { RelatedReading } from '@/components/eeat/RelatedReading'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
 import { CorridorAccessForm } from '@/components/nri/CorridorAccessForm'
@@ -30,6 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: c.metaDescription,
     path: `/nri/${c.slug}`,
     ogTitle: `NRIs in ${c.label}`,
+    dynamicOg: true,
     // Each corridor is the real regional variant for its locale — this is what
     // finally makes the site's hreflang set mean something (P3-29).
     languages: nriHreflang(),
@@ -44,28 +47,6 @@ function H({ children, id }: { children: React.ReactNode; id?: string }) {
     >
       {children}
     </h2>
-  )
-}
-
-function SourceList({ sources, label = 'Sources' }: { sources: Source[]; label?: string }) {
-  return (
-    <div className="mt-4 border-t border-line-soft pt-3">
-      <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-slate block mb-1.5">{label}</span>
-      <ul className="space-y-1">
-        {sources.map((s) => (
-          <li key={s.url} className="text-[13.5px] leading-snug">
-            <a
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-bronze hover:text-ink border-b border-bronze-soft/60"
-            >
-              {s.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
   )
 }
 
@@ -119,9 +100,12 @@ export default async function CorridorPage({ params }: PageProps) {
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{c.capsule}</p>
         </div>
 
-        <div className="mt-5">
-          <Byline reviewed={c.reviewed} />
-        </div>
+        <AuthorByline
+          className="mt-6"
+          published={c.published}
+          reviewed={c.reviewed}
+          regulatoryAsAt={c.regulatoryAsAt ?? c.reviewed}
+        />
       </header>
 
       {/* At a glance */}
@@ -209,7 +193,7 @@ export default async function CorridorPage({ params }: PageProps) {
                 {para}
               </p>
             ))}
-            {qa.sources && <SourceList sources={qa.sources} />}
+            {qa.sources && <Sources sources={qa.sources} compact />}
           </Disclosure>
         ))}
       </div>
@@ -309,9 +293,7 @@ export default async function CorridorPage({ params }: PageProps) {
         </a>
       </div>
 
-      <div className="mt-12 max-w-[820px]">
-        <SourceList sources={c.sources} label="Every source cited on this page" />
-      </div>
+      <Sources sources={c.sources} heading="Every source cited on this page" />
 
       <DisclosureLine
         className="mt-8"

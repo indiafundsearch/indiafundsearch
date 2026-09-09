@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CORRIDORS } from '@/lib/content/corridors'
+import { GIFT_CITY_SPOKES } from '@/lib/content/hubs'
+import { HubSpokes } from '@/components/eeat/HubSpokes'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
@@ -192,6 +194,10 @@ export default function GiftCityPage() {
           </Link>
         </div>
 
+      </FadeInOnScroll>
+
+      <FadeInOnScroll as="section" className="mx-auto max-w-[1180px] px-[22px] mt-16">
+        <HubSpokes links={GIFT_CITY_SPOKES} heading="Straight answers on GIFT City" />
       </FadeInOnScroll>
     </div>
   )

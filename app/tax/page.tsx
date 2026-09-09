@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { TaxTables } from '@/components/tax/TaxTables'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { Disclosure } from '@/components/shared/Disclosure'
+import { TAX_SPOKES } from '@/lib/content/hubs'
+import { HubSpokes } from '@/components/eeat/HubSpokes'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 
@@ -151,6 +153,10 @@ export default function TaxPage() {
             </Disclosure>
           ))}
         </div>
+      </div>
+
+      <div className="mt-16">
+        <HubSpokes links={TAX_SPOKES} heading="Tax questions, answered one at a time" />
       </div>
 
       <JsonLd

@@ -83,7 +83,18 @@ export function Footer() {
         </div>
 
         {/* Disclosure block */}
+        {/* Firm credentials (Phase 2, Task 2.5). Named legal entity, CIN and
+            registered office on every page. The AMFI ARN line is intentionally
+            absent: there is no ARN in the repo and the brief forbids inventing
+            one. TODO: VERIFY — add ARN here and in lib/content/authors.ts. */}
         <div className="mt-12 border-t border-[rgba(252,251,248,0.15)] pt-6">
+          <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-bronze-soft leading-relaxed mb-3">
+            {SITE.legalEntity}
+            <br />
+            CIN {SITE.cin} · {SITE.registeredAddress}
+            <br />
+            {SITE.lineage}
+          </p>
           <p className="text-[12.5px] leading-relaxed text-[#9db5aa]">
             {DISCLOSURE.short}{' '}
             <Link href="/disclosures" className="hover:text-white-warm underline underline-offset-2">

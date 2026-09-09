@@ -3,7 +3,7 @@ import type { Article } from '@/lib/content/types'
 import { guideBySlug, guideReadingTime } from '@/lib/content/guides'
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
-import { Byline } from '@/components/shared/Byline'
+import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 /**
@@ -40,7 +40,7 @@ export function ArticlePage({ article }: { article: Article }) {
         </h1>
         <p className="font-serif italic text-[19px] text-ink-soft mt-3">{article.sub}</p>
         <div className="mt-4 flex items-center gap-3 flex-wrap">
-          <Byline />
+          <AuthorByline reviewed="September 2026" regulatoryAsAt="September 2026" />
           <span className="font-mono text-[10.5px] text-slate">
             · {guideReadingTime(article.slug) ?? article.min}
           </span>
