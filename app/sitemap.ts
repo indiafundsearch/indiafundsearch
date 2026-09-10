@@ -3,6 +3,8 @@ import { PRODUCTS } from '@/lib/content/products'
 import { CORRIDORS } from '@/lib/content/corridors'
 import { ANSWER_SLUGS } from '@/lib/content/answers'
 import { AUTHORS } from '@/lib/content/authors'
+import { US_TAX_SLUGS } from '@/lib/content/usTax'
+import { UK_TAX_SLUGS } from '@/lib/content/ukTax'
 import { SITE } from '@/lib/constants'
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
@@ -23,6 +25,8 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/learn/pms-vs-aif', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/privacy', priority: 0.2, changeFrequency: 'monthly' },
   { path: '/disclosures', priority: 0.3, changeFrequency: 'monthly' },
+  { path: '/us-tax', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/uk-tax', priority: 0.9, changeFrequency: 'monthly' },
   // NOTE: /about, /learn/us-nri-pfic and both /gift-city shelves are noindex by
   // design and are deliberately absent (Phase 7, Task 7.3). Author bio pages
   // are appended below.
@@ -59,6 +63,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
+    })),
+    ...US_TAX_SLUGS.map((slug) => ({
+      url: `${siteUrl}/us-tax/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    })),
+    ...UK_TAX_SLUGS.map((slug) => ({
+      url: `${siteUrl}/uk-tax/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
     })),
     ...ANSWER_SLUGS.map((slug) => ({
       url: `${siteUrl}/learn/${slug}`,

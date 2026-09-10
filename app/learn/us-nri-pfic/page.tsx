@@ -2,13 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { DISCLOSURE } from '@/lib/constants'
 import { pageMeta } from '@/lib/seo'
+import { AuthorByline } from '@/components/eeat/AuthorByline'
 
 // Routed through pageMeta so canonical / og tags are right when this is
 // published. Previously a bare Metadata object, so it emitted no canonical.
 export const metadata: Metadata = pageMeta({
   title: "US and Canadian NRIs: PFIC, FATCA and FBAR",
   description:
-    "Why a US or Canadian passport changes pooled-fund investing materially: PFIC exposure, the QEF and mark-to-market problem, and the reporting you owe anyway.",
+    "Why a US or Canadian passport changes pooled-fund investing: PFIC exposure, the QEF and mark-to-market problem, and the reporting you owe anyway.",
   path: '/learn/us-nri-pfic',
   ogTitle: 'US & Canadian NRIs',
   // Draft: fund-specific positions are being finalised with US-qualified tax
@@ -57,6 +58,12 @@ export default function UsNriPficPage() {
           <b>actively punitive</b> for you. Simply subscribing can create reporting duties back
           home. Read this before you shortlist anything.
         </p>
+        <AuthorByline
+          className="mt-6"
+          published="August 2026"
+          reviewed="September 2026"
+          regulatoryAsAt="September 2026"
+        />
       </header>
 
       <div className="bg-white-warm border border-line border-l-4 border-l-alert px-6 py-5 max-w-[820px] text-[15px] text-ink-soft">

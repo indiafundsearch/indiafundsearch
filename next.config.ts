@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         destination: "https://www.indiafundsearch.com/:path*",
         statusCode: 301,
       },
+      // Appendix A listed /gift-city/minimum-investment, but that page already
+      // exists at /learn/gift-city-minimum-investment with verified IFSCA
+      // content. Two pages for one query would cannibalise, so this redirects.
+      { source: "/gift-city/minimum-investment", destination: "/learn/gift-city-minimum-investment", permanent: true },
       { source: "/knowledge", destination: "/learn", permanent: true },
       { source: "/knowledge/:slug", destination: "/learn", permanent: true },
       { source: "/explore", destination: "/", permanent: true },

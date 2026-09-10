@@ -4,11 +4,12 @@ import { notFound } from 'next/navigation'
 import { PRODUCTS, productBySlug } from '@/lib/content/products'
 import { FD_PATH_5Y, formatCr } from '@/lib/content/format'
 import { SHEETS } from '@/lib/constants'
-import { pageMeta, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
+import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
+import { Disclosure } from '@/components/shared/Disclosure'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -86,6 +87,9 @@ export default async function ProductPage({ params }: PageProps) {
             { name: 'Learn', path: '/learn' },
             { name: p.name, path: `/learn/${p.slug}` },
           ]),
+          // Mirrors the visible deep-dive headings exactly — nothing sits in
+          // JSON-LD that a reader cannot also see on the page.
+          ...(p.deepDive ? [faqJsonLd(p.deepDive.map((d) => ({ q: d.q, a: d.a.join(' ') })))] : []),
         ]}
       />
 
@@ -196,6 +200,42 @@ export default async function ProductPage({ params }: PageProps) {
           )}
         </aside>
       </div>
+
+      {/* Depth for the pages that need it (Phase 6). Native <details> keeps
+          every answer in the served HTML, so an extractor reads it whether or
+          not the reader opens it. */}
+      {p.deepDive && (
+        <section className="mt-16 max-w-[820px]">
+          <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] leading-[1.2] mb-3">
+            {p.name} — the questions that decide it
+          </h2>
+          <p className="text-[16.5px] text-slate mb-5">
+            Mechanics, not marketing. Open whichever applies to you.
+          </p>
+          <div className="grid gap-3">
+            {p.deepDive.map((d, i) => (
+              <Disclosure
+                key={d.q}
+                defaultOpen={i === 0}
+                title={
+                  <h3 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
+                    {d.q}
+                  </h3>
+                }
+              >
+                {d.a.map((para, j) => (
+                  <p
+                    key={para.slice(0, 40)}
+                    className={`text-[16.5px] text-ink-soft leading-[1.62] ${j > 0 ? 'mt-3' : ''}`}
+                  >
+                    {para}
+                  </p>
+                ))}
+              </Disclosure>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA band */}
       <div className="mt-16 plot-card px-8 py-8 flex items-center justify-between gap-6 flex-wrap max-sm:px-5">

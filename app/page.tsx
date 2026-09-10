@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMeta({
   title: "IndiaFundSearch: Indian Alternative Investments Mapped",
   absoluteTitle: true,
   description:
-    "An interactive map of every SEBI-regulated alternative in India: PMS, AIF, SIF, REITs, private credit and GIFT City, by risk, liquidity, outcome and objective.",
+    "An interactive map of every SEBI-regulated alternative in India: PMS, AIF, SIF, REITs, private credit and GIFT City, by risk, liquidity and objective.",
   path: '/',
   ogTitle: 'Every SEBI-Regulated Alternative in India, Mapped',
 })

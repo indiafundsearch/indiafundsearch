@@ -166,7 +166,7 @@ export const ANSWERS: Answer[] = [
       'If you are a US taxpayer, almost always yes. A foreign pooled fund is treated as a corporation by default, and one earning mostly passive income is a PFIC. That means tax at the top rate plus an interest charge, and a separate Form 8621 for every fund, every year.',
     metaTitle: "Are Indian Mutual Funds PFICs? US Taxpayer Guide",
     metaDescription:
-      "Why Indian mutual funds are almost always PFICs for a US taxpayer, what the default regime costs, which election may apply, and the structure that avoids it.",
+      "Why Indian mutual funds are almost always PFICs for a US taxpayer, what the default regime costs, which election applies, and the structure that avoids it.",
     sections: [
       {
         h: 'What makes something a PFIC?',
@@ -304,9 +304,12 @@ export const ANSWERS: Answer[] = [
       },
     ],
     related: [
+      // Points at the /uk-tax cluster this page now sits above (Phase 6). The
+      // maintained list lives there; this page stays the explanation.
+      { label: 'The maintained list of Indian reporting funds', href: '/uk-tax/hmrc-reporting-funds-list' },
+      { label: 'Reporting vs non-reporting: rate and loss relief', href: '/uk-tax/reporting-vs-non-reporting-funds' },
+      { label: 'What counts as an offshore fund', href: '/uk-tax/offshore-reporting-funds' },
       { label: 'NRIs in the United Kingdom', href: '/nri/uk' },
-      { label: 'What is PMS?', href: '/learn/what-is-pms' },
-      { label: 'GIFT City explained', href: '/gift-city' },
     ],
     sources: [
       { label: 'HMRC — Offshore funds: list of reporting funds', url: 'https://www.gov.uk/government/publications/offshore-funds-list-of-reporting-funds' },
@@ -825,7 +828,7 @@ export const ANSWERS: Answer[] = [
       'NRE is for money you earned abroad. It is fully repatriable and the interest is exempt from Indian tax. NRO is for money you earn in India, like rent or dividends. Its interest is taxable, and you can send out up to US $1 million a year. Most NRIs end up needing both.',
     metaTitle: "NRE vs NRO Account: Which One an NRI Needs",
     metaDescription:
-      "NRE holds money earned abroad and is fully repatriable. NRO holds Indian income and is capped. How each is taxed, and which your investments should run through.",
+      "NRE holds money earned abroad and is fully repatriable. NRO holds Indian income and is capped. How each is taxed, and which your investments should use.",
     sections: [
       {
         h: 'The one-line difference',
@@ -888,7 +891,7 @@ export const ANSWERS: Answer[] = [
       'A Specialised Investment Fund is SEBI\'s newest category, sitting between mutual funds and AIFs. The minimum is ₹10 lakh, measured at PAN level across every strategy of that fund. It can go long and short, but it keeps mutual-fund style rules, disclosure and tax.',
     metaTitle: "SIF Minimum Investment: ₹10 Lakh, and What a SIF Is",
     metaDescription:
-      "Specialised Investment Funds start at ₹10 lakh, measured at PAN level across all strategies. How SIFs differ from mutual funds and AIFs, and how they are taxed.",
+      "Specialised Investment Funds start at ₹10 lakh, measured at PAN level across all strategies. How SIFs differ from mutual funds and AIFs, and the tax.",
     sections: [
       {
         h: 'What is a SIF?',
@@ -952,7 +955,7 @@ export const ANSWERS: Answer[] = [
       'A mutual fund gives you units of a pool. A PMS puts the actual shares in your own demat account. That changes everything downstream: how concentrated it can be, what you can see, and crucially who pays tax on the churn. In a PMS, that is you, every year.',
     metaTitle: "PMS vs Mutual Fund: Ownership and Tax Compared",
     metaDescription:
-      "A mutual fund gives you units. A PMS puts the shares in your own demat. What that changes for concentration, visibility and who pays tax on the churn each year.",
+      "A mutual fund gives you units. A PMS puts the shares in your own demat. What that changes for concentration, visibility and who pays tax on the churn.",
     sections: [
       {
         h: 'The difference that drives all the others',
@@ -1016,7 +1019,7 @@ export const ANSWERS: Answer[] = [
       'Only a minority of Indian AMCs accept US or Canadian residents, and those that do usually insist on offline paperwork and extra declarations. The list changes, so nobody should publish a stale one. The bigger question is whether you should buy an Indian mutual fund at all, because for a US taxpayer it is almost certainly a PFIC.',
     metaTitle: "Which Indian Mutual Funds Accept US NRIs?",
     metaDescription:
-      "Why most Indian AMCs decline US and Canadian residents, what the ones that accept you require, and the tax reason to question the product before the access.",
+      "Why most Indian AMCs decline US and Canadian residents, what the ones that accept you require, and the tax reason to question the product first.",
     sections: [
       {
         h: 'Why most houses say no',

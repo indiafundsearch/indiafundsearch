@@ -1,515 +1,619 @@
 // GENERATED from Beyond — The Architecture of Alternatives (R3), 2026-07.
 // Source of truth for educational content. Edit deliberately — copy is compliance-reviewed.
-import type { Product } from './types';
+import type { Product } from "./types";
 
 export const PRODUCTS: Product[] = [
   {
-    "id": "mf",
-    "name": "Mutual Funds",
-    "tag": "The Baseline",
-    "badge": "Mutual Fund",
-    "risk": 55,
-    "liq": 92,
-    "mid": 13,
-    "yrs": 5,
-    "riskBand": "Moderate–High",
-    "liqLabel": "T+1 to T+3",
-    "min": "₹500 (SIP)",
-    "minL": 0.005,
-    "ret": "12–14% p.a. equity · 6–7.5% debt",
-    "horizon": "3–7+ yrs",
-    "cashflow": false,
-    "analogy": "The base layer of most portfolios. Pooled, professionally managed, easy to get in and out of. Comfortable and liquid, but built for the many rather than for you.",
-    "what": "A SEBI-regulated pooled fund. It spreads money across 40 to 80 securities under strict diversification rules. The most liquid and most regulated structure in Indian investing, and the benchmark every alternative has to beat.",
-    "solves": [
+    id: "mf",
+    name: "Mutual Funds",
+    tag: "The Baseline",
+    badge: "Mutual Fund",
+    risk: 55,
+    liq: 92,
+    mid: 13,
+    yrs: 5,
+    riskBand: "Moderate–High",
+    liqLabel: "T+1 to T+3",
+    min: "₹500 (SIP)",
+    minL: 0.005,
+    ret: "12–14% p.a. equity · 6–7.5% debt",
+    horizon: "3–7+ yrs",
+    cashflow: false,
+    analogy:
+      "The base layer of most portfolios. Pooled, professionally managed, easy to get in and out of. Comfortable and liquid, but built for the many rather than for you.",
+    what: "A SEBI-regulated pooled fund. It spreads money across 40 to 80 securities under strict diversification rules. The most liquid and most regulated structure in Indian investing, and the benchmark every alternative has to beat.",
+    solves: [
       "Long-term compounding with full liquidity",
       "Disciplined investing through SIP",
-      "A common yardstick to judge everything else against"
+      "A common yardstick to judge everything else against",
     ],
-    "benefits": [
+    benefits: [
       "Daily NAV; redemption in 1–3 working days",
       "Lowest entry point of any structure",
-      "Taxed only when you redeem — internal churn is not taxed in your hands"
+      "Taxed only when you redeem — internal churn is not taxed in your hands",
     ],
-    "risks": [
+    risks: [
       "Wide diversification caps the upside — a 2% position doubling barely moves the fund",
       "Rules force at least 65% into the mandate, limiting the manager",
-      "Many funds quietly track the index after fees"
+      "Many funds quietly track the index after fees",
     ],
-    "tax": "Equity funds: STCG 20% under 12 months; LTCG 12.5% beyond 12 months (₹1.25 L exempt/yr). Debt funds (bought after Apr 2023): slab rate.",
-    "slug": "mutual-funds",
-    "nriNote": "US/Canada-resident NRIs face AMC-level restrictions on many schemes (FATCA); several fund houses do accept them. Investments via NRE/NRO.",
-    "seoTitle": "Mutual Funds in India: Structure, Costs, Taxation",
-    "seoDescription": "How Indian mutual funds are structured, what they cost, the minimum to start, and how equity and debt funds are taxed. The benchmark alternatives must beat."
+    tax: "Equity funds: STCG 20% under 12 months; LTCG 12.5% beyond 12 months (₹1.25 L exempt/yr). Debt funds (bought after Apr 2023): slab rate.",
+    slug: "mutual-funds",
+    nriNote:
+      "US/Canada-resident NRIs face AMC-level restrictions on many schemes (FATCA); several fund houses do accept them. Investments via NRE/NRO.",
+    seoTitle: "Mutual Funds in India: Structure, Costs, Taxation",
+    seoDescription:
+      "How Indian mutual funds are structured, what they cost, the minimum to start, and how equity and debt funds are taxed. The benchmark to beat.",
   },
   {
-    "id": "fdplus",
-    "name": "FD+ & Structured Debt",
-    "tag": "The Foundation",
-    "badge": "FD / Bonds",
-    "risk": 15,
-    "liq": 72,
-    "mid": 7,
-    "yrs": 2,
-    "riskBand": "Low",
-    "liqLabel": "Days to weeks",
-    "min": "₹1 L – ₹10 L",
-    "minL": 1,
-    "ret": "6.5–7.5% p.a. (indicative)",
-    "horizon": "1–3 yrs",
-    "cashflow": true,
-    "analogy": "The same job a bank FD does, parking money safely, done with better instruments. Corporate deposits, high-grade bonds and short debt strategies. Accessible in days, not years.",
-    "what": "A set of low-risk debt instruments: AAA and AA corporate FDs and bonds, target-maturity funds, and curated debt portfolios. Used as a stable anchor while the rest of the portfolio takes risk.",
-    "solves": [
+    id: "fdplus",
+    name: "FD+ & Structured Debt",
+    tag: "The Foundation",
+    badge: "FD / Bonds",
+    risk: 15,
+    liq: 72,
+    mid: 7,
+    yrs: 2,
+    riskBand: "Low",
+    liqLabel: "Days to weeks",
+    min: "₹1 L – ₹10 L",
+    minL: 1,
+    ret: "6.5–7.5% p.a. (indicative)",
+    horizon: "1–3 yrs",
+    cashflow: true,
+    analogy:
+      "The same job a bank FD does, parking money safely, done with better instruments. Corporate deposits, high-grade bonds and short debt strategies. Accessible in days, not years.",
+    what: "A set of low-risk debt instruments: AAA and AA corporate FDs and bonds, target-maturity funds, and curated debt portfolios. Used as a stable anchor while the rest of the portfolio takes risk.",
+    solves: [
       "Parking surplus without an FD lock-in penalty",
       "Predictable, near-term cashflow",
-      "A low-risk anchor for the wider portfolio"
+      "A low-risk anchor for the wider portfolio",
     ],
-    "benefits": [
+    benefits: [
       "Better liquidity than most alternatives — money out in days",
       "Laddered maturities can match known future expenses",
-      "High credit quality keeps capital risk low"
+      "High credit quality keeps capital risk low",
     ],
-    "risks": [
+    risks: [
       "Credit risk: any extra yield is payment for lending below sovereign quality",
       "Bond prices move with interest rates if sold early",
-      "Yields shown are indicative; reinvestment rates change"
+      "Yields shown are indicative; reinvestment rates change",
     ],
-    "tax": "Interest and any bond gains are taxed at slab rate. No long-term capital-gains concession on this sleeve.",
-    "slug": "fd-plus-structured-debt",
-    "nriNote": "Corporate FDs/bonds available via NRO (and selectively NRE); interest on NRO is fully taxable with TDS.",
-    "seoTitle": "FD Plus and Structured Debt: Structure and Costs",
-    "seoDescription": "Corporate deposits, high-grade bonds and short debt strategies used as a capital-protective anchor. What they hold, how liquid they are, and how they are taxed."
+    tax: "Interest and any bond gains are taxed at slab rate. No long-term capital-gains concession on this sleeve.",
+    slug: "fd-plus-structured-debt",
+    nriNote:
+      "Corporate FDs/bonds available via NRO (and selectively NRE); interest on NRO is fully taxable with TDS.",
+    seoTitle: "FD Plus and Structured Debt: Structure and Costs",
+    seoDescription:
+      "Corporate deposits, high-grade bonds and short debt strategies used as a capital-protective anchor. What they hold, how liquid they are, and the tax.",
   },
   {
-    "id": "dpms",
-    "name": "Debt PMS",
-    "tag": "The Yield Engine",
-    "badge": "PMS",
-    "risk": 30,
-    "liq": 60,
-    "mid": 12,
-    "yrs": 2,
-    "riskBand": "Low–Moderate",
-    "liqLabel": "Min 3-month lock-in, then days",
-    "min": "₹50 L",
-    "minL": 50,
-    "ret": "11–13% p.a. (indicative)",
-    "horizon": "6 months – 2+ yrs",
-    "cashflow": true,
-    "analogy": "A managed lending desk inside your own demat. Instead of one FD, a manager runs a basket of high-yield bonds paying 11 to 13%. Each one visible, each one in your name.",
-    "what": "A SEBI-registered PMS holding high-yield corporate bonds and structured debt directly in your demat account. The manager picks and rotates the credits. Coupons flow to you. Higher carry than traditional debt, with only a short lock-in.",
-    "solves": [
+    id: "dpms",
+    name: "Debt PMS",
+    tag: "The Yield Engine",
+    badge: "PMS",
+    risk: 30,
+    liq: 60,
+    mid: 12,
+    yrs: 2,
+    riskBand: "Low–Moderate",
+    liqLabel: "Min 3-month lock-in, then days",
+    min: "₹50 L",
+    minL: 50,
+    ret: "11–13% p.a. (indicative)",
+    horizon: "6 months – 2+ yrs",
+    cashflow: true,
+    analogy:
+      "A managed lending desk inside your own demat. Instead of one FD, a manager runs a basket of high-yield bonds paying 11 to 13%. Each one visible, each one in your name.",
+    what: "A SEBI-registered PMS holding high-yield corporate bonds and structured debt directly in your demat account. The manager picks and rotates the credits. Coupons flow to you. Higher carry than traditional debt, with only a short lock-in.",
+    solves: [
       "Double-digit income with full portfolio transparency",
       "A middle path between FD+ and locked private credit",
-      "Regular coupon cashflow with a short lock-in"
+      "Regular coupon cashflow with a short lock-in",
     ],
-    "benefits": [
+    benefits: [
       "Every bond visible in your own account — no unit-NAV opacity",
       "Short 3-month lock-in, then exits settle in days",
-      "Coupon ladder can be built around your cashflow needs"
+      "Coupon ladder can be built around your cashflow needs",
     ],
-    "risks": [
+    risks: [
       "Credit risk is the engine — a default hits directly",
       "High-yield bonds can trade thin in stressed markets",
-      "Interest income gets no long-term tax shelter"
+      "Interest income gets no long-term tax shelter",
     ],
-    "tax": "Coupons and bond gains are taxed at slab rate in your hands. No long-term capital-gains concession.",
-    "slug": "debt-pms",
-    "nriNote": "Debt PMS available to NRIs via NRO; coupon TDS applies — obtain a CA computation.",
-    "seoTitle": "Debt PMS in India: Structure, Costs, Taxation",
-    "seoDescription": "A debt PMS holds high-yield corporate bonds directly in your demat. The ₹50 lakh minimum, how coupons reach you, credit risk, and how gains are taxed."
+    tax: "Coupons and bond gains are taxed at slab rate in your hands. No long-term capital-gains concession.",
+    slug: "debt-pms",
+    nriNote:
+      "Debt PMS available to NRIs via NRO; coupon TDS applies — obtain a CA computation.",
+    seoTitle: "Debt PMS in India: Structure, Costs, Taxation",
+    seoDescription:
+      "A debt PMS holds high-yield corporate bonds directly in your demat. The ₹50 lakh minimum, how coupons reach you, credit risk, and how gains are taxed.",
   },
   {
-    "id": "reit",
-    "name": "REITs & InvITs",
-    "tag": "Listed Real Assets",
-    "badge": "Listed Trust",
-    "risk": 40,
-    "liq": 86,
-    "mid": 7,
-    "yrs": 4,
-    "riskBand": "Moderate",
-    "liqLabel": "Exchange-traded",
-    "min": "One unit (a few hundred ₹)",
-    "minL": 0.01,
-    "ret": "6–8% distribution + growth (indicative)",
-    "horizon": "3–5+ yrs",
-    "cashflow": true,
-    "analogy": "A slice of Grade-A offices or infrastructure, without the ₹5 crore ticket or the tenant calls. Rent arrives quarterly. The units trade on the exchange like a share.",
-    "what": "Listed trusts that own rent-earning real estate, or infrastructure like roads, power lines and towers. They must pay out at least 90% of net cashflow to unit-holders. Real-asset income with stock-market liquidity.",
-    "solves": [
+    id: "reit",
+    name: "REITs & InvITs",
+    tag: "Listed Real Assets",
+    badge: "Listed Trust",
+    risk: 40,
+    liq: 86,
+    mid: 7,
+    yrs: 4,
+    riskBand: "Moderate",
+    liqLabel: "Exchange-traded",
+    min: "One unit (a few hundred ₹)",
+    minL: 0.01,
+    ret: "6–8% distribution + growth (indicative)",
+    horizon: "3–5+ yrs",
+    cashflow: true,
+    analogy:
+      "A slice of Grade-A offices or infrastructure, without the ₹5 crore ticket or the tenant calls. Rent arrives quarterly. The units trade on the exchange like a share.",
+    what: "Listed trusts that own rent-earning real estate, or infrastructure like roads, power lines and towers. They must pay out at least 90% of net cashflow to unit-holders. Real-asset income with stock-market liquidity.",
+    solves: [
       "Regular income backed by physical assets",
       "Property exposure without betting on one building",
-      "Rental escalations that track inflation"
+      "Rental escalations that track inflation",
     ],
-    "benefits": [
+    benefits: [
       "Quarterly payouts with exchange liquidity",
       "SEBI-regulated, independently valued portfolios",
-      "Far more diversified than one flat or shop"
+      "Far more diversified than one flat or shop",
     ],
-    "risks": [
+    risks: [
       "Unit prices move with markets and interest rates",
       "Occupancy and rental cycles affect payouts",
-      "Payout mix, and its tax — varies trust to trust"
+      "Payout mix, and its tax — varies trust to trust",
     ],
-    "tax": "Distributions taxed component-wise — interest and rental at slab, some components exempt or as capital return. Units: STCG 20% under 12 months, LTCG 12.5% beyond.",
-    "slug": "reits-invits",
-    "nriNote": "Fully open to NRIs on-exchange; TDS applies on distributions.",
-    "seoTitle": "REITs and InvITs in India: Income and Taxation",
-    "seoDescription": "Listed trusts owning rent-earning property or infrastructure. The 90% payout requirement, exchange liquidity, and how each component of a distribution is taxed."
+    tax: "Distributions taxed component-wise — interest and rental at slab, some components exempt or as capital return. Units: STCG 20% under 12 months, LTCG 12.5% beyond.",
+    slug: "reits-invits",
+    nriNote: "Fully open to NRIs on-exchange; TDS applies on distributions.",
+    seoTitle: "REITs and InvITs in India: Income and Taxation",
+    seoDescription:
+      "Listed trusts owning rent-earning property or infrastructure. The 90% payout rule, exchange liquidity, and how each part of a distribution is taxed.",
   },
   {
-    "id": "mn",
-    "name": "Market Neutral Funds",
-    "tag": "Debt++, Equity Engine",
-    "badge": "Cat III AIF",
-    "risk": 32,
-    "liq": 52,
-    "mid": 13,
-    "yrs": 1,
-    "riskBand": "Low–Moderate",
-    "liqLabel": "Monthly windows (typical)",
-    "min": "₹1 Cr (Cat III AIF)",
-    "minL": 100,
-    "ret": "12–14% p.a. (indicative)",
-    "horizon": "3 months – 2 yrs",
-    "cashflow": true,
-    "analogy": "Long one stock, short another, so market moves largely cancel out. The return comes from the manager's skill in the pair, not from which way the market went.",
-    "what": "Absolute-return Category III AIF strategies, also available through GIFT inbound. They pair long and short positions to strip out market direction. The aim is steady positive returns whether the index rises or falls. Debt-like outcomes from an equity engine.",
-    "solves": [
+    id: "mn",
+    name: "Market Neutral Funds",
+    tag: "Debt++, Equity Engine",
+    badge: "Cat III AIF",
+    risk: 32,
+    liq: 52,
+    mid: 13,
+    yrs: 1,
+    riskBand: "Low–Moderate",
+    liqLabel: "Monthly windows (typical)",
+    min: "₹1 Cr (Cat III AIF)",
+    minL: 100,
+    ret: "12–14% p.a. (indicative)",
+    horizon: "3 months – 2 yrs",
+    cashflow: true,
+    analogy:
+      "Long one stock, short another, so market moves largely cancel out. The return comes from the manager's skill in the pair, not from which way the market went.",
+    what: "Absolute-return Category III AIF strategies, also available through GIFT inbound. They pair long and short positions to strip out market direction. The aim is steady positive returns whether the index rises or falls. Debt-like outcomes from an equity engine.",
+    solves: [
       "Debt-plus returns without duration or plain credit risk",
       "Positive-target returns in flat or falling markets",
-      "A preservation sleeve that still puts capital to work"
+      "A preservation sleeve that still puts capital to work",
     ],
-    "benefits": [
+    benefits: [
       "Low correlation with both equity and debt markets",
       "Monthly-style liquidity — rare at this return level",
-      "Drawdowns designed to stay shallow"
+      "Drawdowns designed to stay shallow",
     ],
-    "risks": [
+    risks: [
       "Fund-level tax typically at the maximum marginal rate (scheme-specific) eats into gross returns",
       "Results depend entirely on manager skill",
-      "Stress periods can break long-short relationships for a while"
+      "Stress periods can break long-short relationships for a while",
     ],
-    "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
-    "slug": "market-neutral-funds",
-    "nriNote": "GIFT inbound market-neutral structures exist specifically for overseas investors, often cleaner than the domestic Cat III route.",
-    "seoTitle": "Market Neutral Funds in India: How They Work",
-    "seoDescription": "Paired long and short positions that strip out market direction. How the strategy works, the Category III structure it sits in, and how returns are taxed."
+    tax: "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
+    slug: "market-neutral-funds",
+    nriNote:
+      "GIFT inbound market-neutral structures exist specifically for overseas investors, often cleaner than the domestic Cat III route.",
+    seoTitle: "Market Neutral Funds in India: How They Work",
+    seoDescription:
+      "Paired long and short positions that strip out market direction. How the strategy works, the Category III structure it sits in, and how returns are taxed.",
   },
   {
-    "id": "lssif",
-    "name": "Long-Short SIFs",
-    "tag": "The Shock Absorber",
-    "badge": "SIF",
-    "risk": 45,
-    "liq": 58,
-    "mid": 12,
-    "yrs": 4,
-    "riskBand": "Moderate",
-    "liqLabel": "Scheme-defined windows",
-    "min": "₹10 L",
-    "minL": 10,
-    "ret": "10–14% p.a. with lower drawdowns (indicative)",
-    "horizon": "3–5 yrs",
-    "cashflow": false,
-    "analogy": "An equity fund with brakes. It will not top the charts in a strong bull run, because the hedges cost some upside. It is built to fall far less when markets drop.",
-    "what": "Specified Investment Funds, SEBI's newest category, live since 2025. They can go long the stocks they like and short the ones they do not. The aim is equity-like returns with much smaller falls. Hedge-fund technique, mutual-fund rules and tax, ₹10 lakh entry.",
-    "solves": [
+    id: "lssif",
+    name: "Long-Short SIFs",
+    tag: "The Shock Absorber",
+    badge: "SIF",
+    risk: 45,
+    liq: 58,
+    mid: 12,
+    yrs: 4,
+    riskBand: "Moderate",
+    liqLabel: "Scheme-defined windows",
+    min: "₹10 L",
+    minL: 10,
+    ret: "10–14% p.a. with lower drawdowns (indicative)",
+    horizon: "3–5 yrs",
+    cashflow: false,
+    analogy:
+      "An equity fund with brakes. It will not top the charts in a strong bull run, because the hedges cost some upside. It is built to fall far less when markets drop.",
+    what: "Specified Investment Funds, SEBI's newest category, live since 2025. They can go long the stocks they like and short the ones they do not. The aim is equity-like returns with much smaller falls. Hedge-fund technique, mutual-fund rules and tax, ₹10 lakh entry.",
+    solves: [
       "Staying in equity without full drawdown exposure",
       "A smoother ride for a first move beyond mutual funds",
-      "Returns less dependent on markets only rising"
+      "Returns less dependent on markets only rising",
     ],
-    "benefits": [
+    benefits: [
       "Downside management is built into the mandate, not left to timing",
       "MF-style tax and disclosure — far kinder than Cat III fund-level tax",
-      "₹10 L entry vs ₹1 Cr for a comparable AIF strategy"
+      "₹10 L entry vs ₹1 Cr for a comparable AIF strategy",
     ],
-    "risks": [
+    risks: [
       "Hedging costs drag returns in strong bull runs",
       "Short track records — the category is young",
-      "Manager skill matters far more than in index-hugging funds"
+      "Manager skill matters far more than in index-hugging funds",
     ],
-    "tax": "Equity-oriented SIFs are taxed like equity mutual funds — STCG 20%, LTCG 12.5% beyond 12 months. A structural tax edge over Cat III AIFs.",
-    "slug": "long-short-sif",
-    "nriNote": "SIF availability to NRIs is scheme-specific and evolving — confirm before shortlisting.",
-    "seoTitle": "Long-Short SIF: SEBI's New Fund Category Explained",
-    "seoDescription": "Specialised Investment Funds can go long and short while keeping mutual-fund rules and tax. The ₹10 lakh entry, what they hold, and what to be cautious about."
+    tax: "Equity-oriented SIFs are taxed like equity mutual funds — STCG 20%, LTCG 12.5% beyond 12 months. A structural tax edge over Cat III AIFs.",
+    slug: "long-short-sif",
+    nriNote:
+      "SIF availability to NRIs is scheme-specific and evolving — confirm before shortlisting.",
+    seoTitle: "Long-Short SIF: SEBI's New Fund Category Explained",
+    seoDescription:
+      "Specialised Investment Funds can go long and short while keeping mutual-fund rules and tax. The ₹10 lakh entry, what they hold, and what to watch.",
   },
   {
-    "id": "pcredit",
-    "name": "Private Credit & Real Estate Debt",
-    "tag": "High-Yield Cashflow",
-    "badge": "Cat II AIF",
-    "risk": 35,
-    "liq": 20,
-    "mid": 16,
-    "yrs": 4,
-    "riskBand": "Low–Moderate",
-    "liqLabel": "3–5 yr tenor, locked",
-    "min": "₹1 Cr",
-    "minL": 100,
-    "ret": "12–20% p.a. (indicative)",
-    "horizon": "3–5 yrs",
-    "cashflow": true,
-    "analogy": "Being the lender instead of the depositor. Sound mid-sized companies pay 12 to 20% to borrow, secured. A private credit fund puts you on the lending side.",
-    "what": "A Category II AIF, also available through GIFT inbound, that lends directly to performing companies and real-estate projects. Secured, covenant-protected loans that banks are too slow or too rigid to write. Interest comes back as regular payouts. Principal returns as loans mature.",
-    "solves": [
+    id: "pcredit",
+    name: "Private Credit & Real Estate Debt",
+    tag: "High-Yield Cashflow",
+    badge: "Cat II AIF",
+    risk: 35,
+    liq: 20,
+    mid: 16,
+    yrs: 4,
+    riskBand: "Low–Moderate",
+    liqLabel: "3–5 yr tenor, locked",
+    min: "₹1 Cr",
+    minL: 100,
+    ret: "12–20% p.a. (indicative)",
+    horizon: "3–5 yrs",
+    cashflow: true,
+    analogy:
+      "Being the lender instead of the depositor. Sound mid-sized companies pay 12 to 20% to borrow, secured. A private credit fund puts you on the lending side.",
+    what: "A Category II AIF, also available through GIFT inbound, that lends directly to performing companies and real-estate projects. Secured, covenant-protected loans that banks are too slow or too rigid to write. Interest comes back as regular payouts. Principal returns as loans mature.",
+    solves: [
       "Double-digit income without equity volatility",
       "Regular quarterly/semi-annual cashflow",
-      "Diversifying the debt book beyond FDs and bonds"
+      "Diversifying the debt book beyond FDs and bonds",
     ],
-    "benefits": [
+    benefits: [
       "Contracted returns — repayment schedules, not market moods",
       "Security cover and covenants on each loan",
-      "Low correlation with equity markets"
+      "Low correlation with equity markets",
     ],
-    "risks": [
+    risks: [
       "Illiquid — capital is committed for the fund’s tenor",
       "Credit risk: defaults hit returns directly; underwriting is everything",
-      "Fees and carry sit between the headline yield and you"
+      "Fees and carry sit between the headline yield and you",
     ],
-    "tax": "Cat II AIFs are tax pass-through — interest income is taxed in your hands at slab rate; capital gains as per the underlying asset. Fund deducts TDS on distributions.",
-    "slug": "private-credit-real-estate-debt",
-    "nriNote": "NRIs can invest in AIFs; TDS on distributions applies at treaty/act rates. GIFT inbound versions often simplify this further.",
-    "seoTitle": "Private Credit and Real Estate Debt in India",
-    "seoDescription": "Category II AIFs lending directly to companies and property projects. Security and covenants, how interest reaches you, lock-in periods, and the tax treatment."
+    tax: "Cat II AIFs are tax pass-through — interest income is taxed in your hands at slab rate; capital gains as per the underlying asset. Fund deducts TDS on distributions.",
+    slug: "private-credit-real-estate-debt",
+    nriNote:
+      "NRIs can invest in AIFs; TDS on distributions applies at treaty/act rates. GIFT inbound versions often simplify this further.",
+    seoTitle: "Private Credit and Real Estate Debt in India",
+    seoDescription:
+      "Category II AIFs lending to companies and property projects. Security and covenants, how interest reaches you, lock-in periods, and the tax treatment.",
   },
   {
-    "id": "gift",
-    "name": "GIFT City & Global USD",
-    "tag": "The Second Passport for Capital",
-    "badge": "GIFT IFSC / LRS",
-    "risk": 60,
-    "liq": 42,
-    "mid": 13,
-    "yrs": 6,
-    "riskBand": "Moderate–High",
-    "liqLabel": "Fund-dependent",
-    "min": "US $5,000+ (fund-dependent)",
-    "minL": 5,
-    "ret": "12–14% p.a. in INR terms (illustrative)",
-    "horizon": "5–7+ yrs",
-    "cashflow": false,
-    "analogy": "A second address for your capital. If your business, your home and your portfolio are all in India and all in rupees, holding some wealth in another currency is insurance, not luxury.",
-    "what": "Investing in global markets in US dollars: US and developed-market equity, global innovation. Either through GIFT City IFSC funds, or the RBI's remittance route at US $2,50,000 per person per year. For NRIs, GIFT inbound funds are often the cleanest way into Indian strategies.",
-    "solves": [
+    id: "gift",
+    name: "GIFT City & Global USD",
+    tag: "The Second Passport for Capital",
+    badge: "GIFT IFSC / LRS",
+    risk: 60,
+    liq: 42,
+    mid: 13,
+    yrs: 6,
+    riskBand: "Moderate–High",
+    liqLabel: "Fund-dependent",
+    min: "US $5,000+ (fund-dependent)",
+    minL: 5,
+    ret: "12–14% p.a. in INR terms (illustrative)",
+    horizon: "5–7+ yrs",
+    cashflow: false,
+    analogy:
+      "A second address for your capital. If your business, your home and your portfolio are all in India and all in rupees, holding some wealth in another currency is insurance, not luxury.",
+    what: "Investing in global markets in US dollars: US and developed-market equity, global innovation. Either through GIFT City IFSC funds, or the RBI's remittance route at US $2,50,000 per person per year. For NRIs, GIFT inbound funds are often the cleanest way into Indian strategies.",
+    solves: [
       "Rupee-concentration risk on family wealth",
       "Access to businesses India doesn’t list — global tech, semiconductors, AI",
-      "Funding future USD expenses like children’s education"
+      "Funding future USD expenses like children’s education",
     ],
-    "benefits": [
+    benefits: [
       "Currency diversification — the rupee has tended to depreciate against the USD over long periods",
       "World-class companies not listed on NSE/BSE",
-      "GIFT structures cut paperwork vs direct overseas accounts"
+      "GIFT structures cut paperwork vs direct overseas accounts",
     ],
-    "risks": [
+    risks: [
       "The currency can also move against you in stretches",
       "TCS applies on LRS remittances above ₹10 L/yr (adjustable against tax)",
-      "Foreign-fund tax and reporting is genuinely more complex — CA involvement is essential"
+      "Foreign-fund tax and reporting is genuinely more complex — CA involvement is essential",
     ],
-    "tax": "Unlisted overseas/GIFT fund units: LTCG 12.5% after 24 months; slab rate if sooner. Foreign assets must be reported in Schedule FA. NRI treatment differs — confirm with your CA.",
-    "slug": "gift-city-global-usd",
-    "nriNote": "For NRIs, GIFT City funds are often the cleanest route into India-linked strategies — IFSC structures can offer simplified tax treatment for non-residents. Verify fund-specific rules.",
-    "seoTitle": "GIFT City and Global USD Investing: How It Works",
-    "seoDescription": "Investing in global markets in US dollars through GIFT City or the remittance route. Who can use each, the annual limit for residents, and the reporting duties."
+    tax: "Unlisted overseas/GIFT fund units: LTCG 12.5% after 24 months; slab rate if sooner. Foreign assets must be reported in Schedule FA. NRI treatment differs — confirm with your CA.",
+    slug: "gift-city-global-usd",
+    nriNote:
+      "For NRIs, GIFT City funds are often the cleanest route into India-linked strategies — IFSC structures can offer simplified tax treatment for non-residents. Verify fund-specific rules.",
+    seoTitle: "GIFT City and Global USD Investing: How It Works",
+    seoDescription:
+      "Investing in global markets in US dollars through GIFT City or the remittance route. Who can use each, the annual limit, and the reporting duties.",
   },
   {
-    "id": "loaif",
-    "name": "Long-Only Equity AIF",
-    "tag": "Listed + Pre-IPO, One Vehicle",
-    "badge": "Cat III AIF",
-    "risk": 75,
-    "liq": 45,
-    "mid": 19,
-    "yrs": 5,
-    "riskBand": "High",
-    "liqLabel": "Scheme windows / close-ended",
-    "min": "₹1 Cr",
-    "minL": 100,
-    "ret": "18–20% p.a. (indicative)",
-    "horizon": "5+ yrs",
-    "cashflow": false,
-    "analogy": "One vehicle holding two things. The listed stocks anyone can buy, and the off-market pre-IPO and anchor allocations most investors never see.",
-    "what": "A Category III long-only AIF, also available through GIFT inbound. It blends a concentrated listed-equity book with a 15 to 20% sleeve of pre-IPO and anchor allocations. Public and late-stage private markets in one commitment.",
-    "solves": [
+    id: "loaif",
+    name: "Long-Only Equity AIF",
+    tag: "Listed + Pre-IPO, One Vehicle",
+    badge: "Cat III AIF",
+    risk: 75,
+    liq: 45,
+    mid: 19,
+    yrs: 5,
+    riskBand: "High",
+    liqLabel: "Scheme windows / close-ended",
+    min: "₹1 Cr",
+    minL: 100,
+    ret: "18–20% p.a. (indicative)",
+    horizon: "5+ yrs",
+    cashflow: false,
+    analogy:
+      "One vehicle holding two things. The listed stocks anyone can buy, and the off-market pre-IPO and anchor allocations most investors never see.",
+    what: "A Category III long-only AIF, also available through GIFT inbound. It blends a concentrated listed-equity book with a 15 to 20% sleeve of pre-IPO and anchor allocations. Public and late-stage private markets in one commitment.",
+    solves: [
       "Concentrated listed alpha plus pre-IPO access in one commitment",
       "Anchor and IPO allocations retail investors rarely receive",
-      "A single high-conviction growth engine above the MF layer"
+      "A single high-conviction growth engine above the MF layer",
     ],
-    "benefits": [
+    benefits: [
       "Internal churn is not taxed in your hands — the fund pays, you receive NAV",
       "The pre-IPO sleeve adds a return source uncorrelated with daily markets",
-      "Pooled scale can secure anchor access no individual gets"
+      "Pooled scale can secure anchor access no individual gets",
     ],
-    "risks": [
+    risks: [
       "Fund-level tax typically at the maximum marginal rate (scheme-specific) is a real drag on gross returns",
       "The pre-IPO sleeve is illiquid inside an otherwise liquid book",
-      "High conviction cuts both ways in a drawdown"
+      "High conviction cuts both ways in a drawdown",
     ],
-    "tax": "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
-    "slug": "long-only-equity-aif",
-    "nriNote": "GIFT inbound long-only AIFs are frequently the most tax-efficient NRI route into concentrated Indian equity.",
-    "seoTitle": "Long-Only Equity AIF: Structure, Costs, Taxation",
-    "seoDescription": "A Category III AIF blending a concentrated listed book with a pre-IPO sleeve. The ₹1 crore minimum, what it holds, and why Cat III tax differs."
+    tax: "Cat III AIFs are typically taxed at the fund level at the maximum marginal rate (scheme-specific — it depends on trust determinacy and income character); you receive post-tax NAV, usually with no further tax in your hands. Confirm per scheme.",
+    slug: "long-only-equity-aif",
+    nriNote:
+      "GIFT inbound long-only AIFs are frequently the most tax-efficient NRI route into concentrated Indian equity.",
+    seoTitle: "Long-Only Equity AIF: Structure, Costs, Taxation",
+    seoDescription:
+      "A Category III AIF blending a concentrated listed book with a pre-IPO sleeve. The ₹1 crore minimum, what it holds, and why Cat III tax differs.",
   },
   {
-    "id": "pms",
-    "name": "High-Alpha Equity PMS",
-    "tag": "The Custom Build",
-    "badge": "PMS",
-    "risk": 70,
-    "liq": 64,
-    "mid": 19,
-    "yrs": 5,
-    "riskBand": "High",
-    "liqLabel": "Exit in ~7–15 days",
-    "min": "₹50 L",
-    "minL": 50,
-    "ret": "18–20% p.a. (indicative)",
-    "horizon": "5–7+ yrs",
-    "cashflow": false,
-    "analogy": "A portfolio built for you, not for the crowd. Twenty to twenty-five stocks chosen with conviction, held in your own demat, visible line by line. When the calls are right, concentration is what compounds.",
-    "what": "A SEBI-registered Portfolio Management Service running a concentrated equity portfolio directly in your demat account. No 65% category limits, no 80-stock dilution. A manager's best 20 to 25 ideas, sized to matter. You own the shares. The manager steers.",
-    "solves": [
+    id: "pms",
+    name: "High-Alpha Equity PMS",
+    tag: "The Custom Build",
+    badge: "PMS",
+    risk: 70,
+    liq: 64,
+    mid: 19,
+    yrs: 5,
+    riskBand: "High",
+    liqLabel: "Exit in ~7–15 days",
+    min: "₹50 L",
+    minL: 50,
+    ret: "18–20% p.a. (indicative)",
+    horizon: "5–7+ yrs",
+    cashflow: false,
+    analogy:
+      "A portfolio built for you, not for the crowd. Twenty to twenty-five stocks chosen with conviction, held in your own demat, visible line by line. When the calls are right, concentration is what compounds.",
+    what: "A SEBI-registered Portfolio Management Service running a concentrated equity portfolio directly in your demat account. No 65% category limits, no 80-stock dilution. A manager's best 20 to 25 ideas, sized to matter. You own the shares. The manager steers.",
+    solves: [
       "Real alpha-seeking beyond diversified funds",
       "Transparency — every holding visible in your own account",
-      "Strategies (focused mid/small-cap, special situations) MFs cannot run"
+      "Strategies (focused mid/small-cap, special situations) MFs cannot run",
     ],
-    "benefits": [
+    benefits: [
       "Concentration lets winners actually move the needle",
       "Direct ownership: your shares, your demat, your capital-gains ledger",
-      "Owner-manager boutiques bring rare manager continuity"
+      "Owner-manager boutiques bring rare manager continuity",
     ],
-    "risks": [
+    risks: [
       "Concentration cuts both ways — drawdowns can exceed index falls",
       "Manager dispersion is huge; selection is the whole game",
-      "Manager churn creates taxable events in your ledger every year"
+      "Manager churn creates taxable events in your ledger every year",
     ],
-    "tax": "Taxed exactly like direct equity in your hands — STCG 20% under 12 months, LTCG 12.5% beyond (₹1.25 L exemption). Review the strategy’s turnover.",
-    "slug": "equity-pms",
-    "nriNote": "Available to NRIs via NRE/NRO with a PIS-linked setup; US/Canada residency needs manager-level confirmation.",
-    "seoTitle": "Equity PMS in India: Structure, Costs, Taxation",
-    "seoDescription": "A concentrated equity portfolio held in your own demat account. The ₹50 lakh SEBI minimum, typical fee structures, liquidity, and why churn creates annual tax."
+    tax: "Taxed exactly like direct equity in your hands — STCG 20% under 12 months, LTCG 12.5% beyond (₹1.25 L exemption). Review the strategy’s turnover.",
+    slug: "equity-pms",
+    nriNote:
+      "Available to NRIs via NRE/NRO with a PIS-linked setup; US/Canada residency needs manager-level confirmation.",
+    seoTitle: "Equity PMS in India: Structure, Costs, Taxation",
+    seoDescription:
+      "A concentrated equity portfolio held in your own demat account. The ₹50 lakh SEBI minimum, typical fees, liquidity, and why churn creates annual tax.",
   },
   {
-    "id": "pe",
-    "name": "Private Equity Funds",
-    "tag": "Late-Stage Unlisted",
-    "badge": "Cat II AIF",
-    "risk": 88,
-    "liq": 8,
-    "mid": 22.5,
-    "yrs": 9,
-    "riskBand": "Very High",
-    "liqLabel": "8–10 yr fund life",
-    "min": "₹1 Cr",
-    "minL": 100,
-    "ret": "20–25% p.a. (indicative)",
-    "horizon": "8–10 yrs",
-    "cashflow": false,
-    "analogy": "Buying into a proven business before it lists. The company already works. The fund's job is to scale it and sell it at a public-market multiple.",
-    "what": "Category II AIFs investing in late-stage private companies that are profitable or close to it. Growth capital, buyouts, pre-listing rounds. It sits between venture risk and public-market pricing: proven businesses, private valuations, professional exit engineering.",
-    "solves": [
+    id: "pe",
+    name: "Private Equity Funds",
+    tag: "Late-Stage Unlisted",
+    badge: "Cat II AIF",
+    risk: 88,
+    liq: 8,
+    mid: 22.5,
+    yrs: 9,
+    riskBand: "Very High",
+    liqLabel: "8–10 yr fund life",
+    min: "₹1 Cr",
+    minL: 100,
+    ret: "20–25% p.a. (indicative)",
+    horizon: "8–10 yrs",
+    cashflow: false,
+    analogy:
+      "Buying into a proven business before it lists. The company already works. The fund's job is to scale it and sell it at a public-market multiple.",
+    what: "Category II AIFs investing in late-stage private companies that are profitable or close to it. Growth capital, buyouts, pre-listing rounds. It sits between venture risk and public-market pricing: proven businesses, private valuations, professional exit engineering.",
+    solves: [
       "Growth-stage exposure without early-stage mortality risk",
       "Entry at private multiples, exit at public ones",
-      "Long-horizon compounding insulated from daily market noise"
+      "Long-horizon compounding insulated from daily market noise",
     ],
-    "benefits": [
+    benefits: [
       "Companies are past the survival question — risk is execution, not existence",
       "Pass-through taxation preserves capital-gains character",
-      "Vintage diversification possible across fund commitments"
+      "Vintage diversification possible across fund commitments",
     ],
-    "risks": [
+    risks: [
       "Long lock-in — 8–10 years with capital calls",
       "Exit timing depends on IPO windows and M&A appetite",
-      "J-curve: early NAVs understate; patience is structural"
+      "J-curve: early NAVs understate; patience is structural",
     ],
-    "tax": "Cat II AIFs are tax pass-through — gains taxed in your hands per the underlying (unlisted: LTCG 12.5% after 24 months). Fund deducts TDS on distributions.",
-    "slug": "private-equity-funds",
-    "nriNote": "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment.",
-    "seoTitle": "Private Equity Funds in India: Access and Minimums",
-    "seoDescription": "Category II AIFs investing in late-stage private companies. The ₹1 crore commitment, how capital is drawn down, typical fund life, and how returns are taxed."
+    tax: "Cat II AIFs are tax pass-through — gains taxed in your hands per the underlying (unlisted: LTCG 12.5% after 24 months). Fund deducts TDS on distributions.",
+    slug: "private-equity-funds",
+    deepDive: [
+      {
+        q: "What is the actual minimum for a private equity fund in India?",
+        a: [
+          "SEBI sets the floor for any Alternative Investment Fund at ₹1 crore. A Category II fund cannot accept less from an ordinary investor. Employees and directors of the fund or its manager can come in at ₹25 lakh, and accredited investors have no minimum at all.",
+          "In practice the number that matters is not the floor but the fund's own ticket. Many private equity funds set theirs well above ₹1 crore, because a smaller number of larger investors is simpler to administer across a ten-year life.",
+        ],
+      },
+      {
+        q: "Do I write the whole cheque on day one?",
+        a: [
+          "No. You sign a commitment. The fund then draws it down in tranches, called capital calls, as it finds deals. A ₹1 crore commitment might see ₹15 lakh called in the first year and the balance over the next three or four.",
+          "This is the part people underestimate. The calls arrive on the manager's timetable, not yours, usually with a short notice period. Defaulting on one is expensive: the standard remedy in the fund documents is forfeiture of part of what you have already paid in. Before you commit, work out where the uncalled money will sit for four years and what it will earn there.",
+        ],
+      },
+      {
+        q: "What is the J-curve, and why does my statement look bad for three years?",
+        a: [
+          "Fees and set-up costs are charged from the first year. Value creation in the underlying companies shows up much later, and unlisted holdings are marked conservatively until there is a transaction to mark them against. So the reported value of your account typically dips below what you have paid in, then recovers.",
+          "That shape is structural, not a warning sign in itself. What it means practically is that an early statement tells you almost nothing about the fund. The first genuinely informative data point is usually the first realisation.",
+        ],
+      },
+      {
+        q: "How much of the gain does the manager keep?",
+        a: [
+          "Two layers. A management fee, often around 2% a year, and carried interest, which is a share of profits above a hurdle rate.",
+          "The layer that decides the number is the catch-up. Read “20% over a 10% hurdle” two ways. Without a catch-up, the manager takes 20% of the gains above the hurdle only. With a full catch-up, once the hurdle is cleared the manager takes 20% of the whole gain, hurdle included. Identical headline terms, several times the fee. Ask whether there is a catch-up before you ask anything about strategy.",
+          "Also ask whether the management fee is charged on committed capital or on capital actually drawn. In the early years, when most of your commitment is still uncalled, those two produce very different bills.",
+        ],
+      },
+      {
+        q: "How does a Category II AIF differ from Category III?",
+        a: [
+          "Category II is the unlisted, long-lock structure: private equity, private credit, real estate. It does not use leverage other than for day-to-day operating needs. Category III is the listed-market structure, and it may use leverage and derivatives.",
+          "The difference that reaches your return is taxation. Category II is a pass-through, so gains are taxed in your hands with the character of the underlying holding preserved. Category III is taxed at the fund level. It also changes what the manager must put in alongside you: the continuing-interest requirement is 2.5% of the corpus or ₹5 crore, whichever is lower, for Categories I and II, and 5% or ₹10 crore for Category III.",
+        ],
+      },
+      {
+        q: "How are the gains taxed when the fund exits a company?",
+        a: [
+          "Category II AIFs are a pass-through. The fund does not pay tax on the gain; it is taxed in your hands, and it keeps the character it had inside the fund. For an unlisted company held beyond twenty-four months that means long-term capital gains at 12.5%.",
+          "The fund deducts tax at source on what it distributes, and issues you a statement each year showing your share of income by head. You reconcile that against your own return. Because income can be reported to you in a year in which you received no cash, the tax year and the cash year do not always line up. Plan for that.",
+        ],
+      },
+      {
+        q: "What should I read in the private placement memorandum?",
+        a: [
+          "Six things, in this order. The fund's tenure and how many extensions the manager can take unilaterally. The capital call notice period and the default remedy. Whether the management fee sits on committed or drawn capital. Whether carry has a catch-up. Whether the waterfall distributes deal by deal or only after the whole fund returns capital. And the key-person clause, which says what happens if the people you are backing leave.",
+          "A deal-by-deal waterfall pays the manager carry on early winners before the fund as a whole has returned your money. A whole-of-fund waterfall does not. Over a ten-year life that single line moves more money than the fee headline.",
+        ],
+      },
+      {
+        q: "Can I get out early?",
+        a: [
+          "Not through the fund. There is no redemption window; the money returns as the manager sells companies. The only exit is a secondary sale of your interest to another investor, which needs the manager's consent, takes months, and prices at a discount because the buyer is taking on your remaining unfunded commitment as well.",
+          "Treat the lock-in as real. The test is not whether you can find ₹1 crore. It is whether you can commit it, meet calls on someone else's schedule, and not touch any of it for eight years without that changing another decision you make in the meantime.",
+        ],
+      },
+      {
+        q: "Can NRIs invest in Indian private equity funds?",
+        a: [
+          "Yes. Category II AIFs accept NRI capital, generally on a repatriable basis through an NRE account, and the structuring should be settled before you commit rather than at the first capital call.",
+          "If you are a US person, stop here and read the position on pooled Indian funds first. A Category II AIF is a pooled foreign vehicle for US tax purposes, and that changes the arithmetic materially regardless of how the fund performs.",
+        ],
+      },
+    ],
+    nriNote:
+      "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment.",
+    seoTitle: "Private Equity Funds in India: Access and Minimums",
+    seoDescription:
+      "Category II AIFs investing in late-stage private companies. The ₹1 crore commitment, how capital is drawn down, fund life, and how returns are taxed.",
   },
   {
-    "id": "preipo",
-    "name": "Pre-IPO & Unlisted Shares",
-    "tag": "The Early Entry",
-    "badge": "Unlisted / Cat II",
-    "risk": 85,
-    "liq": 14,
-    "mid": 25,
-    "yrs": 5,
-    "riskBand": "Very High",
-    "liqLabel": "Illiquid until listing/event",
-    "min": "₹5–25 L typical lots",
-    "minL": 5,
-    "ret": "22–28% p.a. (indicative, wide dispersion)",
-    "horizon": "3–7 yrs",
-    "cashflow": false,
-    "analogy": "Buying the flat at the excavation stage. The discount to the finished price is real. So is the risk that the project is delayed, redesigned, or never built. You are paid for waiting and for uncertainty.",
-    "what": "Buying shares in companies before they list, through unlisted-share platforms or Category II funds. The idea is to enter at private valuations and exit at public ones. Some of India's best-known listings rewarded pre-IPO holders handsomely. Others listed below their private rounds.",
-    "solves": [
+    id: "preipo",
+    name: "Pre-IPO & Unlisted Shares",
+    tag: "The Early Entry",
+    badge: "Unlisted / Cat II",
+    risk: 85,
+    liq: 14,
+    mid: 25,
+    yrs: 5,
+    riskBand: "Very High",
+    liqLabel: "Illiquid until listing/event",
+    min: "₹5–25 L typical lots",
+    minL: 5,
+    ret: "22–28% p.a. (indicative, wide dispersion)",
+    horizon: "3–7 yrs",
+    cashflow: false,
+    analogy:
+      "Buying the flat at the excavation stage. The discount to the finished price is real. So is the risk that the project is delayed, redesigned, or never built. You are paid for waiting and for uncertainty.",
+    what: "Buying shares in companies before they list, through unlisted-share platforms or Category II funds. The idea is to enter at private valuations and exit at public ones. Some of India's best-known listings rewarded pre-IPO holders handsomely. Others listed below their private rounds.",
+    solves: [
       "Access to growth that happens before the IPO pop",
       "Ownership in marquee names years before listing",
-      "A portfolio kicker sized small enough to matter, not hurt"
+      "A portfolio kicker sized small enough to matter, not hurt",
     ],
-    "benefits": [
+    benefits: [
       "Entry valuations often below eventual listing prices",
       "A genuinely differentiated return stream",
-      "Six-month post-IPO lock-ins for pre-IPO holders are a known, plannable constraint"
+      "Six-month post-IPO lock-ins for pre-IPO holders are a known, plannable constraint",
     ],
-    "risks": [
+    risks: [
       "No exit until a listing or buyback — capital can be stuck for years",
       "Price discovery is thin; you may overpay quietly",
-      "IPOs get shelved; some list below the pre-IPO price"
+      "IPOs get shelved; some list below the pre-IPO price",
     ],
-    "tax": "Unlisted shares: LTCG 12.5% after 24 months; slab-rate STCG before that. Buyback proceeds now taxed as capital gains (Budget 2026). Take CA guidance on exit timing.",
-    "slug": "pre-ipo-unlisted-shares",
-    "nriNote": "Unlisted purchases by NRIs involve FEMA pricing and reporting rules — always structured with professional guidance.",
-    "seoTitle": "Pre-IPO and Unlisted Shares in India: How to Buy",
-    "seoDescription": "Buying shares before a company lists, through unlisted platforms or Category II funds. How access works, the holding period for tax, and the real risks."
+    tax: "Unlisted shares: LTCG 12.5% after 24 months; slab-rate STCG before that. Buyback proceeds now taxed as capital gains (Budget 2026). Take CA guidance on exit timing.",
+    slug: "pre-ipo-unlisted-shares",
+    nriNote:
+      "Unlisted purchases by NRIs involve FEMA pricing and reporting rules — always structured with professional guidance.",
+    seoTitle: "Pre-IPO and Unlisted Shares in India: How to Buy",
+    seoDescription:
+      "Buying shares before a company lists, through unlisted platforms or Category II funds. How access works, the holding period for tax, and the real risks.",
   },
   {
-    "id": "vc",
-    "name": "Angel & VC Funds",
-    "tag": "The Frontier",
-    "badge": "Cat I AIF",
-    "risk": 95,
-    "liq": 4,
-    "mid": 28.5,
-    "yrs": 8,
-    "riskBand": "Very High",
-    "liqLabel": "8–12 yr fund life",
-    "min": "₹25 L (angel) / ₹1 Cr (VC AIF)",
-    "minL": 25,
-    "ret": "25–32% p.a. targeted (indicative, power-law)",
-    "horizon": "8–12 yrs",
-    "cashflow": false,
-    "analogy": "Planting an orchard, not buying fruit. Most saplings will not make it. The few that do bear fruit for a generation, and one great tree can pay for the whole orchard.",
-    "what": "Category I AIFs, venture and angel funds, investing in early-stage companies. Returns follow a power law. Many investments fail, most muddle through, and one or two winners are expected to return the whole fund. Patient, decade-long money at the frontier of risk.",
-    "solves": [
+    id: "vc",
+    name: "Angel & VC Funds",
+    tag: "The Frontier",
+    badge: "Cat I AIF",
+    risk: 95,
+    liq: 4,
+    mid: 28.5,
+    yrs: 8,
+    riskBand: "Very High",
+    liqLabel: "8–12 yr fund life",
+    min: "₹25 L (angel) / ₹1 Cr (VC AIF)",
+    minL: 25,
+    ret: "25–32% p.a. targeted (indicative, power-law)",
+    horizon: "8–12 yrs",
+    cashflow: false,
+    analogy:
+      "Planting an orchard, not buying fruit. Most saplings will not make it. The few that do bear fruit for a generation, and one great tree can pay for the whole orchard.",
+    what: "Category I AIFs, venture and angel funds, investing in early-stage companies. Returns follow a power law. Many investments fail, most muddle through, and one or two winners are expected to return the whole fund. Patient, decade-long money at the frontier of risk.",
+    solves: [
       "Participation in India’s startup ecosystem with professional selection",
       "Truly uncorrelated, decade-horizon compounding",
-      "For business families: a structured window into new-economy models"
+      "For business families: a structured window into new-economy models",
     ],
-    "benefits": [
+    benefits: [
       "Diversified exposure vs writing individual angel cheques",
       "Professional diligence, board access, follow-on discipline",
-      "Vintage-year diversification possible across commitments"
+      "Vintage-year diversification possible across commitments",
     ],
-    "risks": [
+    risks: [
       "Longest lock-in of any structure — 8–12 years with capital calls",
       "J-curve: early years show losses before winners mature",
-      "Manager dispersion is the widest of any category"
+      "Manager dispersion is the widest of any category",
     ],
-    "tax": "Cat I AIFs are tax pass-through — gains taxed in your hands per the underlying (unlisted: LTCG 12.5% after 24 months). Fund deducts TDS on income distributed.",
-    "slug": "angel-vc-funds",
-    "nriNote": "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment.",
-    "seoTitle": "Angel and VC Funds in India: Access and Minimums",
-    "seoDescription": "Category I AIFs backing early-stage companies. Why returns follow a power law, the decade-long horizon, and why angel funds no longer carry a minimum."
-  }
+    tax: "Cat I AIFs are tax pass-through — gains taxed in your hands per the underlying (unlisted: LTCG 12.5% after 24 months). Fund deducts TDS on income distributed.",
+    slug: "angel-vc-funds",
+    nriNote:
+      "Open to NRIs; repatriation and TDS mechanics need structuring review before commitment.",
+    seoTitle: "Angel and VC Funds in India: Access and Minimums",
+    seoDescription:
+      "Category I AIFs backing early-stage companies. Why returns follow a power law, the decade-long horizon, and why angel funds no longer carry a minimum.",
+  },
 ];
 
 export const productBySlug = (slug: string): Product | undefined =>

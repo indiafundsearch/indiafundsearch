@@ -18,12 +18,22 @@ import { DisclosureLine } from '@/components/shared/DisclosureLine'
 export function AnswerPage({
   answer,
   children,
+  basePath = '/learn',
+  hubLabel = `Sheet ${SHEETS.fundamentals.no} — Learn`,
+  hubHref = '/learn',
+  /** Market signal in the first 100 words (Appendix A, Task A.7). */
+  marketNote,
 }: {
   answer: Answer
   /** Optional extra block rendered after the sections, before the sources. */
   children?: React.ReactNode
+  /** URL prefix for this cluster, e.g. "/us-tax". */
+  basePath?: string
+  hubLabel?: string
+  hubHref?: string
+  marketNote?: string
 }) {
-  const path = `/learn/${answer.slug}`
+  const path = `${basePath}/${answer.slug}`
 
   return (
     <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
@@ -32,7 +42,7 @@ export function AnswerPage({
           articleJsonLd({ title: answer.question, description: answer.answer, path }),
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
-            { name: 'Learn', path: '/learn' },
+            { name: hubLabel.replace(/^Sheet \d+ — /, ''), path: hubHref },
             { name: answer.question, path },
           ]),
           // Mirrors what is visible on the page and nothing else.
@@ -45,7 +55,7 @@ export function AnswerPage({
       />
 
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
-        <Link href="/learn" className="hover:text-ink">Sheet {SHEETS.fundamentals.no} — Learn</Link>
+        <Link href={hubHref} className="hover:text-ink">{hubLabel}</Link>
       </nav>
 
       <header className="max-w-[820px]">
@@ -62,6 +72,12 @@ export function AnswerPage({
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{answer.answer}</p>
         </div>
+
+        {marketNote && (
+          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-4">
+            {marketNote}
+          </p>
+        )}
 
         <AuthorByline
           className="mt-6"

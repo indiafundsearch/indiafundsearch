@@ -34,6 +34,19 @@ export interface Product {
   seoTitle: string;
   /** Search description, <=155 chars. States what the page answers. */
   seoDescription: string;
+  /**
+   * Optional question-shaped depth for pages sitting in striking distance
+   * (Phase 6). Rendered as native <details> so every answer stays crawlable,
+   * and mirrored into FAQPage schema. Only the pages that need the depth carry
+   * it — a spec page that already answers its query stays short on purpose.
+   */
+  deepDive?: DeepDive[];
+}
+
+export interface DeepDive {
+  q: string;
+  /** paragraphs; trusted in-house HTML (<b>, <em>, <a> only) */
+  a: string[];
 }
 
 export interface Article {
@@ -142,5 +155,13 @@ export interface Corridor {
   published?: string;
   /** Visible "Regulatory position as at" date. */
   regulatoryAsAt?: string;
+  /** Market signal shown under the capsule (Appendix A, Task A.7). */
+  marketNote?: string;
+  /**
+   * Hand-picked next reads (Phase 4, Task 4.3 and Phase 6). Corridor pages are
+   * the deepest entry points on the site, so they carry the most weight to pass
+   * on to the tax clusters they sit above.
+   */
+  related?: { label: string; href: string }[];
   sources: Source[];
 }

@@ -11,7 +11,7 @@ import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 export const metadata: Metadata = pageMeta({
   title: "PMS, AIF and SIF Taxation in India: FY 2026-27",
   description:
-    "How each Indian alternative structure is taxed in FY 2026-27: PMS, AIF Categories I to III, SIF, REITs, debt funds and GIFT City. Resident and NRI schedules.",
+    "How each Indian alternative is taxed in FY 2026-27: PMS, AIF Categories I to III, SIF, REITs, debt funds and GIFT City. Resident and NRI schedules.",
   path: '/tax',
 })
 

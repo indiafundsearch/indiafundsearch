@@ -100,6 +100,12 @@ export default async function CorridorPage({ params }: PageProps) {
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{c.capsule}</p>
         </div>
 
+        {c.marketNote && (
+          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-4">
+            {c.marketNote}
+          </p>
+        )}
+
         <AuthorByline
           className="mt-6"
           published={c.published}
@@ -292,6 +298,8 @@ export default async function CorridorPage({ params }: PageProps) {
           Talk to the desk →
         </a>
       </div>
+
+      {c.related && <RelatedReading links={c.related} heading="Go deeper" />}
 
       <Sources sources={c.sources} heading="Every source cited on this page" />
 
