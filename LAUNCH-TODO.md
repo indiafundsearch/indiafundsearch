@@ -44,6 +44,26 @@ nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
    houses, minimums, route accepted) ready to send, and reply within one
    working day — the confirmation email promises exactly that.
 
+7. **AMFI ARN** — the single highest-value missing item. There is no ARN
+   anywhere in this repo, and the brief forbids inventing one, so the byline,
+   the author schema and the footer credentials block all render without it.
+   Supply the number and which entity holds it, then set `arn` in
+   `lib/content/authors.ts`; every consumer picks it up automatically.
+8. **IFSCA threshold table** — `/gift-city/thresholds` is built (semantic table,
+   Dataset schema, CSV export, changelog) but `ROWS` in
+   `lib/content/ifscaThresholds.ts` is empty, so the page is `noindex`. It needs
+   the thresholds themselves, legally reviewed. Not written from memory.
+9. **Form 8802 user fee and IRS processing time** — the only `TODO: VERIFY` in
+   the `/us-tax` cluster (`lib/content/usTax.ts`, the Form 8802 answer). Both
+   figures move; neither is in the repo.
+10. **GIFT City cluster copy** — five reserved URLs exist as visible
+   placeholders, `noindex` and deliberately unlinked: `/gift-city/eligibility`,
+   `/for-resident-indians`, `/funds-list`, `/how-to-invest`, `/taxation`.
+   Fill the `PendingContent` block, remove `noindex`, add to `GIFT_CITY_SPOKES`
+   in `lib/content/hubs.ts` and to `app/sitemap.ts`.
+11. **Headshot** — `image` in `lib/content/authors.ts` is null, so the byline
+   falls back to a monogram.
+
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
 - **Google Search Console** — sitemap submitted + indexing requested; just monitor.
