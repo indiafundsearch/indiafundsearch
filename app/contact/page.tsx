@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { ContactForm } from '@/components/contact/ContactForm'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 import { CONTACT, DISCLOSURE, SHEETS, whatsappHref, SITE } from '@/lib/constants'
@@ -25,7 +26,10 @@ export default function ContactPage() {
           <em className="text-bronze italic">&ldquo;you don&apos;t need any of this yet.&rdquo;</em>
         </p>
         <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-4">
-          {SITE.city}, {SITE.state} · {SITE.lineage}
+          {SITE.city}, {SITE.state} · {SITE.lineage} ·{' '}
+          <Link href="/about" className="text-bronze border-b border-bronze-soft hover:text-ink normal-case tracking-normal">
+            Who you are talking to
+          </Link>
         </p>
       </div>
 

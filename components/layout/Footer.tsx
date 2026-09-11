@@ -41,6 +41,21 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              {/* Not sheets, so no number: the pages that explain who is behind the site. */}
+              {[
+                { href: '/nri', label: 'NRI corridors' },
+                { href: '/about', label: 'About' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="font-sans text-[14px] text-[#c7d6ce] hover:text-white-warm transition-colors"
+                  >
+                    <span className="font-mono text-[10px] text-bronze-soft mr-2">—</span>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
