@@ -94,7 +94,7 @@ export default async function CorridorPage({ params }: PageProps) {
         <div className="mt-6 plot-card px-6 py-5 max-w-[820px] max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal font-semibold block mb-2">
+          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
             The short answer
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{c.capsule}</p>

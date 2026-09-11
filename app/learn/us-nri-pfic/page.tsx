@@ -12,22 +12,9 @@ export const metadata: Metadata = pageMeta({
     "Why a US or Canadian passport changes pooled-fund investing: PFIC exposure, the QEF and mark-to-market problem, and the reporting you owe anyway.",
   path: '/learn/us-nri-pfic',
   ogTitle: 'US & Canadian NRIs',
-  // Draft: fund-specific positions are being finalised with US-qualified tax
-  // counsel. Keep out of the index until the [COPY NEEDED] blocks are approved.
-  noindex: true,
+  // Published September 2026. Figures are the set verified for the /us-tax
+  // cluster; per-fund positions are deliberately not stated.
 })
-
-/** Visible, honest placeholder for content pending professional review. */
-function CopyNeeded({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="bg-bronze-wash border border-dashed border-bronze-soft px-4 py-3 my-3">
-      <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-bronze font-semibold block mb-1">
-        In review with US-qualified tax counsel
-      </span>
-      <span className="font-serif italic text-[14px] text-ink-soft">{children}</span>
-    </div>
-  )
-}
 
 function H({ children }: { children: React.ReactNode }) {
   return (
@@ -110,11 +97,17 @@ export default function UsNriPficPage() {
           Information Statement</b>. Many Indian and GIFT funds do not produce one. Without it the
           election is unavailable, and you are back in the punitive default.
         </p>
-        <CopyNeeded>
-          [COPY NEEDED]. Fund-by-fund: which shelf funds provide a PFIC Annual Information Statement
-          (QEF-eligible), which support mark-to-market, and the practical filing burden (Form 8621
-          per fund, per year). Do not state per-fund positions until confirmed with US counsel.
-        </CopyNeeded>
+        <p>
+          In practice, few Indian or GIFT City funds issue the statement, so QEF is rarely on the
+          table. Mark-to-market needs the fund to be regularly traded on a qualifying exchange, which
+          a private placement is not. The filing burden is the part people underestimate:{' '}
+          <b>one Form 8621 per fund, per year</b>, and a year you did not file does not close.
+          Whether a given fund supports either election is a question for that fund&apos;s documents
+          and your US CPA or Enrolled Agent, not for a factsheet.{' '}
+          <Link href="/us-tax/pfic-annual-information-statement" className="text-bronze border-b border-bronze-soft">
+            What the statement is, and what to ask →
+          </Link>
+        </p>
       </div>
 
       {/* FATCA / FBAR */}
@@ -128,11 +121,23 @@ export default function UsNriPficPage() {
           obligations of their own. Non-reporting carries heavy penalties — this applies even where
           the investment itself is modest.
         </p>
-        <CopyNeeded>
-          [COPY NEEDED]. Exact thresholds and the filing checklist for FBAR / Form 8938 / Form 8621,
-          and the Canadian equivalents (T1135 foreign-income verification, PFIC-parallel rules). Do
-          not publish specific thresholds or positions without review.
-        </CopyNeeded>
+        <ul className="space-y-1.5">
+          {[
+            'FBAR: foreign accounts together exceeding $10,000 at any point in the year. Filed with FinCEN, separately from your return.',
+            'Form 8938: $50,000 at year end or $75,000 at any time if single and living in the US; $100,000 and $150,000 filing jointly; higher thresholds if you live abroad.',
+            'Form 8621: one per PFIC, per year. A narrow exception applies while your PFIC holdings stay under $25,000 in aggregate, or $50,000 filing jointly, and is lost in any year you sell, receive a distribution or make an election.',
+          ].map((x) => (
+            <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
+              {x}
+            </li>
+          ))}
+        </ul>
+        <p>
+          The three stack. They are cumulative, not alternatives.{' '}
+          <b>Canadian residents:</b> Canada has its own foreign-asset reporting and its own rules for
+          offshore funds. We do not state Canadian thresholds or positions on this site; confirm
+          them with a Canadian CPA before you subscribe to anything.
+        </p>
       </div>
 
       {/* Reg S */}
@@ -164,11 +169,16 @@ export default function UsNriPficPage() {
             </li>
           ))}
         </ul>
-        <CopyNeeded>
-          [COPY NEEDED]. The specific shelf products (if any) that are open to US persons and the
-          basis for each (PMS direct ownership, partnership transparency, QEF availability). This is
-          a legal conclusion per fund — confirm with US-qualified counsel before naming any.
-        </CopyNeeded>
+        <p>
+          Several funds on the inbound GIFT City shelf do accept US persons, and the shelf marks
+          which, as confirmed with each house. Acceptance is not the same as suitability: a fund
+          that takes your subscription can still be a PFIC on your return. Whether a particular
+          vehicle is US-transparent, and whether it issues the statement a QEF election needs, is a
+          legal conclusion about that fund. We do not state it here.{' '}
+          <Link href="/gift-city/inbound" className="text-bronze border-b border-bronze-soft">
+            See the shelf (eligibility-gated) →
+          </Link>
+        </p>
       </div>
 
       {/* CTA */}

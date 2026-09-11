@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import type { Article } from '@/lib/content/types'
 import { guideBySlug, guideReadingTime } from '@/lib/content/guides'
-import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
+import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
+import { Disclosure } from '@/components/shared/Disclosure'
 
 /**
  * Standalone article page (P3-25) — gives the high-volume money keywords
@@ -25,6 +26,7 @@ export function ArticlePage({ article }: { article: Article }) {
             { name: 'Learn', path: '/learn' },
             { name: article.title, path },
           ]),
+          ...(article.faqs ? [faqJsonLd(article.faqs)] : []),
         ]}
       />
 
@@ -39,6 +41,16 @@ export function ArticlePage({ article }: { article: Article }) {
           {article.title}
         </h1>
         <p className="font-serif italic text-[19px] text-ink-soft mt-3">{article.sub}</p>
+        {article.capsule && (
+          <div className="mt-6 plot-card px-6 py-5 max-sm:px-5">
+            <span className="corner corner-tl" /><span className="corner corner-tr" />
+            <span className="corner corner-bl" /><span className="corner corner-br" />
+            <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+              The short answer
+            </span>
+            <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{article.capsule}</p>
+          </div>
+        )}
         <div className="mt-4 flex items-center gap-3 flex-wrap">
           <AuthorByline reviewed="September 2026" regulatoryAsAt="September 2026" />
           <span className="font-mono text-[10.5px] text-slate">
@@ -55,6 +67,25 @@ export function ArticlePage({ article }: { article: Article }) {
         // In-house authored content from lib/content — not user input
         dangerouslySetInnerHTML={{ __html: guideBySlug(article.slug) ?? article.bodyHtml }}
       />
+
+      {/* Visible FAQ, mirrored exactly in the FAQPage schema above. */}
+      {article.faqs && (
+        <section className="mt-14 max-w-[820px]">
+          <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] leading-[1.2] mb-4">
+            Quick answers
+          </h2>
+          <div className="grid gap-3">
+            {article.faqs.map((f) => (
+              <Disclosure
+                key={f.q}
+                title={<h3 className="font-sans font-semibold text-[17px] leading-snug text-ink">{f.q}</h3>}
+              >
+                <p className="text-[16.5px] text-ink-soft leading-[1.62]">{f.a}</p>
+              </Disclosure>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <div className="mt-14 plot-card px-8 py-8 flex items-center justify-between gap-6 flex-wrap max-w-[860px] max-sm:px-5">

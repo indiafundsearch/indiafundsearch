@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { CONTACT, SITE } from './constants'
 import { CORRIDORS } from './content/corridors'
-import { PRIMARY_AUTHOR } from './content/authors'
+import { ARN_IS_PLACEHOLDER, PRIMARY_AUTHOR } from './content/authors'
 
 /** Named author + publisher for E-E-A-T (P3-26). */
 export const AUTHOR = {
   name: 'Yash Jhaveri',
-  role: 'Founder & Principal Adviser, IndiaFundSearch · A Beyond Initiative',
+  role: 'Founder & CEO, Beyond · IndiaFundSearch',
   url: `${SITE.url}/about`,
 } as const
 
@@ -138,7 +138,8 @@ export function pageMeta({
  * ever list profiles that genuinely belong to the entity; a wrong sameAs is
  * worse than none, so each one here has been opened and checked.
  */
-const PERSON_PROFILES = ['https://www.linkedin.com/in/yash-jhaveri-/']
+// Public URL changed to /in/yashjhaveriwealth in September 2026; the old slug redirects.
+const PERSON_PROFILES = ['https://www.linkedin.com/in/yashjhaveriwealth/']
 
 /** The company page, "Beyond | JSL Wealth Management". Verified 2026-08-05. */
 const ORG_PROFILES = [
@@ -192,7 +193,7 @@ export function personJsonLd() {
     '@type': 'Person',
     '@id': `${SITE.url}/#person`,
     name: AUTHOR.name,
-    jobTitle: 'Founder & Principal Adviser',
+    jobTitle: 'Founder & CEO, Beyond',
     url: AUTHOR.url,
     sameAs: PERSON_PROFILES,
     worksFor: {
@@ -225,8 +226,9 @@ export function authorJsonLd(a: {
     url: `${SITE.url}/about/${a.slug}`,
     sameAs: [a.linkedInUrl],
     knowsAbout: a.expertise,
-    // ARN omitted while null — a blank identifier is worse than none.
-    ...(a.arn ? { identifier: a.arn } : {}),
+    // ARN omitted while null or while it is the visible placeholder — a fake
+    // identifier in schema is worse than none.
+    ...(a.arn && !ARN_IS_PLACEHOLDER.test(a.arn) ? { identifier: a.arn } : {}),
     worksFor: {
       '@type': 'Organization',
       '@id': `${SITE.url}/#organization`,

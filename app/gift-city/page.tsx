@@ -84,7 +84,7 @@ export default function GiftCityPage() {
             <Link href={r.href} className="plot-card block p-8 h-full group hover:shadow-plot-hover transition-shadow max-sm:p-5">
               <span className="corner corner-tl" /><span className="corner corner-tr" />
               <span className="corner corner-bl" /><span className="corner corner-br" />
-              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal font-semibold">{r.no}</div>
+              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal-ink font-semibold">{r.no}</div>
               <h2 className="font-sans text-[26px] font-bold mt-2 group-hover:text-bronze transition-colors">
                 {r.title}
               </h2>

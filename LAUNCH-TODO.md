@@ -20,49 +20,30 @@ nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
 
 ---
 
-## ⏳ Pending FROM OWNER (none block promotion)
+## ⏳ Pending FROM OWNER (none block promotion) — updated 2026-09-11
 
-1. **`/learn/us-nri-pfic`** — get **US-qualified tax counsel** to write the three
-   `[COPY NEEDED]` blocks (search `CopyNeeded` in `app/learn/us-nri-pfic/page.tsx`):
-   QEF/Form-8621 per fund, FBAR/8938 thresholds + Canada, and which shelf funds
-   accept US persons. Then remove its `noindex` to publish. *Currently hidden;
-   the general warning + "talk to desk" already works.*
-2. **`/privacy`** — have your compliance/legal adviser glance at it (it's live and
-   substantively accurate; just wants a sign-off).
-3. **`/about`** — DEFERRED by owner. When ready: supply photo + bio + credentials
-   + 1992 lineage + empanelment set (fill `CopyNeeded` blocks in
-   `app/about/page.tsx`), then remove its `noindex`. Byline currently → /contact.
-4. **Booking link** — optional. If you set up cal.com/Calendly, paste the URL and
-   the "Book a conversation" CTAs turn back on (`CONTACT.calendlyUrl`).
-5. **Real GIFT products** — optional. Add final fund data in `/studio` (overrides
-   the in-code list).
-6. **Corridor access list — now a lead magnet, not a page section.** Each
-   `/nri/[corridor]` page asks for an email in exchange for "which houses are
-   currently open to investors in {country}". Leads arrive in Sanity + by email
-   with source **`Corridor Access List`** and the corridor in the Interest
-   field. *Owner action:* keep a current per-corridor list (PMS / AIF / GIFT
-   houses, minimums, route accepted) ready to send, and reply within one
-   working day — the confirmation email promises exactly that.
-
-7. **AMFI ARN** — the single highest-value missing item. There is no ARN
-   anywhere in this repo, and the brief forbids inventing one, so the byline,
-   the author schema and the footer credentials block all render without it.
-   Supply the number and which entity holds it, then set `arn` in
-   `lib/content/authors.ts`; every consumer picks it up automatically.
-8. **IFSCA threshold table** — `/gift-city/thresholds` is built (semantic table,
-   Dataset schema, CSV export, changelog) but `ROWS` in
-   `lib/content/ifscaThresholds.ts` is empty, so the page is `noindex`. It needs
-   the thresholds themselves, legally reviewed. Not written from memory.
-9. **Form 8802 user fee and IRS processing time** — the only `TODO: VERIFY` in
-   the `/us-tax` cluster (`lib/content/usTax.ts`, the Form 8802 answer). Both
-   figures move; neither is in the repo.
-10. **GIFT City cluster copy** — five reserved URLs exist as visible
-   placeholders, `noindex` and deliberately unlinked: `/gift-city/eligibility`,
-   `/for-resident-indians`, `/funds-list`, `/how-to-invest`, `/taxation`.
-   Fill the `PendingContent` block, remove `noindex`, add to `GIFT_CITY_SPOKES`
-   in `lib/content/hubs.ts` and to `app/sitemap.ts`.
-11. **Headshot** — `image` in `lib/content/authors.ts` is null, so the byline
-   falls back to a monogram.
+1. **AMFI ARN** — rendering as the placeholder `XXXXX` at the owner's request
+   (byline on every content page, footer, /about). Held by JSL Wealth
+   Management Pvt Ltd. Replace the string in `lib/content/authors.ts`; the
+   schema `identifier` switches on automatically once it is not a placeholder.
+2. **Headshot** — `image` in `lib/content/authors.ts` is null; byline and /about
+   show the "YJ" monogram. Drop a square JPG in `/public` and set the path.
+3. **IFSCA threshold table** (`/gift-city/thresholds`) — minimum-investment and
+   investor-cap columns are filled from the verified IFSCA figures. Corpus,
+   FME category, sponsor commitment, tenure and repatriability read "Pending
+   verification" and the page stays `noindex` until they are confirmed
+   (`PARTIAL` in `lib/content/ifscaThresholds.ts`).
+4. **Form 8802 user fee / IRS processing time** — now stated as "confirm with
+   your CPA" on `/us-tax/form-8802`. Supply the figures if you want them printed.
+5. **Canadian thresholds** — `/learn/us-nri-pfic` says Canadian positions are
+   not stated here. Needs a Canadian CPA if you want them.
+6. **Booking link** — `CONTACT.calendlyUrl` blank; CTAs hidden. Ignored for now.
+7. **Corridor access list** — lead magnet promises a reply within one working
+   day. Ignored for now.
+8. **IndiaFundSearch company page on LinkedIn** — does not exist yet; Beyond's
+   page is in `sameAs` meanwhile.
+9. **Search Console** — request indexing for the newly indexed URLs listed in
+   the 2026-09-11 session report (about, PFIC page, five GIFT City cluster pages).
 
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.

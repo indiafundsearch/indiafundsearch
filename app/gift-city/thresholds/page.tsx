@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CHANGELOG, COLUMNS, LAST_VERIFIED, ROWS, VERSION } from '@/lib/content/ifscaThresholds'
+import { CHANGELOG, COLUMNS, LAST_VERIFIED, PARTIAL, ROWS, VERSION } from '@/lib/content/ifscaThresholds'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
@@ -15,7 +15,8 @@ export const metadata: Metadata = pageMeta({
   description:
     'A maintained reference table of IFSCA minimums by vehicle type and investor class, with the governing provision and last-verified date against every row.',
   path: '/gift-city/thresholds',
-  noindex: ROWS.length === 0,
+  // Stays out of the index while any column is still 'Pending verification'.
+  noindex: ROWS.length === 0 || PARTIAL,
 })
 
 export default function ThresholdsPage() {

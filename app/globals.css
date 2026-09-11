@@ -21,7 +21,13 @@
   --color-line: #d2d9d2;
   --color-line-soft: #e0e4de;
   --color-signal: #ff862f;
-  --color-bronze: #c05c08;
+  /* Signal as TEXT on paper. The bright orange is 2.3:1 against cream — fine
+     for fills, rules and dots, unreadable as a 10px label. This variant clears
+     WCAG AA (4.5:1) on both paper and white-warm. Use text-signal-ink on light
+     grounds; keep text-signal for labels on the ink-green panels. */
+  --color-signal-ink: #bb4e00;
+  /* Nudged from #c05c08 (3.99:1 on paper) to clear 4.5:1. Visually identical. */
+  --color-bronze: #b15507;
   --color-bronze-soft: #ffab66;
   --color-bronze-wash: #fdefe2;
   --color-teal: #0e5a44;

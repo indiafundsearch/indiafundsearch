@@ -55,7 +55,7 @@ export function CorridorAccessForm({ country, label }: { country: string; label:
     <form onSubmit={submit} className="plot-card px-8 py-8 max-sm:px-5">
       <span className="corner corner-tl" /><span className="corner corner-tr" />
       <span className="corner corner-bl" /><span className="corner corner-br" />
-      <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal font-semibold block mb-2">
+      <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
         Ask the desk
       </span>
       <p className="font-sans font-bold text-[19px] leading-snug">

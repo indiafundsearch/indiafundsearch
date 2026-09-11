@@ -1,113 +1,166 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { DISCLOSURE, SITE } from '@/lib/constants'
-import { AUTHOR, pageMeta, personJsonLd } from '@/lib/seo'
+import { PRIMARY_AUTHOR } from '@/lib/content/authors'
+import { pageMeta, personJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 
-// Routed through pageMeta like every other page so the canonical, og:url and
-// og:image are correct the moment the noindex comes off. Previously this used a
-// bare Metadata object and therefore emitted no canonical at all.
 export const metadata: Metadata = pageMeta({
-  title: "About Yash Jhaveri and the Beyond Desk",
+  title: 'About Beyond: The Desk Behind the Map',
   description:
-    "Who is behind IndiaFundSearch: the people, the 1992 lineage and the empanelments behind the education.",
+    'Who is behind IndiaFundSearch: Yash Jhaveri, the Beyond desk in Vadodara, a lineage that starts in 1992, and why the site is built to say "not yet".',
   path: '/about',
   ogTitle: 'About IndiaFundSearch',
-  // Draft: real credentials and photo are pending the owner. Keep out of the
-  // index until the [COPY NEEDED] blocks are filled.
-  noindex: true,
 })
 
-function CopyNeeded({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="bg-bronze-wash border border-dashed border-bronze-soft px-4 py-3 my-3 max-w-[820px]">
-      <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-bronze font-semibold block mb-1">
-        Copy needed — owner to supply
-      </span>
-      <span className="font-serif italic text-[14px] text-ink-soft">{children}</span>
-    </div>
-  )
-}
+/**
+ * Deliberately short. The bio detail lives on /about/yash-jhaveri; this page
+ * is the answer to one question — who is this, and why should I read them —
+ * in the time it takes to decide whether to keep reading.
+ */
+const FACTS: [string, string][] = [
+  ['Est.', '1992'],
+  ['Base', 'Vadodara, Gujarat'],
+  ['Structures', '13 · SEBI & IFSCA regulated'],
+  ['Model', 'Distribution · not advisory'],
+]
 
-function H({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2.5 mt-10 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
-      {children}
-    </h2>
-  )
-}
+const IDEAS: { h: string; p: string }[] = [
+  {
+    h: 'Most portfolios hold nine things and one return driver.',
+    p: 'Everything in them is paid by the same source: Indian corporate earnings. There are at least six ways a portfolio can get paid. When one stalls, the others are under no obligation to stall with it.',
+  },
+  {
+    h: 'Most people can name two. There are thirteen.',
+    p: 'Thirteen SEBI- and IFSCA-regulated ways to invest beyond a mutual fund. Twelve years across the table from families with serious money, and the same thing happens: they own two. Nobody showed them the other eleven. So we built the map.',
+  },
+  {
+    h: 'The answer is sometimes “not yet”.',
+    p: 'A site that never says so is a brochure. The Fit Finder is built to tell you when nothing here fits, and the desk says it across the table too.',
+  },
+]
 
 export default function AboutPage() {
+  const a = PRIMARY_AUTHOR
+  const initials = a.name.split(' ').map((w) => w[0]).join('')
+
   return (
     <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
-      <JsonLd data={personJsonLd()} />
+      <JsonLd
+        data={[
+          personJsonLd(),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+          ]),
+        ]}
+      />
 
-      <div className="eyebrow mb-3.5">The people behind the education</div>
-      <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[820px]">
-        {AUTHOR.name}
-      </h1>
-      <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-slate mt-2">{AUTHOR.role}</p>
+      <header className="max-w-[860px]">
+        <div className="eyebrow mb-3.5">About · A Beyond Initiative</div>
+        <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
+          Architecture, not salesmanship.
+        </h1>
+        <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[720px]">
+          Helping local and global Indians move beyond retail products. Built on Jhaveri
+          Securities Ltd, est. 1992.
+        </p>
+      </header>
 
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] mt-8">
-        {/* Photo */}
-        <div>
-          <div className="plot-card aspect-[4/5] flex items-center justify-center text-center p-6">
-            <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-slate">
-              [ Professional photograph of {AUTHOR.name} — owner to supply ]
-            </span>
+      {/* At a glance */}
+      <div className="flex flex-wrap border border-line bg-white-warm mt-9 max-w-[860px]">
+        {FACTS.map(([label, value]) => (
+          <div
+            key={label}
+            className="flex-1 min-w-[150px] px-4 py-3.5 border-r border-line last:border-r-0 max-sm:min-w-[45%] max-sm:border-b"
+          >
+            <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
+            <b className="font-sans text-[14.5px] font-semibold">{value}</b>
           </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Bio */}
-        <div className="max-w-[720px] space-y-3 text-[16.5px] text-ink-soft">
-          <p>
-            IndiaFundSearch is the education-first face of a working advisory practice. The goal is
-            simple: explain every SEBI- and IFSCA-regulated alternative in India the way a good
-            adviser would across a table — jargon-free, honest about what does <em>not</em> fit, and
-            useful whether or not you ever become a client.
+      {/* The person */}
+      <div className="grid gap-8 md:grid-cols-[auto_1fr] items-start mt-12 max-w-[860px]">
+        <span
+          aria-hidden
+          className="w-24 h-24 rounded-full border border-line bg-white-warm grid place-items-center font-mono text-[22px] tracking-[0.06em] text-bronze"
+        >
+          {a.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={a.image} alt="" className="w-full h-full rounded-full object-cover" />
+          ) : (
+            initials
+          )}
+        </span>
+        <div>
+          <p className="font-sans font-bold text-[22px] leading-tight">
+            <Link href={`/about/${a.slug}`} className="hover:text-bronze transition-colors">
+              {a.name}
+            </Link>
           </p>
-          <CopyNeeded>
-            Yash Jhaveri&apos;s bio — professional background, qualifications and credentials
-            (e.g. relevant certifications, years in practice, areas of focus). Keep it factual and
-            verifiable.
-          </CopyNeeded>
+          <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-1.5">
+            {a.role} · The University of Manchester
+          </p>
+          <p className="text-[16.5px] text-ink-soft mt-3 max-w-[640px]">
+            Ten years at Jhaveri Securities distributing across the full spectrum. Since 2023,
+            Beyond: PMS, AIF, SIF and GIFT City for resident families, promoters and NRIs in the
+            US, the UK and the Gulf. He writes every page on this site himself.
+          </p>
+          <Link
+            href={`/about/${a.slug}`}
+            className="inline-block mt-3 font-sans text-[12.5px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft"
+          >
+            Full bio and what he has written →
+          </Link>
         </div>
       </div>
 
-      <H>Our lineage</H>
-      <p className="max-w-[820px] text-[16.5px] text-ink-soft">
-        The practice traces its roots back decades — advising business families and first-generation
-        wealth through several market cycles.
+      {/* Three ideas */}
+      <div className="dim my-12 max-w-[860px]"><span>Three ideas the site is built on</span></div>
+      <div className="grid gap-4 md:grid-cols-3 max-w-[1180px]">
+        {IDEAS.map((x) => (
+          <div key={x.h} className="plot-card px-6 py-6">
+            <h2 className="font-sans font-bold text-[18px] leading-snug">{x.h}</h2>
+            <p className="text-[15px] text-ink-soft mt-3">{x.p}</p>
+          </div>
+        ))}
+      </div>
+      <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-6">
+        Same risk, more returns. Less risk, same returns. — Not a promise. Arithmetic.
       </p>
-      <CopyNeeded>
-        The 1992 firm lineage — the founding story, the family/firm history, and how it led to
-        today&apos;s practice. Dates and names to be confirmed by the owner.
-      </CopyNeeded>
 
-      <H>Who we work with &amp; how</H>
-      <p className="max-w-[820px] text-[16.5px] text-ink-soft">{DISCLOSURE.commission}</p>
+      {/* How we are paid */}
+      <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 max-w-[860px]">
+        <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-teal mb-2">How we are paid</h2>
+        <p className="text-[15.5px] text-ink-soft">{DISCLOSURE.commission}</p>
+      </div>
 
-      <H>Empanelments</H>
-      <p className="max-w-[820px] text-[16.5px] text-ink-soft">
-        We work with a curated set of SEBI/IFSCA-regulated managers across PMS, AIF, SIF and GIFT
-        City.
+      {/* Entity */}
+      <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-slate leading-relaxed mt-8 max-w-[860px]">
+        {SITE.legalEntity} · CIN {SITE.cin}
+        {a.arn && <> · AMFI ARN {a.arn}</>}
+        <br />
+        {SITE.registeredAddress}
       </p>
-      <CopyNeeded>
-        The empanelment set — the specific AMCs / managers the practice is empanelled with, plus any
-        registration numbers (AMFI ARN / IFSCA reference). Verify each before publishing.
-      </CopyNeeded>
 
-      <div className="mt-14 plot-card px-8 py-8 flex items-center justify-between gap-6 flex-wrap max-w-[860px] max-sm:px-5">
-        <p className="font-sans font-bold text-[20px]">Start a conversation.</p>
+      {/* One CTA */}
+      <div className="mt-12 plot-card px-8 py-8 flex items-center justify-between gap-6 flex-wrap max-w-[860px] max-sm:px-5">
+        <div>
+          <p className="font-sans font-bold text-[20px]">Start with what fits, not with a product.</p>
+          <p className="font-serif italic text-[15.5px] text-slate mt-1">
+            Seven questions. About 90 seconds. Sometimes the answer is “not yet”.
+          </p>
+        </div>
         <Link
-          href="/contact"
+          href="/fit-finder"
           className="font-sans text-[14px] font-medium tracking-[0.08em] uppercase px-6 py-3 rounded-[3px] bg-ink text-white-warm border-[1.5px] border-ink hover:bg-bronze hover:border-bronze transition-colors"
         >
-          Talk to {AUTHOR.name.split(' ')[0]} →
+          Run the Fit Finder →
         </Link>
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[820px]">
+      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[860px]">
         {DISCLOSURE.education} · {SITE.name} · {SITE.initiative}
       </p>
     </article>

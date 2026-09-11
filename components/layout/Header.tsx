@@ -66,7 +66,7 @@ export function Header() {
                     : 'text-slate border-transparent hover:text-ink'
                 }`}
               >
-                <span className={`font-mono text-[10px] font-semibold ${highlight ? 'text-signal' : 'text-bronze'}`}>
+                <span className={`font-mono text-[10px] font-semibold ${highlight ? 'text-signal-ink' : 'text-bronze'}`}>
                   {l.no}
                 </span>
                 {l.label}

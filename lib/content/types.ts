@@ -57,6 +57,14 @@ export interface Article {
   min: string;
   /** trusted HTML authored in-house — rendered via dangerouslySetInnerHTML */
   bodyHtml: string;
+  /**
+   * 40–60 words, self-contained, link-free, under the H1 (Phase 6). Search
+   * Console shows these pages drawing "pms full form", "aif meaning" style
+   * queries; the capsule answers exactly that in the first 30% of the page.
+   */
+  capsule?: string;
+  /** Visible FAQ block plus matching FAQPage JSON-LD. */
+  faqs?: { q: string; a: string }[];
 }
 
 export interface ObjectiveGroup {

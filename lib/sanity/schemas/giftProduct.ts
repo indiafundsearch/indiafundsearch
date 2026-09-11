@@ -88,6 +88,24 @@ const giftProduct = {
       initialValue: false,
     },
     {
+      name: 'accreditedMin',
+      title: 'Accredited Investor Minimum',
+      type: 'string',
+      description: 'e.g. "$25k" — shown in the footnote when set',
+    },
+    {
+      name: 'access',
+      title: 'Corridor Access (as confirmed with the house)',
+      type: 'object',
+      fields: ['us', 'uk', 'ca'].map((k) => ({
+        name: k,
+        title: k.toUpperCase(),
+        type: 'string',
+        options: { list: ['yes', 'no', 'tbc'] },
+        initialValue: 'tbc',
+      })),
+    },
+    {
       name: 'order',
       title: 'Display Order',
       type: 'number',

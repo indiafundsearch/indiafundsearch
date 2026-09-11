@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CONTACT, DISCLOSURE, NAV_LINKS, SITE, whatsappHref } from '@/lib/constants'
+import { PRIMARY_AUTHOR } from '@/lib/content/authors'
 import { Logo } from '@/components/shared/Logo'
 
 export function Footer() {
@@ -83,15 +84,14 @@ export function Footer() {
         </div>
 
         {/* Disclosure block */}
-        {/* Firm credentials (Phase 2, Task 2.5). Named legal entity, CIN and
-            registered office on every page. The AMFI ARN line is intentionally
-            absent: there is no ARN in the repo and the brief forbids inventing
-            one. TODO: VERIFY — add ARN here and in lib/content/authors.ts. */}
+        {/* Firm credentials (Phase 2, Task 2.5). Named legal entity, CIN,
+            registered office and ARN on every page. The ARN is the owner's
+            placeholder until supplied — see lib/content/authors.ts. */}
         <div className="mt-12 border-t border-[rgba(252,251,248,0.15)] pt-6">
           <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-bronze-soft leading-relaxed mb-3">
             {SITE.legalEntity}
             <br />
-            CIN {SITE.cin} · {SITE.registeredAddress}
+            CIN {SITE.cin}{PRIMARY_AUTHOR.arn && <> · AMFI ARN {PRIMARY_AUTHOR.arn}</>} · {SITE.registeredAddress}
             <br />
             {SITE.lineage}
           </p>

@@ -59,7 +59,7 @@ export default function NriHubPage() {
             >
               <span className="corner corner-tl" /><span className="corner corner-tr" />
               <span className="corner corner-bl" /><span className="corner corner-br" />
-              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal font-semibold">
+              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal-ink font-semibold">
                 <span className="mr-2 text-[13px]" aria-hidden="true">{c.flag}</span>
                 Corridor {c.code}
               </div>

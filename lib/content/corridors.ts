@@ -74,6 +74,10 @@ export const CORRIDORS: Corridor[] = [
         label: "Form 8802 and claiming India treaty relief",
         href: "/us-tax/form-8802",
       },
+      {
+        label: "PFIC, FATCA and FBAR: the orientation page",
+        href: "/learn/us-nri-pfic",
+      },
     ],
     marketNote:
       "If you are a US taxpayer — green card, citizenship, or substantial presence",

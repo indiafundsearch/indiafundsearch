@@ -26,7 +26,16 @@ export interface GiftProduct {
   /** orange * — materially lower minimum for Accredited Investors (per PPM).
    *  A factual, non-evaluative disclosure — not a recommendation. */
   lowerMinForAccredited?: boolean
+  /** The accredited-investor minimum itself, where the desk one-pager states it. */
+  accreditedMin?: string
+  /**
+   * Per-corridor acceptance, as confirmed with each house. 'tbc' means the
+   * desk has not confirmed it either way — shown as a dash, never as a no.
+   */
+  access?: { us: AccessMark; uk: AccessMark; ca: AccessMark }
 }
+
+export type AccessMark = 'yes' | 'no' | 'tbc'
 
 export const OUTBOUND_GROUP_ORDER = [
   'Innovation & Growth',
@@ -34,11 +43,7 @@ export const OUTBOUND_GROUP_ORDER = [
   'Alternatives & Absolute Return',
 ] as const
 
-export const INBOUND_GROUP_ORDER = [
-  'India Equity — Long Only',
-  'Bonds & Structured Income',
-  'Private Markets & Absolute Return',
-] as const
+export const INBOUND_GROUP_ORDER = ['Equity', 'Fixed Income', 'Unlisted'] as const
 
 const DIRECTION_VALUES: Record<GiftDirection, string> = {
   inbound: 'Inbound — Into India',
@@ -46,128 +51,252 @@ const DIRECTION_VALUES: Record<GiftDirection, string> = {
 }
 
 /**
- * Inbound repository — desk-provided list ("Gift inbound.xlsx", July 2026).
- * Real distributable routes for NRIs/overseas investors into India.
- * Internal desk fields (trail/commission) are intentionally NOT included here.
- * Sanity documents override when present.
+ * Inbound repository — the desk one-pager "Curated Inbound Fund Repository",
+ * August 2026. India-dedicated funds accessible through GIFT City, grouped by
+ * asset class, with structure, minimum and per-corridor acceptance as
+ * confirmed with each house. The one-pager's "recommended core" star is
+ * deliberately NOT carried: this is a reference list, not a recommendation.
+ * Internal desk fields (trail/commission) are intentionally absent. Sanity
+ * documents override when present.
  */
-type InboundOverrides = Partial<Omit<GiftProduct, '_id' | 'name' | 'thesis' | 'direction'>>
-
-function inboundFund(
-  id: string,
-  name: string,
-  thesis: string,
-  overrides: InboundOverrides = {},
-): GiftProduct {
-  return {
-    _id: `in-${id}`,
-    name,
+const INBOUND_REPOSITORY: GiftProduct[] = [
+  // ---- Equity ----
+  {
+    _id: 'in-tata-dynamic',
+    name: 'Tata India Dynamic Equity – GIFT',
     direction: 'inbound',
-    structure: 'GIFT City',
-    thesis,
-    description: `${thesis} Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed.`,
-    minInvestment: '$150K',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'Dynamic allocation between India equity and debt.',
+    description: 'Dynamic allocation between India equity and debt. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$500',
     currency: 'USD',
     status: 'Open',
-    group: 'India Equity — Long Only',
-    ...overrides,
-  }
-}
-
-const INBOUND_REPOSITORY: GiftProduct[] = [
-  // ---- India Equity — Long Only ----
-  inboundFund('alchemy-lt', 'Alchemy India Long Term Fund', 'Long-only Indian listed equity with a long-term compounding mandate.', {
-    theme: 'LONG-TERM EQUITY',
-    eligibility: 'US — Yes (K-1 available) · Canada — Yes (K-3 available) · UK — HMRC registered',
-  }),
-  inboundFund('absl-flexicap', 'ABSL India Flexicap Fund', 'Long-only Indian listed equity across market caps.', {
-    theme: 'FLEXICAP',
-  }),
-  inboundFund('mirae-equity-allocation', 'Mirae Asset India Equity Allocation Fund', 'Long-only allocation across Indian listed equity.', {
-    theme: 'EQUITY ALLOCATION',
-    eligibility: 'US — No · Canada — No',
-  }),
-  inboundFund('motilal-growth-anchor', 'Motilal Growth Anchor Plus Fund', 'Long-only Indian growth equity with an anchor sleeve.', {
-    theme: 'GROWTH',
-    eligibility: 'US — Yes (K-1 filed with IRS, non-PFIC) · UK — HMRC compliant',
-  }),
-  inboundFund('motilal-fof', 'Motilal Oswal Fund of Fund', 'Fund-of-fund route into Motilal Oswal Indian equity strategies.', {
-    theme: 'FUND OF FUND',
-    eligibility: 'US — Yes (K-1 filed with IRS, non-PFIC) · UK — Yes',
-  }),
-  inboundFund('hdfc-flexicap', 'HDFC India Flexicap Fund', 'Long-only Indian equity across large, mid and small caps.', {
-    theme: 'FLEXICAP',
-    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
-  }),
-  inboundFund('hdfc-midcap', 'HDFC India Midcap Opportunities Fund', 'Long-only Indian midcap equity.', {
+    group: 'Equity',
+    theme: 'DYNAMIC EQUITY–DEBT',
+    access: { us: 'no', uk: 'yes', ca: 'tbc' },
+  },
+  {
+    _id: 'in-sundaram-midcap',
+    name: 'Sundaram India Mid Cap – GIFT',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'India mid-cap equity.',
+    description: 'India mid-cap equity. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$5k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
     theme: 'MIDCAP',
-    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
-  }),
-  inboundFund('hdfc-smallcap', 'HDFC India Smallcap Fund', 'Long-only Indian smallcap equity.', {
-    theme: 'SMALLCAP',
-    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
-  }),
-  inboundFund('hdfc-baf', 'HDFC India Balanced Advantage Fund', 'Dynamic equity-debt balance on Indian markets.', {
-    theme: 'BALANCED ADVANTAGE',
-    eligibility: 'US — Yes for $5M+ net worth (K-1 available) · Canada — No',
-  }),
-  inboundFund('carnelian-amritkaal', 'Carnelian India Amritkaal Fund', 'Long-only Indian equity built around the decade-of-India thesis.', {
-    theme: 'MULTICAP GROWTH',
-    eligibility: 'US — Yes (K-1 available) · Canada — Yes (K-3 available) · UK — Yes (not yet HMRC registered)',
-  }),
-  inboundFund('ashoka-multicap', 'Ashoka WhiteOak India Multicap Fund', 'Long-only Indian multicap equity, WhiteOak process.', {
+    access: { us: 'no', uk: 'yes', ca: 'no' },
+  },
+  {
+    _id: 'in-mirae-equity-allocation',
+    name: 'Mirae India Equity Allocation Fund',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'Multi-cap India equity allocation.',
+    description: 'Multi-cap India equity allocation. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
     theme: 'MULTICAP',
-    eligibility: 'US — No · Canada — No',
-    description:
-      'Long-only Indian multicap equity run on the WhiteOak process. Minimum can be committed as 25% upfront plus three tranches within two years (lumpsum accepted). Subscribed in US dollars via the GIFT IFSC.',
-  }),
-  inboundFund('bandhan-large-mid', 'Bandhan Large & Midcap Fund', 'Long-only Indian large & midcap equity.', {
-    theme: 'LARGE & MIDCAP',
-    eligibility: 'US — Yes (K-1 available) · Canada — Not yet · UK — Yes (not yet HMRC registered)',
-  }),
-  inboundFund('bandhan-smallcap', 'Bandhan Smallcap Fund', 'Long-only Indian smallcap equity.', {
-    theme: 'SMALLCAP',
-    eligibility: 'US — Yes (K-1 available) · Canada — Not yet · UK — Yes (not yet HMRC registered)',
-  }),
-  inboundFund('valuequest-gift', 'ValueQuest India GIFT Fund', 'Long-only Indian listed equity, ValueQuest process.', {
-    theme: 'LISTED EQUITY',
-  }),
-  inboundFund('icici-smart-navigator', 'ICICI Smart Navigator', 'Long-only Indian equity with dynamic navigation.', {
-    theme: 'DYNAMIC EQUITY',
-    eligibility: 'US — Yes (no K-1) · Canada — No · UK — No',
-  }),
-  inboundFund('sundaram-midcap', 'Sundaram Midcap Fund', 'Long-only Indian midcap equity at a retail-scheme minimum.', {
+    access: { us: 'no', uk: 'yes', ca: 'no' },
+    lowerMinForAccredited: true,
+    accreditedMin: '$25k',
+  },
+  {
+    _id: 'in-hdfc-midcap',
+    name: 'HDFC India Midcap Opportunities Fund',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'India mid-cap equity.',
+    description: 'India mid-cap equity. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
     theme: 'MIDCAP',
-    minInvestment: '$5K',
-    eligibility: 'US — No',
-  }),
-  inboundFund('edelweiss-multimanager', 'Edelweiss India Multimanager Equity Fund — Series 1', 'Multi-manager Indian equity — several managers, one commitment.', {
+    access: { us: 'yes', uk: 'yes', ca: 'no' },
+    lowerMinForAccredited: true,
+    accreditedMin: '$50k',
+  },
+  {
+    _id: 'in-carnelian-amritkaal',
+    name: 'Carnelian India Amritkaal Fund',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'India multi-cap; long-term growth themes.',
+    description: 'India multi-cap; long-term growth themes. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'MULTICAP GROWTH',
+    access: { us: 'yes', uk: 'yes', ca: 'no' },
+  },
+  {
+    _id: 'in-alchemy-lt',
+    name: 'Alchemy India Long Term Fund',
+    direction: 'inbound',
+    structure: 'Cat III AIF',
+    thesis: 'India equity, long-term buy-and-hold.',
+    description: 'India equity, long-term buy-and-hold. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'LONG-TERM EQUITY',
+    access: { us: 'yes', uk: 'yes', ca: 'yes' },
+  },
+  {
+    _id: 'in-motilal-anchor-plus',
+    name: 'Motilal Oswal Anchor Plus Fund',
+    direction: 'inbound',
+    structure: 'Cat III AIF',
+    thesis: 'Concentrated India equity.',
+    description: 'Concentrated India equity. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'CONCENTRATED',
+    access: { us: 'yes', uk: 'yes', ca: 'tbc' },
+  },
+  {
+    _id: 'in-nippon-nifty-bees',
+    name: 'Nippon India ETF Nifty 50 BeES GIFT',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'Passive Nifty 50 index exposure.',
+    description: 'Passive Nifty 50 index exposure. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'PASSIVE · NIFTY 50',
+    access: { us: 'no', uk: 'yes', ca: 'no' },
+  },
+  {
+    _id: 'in-icici-smart-navigator',
+    name: 'ICICI Pru Smart Navigator',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'Dynamic India equity–debt allocation.',
+    description: 'Dynamic India equity–debt allocation. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'DYNAMIC EQUITY–DEBT',
+    access: { us: 'yes', uk: 'yes', ca: 'no' },
+    lowerMinForAccredited: true,
+    accreditedMin: '$40k',
+  },
+  {
+    _id: 'in-bandhan-smallcap',
+    name: 'Bandhan Smallcap Fund',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'India small-cap equity.',
+    description: 'India small-cap equity. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'SMALLCAP',
+    access: { us: 'yes', uk: 'yes', ca: 'no' },
+    lowerMinForAccredited: true,
+    accreditedMin: '$50k',
+  },
+  {
+    _id: 'in-edelweiss-multimanager',
+    name: 'Edelweiss India Multimanager Equity – Series I',
+    direction: 'inbound',
+    structure: 'Cat III Feeder AIF',
+    thesis: 'Multi-manager India equity.',
+    description: 'Multi-manager India equity. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
     theme: 'MULTI-MANAGER',
-    eligibility: 'US — Yes (K-1 available) · Canada — No · UK — Yes (not yet HMRC registered)',
-  }),
-  // ---- Bonds & Structured Income ----
-  inboundFund('bandhan-gsec', 'Bandhan Govt Securities Investment Plan', 'Indian government securities — sovereign INR yield in a GIFT wrapper.', {
-    group: 'Bonds & Structured Income',
+    access: { us: 'yes', uk: 'yes', ca: 'no' },
+    lowerMinForAccredited: true,
+    accreditedMin: '$10k',
+  },
+  {
+    _id: 'in-valuequest-gift',
+    name: 'ValueQuest India GIFT Fund',
+    direction: 'inbound',
+    structure: 'Cat III AIF',
+    thesis: 'India equity, concentrated bottom-up.',
+    description: 'India equity, concentrated bottom-up. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Equity',
+    theme: 'BOTTOM-UP EQUITY',
+    access: { us: 'no', uk: 'yes', ca: 'no' },
+  },
+  // ---- Fixed Income ----
+  {
+    _id: 'in-neo-infra-2',
+    name: 'Neo Infra Income Opportunities Fund II',
+    direction: 'inbound',
+    structure: 'Cat II AIF Feeder',
+    thesis: 'Indian infrastructure debt; income.',
+    description: 'Indian infrastructure debt; income. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Fixed Income',
+    theme: 'INFRA DEBT · INCOME',
+    access: { us: 'yes', uk: 'yes', ca: 'yes' },
+  },
+  {
+    _id: 'in-bandhan-gsec',
+    name: 'Bandhan Govt Securities Investment Plan',
+    direction: 'inbound',
+    structure: 'Cat II AIF Feeder',
+    thesis: 'Indian government securities.',
+    description: 'Indian government securities. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Fixed Income',
     theme: 'GOVT SECURITIES',
-    eligibility: 'US — Yes (K-1 available) · Canada — Not yet · UK — Yes (not yet HMRC registered)',
-  }),
-  // ---- Private Markets & Absolute Return ----
-  inboundFund('neo-secondaries', 'NEO Secondaries Fund', 'Private-equity secondaries — seasoned fund stakes, often at a discount.', {
-    group: 'Private Markets & Absolute Return',
-    theme: 'PE SECONDARIES',
-  }),
-  inboundFund('neo-infra-2', 'NEO Infra Fund II', 'Senior secured lending to operating Indian infrastructure.', {
-    group: 'Private Markets & Absolute Return',
-    theme: 'INFRA DEBT',
-  }),
-  inboundFund('ask-re-3', 'ASK Real Estate Fund III', 'Secured real-estate debt across Indian developers.', {
-    group: 'Private Markets & Absolute Return',
+    access: { us: 'yes', uk: 'yes', ca: 'no' },
+  },
+  {
+    _id: 'in-ask-re-3',
+    name: 'ASK Real Estate Fund III',
+    direction: 'inbound',
+    structure: 'Cat II AIF Feeder',
+    thesis: 'Indian real estate debt.',
+    description: 'Indian real estate debt. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Fixed Income',
     theme: 'REAL ESTATE DEBT',
-  }),
-  inboundFund('whitespace-alpha', 'Whitespace Alpha Debt Plus', 'Market-neutral Indian equity engine targeting debt-plus outcomes.', {
-    group: 'Private Markets & Absolute Return',
-    theme: 'MARKET NEUTRAL',
-  }),
+    access: { us: 'tbc', uk: 'tbc', ca: 'tbc' },
+  },
+  // ---- Unlisted ----
+  {
+    _id: 'in-neo-secondaries',
+    name: 'Neo Secondaries Fund',
+    direction: 'inbound',
+    structure: 'Cat II AIF Feeder',
+    thesis: 'Private equity secondaries.',
+    description: 'Private equity secondaries. Subscribed in US dollars via the GIFT IFSC — no Indian bank account or resident-style filings needed. Structure, minimum and eligibility are confirmed against the PPM at onboarding.',
+    minInvestment: '$150k',
+    currency: 'USD',
+    status: 'Open',
+    group: 'Unlisted',
+    theme: 'PE SECONDARIES',
+    access: { us: 'yes', uk: 'yes', ca: 'yes' },
+  },
 ]
 
 /**
@@ -355,7 +484,7 @@ const OUTBOUND_REPOSITORY: GiftProduct[] = [
 const GIFT_QUERY = `*[_type == "giftProduct" && direction == $direction && status != "Closed"] | order(order asc, name asc) {
   _id, name, direction, structure, manager, thesis, description,
   minInvestment, indicativeReturn, liquidity, currency, eligibility, taxNote, status,
-  "group": productGroup, theme, lowerMinForAccredited
+  "group": productGroup, theme, lowerMinForAccredited, accreditedMin, access
 }`
 
 /**

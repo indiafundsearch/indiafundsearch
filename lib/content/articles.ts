@@ -6,6 +6,29 @@ export const ARTICLES: Article[] = [
   {
     "no": "Article 01",
     "slug": "what-is-pms",
+    "capsule": "PMS stands for Portfolio Management Services. A SEBI-registered manager buys and sells shares directly in your own demat account, rather than pooling your money into units. The minimum is ₹50 lakh, set by SEBI. You own every share, see every trade, and pay tax on the manager's churn each year.",
+    "faqs": [
+          {
+                "q": "What is the full form of PMS in the stock market?",
+                "a": "Portfolio Management Services. A SEBI-registered portfolio manager runs a mandate in your own demat account; you hold the shares, not units."
+          },
+          {
+                "q": "Is ₹50 lakh per PMS, or across all of them?",
+                "a": "Per manager. Split money across two houses and each needs its own ₹50 lakh."
+          },
+          {
+                "q": "Can NRIs invest in a PMS?",
+                "a": "Yes. The SEBI rules contain no residency condition. What decides it is exchange control, your bank accounts, each house's own policy, and where you pay tax."
+          },
+          {
+                "q": "Is a PMS better than a mutual fund?",
+                "a": "No, it is a different tool. A mutual fund gives diversification and daily liquidity cheaply. A PMS gives concentration and direct ownership at a higher price and minimum."
+          },
+          {
+                "q": "How fast can I get out of a PMS?",
+                "a": "Most equity mandates have no lock-in and money usually reaches you within days of the shares being sold. Some strategies charge an exit load early on."
+          }
+    ],
     "title": "What is PMS?",
     "sub": "Like hiring a personal chef for your investments.",
     "min": "3 min read",
@@ -14,6 +37,29 @@ export const ARTICLES: Article[] = [
   {
     "no": "Article 02",
     "slug": "what-is-aif",
+    "capsule": "AIF stands for Alternative Investment Fund. It is a privately pooled fund registered with SEBI that invests according to a stated plan, in places a mutual fund cannot reach: private companies, credit, pre-IPO deals, long-short strategies. You hold units. The minimum is ₹1 crore, usually committed and drawn down over time.",
+    "faqs": [
+          {
+                "q": "What is the full form of AIF in finance?",
+                "a": "Alternative Investment Fund. A SEBI-regulated privately pooled fund in three categories, with a ₹1 crore minimum for ordinary investors."
+          },
+          {
+                "q": "Do I pay the ₹1 crore upfront?",
+                "a": "Usually not. It is a commitment drawn down in tranches as the fund invests. Open-ended Category III funds are more likely to take it at once."
+          },
+          {
+                "q": "Can NRIs invest in an AIF?",
+                "a": "Yes. The rules expressly allow Indian, foreign and non-resident investors. The work is the exchange-control route and your own country's tax rules."
+          },
+          {
+                "q": "What is the difference between Category II and III?",
+                "a": "Category II holds things: private companies, loans, property credit. Category III trades strategies, often listed, and may borrow. They are taxed differently."
+          },
+          {
+                "q": "Is an AIF riskier than a PMS?",
+                "a": "Different, not simply more. A PMS carries market risk in shares you can sell any day. An AIF often carries illiquidity risk in assets you cannot sell for years."
+          }
+    ],
     "title": "What is AIF?",
     "sub": "The VIP section of investing — decoded.",
     "min": "4 min read",
@@ -22,6 +68,29 @@ export const ARTICLES: Article[] = [
   {
     "no": "Article 03",
     "slug": "pms-vs-aif",
+    "capsule": "In a PMS, a manager buys shares in your own demat account and you own them. In an AIF, you hold units of a pooled fund that can reach private companies, credit and hedged strategies. PMS starts at ₹50 lakh with exits in days; AIF at ₹1 crore with lock-ins measured in years. Neither is better. They do different jobs.",
+    "faqs": [
+          {
+                "q": "What is the difference between PMS and AIF?",
+                "a": "Ownership and reach. A PMS holds listed shares in your own demat; an AIF pools money into units and can hold private companies, credit and leveraged strategies. Minimums are ₹50 lakh and ₹1 crore."
+          },
+          {
+                "q": "Can I have both a PMS and an AIF?",
+                "a": "Yes, and above a few crore it is common. They are separate structures with separate minimums."
+          },
+          {
+                "q": "Which has higher fees, PMS or AIF?",
+                "a": "Management fees are similar, often around 2%. AIF carried interest, especially with a catch-up clause, can cost far more than a typical PMS performance fee."
+          },
+          {
+                "q": "Is an AIF just a PMS with a bigger minimum?",
+                "a": "No. An AIF can hold things a PMS cannot: unlisted companies, private loans, leveraged positions. If a fund is doing nothing a managed account could do, the pooled structure adds lock-in without adding access."
+          },
+          {
+                "q": "Which is more transparent?",
+                "a": "A PMS. The holdings sit in your own account. An AIF reports periodically, and private assets are valued by estimate until something sells."
+          }
+    ],
     "title": "PMS vs AIF",
     "sub": "Different tools for different jobs.",
     "min": "3 min read",

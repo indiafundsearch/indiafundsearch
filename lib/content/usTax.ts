@@ -308,7 +308,7 @@ export const US_TAX: Answer[] = [
                'For a US resident, that certificate is Form 6166, and Form 8802 is how you get it.'] },
       { h: 'Timing is the practical problem',
         body: ['Processing is not immediate, and the certificate is issued for a specific year. Applying late, or for the wrong year, is the most common way this goes wrong.',
-               'TODO: VERIFY — current Form 8802 user fee and stated IRS processing time. Not stated here because neither figure is verified in this repo.'] },
+               'The IRS charges a user fee for Form 8802 and publishes a processing time; both change, so we do not print them. Confirm the current figures with your US CPA or Enrolled Agent when you file, and build the processing time into your calendar — the certificate has to exist before the Indian payer can apply treaty rates.'] },
       { h: 'What to do next', body: [CPA] },
     ],
     faqs: [

@@ -67,11 +67,6 @@ export default async function AuthorPage({ params }: PageProps) {
           {a.credential}
           {a.arn && <> · ARN {a.arn}</>}
         </p>
-        {!a.arn && (
-          <p className="font-mono text-[10.5px] text-slate mt-1">
-            {/* TODO: VERIFY — AMFI ARN not present in the repo. Line renders once supplied. */}
-          </p>
-        )}
       </header>
 
       <div className="max-w-[820px] mt-8 space-y-4">

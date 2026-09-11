@@ -5,6 +5,7 @@ import { ANSWER_SLUGS } from '@/lib/content/answers'
 import { AUTHORS } from '@/lib/content/authors'
 import { US_TAX_SLUGS } from '@/lib/content/usTax'
 import { UK_TAX_SLUGS } from '@/lib/content/ukTax'
+import { GIFT_CITY_SLUGS } from '@/lib/content/giftCity'
 import { SITE } from '@/lib/constants'
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
@@ -27,9 +28,10 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/disclosures', priority: 0.3, changeFrequency: 'monthly' },
   { path: '/us-tax', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/uk-tax', priority: 0.9, changeFrequency: 'monthly' },
-  // NOTE: /about, /learn/us-nri-pfic and both /gift-city shelves are noindex by
-  // design and are deliberately absent (Phase 7, Task 7.3). Author bio pages
-  // are appended below.
+  { path: '/about', priority: 0.5, changeFrequency: 'monthly' },
+  { path: '/learn/us-nri-pfic', priority: 0.8, changeFrequency: 'monthly' },
+  // NOTE: both /gift-city shelves and /gift-city/thresholds (until its rows are
+  // verified) are noindex by design and deliberately absent (Phase 7, Task 7.3).
 ]
 
 export const revalidate = 3600
@@ -69,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
+    })),
+    ...GIFT_CITY_SLUGS.map((slug) => ({
+      url: `${siteUrl}/gift-city/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
     ...UK_TAX_SLUGS.map((slug) => ({
       url: `${siteUrl}/uk-tax/${slug}`,

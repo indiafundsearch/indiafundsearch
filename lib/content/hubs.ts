@@ -16,6 +16,11 @@ export interface HubLink {
 }
 
 export const GIFT_CITY_SPOKES: HubLink[] = [
+  { label: 'Who can invest in GIFT City funds', href: '/gift-city/eligibility', note: 'The four investor classes, and where residence changes the answer' },
+  { label: 'How to invest in a GIFT City fund', href: '/gift-city/how-to-invest', note: 'The account, KYC and money route for NRIs and residents' },
+  { label: 'How GIFT City funds are taxed', href: '/gift-city/taxation', note: 'In India, then at home. The second level decides it' },
+  { label: 'GIFT City for resident Indians', href: '/gift-city/for-resident-indians', note: 'The outbound route, the LRS cap and Schedule FA' },
+  { label: 'What funds are available in GIFT City', href: '/gift-city/funds-list', note: 'By category. The named shelf is behind the gate' },
   { label: 'GIFT City fund minimum investment', href: '/learn/gift-city-minimum-investment', note: 'IFSCA thresholds by scheme type and investor class' },
   { label: 'GIFT City vs Indian mutual fund', href: '/learn/gift-city-vs-mutual-fund-for-nri', note: 'Why the answer differs by the country you file in' },
   { label: 'GIFT City and global USD investing', href: '/learn/gift-city-global-usd', note: 'The outbound route for resident Indians' },
@@ -32,10 +37,12 @@ export const NRI_SPOKES: HubLink[] = [
   { label: 'Are Indian mutual funds PFICs?', href: '/learn/are-indian-mutual-funds-pfic', note: 'For a US taxpayer, almost always yes' },
   { label: 'HMRC reporting fund status', href: '/learn/hmrc-reporting-fund-status-india', note: 'Which Indian funds hold it, and why 24% or 45%' },
   { label: 'Which AMCs accept US NRIs?', href: '/learn/which-amcs-accept-us-nri', note: 'Why most decline, and what to ask instead' },
+  { label: 'US and Canadian NRIs: PFIC, FATCA and FBAR', href: '/learn/us-nri-pfic', note: 'Read this before you shortlist anything' },
 ]
 
 export const TAX_SPOKES: HubLink[] = [
   { label: 'Are Indian mutual funds PFICs?', href: '/learn/are-indian-mutual-funds-pfic', note: 'The US tax treatment of pooled Indian funds' },
+  { label: 'US and Canadian NRIs: PFIC, FATCA and FBAR', href: '/learn/us-nri-pfic', note: 'The orientation page for a US or Canadian passport' },
   { label: 'HMRC reporting fund status', href: '/learn/hmrc-reporting-fund-status-india', note: 'Income at 45% against a capital gain at 24%' },
   { label: 'Form 10F, now Form 41', href: '/learn/form-10f-for-nri', note: 'Claiming treaty relief on Indian income' },
   { label: 'Tax residency certificate, UAE', href: '/learn/tax-residency-certificate-uae', note: 'What India needs before it honours the treaty' },
