@@ -322,7 +322,7 @@ export const PRODUCTS: Product[] = [
     ],
     benefits: [
       "Currency diversification — the rupee has tended to depreciate against the USD over long periods",
-      "World-class companies not listed on NSE/BSE",
+      "Companies that are not listed on the NSE or BSE",
       "GIFT structures cut paperwork vs direct overseas accounts",
     ],
     risks: [

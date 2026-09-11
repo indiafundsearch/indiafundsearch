@@ -30,8 +30,8 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/uk-tax', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/about', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/learn/us-nri-pfic', priority: 0.8, changeFrequency: 'monthly' },
-  // NOTE: both /gift-city shelves and /gift-city/thresholds (until its rows are
-  // verified) are noindex by design and deliberately absent (Phase 7, Task 7.3).
+  // NOTE: both /gift-city shelves are noindex by design and deliberately absent
+  // (Phase 7, Task 7.3).
 ]
 
 export const revalidate = 3600

@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
       // exists at /learn/gift-city-minimum-investment with verified IFSCA
       // content. Two pages for one query would cannibalise, so this redirects.
       { source: "/gift-city/minimum-investment", destination: "/learn/gift-city-minimum-investment", permanent: true },
+      // Threshold table withdrawn by the owner (2026-09-12); the verified minimums live on the answer page.
+      { source: "/gift-city/thresholds", destination: "/learn/gift-city-minimum-investment", permanent: true },
       { source: "/knowledge", destination: "/learn", permanent: true },
       { source: "/knowledge/:slug", destination: "/learn", permanent: true },
       { source: "/explore", destination: "/", permanent: true },

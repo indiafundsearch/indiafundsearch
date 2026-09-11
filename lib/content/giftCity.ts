@@ -233,7 +233,7 @@ export const GIFT_CITY: Answer[] = [
       { label: 'Inbound shelf: NRIs into India', href: '/gift-city/inbound' },
       { label: 'Outbound shelf: residents going global', href: '/gift-city/outbound' },
       { label: 'Who can invest in GIFT City funds', href: '/gift-city/eligibility' },
-      { label: 'IFSCA threshold table', href: '/gift-city/thresholds' },
+      { label: 'GIFT City fund minimum investment', href: '/learn/gift-city-minimum-investment' },
     ],
     sources: [IFSCA],
     faqs: [

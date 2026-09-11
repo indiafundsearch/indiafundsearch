@@ -40,7 +40,7 @@ const ROUTES = [
       ['A currency hedge that pays', 'dollar assets against long-run rupee depreciation'],
       ['Themes India doesn’t list', 'GenAI & semis, Greater China, EM ex-India, global macro'],
       ['Multi-geography allocation', 'US, Europe & emerging markets in one sleeve'],
-      ['LRS route', 'US $2,50,000 per person per year'],
+      ['LRS route', 'US $250,000 per person per year'],
       ['Indian paperwork, familiar KYC', 'no foreign brokerage account to maintain'],
     ],
     chips: ['LRS ROUTE', 'DOLLAR ASSETS', 'INDIAN PAPERWORK'],

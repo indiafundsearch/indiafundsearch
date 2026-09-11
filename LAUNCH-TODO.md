@@ -28,11 +28,7 @@ nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
    schema `identifier` switches on automatically once it is not a placeholder.
 2. **Headshot** — `image` in `lib/content/authors.ts` is null; byline and /about
    show the "YJ" monogram. Drop a square JPG in `/public` and set the path.
-3. **IFSCA threshold table** (`/gift-city/thresholds`) — minimum-investment and
-   investor-cap columns are filled from the verified IFSCA figures. Corpus,
-   FME category, sponsor commitment, tenure and repatriability read "Pending
-   verification" and the page stays `noindex` until they are confirmed
-   (`PARTIAL` in `lib/content/ifscaThresholds.ts`).
+3. ~~IFSCA threshold table~~ — withdrawn by owner 2026-09-12; `/gift-city/thresholds` now 301s to the minimum-investment answer.
 4. **Form 8802 user fee / IRS processing time** — now stated as "confirm with
    your CPA" on `/us-tax/form-8802`. Supply the figures if you want them printed.
 5. **Canadian thresholds** — `/learn/us-nri-pfic` says Canadian positions are

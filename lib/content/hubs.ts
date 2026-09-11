@@ -21,7 +21,6 @@ export const GIFT_CITY_SPOKES: HubLink[] = [
   { label: 'How GIFT City funds are taxed', href: '/gift-city/taxation', note: 'In India, then at home. The second level decides it' },
   { label: 'GIFT City for resident Indians', href: '/gift-city/for-resident-indians', note: 'The outbound route, the LRS cap and Schedule FA' },
   { label: 'What funds are available in GIFT City', href: '/gift-city/funds-list', note: 'By category. The named shelf is behind the gate' },
-  { label: 'IFSCA threshold table', href: '/gift-city/thresholds', note: 'Every vehicle type and investor class, with the minimum. CSV export' },
   { label: 'GIFT City fund minimum investment', href: '/learn/gift-city-minimum-investment', note: 'IFSCA thresholds by scheme type and investor class' },
   { label: 'GIFT City vs Indian mutual fund', href: '/learn/gift-city-vs-mutual-fund-for-nri', note: 'Why the answer differs by the country you file in' },
   { label: 'GIFT City and global USD investing', href: '/learn/gift-city-global-usd', note: 'The outbound route for resident Indians' },
