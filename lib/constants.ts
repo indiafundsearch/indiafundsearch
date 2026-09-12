@@ -134,6 +134,11 @@ export const SHEETS = {
   // sections — so the sheet numbers line up 1:1 with the six nav tabs.
   fundamentals: { no: '02', title: 'First Principles' },
   materials: { no: '02', title: 'Material Specifications' },
+  // The /compare cluster is the third section of the Learn sheet, exactly as
+  // "First Principles" and "The Materials" are its first two. It gets no nav
+  // tab of its own, so the six tabs and six sheet numbers stay aligned 1:1 —
+  // the same arrangement `nri` has with `giftCity` on sheet 05.
+  compare: { no: '02', title: 'Decision Matrices' },
   fitFinder: { no: '03', title: 'Load Calculation' },
   tax: { no: '04', title: 'Compliance Schedule' },
   giftCity: { no: '05', title: 'GIFT City' },

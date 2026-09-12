@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArticleAccordion } from '@/components/learn/ArticleAccordion'
 import { ANSWERS } from '@/lib/content/answers'
+import { COMPARE_PAGES } from '@/lib/content/compare'
 import { ComparisonTable } from '@/components/learn/ComparisonTable'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { ARTICLES } from '@/lib/content/articles'
@@ -55,6 +56,39 @@ export default function LearnPage() {
           </Link>
         ))}
       </div>
+
+      {/* Decision matrices — the bottom-of-funnel cluster. Placed directly after
+          the answer grid because a reader who has worked through the
+          fundamentals is, by definition, at the choosing stage next. */}
+      <div className="dim my-11">
+        <span>Choosing between two structures</span>
+      </div>
+      <p className="font-serif text-[17px] text-ink-soft max-w-[720px] -mt-4 mb-6">
+        Decision matrices rather than explainers. Minimums, liquidity, tax treatment and what each
+        structure is allowed to hold — with the verdict stated plainly.
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {COMPARE_PAGES.slice(0, 6).map((c) => (
+          <Link
+            key={c.slug}
+            href={`/compare/${c.slug}`}
+            className="plot-card px-5 py-4 hover:shadow-plot-hover transition-shadow group"
+          >
+            <span className="font-sans text-[15.5px] font-semibold leading-snug group-hover:text-bronze transition-colors">
+              {c.title}
+            </span>
+            <span className="font-serif italic text-[14px] text-slate block mt-1.5 leading-snug">
+              {c.hook}
+            </span>
+          </Link>
+        ))}
+      </div>
+      <Link
+        href="/compare"
+        className="inline-block mt-5 font-sans text-[13px] font-medium tracking-[0.08em] uppercase text-bronze border-b-[1.5px] border-bronze-soft hover:text-ink transition-colors"
+      >
+        All {COMPARE_PAGES.length} comparisons →
+      </Link>
 
       <div className="dim my-11">
         <span>Reference — the four structures, side by side</span>

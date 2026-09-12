@@ -6,6 +6,7 @@ import { AUTHORS } from '@/lib/content/authors'
 import { US_TAX_SLUGS } from '@/lib/content/usTax'
 import { UK_TAX_SLUGS } from '@/lib/content/ukTax'
 import { GIFT_CITY_SLUGS } from '@/lib/content/giftCity'
+import { COMPARE_SLUGS } from '@/lib/content/compare'
 import { SITE } from '@/lib/constants'
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [
@@ -24,6 +25,8 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   { path: '/learn/what-is-pms', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/learn/what-is-aif', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/learn/pms-vs-aif', priority: 0.9, changeFrequency: 'monthly' },
+  // Bottom-of-funnel decision cluster — highest commercial intent on the site.
+  { path: '/compare', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/privacy', priority: 0.2, changeFrequency: 'monthly' },
   { path: '/disclosures', priority: 0.3, changeFrequency: 'monthly' },
   { path: '/us-tax', priority: 0.9, changeFrequency: 'monthly' },
@@ -89,6 +92,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    // Comparison pages carry the site's highest purchase intent, so they are
+    // given the same priority as the corridor guides.
+    ...COMPARE_SLUGS.map((slug) => ({
+      url: `${siteUrl}/compare/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
     })),
   ]
 }

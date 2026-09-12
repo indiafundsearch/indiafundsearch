@@ -43,6 +43,7 @@ export function Footer() {
               ))}
               {/* Not sheets, so no number: the pages that explain who is behind the site. */}
               {[
+                { href: '/compare', label: 'Compare' },
                 { href: '/nri', label: 'NRI corridors' },
                 { href: '/about', label: 'About' },
               ].map((l) => (
