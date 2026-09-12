@@ -22,8 +22,8 @@ import type { AnswerSection } from '../answers'
  * or imply a performance claim for a specific product. Beyond earns referral
  * fees on some of what is described here (see DISCLOSURE in lib/constants),
  * which is exactly why a page that ranked named products would be indefensible
- * whatever the disclaimer said. One named platform appears — smallcase — and
- * only as a structural contrast, with no performance comparison of any kind.
+ * whatever the disclaimer said. No third-party platform, distributor or product
+ * brand is named anywhere in this cluster, not even as a structural contrast.
  *
  * Every indicative return band is inherited from lib/content/products.ts and
  * carries its "indicative" label. Do not add a number here that is not either

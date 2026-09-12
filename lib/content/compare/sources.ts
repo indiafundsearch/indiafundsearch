@@ -37,12 +37,6 @@ export const SEBI_REIT: Source = {
   issuer: 'SEBI',
 }
 
-export const SEBI_RA: Source = {
-  label: 'SEBI (Research Analysts) Regulations, 2014',
-  url: 'https://www.sebi.gov.in/legal/regulations/jan-2025/securities-and-exchange-board-of-india-research-analysts-regulations-2014-last-amended-on-january-08-2025-_91170.html',
-  issuer: 'SEBI',
-}
-
 export const RBI_FI: Source = {
   label: 'RBI Master Direction — Foreign Investment in India',
   url: 'https://rbi.org.in/scripts/BS_ViewMasDirections.aspx?id=11200',
@@ -78,4 +72,17 @@ export const IRS_PFIC: Source = {
   url: 'https://www.irs.gov/forms-pubs/about-form-8621',
   issuer: 'IRS',
   documentNumber: 'Form 8621',
+}
+
+export const INDIA_POST: Source = {
+  label: 'National Savings Schemes — SCSS and Monthly Income Account',
+  url: 'https://www.indiapost.gov.in/Financial/Pages/Content/Post-Office-Saving-Schemes.aspx',
+  issuer: 'Department of Posts, Government of India',
+}
+
+export const SEBI_STT: Source = {
+  label: 'Securities transaction tax rates (revised 1 April 2026)',
+  url: 'https://www.incometaxindia.gov.in/charts%20%20tables/securities-transaction-tax.htm',
+  issuer: 'Income Tax Department',
+  date: 'In force 1 April 2026',
 }

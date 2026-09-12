@@ -5,9 +5,9 @@ import {
   SEBI_AIF,
   SEBI_MF,
   SEBI_PMS,
-  SEBI_RA,
   SEBI_REIT,
   SEBI_SIF,
+  SEBI_STT,
   ITA_2025,
 } from './sources'
 
@@ -153,6 +153,7 @@ export const VERSUS: ComparePageContent[] = [
       { label: 'AIF Category I, II and III explained', href: '/learn/aif-categories-explained' },
       { label: 'PMS vs AIF', href: '/learn/pms-vs-aif' },
       { label: 'AIF minimum investment', href: '/learn/aif-minimum-investment' },
+      { label: 'Market-neutral AIF vs arbitrage fund', href: '/compare/market-neutral-aif-vs-arbitrage-fund' },
       { label: 'Can an NRI invest in an AIF?', href: '/learn/can-nri-invest-in-aif' },
       { label: 'The full tax schedule', href: '/tax' },
     ],
@@ -286,6 +287,7 @@ export const VERSUS: ComparePageContent[] = [
     related: [
       { label: 'Long-short SIFs — the specification', href: '/learn/long-short-sif' },
       { label: 'SIF minimum investment', href: '/learn/sif-minimum-investment' },
+      { label: 'SIF vs mutual fund', href: '/compare/sif-vs-mutual-fund' },
       { label: 'What is PMS?', href: '/learn/what-is-pms' },
       { label: 'PMS fees explained', href: '/learn/pms-fees-explained' },
       { label: 'PMS vs mutual fund', href: '/learn/pms-vs-mutual-fund' },
@@ -430,139 +432,6 @@ export const VERSUS: ComparePageContent[] = [
       { label: 'The full tax schedule', href: '/tax' },
     ],
     sources: [SEBI_PMS, ITA_2025],
-    reviewed: REVIEWED,
-    published: PUBLISHED,
-    regulatoryAsAt: REVIEWED,
-  },
-
-  // ───────────────────────────────────────────────────────────────────────
-  {
-    slug: 'pms-vs-smallcase',
-    kind: 'versus',
-    title: 'PMS vs smallcase: what actually differs',
-    sides: [
-      { label: 'PMS', sub: 'Discretionary · ₹50 lakh · SEBI portfolio manager', href: '/learn/what-is-pms' },
-      { label: 'smallcase', sub: 'You execute · no minimum · research subscription' },
-    ],
-    hook: 'They look similar because both end with shares in your demat. The difference is who presses the button, and it changes everything.',
-    capsule:
-      'A PMS is a discretionary mandate: a SEBI-registered portfolio manager trades your ₹50 lakh without asking you. A smallcase is a published basket you buy through your own broker and rebalance yourself when prompted. One is management, the other is research plus execution convenience. The regulatory obligations owed to you are not the same.',
-    metaTitle: 'PMS vs smallcase: Discretion, Minimums and Regulation',
-    metaDescription:
-      'Both leave shares in your own demat. Only one involves a manager who can trade without asking. What each is regulated as, what it costs, and who each one suits.',
-    table: {
-      caption: 'PMS against smallcase',
-      head: ['', 'PMS', 'smallcase'],
-      rows: [
-        ['What it is', 'A discretionary portfolio management mandate', 'A published, rebalanced basket of listed securities you buy yourself'],
-        ['Who trades', 'The manager, without asking you', 'You. A rebalance is a prompt you must accept'],
-        ['Minimum', '₹50 lakh per manager', 'Roughly the cost of one share of each constituent'],
-        ['Regulated as', 'A SEBI-registered portfolio manager', 'Baskets are generally published by SEBI-registered research analysts or investment advisers; execution runs through your own SEBI-registered broker'],
-        ['What is owed to you', 'A fiduciary-style discretionary mandate, prescribed disclosure documents and periodic reporting', 'Research disclosure obligations; the investment decision remains legally yours'],
-        ['Cost', 'A fixed fee, often plus a performance share, plus GST, brokerage and custody', 'A subscription per basket, plus your own brokerage and statutory charges on every rebalance'],
-        ['Customisation', 'Possible at size — exclusions and mandates can be negotiated', 'None. You can skip a constituent, but then it is your portfolio, not the basket'],
-        ['Where the shares sit', 'Your own demat account', 'Your own demat account'],
-        ['Tax', 'Every manager sale is your sale that year', 'Every rebalance you accept is your sale that year'],
-        ['Reporting', 'Consolidated, benchmarked, audited statements', 'Your broker statement, plus the basket\'s own tracking page'],
-      ],
-      note: 'Structural comparison only. No performance comparison is made or implied, and arrangements differ between individual managers and individual basket publishers.',
-    },
-    verdicts: [
-      {
-        side: 'A smallcase fits when',
-        when: [
-          'You are below ₹50 lakh, or unwilling to concentrate that much with one manager',
-          'You want a rules-based or thematic basket and are happy to execute it yourself',
-          'You will actually action the rebalance prompts — an ignored rebalance quietly becomes a portfolio nobody is managing',
-          'Cost matters more than delegation, and you accept that the decision stays yours',
-          'You want to learn by watching a transparent process rather than by paying for discretion',
-        ],
-      },
-      {
-        side: 'A PMS fits when',
-        when: [
-          'You have ₹50 lakh or more and genuinely want the decisions taken off your desk',
-          'You want a named manager accountable to you under a discretionary mandate',
-          'You need exclusions or a portfolio shaped around existing concentrated holdings',
-          'You want consolidated, benchmarked, auditable reporting for family governance',
-          'You know you will not action rebalances yourself, honestly assessed',
-        ],
-      },
-    ],
-    sections: [
-      {
-        h: 'Discretion is the whole distinction',
-        body: [
-          'Strip away the marketing and one difference remains. In a PMS, the manager trades. In a smallcase, you trade.',
-          'That single fact drives everything else — the minimum, the fee model, what SEBI requires of the provider, and what happens when markets fall thirty per cent and nobody sends an instruction.',
-          'It also decides who is responsible. When a discretionary manager makes a bad call, they made it under a mandate you gave them, inside a regulated relationship with defined obligations. When you decline a rebalance and the basket drifts, that outcome is yours.',
-        ],
-      },
-      {
-        h: 'The rebalance problem',
-        body: [
-          'A basket only behaves like its published version if you execute every rebalance, promptly, including the ones that feel wrong.',
-          'In practice people skip them. They skip the rebalance that sells a winner, and they skip the one that buys during a crash — which is precisely the rebalance that matters most.',
-          'After a few skipped prompts you are no longer holding the basket. You are holding a personal portfolio that happens to have started as one, with none of the discipline that made it work and none of the accountability of a managed mandate.',
-          '<b>Be honest about this before choosing.</b> If you know you will not action prompts inside a falling market, you are paying for a process you will not follow.',
-        ],
-      },
-      {
-        h: 'Cost: cheaper is not automatically cheaper',
-        body: [
-          'A subscription is obviously less than a percentage-based management fee, and on a small portfolio that gap is decisive.',
-          'But baskets rebalance, and each rebalance is brokerage, statutory charges and a taxable event in your own return. A high-turnover basket executed by you carries the same churn tax problem as a high-turnover PMS — it is just paid by you instead of being visible in a fee schedule.',
-          'The clean comparison is total cost of ownership: subscription, plus brokerage, plus statutory charges, plus tax created by turnover. Ask for the basket\'s published rebalance frequency before subscribing.',
-        ],
-      },
-      {
-        h: 'What neither one is',
-        body: [
-          'Neither is a substitute for an asset allocation. Both are ways of holding listed Indian equity, and both do badly at the same time, for the same reason.',
-          'If your whole portfolio is one PMS or four smallcases, you do not have a diversified portfolio — you have one bet with different wrappers. Allocation sits above this decision, not inside it.',
-        ],
-      },
-    ],
-    mistakes: [
-      {
-        m: 'Treating a basket as managed money',
-        why: 'Nobody is managing it on your behalf. The publisher issues research and a rebalance prompt; the decision and the execution remain legally yours. That is the deal, and it is a fair one — but only if you know it.',
-      },
-      {
-        m: 'Holding several overlapping baskets',
-        why: 'Four baskets built on similar themes often hold the same names, so the portfolio is far more concentrated than the count of baskets suggests. Consolidate the holdings across all of them before deciding you are diversified.',
-      },
-      {
-        m: 'Choosing a PMS at ₹50 lakh when ₹50 lakh is your whole portfolio',
-        why: 'The minimum is a regulatory threshold, not a suitability test. Clearing it does not mean the concentration is appropriate for you.',
-      },
-    ],
-    faqs: [
-      {
-        q: 'Is a smallcase a PMS?',
-        a: 'No. A PMS is a discretionary mandate run by a SEBI-registered portfolio manager who trades your account. A smallcase is a published basket you buy and rebalance yourself through your own broker, generally under research or advisory regulations rather than portfolio management ones.',
-      },
-      {
-        q: 'Which is cheaper?',
-        a: 'A subscription is almost always less than a percentage-based management fee, especially on smaller amounts. Whether it is cheaper in total depends on rebalance frequency, because you pay the brokerage, the statutory charges and the tax on every rebalance you accept.',
-      },
-      {
-        q: 'Can an NRI use either?',
-        a: 'PMS is open to non-residents subject to FEMA routing and the house accepting your jurisdiction. Basket platforms depend entirely on whether your broker supports NRI accounts and non-resident execution. Check with the broker first, because it is the constraint that usually bites.',
-      },
-      {
-        q: 'Which performs better?',
-        a: 'That is not a question this page will answer, and be sceptical of anyone who does. Outcomes depend on the specific manager or basket, the period measured, and whether you actioned rebalances. Compare structures here, then diligence the specific option on its own documents.',
-      },
-    ],
-    related: [
-      { label: 'What is PMS?', href: '/learn/what-is-pms' },
-      { label: 'PMS fees explained', href: '/learn/pms-fees-explained' },
-      { label: 'PMS vs managing your own stocks', href: '/compare/pms-vs-direct-equity' },
-      { label: 'PMS vs mutual fund', href: '/learn/pms-vs-mutual-fund' },
-      { label: 'Run the Fit Finder', href: '/fit-finder' },
-    ],
-    sources: [SEBI_PMS, SEBI_RA],
     reviewed: REVIEWED,
     published: PUBLISHED,
     regulatoryAsAt: REVIEWED,
@@ -835,6 +704,284 @@ export const VERSUS: ComparePageContent[] = [
       { label: 'AIF Category I, II and III explained', href: '/learn/aif-categories-explained' },
     ],
     sources: [SEBI_AIF, DICGC, RBI_DEPOSITS, ITA_2025],
+    reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'sif-vs-mutual-fund',
+    kind: 'versus',
+    title: 'SIF vs mutual fund: what the ₹10 lakh buys you',
+    sides: [
+      { label: 'SIF', sub: '₹10 lakh · can short and hedge', href: '/learn/long-short-sif' },
+      { label: 'Mutual fund', sub: '₹500 · long-only, capped', href: '/learn/mutual-funds' },
+    ],
+    hook: 'Same fund house, same tax treatment, twenty times the minimum. The only thing you are paying for is permission to short.',
+    capsule:
+      'Both are run by registered mutual fund houses and an equity-oriented scheme of either is taxed the same way. The difference is what the manager may do: a SIF can take meaningful short and derivative positions to hedge, which a mutual fund cannot. That permission is what the ₹10 lakh minimum gates.',
+    metaTitle: 'SIF vs Mutual Fund: Hedging Powers, Minimum and Tax',
+    metaDescription:
+      "SEBI's Specialised Investment Fund against an ordinary mutual fund. What a SIF may hold that a mutual fund cannot, the ₹10 lakh threshold, and where the tax is identical.",
+    table: {
+      caption: 'SIF against an ordinary mutual fund scheme',
+      head: ['', 'SIF', 'Mutual fund'],
+      rows: [
+        ['Minimum', '₹10 lakh across the SIF strategies of one fund house', '₹100–5,000, and a SIP from ₹500'],
+        ['Who runs it', 'A registered mutual fund house, under a separate SEBI framework and separate branding', 'The same kind of house, under the mutual fund regulations'],
+        ['Can it short?', 'Yes — meaningful short and derivative exposure is the point of the category', 'Only within narrow limits; a mutual fund is effectively long-only'],
+        ['Concentration limits', 'Wider than mutual fund limits, but still prescribed — this is not an AIF', 'Tight single-issuer and sector caps'],
+        ['Liquidity', 'Scheme-defined subscription and redemption windows', 'Daily NAV; proceeds normally in one to three working days'],
+        ['Tax', 'Nothing until you redeem. An equity-oriented scheme is taxed as equity', 'Identical — nothing until you redeem'],
+        ['Fees', 'A single expense ratio', 'A single expense ratio, capped by SEBI'],
+        ['Operational spine', 'Trustee, registrar, published scheme document — the full AMC machinery', 'The same machinery'],
+        ['Track record', 'Short. The category and most of its teams are new', 'Decades, across full cycles, in most categories'],
+        ['What it is for', 'A sleeve that behaves differently from the index in a drawdown', 'The core of a portfolio, at the lowest cost per rupee of exposure'],
+      ],
+      note: 'SIF is a young category and operating practice is still settling. Read the scheme information document rather than a summary.',
+    },
+    verdicts: [
+      {
+        side: 'Stay with mutual funds when',
+        when: [
+          'This is your core listed allocation — nothing beats an index fund on cost for that job',
+          'You might need the money on short notice, and want daily redemption rather than a window',
+          'You have less than ₹10 lakh for this, in which case the question does not arise',
+          'You do not actually want a hedge, you want market exposure — most portfolios do',
+          'You would rather back a strategy with a decade of evidence than one with a year of it',
+        ],
+      },
+      {
+        side: 'Add a SIF when',
+        when: [
+          'Everything you own falls at the same time, and you want a sleeve that does not',
+          'You have ₹10 lakh or more that is genuinely surplus to the core',
+          'You want hedged exposure but a ₹1 crore Category III AIF ticket is out of proportion',
+          'You value tax deferral — a SIF gives you a hedged book without a PMS-style annual tax bill',
+          'You have read who specifically runs the strategy and what they ran before it',
+        ],
+      },
+    ],
+    sections: [
+      {
+        h: 'The ₹10 lakh is a permission fee, not a quality fee',
+        body: [
+          'It helps to see what SEBI actually did here. It did not create a better mutual fund. It created a category where a mutual fund house is allowed to run strategies the mutual fund rules forbid.',
+          'A mutual fund is sold to anyone with ₹500, so the rules assume the buyer reads nothing. Shorting, meaningful derivative exposure and wide concentration are therefore off the table.',
+          'A SIF assumes a buyer with at least ₹10 lakh who can be expected to read a scheme document. So the leash is longer.',
+          '<b>You are not buying better management. You are buying a wider mandate.</b> If you do not want that wider mandate used, you are paying a twenty-times minimum for nothing.',
+        ],
+      },
+      {
+        h: 'Where the two are genuinely identical',
+        body: [
+          'This is the part that surprises people, and it is the strongest argument for the category.',
+          'Tax treatment is the same. An equity-oriented SIF scheme is taxed as equity, and like a mutual fund nothing touches your return until you redeem. The manager can trade as much as the strategy needs inside the scheme without generating a tax event in your hands.',
+          'The operational spine is the same too: a trustee, a registrar, a published scheme information document, and an AMC with an existing compliance function.',
+          'Compare that to the alternatives for hedged exposure. A Category III AIF asks ₹1 crore and is taxed inside the fund. A PMS taxes every trade in your own return. The SIF is the only route to a hedged book that keeps mutual fund tax treatment.',
+        ],
+      },
+      {
+        h: 'What a hedge actually costs',
+        body: [
+          'A hedged strategy trades constantly. It rolls futures, it maintains matched positions, it rebalances. Every one of those trades carries securities transaction tax, and the rate on futures and options rose on 1 April 2026.',
+          'That is a permanent drag taken straight out of the spread the strategy is trying to harvest, and it falls hardest on exactly the strategies a SIF exists to run.',
+          'It does not make the category a bad idea. It does mean the honest number is the <b>net</b> spread after transaction costs and fees, not the gross one in the pitch.',
+          'Ask any SIF manager how the April 2026 change moved their gross-to-net. A manager who has not computed it is telling you something.',
+        ],
+      },
+      {
+        h: 'The caution the category deserves',
+        body: [
+          'The framework is recent, the strategies are new, and the teams are being assembled rather than proven.',
+          'A long record in long-only equity does not transfer to running a hedged book — the skills barely overlap. Managing a short position through a squeeze is a different job from picking a compounder.',
+          'So diligence the person, not the brand. Ask who runs this specific strategy, what they ran before, how the derivative exposure is actually constructed, and what happens to the book in a sharp rally. A good manager will enjoy the question.',
+        ],
+      },
+    ],
+    mistakes: [
+      {
+        m: 'Buying a SIF as a better version of your equity fund',
+        why: 'It is not a performance upgrade, it is a different mandate. A hedged strategy is designed to lag a rising market — that is the trade for the drawdown protection. Expecting it to beat your equity fund in a bull run misunderstands what you bought.',
+      },
+      {
+        m: 'Assuming the ₹10 lakh threshold implies a safer product',
+        why: 'The minimum reflects who SEBI thinks should be allowed in, not how the strategy behaves. A long-short SIF uses derivatives and can lose money in ways a plain long-only fund cannot.',
+      },
+      {
+        m: 'Judging a SIF on a track record measured in months',
+        why: 'A hedged strategy is tested by a drawdown, and most of these have not seen one yet. Until they have, you are diligencing the process and the people, not a record.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Is a SIF just a mutual fund with a higher minimum?',
+        a: 'No. It is run by a mutual fund house and taxed like one, but it operates under a separate SEBI framework with far wider derivative and short-selling powers. The ₹10 lakh minimum exists because of those powers, not as a premium tier of the same product.',
+      },
+      {
+        q: 'Is a SIF taxed differently from a mutual fund?',
+        a: 'No — that is the category\'s main structural advantage. An equity-oriented SIF scheme is taxed as equity, and nothing is taxed until you redeem. Compare that to a Category III AIF, which is taxed inside the fund, or a PMS, which taxes every manager trade in your return each year.',
+      },
+      {
+        q: 'Is the ₹10 lakh minimum per scheme?',
+        a: 'It applies across the SIF strategies you hold with one fund house rather than per scheme. Read the scheme information document, because the aggregation rules are what decide whether you actually clear the threshold.',
+      },
+      {
+        q: 'Should a SIF replace my equity mutual funds?',
+        a: 'Almost never. A SIF is a diversifying sleeve, sized so it changes how the portfolio behaves in a bad year. The low-cost long-only core is doing a different job and a hedged strategy is an expensive way to do it.',
+      },
+    ],
+    related: [
+      { label: 'Long-short SIFs — the specification', href: '/learn/long-short-sif' },
+      { label: 'SIF minimum investment', href: '/learn/sif-minimum-investment' },
+      { label: 'SIF vs PMS', href: '/compare/sif-vs-pms' },
+      { label: 'Market-neutral AIF vs arbitrage fund', href: '/compare/market-neutral-aif-vs-arbitrage-fund' },
+      { label: 'What the 2026 STT hike does to hedged strategies', href: '/tax#stt-hedged' },
+      { label: 'Run the Fit Finder', href: '/fit-finder' },
+    ],
+    sources: [SEBI_SIF, SEBI_MF, SEBI_STT, ITA_2025],
+    reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'market-neutral-aif-vs-arbitrage-fund',
+    kind: 'versus',
+    title: 'Market-neutral AIF vs arbitrage fund',
+    sides: [
+      { label: 'Market-neutral AIF', sub: '₹1 crore · Category III', href: '/learn/market-neutral-funds' },
+      { label: 'Arbitrage fund', sub: '₹500 · equity-oriented MF', href: '/learn/mutual-funds' },
+    ],
+    hook: 'Both strip out market direction. One is taxed inside the fund at the top rate, the other as equity — and that gap eats most of the headline difference.',
+    capsule:
+      'An arbitrage fund harvests the cash-futures spread inside an equity-oriented mutual fund, so it is taxed as equity and you can redeem daily. A market-neutral Category III AIF runs paired long and short positions for a higher gross return, but is typically taxed inside the fund at the maximum marginal rate. Compare them post-tax or not at all.',
+    metaTitle: 'Market-Neutral AIF vs Arbitrage Fund: The Post-Tax Gap',
+    metaDescription:
+      'Two ways to earn without taking market direction. Why the Category III fund-level tax narrows a large headline gap, and what the 2026 STT rise does to both.',
+    table: {
+      caption: 'Market-neutral Category III AIF against an arbitrage mutual fund',
+      head: ['', 'Market-neutral AIF', 'Arbitrage fund'],
+      rows: [
+        ['Minimum', '₹1 crore', '₹500'],
+        ['What generates the return', 'Paired long and short positions — the manager\'s skill in the pair', 'The mechanical spread between the cash and futures price of the same stock'],
+        ['Indicative return', '12–14% p.a. gross, indicative', 'Broadly money-market-like, and it moves with the spread on offer'],
+        ['Who decides the outcome', 'The manager. Results depend entirely on selection', 'The market. Wide spreads are a good year, narrow spreads are a poor one'],
+        ['Tax', 'Typically charged inside the fund at the maximum marginal rate (scheme-specific); you receive post-tax NAV', 'Equity-oriented treatment, and nothing until you redeem'],
+        ['Liquidity', 'Monthly-style windows, typically', 'Daily NAV, with a short exit load window on some schemes'],
+        ['Transparency', 'Periodic fund reporting', 'Monthly portfolio disclosure, daily NAV'],
+        ['Dispersion between managers', 'Wide. Manager selection is the whole risk', 'Narrow. Most arbitrage funds do a similar mechanical thing'],
+        ['Turnover and STT exposure', 'High — matched legs are rebalanced constantly', 'High — the position is rolled every expiry'],
+        ['What breaks it', 'A stress period where long-short relationships stop holding', 'A prolonged narrow-spread market, where returns fall towards deposit rates'],
+      ],
+      note: 'Indicative ranges, not offers or guarantees. Category III AIF taxation is scheme-specific and turns on trust determinacy and income character — confirm per scheme.',
+    },
+    verdicts: [
+      {
+        side: 'Use an arbitrage fund when',
+        when: [
+          'You want a low-volatility parking place and the ability to redeem any business day',
+          'You are at a high slab and want equity-oriented tax treatment rather than income taxed at your rate',
+          'You have less than ₹1 crore for this, which settles it',
+          'You want an outcome that does not depend on picking the right manager',
+          'This is money with a job in the next year or two',
+        ],
+      },
+      {
+        side: 'Consider a market-neutral AIF when',
+        when: [
+          '₹1 crore is a normal position size for you, not a stretch',
+          'You have seen the manager\'s net-of-everything record, not the gross one',
+          'You can live with monthly-style windows rather than daily redemption',
+          'You accept that the result is manager skill, and that dispersion in this category is wide',
+          'You have asked, and been told, how the fund-level tax actually applies to that specific scheme',
+        ],
+      },
+    ],
+    sections: [
+      {
+        h: 'The post-tax arithmetic is the entire comparison',
+        body: [
+          'A market-neutral AIF quoting 12–14% and an arbitrage fund earning a money-market-like return look like completely different products. Post-tax, at a high slab, they are much closer than that.',
+          'A Category III AIF is typically taxed <b>inside the fund</b>, at the maximum marginal rate. You receive the post-tax NAV. So the gross number in the pitch is not a number you ever receive.',
+          'An arbitrage fund is an equity-oriented mutual fund. Its gains carry equity treatment, and nothing is taxed until you redeem — so the full amount compounds in the meantime.',
+          '<b>Run both to a post-tax number before comparing anything.</b> A large headline gap can narrow to a modest one, and for some investors it closes almost entirely. That does not make the AIF wrong; it means the decision is finer than it looks and should be made on the real number.',
+        ],
+      },
+      {
+        h: 'They are not the same kind of bet',
+        body: [
+          'An arbitrage fund is mechanical. It buys the stock, sells the future, and collects the difference as the two converge at expiry. There is little for a manager to get right or wrong, which is why arbitrage funds cluster so tightly together.',
+          'Its weakness is the same thing: when spreads narrow across the market, returns fall towards deposit rates and no manager can fix it. You are exposed to a market condition, not to skill.',
+          'A market-neutral AIF is the opposite. The manager chooses which long to pair against which short. Done well, the return is uncorrelated with both equity and debt. Done badly, the pairs stop working and you lose money in a strategy you were told was low risk.',
+          'So the choice is between accepting a market condition and accepting manager selection risk. Neither is free.',
+        ],
+      },
+      {
+        h: 'Both got more expensive on 1 April 2026',
+        body: [
+          'Securities transaction tax is charged on every trade, so its cost scales with turnover — and both of these strategies trade constantly.',
+          'From 1 April 2026, futures STT rose from 0.02% to 0.05% and options-premium STT from 0.10% to 0.15%. An arbitrage fund rolling its position every expiry and a market-neutral book rebalancing matched legs both pay that, repeatedly.',
+          'The effect is larger on the arbitrage fund in relative terms, because it is harvesting a thin spread to begin with. A few basis points of extra transaction cost is a meaningful share of a thin spread; it is a smaller share of a wider one.',
+          'The takeaway is not to avoid either. It is that the net spread after STT and fees is what matters, and it got thinner. Ask the manager directly how the change moved their gross-to-net.',
+        ],
+      },
+      {
+        h: 'Where each one belongs in a portfolio',
+        body: [
+          'Neither is an equity substitute and neither should be sized like one.',
+          'An arbitrage fund is a cash-management tool. It sits where a liquid fund or a short deposit would sit, for an investor at a high slab who prefers equity-oriented treatment on that money.',
+          'A market-neutral AIF is a diversifying sleeve for a portfolio large enough that ₹1 crore is a sleeve. Its job is to produce a return that does not care what the index did, which is worth a great deal in the year the index does badly.',
+          'An investor holding one because they were told it was "like a fixed deposit but better" has been mis-sold, whichever one it is.',
+        ],
+      },
+    ],
+    mistakes: [
+      {
+        m: 'Comparing the AIF gross return to the arbitrage fund net return',
+        why: 'The Category III number is typically quoted before fund-level tax that you never see deducted from your own return. That is not a like-for-like comparison and it flatters the AIF substantially.',
+      },
+      {
+        m: 'Treating either as a fixed deposit substitute',
+        why: 'Both are equity-market strategies with no capital protection and no deposit insurance. Low volatility is not the same as low risk, and a market-neutral book can lose money when long-short relationships break.',
+      },
+      {
+        m: 'Buying an arbitrage fund when spreads are already thin',
+        why: 'Returns follow the spread on offer. Entering after a period of wide spreads, on the strength of the trailing number, is buying the past. Look at the current spread environment, not last year\'s return.',
+      },
+      {
+        m: 'Not asking how the specific Category III scheme is taxed',
+        why: 'The treatment turns on trust determinacy and income character and is genuinely scheme-specific. A manager who cannot give you a clear written answer is not one to hand ₹1 crore.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Which gives higher returns, a market-neutral AIF or an arbitrage fund?',
+        a: 'Gross, the market-neutral AIF, usually by a wide margin. Post-tax the gap narrows considerably, because Category III funds are typically taxed inside the fund at the maximum marginal rate while an arbitrage fund carries equity-oriented treatment. Compare only the post-tax numbers.',
+      },
+      {
+        q: 'Are arbitrage funds safe?',
+        a: 'They are low-volatility, not risk-free. The strategy is mechanical and well understood, but there is no capital protection and no deposit insurance, and returns fall towards deposit rates when spreads narrow across the market.',
+      },
+      {
+        q: 'Why are Category III AIFs taxed inside the fund?',
+        a: 'Unlike Categories I and II, Category III does not get pass-through treatment, so tax is generally charged at the fund level and you receive post-tax NAV. The precise position depends on the trust\'s determinacy and the character of the income, which is why it must be confirmed scheme by scheme.',
+      },
+      {
+        q: 'Can an NRI invest in either?',
+        a: 'Both are open subject to FEMA routing and the house accepting your jurisdiction. For a US or Canadian taxpayer, both are pooled Indian funds and so generally bring PFIC reporting — settle that question before shortlisting either.',
+      },
+    ],
+    related: [
+      { label: 'Market neutral funds — the specification', href: '/learn/market-neutral-funds' },
+      { label: 'AIF Category I, II and III explained', href: '/learn/aif-categories-explained' },
+      { label: 'What the 2026 STT hike does to hedged strategies', href: '/tax#stt-hedged' },
+      { label: 'SIF vs mutual fund', href: '/compare/sif-vs-mutual-fund' },
+      { label: 'Alternatives to a fixed deposit', href: '/compare/fixed-deposit-alternatives' },
+      { label: 'AIF vs mutual fund', href: '/compare/aif-vs-mutual-fund' },
+    ],
+    sources: [SEBI_AIF, SEBI_MF, SEBI_STT, ITA_2025],
     reviewed: REVIEWED,
     published: PUBLISHED,
     regulatoryAsAt: REVIEWED,

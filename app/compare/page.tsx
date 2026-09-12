@@ -109,8 +109,8 @@ export default function CompareHub() {
           <span>Comparisons that live elsewhere on the site</span>
         </div>
         <p className="font-serif text-[17px] text-ink-soft max-w-[720px] mb-6 -mt-2">
-          These four already sit in the section they belong to. They are indexed here so this page
-          is the complete list, not so they are published twice.
+          These {EXTERNAL_COMPARISONS.length} already sit in the section they belong to. They are
+          indexed here so this page is the complete list, not so they are published twice.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {EXTERNAL_COMPARISONS.map((l) => (

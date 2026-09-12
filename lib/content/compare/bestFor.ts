@@ -1,7 +1,10 @@
 import type { ComparePageContent } from './types'
 import {
+  DICGC,
   IFSCA_FM,
+  INDIA_POST,
   IRS_PFIC,
+  RBI_DEPOSITS,
   RBI_FI,
   SEBI_AIF,
   SEBI_MF,
@@ -455,6 +458,164 @@ export const BEST_FOR: ComparePageContent[] = [
       { label: 'Run the Fit Finder', href: '/fit-finder' },
     ],
     sources: [SEBI_PMS, SEBI_AIF, SEBI_SIF, SEBI_MF, SEBI_REIT, IFSCA_FM],
+    reviewed: REVIEWED,
+    published: PUBLISHED,
+    regulatoryAsAt: REVIEWED,
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'best-investment-for-monthly-income-india',
+    kind: 'best-for',
+    title: 'Best investments for monthly income in India',
+    sides: [
+      { label: 'SCSS and POMIS', sub: 'Government-backed, capped' },
+      { label: 'FD interest payout', sub: 'Contractual, taxed at slab' },
+      { label: 'Debt fund SWP', sub: 'Tax-efficient withdrawal', href: '/learn/mutual-funds' },
+      { label: 'REITs and InvITs', sub: 'Distributions, listed', href: '/learn/reits-invits' },
+      { label: 'Private credit', sub: '₹1 crore, irregular', href: '/learn/private-credit-real-estate-debt' },
+    ],
+    hook: 'The highest-yielding income product is almost never the right one. What decides it is whether the payment must arrive on a date.',
+    capsule:
+      'For a retiree, the base layer is the government-backed schemes and a laddered deposit — capped, certain, and taxed at your slab. Above that, a systematic withdrawal plan from a debt fund is usually the most tax-efficient way to produce a monthly payment, and REIT distributions add real-asset income without owning a building.',
+    metaTitle: 'Best Monthly Income Investments in India: The Honest Shelf',
+    metaDescription:
+      'SCSS, POMIS, FD payouts, debt fund SWPs, REIT distributions and private credit compared for regular income — with the tax difference that decides most of it.',
+    table: {
+      caption: 'Ways to produce a monthly payment, from most certain to least',
+      head: ['Route', 'Minimum / cap', 'Certainty of payment', 'How it is taxed', 'The catch'],
+      rows: [
+        ['Senior Citizens Savings Scheme', 'Age-gated; a statutory cap per person', 'Very high — government backed, quarterly payment', 'Interest at your slab, each year', 'Capped, age-restricted, and the rate is reset periodically'],
+        ['Post Office Monthly Income Account', 'A statutory cap, higher for a joint account', 'Very high — government backed, monthly by design', 'Interest at your slab, each year', 'Capped, and the rate is reset periodically'],
+        ['Bank FD with interest payout', '₹1,000', 'High, subject to the bank', 'Interest at your slab, with TDS', 'Insured only to ₹5 lakh per bank. Nothing compounds'],
+        ['Debt fund SWP', '₹500', 'You choose the date and the amount', 'Only the gain portion of each withdrawal is taxed, and only when you withdraw', 'The value moves. A fixed withdrawal in a bad year sells more units'],
+        ['REIT and InvIT distributions', 'One unit', 'Regular but not fixed — it follows occupancy and rent collection', 'Depends on the character of each distribution component', 'Listed price moves. Distributions can fall in a downturn'],
+        ['Debt PMS', '₹50 lakh', 'Manager-dependent', 'Every manager sale is your sale, in your return, that year', 'Credit risk taken deliberately, and annual tax on churn'],
+        ['Private credit AIF', '₹1 crore', 'Low — distributions arrive as borrowers pay, often irregularly', 'Pass-through: taxed as income arises, sometimes before cash reaches you', 'Locked for the fund life, real default risk, no insurance'],
+      ],
+      note: 'Statutory caps and administered rates on small savings schemes are revised periodically. Confirm the current figure at a post office or bank before planning around it.',
+    },
+    verdicts: [
+      {
+        side: 'If the payment must arrive, every month, no matter what',
+        when: [
+          'This is the base layer and it should be boring: the government-backed schemes first, up to their caps',
+          'Then a deposit ladder, spread across banks so the ₹5 lakh insurance limit does each bit of work it can',
+          'Size this layer to cover your non-negotiable outgoings — rent, medicines, help, utilities',
+          'Accept the lower yield. You are buying certainty, and certainty is the product',
+          'Nothing in this layer should be capable of paying you less than promised',
+        ],
+      },
+      {
+        side: 'For the income above your non-negotiables',
+        when: [
+          'A systematic withdrawal plan from a debt or conservative hybrid fund is usually the most tax-efficient monthly payment available',
+          'REIT and InvIT distributions add real-asset income without a tenant, a broker or a title deed',
+          'Size this layer so a bad year reduces your comfort, not your medication',
+          'Keep a year of withdrawals in cash so you are never forced to sell units into a fall',
+          'Review the withdrawal rate annually rather than setting it once and forgetting it',
+        ],
+      },
+      {
+        side: 'Be careful with',
+        when: [
+          'Private credit sold as "monthly income" — distributions follow borrower repayment, not a calendar',
+          'Any product where the quoted yield is well above everything else on this page, without a stated reason',
+          'A large deposit at one small bank for the extra rate — insurance stops at ₹5 lakh per bank',
+          'Anything with a lock-in longer than your own planning horizon',
+        ],
+      },
+    ],
+    sections: [
+      {
+        h: 'Split the income into two layers before choosing anything',
+        body: [
+          'This is the single most useful thing on the page, and almost nobody selling income products does it.',
+          'Write down what you must pay every month regardless — housing, food, medicines, help, utilities, insurance premiums. That is the <b>non-negotiable layer</b>. It gets funded by things that cannot pay you less than promised: the government-backed schemes and a deposit ladder. Yield is not the objective here. Certainty is.',
+          'Everything above that — travel, gifts, the grandchildren, the things that make retirement worth having — is the <b>discretionary layer</b>. This can be funded by things that vary: a withdrawal plan from a fund, REIT distributions, whatever else fits.',
+          'Get this split right and a bad market year is disappointing rather than frightening. Get it wrong and you are selling assets at the bottom to buy medicine.',
+        ],
+      },
+      {
+        h: 'Why a withdrawal plan usually beats interest',
+        body: [
+          'People instinctively want interest, because interest feels like income and selling units feels like eating capital. On the arithmetic it is generally the other way round.',
+          'Deposit interest is added to your income and taxed at your slab every year, with tax deducted at source. At a high slab a large part of it is gone before it reaches you, and nothing compounds because the payment leaves.',
+          'A systematic withdrawal plan sells a small number of units each month. Only the <b>gain portion</b> of each withdrawal is taxable, not the whole payment — most of what arrives is your own capital coming back. The rest of the holding stays invested and keeps compounding.',
+          'For someone at a high slab this difference is large and it runs every year. The catch is honest and worth stating: the value moves, so a fixed monthly withdrawal sells more units in a bad year. That is exactly why the non-negotiable layer sits underneath, and why a year of withdrawals should be in cash.',
+        ],
+      },
+      {
+        h: 'The schemes nobody gets paid to recommend',
+        body: [
+          'The Senior Citizens Savings Scheme and the Post Office Monthly Income Account are government-backed, pay on a fixed schedule, and carry no credit risk worth discussing.',
+          'They are capped, age-gated in the case of SCSS, and the administered rates are reset periodically. Those are real limitations.',
+          'They also pay nobody a commission, which is why they rarely appear in a retirement pitch. <b>For most retirees they should be the first thing filled, to their caps, before anything else is considered.</b>',
+          'Confirm the current caps and rates at a post office or bank rather than from any website, this one included — they are revised, and a stale figure is worse than none.',
+        ],
+      },
+      {
+        h: 'What "monthly income" means in a private credit fund',
+        body: [
+          'It usually does not mean a payment on the first of the month.',
+          'A private credit fund distributes as borrowers repay. Repayments are lumpy, sometimes delayed, and occasionally do not arrive at all. The fund also has a life, and capital returns at the end of it rather than on a schedule you set.',
+          'On top of that, a Category II AIF is a pass-through: income is taxed in your hands as it arises, which can mean a tax bill on income the fund has not yet distributed to you.',
+          'Private credit can be an excellent holding for the right investor. It is a poor answer to "I need ₹1 lakh a month", and it is frequently sold as though it were one.',
+        ],
+      },
+    ],
+    mistakes: [
+      {
+        m: 'Funding essential expenses from anything that can pay less than promised',
+        why: 'A distribution that falls with occupancy, or a withdrawal plan in a falling market, is fine for discretionary spending and dangerous for medicine. Match the certainty of the source to the necessity of the expense.',
+      },
+      {
+        m: 'Chasing the highest quoted yield on the page',
+        why: 'Every point above the deposit rate is payment for a specific risk — credit, illiquidity or price movement. In the income layer of a retired person\'s portfolio, that is precisely the wrong place to be taking it.',
+      },
+      {
+        m: 'Holding a large fixed deposit at one bank for the extra rate',
+        why: 'Deposit insurance is ₹5 lakh per depositor per bank, principal and interest combined. A materially above-market rate is a price signal about the institution, and the uninsured balance is a straight credit exposure.',
+      },
+      {
+        m: 'Setting a withdrawal rate once and never revisiting it',
+        why: 'A rate that was comfortable at the start can quietly deplete the capital after a poor run. Review it annually against the remaining balance, and be willing to reduce it for a year.',
+      },
+      {
+        m: 'Ignoring inflation because the payment is fixed',
+        why: 'A fixed monthly payment buys less every year. Over a twenty-year retirement that erosion is the largest single risk, and an all-deposit portfolio has no defence against it.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'What is the best investment for monthly income in India?',
+        a: 'There is no single answer, and the split matters more than the product. Government-backed schemes and a deposit ladder for the expenses you cannot skip; a systematic withdrawal plan from a debt fund, plus REIT distributions, for everything above that.',
+      },
+      {
+        q: 'Is an SWP better than FD interest?',
+        a: 'For most people at a high slab, yes. Only the gain portion of each withdrawal is taxed, and the rest of the holding stays invested and compounding — whereas deposit interest is taxed in full at your slab every year and leaves the account. The trade-off is that the value moves.',
+      },
+      {
+        q: 'How much do I need for ₹1 lakh a month?',
+        a: 'It depends entirely on the withdrawal rate you consider sustainable and how long the money must last. The more useful exercise is the reverse: work out your non-negotiable monthly figure first, fund that from certain sources, and size the rest against what is actually left.',
+      },
+      {
+        q: 'Are REITs a good source of retirement income?',
+        a: 'As part of the discretionary layer, often yes — regular distributions from institutional-grade commercial property, with same-day liquidity and no tenant to manage. They are not a substitute for the certain layer, because distributions follow occupancy and rent collection and the unit price moves.',
+      },
+      {
+        q: 'Can an NRI use these for income from India?',
+        a: 'Partly. The small savings schemes are generally not available to non-residents. NRE deposits, mutual fund SWPs and REIT distributions are, subject to FEMA routing — and the repatriation route must be chosen when the money goes in, not at the end.',
+      },
+    ],
+    related: [
+      { label: 'Alternatives to a fixed deposit', href: '/compare/fixed-deposit-alternatives' },
+      { label: 'Private credit vs fixed deposit', href: '/compare/private-credit-vs-fixed-deposit' },
+      { label: 'REITs and InvITs — the specification', href: '/learn/reits-invits' },
+      { label: 'FD+ and structured debt', href: '/learn/fd-plus-structured-debt' },
+      { label: 'The full tax schedule', href: '/tax' },
+      { label: 'Run the Fit Finder', href: '/fit-finder' },
+    ],
+    sources: [INDIA_POST, DICGC, RBI_DEPOSITS, SEBI_REIT, SEBI_AIF, ITA_2025],
     reviewed: REVIEWED,
     published: PUBLISHED,
     regulatoryAsAt: REVIEWED,
