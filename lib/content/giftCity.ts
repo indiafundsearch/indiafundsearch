@@ -103,7 +103,7 @@ export const GIFT_CITY: Answer[] = [
           'The private placement memorandum, read before you sign. The minimum, the lock-in and the redemption terms are in there, not on the factsheet.',
         ] },
       { h: 'What we do not know until we see the fund',
-        body: ['Timelines, document lists and cut-off dates are set by each fund management entity and change. We confirm them against the PPM at onboarding rather than print them here. ' + CONFIRM] },
+        body: ['Timelines, document lists and cut-off dates are set by each fund management entity and change. We confirm them against the PPM at onboarding rather than print them here. ', CONFIRM] },
     ],
     related: [
       { label: 'Who can invest in GIFT City funds', href: '/gift-city/eligibility' },
@@ -187,7 +187,7 @@ export const GIFT_CITY: Answer[] = [
       { h: 'The reporting that follows',
         body: ['Units in a GIFT City fund are a foreign asset for a resident. They go on Schedule FA of your return every year you hold them, whether or not anything was sold. Gains are taxed at 12.5% after 24 months and at slab if sooner; dividends at slab.'] },
       { h: 'Is it worth it for a resident?',
-        body: ['That depends on what you want the money to do. If the job is a dollar hedge and exposure to markets and themes India does not list, GIFT City does it with Indian KYC and no foreign brokerage account. If the job is Indian equity, stay onshore. ' + CONFIRM] },
+        body: ['That depends on what you want the money to do. If the job is a dollar hedge and exposure to markets and themes India does not list, GIFT City does it with Indian KYC and no foreign brokerage account. If the job is Indian equity, stay onshore. ', CONFIRM] },
     ],
     related: [
       { label: 'GIFT City and global USD investing', href: '/learn/gift-city-global-usd' },
@@ -227,7 +227,7 @@ export const GIFT_CITY: Answer[] = [
         body: ['These are private placements and restricted schemes. Listing them on an open page would be an offer to the public that the structures are not built for, and it would put fund names in front of readers the funds may not accept. So the named shelf sits behind a one-line eligibility declaration and is served only after it.',
                'The curated list is dated, reviewed monthly, and states for each fund the structure, the minimum and whether the house accepts investors from the US, the UK and Canada, as confirmed with each house.'] },
       { h: 'How to read it',
-        body: ['Start with where you file your taxes, not with the fund. The same GIFT City fund is treated three different ways in the US, the UK and the UAE. Then read the corridor guide for your country, then the shelf. ' + CONFIRM] },
+        body: ['Start with where you file your taxes, not with the fund. The same GIFT City fund is treated three different ways in the US, the UK and the UAE. Then read the corridor guide for your country, then the shelf. ', CONFIRM] },
     ],
     related: [
       { label: 'Inbound shelf: NRIs into India', href: '/gift-city/inbound' },

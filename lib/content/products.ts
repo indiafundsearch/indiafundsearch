@@ -492,7 +492,8 @@ export const PRODUCTS: Product[] = [
         q: "How does a Category II AIF differ from Category III?",
         a: [
           "Category II is the unlisted, long-lock structure: private equity, private credit, real estate. It does not use leverage other than for day-to-day operating needs. Category III is the listed-market structure, and it may use leverage and derivatives.",
-          "The difference that reaches your return is taxation. Category II is a pass-through, so gains are taxed in your hands with the character of the underlying holding preserved. Category III is taxed at the fund level. It also changes what the manager must put in alongside you: the continuing-interest requirement is 2.5% of the corpus or ₹5 crore, whichever is lower, for Categories I and II, and 5% or ₹10 crore for Category III.",
+          "The difference that reaches your return is taxation. Category II is a pass-through, so gains are taxed in your hands with the character of the underlying holding preserved. Category III is taxed at the fund level.",
+        "It also changes what the manager must put in alongside you. The continuing-interest requirement is 2.5% of the corpus or ₹5 crore, whichever is lower, for Categories I and II, and 5% or ₹10 crore for Category III.",
         ],
       },
       {
@@ -505,7 +506,8 @@ export const PRODUCTS: Product[] = [
       {
         q: "What should I read in the private placement memorandum?",
         a: [
-          "Six things, in this order. The fund's tenure and how many extensions the manager can take unilaterally. The capital call notice period and the default remedy. Whether the management fee sits on committed or drawn capital. Whether carry has a catch-up. Whether the waterfall distributes deal by deal or only after the whole fund returns capital. And the key-person clause, which says what happens if the people you are backing leave.",
+          "Six things, in this order. The fund's tenure and how many extensions the manager can take unilaterally. The capital call notice period and the default remedy. Whether the management fee sits on committed or drawn capital.",
+        "Then: whether carry has a catch-up. Whether the waterfall distributes deal by deal or only after the whole fund returns capital. And the key-person clause, which says what happens if the people you are backing leave.",
           "A deal-by-deal waterfall pays the manager carry on early winners before the fund as a whole has returned your money. A whole-of-fund waterfall does not. Over a ten-year life that single line moves more money than the fee headline.",
         ],
       },
@@ -621,3 +623,20 @@ export const productBySlug = (slug: string): Product | undefined =>
 
 export const productById = (id: string): Product | undefined =>
   PRODUCTS.find((p) => p.id === id);
+
+/**
+ * Question-shaped quick answers for a specification page (page-structure
+ * rule 7). Derived from the fields already on the page, so nothing here says
+ * anything the page does not already say — it only says it in the shape a
+ * long-tail query takes ("equity pms minimum investment", "how are reits taxed").
+ */
+export function productFaqs(p: Product): { q: string; a: string }[] {
+  const faqs: { q: string; a: string }[] = [
+    { q: `What is the minimum investment in ${p.name}?`, a: `${p.min}. Typical horizon ${p.horizon}; liquidity ${p.liqLabel}.` },
+    { q: `How is ${p.name.toLowerCase().startsWith('the ') ? p.name : 'a ' + p.name.replace(/s$/, '')} taxed?`, a: p.tax },
+    { q: `What can go wrong with ${p.name}?`, a: p.risks.map((r) => r.replace(/\.$/, '')).join('. ') + '.' },
+  ]
+  if (p.nriNote) faqs.push({ q: `Can an NRI invest in ${p.name}?`, a: p.nriNote })
+  return faqs
+}
+

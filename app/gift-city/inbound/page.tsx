@@ -38,7 +38,9 @@ export default function GiftInboundPage() {
           account, no currency conversion, no resident-style tax filings.{' '}
           <em className="text-bronze italic">
             For NRIs, frequently the cleanest route into Indian strategies.
-          </em>{' '}
+          </em>
+        </p>
+        <p className="font-serif text-[19px] text-ink-soft mt-3">
           Below is the desk&apos;s <b>Curated Inbound Fund Repository</b>: India-dedicated funds
           accessible through GIFT City, grouped by asset class, with the structure, minimum and
           US / UK / Canada acceptance confirmed with each house.

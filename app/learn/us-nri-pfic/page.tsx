@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { DISCLOSURE } from '@/lib/constants'
-import { pageMeta } from '@/lib/seo'
+import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/JsonLd'
+import { Disclosure } from '@/components/shared/Disclosure'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 
 // Routed through pageMeta so canonical / og tags are right when this is
@@ -16,6 +18,14 @@ export const metadata: Metadata = pageMeta({
   // cluster; per-fund positions are deliberately not stated.
 })
 
+/** Visible FAQ, mirrored exactly into FAQPage schema. Figures are the verified set only. */
+const FAQS = [
+  { q: 'Is a GIFT City fund a PFIC for a US taxpayer?', a: 'Usually, yes. A pooled fund holding passive assets is the textbook PFIC, and where the fund sits does not change that. The exception is a structure that gives you direct ownership or is transparent for US tax, which has to be confirmed fund by fund.' },
+  { q: 'Do I have to file Form 8621 every year?', a: 'One Form 8621 per PFIC, per year, unless the narrow de minimis exception applies: holdings under $25,000 in aggregate, or $50,000 filing jointly, with no sale, distribution or election that year.' },
+  { q: 'Which Indian investments avoid PFIC treatment?', a: 'A managed account where the shares sit in your own name, such as a PMS, has no pooled foreign corporation between you and the companies. You still report the account on the FBAR and Form 8938.' },
+  { q: 'Does this apply to Canadian residents too?', a: 'Canada has its own foreign-asset reporting and its own offshore fund rules. We do not state Canadian thresholds or positions here. Confirm them with a Canadian CPA before subscribing.' },
+]
+
 function H({ children }: { children: React.ReactNode }) {
   return (
     <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2.5 mt-10 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
@@ -27,6 +37,16 @@ function H({ children }: { children: React.ReactNode }) {
 export default function UsNriPficPage() {
   return (
     <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Learn', path: '/learn' },
+            { name: 'US and Canadian NRIs: PFIC, FATCA and FBAR', path: '/learn/us-nri-pfic' },
+          ]),
+          faqJsonLd(FAQS),
+        ]}
+      />
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/learn" className="hover:text-ink">Learn</Link>
         <span className="mx-2">/</span>
@@ -45,6 +65,19 @@ export default function UsNriPficPage() {
           <b>actively punitive</b> for you. Simply subscribing can create reporting duties back
           home. Read this before you shortlist anything.
         </p>
+        <div className="mt-6 plot-card px-6 py-5 max-sm:px-5">
+          <span className="corner corner-tl" /><span className="corner corner-tr" />
+          <span className="corner corner-bl" /><span className="corner corner-br" />
+          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+            The short answer
+          </span>
+          <p className="font-sans text-[17.5px] leading-[1.5] text-ink">
+            For a US taxpayer, a pooled Indian or GIFT City fund is almost always a PFIC: taxed at
+            the top marginal rate with an interest charge, and reported on Form 8621 every year, per
+            fund. Holding shares directly, as in a PMS, sits outside that regime. Take your own
+            position to a US CPA before you subscribe to anything.
+          </p>
+        </div>
         <AuthorByline
           className="mt-6"
           published="August 2026"
@@ -82,6 +115,8 @@ export default function UsNriPficPage() {
         <p>
           Hold <b>units of a pooled fund</b>, whether a mutual fund, most AIFs or a feeder, and you
           own a slice of a foreign corporation holding passive assets. That is the textbook PFIC.
+        </p>
+        <p>
           Hold securities <b>directly in your own name</b>, as in a PMS or managed account, or
           through a partnership that is transparent for US tax, and the analysis can be different.
           Structure is everything here, and it has to be confirmed fund by fund.
@@ -100,7 +135,10 @@ export default function UsNriPficPage() {
         <p>
           In practice, few Indian or GIFT City funds issue the statement, so QEF is rarely on the
           table. Mark-to-market needs the fund to be regularly traded on a qualifying exchange, which
-          a private placement is not. The filing burden is the part people underestimate:{' '}
+          a private placement is not.
+        </p>
+        <p>
+          The filing burden is the part people underestimate:{' '}
           <b>one Form 8621 per fund, per year</b>, and a year you did not file does not close.
           Whether a given fund supports either election is a question for that fund&apos;s documents
           and your US CPA or Enrolled Agent, not for a factsheet.{' '}
@@ -116,10 +154,12 @@ export default function UsNriPficPage() {
         <p>
           Separate from how the fund is taxed, US persons must <b>report</b> foreign financial
           assets: <b>FBAR (FinCEN Form 114)</b> for foreign accounts over the threshold, and{' '}
-          <b>FATCA (Form 8938)</b> with your US return. GIFT funds accepting US money will also ask
-          for US tax documentation (W-9) and may decline US persons precisely to avoid FATCA
-          obligations of their own. Non-reporting carries heavy penalties — this applies even where
-          the investment itself is modest.
+          <b>FATCA (Form 8938)</b> with your US return.
+        </p>
+        <p>
+          GIFT funds accepting US money will also ask for US tax documentation (W-9) and may decline
+          US persons precisely to avoid FATCA obligations of their own. Non-reporting carries heavy
+          penalties, even where the investment itself is modest.
         </p>
         <ul className="space-y-1.5">
           {[
@@ -172,14 +212,27 @@ export default function UsNriPficPage() {
         <p>
           Several funds on the inbound GIFT City shelf do accept US persons, and the shelf marks
           which, as confirmed with each house. Acceptance is not the same as suitability: a fund
-          that takes your subscription can still be a PFIC on your return. Whether a particular
-          vehicle is US-transparent, and whether it issues the statement a QEF election needs, is a
-          legal conclusion about that fund. We do not state it here.{' '}
+          that takes your subscription can still be a PFIC on your return.
+        </p>
+        <p>
+          Whether a particular vehicle is US-transparent, and whether it issues the statement a QEF
+          election needs, is a legal conclusion about that fund. We do not state it here.{' '}
           <Link href="/gift-city/inbound" className="text-bronze border-b border-bronze-soft">
             See the shelf (eligibility-gated) →
           </Link>
         </p>
       </div>
+
+      <section className="mt-12 max-w-[820px]">
+        <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] mb-4">Common questions</h2>
+        <div className="grid gap-3">
+          {FAQS.map((f) => (
+            <Disclosure key={f.q} title={<h3 className="font-sans font-semibold text-[16.5px] leading-snug text-ink">{f.q}</h3>}>
+              <p className="text-[16px] text-ink-soft leading-[1.6]">{f.a}</p>
+            </Disclosure>
+          ))}
+        </div>
+      </section>
 
       {/* CTA */}
       <div className="mt-12 plot-card px-8 py-8 max-w-[820px] max-sm:px-5">

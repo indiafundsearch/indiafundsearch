@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { PRODUCTS, productBySlug } from '@/lib/content/products'
+import { PRODUCTS, productBySlug, productFaqs } from '@/lib/content/products'
 import { FD_PATH_5Y, formatCr } from '@/lib/content/format'
 import { SHEETS } from '@/lib/constants'
 import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
@@ -87,9 +87,13 @@ export default async function ProductPage({ params }: PageProps) {
             { name: 'Learn', path: '/learn' },
             { name: p.name, path: `/learn/${p.slug}` },
           ]),
-          // Mirrors the visible deep-dive headings exactly — nothing sits in
-          // JSON-LD that a reader cannot also see on the page.
-          ...(p.deepDive ? [faqJsonLd(p.deepDive.map((d) => ({ q: d.q, a: d.a.join(' ') })))] : []),
+          // One FAQPage block: the quick answers plus any deep-dive sections.
+          // Mirrors visible headings exactly — nothing sits in JSON-LD that a
+          // reader cannot also see on the page.
+          faqJsonLd([
+            ...productFaqs(p),
+            ...(p.deepDive ?? []).map((d) => ({ q: d.q, a: d.a.join(' ') })),
+          ]),
         ]}
       />
 
@@ -112,6 +116,15 @@ export default async function ProductPage({ params }: PageProps) {
         <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[760px]">
           {p.analogy}
         </p>
+        {/* The answer before any context (rule 4). Link-free on purpose. */}
+        <div className="mt-6 plot-card px-6 py-5 max-w-[820px] max-sm:px-5">
+          <span className="corner corner-tl" /><span className="corner corner-tr" />
+          <span className="corner corner-bl" /><span className="corner corner-br" />
+          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+            The short answer
+          </span>
+          <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{p.what}</p>
+        </div>
         <div className="mt-5">
           <AuthorByline reviewed="September 2026" regulatoryAsAt="September 2026" />
         </div>
@@ -129,10 +142,6 @@ export default async function ProductPage({ params }: PageProps) {
 
       <div className="grid gap-12 lg:grid-cols-[1.35fr_1fr]">
         <div className="space-y-8">
-          <div>
-            <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-3">What it actually is</h2>
-            <p className="text-[17.5px] text-ink-soft max-w-[720px]">{p.what}</p>
-          </div>
           <SpecList title="The job it does" items={p.solves} />
           <SpecList title="Why people use it" items={p.benefits} />
           <SpecList title="What can go wrong" items={p.risks} />
@@ -200,6 +209,23 @@ export default async function ProductPage({ params }: PageProps) {
           )}
         </aside>
       </div>
+
+      {/* Quick answers — the long-tail shapes of the facts above (rule 7). */}
+      <section className="mt-16 max-w-[820px]">
+        <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] leading-[1.2] mb-4">
+          Quick answers
+        </h2>
+        <div className="grid gap-3">
+          {productFaqs(p).map((f) => (
+            <Disclosure
+              key={f.q}
+              title={<h3 className="font-sans font-semibold text-[16.5px] leading-snug text-ink">{f.q}</h3>}
+            >
+              <p className="text-[16px] text-ink-soft leading-[1.6]">{f.a}</p>
+            </Disclosure>
+          ))}
+        </div>
+      </section>
 
       {/* Depth for the pages that need it (Phase 6). Native <details> keeps
           every answer in the served HTML, so an extractor reads it whether or

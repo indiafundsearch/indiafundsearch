@@ -7,6 +7,7 @@ import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { Sources } from '@/components/eeat/Sources'
 import { RelatedReading } from '@/components/eeat/RelatedReading'
 import { Disclosure } from '@/components/shared/Disclosure'
+import { autoLink } from '@/lib/content/autoLink'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 /**
@@ -34,6 +35,20 @@ export function AnswerPage({
   marketNote?: string
 }) {
   const path = `${basePath}/${answer.slug}`
+
+  // Contextual links, first mention only, never in the capsule (rule 5).
+  const flat = answer.sections.flatMap((s) => [...s.body, ...(s.points ?? [])])
+  const linked = autoLink(flat, path)
+  // Re-shape the flat, linked list back into sections by running offset.
+  const offsets = answer.sections.reduce<number[]>(
+    (acc, s, i) => [...acc, acc[i] + s.body.length + (s.points?.length ?? 0)],
+    [0],
+  )
+  const sections = answer.sections.map((s, i) => ({
+    ...s,
+    body: linked.slice(offsets[i], offsets[i] + s.body.length),
+    points: s.points ? linked.slice(offsets[i] + s.body.length, offsets[i + 1]) : undefined,
+  }))
 
   return (
     <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
@@ -88,7 +103,7 @@ export function AnswerPage({
       </header>
 
       <div className="max-w-[820px] article-body mt-4">
-        {answer.sections.map((s) => (
+        {sections.map((s) => (
           <section key={s.h}>
             <h2>{s.h}</h2>
             {s.body.map((p) => (

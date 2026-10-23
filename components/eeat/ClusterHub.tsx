@@ -40,7 +40,7 @@ export function ClusterHub({
 
       {sections.map((s) => (
         <section key={s.heading} className="mt-14">
-          <div className="dim mb-6"><span>{s.heading}</span></div>
+          <h2 className="dim mb-6"><span>{s.heading}</span></h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {s.links.map((l) => (
               <Link

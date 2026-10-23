@@ -37,7 +37,8 @@ export const AUTHORS: Author[] = [
     arn: 'XXXXX', // TODO: VERIFY — AMFI ARN of JSL Wealth Management Pvt Ltd; owner to supply
     bio: [
       'Yash Jhaveri is the founder and CEO of Beyond, the wealth-distribution boutique behind IndiaFundSearch, based in Vadodara, Gujarat. Beyond operates within JSL Wealth Management Private Limited and is built on Jhaveri Securities Ltd, a securities business established in 1992.',
-      'Before Beyond he spent ten years at Jhaveri Securities, from 2012 to 2023, distributing across the full spectrum — equities, mutual funds, PMS, AIFs, private equity, venture and structured products — to resident families, promoters and NRIs. Beyond distributes; it does not advise. His work is with resident Indian families and with NRIs in the United States, the United Kingdom and the Gulf, on the structures that sit above mutual funds.',
+      'Before Beyond he spent ten years at Jhaveri Securities, from 2012 to 2023, distributing across the full spectrum — equities, mutual funds, PMS, AIFs, private equity, venture and structured products — to resident families, promoters and NRIs.',
+      'Beyond distributes; it does not advise. His work is with resident Indian families and with NRIs in the United States, the United Kingdom and the Gulf, on the structures that sit above mutual funds.',
       'He read at the University of Manchester. He writes the education on this site himself, and its governing idea is that the answer is sometimes "not yet" — a site that never says so is a brochure.',
     ],
     expertise: [

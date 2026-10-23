@@ -48,6 +48,20 @@ export default function TaxPage() {
           taxation and securities transaction tax. Both are covered below.{' '}
           <em className="text-bronze italic">Always confirm with your Chartered Accountant before acting.</em>
         </p>
+        {/* The answer before the table (rule 4). Link-free. */}
+        <div className="mt-6 plot-card px-6 py-5 max-w-[820px] max-sm:px-5">
+          <span className="corner corner-tl" /><span className="corner corner-tr" />
+          <span className="corner corner-bl" /><span className="corner corner-br" />
+          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+            The short answer
+          </span>
+          <p className="font-sans text-[17.5px] leading-[1.5] text-ink">
+            Listed equity, whether held through a mutual fund, a PMS or an equity SIF, is taxed at 20%
+            short-term and 12.5% long-term after 12 months. Debt of every kind is taxed at your slab
+            rate. Category I and II AIFs pass income through to you; Category III AIFs pay tax inside
+            the fund. Unlisted holdings turn long-term at 24 months.
+          </p>
+        </div>
       </div>
 
       <TaxTables />
@@ -102,10 +116,13 @@ export default function TaxPage() {
           its cost scales with turnover. A directional, low-churn portfolio barely feels a rate change.
           But <b className="text-white-warm">hedged strategies trade constantly</b>. A market-neutral
           book runs matched long and short legs and rebalances them. A long-short SIF rolls index
-          futures and options to hold its hedge. From <b className="text-white-warm">1 Apr 2026</b>,
-          futures STT rose 0.02% to 0.05%, and options-premium STT 0.10% to 0.15%. The transaction-cost
-          base of exactly these strategies stepped up. That is a permanent drag, taken straight out of
-          the spread they are trying to harvest.
+          futures and options to hold its hedge.
+        </p>
+        <p className="text-[15.5px] text-[#c7d6ce] mt-3">
+          From <b className="text-white-warm">1 Apr 2026</b>, futures STT rose 0.02% to 0.05%, and
+          options-premium STT 0.10% to 0.15%. The transaction-cost base of exactly these strategies
+          stepped up. That is a permanent drag, taken straight out of the spread they are trying to
+          harvest.
         </p>
         <p className="text-[14.5px] text-[#9db5aa] mt-3">
           The takeaway is not &ldquo;avoid them&rdquo;. It is that the{' '}
