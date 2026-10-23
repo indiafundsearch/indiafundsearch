@@ -20,7 +20,7 @@ nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
 
 ---
 
-## ⏳ Pending FROM OWNER (none block promotion) — updated 2026-09-11
+## ⏳ Pending FROM OWNER (none block promotion) — updated 2026-10-23
 
 1. **AMFI ARN** — rendering as the placeholder `XXXXX` at the owner's request
    (byline on every content page, footer, /about). Held by JSL Wealth
@@ -38,8 +38,11 @@ nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
    day. Ignored for now.
 8. **IndiaFundSearch company page on LinkedIn** — does not exist yet; Beyond's
    page is in `sameAs` meanwhile.
-9. **Search Console** — request indexing for the newly indexed URLs listed in
-   the 2026-09-11 session report (about, PFIC page, five GIFT City cluster pages).
+9. **Search Console** — request indexing for /about, /learn/us-nri-pfic and the
+   five /gift-city cluster pages; re-request the 13 product pages and the three
+   head-term articles after the 2026-10-23 structure pass (capsules + FAQ schema).
+10. **Backlinks** — the only lever left that moves the head terms off page 8.
+   Even 3–4 links from Indian finance publications or empanelled AMCs.
 
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
