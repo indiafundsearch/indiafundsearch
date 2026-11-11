@@ -74,7 +74,14 @@ Also: verify the site in **Bing Webmaster Tools** (import from Search Console,
 two minutes). ChatGPT search and Copilot draw on Bing's index.
 
 AI visibility tracking lives in OpenSEO (12 prompts × ChatGPT, Gemini, Google
-AI Overviews). Baseline run 2026-11-11.
+AI Overviews), re-checked monthly (next: 30 Nov 2026, ~72 credits).
+
+**Baseline, 2026-11-11: 36 answers, 0 brand mentions, 1 citation.** ChatGPT
+cited /learn/hmrc-reporting-fund-status-india as its FIRST source, ahead of
+gov.uk, for "Which Indian funds have HMRC reporting fund status?" and repeated
+the 18 funds / 69 share classes figure. The only page cited is the only page
+holding data nobody else has. Zero citations on the US-tax, GIFT City, PMS/AIF
+and UAE questions. Pitch drafts for earning links are in OUTREACH.md.
 
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
