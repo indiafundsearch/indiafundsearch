@@ -150,6 +150,12 @@ export interface Corridor {
   /** "At a glance" strip — [label, value] */
   facts: [string, string][];
   table: CorridorTable;
+  /**
+   * Further tables rendered straight after the main one — the filings map and,
+   * where every input is a verified rate, a worked illustration. Each caption
+   * becomes its own <h2>, so keep it question- or outcome-shaped.
+   */
+  extraTables?: CorridorTable[];
   qas: CorridorQA[];
   /** Problem-shaped headings — these rank for "…mistake" and "…wrong" queries. */
   mistakes: { m: string; why: string }[];

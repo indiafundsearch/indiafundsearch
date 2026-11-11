@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { CORRIDORS, corridorBySlug } from '@/lib/content/corridors'
-import type { Corridor } from '@/lib/content/types'
+import type { Corridor, CorridorTable } from '@/lib/content/types'
 import { DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
 import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
@@ -46,6 +46,52 @@ function H({ children, id }: { children: React.ReactNode; id?: string }) {
     </h2>
   )
 }
+
+function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable }) {
+  return (
+    <>
+      <H id={id}>{table.caption}</H>
+      <div className="overflow-x-auto plot-card">
+        <table className="table w-full border-collapse min-w-[820px]">
+          <thead>
+            <tr>
+              {table.head.map((h) => (
+                <th
+                  key={h}
+                  scope="col"
+                  className="bg-ink text-white-warm font-mono text-[10px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row) => (
+              <tr key={row[0]} className="even:[&>td]:bg-paper">
+                {row.map((cell, i) => (
+                  <td
+                    key={i}
+                    className={`px-4 py-3.5 text-[14.5px] align-top border-t border-line-soft ${
+                      i === 0 ? 'font-sans font-semibold text-ink' : 'text-ink-soft'
+                    }`}
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {table.note && (
+        <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[820px]">{table.note}</p>
+      )}
+    </>
+  )
+}
+
+const COUNT_WORDS = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten']
 
 export default async function CorridorPage({ params }: PageProps) {
   const { corridor } = await params
@@ -132,43 +178,10 @@ export default async function CorridorPage({ params }: PageProps) {
       {c.slug === 'us' && <UsPersonWarning className="mt-7 max-w-[780px]" />}
 
       {/* Comparison table — early, and independently extractable. */}
-      <H id="comparison">{c.table.caption}</H>
-      <div className="overflow-x-auto plot-card">
-        <table className="table w-full border-collapse min-w-[820px]">
-          <thead>
-            <tr>
-              {c.table.head.map((h) => (
-                <th
-                  key={h}
-                  scope="col"
-                  className="bg-ink text-white-warm font-mono text-[10px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {c.table.rows.map((row) => (
-              <tr key={row[0]} className="even:[&>td]:bg-paper">
-                {row.map((cell, i) => (
-                  <td
-                    key={i}
-                    className={`px-4 py-3.5 text-[14.5px] align-top border-t border-line-soft ${
-                      i === 0 ? 'font-sans font-semibold text-ink' : 'text-ink-soft'
-                    }`}
-                  >
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {c.table.note && (
-        <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[820px]">{c.table.note}</p>
-      )}
+      <CorridorTableBlock id="comparison" table={c.table} />
+      {c.extraTables?.map((t, i) => (
+        <CorridorTableBlock key={t.caption} id={`table-${i + 2}`} table={t} />
+      ))}
 
       {/* Question-shaped sections. Collapsed for readability, but rendered into
           the DOM via native <details> so every answer stays crawlable. */}
@@ -221,7 +234,7 @@ export default async function CorridorPage({ params }: PageProps) {
           meta={`${c.mistakes.length} to avoid`}
           title={
             <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
-              Five mistakes that cost money in this corridor
+              {COUNT_WORDS[c.mistakes.length] ?? c.mistakes.length} mistakes that cost money in this corridor
             </h2>
           }
         >

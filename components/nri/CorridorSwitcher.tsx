@@ -2,15 +2,15 @@ import Link from 'next/link'
 import { CORRIDORS } from '@/lib/content/corridors'
 
 /**
- * Persistent three-way corridor switcher. Every corridor page links to both
- * siblings, so authority is distributed rather than pooling in the hub — and a
- * reader who picked the wrong country is one click from the right one.
+ * Persistent corridor switcher. Every country guide links to every other one,
+ * so authority is distributed rather than pooling in the hub — and a reader
+ * who picked the wrong country is one click from the right one.
  */
 export function CorridorSwitcher({ current }: { current?: string }) {
   return (
-    <nav className="mt-14" aria-label="Other corridors">
-      <div className="dim mb-6"><span>Other corridors</span></div>
-      <div className="grid gap-4 sm:grid-cols-3">
+    <nav className="mt-14" aria-label="Guides for other countries">
+      <div className="dim mb-6"><span>Guides for other countries</span></div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CORRIDORS.map((c) => {
           const isCurrent = c.slug === current
           return (
