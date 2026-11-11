@@ -34,59 +34,96 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
   // (Phase 7, Task 7.3).
 ]
 
-export const revalidate = 3600
+/**
+ * Real last-modified dates, by content group. Every URL used to carry the build
+ * time, which made all 69 entries identical — and a lastmod that is always
+ * "now" is one Google learns to ignore. BUMP THE RELEVANT LINE when that
+ * content actually changes; leave the rest alone.
+ */
+const UPDATED = {
+  hubs: '2026-11-11', // home, learn, footer links to the tax clusters
+  products: '2026-11-11', // heading levels; capsules + quick answers 2026-10-23
+  corridors: '2026-11-11', // hreflang cluster removed
+  answers: '2026-10-23', // contextual links
+  usTax: '2026-10-23',
+  ukTax: '2026-10-23',
+  giftCity: '2026-10-23',
+  articles: '2026-09-11', // capsule + FAQ
+  tax: '2026-10-23',
+  about: '2026-10-23',
+  legal: '2026-09-10',
+} as const
+
+const LASTMOD: Record<string, string> = {
+  '': UPDATED.hubs,
+  '/learn': UPDATED.hubs,
+  '/fit-finder': UPDATED.legal,
+  '/tax': UPDATED.tax,
+  '/gift-city': UPDATED.giftCity,
+  '/contact': UPDATED.about,
+  '/nri': UPDATED.corridors,
+  '/learn/what-is-pms': UPDATED.articles,
+  '/learn/what-is-aif': UPDATED.articles,
+  '/learn/pms-vs-aif': UPDATED.articles,
+  '/privacy': UPDATED.legal,
+  '/disclosures': UPDATED.legal,
+  '/us-tax': UPDATED.usTax,
+  '/uk-tax': UPDATED.ukTax,
+  '/about': UPDATED.about,
+  '/learn/us-nri-pfic': UPDATED.tax,
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = SITE.url
-  const now = new Date()
+  const d = (iso: string) => new Date(`${iso}T00:00:00.000Z`)
 
   return [
     ...STATIC_ROUTES.map((entry) => ({
       url: `${siteUrl}${entry.path}`,
-      lastModified: now,
+      lastModified: d(LASTMOD[entry.path] ?? UPDATED.legal),
       changeFrequency: entry.changeFrequency,
       priority: entry.priority,
     })),
     ...PRODUCTS.map((p) => ({
       url: `${siteUrl}/learn/${p.slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.products),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     ...CORRIDORS.map((c) => ({
       url: `${siteUrl}/nri/${c.slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.corridors),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     })),
     // Long-tail answer pages — one question each.
     ...AUTHORS.map((a) => ({
       url: `${siteUrl}/about/${a.slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.about),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     })),
     ...US_TAX_SLUGS.map((slug) => ({
       url: `${siteUrl}/us-tax/${slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.usTax),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     })),
     ...GIFT_CITY_SLUGS.map((slug) => ({
       url: `${siteUrl}/gift-city/${slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.giftCity),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     ...UK_TAX_SLUGS.map((slug) => ({
       url: `${siteUrl}/uk-tax/${slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.ukTax),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     })),
     ...ANSWER_SLUGS.map((slug) => ({
       url: `${siteUrl}/learn/${slug}`,
-      lastModified: now,
+      lastModified: d(UPDATED.answers),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),

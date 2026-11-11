@@ -57,6 +57,25 @@ export default function LearnPage() {
       </div>
 
       <div className="dim my-11">
+        <span>If you file taxes outside India</span>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { href: '/us-tax', label: 'US tax for NRIs', note: 'PFIC, Form 8621 and the Form 8802 chain' },
+          { href: '/uk-tax', label: 'UK tax for NRIs', note: 'HMRC reporting funds, and the list of Indian ones' },
+          { href: '/nri', label: 'NRI corridors', note: 'US, UK and UAE, starting from where you file' },
+          { href: '/gift-city', label: 'GIFT City', note: 'Who can invest, how, and how it is taxed' },
+        ].map((l) => (
+          <Link key={l.href} href={l.href} className="plot-card px-5 py-4 hover:shadow-plot-hover transition-shadow group">
+            <span className="font-sans text-[15.5px] font-semibold leading-snug group-hover:text-bronze transition-colors">
+              {l.label} →
+            </span>
+            <span className="font-serif text-[14px] text-slate block mt-1.5 leading-snug">{l.note}</span>
+          </Link>
+        ))}
+      </div>
+
+      <div className="dim my-11">
         <span>Reference — the four structures, side by side</span>
       </div>
       <ComparisonTable />

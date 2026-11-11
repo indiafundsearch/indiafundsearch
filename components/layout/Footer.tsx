@@ -44,6 +44,11 @@ export function Footer() {
               {/* Not sheets, so no number: the pages that explain who is behind the site. */}
               {[
                 { href: '/nri', label: 'NRI corridors' },
+                // Sitewide on purpose: Search Console showed these clusters sitting
+                // "Discovered, not indexed" for two months with the sitemap as their
+                // only referrer. A footer link puts them one click from every page.
+                { href: '/us-tax', label: 'US tax for NRIs' },
+                { href: '/uk-tax', label: 'UK tax for NRIs' },
                 { href: '/about', label: 'About' },
               ].map((l) => (
                 <li key={l.href}>

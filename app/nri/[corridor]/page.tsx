@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { CORRIDORS, corridorBySlug } from '@/lib/content/corridors'
 import type { Corridor } from '@/lib/content/types'
 import { DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
-import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd, nriHreflang } from '@/lib/seo'
+import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { Sources } from '@/components/eeat/Sources'
@@ -33,9 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/nri/${c.slug}`,
     ogTitle: `NRIs in ${c.label}`,
     dynamicOg: true,
-    // Each corridor is the real regional variant for its locale — this is what
-    // finally makes the site's hreflang set mean something (P3-29).
-    languages: nriHreflang(),
   })
 }
 

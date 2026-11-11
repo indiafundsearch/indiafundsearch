@@ -4,7 +4,7 @@ import { CORRIDORS } from '@/lib/content/corridors'
 import { NRI_SPOKES } from '@/lib/content/hubs'
 import { HubSpokes } from '@/components/eeat/HubSpokes'
 import { SHEETS } from '@/lib/constants'
-import { pageMeta, breadcrumbJsonLd, nriHreflang } from '@/lib/seo'
+import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
@@ -15,7 +15,6 @@ export const metadata: Metadata = pageMeta({
   description:
     "Where you are tax-resident changes which Indian structures make sense, not just the paperwork. Corridor guides for NRIs in the US, the UAE and the UK.",
   path: '/nri',
-  languages: nriHreflang(),
 })
 
 export default function NriHubPage() {

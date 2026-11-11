@@ -38,9 +38,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function SpecList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h3 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
+      <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
         {title}
-      </h3>
+      </h2>
       <ul>
         {items.map((it) => (
           <li

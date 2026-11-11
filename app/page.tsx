@@ -136,6 +136,24 @@ export default function HomePage() {
           >
             All fundamentals + the thirteen materials →
           </Link>
+          {/* The homepage is the most-crawled page on the site; these are the
+              clusters that were three clicks away from it. */}
+          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-5">
+            Filing taxes abroad?{' '}
+            {[
+              { href: '/nri', label: 'NRI corridors' },
+              { href: '/us-tax', label: 'US tax' },
+              { href: '/uk-tax', label: 'UK tax' },
+              { href: '/gift-city/taxation', label: 'GIFT City tax' },
+            ].map((l, i) => (
+              <span key={l.href}>
+                {i > 0 && ' · '}
+                <Link href={l.href} className="text-bronze border-b border-bronze-soft hover:text-ink transition-colors">
+                  {l.label}
+                </Link>
+              </span>
+            ))}
+          </p>
         </FadeInOnScroll>
       </section>
 

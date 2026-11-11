@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { CONTACT, SITE } from './constants'
-import { CORRIDORS } from './content/corridors'
 import { ARN_IS_PLACEHOLDER, PRIMARY_AUTHOR } from './content/authors'
 
 /** Named author + publisher for E-E-A-T (P3-26). */
@@ -10,26 +9,20 @@ export const AUTHOR = {
   url: `${SITE.url}/about`,
 } as const
 
-/** Site-wide hreflang corridors for the NRI thesis (P3-29). For a page with no
- *  region-specific variant these all resolve to the same URL — self-referential
- *  and harmless. The /nri corridor cluster overrides them with real per-region
- *  URLs via `languages` below. */
+/** Site-wide hreflang locales (P3-29). Every page points all of them at
+ *  itself — self-referential and harmless. */
 export const HREFLANG = ['en-IN', 'en-AE', 'en-US'] as const
 
 /**
- * The one genuine hreflang cluster on the site: the /nri hub is the generic
- * (x-default and en-IN) version, and each corridor page is the regional variant
- * for its own market. Every page in the cluster declares the identical set, so
- * the annotations are reciprocal — which is what makes Google honour them.
+ * There is deliberately NO cross-page hreflang cluster on this site. An earlier
+ * version declared /nri/us, /nri/uae and /nri/uk as en-US / en-AE / en-GB
+ * alternates of /nri. That was wrong: hreflang says "these are the same page
+ * for different regions", and those are three different pages about three
+ * different tax systems. A reader in New Jersey researching the UAE treaty
+ * should be able to land on the UAE page. Two months in, Search Console had
+ * /nri/us and /nri/uae at "Crawled, currently not indexed" while /nri/uk was
+ * indexed (November 2026). Every page now self-references only.
  */
-export function nriHreflang(): Record<string, string> {
-  const languages: Record<string, string> = {
-    'x-default': '/nri',
-    'en-IN': '/nri',
-  }
-  for (const c of CORRIDORS) languages[c.hreflang] = `/nri/${c.slug}`
-  return languages
-}
 
 /**
  * Static default share card (Phase 7, Task 7.1). The dynamic /og edge route
@@ -69,9 +62,9 @@ interface PageMetaInput {
   /** Article-level pages use the per-page dynamic card; everything else the static one. */
   dynamicOg?: boolean
   /**
-   * Override the hreflang alternates with a real cluster — a map of locale to
-   * site-relative path (see `nriHreflang`). Omit for ordinary pages, which get
-   * the self-referential site-wide set.
+   * Override the hreflang alternates — a map of locale to site-relative path.
+   * Only for a page aimed at one market (the /us-tax and /uk-tax clusters).
+   * Omit for ordinary pages, which get the self-referential site-wide set.
    */
   languages?: Record<string, string>
 }
