@@ -47,6 +47,22 @@ function H({ children, id }: { children: React.ReactNode; id?: string }) {
   )
 }
 
+/**
+ * Corridor copy marks emphasis with literal <b> and <em> tags. They were being
+ * printed as text. Render exactly those two tags as elements and nothing else,
+ * so no raw HTML from the content file ever reaches the page.
+ */
+function renderInline(text: string): React.ReactNode[] {
+  return text.split(/(<b>.*?<\/b>|<em>.*?<\/em>)/g).map((part, i) => {
+    if (part.startsWith('<b>')) return <b key={i} className="font-semibold text-ink">{part.slice(3, -4)}</b>
+    if (part.startsWith('<em>')) return <em key={i}>{part.slice(4, -5)}</em>
+    return part
+  })
+}
+
+/** Plain-text form of the same copy, for JSON-LD. */
+const stripInline = (text: string) => text.replace(/<\/?(?:b|em)>/g, '')
+
 function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable }) {
   return (
     <>
@@ -76,7 +92,7 @@ function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable })
                       i === 0 ? 'font-sans font-semibold text-ink' : 'text-ink-soft'
                     }`}
                   >
-                    {cell}
+                    {renderInline(cell)}
                   </td>
                 ))}
               </tr>
@@ -114,7 +130,7 @@ export default async function CorridorPage({ params }: PageProps) {
           ]),
           // Mirrors the visible Q&A headings exactly — nothing lives in JSON-LD
           // that a reader (or an answer engine reading rendered HTML) can't see.
-          faqJsonLd(c.qas.map((qa) => ({ q: qa.q, a: qa.a.join(' ') }))),
+          faqJsonLd(c.qas.map((qa) => ({ q: qa.q, a: stripInline(qa.a.join(' ')) }))),
         ]}
       />
 
@@ -206,7 +222,7 @@ export default async function CorridorPage({ params }: PageProps) {
                 key={para.slice(0, 40)}
                 className={`text-[16.5px] text-ink-soft leading-[1.62] ${j > 0 ? 'mt-3' : ''}`}
               >
-                {para}
+                {renderInline(para)}
               </p>
             ))}
             {qa.sources && <Sources sources={qa.sources} compact />}

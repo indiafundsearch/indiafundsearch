@@ -218,7 +218,7 @@ export const CORRIDORS: Corridor[] = [
         q: "Does a GIFT City fund solve the PFIC problem?",
         a: [
           "Sometimes. And you cannot tell from the brochure.",
-          "PFIC rules apply only to foreign corporations. A vehicle that is genuinely a partnership, or one that has validly filed IRS Form 8832 to be taxed as a pass-through, is not itself a PFIC. Helpfully, no Indian trust, LLP or private limited company sits on the IRS list of automatic corporations. Only \\'India, Public Limited Company\\' is listed.",
+          "PFIC rules apply only to foreign corporations. A vehicle that is genuinely a partnership, or one that has validly filed IRS Form 8832 to be taxed as a pass-through, is not itself a PFIC. Helpfully, no Indian trust, LLP or private limited company sits on the IRS list of automatic corporations. Only 'India, Public Limited Company' is listed.",
           "Three cautions matter more than that headline.",
           "First, a Schedule K-1 does not end the analysis. You stay an indirect PFIC shareholder for any PFIC the fund itself holds, so a fund-of-funds can multiply your filings rather than remove them.",
           "Second, if the vehicle is classified as a trust rather than a business entity, you land in the foreign non-grantor trust throwback rules. Those carry their own interest charge and their own forms, and are about as punitive as PFIC.",
@@ -600,7 +600,7 @@ export const CORRIDORS: Corridor[] = [
           "India has a deemed-residency rule aimed at people not liable to tax anywhere. By design, that describes a UAE resident. It turns on Indian citizenship and on Indian-source income above a threshold.",
           "We are deliberately not publishing the mechanics, for two reasons.",
           "The rule is framed around Indian <em>citizens</em>, and Overseas Citizen of India status is expressly not citizenship. So many readers assume it catches them when it may not.",
-          "And the consequence is routinely overstated. Where the rule bites it generally produces a \\'not ordinarily resident\\' status, under which Indian-source income is taxable rather than your worldwide income.",
+          "And the consequence is routinely overstated. Where the rule bites it generally produces a 'not ordinarily resident' status, under which Indian-source income is taxable rather than your worldwide income.",
           "India also replaced its entire income tax statute on 1 April 2026, so any page quoting section numbers for this is quoting a repealed Act. Take it to your Chartered Accountant with your actual day counts and income figures. It is a five-minute question for someone with the current text in front of them, and a bad thing to guess at.",
         ],
         sources: [
