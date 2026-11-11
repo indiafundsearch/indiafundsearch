@@ -3,7 +3,7 @@ import { Space_Grotesk, Newsreader, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Analytics } from '@/components/shared/Analytics'
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 import { LeadGate } from '@/components/gate/LeadGate'
 import { JsonLd } from '@/components/shared/JsonLd'
@@ -92,8 +92,8 @@ export default function RootLayout({
         <JsonLd data={[organizationJsonLd(), personJsonLd()]} />
       </head>
       <body className="min-h-full flex flex-col">
-        <Analytics />
         <VercelAnalytics />
+        <GoogleAnalytics />
         <LeadGate />
         <Header />
         <main className="flex-1">{children}</main>

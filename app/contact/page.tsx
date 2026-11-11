@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ContactForm } from '@/components/contact/ContactForm'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 import { CONTACT, DISCLOSURE, SHEETS, whatsappHref, SITE } from '@/lib/constants'
+import { TrackedContactLink } from '@/components/analytics/TrackedContactLink'
 import { pageMeta } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
@@ -37,7 +38,9 @@ export default function ContactPage() {
         <ContactForm />
 
         <div className="space-y-4">
-          <a
+          <TrackedContactLink
+            channel="whatsapp"
+            placement="contact_page"
             href={whatsappHref()}
             target="_blank"
             rel="noopener noreferrer"
@@ -50,10 +53,12 @@ export default function ContactPage() {
             <p className="text-[14px] text-[#c7d6ce] mt-1.5">
               Straight to a human. Usually minutes, not days.
             </p>
-          </a>
+          </TrackedContactLink>
 
           {CONTACT.calendlyUrl && (
-            <a
+            <TrackedContactLink
+              channel="booking"
+              placement="contact_page"
               href={CONTACT.calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -66,10 +71,12 @@ export default function ContactPage() {
               <p className="text-[14px] text-slate mt-1.5">
                 Pick a slot that suits you. 30 minutes, agenda yours.
               </p>
-            </a>
+            </TrackedContactLink>
           )}
 
-          <a
+          <TrackedContactLink
+            channel="email"
+            placement="contact_page"
             href={`mailto:${CONTACT.email}`}
             className="block plot-card px-6 py-6 hover:shadow-plot-hover transition-shadow"
           >
@@ -78,7 +85,7 @@ export default function ContactPage() {
             </span>
             <span className="font-sans font-bold text-[18px]">{CONTACT.email}</span>
             <p className="text-[14px] text-slate mt-1.5">Reply within one working day.</p>
-          </a>
+          </TrackedContactLink>
         </div>
       </div>
 

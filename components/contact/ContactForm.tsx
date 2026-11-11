@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackEvent } from '@/lib/analytics/ga'
 
 type State = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -42,6 +43,7 @@ export function ContactForm() {
           message: form.message || undefined,
         }),
       })
+      if (res.ok) trackEvent({ name: 'enquiry_form_submit_success', params: { form_name: 'contact' } })
       setState(res.ok ? 'sent' : 'error')
     } catch {
       setState('error')

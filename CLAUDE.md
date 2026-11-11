@@ -25,6 +25,12 @@ tools:
 
 ## Amendment Log
 
+- **v2.1.0 (2026-11-11)** — analytics. Plausible is REMOVED (it was never
+  configured). Vercel Analytics stays. Google Analytics 4 is added behind a
+  first-party consent banner and an env variable; see `ANALYTICS.md`. All GA4
+  calls go through `lib/analytics/ga.ts`, which allowlists events and
+  parameters. Never send form values or Fit Finder answers to analytics.
+
 - **v2.0.0 (2026-07-06)** — FULL REBUILD, approved by owner. The site is now
   **"The Architecture of Alternatives"** — an education-first drawing-set-styled
   platform co-branded **IndiaFundSearch · A Beyond Initiative**:

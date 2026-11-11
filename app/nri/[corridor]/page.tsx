@@ -13,6 +13,7 @@ import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
 import { CorridorAccessForm } from '@/components/nri/CorridorAccessForm'
 import { Disclosure } from '@/components/shared/Disclosure'
+import { TrackedContactLink } from '@/components/analytics/TrackedContactLink'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 interface PageProps {
@@ -313,7 +314,9 @@ export default async function CorridorPage({ params }: PageProps) {
             first.
           </p>
         </div>
-        <a
+        <TrackedContactLink
+          channel="whatsapp"
+          placement="nri_page"
           href={whatsappHref(
             `Hello team, I'm an NRI resident in ${c.label} and I'd like to understand which Indian structures are open to me.`,
           )}
@@ -322,7 +325,7 @@ export default async function CorridorPage({ params }: PageProps) {
           className="font-sans text-[14px] font-medium tracking-[0.08em] uppercase px-6 py-3 rounded-[3px] bg-ink text-white-warm border-[1.5px] border-ink hover:bg-bronze hover:border-bronze transition-colors shrink-0"
         >
           Talk to the desk →
-        </a>
+        </TrackedContactLink>
       </div>
 
       {c.related && <RelatedReading links={c.related} heading="Go deeper" />}

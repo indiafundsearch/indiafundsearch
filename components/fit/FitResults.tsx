@@ -9,6 +9,7 @@ import {
   scoreFit,
   type FitAnswers,
 } from '@/lib/utils/fitScoring'
+import { trackEvent } from '@/lib/analytics/ga'
 
 interface FitResultsProps {
   answers: FitAnswers
@@ -50,6 +51,9 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
           fitShortlist: shortlist,
         }),
       })
+      // Only a server-acknowledged save counts. A click, a validation error or a
+      // failed request never reaches this line with res.ok true.
+      if (res.ok) trackEvent({ name: 'blueprint_form_submit_success' })
       setGate(res.ok ? 'sent' : 'error')
     } catch {
       setGate('error')

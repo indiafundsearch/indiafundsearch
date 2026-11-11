@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackEvent } from '@/lib/analytics/ga'
 import type { GiftProduct } from '@/lib/gift/data'
 
 type State = 'idle' | 'sending' | 'sent' | 'error'
@@ -36,6 +37,7 @@ export function GiftEnquiryForm({ product }: { product: GiftProduct }) {
           giftDirection: product.direction === 'inbound' ? 'Inbound — Into India' : 'Outbound — Global',
         }),
       })
+      if (res.ok) trackEvent({ name: 'enquiry_form_submit_success', params: { form_name: 'gift_enquiry' } })
       setState(res.ok ? 'sent' : 'error')
     } catch {
       setState('error')

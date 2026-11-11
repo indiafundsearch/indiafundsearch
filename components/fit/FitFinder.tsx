@@ -3,12 +3,32 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { FIT_QUESTIONS } from '@/lib/content/fitFinder'
 import type { FitAnswers } from '@/lib/utils/fitScoring'
+import { trackEvent } from '@/lib/analytics/ga'
 import { FitResults } from './FitResults'
 
 type PartialAnswers = Partial<FitAnswers>
 type Progress = { step: number; answers: PartialAnswers; restored: boolean }
 
 const STORAGE_KEY = 'ifs-fit-progress'
+/** Highest step already reported to analytics in this run. Kept in session
+ *  storage so a refresh, a Back, or a re-render never reports a step twice. */
+const REPORTED_KEY = 'ifs-fit-reported'
+
+function reportedStep(): number {
+  try {
+    return Number(sessionStorage.getItem(REPORTED_KEY) ?? 0) || 0
+  } catch {
+    return 0
+  }
+}
+
+function setReportedStep(step: number) {
+  try {
+    sessionStorage.setItem(REPORTED_KEY, String(step))
+  } catch {
+    /* ignore */
+  }
+}
 /** Long enough for the selected state to register, short enough not to feel laggy. */
 const ADVANCE_MS = 260
 
@@ -54,6 +74,23 @@ export function FitFinder() {
 
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current) }, [])
 
+  // Funnel events. `step` is the number of questions answered so far, so
+  // reaching step 1 for the first time is the first answer: that is the start.
+  // Each step is reported once, when it is first reached. Going back and
+  // forward again, refreshing, or restoring a saved run reports nothing new.
+  // Only step numbers are sent, never the answers.
+  useEffect(() => {
+    if (!restored) return
+    const already = reportedStep()
+    if (step <= already) return
+    setReportedStep(step)
+    for (let n = already + 1; n <= step; n += 1) {
+      if (n === 1) trackEvent({ name: 'fit_finder_start' })
+      trackEvent({ name: 'fit_finder_step', params: { step_number: n } })
+    }
+    if (step >= FIT_QUESTIONS.length) trackEvent({ name: 'fit_finder_complete' })
+  }, [step, restored])
+
   const goTo = useCallback((next: number) => {
     setProgress((p) => ({ ...p, step: Math.max(0, next) }))
   }, [])
@@ -63,6 +100,7 @@ export function FitFinder() {
     setProgress({ step: 0, answers: {}, restored: true })
     try {
       sessionStorage.removeItem(STORAGE_KEY)
+      sessionStorage.removeItem(REPORTED_KEY)
     } catch {
       /* ignore */
     }

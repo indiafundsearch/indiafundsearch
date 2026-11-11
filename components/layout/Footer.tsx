@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { CONTACT, DISCLOSURE, NAV_LINKS, SITE, whatsappHref } from '@/lib/constants'
+import { TrackedContactLink } from '@/components/analytics/TrackedContactLink'
+import { CookieSettingsLink } from '@/components/analytics/CookieSettingsLink'
 import { PRIMARY_AUTHOR } from '@/lib/content/authors'
 import { Logo } from '@/components/shared/Logo'
 
@@ -70,34 +72,40 @@ export function Footer() {
             </p>
             <ul className="space-y-2 font-sans text-[14px]">
               <li>
-                <a
+                <TrackedContactLink
+                  channel="whatsapp"
+                  placement="footer"
                   href={whatsappHref()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#c7d6ce] hover:text-white-warm transition-colors"
                 >
                   WhatsApp the desk ↗
-                </a>
+                </TrackedContactLink>
               </li>
               {CONTACT.calendlyUrl && (
                 <li>
-                  <a
+                  <TrackedContactLink
+                    channel="booking"
+                    placement="footer"
                     href={CONTACT.calendlyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#c7d6ce] hover:text-white-warm transition-colors"
                   >
                     Book a conversation ↗
-                  </a>
+                  </TrackedContactLink>
                 </li>
               )}
               <li>
-                <a
+                <TrackedContactLink
+                  channel="email"
+                  placement="footer"
                   href={`mailto:${CONTACT.email}`}
                   className="text-[#c7d6ce] hover:text-white-warm transition-colors"
                 >
                   {CONTACT.email}
-                </a>
+                </TrackedContactLink>
               </li>
             </ul>
           </div>
@@ -126,6 +134,7 @@ export function Footer() {
             <Link href="/privacy" className="hover:text-white-warm underline underline-offset-2">
               Privacy Policy
             </Link>
+            <CookieSettingsLink className="ml-2 before:content-['·'] before:mr-2 hover:text-white-warm underline underline-offset-2" />
           </p>
         </div>
       </div>
