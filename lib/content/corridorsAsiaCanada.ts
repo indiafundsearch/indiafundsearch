@@ -4,7 +4,12 @@ import {
   CHECK_STATUS,
   INDIA_RESIDENCE_QA,
   INDIA_SOURCES,
+  CHECK_ADVISER,
+  CHECK_PMS_REPORTING,
+  MISTAKE_ADVICE_LATER,
+  MISTAKE_INDIAN_LOGIC,
   MISTAKE_REFUND,
+  WHY_INDIA_QA,
   MISTAKE_STATUS,
   NEW_COMMON,
   RELATED_COMMON,
@@ -239,6 +244,18 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         note: "Budget 2026, tabled on 5 November 2026, proposes raising the T1135 threshold to CAD 200,000 and the simplified-method ceiling to CAD 500,000 for years ending after 2026. It is a proposal. The 2026 tax year runs on the current figures.",
       },
+      {
+        caption: "What the offshore fund rule could cost over ten years",
+        head: ["Step", "Amount", "Assumption"],
+        rows: [
+          ["Cost of fund units", "CAD 200,000", "Held for ten full years, no distributions"],
+          ["Deemed income, year 1", "CAD 10,000", "A 5% factor: the 3% prescribed rate for late 2026, plus 2 points"],
+          ["Deemed income, ten years", "About CAD 125,800", "The factor stays at 5%, and each year's inclusion is added to cost"],
+          ["Tax on that income", "About CAD 62,900", "A combined federal and provincial marginal rate of 50%"],
+          ["Cost base at the end", "About CAD 325,800", "The inclusions reduce the gain taxed on sale"],
+        ],
+        note: "An illustration built on two assumptions that will not hold exactly: the prescribed rate changes every quarter, and your marginal rate depends on your province and income. The point is the shape. The tax is paid in cash each year, and it is owed even in a year the fund loses value.",
+      },
     ],
     qas: [
       {
@@ -257,7 +274,7 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
           "Two conditions must both be met. First, you hold a share of, an interest in, or a debt of a non-resident entity whose value may reasonably be considered to derive primarily from portfolio investments. A fund that holds listed shares and bonds fits that description.",
           "Second, it must be reasonable to conclude that one of your main reasons for holding it was to benefit from those portfolio investments in a way that leaves the tax on them significantly lower than if you had earned the income directly.",
           "The Act lists what to weigh for that second test. It includes how heavily the fund's income is taxed abroad compared with Canada, and how much of its income the fund distributes each year. A growth-option fund that distributes nothing does not help you on that last point.",
-          "So the answer is not automatic either way. It turns on your facts. This is the question to put to a Canadian tax adviser before you buy, with the fund's distribution policy in hand.",
+          "So the answer is not automatic either way. The motive test is subjective, and the cautious working assumption for an Indian mutual fund is that it is met. Put the question to a Canadian tax adviser before you buy, with the fund's distribution policy in hand.",
         ],
         sources: [CA.s941],
       },
@@ -300,6 +317,25 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         sources: [CA.newcomers],
       },
+      {
+        q: "Why do many Indian fund houses turn away Canadian residents?",
+        a: [
+          "Many Indian fund houses decline investors with a Canadian address, often in the same breath as US addresses. It is a policy set fund house by fund house, in each scheme's own documents.",
+          "The reason usually given is Canadian securities regulation. A foreign firm that deals with ordinary Canadian residents generally needs to be registered in Canada, and the exemptions for international firms are built around institutional and very wealthy clients. Reporting obligations add to the cost.",
+          "We have not found an Indian regulator's rule that requires the exclusion. Treat it as a commercial decision that varies between houses and can change.",
+        ],
+      },
+      {
+        q: "Are direct Indian shares or a PMS safer than funds for a Canadian resident?",
+        a: [
+          "For most holdings, yes, on the offshore fund rule. That rule looks at entities whose value comes mainly from portfolio investments. A bank, a manufacturer or a software company does not fit that description. An investment holding company can.",
+          "So shares of operating companies held in your own name generally sit outside the rule. You are left with ordinary capital gains tax on sale, in both countries, with a credit.",
+          "A portfolio management account works the same way, because the shares are in your name. Two details undo the benefit. If the manager parks idle cash in a liquid or overnight fund, that fund is a pooled vehicle. So is any exchange-traded fund in the portfolio, including a gold fund. Ask the manager to hold cash as cash.",
+          "Shares bring their own work. Every sale is a disposal to report in Canadian dollars, and trading Indian market hours from Canada is impractical for most people. That is the usual argument for a manager who understands the pooled-vehicle rule.",
+        ],
+        sources: [CA.s941],
+      },
+      WHY_INDIA_QA,
       indiaTaxQA("Canada"),
       indiaPaperworkQA(
         "The Canada–India treaty gives an individual no lower Indian rate on gains or dividends, so for most Canadian residents this matters only when claiming back tax that was over-deducted.",
@@ -324,9 +360,17 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         m: "Arriving in Canada without recording what your Indian holdings were worth that day",
         why: "Your Canadian cost is the fair market value on the day you became resident. Without evidence of it you cannot show how much of a later gain belongs to Canada.",
       },
+      {
+        m: "Letting a portfolio manager park your idle cash in a liquid fund or an ETF",
+        why: "Those are pooled vehicles. They bring the offshore fund question back for that part of the portfolio.",
+      },
+      MISTAKE_ADVICE_LATER,
+      MISTAKE_INDIAN_LOGIC,
       MISTAKE_STATUS,
     ],
     checklist: [
+      CHECK_ADVISER,
+      CHECK_PMS_REPORTING,
       "Confirm the date you became a Canadian resident, and save the value of every Indian holding on that date.",
       "Add up the cost of all foreign property. Above CAD 100,000 at any point in the year, file Form T1135.",
       "For each fund holding, ask a Canadian adviser whether the offshore investment fund rule applies to you, and bring the fund's distribution record.",
@@ -532,6 +576,26 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         sources: [SG.keskar, SRC.form41],
       },
+      {
+        q: "How long does the refund take, and what does it cost?",
+        a: [
+          "Longer than most people expect. Treat the following as what practitioners report, not as published rules.",
+          "A residency certificate is generally issued for a completed year. The Indian return for a sale is filed after the Indian tax year ends. Put the two together and a refund can arrive one to two years after the sale. Sell in April 2026 and it may be early 2028 before the money is back.",
+          "A Chartered Accountant will typically charge around ₹20,000 to ₹25,000 to run the certificate, the form and the return. Against the tax at stake on a meaningful redemption, that is usually money well spent.",
+          "The cash-flow point matters for planning. The tax deducted is out of your hands for that whole period.",
+        ],
+      },
+      {
+        q: "So should a Singapore resident prefer mutual funds or shares?",
+        a: [
+          "On tax alone, the treaty reading favours fund units for a long-term Singapore resident who will do the paperwork. If the reading holds, the Indian tax comes back. If it is overturned, you pay what a share investor pays anyway. The downside is the ordinary rate, not a penalty.",
+          "That is a conditional answer. It assumes you are clearly resident in Singapore and not in India, that you are not arranging your residence around a sale, and that you can leave the deducted tax outstanding until the refund.",
+          "Shares still make sense if you have real conviction in picking them, or want dividends, which the treaty taxes at up to 15% either way.",
+          "Tax should not be the only reason to choose a vehicle. Here it happens to point one way, with the caveats above.",
+        ],
+        sources: [SG.treaty],
+      },
+      WHY_INDIA_QA,
       indiaTaxQA("Singapore"),
       indiaPaperworkQA(
         "For Singapore that is a Certificate of Residence from IRAS, applied for online. IRAS says applications are processed in two to three weeks.",
@@ -556,10 +620,19 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         m: "Expecting dividends to be covered by the same argument",
         why: "They are not capital gains. The treaty lets India tax dividends at up to 15% for an individual investor.",
       },
+      {
+        m: "Moving to Singapore for a few months in order to sell",
+        why: "India's own residence tests look back over four years, so a short stay may not make you non-resident. The treaty's principal purpose test is aimed at exactly this kind of arrangement.",
+      },
+      {
+        m: "Treating Singapore and Hong Kong as interchangeable",
+        why: "The two treaties end their capital gains articles differently. Hong Kong's lets India tax mutual fund gains.",
+      },
       MISTAKE_REFUND,
       MISTAKE_STATUS,
     ],
     checklist: [
+      CHECK_ADVISER,
       "Confirm you are Singapore tax-resident for the year of sale, and check your Indian day count for the same period.",
       "Separate your holdings into shares bought before 1 April 2017, shares bought after, and fund units. Each has a different answer.",
       "Apply to IRAS for a Certificate of Residence, then file India's online treaty form.",
@@ -702,7 +775,7 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         q: "Does Hong Kong tax my Indian gains or dividends?",
         a: [
           "Hong Kong taxes on a territorial basis. Its Inland Revenue Department says profits tax is charged on profits arising in or derived from Hong Kong from a trade, profession or business carried on there, and that a resident may derive profits from abroad without being charged to tax.",
-          "Profits from the sale of capital assets are excluded from profits tax.",
+          "Profits from the sale of capital assets are excluded from profits tax. Because the system looks at where income arises, not where it ends up, foreign investment income is not taxed merely because you bring the money into Hong Kong.",
           "Hong Kong does have a regime that taxes some foreign-sourced income. It applies only to entities in multinational groups. The department defines an entity as a legal person other than a natural person, so individuals are outside it.",
           "As with any such system, someone carrying on a trade in securities is in a different position from an investor.",
         ],
@@ -718,6 +791,7 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         sources: [HK.cor, HK.form, HK.treaty, SRC.form41],
       },
+      WHY_INDIA_QA,
       indiaTaxQA("Hong Kong"),
       indiaPaperworkQA(
         "For Hong Kong that is a Certificate of Resident Status from the Inland Revenue Department, applied for on Form IR1314B.",
@@ -741,6 +815,7 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
       MISTAKE_STATUS,
     ],
     checklist: [
+      CHECK_ADVISER,
       "Budget for Indian capital gains tax on both shares and fund units. The agreement does not remove it.",
       "If you hold dividend-paying Indian shares, apply for a Certificate of Resident Status on Form IR1314B.",
       "File India's online treaty form with the certificate, and an Indian return if tax was over-deducted.",

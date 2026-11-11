@@ -1,4 +1,4 @@
-# NRI country guides — change log, 11 November 2026
+# NRI country guides — change log, 11 November 2026 (two passes)
 
 Source brief: owner's notes on three podcast episodes about NRIs investing in
 India. The podcast is not named or quoted anywhere on the site (owner's
@@ -120,39 +120,50 @@ Budget of 28 Oct 2026; treaty Articles 11 and 14; reporting funds list updated
   period, debt-heavy fund units always short-term, 20% on dividends to
   non-residents, refunds by filing a return. These match `/tax`.
 
-## 4. Claims omitted — for owner review
+## 4. Claims from the notes published on the owner's instruction (second pass, 11 Nov 2026)
 
-Not published. Each is either unverifiable from here or contradicted.
+The owner reviewed the omitted list and instructed that the claims be
+implemented. These are now on the pages. Where a claim was not read at source,
+the page says "reported" or "generally described", so a reader can tell.
 
-| Claim in the notes | Why it is out |
+| Claim | Where | Basis |
+|---|---|---|
+| Tax deducted at source: 20% short-term, 12.5% long-term, 20% on dividends; 4% cess | Every guide | Notes; matches `/tax`. Not read in the Finance Act, 2026 |
+| Form 41 is the renamed Form 10F | Every guide | Notes and existing site copy. Portal manual names only Form 41 |
+| US: wrong wrapper costs about half the gain, the right one about a quarter | `/nri/us` | Rebuilt as our own US $100,000 illustration from verified 2026 rates. The credit-timing assumption is stated |
+| US: sell or transfer Indian funds before becoming a US tax resident | `/nri/us` | Notes. The page warns that a later gift can itself be a disposal (proposed regulations) |
+| US: US-born children are US persons; idle PMS cash in liquid funds is a PFIC | `/nri/us` | Notes; consistent with the statute |
+| Canada: ten-year cost of the offshore fund rule | `/nri/canada` | Our own CAD 200,000 illustration. Assumes a constant 5% factor and a 50% combined marginal rate, both stated |
+| Canada: why fund houses decline Canadian residents | `/nri/canada` | Notes. Worded as the reason usually given; no regulator rule found |
+| Canada: direct shares and PMS, cash-parking and ETF caveats | `/nri/canada` | Notes, corrected to the statute: operating companies, not "any stock" |
+| Singapore: certificate for a completed year, refund in one to two years, CA fee of ₹20,000–25,000 | `/nri/singapore` | Notes. Worded as what practitioners report |
+| Singapore, UAE, Saudi Arabia, Qatar, Oman: funds or shares? | Each guide | Notes' conclusion, published as a conditional answer with its assumptions |
+| Hong Kong: foreign investment income not taxed even when brought in | `/nri/hong-kong` | Follows from the territorial basis the IRD describes |
+| Saudi Arabia: no personal income tax or capital gains tax on an expatriate's investments | `/nri/saudi-arabia` | Notes. Worded as generally described |
+| Oman: 2028 tax reaches worldwide income including foreign dividends and gains | `/nri/oman` | Notes. Worded as widely reported |
+| Qatar: in force 10 Sep 2025, applies in India from 1 Apr 2026 | `/nri/qatar` | Notes and an Indian notification seen only as a search extract |
+| Kuwait: treaty follows the UAE pattern; dividends capped at 10–15%; no local tax | `/nri/kuwait` | Notes only. The page says this is second-hand |
+| Bahrain: unilateral relief does not help; no local tax; treaty talks reported | `/nri/bahrain` | Notes; relief mechanism as described in Indian law |
+| UAE: dividends capped at 10% | `/nri/uae` | Search extract of the treaty text. Worded as reported |
+| Common mistakes and checklist: advice before investing, Indian logic abroad, returns in home currency, PMS reporting | Every guide | Notes |
+| When rupee exposure makes sense regardless of the currency | Every guide | Notes. Reasoning, not a forecast |
+
+### Not published, and why
+
+| Claim | Reason |
 |---|---|
-| Percentage of tax deducted at source on sale or redemption (20% / 12.5%) | Depends on the Finance Act, 2026, which could not be read. incometaxindia.gov.in refuses automated readers |
-| Whether the ₹1.25 lakh threshold is applied at source | Not found in any source read |
-| Anything the Finance Act, 2026 changed; cess rate for tax year 2026-27 | Not read |
-| "Form 10F is now Form 41" | The portal manual names Form 41 and never mentions Form 10F. New copy says "India's treaty-information form". **Decision needed:** existing pages still say "Form 10F, now Form 41" |
-| FATCA/CRS rule and form numbers under the 2026 Rules | Search snippets only |
-| Combined US cost of ~50% on mutual funds, ~24% on stocks; "57%" trapped-loss example | Podcast arithmetic. Replaced with mechanism and verified rates |
-| "~8% interest charge" under the PFIC default regime | IRS underpayment rate was 7%, 6%, 7%, 7% across 2026 |
-| Gift or transfer Indian funds to family before moving to the US | Rests on proposed regulations never finalised; a gift can itself be a disposition |
-| Named Indian companies as PFIC examples | Unverifiable; would be a statement about real companies |
-| Why Indian fund houses decline US and Canadian residents | No SEBI, AMFI or Canadian regulator source read for the Canadian explanation |
-| Canada: "direct stocks of any type are fine" | The rule tests each company; a blanket statement is wrong |
-| Canada: combined ~50% marginal rate; ~₹31 lakh / ₹68 lakh totals | Provincial rates not verified; totals assume a fixed prescribed rate |
-| Canada: how courts have applied the motive test | Case law not read at source |
-| Singapore: certificates issued only after the year ends; refunds take 1–2 years | IRAS individual page says nothing on years |
-| Singapore: CA fee of ₹20–25k | Not a verifiable fact |
-| Singapore/Gulf: "mutual fund route clearly preferable" | Blanket verdict; excluded by the brief |
-| Hong Kong: offshore income not taxed "even if remitted" | No IRD sentence in those words |
-| Saudi Arabia: no tax at all on an expatriate's investment income; treaty in-force date | No official statement read |
-| Dividend rates "10–15% for others" in the Gulf | Read per treaty instead: Saudi 5%, Qatar 10%, Oman 12.5% (1997 text). UAE current rate and Kuwait rate not read, so not stated |
-| Kuwait: capital gains, residence and dividend articles | Kuwait's finance ministry site refused the connection; no Indian order quotes them |
-| Oman: what the January 2025 protocol changed; whether the 2028 tax covers foreign dividends and gains; certificate procedure | Protocol link serves the wrong file; law text unreadable |
-| Qatar: date the 2025 agreement entered into force (reported as 10 Sep 2025) | Search snippet only |
-| Bahrain: Section 91 relief; reported start of treaty negotiations | Joint statement text could not be read |
-| Macro views (rupee depreciation, oil find, current account) | Speaker opinion, out of scope |
+| "~8% interest" on the PFIC default regime | Contradicted. The IRS rate was 7%, 6%, 7%, 7% in 2026; the page prints those |
+| Canada: "direct stocks of any type are fine" | Contradicted by the statute, which tests each company. Published in the corrected form |
+| Qatar: the residual clause "may have been removed" | Contradicted. The 2025 text keeps it |
+| Named Indian companies as PFIC examples | A statement about the US tax status of specific real companies, with no source. The page describes the types instead |
+| The "famous e-commerce founder" relocation example | An allegation about an identifiable person |
+| Oil-find, current-account and rupee forecasts | The speaker's own estimates, described in the notes as not consensus |
+| The podcast's exact rupee totals and slides | Copyright; replaced by our own illustrations |
+| Whether the ₹1.25 lakh threshold is applied at source | The notes do not say, and no source was found |
 
-**One contradiction found:** the notes say the Qatar treaty "may have removed"
-the residual clause. The 2025 text keeps it (Article 13(6)).
+**Still open:** these claims were published on instruction, not on verification.
+If any proves wrong, the pages name their sources and the wording is easy to
+find: search the content files for "reported" and "generally described".
 
 ## 5. Technical audit of the live site (before this change)
 

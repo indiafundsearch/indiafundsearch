@@ -21,10 +21,13 @@ import type { Corridor, CorridorQA, Source } from "./types";
  *   - refunds claimed by filing a return.
  *   These match the owner-confirmed figures on /tax.
  *
- * NOT read anywhere, and therefore NOT printed:
- *   - the percentage deducted at source on sale or redemption proceeds;
- *   - whether the ₹1.25 lakh threshold is applied at source;
- *   - anything the Finance Act, 2026 changed.
+ * NOT read at source, but PUBLISHED on the owner's instruction of 11 November
+ * 2026 (they match /tax, which the owner had already confirmed):
+ *   - deduction at source of 20% / 12.5% on equity gains and 20% on dividends;
+ *   - the 4% cess;
+ *   - that Form 41 is the renamed Form 10F.
+ * Still not printed: whether the ₹1.25 lakh threshold is applied at source,
+ * and anything the Finance Act, 2026 changed.
  *
  * Same editorial rule as corridors.ts: no Indian section numbers.
  */
@@ -87,7 +90,8 @@ export function indiaTaxQA(country: string): CorridorQA {
       "On listed Indian shares and equity mutual fund units held for more than twelve months, India charges <b>12.5% on gains above ₹1.25 lakh</b> in a tax year. Sold within twelve months, the rate is <b>20%</b>. Surcharge and cess are added on top of both.",
       "Debt-heavy funds work differently. Units of a fund with more than 65% in debt and money-market instruments, bought on or after 1 April 2023, are always treated as short-term, however long you hold them.",
       "Dividends paid to a non-resident are taxed at 20% before surcharge and cess, unless a treaty sets a lower rate and you have filed the paperwork for it.",
-      "Tax is deducted at source when a non-resident is paid, so what lands in your account is already net. The amount deducted is not always your final liability. Check the figure on your contract note or redemption statement, and treat any excess as something to claim back.",
+      "Tax is deducted at source when a non-resident is paid, so what lands in your account is already net. The deduction is generally 20% on short-term and 12.5% on long-term equity gains, and 20% on dividends, with surcharge and a 4% cess on top.",
+      "The amount deducted is not always your final liability. Check the figure on your contract note or redemption statement, and treat any excess as something to claim back.",
     ],
     sources: [SRC.act2025],
   };
@@ -103,7 +107,7 @@ export function indiaPaperworkQA(
     a: [
       "Three things, in this order.",
       `<b>A residency certificate</b> from your own tax authority. ${certificate}`,
-      "<b>India's treaty-information form.</b> It is filed on the Indian income-tax e-filing portal and can only be submitted online. The portal lists your residency certificate as a prerequisite, so get the certificate first.",
+      "<b>India's treaty-information form, Form 41.</b> Until April 2026 it was Form 10F, and most people still call it that. It is filed on the Indian income-tax e-filing portal and can only be submitted online. The portal lists your residency certificate as a prerequisite, so get the certificate first.",
       "<b>An Indian tax return</b> for the year, if you are owed money back. Indian law says a refund claim is made by filing a return. Nothing is refunded automatically, and a treaty rate you never claimed is simply tax you paid.",
       "Keep the three consistent: the same name, the same period, the same country of residence on each.",
     ],
@@ -137,6 +141,33 @@ export const MISTAKE_REFUND = {
   m: "Assuming a treaty rate applies by itself",
   why: "Tax is deducted when you are paid. Relief needs a residency certificate, the online treaty form and, for a refund, an Indian return. Skip one and the deduction stands.",
 };
+
+/** The decision behind the tax question. Reasoning, not a forecast. */
+export const WHY_INDIA_QA: CorridorQA = {
+  q: "Is it worth holding rupee investments at all if I live abroad?",
+  a: [
+    "That depends on what the money is for, and it is worth answering before the tax question.",
+    "If you earn and spend in another currency, measure the return in that currency. A rupee return can look strong and still be ordinary once the exchange rate has moved. The opposite mistake is just as common: judging India only in foreign-currency terms and concluding there is no return at all.",
+    "There are cases where rupee exposure makes sense whatever the currency does. You plan to return to India. You support parents or family there. You expect an inheritance that will stay in India. You have rupee income or rupee spending, such as property upkeep or giving.",
+    "In those cases the currency question mostly answers itself. What is left is the one this page is about: how to hold those rupees so that two tax systems do not take more than they need to.",
+  ],
+};
+
+export const MISTAKE_ADVICE_LATER = {
+  m: "Investing first and taking tax advice afterwards",
+  why: "The wrapper is hard to change once you are in it. Selling to fix the structure is itself a taxable event, in India and usually at home as well.",
+};
+
+export const MISTAKE_INDIAN_LOGIC = {
+  m: "Assuming advice that works for a resident Indian works for you",
+  why: "India taxes equity funds and shares at the same rates, so Indian advice rarely distinguishes between them. Your country of residence may treat the two very differently.",
+};
+
+export const CHECK_ADVISER =
+  "Take advice from someone qualified in your country of residence before you invest or before you move, not after. Do not self-file cross-border returns from a blog post.";
+
+export const CHECK_PMS_REPORTING =
+  "If you use an Indian portfolio manager, confirm in writing that they provide transaction-level statements in a form your home-country return can use.";
 
 export const CHECK_STATUS =
   "Update your residential status with your Indian bank and fund houses, and move resident accounts to NRO.";

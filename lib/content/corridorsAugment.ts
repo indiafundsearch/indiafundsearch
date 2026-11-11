@@ -1,7 +1,10 @@
 import type { Corridor, CorridorQA, CorridorTable } from "./types";
 import {
   INDIA_SOURCES,
+  MISTAKE_ADVICE_LATER,
+  MISTAKE_INDIAN_LOGIC,
   MISTAKE_STATUS,
+  WHY_INDIA_QA,
   SRC,
   indiaTaxQA,
 } from "./corridorsShared";
@@ -59,6 +62,10 @@ const US = {
   fbar: {
     label: "IRS — Report of Foreign Bank and Financial Accounts (FBAR)",
     url: "https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar",
+  },
+  interest: {
+    label: "IRS — quarterly interest rates",
+    url: "https://www.irs.gov/payments/quarterly-interest-rates",
   },
   iga: {
     label: "India–US FATCA intergovernmental agreement (signed 9 July 2015)",
@@ -152,19 +159,50 @@ export const AUGMENT: Record<string, CorridorAugment> = {
         ],
         note: "Filing Form 8938 does not replace the FBAR. The two go to different agencies and both can apply to the same account.",
       },
+      {
+        caption: "The same US $100,000, as a mutual fund and as direct shares",
+        head: ["Route", "US tax", "Indian tax", "Total, as a share of the gain"],
+        rows: [
+          [
+            "Indian mutual fund, mark-to-market election",
+            "About $77,900, paid year by year at 37% on each year's rise",
+            "About $26,300 at exit, at 12.5%",
+            "Just under 50%, if the Indian tax cannot be credited against US tax already paid in earlier years",
+          ],
+          [
+            "Direct shares in companies that are not PFICs",
+            "About $23,800 after credit: 20% of the gain less the Indian tax, plus the 3.8% net investment income tax",
+            "About $26,300 at exit, at 12.5%",
+            "About 24%",
+          ],
+        ],
+        note: "An illustration, not a forecast. It assumes 12% growth for ten years, a gain of about $210,600, the top federal bracket, no state tax, a flat exchange rate, and that the mark-to-market tax is paid from other money. Whether Indian tax paid at exit can be credited against earlier years' US tax is a question for a US tax professional. The wrong wrapper can cost roughly half the gain. The right one costs roughly a quarter.",
+      },
     ],
     qas: [
       {
         q: "Can a US NRI invest in Indian mutual funds?",
         a: [
           "You are allowed to. The question is which of three US tax treatments you end up in, because an Indian mutual fund will usually be a PFIC for a US taxpayer.",
-          "<b>Default.</b> If you elect nothing, gain on sale is spread back over your holding period, taxed at the highest rate for each earlier year, and charged interest.",
+          "<b>Default.</b> If you elect nothing, gain on sale is spread back over your holding period, taxed at the highest rate for each earlier year, and charged interest. The interest runs at the IRS underpayment rate, which was 7%, 6%, 7% and 7% across the four quarters of 2026.",
           "<b>Mark-to-market.</b> You pay tax each year on the rise in value, as ordinary income, whether or not you sold. A fall is deductible only up to the gains you included in earlier years. This election is not open to every fund. For a fund that redeems at net asset value, the regulation sets eight conditions. They include more than 100 unrelated holders, a minimum initial investment of no more than US $10,000, and prices published at least weekly.",
           "<b>Qualified electing fund.</b> You are taxed each year on your share of the fund's income and gains. It needs an annual information statement from the fund, and you cannot produce that yourself.",
           "For 2026 the top federal rate on ordinary income is 37%, starting above $640,600 for a single filer and $768,700 for a joint return. Long-term capital gains on non-PFIC assets top out at 20%, plus the 3.8% net investment income tax where it applies. The gap between those two outcomes is why the wrapper matters so much from the US.",
         ],
-        sources: [US.s1297, US.s1296, US.reg1296, US.rp2532, US.niit],
+        sources: [US.s1297, US.s1296, US.reg1296, US.rp2532, US.niit, US.interest],
       },
+      {
+        q: "I am about to move to the US. What should I do with my Indian mutual funds?",
+        a: [
+          "Decide before you become a US tax resident. After that date the choices get worse.",
+          "Until you are a US person, the United States has no claim on a gain you make on an Indian fund. Sell in India before the move and the only tax is India's, at 12.5% on a long-term equity gain. Sell the same units a few years later as a US person and you are in the PFIC rules, at ordinary rates of up to 37%.",
+          "Some families transfer the units to a parent or sibling who stays resident in India, instead of selling. Timing is everything with that route. A gift made after you become a US person can itself be treated as a disposal under proposed US regulations, so it does not work as a later fix.",
+          "This applies to H-1B and L-1 moves as much as to green cards. It also applies in reverse to anyone taking US citizenship, because the US taxes citizens wherever they live.",
+          "Whichever route you take, tell your Indian bank and fund houses that your residence has changed. Correcting years of deductions made on the wrong status is slow and expensive.",
+        ],
+        sources: [US.s1297],
+      },
+      WHY_INDIA_QA,
       {
         q: "Can a single Indian stock be a PFIC?",
         a: [
@@ -178,9 +216,22 @@ export const AUGMENT: Record<string, CorridorAugment> = {
       },
       indiaTaxQA("the United States"),
     ],
-    mistakes: [MISTAKE_STATUS],
+    mistakes: [
+      {
+        m: "Forgetting that a child born in the US is a US person",
+        why: "The US taxes its citizens wherever they live. Indian funds held in that child's name are PFIC holdings, with the same reporting, even if the family has moved back to India.",
+      },
+      {
+        m: "Leaving idle cash inside an Indian portfolio account in a liquid or overnight fund",
+        why: "Those are pooled funds, so they are PFICs. A managed account of direct shares only stays outside the regime if the cash is held as cash.",
+      },
+      MISTAKE_ADVICE_LATER,
+      MISTAKE_INDIAN_LOGIC,
+      MISTAKE_STATUS,
+    ],
     sources: [
       US.i8621,
+      US.interest,
       US.s1296,
       US.reg1296,
       US.s1298,
@@ -270,9 +321,10 @@ export const AUGMENT: Record<string, CorridorAugment> = {
         ],
         sources: [UK.reg17, UK.cgt, UK.it, UK.div, UK.treaty, UK.budget],
       },
+      WHY_INDIA_QA,
       indiaTaxQA("the United Kingdom"),
     ],
-    mistakes: [MISTAKE_STATUS],
+    mistakes: [MISTAKE_ADVICE_LATER, MISTAKE_INDIAN_LOGIC, MISTAKE_STATUS],
     sources: [
       UK.cgt,
       UK.it,
@@ -335,9 +387,19 @@ export const AUGMENT: Record<string, CorridorAugment> = {
         ],
         sources: [SRC.faizal, UAE.kanoi],
       },
+      {
+        q: "So should a UAE resident prefer mutual funds or shares?",
+        a: [
+          "On tax alone, the treaty reading favours fund units for a settled UAE resident who will do the paperwork. If the reading holds, the Indian tax on the gain comes back. If a higher court overturns it, you pay what a share investor pays anyway. The downside is the ordinary rate, not a penalty.",
+          "Funds also avoid a yearly trickle of dividend deductions. The treaty is reported to cap Indian tax on dividends at 10%, against India's own 20%, but each one still needs the certificate and the form to claim.",
+          "That is a conditional answer. It assumes 183 days in the UAE in the calendar year, a residency certificate for the right period, and patience while the deducted tax is refunded.",
+          "Shares still make sense if you want to choose companies yourself. Tax should not be the only reason to pick a vehicle.",
+        ],
+      },
+      WHY_INDIA_QA,
       indiaTaxQA("the UAE"),
     ],
-    mistakes: [MISTAKE_STATUS],
+    mistakes: [MISTAKE_ADVICE_LATER, MISTAKE_STATUS],
     sources: [UAE.cd85, OECD_CRS, SRC.act2025, SRC.form41, SRC.nrFaq, SRC.rbiAccounts],
   },
 };

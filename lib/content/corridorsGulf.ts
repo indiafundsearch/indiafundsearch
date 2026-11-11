@@ -4,7 +4,10 @@ import {
   CHECK_STATUS,
   INDIA_RESIDENCE_QA,
   INDIA_SOURCES,
+  CHECK_ADVISER,
+  MISTAKE_ADVICE_LATER,
   MISTAKE_REFUND,
+  WHY_INDIA_QA,
   MISTAKE_STATUS,
   NEW_COMMON,
   RELATED_COMMON,
@@ -23,13 +26,15 @@ import {
  *   Saudi Arabia — zatca.gov.sa        Oman — tms.taxoman.gov.om
  *   Qatar — gta.gov.qa (the 2025 agreement)
  *
- * NOT stated, because the source could not be read:
- *   - Saudi Arabia: the in-force date; any official statement on how an
- *     expatriate's personal investment income is treated.
- *   - Oman: the January 2025 protocol; which income the 2028 personal income
- *     tax covers; the residency-certificate procedure.
- *   - Qatar: the date the 2025 agreement entered into force.
- *   - Kuwait and Bahrain: see the notes on those entries.
+ * PUBLISHED ON THE OWNER'S INSTRUCTION of 11 November 2026 without a primary
+ * read, and worded on the page as reported, not as verified:
+ *   - Saudi Arabia: no personal income tax on an expatriate's investments.
+ *   - Oman: the 2028 tax reaching a resident's foreign dividends and gains.
+ *   - Qatar: in force 10 September 2025, applying in India from 1 April 2026.
+ *   - Kuwait: the treaty following the UAE pattern; dividend relief range.
+ *   - Bahrain: treaty negotiations reported; unilateral relief not available.
+ *   - All: a conditional funds-versus-shares answer.
+ * Still not stated: the Saudi in-force date; what the Oman protocol changed.
  *
  * The ZATCA copy of the Saudi agreement misnumbers the paragraphs of its
  * capital gains article, so the Saudi guide cites the article, not paragraphs.
@@ -253,7 +258,7 @@ export const CORRIDORS_GULF: Corridor[] = [
         a: [
           "Zakat is not aimed at you. The Zakat, Tax and Customs Authority says zakat applies to resident Saudi natural persons, and to nationals of other Gulf Cooperation Council states who are treated like Saudi nationals.",
           "An Indian national working in the Kingdom is in neither group.",
-          "We have not printed a wider statement about how the Kingdom treats an expatriate's personal investment income, because we could not find one on the authority's own pages. Ask a Saudi adviser to confirm your position in writing if the amounts are large.",
+          "More broadly, Saudi Arabia is generally described as charging no personal income tax on an expatriate employee's salary or personal investments, and no capital gains tax on them. The authority's pages we read do not put that in one sentence, so have a Saudi adviser confirm it in writing if the amounts are large.",
         ],
         sources: [KSA.faq],
       },
@@ -266,6 +271,16 @@ export const CORRIDORS_GULF: Corridor[] = [
         ],
         sources: [KSA.treaty, KSA.trc, SRC.form41],
       },
+      {
+        q: "So should I prefer mutual funds or shares from Saudi Arabia?",
+        a: [
+          "On tax alone, and only if the treaty argument is available to you, fund units have the better range of outcomes. If the residual paragraph is accepted, the Indian tax on the gain comes back. If it is not, you pay what a share investor pays anyway.",
+          "Funds also avoid a yearly trickle of dividend deductions and refund claims, which means less paperwork.",
+          "That is a conditional answer. It assumes you qualify as a resident under the treaty, that you are not arranging your residence around a sale, and that you can leave the deducted tax outstanding until a refund arrives. From Saudi Arabia the argument has an extra untested step compared with the UAE.",
+          "Shares still make sense if you want to choose companies yourself or want dividend income. Tax should not be the only reason to pick a vehicle.",
+        ],
+      },
+      WHY_INDIA_QA,
       indiaTaxQA("Saudi Arabia"),
       indiaPaperworkQA(
         "For Saudi Arabia that is ZATCA's tax residency certificate for individuals. Its service page asks for 183 days in the Kingdom, or 30 days if you own a permanent residence.",
@@ -274,6 +289,7 @@ export const CORRIDORS_GULF: Corridor[] = [
       INDIA_RESIDENCE_QA,
     ],
     mistakes: [
+      MISTAKE_ADVICE_LATER,
       MISTAKE_NEIGHBOUR("Saudi Arabia"),
       MISTAKE_SHARES,
       {
@@ -284,6 +300,7 @@ export const CORRIDORS_GULF: Corridor[] = [
       MISTAKE_STATUS,
     ],
     checklist: [
+      CHECK_ADVISER,
       "Budget for Indian capital gains tax on shares. The agreement does not remove it.",
       "If you hold fund units and intend to claim the residual paragraph, take advice on the residence question first.",
       "Apply to ZATCA for a tax residency certificate, then file India's online treaty form.",
@@ -391,8 +408,9 @@ export const CORRIDORS_GULF: Corridor[] = [
         a: [
           "Oman will have a personal income tax. The Tax Authority's announcement of Royal Decree 56/2025 gives three facts.",
           "It applies to a natural person whose total income is above OMR 42,000 a year. The rate is 5% of taxable income. It comes into force at the beginning of 2028.",
-          "The announcement says the tax is on income earned from certain types of income, under conditions set out in the law. It does not list them. Whether dividends and gains from Indian investments are among them is a question for the law itself and its regulations.",
-          "Until then, plan on two timelines. Before 2028, Oman adds nothing to your Indian tax. From 2028, get the scope confirmed by an adviser in Oman before you assume it still adds nothing.",
+          "The announcement says the tax is on income earned from certain types of income, under conditions set out in the law. It does not list them.",
+          "The law is widely reported to tax a resident on worldwide income, with dividends and capital gains from abroad among the categories, and with credit for tax paid in the other country. We have not been able to read the law's text to confirm the detail.",
+          "At 5% it is mild next to the United States, the United Kingdom or Canada. It still changes the arithmetic. Before 2028, Oman adds nothing to your Indian tax. From 2028, assume it may, and get the scope confirmed by an adviser in Oman.",
         ],
         sources: [OM.pit],
       },
@@ -406,6 +424,16 @@ export const CORRIDORS_GULF: Corridor[] = [
         ],
         sources: [OM.treaty, OM.list, SRC.form41],
       },
+      {
+        q: "So should I prefer mutual funds or shares from Oman?",
+        a: [
+          "On tax alone, and only if the treaty argument is available to you, fund units have the better range of outcomes. If the residual paragraph is accepted, the Indian tax on the gain comes back. If it is not, you pay what a share investor pays anyway.",
+          "Funds also avoid a yearly trickle of dividend deductions and refund claims, which means less paperwork.",
+          "That is a conditional answer. It assumes you qualify as a resident under the treaty, that you are not arranging your residence around a sale, and that you can leave the deducted tax outstanding until a refund arrives. From Oman the argument has an extra untested step compared with the UAE.",
+          "Shares still make sense if you want to choose companies yourself or want dividend income. Tax should not be the only reason to pick a vehicle.",
+        ],
+      },
+      WHY_INDIA_QA,
       indiaTaxQA("Oman"),
       indiaPaperworkQA(
         "For Oman that means a certificate from Oman's tax authorities confirming you are resident there.",
@@ -426,6 +454,7 @@ export const CORRIDORS_GULF: Corridor[] = [
       MISTAKE_STATUS,
     ],
     checklist: [
+      CHECK_ADVISER,
       "Budget for Indian capital gains tax on shares. The agreement does not remove it.",
       "Ask an adviser in Oman whether the 2028 personal income tax covers foreign dividends and gains, before any holding period that runs into 2028.",
       "Get a tax residency certificate in Oman, then file India's online treaty form.",
@@ -488,7 +517,7 @@ export const CORRIDORS_GULF: Corridor[] = [
           "Clear on the text, if you qualify as a resident",
         ],
       ],
-      note: "The 2025 agreement applies to income arising from the first fiscal year after the calendar year in which it entered into force. If your sale falls near the changeover, confirm which agreement governs it.",
+      note: "The 2025 agreement applies to income arising from the first fiscal year after the calendar year in which it entered into force. India's notification is reported to give 10 September 2025 as that date, which makes the new agreement apply in India to income from 1 April 2026. Earlier sales fall under the 1999 agreement.",
     },
     extraTables: [
       gainIllustration(
@@ -556,6 +585,16 @@ export const CORRIDORS_GULF: Corridor[] = [
         ],
         sources: [QA.treaty, QA.trc, SRC.form41],
       },
+      {
+        q: "So should I prefer mutual funds or shares from Qatar?",
+        a: [
+          "On tax alone, and only if the treaty argument is available to you, fund units have the better range of outcomes. If the residual paragraph is accepted, the Indian tax on the gain comes back. If it is not, you pay what a share investor pays anyway.",
+          "Funds also avoid a yearly trickle of dividend deductions and refund claims, which means less paperwork.",
+          "That is a conditional answer. It assumes you qualify as a resident under the treaty, that you are not arranging your residence around a sale, and that you can leave the deducted tax outstanding until a refund arrives. From Qatar the argument has an extra untested step compared with the UAE.",
+          "Shares still make sense if you want to choose companies yourself or want dividend income. Tax should not be the only reason to pick a vehicle.",
+        ],
+      },
+      WHY_INDIA_QA,
       indiaTaxQA("Qatar"),
       indiaPaperworkQA(
         "For Qatar that is a residency certificate from the General Tax Authority. Its application asks about 183 days of presence, a permanent home, or your centre of vital interests.",
@@ -577,7 +616,8 @@ export const CORRIDORS_GULF: Corridor[] = [
       MISTAKE_STATUS,
     ],
     checklist: [
-      "Confirm which agreement governs the year of your sale: the 1999 text or the 2025 one.",
+      CHECK_ADVISER,
+      "Confirm which agreement governs the year of your sale. The 2025 agreement is reported to apply in India from 1 April 2026.",
       "Budget for Indian capital gains tax on shares. Neither agreement removes it.",
       "Get a residency certificate from the General Tax Authority, then file India's online treaty form.",
       CHECK_RECORDS,
@@ -658,7 +698,7 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
       ["Protocol", "Signed 15 January 2017, in force 26 March 2018"],
       ["What the protocol covered", "Exchange of information"],
       ["India's starting point", "Its ordinary rates, deducted at source"],
-      ["Treaty articles on gains", "Not reproduced here. Read them before claiming"],
+      ["Treaty articles on gains", "Reported to follow the UAE pattern. Not read by us"],
     ],
     table: DOMESTIC_TABLE(
       "Kuwait",
@@ -683,6 +723,17 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
         ],
         sources: [SRC.faizal, SRC.anushka],
       },
+      {
+        q: "What is the India–Kuwait treaty reported to say?",
+        a: [
+          "This answer is second-hand, and we mark it as such. We could not open the official text.",
+          "The agreement is commonly described as following the same pattern as the UAE and Saudi treaties. India may tax gains on shares of an Indian company. Gains on other property are left to the country where the seller is resident. On that description, a Kuwait resident would have the same argument on mutual fund units that UAE residents make.",
+          "Indian tax on dividends is described as capped under the treaty at somewhere in the range of 10% to 15%, against India's own 20%.",
+          "Kuwait is generally described as charging no personal income tax or capital gains tax on an individual's investments.",
+          "If that description is right, the cautious plan is the one in our UAE guide: the fund position is arguable and tested only at tribunal level under other treaties, shares are taxed by India, and the worst case is India's ordinary rate. Have the text checked before you rely on any of it.",
+        ],
+      },
+      WHY_INDIA_QA,
       {
         q: "What should I ask an adviser about the India–Kuwait treaty?",
         a: [
@@ -787,9 +838,21 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
         ],
         sources: [SRC.act2025],
       },
+      {
+        q: "Does any other relief help a Bahrain resident?",
+        a: [
+          "No. India does have a unilateral relief for countries it has no treaty with. It is a credit given to people resident in India for tax they paid abroad.",
+          "A Bahrain resident is on the wrong side of it twice. You are not resident in India, and Bahrain is generally described as charging no personal income tax, so there is no foreign tax to credit.",
+          "The 20% deducted on dividends therefore stays deducted. So does the tax on gains, apart from any excess over your actual liability.",
+          "The two governments were reported in late 2025 to have agreed to begin negotiating a double taxation agreement. Nothing signed has been published that we could find. If one is concluded, this page changes.",
+        ],
+        sources: [BH.mea],
+      },
+      WHY_INDIA_QA,
       INDIA_RESIDENCE_QA,
     ],
     mistakes: [
+      MISTAKE_ADVICE_LATER,
       {
         m: "Assuming every Gulf country has the UAE's treaty position",
         why: "The mutual fund argument needs a double taxation agreement with a residence-only paragraph. India's published list for Bahrain shows only an exchange-of-information agreement.",
