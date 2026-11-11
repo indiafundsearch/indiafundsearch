@@ -52,7 +52,7 @@ homepage and Learn links; corridor hreflang cluster removed; real sitemap
 lastmod; IndexNow; /llms.txt). **Owner: request indexing in this order**,
 about 10 a day (Search Console caps daily requests):
 
-Day 1 — hubs and the highest-demand pages
+Day 1 — hubs and the highest-demand pages — ✅ all 10 requested 2026-11-11
 - /us-tax · /uk-tax · /us-tax/form-8621 · /us-tax/form-8802
 - /uk-tax/hmrc-reporting-funds-list · /nri/us · /nri/uae
 - /about · /learn/us-nri-pfic · /gift-city/how-to-invest
