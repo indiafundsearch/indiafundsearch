@@ -44,6 +44,38 @@ nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
 10. **Backlinks** — the only lever left that moves the head terms off page 8.
    Even 3–4 links from Indian finance publications or empanelled AMCs.
 
+## 🔎 Indexing status — Search Console inspection, 2026-11-11
+
+41 of 69 sitemap URLs indexed. 28 were not, two months after publishing.
+Cause: the tax hubs were 3–4 clicks from the homepage (fixed same day: footer,
+homepage and Learn links; corridor hreflang cluster removed; real sitemap
+lastmod; IndexNow; /llms.txt). **Owner: request indexing in this order**,
+about 10 a day (Search Console caps daily requests):
+
+Day 1 — hubs and the highest-demand pages
+- /us-tax · /uk-tax · /us-tax/form-8621 · /us-tax/form-8802
+- /uk-tax/hmrc-reporting-funds-list · /nri/us · /nri/uae
+- /about · /learn/us-nri-pfic · /gift-city/how-to-invest
+
+Day 2
+- /us-tax/pfic-tax-rate · /us-tax/form-8621-instructions
+- /us-tax/form-8621-filing-requirements · /us-tax/pfic-reporting-threshold
+- /us-tax/us-tax-residency-certificate · /uk-tax/uk-reporting-fund-status
+- /uk-tax/offshore-reporting-funds · /uk-tax/reporting-vs-non-reporting-funds
+- /gift-city/eligibility · /gift-city/for-resident-indians
+
+Day 3
+- /learn/gift-city-vs-mutual-fund-for-nri · /learn/gift-city-minimum-investment
+- /learn/gift-city-global-usd · /learn/tax-residency-certificate-uae
+- /learn/sif-minimum-investment · /learn/pms-vs-mutual-fund
+- /learn/reits-invits · /learn/angel-vc-funds
+
+Also: verify the site in **Bing Webmaster Tools** (import from Search Console,
+two minutes). ChatGPT search and Copilot draw on Bing's index.
+
+AI visibility tracking lives in OpenSEO (12 prompts × ChatGPT, Gemini, Google
+AI Overviews). Baseline run 2026-11-11.
+
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
 - **Google Search Console** — sitemap submitted + indexing requested; just monitor.
