@@ -70,8 +70,9 @@ Day 3
 - /learn/sif-minimum-investment · /learn/pms-vs-mutual-fund
 - /learn/reits-invits · /learn/angel-vc-funds
 
-Also: verify the site in **Bing Webmaster Tools** (import from Search Console,
-two minutes). ChatGPT search and Copilot draw on Bing's index.
+Bing Webmaster Tools: ✅ site imported from Search Console 2026-11-11; sitemap
+read successfully, 69 URLs discovered. ChatGPT search and Copilot draw on
+Bing's index.
 
 AI visibility tracking lives in OpenSEO (12 prompts × ChatGPT, Gemini, Google
 AI Overviews), re-checked monthly (next: 30 Nov 2026, ~72 credits).
