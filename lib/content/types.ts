@@ -169,6 +169,9 @@ export interface Corridor {
   published?: string;
   /** Visible "Regulatory position as at" date. */
   regulatoryAsAt?: string;
+  /** ISO dates for the Article JSON-LD. Must agree with the visible dates. */
+  publishedIso?: string;
+  modifiedIso?: string;
   /** Market signal shown under the capsule (Appendix A, Task A.7). */
   marketNote?: string;
   /**

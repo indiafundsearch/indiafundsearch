@@ -11,9 +11,9 @@ import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 
 export const metadata: Metadata = pageMeta({
-  title: "NRI Investing in India: US, UK and UAE Corridors",
+  title: "NRI Investing in India: Country-by-Country Tax Guides",
   description:
-    "Where you are tax-resident changes which Indian structures make sense, not just the paperwork. Corridor guides for NRIs in the US, the UAE and the UK.",
+    "How Indian mutual funds and shares are taxed for NRIs in the US, Canada, UK, Singapore, Hong Kong, UAE, Saudi Arabia, Qatar, Oman, Kuwait and Bahrain.",
   path: '/nri',
 })
 
@@ -30,28 +30,31 @@ export default function NriHubPage() {
       <section className="mx-auto max-w-[1180px] px-[22px] pt-14 max-sm:pt-9">
         <div className="eyebrow mb-3.5">Sheet {SHEETS.nri.no} — Corridors</div>
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,48px)] tracking-[-0.01em] leading-[1.06] max-w-[880px]">
-          The same fund, three countries,
+          The same fund, eleven countries,
           <br />
-          <em className="font-serif italic font-medium text-bronze">three different answers.</em>
+          <em className="font-serif italic font-medium text-bronze">eleven different answers.</em>
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[760px] mt-4">
           Indian regulation barely distinguishes between one non-resident investor and another. Your
           country of residence does. The same fund can be a sensible holding in Dubai, a reporting
-          headache in London and a real tax trap in New Jersey. Nothing on the factsheet tells you
-          which one you are looking at.
+          headache in London and a real tax trap in New Jersey. Singapore and Hong Kong sit an hour
+          apart by air and get opposite treaty answers. Nothing on the factsheet tells you which one
+          you are looking at.
         </p>
         <p className="text-[17px] text-ink-soft max-w-[760px] mt-4">
-          These three guides start from where you file your taxes, not from the product shelf. Each is
-          written against the rules that actually govern you, published by the IRS, HMRC and the UAE
-          Federal Tax Authority. Where the law is unsettled, we say so instead of rounding it off
-          into a confident answer.
+          These guides start from where you file your taxes, not from the product shelf. Each one
+          covers which rules apply to shares and to mutual funds, which filings you owe, and the
+          mistakes that cost money. Each is written against the treaty and the tax authority that
+          actually govern you, and no country&apos;s answer is borrowed from its neighbour. Where
+          the law is unsettled, or where we could not read the source ourselves, we say so instead
+          of rounding it off into a confident answer.
         </p>
-        <AuthorByline className="mt-6" reviewed="September 2026" regulatoryAsAt="September 2026" />
+        <AuthorByline className="mt-6" reviewed="November 2026" regulatoryAsAt="November 2026" />
       </section>
 
-      <section className="mx-auto max-w-[1180px] px-[22px] mt-12 grid gap-6 lg:grid-cols-3">
+      <section className="mx-auto max-w-[1180px] px-[22px] mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {CORRIDORS.map((c, i) => (
-          <FadeInOnScroll key={c.slug} delay={i * 0.1}>
+          <FadeInOnScroll key={c.slug} delay={(i % 3) * 0.1}>
             <Link
               href={`/nri/${c.slug}`}
               className="plot-card block p-8 h-full group hover:shadow-plot-hover transition-shadow max-sm:p-5"
@@ -95,7 +98,7 @@ export default function NriHubPage() {
             },
             {
               h: 'The structure decides the tax',
-              p: 'A managed account holding shares in your own name and a fund issuing you units are treated very differently in all three corridors, sometimes as the difference between a capital gain and income. It is the first question to ask, not the last.',
+              p: 'A managed account holding shares in your own name and a fund issuing you units are treated very differently in most of these countries, sometimes as the difference between a capital gain and income. It is the first question to ask, not the last.',
             },
             {
               h: 'Indian law changed underneath everyone',

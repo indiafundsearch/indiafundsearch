@@ -43,7 +43,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
 const UPDATED = {
   hubs: '2026-11-11', // home, learn, footer links to the tax clusters
   products: '2026-11-11', // heading levels; capsules + quick answers 2026-10-23
-  corridors: '2026-11-11', // hreflang cluster removed
+  corridors: '2026-11-11', // eight country guides added; hreflang cluster removed
   answers: '2026-10-23', // contextual links
   usTax: '2026-10-23',
   ukTax: '2026-11-11', // HMRC extract refreshed from the 4 Nov 2026 file

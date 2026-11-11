@@ -1,7 +1,13 @@
 import type { Corridor } from "./types";
+import { CORRIDORS_ASIA_CANADA } from "./corridorsAsiaCanada";
+import { AUGMENT } from "./corridorsAugment";
+import { CORRIDORS_GULF, CORRIDORS_GULF_NO_TEXT } from "./corridorsGulf";
 
 /**
- * NRI corridor landing pages — /nri/us, /nri/uae, /nri/uk.
+ * The three original NRI corridor pages — /nri/us, /nri/uae, /nri/uk.
+ * Eight more countries were added in November 2026; see corridorsAsiaCanada.ts,
+ * corridorsGulf.ts and corridorsAugment.ts. CORRIDORS at the foot of this file
+ * is the full ordered list.
  *
  * EDITORIAL RULES FOR THIS FILE. Read before changing a word.
  *
@@ -28,7 +34,7 @@ import type { Corridor } from "./types";
  */
 
 const PUBLISHED = "August 2026";
-const REVIEWED = "September 2026";
+const REVIEWED = "November 2026";
 
 /** Shared across corridors — the access rules are Indian-side and identical. */
 const INDIAN_MINIMUMS: Corridor["sources"] = [
@@ -53,7 +59,7 @@ const INDIAN_MINIMUMS: Corridor["sources"] = [
   },
 ];
 
-export const CORRIDORS: Corridor[] = [
+const ORIGINAL: Corridor[] = [
   // ─────────────────────────────────────────────────────────────────────────
   {
     slug: "us",
@@ -137,7 +143,7 @@ export const CORRIDORS: Corridor[] = [
         [
           "Indian mutual fund",
           "A minority of AMCs accept US persons, usually offline only",
-          "PFIC. A mark-to-market election is often available because units redeem at daily NAV",
+          "PFIC. A mark-to-market election may be available, if the fund meets every condition in the regulations",
           "Form 8621 per fund",
         ],
         [
@@ -1025,6 +1031,57 @@ export const CORRIDORS: Corridor[] = [
     ],
   },
 ];
+
+/**
+ * The three original pages, with the November 2026 additions appended: a
+ * filings table, an instrument-by-instrument question, and what India taxes
+ * first. The original copy above is untouched.
+ */
+const AUGMENTED: Corridor[] = ORIGINAL.map((c) => {
+  const extra = AUGMENT[c.slug];
+  const base: Corridor = {
+    ...c,
+    publishedIso: "2026-08-02",
+    modifiedIso: "2026-11-11",
+  };
+  if (!extra) return base;
+  const seen = new Set(c.sources.map((s) => s.url));
+  return {
+    ...base,
+    extraTables: [...(c.extraTables ?? []), ...extra.extraTables],
+    qas: [...c.qas, ...extra.qas],
+    mistakes: [...c.mistakes, ...extra.mistakes],
+    sources: [...c.sources, ...extra.sources.filter((s) => !seen.has(s.url))],
+  };
+});
+
+/** Display order: by region, so neighbours with different answers sit together. */
+const ORDER = [
+  "us",
+  "canada",
+  "uk",
+  "singapore",
+  "hong-kong",
+  "uae",
+  "saudi-arabia",
+  "qatar",
+  "oman",
+  "kuwait",
+  "bahrain",
+];
+
+const ALL: Corridor[] = [
+  ...AUGMENTED,
+  ...CORRIDORS_ASIA_CANADA,
+  ...CORRIDORS_GULF,
+  ...CORRIDORS_GULF_NO_TEXT,
+];
+
+export const CORRIDORS: Corridor[] = ORDER.map((slug) => {
+  const c = ALL.find((x) => x.slug === slug);
+  if (!c) throw new Error(`Missing corridor: ${slug}`);
+  return c;
+});
 
 export const corridorBySlug = (slug: string): Corridor | undefined =>
   CORRIDORS.find((c) => c.slug === slug);

@@ -23,7 +23,7 @@ export function GET() {
   const body = [
     `# ${SITE.name}`,
     '',
-    '> A free, education-first map of every SEBI- and IFSCA-regulated alternative investment structure in India: PMS, AIF, SIF, REITs, private credit and GIFT City. Written for resident Indian families and for NRIs in the United States, the United Kingdom and the UAE. Published by Beyond, a wealth-distribution boutique within JSL Wealth Management Private Limited, Vadodara, built on Jhaveri Securities Ltd (est. 1992).',
+    '> A free, education-first map of every SEBI- and IFSCA-regulated alternative investment structure in India: PMS, AIF, SIF, REITs, private credit and GIFT City. Written for resident Indian families and for NRIs in the United States, Canada, the United Kingdom, Singapore, Hong Kong and the Gulf states. Published by Beyond, a wealth-distribution boutique within JSL Wealth Management Private Limited, Vadodara, built on Jhaveri Securities Ltd (est. 1992).',
     '',
     'Every page carries a named author, a last-reviewed date and its primary sources. Content is education, not investment or tax advice. Indian income-tax section numbers are deliberately not cited: the Income-tax Act, 1961 was repealed on 1 April 2026 and replaced by the Income-tax Act, 2025.',
     '',
@@ -43,7 +43,7 @@ export function GET() {
     ...PRODUCTS.map((p) => line(p.name, `/learn/${p.slug}`, `${p.badge}, minimum ${p.min}`)),
     '',
     '## NRI corridors',
-    line('NRI investing in India: the three corridors', '/nri'),
+    line('NRI investing in India: country-by-country tax guides', '/nri'),
     ...CORRIDORS.map((c) => line(`NRIs in ${c.label}`, `/nri/${c.slug}`, c.hook)),
     '',
     '## US tax for NRIs (PFIC, Form 8621, Form 8802)',

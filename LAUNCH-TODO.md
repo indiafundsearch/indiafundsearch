@@ -16,7 +16,7 @@ softened) · fund repository cleared for display · registration line removed by
 choice · booking CTAs hidden by choice (WhatsApp + forms used instead) ·
 nav/sheet numbers aligned 1:1 · **NRI corridor pages live 2026-08-02**
 (`/nri`, `/nri/us`, `/nri/uae`, `/nri/uk`) with a real hreflang cluster and the
-`Corridor Access List` lead magnet.
+`Corridor Access List` lead magnet. **Eight more country guides added 2026-11-11** (Canada, Singapore, Hong Kong, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain) and the US/UK/UAE pages extended — see `NRI-GUIDES-CHANGELOG.md` for what was verified, what was left out for owner review, and the open decisions.
 
 ---
 
@@ -83,6 +83,14 @@ gov.uk, for "Which Indian funds have HMRC reporting fund status?" and repeated
 the 18 funds / 69 share classes figure. The only page cited is the only page
 holding data nobody else has. Zero citations on the US-tax, GIFT City, PMS/AIF
 and UAE questions. Pitch drafts for earning links are in OUTREACH.md.
+
+## 🌍 NRI country guides — owner actions after 2026-11-11
+
+1. Read section 4 of `NRI-GUIDES-CHANGELOG.md` (claims left out) and decide which to supply sources for.
+2. Decide the form name: new copy says "India's treaty-information form"; older pages say "Form 10F, now Form 41".
+3. Decide whether to strip FAQPage markup from the rest of the site (Google retired FAQ rich results in May 2026).
+4. Request indexing for the eight new `/nri/*` URLs in Search Console.
+5. Kuwait and Bahrain pages are deliberately short: the treaty text could not be read from the build environment.
 
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.

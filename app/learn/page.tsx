@@ -63,7 +63,7 @@ export default function LearnPage() {
         {[
           { href: '/us-tax', label: 'US tax for NRIs', note: 'PFIC, Form 8621 and the Form 8802 chain' },
           { href: '/uk-tax', label: 'UK tax for NRIs', note: 'HMRC reporting funds, and the list of Indian ones' },
-          { href: '/nri', label: 'NRI corridors', note: 'US, UK and UAE, starting from where you file' },
+          { href: '/nri', label: 'NRI corridors', note: 'Eleven countries, starting from where you file' },
           { href: '/gift-city', label: 'GIFT City', note: 'Who can invest, how, and how it is taxed' },
         ].map((l) => (
           <Link key={l.href} href={l.href} className="plot-card px-5 py-4 hover:shadow-plot-hover transition-shadow group">

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { CORRIDORS, corridorBySlug } from '@/lib/content/corridors'
 import type { Corridor, CorridorTable } from '@/lib/content/types'
 import { DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
-import { pageMeta, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
+import { pageMeta, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { Sources } from '@/components/eeat/Sources'
@@ -60,8 +60,6 @@ function renderInline(text: string): React.ReactNode[] {
   })
 }
 
-/** Plain-text form of the same copy, for JSON-LD. */
-const stripInline = (text: string) => text.replace(/<\/?(?:b|em)>/g, '')
 
 function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable }) {
   return (
@@ -122,15 +120,17 @@ export default async function CorridorPage({ params }: PageProps) {
             title: c.metaTitle,
             description: c.metaDescription,
             path: `/nri/${c.slug}`,
+            datePublished: c.publishedIso,
+            dateModified: c.modifiedIso,
           }),
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
             { name: 'NRI Corridors', path: '/nri' },
             { name: c.label, path: `/nri/${c.slug}` },
           ]),
-          // Mirrors the visible Q&A headings exactly — nothing lives in JSON-LD
-          // that a reader (or an answer engine reading rendered HTML) can't see.
-          faqJsonLd(c.qas.map((qa) => ({ q: qa.q, a: stripInline(qa.a.join(' ')) }))),
+          // No FAQPage node. Google stopped showing FAQ rich results on 7 May
+          // 2026 and removed the documentation on 15 June 2026, so the markup
+          // earns nothing there. The questions stay as visible headings.
         ]}
       />
 
