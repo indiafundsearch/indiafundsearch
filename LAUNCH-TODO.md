@@ -69,6 +69,16 @@ Day 3
 - /learn/gift-city-global-usd · /learn/tax-residency-certificate-uae
 - /learn/sif-minimum-investment · /learn/pms-vs-mutual-fund
 - /learn/reits-invits · /learn/angel-vc-funds
+- /nri/canada · /nri/singapore *(new 2026-11-11; brings Day 3 to 10)*
+
+Day 4 — the remaining new country guides, plus the two edited ones not yet re-requested
+- /nri/hong-kong · /nri/saudi-arabia · /nri/qatar · /nri/oman
+- /nri/kuwait · /nri/bahrain
+- /nri *(hub rewritten for eleven countries)* · /nri/uk *(extended 2026-11-11)*
+
+Note: /nri/us and /nri/uae were requested on Day 1, before they were extended
+the same afternoon. Google will pick up the new version on its next crawl; a
+second request is optional, and only worth a slot if Day 4 has room.
 
 Bing Webmaster Tools: ✅ site imported from Search Console 2026-11-11; sitemap
 read successfully, 69 URLs discovered. ChatGPT search and Copilot draw on
@@ -89,7 +99,7 @@ and UAE questions. Pitch drafts for earning links are in OUTREACH.md.
 1. Read section 4 of `NRI-GUIDES-CHANGELOG.md` (claims left out) and decide which to supply sources for.
 2. Decide the form name: new copy says "India's treaty-information form"; older pages say "Form 10F, now Form 41".
 3. Decide whether to strip FAQPage markup from the rest of the site (Google retired FAQ rich results in May 2026).
-4. Request indexing for the eight new `/nri/*` URLs in Search Console.
+4. Request indexing for the eight new `/nri/*` URLs in Search Console — scheduled into Day 3 and Day 4 of the indexing list below. IndexNow (Bing and others) was submitted for all of them on 2026-11-11.
 5. Kuwait and Bahrain pages are deliberately short: the treaty text could not be read from the build environment.
 
 ## 🔁 Recurring / ops
