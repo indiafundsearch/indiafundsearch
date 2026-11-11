@@ -245,7 +245,7 @@ export const ANSWERS: Answer[] = [
     slug: 'hmrc-reporting-fund-status-india',
     question: 'Do Indian funds have HMRC reporting fund status?',
     answer:
-      'Some do. As at 4 August 2026, 18 India-domiciled or GIFT City parent funds hold HMRC reporting fund status across 69 share classes. Most Indian funds still do not. If yours does not, your profit on sale is taxed as income at up to 45% rather than as a capital gain at 24%.',
+      'Some do. As at 4 November 2026, 19 India-domiciled or GIFT City parent funds hold HMRC reporting fund status across 71 share classes. Most Indian funds still do not. If yours does not, your profit on sale is taxed as income at up to 45% rather than as a capital gain at 24%.',
     metaTitle: "HMRC Reporting Fund Status: Indian Funds & UK Tax",
     metaDescription:
       "Which India-domiciled and GIFT City funds hold HMRC reporting fund status, parsed from HMRC's own file and dated, and why status decides 24% or 45%.",
@@ -271,7 +271,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Are any Indian funds actually on the list?',
         body: [
-          'Yes, and more than the usual advice suggests. We parsed HMRC\'s published file and counted <b>18 parent funds across 69 share classes</b>, including mainstream houses like DSP, HDFC, ICICI Prudential, Kotak and Quantum, and five GIFT City or IFSC funds. The full table is below.',
+          'Yes, and more than the usual advice suggests. We parsed HMRC\'s published file and counted <b>19 parent funds across 71 share classes</b>, including mainstream houses like DSP, HDFC, ICICI Prudential, Kotak and Quantum, and six GIFT City or IFSC funds. The full table is below.',
           'Three things decide whether that helps you.',
         ],
         points: [
@@ -317,15 +317,16 @@ export const ANSWERS: Answer[] = [
       { label: 'HMRC IFM12220 — definition of an offshore fund', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm12220' },
     ],
     faqs: [
-      { q: "Do any Indian funds hold HMRC reporting fund status?", a: "Yes. As at 4 August 2026, 18 India-domiciled or GIFT City parent funds held it across 69 share classes, including mainstream Indian houses." },
+      { q: "Do any Indian funds hold HMRC reporting fund status?", a: "Yes. As at 4 November 2026, 19 India-domiciled or GIFT City parent funds held it across 71 share classes, including mainstream Indian houses." },
       { q: "What happens without reporting status?", a: "Your profit on sale is an offshore income gain, charged to income tax at up to 45% rather than as a capital gain, with no annual exempt amount." },
       { q: "Is status per fund or per share class?", a: "Per share class, and from a stated date. Finding the fund name on HMRC's list is not the check; the class and its dates are." },
       { q: "Can a fund lose reporting status?", a: "Yes. One GIFT City share class came off HMRC's list on 31 March 2026, which is why the date matters as much as the name." },
       { q: "Is reporting status simply better?", a: "Better on disposal, but it brings an annual obligation to declare the fund's reported income, including amounts not paid out to you." },
     ],
-    reviewed: REVIEWED,
+    // Moves with HMRC's monthly file: extract refreshed from the 4 Nov 2026 list.
+    reviewed: 'November 2026',
     published: PUBLISHED,
-    regulatoryAsAt: REVIEWED,
+    regulatoryAsAt: 'November 2026',
   },
 
   // ───────────────────────────────────────────────────────────────────────

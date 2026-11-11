@@ -29,17 +29,20 @@ const base = { published: PUBLISHED, reviewed: REVIEWED, regulatoryAsAt: REVIEWE
 export const UK_TAX: Answer[] = [
   {
     ...base,
+    // Moves with HMRC's monthly file: extract refreshed from the 4 Nov 2026 list.
+    reviewed: 'November 2026',
+    regulatoryAsAt: 'November 2026',
     slug: 'hmrc-reporting-funds-list',
     question: 'HMRC reporting funds list: which Indian funds are on it',
     answer:
-      'HMRC publishes the list of approved offshore reporting funds monthly. As at 4 August 2026, 18 India-domiciled or GIFT City parent funds held status across 69 share classes. The table below is the India-exposed extract, dated, with the method stated.',
+      'HMRC publishes the list of approved offshore reporting funds monthly. As at 4 November 2026, 19 India-domiciled or GIFT City parent funds held status across 71 share classes. The table below is the India-exposed extract, dated, with the method stated.',
     metaTitle: 'HMRC Reporting Funds List: Indian Funds Extract',
     metaDescription:
-      'The India-exposed extract of HMRC\'s approved reporting funds list: 18 parent funds across 69 share classes, dated, with the method and three cautions.',
+      'The India-exposed extract of HMRC\'s approved reporting funds list: 19 parent funds across 71 share classes, dated, with the method and three cautions.',
     sections: [
       { h: 'What this list is',
         body: ['HMRC maintains a register of offshore funds that have been approved as reporting funds. A UK investor in a fund on that list is taxed on disposal as a capital gain. A UK investor in one that is not is taxed as income.',
-               'The full file runs to more than 124,000 share-class rows across every jurisdiction. The table below is the India-exposed extract.'] },
+               'The full file runs to more than 125,000 share-class rows across every jurisdiction. The table below is the India-exposed extract.'] },
       { h: 'Three cautions before you read the table',
         body: [],
         points: ['<b>Status belongs to a share class</b>, not to a fund. Finding the fund name is not the check.',
@@ -52,7 +55,7 @@ export const UK_TAX: Answer[] = [
     ],
     faqs: [
       { q: 'How often does HMRC update the list?', a: 'Monthly. Our extract names the file date it was parsed from, so you can see how current it is.' },
-      { q: 'Are GIFT City funds on the list?', a: 'Some are. Five of the eighteen India-exposed parent funds in the current extract are GIFT City or IFSC funds.' },
+      { q: 'Are GIFT City funds on the list?', a: 'Some are. Six of the nineteen India-exposed parent funds in the current extract are GIFT City or IFSC funds.' },
       { q: 'Does a fund on the list stay on it?', a: 'Not necessarily. Status can cease, and one GIFT City share class came off the list on 31 March 2026.' },
       { q: 'Can I rely on this table?', a: 'Treat it as a signpost to HMRC\'s own file, not as a substitute for it. Always confirm your exact share class against the current HMRC publication.' },
     ],

@@ -796,7 +796,7 @@ export const CORRIDORS: Corridor[] = [
       {
         q: "Are any Indian or GIFT City funds actually on HMRC's reporting list?",
         a: [
-          "Yes, and more than the usual advice suggests. We parsed HMRC's own file and counted 18 India-domiciled or GIFT City parent funds holding status across 69 share classes, including DSP, HDFC, ICICI Prudential, Kotak and Quantum. The full table is on our reporting-status page.",
+          "Yes, and more than the usual advice suggests. We parsed HMRC's own file and counted 19 India-domiciled or GIFT City parent funds holding status across 71 share classes, including DSP, HDFC, ICICI Prudential, Kotak and Quantum. The full table is on our reporting-status page.",
           "Three caveats decide whether that helps you.",
           "Status is granted <b>per share class</b>. Holding the wrong class of a listed fund gives you nothing.",
           "Status runs <b>from a date</b>, and most Indian entries only start in April 2025. A longer-held investment may have been non-reporting for part of its life, which is enough to taint the disposal.",

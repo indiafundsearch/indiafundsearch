@@ -80,7 +80,7 @@ export function HmrcFundTable() {
         >
           HMRC, approved offshore reporting funds
         </a>
-        , file dated {AS_OF}. Counted as Indian where the ISIN is Indian, or the fund name says GIFT
+        , file published {AS_OF}. Counted as Indian where the ISIN is Indian, or the fund name says GIFT
         or IFSC. Grouped by parent; &ldquo;reporting from&rdquo; is the earliest date across that
         parent&rsquo;s classes.
       </p>

@@ -12,9 +12,9 @@ once — for the one page that holds data nobody else has.
 **The rule for every pitch:** lead with something the recipient can use. Never
 ask for "a link".
 
-**Before sending the HMRC pitches:** the extract on the site is from HMRC's file
-dated 4 August 2026. HMRC republishes monthly. Refresh the extract first so the
-numbers in the pitch match the page on the day a journalist opens it.
+**HMRC numbers:** refreshed on 11 November 2026 from the file HMRC published on
+4 November 2026 — 19 parent funds, 71 share classes, six GIFT City / IFSC funds,
+one class ceased. HMRC republishes monthly; re-check before any later send.
 
 Compliance, as on the site: no performance figures, no product recommendations,
 no "best fund" language. Counts and rules only.
@@ -28,15 +28,15 @@ Marketing, Citywire Wealth Manager. Each lists a news-desk address on its
 contact page; a named reporter who covers tax or offshore funds is better —
 find one from a recent byline on reporting funds.
 
-**Subject:** Only 18 India funds hold UK reporting status — most UK-resident NRIs are in the other kind
+**Subject:** Only 19 India funds hold UK reporting status — most UK-resident NRIs are in the other kind
 
 > Hi [name],
 >
 > A data point your readers who advise British Indians may not have seen.
 >
 > We went through HMRC's approved offshore reporting funds register and pulled
-> out every India-focused fund. The result: 18 parent funds, across 69 share
-> classes, hold reporting fund status. Five of those are GIFT City funds. One
+> out every India-focused fund. The result: 19 parent funds, across 71 share
+> classes, hold reporting fund status. Six of those are GIFT City funds. One
 > share class lost its status on 31 March 2026.
 >
 > Everything else a UK resident holds in Indian funds is non-reporting. On
@@ -72,8 +72,8 @@ Moneycontrol personal finance, Outlook Money. Angle it at the NRI reader.
 > exact share class holds "reporting fund status", it is a capital gain. If it
 > does not, the whole gain is taxed as income, at up to 45%.
 >
-> We checked HMRC's register for India-focused funds. Eighteen parent funds
-> qualify, across 69 share classes. Ordinary Indian-domiciled mutual fund
+> We checked HMRC's register for India-focused funds. Nineteen parent funds
+> qualify, across 71 share classes. Ordinary Indian-domiciled mutual fund
 > units bought through an Indian platform are generally not among them.
 >
 > The list and the explanation:

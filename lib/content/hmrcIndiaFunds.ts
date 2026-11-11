@@ -9,7 +9,8 @@
  *
  * METHOD
  * Parsed from HMRC's own published list of approved offshore reporting funds,
- * the file dated 4 August 2026 (124,141 share-class rows). A row is counted as
+ * the file HMRC published on 4 November 2026 (20261102_Master-Weblist,
+ * 125,908 share-class rows). First extract: 4 August 2026 (124,141 rows). A row is counted as
  * Indian if its ISIN is an Indian one, or if the parent or sub-fund name says
  * GIFT or IFSC. Grouped by parent fund. "From" is the earliest effective date
  * across that parent's share classes.
@@ -34,7 +35,7 @@ export interface HmrcFund {
 }
 
 /** The date on HMRC's published file, not the date we looked. */
-export const AS_OF = '4 August 2026'
+export const AS_OF = '4 November 2026'
 export const HMRC_SOURCE =
   'https://www.gov.uk/government/publications/offshore-funds-list-of-reporting-funds'
 
@@ -42,6 +43,8 @@ export const HMRC_INDIA_FUNDS: HmrcFund[] = [
   { parent: '3PIM India Equity (IFSC) Fund', classes: 6, from: '01/04/2026', ceased: undefined, gift: true },
   { parent: 'Aikyam India Discovery Fund', classes: 1, from: '01/04/2026', ceased: undefined, gift: false },
   { parent: 'Ashoka WhiteOak Capital India Opportunities GIFT Fund', classes: 1, from: '01/04/2025', ceased: '31/03/2026', gift: true },
+  // New on the November 2026 file.
+  { parent: 'Bandhan India Large and Mid-Cap Fund (IFSC)', classes: 2, from: '01/04/2026', ceased: undefined, gift: true },
   { parent: 'Buoyant Capital AIF', classes: 7, from: '02/11/2023', ceased: undefined, gift: false },
   { parent: 'DSP Mutual Fund', classes: 2, from: '01/04/2025', ceased: undefined, gift: false },
   { parent: 'Equirus IFSC Trust', classes: 7, from: '01/04/2025', ceased: undefined, gift: true },

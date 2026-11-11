@@ -46,7 +46,7 @@ const UPDATED = {
   corridors: '2026-11-11', // hreflang cluster removed
   answers: '2026-10-23', // contextual links
   usTax: '2026-10-23',
-  ukTax: '2026-10-23',
+  ukTax: '2026-11-11', // HMRC extract refreshed from the 4 Nov 2026 file
   giftCity: '2026-10-23',
   articles: '2026-09-11', // capsule + FAQ
   tax: '2026-10-23',
@@ -123,7 +123,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...ANSWER_SLUGS.map((slug) => ({
       url: `${siteUrl}/learn/${slug}`,
-      lastModified: d(UPDATED.answers),
+      // The HMRC page moves with the monthly extract, not with the other answers.
+      lastModified: d(slug === 'hmrc-reporting-fund-status-india' ? UPDATED.ukTax : UPDATED.answers),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
