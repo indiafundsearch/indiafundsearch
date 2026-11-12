@@ -107,7 +107,7 @@ and UAE questions. Pitch drafts for earning links are in OUTREACH.md.
 GA4 is built but inert: nothing loads until `NEXT_PUBLIC_GA_MEASUREMENT_ID` is
 set in Vercel, and then only for visitors who click Accept. See `ANALYTICS.md`.
 
-1. Approve the analytics paragraph for `/privacy` (drafted, not yet on the page). Do this BEFORE step 3.
+1. ~~Approve the analytics paragraph for `/privacy`~~ — approved and published 2026-11-12.
 2. Create the GA4 property and web stream; choose data retention (2 or 14 months).
 3. Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel (Production) and redeploy.
 4. In the GA4 stream, switch OFF enhanced measurement for: page changes on browser history events, form interactions, outbound clicks, site search, video, file downloads. Turn Google signals off.

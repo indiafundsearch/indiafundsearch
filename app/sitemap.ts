@@ -65,7 +65,7 @@ const LASTMOD: Record<string, string> = {
   '/learn/what-is-pms': UPDATED.articles,
   '/learn/what-is-aif': UPDATED.articles,
   '/learn/pms-vs-aif': UPDATED.articles,
-  '/privacy': UPDATED.legal,
+  '/privacy': '2026-11-12', // analytics paragraph added
   '/disclosures': UPDATED.legal,
   '/us-tax': UPDATED.usTax,
   '/uk-tax': UPDATED.ukTax,

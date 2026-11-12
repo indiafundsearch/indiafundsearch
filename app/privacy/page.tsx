@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         Privacy Policy
       </h1>
       <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-slate mt-2">
-        Last updated August 2026
+        Last updated November 2026
       </p>
 
       <div className="text-[16.5px] text-ink-soft mt-6 space-y-3">
@@ -98,7 +98,18 @@ export default function PrivacyPage() {
 
         <H>Cookies &amp; storage</H>
         <p>
-          We do not use advertising or cross-site tracking cookies. To remember that you have passed
+          <b className="font-semibold text-ink">Analytics.</b> We use two tools to understand how
+          the site is used. Vercel Analytics counts page visits without cookies. Google Analytics is
+          used only if you click Accept on the cookie banner; if you reject or ignore it, Google
+          Analytics does not load and sets no cookies. When it is on, it sets cookies on your device
+          and records which pages are viewed, roughly where visitors are located, and whether
+          actions such as completing the Fit Finder or sending an enquiry took place. We do not send
+          Google your name, email, phone number, city, your Fit Finder answers or anything you type
+          into a form. We do not use it for advertising. You can change your choice at any time
+          using &ldquo;Cookie settings&rdquo; at the foot of any page.
+        </p>
+        <p>
+          Apart from that, we do not use advertising or cross-site tracking cookies. To remember that you have passed
           the one-time email verification on the GIFT City section, your browser stores a small
           functional flag on your own device (session/local storage) — no personal data, and nothing
           shared with third parties.
