@@ -35,6 +35,7 @@ No session recording, heatmaps, ad pixels or fingerprinting. Do not add any.
 | `fit_finder_complete` | All questions answered and the shortlist shown | none | Not an enquiry |
 | `blueprint_form_submit_success` | `/api/lead-capture` returned success for the Fit Finder form | none | Not a button click. Not a qualified lead |
 | `enquiry_form_submit_success` | Same, for the other three forms | `form_name`: `contact`, `gift_enquiry`, `corridor_access` | Not a qualified lead |
+| `gift_gate_verify_success` | The server accepted the emailed code on the `/gift-city` gate | none | Not an enquiry about a product. The visitor registered to read the section |
 | `contact_click` | A WhatsApp, email or booking link is clicked | `channel`, `placement` | **Not proof of contact.** Interest only |
 
 Keep these distinctions in every report:
@@ -50,7 +51,9 @@ Events before a visitor accepts are dropped, not queued. GA4 numbers therefore
 undercount by everyone who rejects or ignores the banner. Use them for ratios
 and trends, and use Sanity for absolute enquiry counts.
 
-The OTP gate on `/gift-city` is not tracked.
+The `/gift-city` gate also writes a lead to Sanity when the code is verified,
+so count `gift_gate_verify_success` alongside the two form events when
+cross-checking against Sanity.
 
 ## Never send
 

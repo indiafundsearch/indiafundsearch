@@ -51,7 +51,7 @@ export interface Answer {
   published?: string
   /** Only where the page states a regulatory position. */
   regulatoryAsAt?: string
-  /** Visible FAQ block plus matching FAQPage JSON-LD (Phase 3, Task 3.3). */
+  /** Visible FAQ block. */
   faqs?: { q: string; a: string }[]
 }
 

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Answer } from '@/lib/content/answers'
 import { FIT_FINDER, SHEETS } from '@/lib/constants'
-import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
+import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { Sources } from '@/components/eeat/Sources'
@@ -59,12 +59,6 @@ export function AnswerPage({
             { name: 'Home', path: '/' },
             { name: hubLabel.replace(/^Sheet \d+ — /, ''), path: hubHref },
             { name: answer.question, path },
-          ]),
-          // Mirrors what is visible on the page and nothing else.
-          faqJsonLd([
-            { q: answer.question, a: answer.answer },
-            ...answer.sections.map((s) => ({ q: s.h, a: [...s.body, ...(s.points ?? [])].join(' ') })),
-            ...(answer.faqs ?? []),
           ]),
         ]}
       />

@@ -275,14 +275,6 @@ export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
   }
 }
 
-export function faqJsonLd(qas: { q: string; a: string }[]) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: qas.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
-  }
-}
+// No FAQPage builder. Google stopped showing FAQ rich results on 7 May 2026
+// and removed the documentation on 15 June 2026, so the markup was stripped
+// site-wide in November 2026. FAQ sections remain as visible content.

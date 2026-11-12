@@ -37,7 +37,7 @@ export interface Product {
   /**
    * Optional question-shaped depth for pages sitting in striking distance
    * (Phase 6). Rendered as native <details> so every answer stays crawlable,
-   * and mirrored into FAQPage schema. Only the pages that need the depth carry
+   * (visible only; FAQPage markup was removed). Only the pages that need the depth carry
    * it — a spec page that already answers its query stays short on purpose.
    */
   deepDive?: DeepDive[];
@@ -63,7 +63,7 @@ export interface Article {
    * queries; the capsule answers exactly that in the first 30% of the page.
    */
   capsule?: string;
-  /** Visible FAQ block plus matching FAQPage JSON-LD. */
+  /** Visible FAQ block. */
   faqs?: { q: string; a: string }[];
 }
 

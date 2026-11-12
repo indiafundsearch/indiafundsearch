@@ -115,6 +115,7 @@ export function sanitizeReferrer(input: string): string {
  *   contact_click                   interest shown — NOT proof of contact
  *   blueprint_form_submit_success   server confirmed the Fit Finder lead saved
  *   enquiry_form_submit_success     server confirmed another enquiry saved
+ *   gift_gate_verify_success        server confirmed the GIFT City email code
  * Qualified lead, meeting and funded client are tracked offline, never here.
  */
 export type AnalyticsEvent =
@@ -126,6 +127,7 @@ export type AnalyticsEvent =
       name: 'enquiry_form_submit_success'
       params: { form_name: 'contact' | 'gift_enquiry' | 'corridor_access' }
     }
+  | { name: 'gift_gate_verify_success' }
   | {
       name: 'contact_click'
       params: {

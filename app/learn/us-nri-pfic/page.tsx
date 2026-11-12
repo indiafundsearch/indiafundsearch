@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { DISCLOSURE } from '@/lib/constants'
-import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
+import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { Disclosure } from '@/components/shared/Disclosure'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMeta({
   // cluster; per-fund positions are deliberately not stated.
 })
 
-/** Visible FAQ, mirrored exactly into FAQPage schema. Figures are the verified set only. */
+/** Visible FAQ. Figures are the verified set only. */
 const FAQS = [
   { q: 'Is a GIFT City fund a PFIC for a US taxpayer?', a: 'Usually, yes. A pooled fund holding passive assets is the textbook PFIC, and where the fund sits does not change that. The exception is a structure that gives you direct ownership or is transparent for US tax, which has to be confirmed fund by fund.' },
   { q: 'Do I have to file Form 8621 every year?', a: 'One Form 8621 per PFIC, per year, unless the narrow de minimis exception applies: holdings under $25,000 in aggregate, or $50,000 filing jointly, with no sale, distribution or election that year.' },
@@ -44,7 +44,6 @@ export default function UsNriPficPage() {
             { name: 'Learn', path: '/learn' },
             { name: 'US and Canadian NRIs: PFIC, FATCA and FBAR', path: '/learn/us-nri-pfic' },
           ]),
-          faqJsonLd(FAQS),
         ]}
       />
       <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">

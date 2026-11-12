@@ -6,7 +6,7 @@ import { Disclosure } from '@/components/shared/Disclosure'
 import { TAX_SPOKES } from '@/lib/content/hubs'
 import { HubSpokes } from '@/components/eeat/HubSpokes'
 import { SHEETS } from '@/lib/constants'
-import { pageMeta, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo'
+import { pageMeta, breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = pageMeta({
   title: "PMS, AIF and SIF Taxation in India: FY 2026-27",
@@ -154,7 +154,7 @@ export default function TaxPage() {
         Accountant.
       </div>
 
-      {/* FAQ (P3-27 — matches the FAQPage schema below) */}
+      {/* FAQ — visible only. FAQPage markup was removed in November 2026. */}
       <div className="mt-16">
         <div className="dim mb-8"><span>Frequently asked</span></div>
         <div className="grid gap-3 max-w-[820px]">
@@ -178,7 +178,6 @@ export default function TaxPage() {
 
       <JsonLd
         data={[
-          faqJsonLd(TAX_FAQ),
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
             { name: 'Taxation', path: '/tax' },

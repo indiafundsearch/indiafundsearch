@@ -98,7 +98,7 @@ and UAE questions. Pitch drafts for earning links are in OUTREACH.md.
 
 1. Read section 4 of `NRI-GUIDES-CHANGELOG.md` (claims left out) and decide which to supply sources for.
 2. Decide the form name: new copy says "India's treaty-information form"; older pages say "Form 10F, now Form 41".
-3. Decide whether to strip FAQPage markup from the rest of the site (Google retired FAQ rich results in May 2026).
+3. ~~Strip FAQPage markup from the rest of the site~~ — done 2026-11-12; FAQ sections remain visible.
 4. Request indexing for the eight new `/nri/*` URLs in Search Console — scheduled into Day 3 and Day 4 of the indexing list below. IndexNow (Bing and others) was submitted for all of them on 2026-11-11.
 5. Kuwait and Bahrain pages are deliberately short: the treaty text could not be read from the build environment.
 
@@ -115,8 +115,8 @@ own live test.
 Still open:
 1. Confirm Vercel Web Analytics is receiving (Vercel → project → Analytics).
 2. Confirm Search Console reads the sitemap at 77 URLs.
-3. After one week: compare GA4 `blueprint_form_submit_success` +
-   `enquiry_form_submit_success` with Sanity lead documents and the
+3. On 19 Nov (reminder scheduled): compare GA4 `blueprint_form_submit_success` +
+   `enquiry_form_submit_success` + `gift_gate_verify_success` with Sanity lead documents and the
    hello@jslwealth.in inbox for the same dates.
 
 Day 2 indexing: IndexNow (Bing) submitted 2026-11-12. Google "Request

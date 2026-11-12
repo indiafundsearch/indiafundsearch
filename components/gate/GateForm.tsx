@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackEvent } from '@/lib/analytics/ga'
 import { SITE } from '@/lib/constants'
 
 type Step = 'details' | 'otp'
@@ -61,6 +62,9 @@ export function GateForm({ onVerified }: GateFormProps) {
         setError(data.error ?? 'Incorrect or expired code.')
         return
       }
+      // Only after the server accepted the code. A wrong or expired code, or
+      // a network failure, returns above or lands in the catch.
+      trackEvent({ name: 'gift_gate_verify_success' })
       onVerified()
     } catch {
       setError('Network hiccup — try again.')

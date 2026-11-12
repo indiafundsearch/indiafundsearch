@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Article } from '@/lib/content/types'
 import { guideBySlug, guideReadingTime } from '@/lib/content/guides'
-import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
+import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
@@ -26,7 +26,6 @@ export function ArticlePage({ article }: { article: Article }) {
             { name: 'Learn', path: '/learn' },
             { name: article.title, path },
           ]),
-          ...(article.faqs ? [faqJsonLd(article.faqs)] : []),
         ]}
       />
 
@@ -68,7 +67,7 @@ export function ArticlePage({ article }: { article: Article }) {
         dangerouslySetInnerHTML={{ __html: guideBySlug(article.slug) ?? article.bodyHtml }}
       />
 
-      {/* Visible FAQ, mirrored exactly in the FAQPage schema above. */}
+      {/* Visible FAQ. */}
       {article.faqs && (
         <section className="mt-14 max-w-[820px]">
           <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] leading-[1.2] mb-4">
