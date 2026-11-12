@@ -20,10 +20,10 @@ export const metadata: Metadata = pageMeta({
 
 /** Visible FAQ. Figures are the verified set only. */
 const FAQS = [
-  { q: 'Is a GIFT City fund a PFIC for a US taxpayer?', a: 'Usually, yes. A pooled fund holding passive assets is the textbook PFIC, and where the fund sits does not change that. The exception is a structure that gives you direct ownership or is transparent for US tax, which has to be confirmed fund by fund.' },
+  { q: 'Is a GIFT City fund a PFIC for a US taxpayer?', a: 'Usually, yes. A pooled fund holding passive assets is the textbook PFIC, wherever the fund sits. The exception is a structure that gives you direct ownership or is transparent for US tax, confirmed fund by fund.' },
   { q: 'Do I have to file Form 8621 every year?', a: 'One Form 8621 per PFIC, per year, unless the narrow de minimis exception applies: holdings under $25,000 in aggregate, or $50,000 filing jointly, with no sale, distribution or election that year.' },
-  { q: 'Which Indian investments avoid PFIC treatment?', a: 'A managed account where the shares sit in your own name, such as a PMS, has no pooled foreign corporation between you and the companies. You still report the account on the FBAR and Form 8938.' },
-  { q: 'Does this apply to Canadian residents too?', a: 'Canada has its own foreign-asset reporting and its own offshore fund rules. We do not state Canadian thresholds or positions here. Confirm them with a Canadian CPA before subscribing.' },
+  { q: 'Which Indian investments avoid PFIC treatment?', a: 'A managed account with shares in your own name, such as a PMS, has no pooled foreign corporation between you and the companies. You still report the account on the FBAR and Form 8938.' },
+  { q: 'Does this apply to Canadian residents too?', a: 'Canada has its own foreign-asset reporting and offshore fund rules. We do not state Canadian thresholds or positions here. Confirm them with a Canadian CPA before subscribing.' },
 ]
 
 function H({ children }: { children: React.ReactNode }) {
@@ -59,10 +59,10 @@ export default function UsNriPficPage() {
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-4">
           Most GIFT City and pooled Indian funds are built for NRIs and foreign investors{' '}
-          <em className="text-bronze italic">who are not US persons</em>. If you hold a US or
-          Canadian passport or a green card, the same fund that works well for other NRIs can be{' '}
-          <b>actively punitive</b> for you. Simply subscribing can create reporting duties back
-          home. Read this before you shortlist anything.
+          <em className="text-bronze italic">who are not US persons</em>. With a US or Canadian
+          passport or a green card, a fund that works for other NRIs can be{' '}
+          <b>actively punitive</b> for you, and subscribing alone can create reporting duties back
+          home.
         </p>
         <div className="mt-6 plot-card px-6 py-5 max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
@@ -74,7 +74,7 @@ export default function UsNriPficPage() {
             For a US taxpayer, a pooled Indian or GIFT City fund is almost always a PFIC: taxed at
             the top marginal rate with an interest charge, and reported on Form 8621 every year, per
             fund. Holding shares directly, as in a PMS, sits outside that regime. Take your own
-            position to a US CPA before you subscribe to anything.
+            position to a US CPA before you subscribe.
           </p>
         </div>
         <AuthorByline
@@ -86,25 +86,23 @@ export default function UsNriPficPage() {
       </header>
 
       <div className="bg-white-warm border border-line border-l-4 border-l-alert px-6 py-5 max-w-[820px] text-[15px] text-ink-soft">
-        <b className="font-sans">Who this is for:</b> US citizens, US green-card holders and US tax
-        residents; and Canadian residents. If any of these describe you (or a joint holder), the
-        rules below apply <b>regardless of where the fund sits</b>, including inside GIFT IFSC.
+        <b className="font-sans">Who this is for:</b> US citizens, green-card holders and tax
+        residents; and Canadian residents. If that is you (or a joint holder), the rules below
+        apply <b>regardless of where the fund sits</b>, including inside GIFT IFSC.
       </div>
 
       {/* PFIC */}
       <H>What a PFIC is</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          A <b>Passive Foreign Investment Company (PFIC)</b> is a US tax classification. Broadly,
-          any non-US pooled vehicle whose income or assets are mostly passive is a PFIC. Passive
-          means interest, dividends and capital gains. <b>Most non-US mutual funds, AIFs and pooled
-          structures are PFICs.</b>
+          Under US tax law, a <b>Passive Foreign Investment Company (PFIC)</b> is, broadly, any
+          non-US pooled vehicle whose income or assets are mostly passive: interest, dividends,
+          capital gains. <b>Most non-US mutual funds, AIFs and pooled structures are PFICs.</b>
         </p>
         <p>
-          The default treatment is harsh. Under the excess distribution regime, gains are taxed at
+          The default is harsh. Under the excess distribution regime, gains are taxed at
           the highest ordinary rates, with an interest charge for every year you held the fund. That
-          often erases the return advantage entirely. It is one of the least favourable regimes in
-          the US code, and it is aimed at exactly the kind of fund on a typical GIFT shelf.
+          often erases the return advantage entirely.
         </p>
       </div>
 
@@ -112,13 +110,13 @@ export default function UsNriPficPage() {
       <H>Why a pooled non-US fund triggers it</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          Hold <b>units of a pooled fund</b>, whether a mutual fund, most AIFs or a feeder, and you
-          own a slice of a foreign corporation holding passive assets. That is the textbook PFIC.
+          Hold <b>units of a pooled fund</b> (a mutual fund, most AIFs or a feeder) and you own a
+          slice of a foreign corporation holding passive assets: the textbook PFIC.
         </p>
         <p>
           Hold securities <b>directly in your own name</b>, as in a PMS or managed account, or
           through a partnership that is transparent for US tax, and the analysis can be different.
-          Structure is everything here, and it has to be confirmed fund by fund.
+          It has to be confirmed fund by fund.
         </p>
       </div>
 
@@ -126,21 +124,20 @@ export default function UsNriPficPage() {
       <H>The QEF / mark-to-market election problem</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          Two elections can soften PFIC treatment: <b>QEF</b>, the qualified electing fund route,
-          and <b>mark-to-market</b>. QEF only works if the fund gives you an annual <b>PFIC Annual
-          Information Statement</b>. Many Indian and GIFT funds do not produce one. Without it the
-          election is unavailable, and you are back in the punitive default.
+          Two elections can soften PFIC treatment: <b>QEF</b> (qualified electing fund) and{' '}
+          <b>mark-to-market</b>. QEF only works if the fund gives you an annual{' '}
+          <b>PFIC Annual Information Statement</b>. Few Indian or GIFT City funds issue one. Without
+          it the election is unavailable, and you are back in the punitive default.
         </p>
         <p>
-          In practice, few Indian or GIFT City funds issue the statement, so QEF is rarely on the
-          table. Mark-to-market needs the fund to be regularly traded on a qualifying exchange, which
-          a private placement is not.
+          Mark-to-market needs the fund to be regularly traded on a qualifying exchange, which a
+          private placement is not.
         </p>
         <p>
-          The filing burden is the part people underestimate:{' '}
-          <b>one Form 8621 per fund, per year</b>, and a year you did not file does not close.
-          Whether a given fund supports either election is a question for that fund&apos;s documents
-          and your US CPA or Enrolled Agent, not for a factsheet.{' '}
+          The filing burden: <b>one Form 8621 per fund, per year</b>, and a year you did not file
+          does not close.
+          Whether a fund supports either election is a question for its documents and your US CPA
+          or Enrolled Agent, not a factsheet.{' '}
           <Link href="/us-tax/pfic-annual-information-statement" className="text-bronze border-b border-bronze-soft">
             What the statement is, and what to ask →
           </Link>
@@ -151,20 +148,20 @@ export default function UsNriPficPage() {
       <H>FATCA and FBAR — the reporting you owe anyway</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          Separate from how the fund is taxed, US persons must <b>report</b> foreign financial
+          Separately, US persons must <b>report</b> foreign financial
           assets: <b>FBAR (FinCEN Form 114)</b> for foreign accounts over the threshold, and{' '}
           <b>FATCA (Form 8938)</b> with your US return.
         </p>
         <p>
-          GIFT funds accepting US money will also ask for US tax documentation (W-9) and may decline
-          US persons precisely to avoid FATCA obligations of their own. Non-reporting carries heavy
-          penalties, even where the investment itself is modest.
+          GIFT funds accepting US money will also ask for US tax documentation (W-9), and may decline
+          US persons to avoid FATCA obligations of their own. Non-reporting carries heavy penalties,
+          even on a modest investment.
         </p>
         <ul className="space-y-1.5">
           {[
             'FBAR: foreign accounts together exceeding $10,000 at any point in the year. Filed with FinCEN, separately from your return.',
             'Form 8938: $50,000 at year end or $75,000 at any time if single and living in the US; $100,000 and $150,000 filing jointly; higher thresholds if you live abroad.',
-            'Form 8621: one per PFIC, per year. A narrow exception applies while your PFIC holdings stay under $25,000 in aggregate, or $50,000 filing jointly, and is lost in any year you sell, receive a distribution or make an election.',
+            'Form 8621: one per PFIC, per year. A narrow exception applies while your PFIC holdings stay under $25,000 in aggregate, or $50,000 filing jointly. It is lost in any year you sell, receive a distribution or make an election.',
           ].map((x) => (
             <li key={x} className="relative pl-[22px] before:content-[''] before:absolute before:left-0.5 before:top-[13px] before:w-2.5 before:h-[1.5px] before:bg-bronze-soft">
               {x}
@@ -172,10 +169,10 @@ export default function UsNriPficPage() {
           ))}
         </ul>
         <p>
-          The three stack. They are cumulative, not alternatives.{' '}
-          <b>Canadian residents:</b> Canada has its own foreign-asset reporting and its own rules for
-          offshore funds. We do not state Canadian thresholds or positions on this site; confirm
-          them with a Canadian CPA before you subscribe to anything.
+          The three are cumulative, not alternatives.{' '}
+          <b>Canadian residents:</b> Canada has its own foreign-asset reporting and offshore fund
+          rules. We do not state Canadian thresholds or positions on this site; confirm them with a
+          Canadian CPA before you subscribe.
         </p>
       </div>
 
@@ -185,9 +182,8 @@ export default function UsNriPficPage() {
         <p>
           Many GIFT and offshore funds are offered under <b>Regulation S</b>, a US securities-law
           safe harbour for offerings made <b>outside the United States to non-US persons</b>.
-          Accepting a US person can break the Reg S exemption for the whole fund, so most managers
-          simply <b>exclude US persons</b> at onboarding. That is why a fund can be perfect for one
-          NRI and closed to another.
+          Accepting a US person can break the exemption for the whole fund, so most managers{' '}
+          <b>exclude US persons</b> at onboarding.
         </p>
       </div>
 
@@ -195,7 +191,7 @@ export default function UsNriPficPage() {
       <H>Which structures can work for US persons</H>
       <div className="max-w-[820px] space-y-3 text-[16.5px] text-ink-soft">
         <p>
-          There are routes that can be workable, typically those giving <b>direct ownership</b> or
+          Some routes can be workable, typically those giving <b>direct ownership</b> or
           US-transparent treatment rather than opaque pooled units:
         </p>
         <ul className="space-y-1.5">
@@ -209,9 +205,9 @@ export default function UsNriPficPage() {
           ))}
         </ul>
         <p>
-          Several funds on the inbound GIFT City shelf do accept US persons, and the shelf marks
-          which, as confirmed with each house. Acceptance is not the same as suitability: a fund
-          that takes your subscription can still be a PFIC on your return.
+          Several funds on the inbound GIFT City shelf accept US persons; the shelf marks which,
+          as confirmed with each house. Acceptance is not suitability: a fund that takes your
+          subscription can still be a PFIC on your return.
         </p>
         <p>
           Whether a particular vehicle is US-transparent, and whether it issues the statement a QEF
@@ -237,8 +233,8 @@ export default function UsNriPficPage() {
       <div className="mt-12 plot-card px-8 py-8 max-w-[820px] max-sm:px-5">
         <p className="font-sans font-bold text-[20px]">Hold a US or Canadian passport?</p>
         <p className="font-serif text-[16px] text-ink-soft mt-2">
-          Tell the desk before you shortlist anything — we map your specific position with
-          US-qualified counsel first, so you never subscribe into a PFIC by accident.
+          Tell the desk before you shortlist. We map your position with US-qualified counsel
+          first, so you never subscribe into a PFIC by accident.
         </p>
         <Link
           href="/contact"
@@ -249,9 +245,9 @@ export default function UsNriPficPage() {
       </div>
 
       <p className="font-serif italic text-[13.5px] text-slate mt-10 border-t border-line pt-5 max-w-[820px]">
-        This page is a plain-English orientation, not US, Canadian or Indian tax advice. US and
-        Canadian tax positions are fact-specific and are confirmed with qualified counsel before any
-        investment. {DISCLOSURE.education}
+        This page is an orientation, not US, Canadian or Indian tax advice. US and Canadian tax
+        positions are fact-specific and are confirmed with qualified counsel before any investment.{' '}
+        {DISCLOSURE.education}
       </p>
     </article>
   )

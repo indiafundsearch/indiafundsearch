@@ -65,11 +65,11 @@ export default function GiftCityPage() {
           <em className="font-serif italic font-medium text-bronze">Financially, the world.</em>
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[720px] mt-4">
-          <b>GIFT City (Gujarat International Finance Tec-City)</b> is a special jurisdiction. It sits
-          legally inside India, but works in <b>US dollars</b> under its own regulator, the IFSCA.
-          Money can flow <em className="text-bronze italic">in</em> from overseas investors and{' '}
-          <em className="text-bronze italic">out</em> to global markets — both without the old
-          friction. We currently curate products on both routes.
+          <b>GIFT City (Gujarat International Finance Tec-City)</b> sits legally inside India, but
+          works in <b>US dollars</b> under its own regulator, the IFSCA. Money can flow{' '}
+          <em className="text-bronze italic">in</em> from overseas investors and{' '}
+          <em className="text-bronze italic">out</em> to global markets. We currently curate
+          products on both routes.
         </p>
         <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-5">
           We are in Vadodara, about two hours from GIFT City itself
@@ -128,9 +128,9 @@ export default function GiftCityPage() {
             The same GIFT City fund is treated three different ways.
           </h2>
           <p className="font-serif text-[17px] text-[#c7d6ce] mt-3 max-w-[720px]">
-            India&rsquo;s exemptions were designed for investors who are taxed nowhere else. Whether
-            they help you, or quietly cost you, depends on where you file your taxes rather than on
-            the fund itself. Read your corridor before you read the shelf.
+            India&rsquo;s exemptions were designed for investors taxed nowhere else. Whether they
+            help or quietly cost you depends on where you file your taxes, not on the fund. Read
+            your corridor before the shelf.
           </p>
           <div className="grid gap-3 sm:grid-cols-3 mt-7">
             {CORRIDORS.map((c) => (
@@ -162,15 +162,15 @@ export default function GiftCityPage() {
           {[
             {
               h: 'The old friction',
-              p: 'Investing across borders used to mean NRE/NRO mazes, currency conversion, TDS surprises and resident-style filings — enough friction that most capital simply stayed put.',
+              p: 'Investing across borders used to mean NRE/NRO accounts, currency conversion, TDS surprises and resident-style filings. Most capital stayed put.',
             },
             {
               h: 'The GIFT answer',
-              p: 'Funds domiciled in GIFT IFSC operate in US dollars under IFSCA. Overseas money reaches Indian strategies, and Indian money reaches global markets — inside one clean, regulated wrapper.',
+              p: 'GIFT IFSC funds operate in US dollars under IFSCA. Overseas money reaches Indian strategies, and Indian money reaches global markets, in one regulated wrapper.',
             },
             {
               h: 'The honest caveat',
-              p: 'Tax treatment is fund-specific and residency-specific. Every GIFT decision here ends with one conversation with your CA, but it starts from a far simpler place than the old maze.',
+              p: 'Tax treatment is fund-specific and residency-specific. Every GIFT decision here ends with a conversation with your CA.',
             },
           ].map((b) => (
             <div key={b.h}>

@@ -26,8 +26,7 @@ export default function LearnPage() {
           Start with the fundamentals.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-3.5">
-          Six short reads that make the rest of this drawing set obvious. Written the way we would
-          explain it to you across a table.{' '}
+          Six short reads in plain language.{' '}
           <em className="text-bronze italic">No jargon survives past the first sentence.</em>
         </p>
       </div>
@@ -80,7 +79,7 @@ export default function LearnPage() {
       </div>
       <ComparisonTable />
       <p className="font-mono text-[12px] text-slate tracking-[0.04em] mt-3">
-        Structural comparison, simplified for conversation. Category rules per SEBI; individual schemes vary.
+        Simplified structural comparison. Category rules per SEBI; individual schemes vary.
       </p>
 
       {/* Materials — the second section of the Learn sheet (Sheet 02) */}
@@ -90,8 +89,7 @@ export default function LearnPage() {
           The thirteen materials of a modern portfolio.
         </h2>
         <p className="font-serif text-[18px] text-ink-soft max-w-[700px] mt-3">
-          From the familiar to the frontier. What each one is, the job it does, what it costs to
-          get in, and how the taxman treats it.
+          What each one is, the job it does, the minimum to get in, and how it is taxed.
         </p>
       </div>
 

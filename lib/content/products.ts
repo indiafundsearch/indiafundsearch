@@ -20,8 +20,8 @@ export const PRODUCTS: Product[] = [
     horizon: "3–7+ yrs",
     cashflow: false,
     analogy:
-      "The base layer of most portfolios. Pooled, professionally managed, easy to get in and out of. Comfortable and liquid, but built for the many rather than for you.",
-    what: "A SEBI-regulated pooled fund. It spreads money across 40 to 80 securities under strict diversification rules. The most liquid and most regulated structure in Indian investing, and the benchmark every alternative has to beat.",
+      "The base layer of most portfolios: pooled and liquid, but built for the many.",
+    what: "A SEBI-regulated pooled fund spreading money across 40 to 80 securities under strict diversification rules. The most liquid and most regulated structure in Indian investing, and the benchmark every alternative has to beat.",
     solves: [
       "Long-term compounding with full liquidity",
       "Disciplined investing through SIP",
@@ -62,8 +62,8 @@ export const PRODUCTS: Product[] = [
     horizon: "1–3 yrs",
     cashflow: true,
     analogy:
-      "The same job a bank FD does, parking money safely, done with better instruments. Corporate deposits, high-grade bonds and short debt strategies. Accessible in days, not years.",
-    what: "A set of low-risk debt instruments: AAA and AA corporate FDs and bonds, target-maturity funds, and curated debt portfolios. Used as a stable anchor while the rest of the portfolio takes risk.",
+      "A bank FD's job, parking money safely, done with corporate deposits, high-grade bonds and short debt strategies.",
+    what: "Low-risk debt instruments: AAA and AA corporate FDs and bonds, target-maturity funds, and curated debt portfolios. A stable anchor while the rest of the portfolio takes risk.",
     solves: [
       "Parking surplus without an FD lock-in penalty",
       "Predictable, near-term cashflow",
@@ -104,8 +104,8 @@ export const PRODUCTS: Product[] = [
     horizon: "6 months – 2+ yrs",
     cashflow: true,
     analogy:
-      "A managed lending desk inside your own demat. Instead of one FD, a manager runs a basket of high-yield bonds paying 11 to 13%. Each one visible, each one in your name.",
-    what: "A SEBI-registered PMS holding high-yield corporate bonds and structured debt directly in your demat account. The manager picks and rotates the credits. Coupons flow to you. Higher carry than traditional debt, with only a short lock-in.",
+      "A managed lending desk in your own demat: a basket of high-yield bonds paying 11 to 13%, each in your name.",
+    what: "A SEBI-registered PMS holding high-yield corporate bonds and structured debt directly in your demat account. The manager picks and rotates the credits; coupons flow to you. Higher carry than traditional debt, with a short lock-in.",
     solves: [
       "Double-digit income with full portfolio transparency",
       "A middle path between FD+ and locked private credit",
@@ -146,8 +146,8 @@ export const PRODUCTS: Product[] = [
     horizon: "3–5+ yrs",
     cashflow: true,
     analogy:
-      "A slice of Grade-A offices or infrastructure, without the ₹5 crore ticket or the tenant calls. Rent arrives quarterly. The units trade on the exchange like a share.",
-    what: "Listed trusts that own rent-earning real estate, or infrastructure like roads, power lines and towers. They must pay out at least 90% of net cashflow to unit-holders. Real-asset income with stock-market liquidity.",
+      "A slice of Grade-A offices or infrastructure without the ₹5 crore ticket. Rent arrives quarterly; units trade like a share.",
+    what: "Listed trusts that own rent-earning real estate, or infrastructure like roads, power lines and towers. They must pay out at least 90% of net cashflow to unit-holders.",
     solves: [
       "Regular income backed by physical assets",
       "Property exposure without betting on one building",
@@ -187,8 +187,8 @@ export const PRODUCTS: Product[] = [
     horizon: "3 months – 2 yrs",
     cashflow: true,
     analogy:
-      "Long one stock, short another, so market moves largely cancel out. The return comes from the manager's skill in the pair, not from which way the market went.",
-    what: "Absolute-return Category III AIF strategies, also available through GIFT inbound. They pair long and short positions to strip out market direction. The aim is steady positive returns whether the index rises or falls. Debt-like outcomes from an equity engine.",
+      "Long one stock, short another, so market moves largely cancel out. The return comes from manager skill, not market direction.",
+    what: "Absolute-return Category III AIF strategies, also available through GIFT inbound. They pair long and short positions to strip out market direction, aiming for steady positive returns whether the index rises or falls.",
     solves: [
       "Debt-plus returns without duration or plain credit risk",
       "Positive-target returns in flat or falling markets",
@@ -229,8 +229,8 @@ export const PRODUCTS: Product[] = [
     horizon: "3–5 yrs",
     cashflow: false,
     analogy:
-      "An equity fund with brakes. It will not top the charts in a strong bull run, because the hedges cost some upside. It is built to fall far less when markets drop.",
-    what: "Specified Investment Funds, SEBI's newest category, live since 2025. They can go long the stocks they like and short the ones they do not. The aim is equity-like returns with much smaller falls. Hedge-fund technique, mutual-fund rules and tax, ₹10 lakh entry.",
+      "An equity fund with brakes. Hedges cost some upside in a bull run; it is built to fall far less when markets drop.",
+    what: "Specified Investment Funds, SEBI's newest category, live since 2025. They can go long the stocks they like and short the ones they do not, aiming for equity-like returns with much smaller falls. Mutual-fund rules and tax, ₹10 lakh entry.",
     solves: [
       "Staying in equity without full drawdown exposure",
       "A smoother ride for a first move beyond mutual funds",
@@ -271,8 +271,8 @@ export const PRODUCTS: Product[] = [
     horizon: "3–5 yrs",
     cashflow: true,
     analogy:
-      "Being the lender instead of the depositor. Sound mid-sized companies pay 12 to 20% to borrow, secured. A private credit fund puts you on the lending side.",
-    what: "A Category II AIF, also available through GIFT inbound, that lends directly to performing companies and real-estate projects. Secured, covenant-protected loans that banks are too slow or too rigid to write. Interest comes back as regular payouts. Principal returns as loans mature.",
+      "Being the lender, not the depositor. Sound mid-sized companies pay 12 to 20% to borrow, secured.",
+    what: "A Category II AIF, also available through GIFT inbound, that lends directly to performing companies and real-estate projects through secured, covenant-protected loans. Interest comes back as regular payouts. Principal returns as loans mature.",
     solves: [
       "Double-digit income without equity volatility",
       "Regular quarterly/semi-annual cashflow",
@@ -313,8 +313,8 @@ export const PRODUCTS: Product[] = [
     horizon: "5–7+ yrs",
     cashflow: false,
     analogy:
-      "A second address for your capital. If your business, your home and your portfolio are all in India and all in rupees, holding some wealth in another currency is insurance, not luxury.",
-    what: "Investing in global markets in US dollars: US and developed-market equity, global innovation. Either through GIFT City IFSC funds, or the RBI's remittance route at US $2,50,000 per person per year. For NRIs, GIFT inbound funds are often the cleanest way into Indian strategies.",
+      "If your business, home and portfolio are all in India and in rupees, holding some wealth in another currency is insurance, not luxury.",
+    what: "Global markets in US dollars: US and developed-market equity, global innovation. Through GIFT City IFSC funds, or the RBI's remittance route at US $2,50,000 per person per year. For NRIs, GIFT inbound funds are often the cleanest way into Indian strategies.",
     solves: [
       "Rupee-concentration risk on family wealth",
       "Access to businesses India doesn’t list — global tech, semiconductors, AI",
@@ -355,8 +355,8 @@ export const PRODUCTS: Product[] = [
     horizon: "5+ yrs",
     cashflow: false,
     analogy:
-      "One vehicle holding two things. The listed stocks anyone can buy, and the off-market pre-IPO and anchor allocations most investors never see.",
-    what: "A Category III long-only AIF, also available through GIFT inbound. It blends a concentrated listed-equity book with a 15 to 20% sleeve of pre-IPO and anchor allocations. Public and late-stage private markets in one commitment.",
+      "One vehicle for listed stocks plus the off-market pre-IPO and anchor allocations most investors never see.",
+    what: "A Category III long-only AIF, also available through GIFT inbound. It blends a concentrated listed-equity book with a 15 to 20% sleeve of pre-IPO and anchor allocations.",
     solves: [
       "Concentrated listed alpha plus pre-IPO access in one commitment",
       "Anchor and IPO allocations retail investors rarely receive",
@@ -397,8 +397,8 @@ export const PRODUCTS: Product[] = [
     horizon: "5–7+ yrs",
     cashflow: false,
     analogy:
-      "A portfolio built for you, not for the crowd. Twenty to twenty-five stocks chosen with conviction, held in your own demat, visible line by line. When the calls are right, concentration is what compounds.",
-    what: "A SEBI-registered Portfolio Management Service running a concentrated equity portfolio directly in your demat account. No 65% category limits, no 80-stock dilution. A manager's best 20 to 25 ideas, sized to matter. You own the shares. The manager steers.",
+      "Twenty to twenty-five conviction stocks in your own demat, visible line by line. When the calls are right, concentration is what compounds.",
+    what: "A SEBI-registered Portfolio Management Service running a concentrated equity portfolio directly in your demat account. No 65% category limits, no 80-stock dilution: a manager's best 20 to 25 ideas, sized to matter. You own the shares.",
     solves: [
       "Real alpha-seeking beyond diversified funds",
       "Transparency — every holding visible in your own account",
@@ -439,8 +439,8 @@ export const PRODUCTS: Product[] = [
     horizon: "8–10 yrs",
     cashflow: false,
     analogy:
-      "Buying into a proven business before it lists. The company already works. The fund's job is to scale it and sell it at a public-market multiple.",
-    what: "Category II AIFs investing in late-stage private companies that are profitable or close to it. Growth capital, buyouts, pre-listing rounds. It sits between venture risk and public-market pricing: proven businesses, private valuations, professional exit engineering.",
+      "Buying into a proven business before it lists. The fund's job is to scale it and sell at a public-market multiple.",
+    what: "Category II AIFs investing in late-stage private companies that are profitable or close to it: growth capital, buyouts, pre-listing rounds. It sits between venture risk and public-market pricing.",
     solves: [
       "Growth-stage exposure without early-stage mortality risk",
       "Entry at private multiples, exit at public ones",
@@ -462,67 +462,67 @@ export const PRODUCTS: Product[] = [
       {
         q: "What is the actual minimum for a private equity fund in India?",
         a: [
-          "SEBI sets the floor for any Alternative Investment Fund at ₹1 crore. A Category II fund cannot accept less from an ordinary investor. Employees and directors of the fund or its manager can come in at ₹25 lakh, and accredited investors have no minimum at all.",
-          "In practice the number that matters is not the floor but the fund's own ticket. Many private equity funds set theirs well above ₹1 crore, because a smaller number of larger investors is simpler to administer across a ten-year life.",
+          "SEBI's floor for any Alternative Investment Fund is ₹1 crore. A Category II fund cannot accept less from an ordinary investor. Employees and directors of the fund or its manager can come in at ₹25 lakh; accredited investors have no minimum.",
+          "Many private equity funds set their own ticket well above ₹1 crore, because fewer, larger investors are simpler to administer across a ten-year life.",
         ],
       },
       {
         q: "Do I write the whole cheque on day one?",
         a: [
-          "No. You sign a commitment. The fund then draws it down in tranches, called capital calls, as it finds deals. A ₹1 crore commitment might see ₹15 lakh called in the first year and the balance over the next three or four.",
-          "This is the part people underestimate. The calls arrive on the manager's timetable, not yours, usually with a short notice period. Defaulting on one is expensive: the standard remedy in the fund documents is forfeiture of part of what you have already paid in. Before you commit, work out where the uncalled money will sit for four years and what it will earn there.",
+          "No. You sign a commitment, drawn down in tranches called capital calls as the fund finds deals. A ₹1 crore commitment might see ₹15 lakh called in the first year and the balance over the next three or four.",
+          "Calls arrive on the manager's timetable, usually at short notice. Defaulting is expensive: the standard remedy in the fund documents is forfeiture of part of what you have already paid in. Work out beforehand where the uncalled money will sit for four years and what it will earn.",
         ],
       },
       {
         q: "What is the J-curve, and why does my statement look bad for three years?",
         a: [
-          "Fees and set-up costs are charged from the first year. Value creation in the underlying companies shows up much later, and unlisted holdings are marked conservatively until there is a transaction to mark them against. So the reported value of your account typically dips below what you have paid in, then recovers.",
-          "That shape is structural, not a warning sign in itself. What it means practically is that an early statement tells you almost nothing about the fund. The first genuinely informative data point is usually the first realisation.",
+          "Fees and set-up costs are charged from the first year. Value creation shows up much later, and unlisted holdings are marked conservatively until a transaction prices them. So your account's reported value typically dips below what you have paid in, then recovers.",
+          "That shape is structural, not a warning sign in itself. An early statement tells you almost nothing about the fund. The first informative data point is usually the first realisation.",
         ],
       },
       {
         q: "How much of the gain does the manager keep?",
         a: [
-          "Two layers. A management fee, often around 2% a year, and carried interest, which is a share of profits above a hurdle rate.",
-          "The layer that decides the number is the catch-up. Read “20% over a 10% hurdle” two ways. Without a catch-up, the manager takes 20% of the gains above the hurdle only. With a full catch-up, once the hurdle is cleared the manager takes 20% of the whole gain, hurdle included. Identical headline terms, several times the fee. Ask whether there is a catch-up before you ask anything about strategy.",
-          "Also ask whether the management fee is charged on committed capital or on capital actually drawn. In the early years, when most of your commitment is still uncalled, those two produce very different bills.",
+          "A management fee, often around 2% a year, and carried interest, a share of profits above a hurdle rate.",
+          "The catch-up decides the number. Take “20% over a 10% hurdle”. Without a catch-up, the manager takes 20% of the gains above the hurdle only. With a full catch-up, once the hurdle is cleared the manager takes 20% of the whole gain, hurdle included. Identical headline terms, several times the fee.",
+          "Also ask whether the management fee is charged on committed or drawn capital. In the early years, with most of your commitment uncalled, those produce very different bills.",
         ],
       },
       {
         q: "How does a Category II AIF differ from Category III?",
         a: [
-          "Category II is the unlisted, long-lock structure: private equity, private credit, real estate. It does not use leverage other than for day-to-day operating needs. Category III is the listed-market structure, and it may use leverage and derivatives.",
-          "The difference that reaches your return is taxation. Category II is a pass-through, so gains are taxed in your hands with the character of the underlying holding preserved. Category III is taxed at the fund level.",
-        "It also changes what the manager must put in alongside you. The continuing-interest requirement is 2.5% of the corpus or ₹5 crore, whichever is lower, for Categories I and II, and 5% or ₹10 crore for Category III.",
+          "Category II is the unlisted, long-lock structure: private equity, private credit, real estate. It does not use leverage other than for day-to-day operating needs. Category III is the listed-market structure, and may use leverage and derivatives.",
+          "Category II is a pass-through: gains are taxed in your hands, keeping the character of the underlying holding. Category III is taxed at the fund level.",
+        "The manager's continuing-interest requirement also differs: 2.5% of the corpus or ₹5 crore, whichever is lower, for Categories I and II, and 5% or ₹10 crore for Category III.",
         ],
       },
       {
         q: "How are the gains taxed when the fund exits a company?",
         a: [
-          "Category II AIFs are a pass-through. The fund does not pay tax on the gain; it is taxed in your hands, and it keeps the character it had inside the fund. For an unlisted company held beyond twenty-four months that means long-term capital gains at 12.5%.",
-          "The fund deducts tax at source on what it distributes, and issues you a statement each year showing your share of income by head. You reconcile that against your own return. Because income can be reported to you in a year in which you received no cash, the tax year and the cash year do not always line up. Plan for that.",
+          "Category II AIFs are a pass-through. The gain is taxed in your hands, not the fund's, and keeps its character. For an unlisted company held beyond twenty-four months that means long-term capital gains at 12.5%.",
+          "The fund deducts tax at source on distributions, and issues a yearly statement of your share of income by head. Income can be reported to you in a year in which you received no cash, so the tax year and the cash year do not always line up.",
         ],
       },
       {
         q: "What should I read in the private placement memorandum?",
         a: [
-          "Six things, in this order. The fund's tenure and how many extensions the manager can take unilaterally. The capital call notice period and the default remedy. Whether the management fee sits on committed or drawn capital.",
-        "Then: whether carry has a catch-up. Whether the waterfall distributes deal by deal or only after the whole fund returns capital. And the key-person clause, which says what happens if the people you are backing leave.",
-          "A deal-by-deal waterfall pays the manager carry on early winners before the fund as a whole has returned your money. A whole-of-fund waterfall does not. Over a ten-year life that single line moves more money than the fee headline.",
+          "Six things. The fund's tenure and how many extensions the manager can take unilaterally. The capital call notice period and the default remedy. Whether the management fee sits on committed or drawn capital.",
+        "Whether carry has a catch-up. Whether the waterfall distributes deal by deal or only after the whole fund returns capital. And the key-person clause, which says what happens if the people you are backing leave.",
+          "A deal-by-deal waterfall pays the manager carry on early winners before the fund as a whole has returned your money. A whole-of-fund waterfall does not.",
         ],
       },
       {
         q: "Can I get out early?",
         a: [
-          "Not through the fund. There is no redemption window; the money returns as the manager sells companies. The only exit is a secondary sale of your interest to another investor, which needs the manager's consent, takes months, and prices at a discount because the buyer is taking on your remaining unfunded commitment as well.",
-          "Treat the lock-in as real. The test is not whether you can find ₹1 crore. It is whether you can commit it, meet calls on someone else's schedule, and not touch any of it for eight years without that changing another decision you make in the meantime.",
+          "Not through the fund. There is no redemption window; money returns as the manager sells companies. The only exit is a secondary sale of your interest to another investor, which needs the manager's consent, takes months, and prices at a discount because the buyer takes on your remaining unfunded commitment.",
+          "Treat the lock-in as real. The test is whether you can commit ₹1 crore, meet calls on someone else's schedule, and not touch it for eight years without that changing another decision you make meanwhile.",
         ],
       },
       {
         q: "Can NRIs invest in Indian private equity funds?",
         a: [
-          "Yes. Category II AIFs accept NRI capital, generally on a repatriable basis through an NRE account, and the structuring should be settled before you commit rather than at the first capital call.",
-          "If you are a US person, stop here and read the position on pooled Indian funds first. A Category II AIF is a pooled foreign vehicle for US tax purposes, and that changes the arithmetic materially regardless of how the fund performs.",
+          "Yes. Category II AIFs accept NRI capital, generally on a repatriable basis through an NRE account. Settle the structuring before you commit, not at the first capital call.",
+          "If you are a US person, first read the position on pooled Indian funds. A Category II AIF is a pooled foreign vehicle for US tax purposes, which changes the arithmetic materially regardless of how the fund performs.",
         ],
       },
     ],
@@ -549,8 +549,8 @@ export const PRODUCTS: Product[] = [
     horizon: "3–7 yrs",
     cashflow: false,
     analogy:
-      "Buying the flat at the excavation stage. The discount to the finished price is real. So is the risk that the project is delayed, redesigned, or never built. You are paid for waiting and for uncertainty.",
-    what: "Buying shares in companies before they list, through unlisted-share platforms or Category II funds. The idea is to enter at private valuations and exit at public ones. Some of India's best-known listings rewarded pre-IPO holders handsomely. Others listed below their private rounds.",
+      "Buying the flat at the excavation stage. The discount is real. So is the risk the project is delayed, redesigned, or never built.",
+    what: "Buying shares in companies before they list, through unlisted-share platforms or Category II funds, to enter at private valuations and exit at public ones. Some of India's best-known listings rewarded pre-IPO holders handsomely. Others listed below their private rounds.",
     solves: [
       "Access to growth that happens before the IPO pop",
       "Ownership in marquee names years before listing",
@@ -591,8 +591,8 @@ export const PRODUCTS: Product[] = [
     horizon: "8–12 yrs",
     cashflow: false,
     analogy:
-      "Planting an orchard, not buying fruit. Most saplings will not make it. The few that do bear fruit for a generation, and one great tree can pay for the whole orchard.",
-    what: "Category I AIFs, venture and angel funds, investing in early-stage companies. Returns follow a power law. Many investments fail, most muddle through, and one or two winners are expected to return the whole fund. Patient, decade-long money at the frontier of risk.",
+      "Planting an orchard. Most saplings will not make it. One great tree can pay for the whole orchard.",
+    what: "Category I AIFs, venture and angel funds, investing in early-stage companies. Returns follow a power law: many investments fail, most muddle through, and one or two winners are expected to return the whole fund. Patient, decade-long money.",
     solves: [
       "Participation in India’s startup ecosystem with professional selection",
       "Truly uncorrelated, decade-horizon compounding",

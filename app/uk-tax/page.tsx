@@ -32,8 +32,8 @@ export default function UkTaxHub() {
         }
         marketNote="If you are UK-resident and hold Indian funds"
         lede={[
-          'For a UK resident, the question that decides your outcome is not what the fund returned. It is whether that exact share class holds HMRC reporting fund status. Without it, your profit on sale is not a capital gain at all. It is an offshore income gain, charged to income tax at up to 45%.',
-          'Most Indian funds do not hold the status. Some do, including several GIFT City funds, and we maintain the India-exposed extract of HMRC\'s own list.',
+          'For a UK resident, what decides your outcome is whether that exact share class holds HMRC reporting fund status. Without it, your profit on sale is not a capital gain. It is an offshore income gain, charged to income tax at up to 45%.',
+          'Most Indian funds do not hold the status. Some do, including several GIFT City funds. We maintain the India-exposed extract of HMRC\'s list.',
         ]}
         reviewed="September 2026"
         sections={[

@@ -32,18 +32,18 @@ export default function GiftInboundPage() {
           Into India, in dollars.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
-          A GIFT City inbound fund runs an Indian strategy — the same PMS or AIF logic used onshore
-          — but is housed inside the GIFT IFSC, where it accepts{' '}
-          <b>US dollars from overseas investors</b> under the IFSCA regulator. No Indian bank
+          A GIFT City inbound fund runs an Indian strategy, the same PMS or AIF logic used
+          onshore, inside the GIFT IFSC. It accepts{' '}
+          <b>US dollars from overseas investors</b> under the IFSCA. No Indian bank
           account, no currency conversion, no resident-style tax filings.{' '}
           <em className="text-bronze italic">
             For NRIs, frequently the cleanest route into Indian strategies.
           </em>
         </p>
         <p className="font-serif text-[19px] text-ink-soft mt-3">
-          Below is the desk&apos;s <b>Curated Inbound Fund Repository</b>: India-dedicated funds
-          accessible through GIFT City, grouped by asset class, with the structure, minimum and
-          US / UK / Canada acceptance confirmed with each house.
+          Below is the desk&apos;s <b>Curated Inbound Fund Repository</b>: India-dedicated GIFT
+          City funds by asset class, with structure, minimum and US / UK / Canada acceptance
+          confirmed with each house.
         </p>
       </header>
 
@@ -63,9 +63,8 @@ export default function GiftInboundPage() {
           Where you file your taxes changes what these funds are worth to you.
         </h2>
         <p className="font-serif text-[16px] text-[#c7d6ce] mt-2.5 max-w-[660px]">
-          India&rsquo;s IFSC exemptions were written for investors who are taxed nowhere else. If
-          your own country taxes you anyway, an Indian exemption can quietly leave you worse off,
-          not better. Same fund, three different answers.
+          India&rsquo;s IFSC exemptions were written for investors taxed nowhere else. If your own
+          country taxes you anyway, an Indian exemption can quietly leave you worse off.
         </p>
         <div className="grid gap-3 sm:grid-cols-3 mt-6">
           {CORRIDORS.map((c) => (
@@ -94,7 +93,7 @@ export default function GiftInboundPage() {
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 text-[15px] text-ink-soft max-w-[860px]">
         <b className="font-sans">Eligibility, in one line —</b> inbound GIFT funds are built for
         NRIs, OCIs and foreign investors; resident Indians generally access these strategies through
-        the domestic (onshore) versions instead.{' '}
+        the domestic (onshore) versions.{' '}
         <Link href="/fit-finder" className="text-bronze font-sans font-medium">
           Not sure which side you&apos;re on? Run the Fit Finder →
         </Link>

@@ -30,13 +30,13 @@ export default function GiftOutboundPage() {
           Go global, without the maze.
         </h1>
         <p className="font-serif text-[19px] text-ink-soft mt-3.5">
-          Resident Indians can invest globally through the RBI&apos;s LRS route —{' '}
+          Resident Indians can invest globally through the RBI&apos;s LRS route:{' '}
           <b>US $250,000 per person per year</b>. Below is our{' '}
-          <b>Curated Global Fund Repository</b>: a working reference list of{' '}
-          <b>global routes — GIFT City and offshore</b> (the domicile of each is shown in the table),
-          organised by the role each plays in a global sleeve.{' '}
+          <b>Curated Global Fund Repository</b>:{' '}
+          <b>global routes, GIFT City and offshore</b> (domicile shown in the table), organised by
+          the role each plays in a global sleeve.{' '}
           <em className="text-bronze italic">
-            A reference list for eligible investors — not investment advice.
+            A reference list for eligible investors, not investment advice.
           </em>
         </p>
         <Link

@@ -33,8 +33,8 @@ export default function UsTaxHub() {
         }
         marketNote="If you are a US taxpayer — green card, citizenship, or substantial presence"
         lede={[
-          'Indian law does not stop a US resident investing at home. American law is what decides whether it is sensible. A pooled Indian fund is usually a PFIC, which means tax at the top marginal rate, an interest charge, and a separate form for every fund, every year.',
-          'These pages explain the rules and what they mean for someone holding Indian funds. They do not work out what you owe, and they are not a substitute for a US CPA or an Enrolled Agent.',
+          'Indian law does not stop a US resident investing at home. US law decides whether it is sensible. A pooled Indian fund is usually a PFIC: tax at the top marginal rate, an interest charge, and a separate form per fund, per year.',
+          'These pages explain the rules for someone holding Indian funds. They do not work out what you owe, and are not a substitute for a US CPA or an Enrolled Agent.',
         ]}
         reviewed="September 2026"
         sections={[

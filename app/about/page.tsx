@@ -28,15 +28,15 @@ const FACTS: [string, string][] = [
 const IDEAS: { h: string; p: string }[] = [
   {
     h: 'Most portfolios hold nine things and one return driver.',
-    p: 'Everything in them is paid by the same source: Indian corporate earnings. There are at least six ways a portfolio can get paid. When one stalls, the others are under no obligation to stall with it.',
+    p: 'Everything in them is paid by one source: Indian corporate earnings. A portfolio can get paid in at least six ways. When one stalls, the others need not.',
   },
   {
     h: 'Most people can name two. There are thirteen.',
-    p: 'Thirteen SEBI- and IFSCA-regulated ways to invest beyond a mutual fund. Twelve years across the table from families with serious money, and the same thing happens: they own two. Nobody showed them the other eleven. So we built the map.',
+    p: 'Thirteen SEBI- and IFSCA-regulated ways to invest beyond a mutual fund. After twelve years across the table from families with serious money, the pattern holds: they own two. So we built the map.',
   },
   {
     h: 'The answer is sometimes “not yet”.',
-    p: 'A site that never says so is a brochure. The Fit Finder is built to tell you when nothing here fits, and the desk says it across the table too.',
+    p: 'A site that never says so is a brochure. The Fit Finder is built to tell you when nothing here fits, and the desk says it too.',
   },
 ]
 
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <p className="text-[16.5px] text-ink-soft mt-3 max-w-[640px]">
             Ten years at Jhaveri Securities distributing across the full spectrum. Since 2023,
             Beyond: PMS, AIF, SIF and GIFT City for resident families, promoters and NRIs in the
-            US, the UK and the Gulf. He writes every page on this site himself.
+            US, the UK and the Gulf. He writes every page on this site.
           </p>
           <Link
             href={`/about/${a.slug}`}

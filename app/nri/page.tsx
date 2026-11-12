@@ -37,17 +37,13 @@ export default function NriHubPage() {
         <p className="font-serif text-[19px] text-ink-soft max-w-[760px] mt-4">
           Indian regulation barely distinguishes between one non-resident investor and another. Your
           country of residence does. The same fund can be a sensible holding in Dubai, a reporting
-          headache in London and a real tax trap in New Jersey. Singapore and Hong Kong sit an hour
-          apart by air and get opposite treaty answers. Nothing on the factsheet tells you which one
-          you are looking at.
+          headache in London and a real tax trap in New Jersey. Nothing on the factsheet tells you
+          which.
         </p>
         <p className="text-[17px] text-ink-soft max-w-[760px] mt-4">
-          These guides start from where you file your taxes, not from the product shelf. Each one
-          covers which rules apply to shares and to mutual funds, which filings you owe, and the
-          mistakes that cost money. Each is written against the treaty and the tax authority that
-          actually govern you, and no country&apos;s answer is borrowed from its neighbour. Where
-          the law is unsettled, or where we could not read the source ourselves, we say so instead
-          of rounding it off into a confident answer.
+          These guides start from where you file your taxes. Each covers the rules for shares and
+          for mutual funds, the filings you owe, and the mistakes that cost money. Where the law is
+          unsettled, or we could not read the source ourselves, we say so.
         </p>
         <AuthorByline className="mt-6" reviewed="November 2026" regulatoryAsAt="November 2026" />
       </section>
@@ -94,15 +90,15 @@ export default function NriHubPage() {
           {[
             {
               h: 'India does not restrict you',
-              p: 'Portfolio management regulations carry no residency condition at all, and the AIF regulations expressly permit foreign and non-resident investors. Where a house declines you, that is its own commercial decision, usually driven by your country\'s rules, not India\'s.',
+              p: 'Portfolio management regulations carry no residency condition, and the AIF regulations expressly permit foreign and non-resident investors. If a house declines you, that is its commercial decision, usually driven by your country\'s rules, not India\'s.',
             },
             {
               h: 'The structure decides the tax',
-              p: 'A managed account holding shares in your own name and a fund issuing you units are treated very differently in most of these countries, sometimes as the difference between a capital gain and income. It is the first question to ask, not the last.',
+              p: 'A managed account holding shares in your name and a fund issuing you units are treated very differently in most of these countries, sometimes as capital gain versus income. Ask this first.',
             },
             {
               h: 'Indian law changed underneath everyone',
-              p: 'India replaced its entire income tax statute on 1 April 2026. Any page quoting the old section numbers is quoting a repealed Act, so we describe Indian rules by what they do and cite numbers only where they are stable.',
+              p: 'India replaced its entire income tax statute on 1 April 2026. Pages quoting the old section numbers quote a repealed Act, so we describe Indian rules by what they do and cite numbers only where they are stable.',
             },
           ].map((b) => (
             <div key={b.h}>

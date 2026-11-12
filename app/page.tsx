@@ -30,11 +30,10 @@ export default function HomePage() {
             <em className="font-serif italic font-medium text-bronze">Drawn to scale.</em>
           </h1>
           <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-4">
-            One landscape, three ways to read it. By{' '}
-            <em className="text-bronze italic">position</em>, risk against liquidity. By{' '}
-            <em className="text-bronze italic">outcome</em>, what ₹1 crore becomes next to the FD
-            you already have. By <em className="text-bronze italic">objective</em>, which structure
-            does which job. Tap any block or bubble to open it up.
+            Three ways to read it. By <em className="text-bronze italic">position</em>: risk
+            against liquidity. By <em className="text-bronze italic">outcome</em>: what ₹1 crore
+            becomes next to an FD. By <em className="text-bronze italic">objective</em>: which
+            structure does which job. Tap any block or bubble to open it.
           </p>
           <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-5">
             {SITE.lineage} · {SITE.city}, {SITE.state} · Architecture, not salesmanship
@@ -55,9 +54,8 @@ export default function HomePage() {
               The second passport for capital.
             </h2>
             <p className="font-serif text-[18px] text-[#c7d6ce] mt-4 max-w-[560px]">
-              India built its own international financial centre for a simple reason. Money from
-              abroad should be able to reach Indian strategies, and Indian money should be able to
-              reach the world, without the paperwork that used to make both a chore. We curate{' '}
+              India&apos;s own international financial centre. Money from abroad reaches Indian
+              strategies, and Indian money reaches the world, with less paperwork. We curate{' '}
               <b className="text-white-warm">inbound</b> funds for NRIs and{' '}
               <b className="text-white-warm">outbound</b> dollar routes for residents.
             </p>
@@ -105,7 +103,7 @@ export default function HomePage() {
             Start with the fundamentals.
           </h2>
           <p className="font-serif text-[18px] text-ink-soft max-w-[640px] mt-3">
-            Short reads, written the way we would explain it to you across a table.{' '}
+            Short reads in plain language.{' '}
             <em className="text-bronze italic">No jargon survives past the first sentence.</em>
           </p>
         </FadeInOnScroll>
@@ -171,9 +169,8 @@ export default function HomePage() {
             Seven questions. A shortlist, not a sales pitch.
           </h2>
           <p className="font-serif text-[17px] text-ink-soft max-w-[560px] mx-auto mt-3">
-            An architect asks what the building is <em className="italic">for</em> before drawing
-            it. Answer seven questions — the tool narrows thirteen structures to the few worth a
-            serious conversation.
+            Answer seven questions. The tool narrows thirteen structures to the few worth a serious
+            conversation.
           </p>
           <Link
             href="/fit-finder"

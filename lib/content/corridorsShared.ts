@@ -86,12 +86,12 @@ export function indiaTaxQA(country: string): CorridorQA {
   return {
     q: `What does India tax before the money reaches me in ${country}?`,
     a: [
-      "India taxes the gain first. What your country of residence does comes afterwards.",
-      "On listed Indian shares and equity mutual fund units held for more than twelve months, India charges <b>12.5% on gains above ₹1.25 lakh</b> in a tax year. Sold within twelve months, the rate is <b>20%</b>. Surcharge and cess are added on top of both.",
-      "Debt-heavy funds work differently. Units of a fund with more than 65% in debt and money-market instruments, bought on or after 1 April 2023, are always treated as short-term, however long you hold them.",
-      "Dividends paid to a non-resident are taxed at 20% before surcharge and cess, unless a treaty sets a lower rate and you have filed the paperwork for it.",
-      "Tax is deducted at source when a non-resident is paid, so what lands in your account is already net. The deduction is generally 20% on short-term and 12.5% on long-term equity gains, and 20% on dividends, with surcharge and a 4% cess on top.",
-      "The amount deducted is not always your final liability. Check the figure on your contract note or redemption statement, and treat any excess as something to claim back.",
+      "India taxes the gain first.",
+      "Listed Indian shares and equity mutual fund units held over twelve months: <b>12.5% on gains above ₹1.25 lakh</b> in a tax year. Sold within twelve months: <b>20%</b>. Surcharge and cess are extra.",
+      "Fund units with more than 65% in debt and money-market instruments, bought on or after 1 April 2023, are always short-term, however long held.",
+      "Dividends to a non-resident are taxed at 20% before surcharge and cess, unless a treaty rate is lower and you have filed for it.",
+      "Tax is deducted at source when a non-resident is paid: generally 20% on short-term and 12.5% on long-term equity gains and 20% on dividends, plus surcharge and a 4% cess.",
+      "That is not always your final liability. Check your contract note or redemption statement and claim back any excess.",
     ],
     sources: [SRC.act2025],
   };
@@ -107,9 +107,9 @@ export function indiaPaperworkQA(
     a: [
       "Three things, in this order.",
       `<b>A residency certificate</b> from your own tax authority. ${certificate}`,
-      "<b>India's treaty-information form, Form 41.</b> Until April 2026 it was Form 10F, and most people still call it that. It is filed on the Indian income-tax e-filing portal and can only be submitted online. The portal lists your residency certificate as a prerequisite, so get the certificate first.",
-      "<b>An Indian tax return</b> for the year, if you are owed money back. Indian law says a refund claim is made by filing a return. Nothing is refunded automatically, and a treaty rate you never claimed is simply tax you paid.",
-      "Keep the three consistent: the same name, the same period, the same country of residence on each.",
+      "<b>India's treaty-information form, Form 41</b> (Form 10F until April 2026, and still widely called that). It is filed online only, on the Indian income-tax e-filing portal, which lists your residency certificate as a prerequisite.",
+      "<b>An Indian tax return</b> for the year, if you are owed money back. Indian law says a refund is claimed by filing a return. Nothing is refunded automatically.",
+      "Keep name, period and country of residence the same on all three.",
     ],
     sources: [
       ...(certificateSource ? [certificateSource] : []),
@@ -123,10 +123,10 @@ export function indiaPaperworkQA(
 export const INDIA_RESIDENCE_QA: CorridorQA = {
   q: "Could I still count as tax-resident in India?",
   a: [
-    "Yes, and it is worth checking before anything else on this page.",
-    "India treats you as resident if you spend 182 days or more there in a tax year, which runs from 1 April to 31 March. A second test catches people who spend 60 days in the year and 365 days across the four years before it.",
-    "That second test is relaxed for Indian citizens and people of Indian origin who are visiting. The 60-day test does not apply to them, unless their Indian income is above ₹15 lakh, in which case 120 days replaces 60.",
-    "If you are resident in both countries in the same year, the treaty's tie-breaker decides where you belong, if there is a treaty. This is a day-count question with a precise answer. Count the days and keep the passport stamps.",
+    "Yes. Check this first.",
+    "India treats you as resident if you spend 182 days or more there in a tax year (1 April to 31 March), or 60 days in the year and 365 days across the four years before it.",
+    "For visiting Indian citizens and people of Indian origin the 60-day test does not apply, unless their Indian income is above ₹15 lakh, when 120 days replaces 60.",
+    "If both countries treat you as resident in the same year, the treaty's tie-breaker decides, if there is a treaty. Count the days and keep the passport stamps.",
   ],
   sources: [SRC.nrFaq, SRC.act2025],
 };
@@ -134,46 +134,46 @@ export const INDIA_RESIDENCE_QA: CorridorQA = {
 /** Mistake that applies in every country. */
 export const MISTAKE_STATUS = {
   m: "Leaving your Indian bank and fund records marked as resident after you move",
-  why: "RBI's direction says a resident account should be designated as an NRO account when the holder becomes a person resident outside India. Indian institutions also report accounts to your new country based on the residence you declared, so a stale record produces the wrong deduction and the wrong report.",
+  why: "RBI's direction says a resident account should be designated as an NRO account when the holder becomes a person resident outside India. Indian institutions report accounts abroad on your declared residence, so a stale record means the wrong deduction and the wrong report.",
 };
 
 export const MISTAKE_REFUND = {
   m: "Assuming a treaty rate applies by itself",
-  why: "Tax is deducted when you are paid. Relief needs a residency certificate, the online treaty form and, for a refund, an Indian return. Skip one and the deduction stands.",
+  why: "Relief needs a residency certificate, the online treaty form and, for a refund, an Indian return. Skip one and the tax deducted when you were paid stands.",
 };
 
 /** The decision behind the tax question. Reasoning, not a forecast. */
 export const WHY_INDIA_QA: CorridorQA = {
   q: "Is it worth holding rupee investments at all if I live abroad?",
   a: [
-    "That depends on what the money is for, and it is worth answering before the tax question.",
-    "If you earn and spend in another currency, measure the return in that currency. A rupee return can look strong and still be ordinary once the exchange rate has moved. The opposite mistake is just as common: judging India only in foreign-currency terms and concluding there is no return at all.",
-    "There are cases where rupee exposure makes sense whatever the currency does. You plan to return to India. You support parents or family there. You expect an inheritance that will stay in India. You have rupee income or rupee spending, such as property upkeep or giving.",
-    "In those cases the currency question mostly answers itself. What is left is the one this page is about: how to hold those rupees so that two tax systems do not take more than they need to.",
+    "It depends what the money is for.",
+    "If you earn and spend in another currency, measure the return in that currency. A strong rupee return can be ordinary once the exchange rate has moved. Judging India only in foreign-currency terms and seeing no return is the opposite mistake.",
+    "Rupee exposure makes sense whatever the currency does if you plan to return to India, support parents or family there, expect an inheritance that will stay in India, or have rupee income or spending, such as property upkeep or giving.",
+    "What remains is how to hold those rupees so two tax systems take no more than they must.",
   ],
 };
 
 export const MISTAKE_ADVICE_LATER = {
   m: "Investing first and taking tax advice afterwards",
-  why: "The wrapper is hard to change once you are in it. Selling to fix the structure is itself a taxable event, in India and usually at home as well.",
+  why: "The wrapper is hard to change once you are in it. Selling to fix it is a taxable event, in India and usually at home too.",
 };
 
 export const MISTAKE_INDIAN_LOGIC = {
   m: "Assuming advice that works for a resident Indian works for you",
-  why: "India taxes equity funds and shares at the same rates, so Indian advice rarely distinguishes between them. Your country of residence may treat the two very differently.",
+  why: "India taxes equity funds and shares at the same rates, so Indian advice rarely separates them. Your country of residence may treat them very differently.",
 };
 
 export const CHECK_ADVISER =
-  "Take advice from someone qualified in your country of residence before you invest or before you move, not after. Do not self-file cross-border returns from a blog post.";
+  "Take advice from someone qualified in your country of residence before you invest or move, not after. Do not self-file cross-border returns from a blog post.";
 
 export const CHECK_PMS_REPORTING =
-  "If you use an Indian portfolio manager, confirm in writing that they provide transaction-level statements in a form your home-country return can use.";
+  "If you use an Indian portfolio manager, confirm in writing that they provide transaction-level statements your home-country return can use.";
 
 export const CHECK_STATUS =
   "Update your residential status with your Indian bank and fund houses, and move resident accounts to NRO.";
 
 export const CHECK_RECORDS =
-  "Keep purchase dates, costs and the exchange rate on each date. Your country of residence computes the gain in its own currency, not in rupees.";
+  "Keep purchase dates, costs and the exchange rate on each date. Your country of residence computes the gain in its own currency, not rupees.";
 
 /** Fields every new guide shares. */
 export const NEW_COMMON: Pick<
