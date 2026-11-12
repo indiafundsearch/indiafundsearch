@@ -29,7 +29,7 @@ export default function HomePage() {
             <br />
             <em className="font-serif italic font-medium text-bronze">Drawn to scale.</em>
           </h1>
-          <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-4">
+          <p className="font-serif text-[19px] text-ink-soft max-w-[62ch] mt-4">
             Three ways to read it. By <em className="text-bronze italic">position</em>: risk
             against liquidity. By <em className="text-bronze italic">outcome</em>: what ₹1 crore
             becomes next to an FD. By <em className="text-bronze italic">objective</em>: which
@@ -102,7 +102,7 @@ export default function HomePage() {
           <h2 className="font-sans font-bold text-[clamp(26px,3.6vw,38px)] tracking-[-0.01em]">
             Start with the fundamentals.
           </h2>
-          <p className="font-serif text-[18px] text-ink-soft max-w-[640px] mt-3">
+          <p className="font-serif text-[18px] text-ink-soft max-w-[62ch] mt-3">
             Short reads in plain language.{' '}
             <em className="text-bronze italic">No jargon survives past the first sentence.</em>
           </p>

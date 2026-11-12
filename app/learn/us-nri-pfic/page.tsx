@@ -244,7 +244,7 @@ export default function UsNriPficPage() {
         </Link>
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-10 border-t border-line pt-5 max-w-[820px]">
+      <p className="font-serif italic text-[13.5px] text-slate mt-10 border-t border-line pt-5 max-w-[62ch]">
         This page is an orientation, not US, Canadian or Indian tax advice. US and Canadian tax
         positions are fact-specific and are confirmed with qualified counsel before any investment.{' '}
         {DISCLOSURE.education}

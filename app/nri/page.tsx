@@ -34,13 +34,13 @@ export default function NriHubPage() {
           <br />
           <em className="font-serif italic font-medium text-bronze">eleven different answers.</em>
         </h1>
-        <p className="font-serif text-[19px] text-ink-soft max-w-[760px] mt-4">
+        <p className="font-serif text-[19px] text-ink-soft max-w-[62ch] mt-4">
           Indian regulation barely distinguishes between one non-resident investor and another. Your
           country of residence does. The same fund can be a sensible holding in Dubai, a reporting
           headache in London and a real tax trap in New Jersey. Nothing on the factsheet tells you
           which.
         </p>
-        <p className="text-[17px] text-ink-soft max-w-[760px] mt-4">
+        <p className="text-[17px] text-ink-soft max-w-[62ch] mt-4">
           These guides start from where you file your taxes. Each covers the rules for shares and
           for mutual funds, the filings you owe, and the mistakes that cost money. Where the law is
           unsettled, or we could not read the source ourselves, we say so.

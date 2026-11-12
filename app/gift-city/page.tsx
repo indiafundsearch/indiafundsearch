@@ -64,7 +64,7 @@ export default function GiftCityPage() {
           <br />
           <em className="font-serif italic font-medium text-bronze">Financially, the world.</em>
         </h1>
-        <p className="font-serif text-[19px] text-ink-soft max-w-[720px] mt-4">
+        <p className="font-serif text-[19px] text-ink-soft max-w-[62ch] mt-4">
           <b>GIFT City (Gujarat International Finance Tec-City)</b> sits legally inside India, but
           works in <b>US dollars</b> under its own regulator, the IFSCA. Money can flow{' '}
           <em className="text-bronze italic">in</em> from overseas investors and{' '}
@@ -127,7 +127,7 @@ export default function GiftCityPage() {
           <h2 className="font-sans text-[clamp(23px,3vw,30px)] font-bold mt-2.5 max-w-[760px] leading-[1.15]">
             The same GIFT City fund is treated three different ways.
           </h2>
-          <p className="font-serif text-[17px] text-[#c7d6ce] mt-3 max-w-[720px]">
+          <p className="font-serif text-[17px] text-[#c7d6ce] mt-3 max-w-[62ch]">
             India&rsquo;s exemptions were designed for investors taxed nowhere else. Whether they
             help or quietly cost you depends on where you file your taxes, not on the fund. Read
             your corridor before the shelf.

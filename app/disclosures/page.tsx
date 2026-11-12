@@ -56,16 +56,16 @@ export default function DisclosuresPage() {
       <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[760px]">
         How we are paid, and what this site is for.
       </h1>
-      <p className="font-serif text-[19px] text-ink-soft max-w-[720px] mt-4">
+      <p className="font-serif text-[19px] text-ink-soft max-w-[62ch] mt-4">
         The short version sits at the foot of every page. This is the long version, in one place, so
         it does not have to be repeated eleven times.
       </p>
-      <p className="text-[17px] text-ink-soft max-w-[820px] mt-5">
+      <p className="text-[17px] text-ink-soft max-w-[62ch] mt-5">
         <b>{SITE.name}</b> and <b>Beyond</b> are brands of <b>{SITE.legalEntity}</b>. That company
         operates this website, holds the distribution and referral arrangements described below, and
         is who you are dealing with when you contact the desk.
       </p>
-      <p className="font-mono text-[13px] text-slate leading-relaxed max-w-[820px] mt-3">
+      <p className="font-mono text-[13px] text-slate leading-relaxed max-w-[62ch] mt-3">
         CIN {SITE.cin} · Incorporated {SITE.incorporated}
         <br />
         Registered office: {SITE.registeredAddress}
@@ -86,7 +86,7 @@ export default function DisclosuresPage() {
         ))}
       </div>
 
-      <p className="font-mono text-[12px] tracking-[0.04em] text-slate mt-14 border-t border-line pt-4 max-w-[820px]">
+      <p className="font-mono text-[12px] tracking-[0.04em] text-slate mt-14 border-t border-line pt-4 max-w-[62ch]">
         {SITE.legalEntity} · Operator of {SITE.name} ·{' '}
         <Link href="/privacy" className="text-bronze border-b border-bronze-soft hover:text-ink">
           Privacy Policy

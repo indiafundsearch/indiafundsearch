@@ -62,7 +62,7 @@ export default function GiftInboundPage() {
         <h2 className="font-sans text-[clamp(20px,2.6vw,26px)] font-bold mt-2 leading-[1.15] max-w-[620px]">
           Where you file your taxes changes what these funds are worth to you.
         </h2>
-        <p className="font-serif text-[16px] text-[#c7d6ce] mt-2.5 max-w-[660px]">
+        <p className="font-serif text-[16px] text-[#c7d6ce] mt-2.5 max-w-[62ch]">
           India&rsquo;s IFSC exemptions were written for investors taxed nowhere else. If your own
           country taxes you anyway, an Indian exemption can quietly leave you worse off.
         </p>

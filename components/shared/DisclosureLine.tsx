@@ -12,7 +12,7 @@ import { DISCLOSURE } from '@/lib/constants'
 export function DisclosureLine({ extra, className = '' }: { extra?: string; className?: string }) {
   return (
     <p
-      className={`font-mono text-[12px] tracking-[0.04em] text-slate mt-12 border-t border-line pt-4 max-w-[820px] ${className}`}
+      className={`font-mono text-[12px] tracking-[0.04em] text-slate mt-12 border-t border-line pt-4 max-w-[62ch] ${className}`}
     >
       {DISCLOSURE.short}
       {extra ? ` ${extra}` : ''}{' '}

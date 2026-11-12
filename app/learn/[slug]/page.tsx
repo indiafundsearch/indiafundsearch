@@ -106,7 +106,7 @@ export default async function ProductPage({ params }: PageProps) {
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
           {p.name}
         </h1>
-        <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[760px]">
+        <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[62ch]">
           {p.analogy}
         </p>
         {/* The answer before any context (rule 4). Link-free on purpose. */}

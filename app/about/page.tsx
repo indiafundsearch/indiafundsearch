@@ -61,7 +61,7 @@ export default function AboutPage() {
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
           Architecture, not salesmanship.
         </h1>
-        <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[720px]">
+        <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-5 max-w-[62ch]">
           Helping local and global Indians move beyond retail products. Built on Jhaveri
           Securities Ltd, est. 1992.
         </p>
@@ -102,7 +102,7 @@ export default function AboutPage() {
           <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-1.5">
             {a.role} · The University of Manchester
           </p>
-          <p className="text-[16.5px] text-ink-soft mt-3 max-w-[640px]">
+          <p className="text-[16.5px] text-ink-soft mt-3 max-w-[62ch]">
             Ten years at Jhaveri Securities distributing across the full spectrum. Since 2023,
             Beyond: PMS, AIF, SIF and GIFT City for resident families, promoters and NRIs in the
             US, the UK and the Gulf. He writes every page on this site.
@@ -137,7 +137,7 @@ export default function AboutPage() {
       </div>
 
       {/* Entity */}
-      <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate leading-relaxed mt-8 max-w-[860px]">
+      <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate leading-relaxed mt-8 max-w-[62ch]">
         {SITE.legalEntity} · CIN {SITE.cin}
         {a.arn && <> · AMFI ARN {a.arn}</>}
         <br />
@@ -160,7 +160,7 @@ export default function AboutPage() {
         </Link>
       </div>
 
-      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[860px]">
+      <p className="font-serif italic text-[13.5px] text-slate mt-12 border-t border-line pt-5 max-w-[62ch]">
         {DISCLOSURE.education} · {SITE.name} · {SITE.initiative}
       </p>
     </article>

@@ -18,7 +18,7 @@ export default function NotFound() {
       <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[820px]">
         That page is not here.
       </h1>
-      <p className="font-serif italic text-[19px] text-ink-soft mt-4 max-w-[640px]">
+      <p className="font-serif italic text-[19px] text-ink-soft mt-4 max-w-[62ch]">
         The link may be old, or the address mistyped. Everything on the site is one of these three
         doors away.
       </p>

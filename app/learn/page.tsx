@@ -25,7 +25,7 @@ export default function LearnPage() {
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[800px]">
           Start with the fundamentals.
         </h1>
-        <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-3.5">
+        <p className="font-serif text-[19px] text-ink-soft max-w-[62ch] mt-3.5">
           Six short reads in plain language.{' '}
           <em className="text-bronze italic">No jargon survives past the first sentence.</em>
         </p>
@@ -88,7 +88,7 @@ export default function LearnPage() {
         <h2 className="font-sans font-bold text-[clamp(26px,3.8vw,38px)] tracking-[-0.01em] leading-[1.1] max-w-[800px]">
           The thirteen materials of a modern portfolio.
         </h2>
-        <p className="font-serif text-[18px] text-ink-soft max-w-[700px] mt-3">
+        <p className="font-serif text-[18px] text-ink-soft max-w-[62ch] mt-3">
           What each one is, the job it does, the minimum to get in, and how it is taxed.
         </p>
       </div>

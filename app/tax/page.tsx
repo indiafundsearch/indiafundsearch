@@ -42,7 +42,7 @@ export default function TaxPage() {
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08] max-w-[800px]">
           How each structure is taxed. FY 2026–27.
         </h1>
-        <p className="font-serif text-[19px] text-ink-soft max-w-[700px] mt-3.5">
+        <p className="font-serif text-[19px] text-ink-soft max-w-[62ch] mt-3.5">
           Only the post-tax number reaches you. Union Budget 2026 left headline capital-gains
           rates alone but changed buyback taxation and securities transaction tax.{' '}
           <em className="text-bronze italic">Always confirm with your Chartered Accountant before acting.</em>

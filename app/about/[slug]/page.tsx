@@ -94,7 +94,7 @@ export default async function AuthorPage({ params }: PageProps) {
       <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mt-12 mb-3">
         Where to find {a.name.split(' ')[0]}
       </h2>
-      <p className="text-[16.5px] text-ink-soft max-w-[820px]">
+      <p className="text-[16.5px] text-ink-soft max-w-[62ch]">
         <a
           href={a.linkedInUrl}
           target="_blank"

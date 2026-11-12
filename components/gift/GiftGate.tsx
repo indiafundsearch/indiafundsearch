@@ -89,7 +89,7 @@ export function GiftGate({ direction, curatedAsOf, groupOrder }: GiftGateProps) 
       <h2 className="font-sans font-bold text-[22px] leading-tight">
         This shelf is a reference for eligible investors.
       </h2>
-      <p className="font-serif text-[16px] text-ink-soft mt-3 max-w-[720px]">
+      <p className="font-serif text-[16px] text-ink-soft mt-3 max-w-[62ch]">
         The funds below are private-placement and restricted-scheme instruments (IFSCA / SEBI). This
         list is shown for reference only — it is <b>not an offer, solicitation or recommendation</b>,
         and nothing here is investment advice. Access route, domicile and minimums are confirmed

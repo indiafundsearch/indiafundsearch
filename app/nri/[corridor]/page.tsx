@@ -100,7 +100,7 @@ function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable })
         </table>
       </div>
       {table.note && (
-        <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[720px]">{table.note}</p>
+        <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[62ch]">{table.note}</p>
       )}
     </>
   )
@@ -187,10 +187,10 @@ export default async function CorridorPage({ params }: PageProps) {
         ))}
       </div>
 
-      <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-10 max-w-[680px]">
+      <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-10 max-w-[62ch]">
         {c.hook}
       </p>
-      <p className="text-[17.5px] text-ink-soft mt-5 max-w-[680px]">{c.lede}</p>
+      <p className="text-[17.5px] text-ink-soft mt-5 max-w-[62ch]">{c.lede}</p>
 
       {c.slug === 'us' && <UsPersonWarning className="mt-7 max-w-[680px]" />}
 
@@ -203,7 +203,7 @@ export default async function CorridorPage({ params }: PageProps) {
       {/* Question-shaped sections. Collapsed for readability, but rendered into
           the DOM via native <details> so every answer stays crawlable. */}
       <H id="questions">Questions people in {c.country} actually ask</H>
-      <p className="text-[16.5px] text-slate max-w-[720px] mb-5">
+      <p className="text-[16.5px] text-slate max-w-[62ch] mb-5">
         Open whichever applies to you. Each answer stands on its own, with the primary sources it
         rests on.
       </p>

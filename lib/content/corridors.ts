@@ -219,7 +219,7 @@ const ORIGINAL: Corridor[] = [
         a: [
           "Sometimes, and you cannot tell from the brochure. A vehicle that is genuinely a partnership, or has validly filed IRS Form 8832 to be taxed as a pass-through, is not itself a PFIC, because PFIC rules apply only to foreign corporations. No Indian trust, LLP or private limited company is on the IRS list of automatic corporations. Only 'India, Public Limited Company' is listed.",
           "Three cautions. A Schedule K-1 leaves you an indirect PFIC shareholder for any PFIC the fund holds, so a fund-of-funds can multiply your filings. A vehicle classified as a trust rather than a business entity puts you in the foreign non-grantor trust throwback rules, with their own interest charge and forms, about as punitive as PFIC. And the election belongs to the fund, not to one investor.",
-          "So ask in writing before you subscribe: have you filed Form 8832 and what did you elect, will you issue a K-1, and do you provide annual US tax reporting for every underlying vehicle? If any answer is vague, price it as a PFIC.",
+          "So ask in writing before you subscribe: have you filed Form 8832, and what did you elect; will you issue a K-1; do you provide annual US tax reporting for every underlying vehicle? If any answer is vague, price it as a PFIC.",
         ],
         sources: [
           {
@@ -314,7 +314,7 @@ const ORIGINAL: Corridor[] = [
     mistakes: [
       {
         m: "Assuming the India–US treaty caps your Indian dividend tax at 15%",
-        why: "The 15% rate is only for a company owning at least 10% of the voting stock. An individual is under the 25% limit, which changes nothing in practice.",
+        why: "The 15% rate is only for a company owning at least 10% of the voting stock. An individual is under the 25% limit.",
       },
       {
         m: "Buying an Indian mutual fund because a relative in India did well out of it",
@@ -334,11 +334,11 @@ const ORIGINAL: Corridor[] = [
       },
     ],
     checklist: [
-      "Check whether you are a US tax resident this year by the substantial presence arithmetic, not your visa label.",
-      "List every Indian pooled holding you own. Each is a separate PFIC analysis, per year.",
-      "For anything new, establish the structure first: managed account, partnership, corporation or trust.",
-      "For a GIFT City fund, get the Form 8832 position, the K-1 answer and the US reporting commitment in writing before subscribing.",
-      "If you are behind on filings, speak to a US tax professional about the streamlined procedures before any new investment.",
+      "Check the substantial presence arithmetic for this year, not your visa label.",
+      "List every Indian pooled holding you own: each is a separate PFIC analysis, per year.",
+      "Establish the structure first: managed account, partnership, corporation or trust.",
+      "For a GIFT City fund, get the Form 8832 position, the K-1 answer and the US reporting commitment in writing.",
+      "If you are behind on filings, see a US tax professional about the streamlined procedures before investing more.",
     ],
     metaTitle: "NRI Investing from the US: PFIC and Access Rules",
     metaDescription:
@@ -615,9 +615,9 @@ const ORIGINAL: Corridor[] = [
       },
     ],
     checklist: [
-      "Count your UAE days by calendar year and keep the evidence: entry and exit stamps, tenancy, employment.",
+      "Count UAE days by calendar year and keep the evidence: entry and exit stamps, tenancy, employment.",
       "Apply for the residency certificate for the right period through the FTA portal; it cannot be backdated to cover a future period.",
-      "File the Indian information form online. Register for an NR ID first if you hold no PAN.",
+      "File the Indian information form online, with an NR ID if you hold no PAN.",
       "Decide repatriable or non-repatriable before you invest.",
       "Ask how your chosen structure is treated: shares held in your name, units of a trust, or an IFSC scheme.",
     ],
@@ -687,7 +687,7 @@ const ORIGINAL: Corridor[] = [
     title: "Investing in Indian alternatives from the United Kingdom",
     hook: "Your Indian fund is probably taxed as income at 45% instead of as a gain at 24%, and the loss relief never comes back.",
     capsule:
-      "If you live in the UK, what decides your outcome is whether your exact share class holds HMRC reporting fund status, not what the fund returned. Without it, your profit on sale is not a capital gain. It is an offshore income gain, charged to income tax at up to 45%, with no annual exempt amount.",
+      "In the UK, what decides your outcome is whether your exact share class holds HMRC reporting fund status, not what the fund returned. Without it, your profit on sale is not a capital gain. It is an offshore income gain, charged to income tax at up to 45%, with no annual exempt amount.",
     lede: "The damage shows up years later, when you sell: a gain you assumed would be taxed at 24% is charged as income, and the loss on the fund that did not work cannot be set against it.",
     facts: [
       [
@@ -954,7 +954,7 @@ const ORIGINAL: Corridor[] = [
       "If you arrived in the UK within the last four years, take advice on the foreign income and gains regime now.",
       "If you have pre-April-2025 foreign income or gains, model the repatriation facility before the rate steps up.",
       "For a PMS, confirm in writing whether the manager provides UK-basis reporting — you will need it for every trade.",
-      "If anything has gone unreported, deal with it deliberately. India sits in a higher penalty category than most people assume.",
+      "Deal with anything unreported deliberately. India sits in a higher penalty category than most people assume.",
     ],
     metaTitle: "NRI Investing from the UK: Reporting Fund Status",
     metaDescription:
