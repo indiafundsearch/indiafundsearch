@@ -102,17 +102,25 @@ and UAE questions. Pitch drafts for earning links are in OUTREACH.md.
 4. Request indexing for the eight new `/nri/*` URLs in Search Console — scheduled into Day 3 and Day 4 of the indexing list below. IndexNow (Bing and others) was submitted for all of them on 2026-11-11.
 5. Kuwait and Bahrain pages are deliberately short: the treaty text could not be read from the build environment.
 
-## 📊 Analytics — owner actions (code shipped 2026-11-11, GA4 is OFF)
+## 📊 Analytics — status 2026-11-12: GA4 is ON (consent-gated)
 
-GA4 is built but inert: nothing loads until `NEXT_PUBLIC_GA_MEASUREMENT_ID` is
-set in Vercel, and then only for visitors who click Accept. See `ANALYTICS.md`.
+Measurement ID is set in Vercel. Checked on the live site 2026-11-12: banner
+shows, Reject sends nothing, Accept requests gtag.js with the right ID and
+sends one page view. See `ANALYTICS.md`.
 
-1. ~~Approve the analytics paragraph for `/privacy`~~ — approved and published 2026-11-12.
-2. Create the GA4 property and web stream; choose data retention (2 or 14 months).
-3. Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel (Production) and redeploy.
-4. In the GA4 stream, switch OFF enhanced measurement for: page changes on browser history events, form interactions, outbound clicks, site search, video, file downloads. Turn Google signals off.
-5. Check GA4 DebugView/Realtime on the live site after accepting the banner.
-6. Cross-check GA4 enquiry counts against Sanity lead documents and the desk inbox.
+Done: privacy paragraph · GA4 property and stream · ID in Vercel · enhanced
+measurement switched off (owner-confirmed, not visible from code) · owner's
+own live test.
+
+Still open:
+1. Confirm Vercel Web Analytics is receiving (Vercel → project → Analytics).
+2. Confirm Search Console reads the sitemap at 77 URLs.
+3. After one week: compare GA4 `blueprint_form_submit_success` +
+   `enquiry_form_submit_success` with Sanity lead documents and the
+   hello@jslwealth.in inbox for the same dates.
+
+Day 2 indexing: IndexNow (Bing) submitted 2026-11-12. Google "Request
+indexing" has no API; the ten Day 2 clicks are the owner's.
 
 ## 🔁 Recurring / ops
 - **LinkedIn Post Inspector** — re-run on each URL before posting so cards cache fresh.
