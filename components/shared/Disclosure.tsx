@@ -39,7 +39,7 @@ export function Disclosure({
       <summary className="flex items-center gap-4 px-6 py-4.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden hover:bg-paper-2 transition-colors max-sm:px-4">
         <span className="flex-1 min-w-0">{title}</span>
         {meta && (
-          <span className="font-mono text-[10.5px] text-slate whitespace-nowrap max-sm:hidden">
+          <span className="font-mono text-[12px] text-slate whitespace-nowrap max-sm:hidden">
             {meta}
           </span>
         )}

@@ -132,7 +132,7 @@ export type AnalyticsEvent =
       name: 'contact_click'
       params: {
         channel: 'whatsapp' | 'email' | 'booking'
-        placement: 'footer' | 'contact_page' | 'nri_page'
+        placement: 'footer' | 'contact_page' | 'nri_page' | 'sticky_bar' | 'next_step'
       }
     }
 

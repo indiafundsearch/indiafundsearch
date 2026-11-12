@@ -53,7 +53,7 @@ export function AuthorByline({
           </Link>
           <span className="text-slate">, {author.role}</span>
         </p>
-        <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-slate mt-1 leading-relaxed">
+        <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate mt-1 leading-relaxed">
           {author.credential}
           {author.arn && <> · ARN {author.arn}</>}
           <br />

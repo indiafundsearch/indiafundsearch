@@ -26,7 +26,7 @@ function Mark({ label, value }: { label: string; value: AccessMark }) {
   const title = value === 'yes' ? 'Accepted' : value === 'no' ? 'Not accepted' : 'Not confirmed'
   return (
     <span className="inline-flex items-center gap-1 mr-3 last:mr-0" title={`${label}: ${title}`}>
-      <span className="font-mono text-[9.5px] tracking-[0.12em] uppercase text-slate">{label}</span>
+      <span className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate">{label}</span>
       <span className={`font-sans text-[13px] font-bold ${tone}`} aria-label={title}>{glyph}</span>
     </span>
   )
@@ -50,7 +50,7 @@ export function GiftRepositoryTable({
   return (
     <div>
       {curatedAsOf && (
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-slate text-right mb-2">
+        <p className="font-mono text-[12px] tracking-[0.2em] uppercase text-slate text-right mb-2">
           Curated as of <b className="text-ink">{curatedAsOf}</b> · {GIFT_SHELF.reviewCadence}
         </p>
       )}
@@ -62,7 +62,7 @@ export function GiftRepositoryTable({
               {columns.map((h) => (
                 <th
                   key={h}
-                  className="font-mono text-[10px] tracking-[0.18em] uppercase text-left px-5 py-3.5 bg-ink text-white-warm font-medium"
+                  className="font-mono text-[12px] tracking-[0.18em] uppercase text-left px-5 py-3.5 bg-ink text-white-warm font-medium"
                 >
                   {h}
                 </th>
@@ -80,7 +80,7 @@ export function GiftRepositoryTable({
                       <span className="font-sans text-[13.5px] font-bold tracking-[0.04em] uppercase text-white-warm">
                         {g.name}
                       </span>
-                      <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-bronze-soft">
+                      <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze-soft">
                         {g.rows.length} route{g.rows.length > 1 ? 's' : ''}
                       </span>
                     </span>
@@ -121,11 +121,11 @@ export function GiftRepositoryTable({
                                 <Mark label="CA" value={p.access.ca} />
                               </>
                             ) : (
-                              <span className="font-mono text-[10px] text-slate">–</span>
+                              <span className="font-mono text-[12px] text-slate">–</span>
                             )
                           ) : (
                             p.theme && (
-                              <span className="font-mono text-[9.5px] tracking-[0.1em] uppercase border border-line bg-paper text-slate px-2.5 py-1.5 rounded-[2px] inline-block whitespace-nowrap">
+                              <span className="font-mono text-[12px] tracking-[0.1em] uppercase border border-line bg-paper text-slate px-2.5 py-1.5 rounded-[2px] inline-block whitespace-nowrap">
                                 {p.theme}
                               </span>
                             )
@@ -146,17 +146,17 @@ export function GiftRepositoryTable({
                                 <div className="px-5 py-5 max-w-[860px]">
                                   <p className="text-[15px] text-ink-soft">{p.description}</p>
                                   {hasAccess && p.theme && (
-                                    <span className="font-mono text-[9.5px] tracking-[0.1em] uppercase border border-line bg-paper text-slate px-2.5 py-1.5 rounded-[2px] inline-block mt-2.5">
+                                    <span className="font-mono text-[12px] tracking-[0.1em] uppercase border border-line bg-paper text-slate px-2.5 py-1.5 rounded-[2px] inline-block mt-2.5">
                                       {p.theme}
                                     </span>
                                   )}
                                   {p.eligibility && (
-                                    <p className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-slate mt-2.5">
+                                    <p className="font-mono text-[12px] tracking-[0.08em] uppercase text-slate mt-2.5">
                                       Eligibility — {p.eligibility}
                                     </p>
                                   )}
                                   {p.manager && (
-                                    <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-1.5">
+                                    <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-1.5">
                                       Manager — {p.manager}
                                     </p>
                                   )}
@@ -178,7 +178,7 @@ export function GiftRepositoryTable({
 
       {/* Footnotes — as on the desk one-pager; shown only when applicable */}
       {hasAccess && (
-        <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-slate mt-4">
+        <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-4">
           <span className="text-teal font-bold">✓</span> Accepted · <span className="text-alert font-bold">✗</span> Not accepted ·
           <span className="font-bold"> –</span> Not confirmed — as confirmed with each house; re-checked at onboarding.
         </p>

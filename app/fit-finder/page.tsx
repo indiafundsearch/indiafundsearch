@@ -25,7 +25,7 @@ export default function FitFinderPage() {
           drawing it. Answer seven questions and the tool narrows thirteen structures down to the
           few worth a serious conversation.
         </p>
-        <p className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-slate mt-4">
+        <p className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate mt-4">
           About {FIT_FINDER.durationShort} · No email needed to see your shortlist
         </p>
       </div>

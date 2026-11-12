@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 import { LeadGate } from '@/components/gate/LeadGate'
+import { NextStep } from '@/components/layout/NextStep'
+import { MobileActionBar } from '@/components/layout/MobileActionBar'
 import { JsonLd } from '@/components/shared/JsonLd'
 import { organizationJsonLd, personJsonLd } from '@/lib/seo'
 import { SITE } from '@/lib/constants'
@@ -97,7 +99,9 @@ export default function RootLayout({
         <LeadGate />
         <Header />
         <main className="flex-1">{children}</main>
+        <NextStep />
         <Footer />
+        <MobileActionBar />
       </body>
     </html>
   )

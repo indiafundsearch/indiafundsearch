@@ -29,7 +29,7 @@ export function ArticlePage({ article }: { article: Article }) {
         ]}
       />
 
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/learn" className="hover:text-ink">Learn</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">{article.no}</span>
@@ -44,7 +44,7 @@ export function ArticlePage({ article }: { article: Article }) {
           <div className="mt-6 plot-card px-6 py-5 max-sm:px-5">
             <span className="corner corner-tl" /><span className="corner corner-tr" />
             <span className="corner corner-bl" /><span className="corner corner-br" />
-            <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+            <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
               The short answer
             </span>
             <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{article.capsule}</p>
@@ -52,7 +52,7 @@ export function ArticlePage({ article }: { article: Article }) {
         )}
         <div className="mt-4 flex items-center gap-3 flex-wrap">
           <AuthorByline reviewed="September 2026" regulatoryAsAt="September 2026" />
-          <span className="font-mono text-[10.5px] text-slate">
+          <span className="font-mono text-[12px] text-slate">
             · {guideReadingTime(article.slug) ?? article.min}
           </span>
         </div>

@@ -39,7 +39,7 @@ export function TaxTables() {
               {HEADS[mode].map((h) => (
                 <th
                   key={h}
-                  className="font-mono text-[10px] tracking-[0.14em] uppercase text-left px-4 py-3.5 bg-ink text-white-warm font-medium"
+                  className="font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3.5 bg-ink text-white-warm font-medium"
                 >
                   {h}
                 </th>

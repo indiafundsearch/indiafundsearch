@@ -34,7 +34,7 @@ export function PendingContent({
       <AuthorByline className="mt-6" reviewed="September 2026" />
 
       <div className="mt-8 bg-bronze-wash border border-dashed border-bronze-soft px-6 py-6 max-w-[860px]">
-        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-bronze mb-2">
+        <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze mb-2">
           TODO: CONTENT — copy pending
         </p>
         <p className="text-[16.5px] text-ink-soft">
@@ -56,7 +56,7 @@ export function PendingContent({
         </ul>
       </div>
 
-      <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mt-12 mb-4">
+      <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mt-12 mb-4">
         Meanwhile
       </h2>
       <div className="grid gap-3 sm:grid-cols-2 max-w-[860px]">

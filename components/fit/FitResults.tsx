@@ -64,7 +64,7 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
     <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-[760px] mx-auto">
       {/* Summary */}
       <div className="bg-ink text-white-warm px-[30px] py-[26px] border-l-4 border-signal mb-[22px] max-sm:px-5">
-        <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-bronze-soft">Your shortlist</div>
+        <div className="font-mono text-[12px] tracking-[0.14em] uppercase text-bronze-soft">Your shortlist</div>
         <h2 className="font-sans text-xl font-bold mt-2">
           Built for {OBJECTIVE_NAMES[answers.obj]}, {HORIZON_NAMES[answers.hz]} horizon
           {nri ? ', NRI structuring' : ''}.
@@ -88,16 +88,16 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
           >
             <div className="shrink-0 w-[72px] text-center border-[1.5px] border-signal px-1 pt-2.5 pb-2">
               <b className="font-sans text-[22px] font-bold text-bronze block">{pct}</b>
-              <span className="font-mono text-[8.5px] tracking-[0.14em] uppercase text-slate">Fit index</span>
+              <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-slate">Fit index</span>
             </div>
             <div className="flex-1">
               <h3 className="font-sans text-[19px] font-bold flex items-center gap-2.5 flex-wrap">
                 {r.product.name}
-                <span className="font-mono text-[9.5px] tracking-[0.1em] uppercase bg-ink text-white-warm px-2 py-[3px] rounded-[2px]">
+                <span className="font-mono text-[12px] tracking-[0.1em] uppercase bg-ink text-white-warm px-2 py-[3px] rounded-[2px]">
                   {r.product.badge}
                 </span>
               </h3>
-              <div className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-bronze mt-0.5">
+              <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze mt-0.5">
                 {r.product.tag} · {r.product.ret.split('·')[0].trim()} · min {r.product.min.split('(')[0].trim()}
               </div>
               {r.why.length > 0 && (
@@ -110,7 +110,7 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
                 </ul>
               )}
               {nri && r.product.nriNote && (
-                <p className="font-mono text-[11px] text-alert border-l-2 border-alert pl-2.5 mt-2.5">
+                <p className="font-mono text-[12px] text-alert border-l-2 border-alert pl-2.5 mt-2.5">
                   NRI · {r.product.nriNote}
                 </p>
               )}
@@ -138,7 +138,7 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
           </div>
         ) : (
           <>
-            <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-1.5">
+            <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-1.5">
               The full blueprint
             </div>
             <p className="font-sans text-[19px] font-bold">
@@ -176,9 +176,9 @@ export function FitResults({ answers, onReset }: FitResultsProps) {
               </button>
             </form>
             {gate === 'error' && (
-              <p className="font-mono text-[11.5px] text-alert mt-2">Something went wrong — please try again.</p>
+              <p className="font-mono text-[12px] text-alert mt-2">Something went wrong — please try again.</p>
             )}
-            <p className="font-mono text-[10px] tracking-[0.06em] uppercase text-slate mt-3">
+            <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate mt-3">
               No spam · One follow-up from the desk · That&apos;s it
             </p>
           </>

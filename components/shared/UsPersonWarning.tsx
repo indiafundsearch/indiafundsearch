@@ -16,7 +16,7 @@ export function UsPersonWarning({ className = '' }: { className?: string }) {
       href="/nri/us"
       className={`block border border-alert/40 border-l-4 border-l-alert bg-white-warm px-5 py-4 hover:bg-paper transition-colors group ${className}`}
     >
-      <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-alert font-semibold block mb-1">
+      <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-alert font-semibold block mb-1">
         Do you file taxes in the US or Canada?
       </span>
       <span className="font-sans text-[14.5px] font-semibold text-ink">

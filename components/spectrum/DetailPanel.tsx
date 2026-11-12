@@ -35,9 +35,9 @@ export function DetailPanel({ selectedId }: DetailPanelProps) {
       >
         <div className="flex justify-between gap-5 flex-wrap items-baseline">
           <div>
-            <div className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-bronze">
+            <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze">
               {product.tag}
-              <span className="ml-2 font-mono text-[9.5px] tracking-[0.1em] bg-ink text-white-warm px-2 py-[3px] rounded-[2px] normal-tracking">
+              <span className="ml-2 font-mono text-[12px] tracking-[0.1em] bg-ink text-white-warm px-2 py-[3px] rounded-[2px] normal-tracking">
                 {product.badge}
               </span>
             </div>
@@ -57,7 +57,7 @@ export function DetailPanel({ selectedId }: DetailPanelProps) {
 
         {/* ₹1 Cr story */}
         <div className="bg-paper border border-line px-[22px] py-[18px] my-4 max-w-[460px]">
-          <div className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-slate mb-2">
+          <div className="font-mono text-[12px] tracking-[0.18em] uppercase text-slate mb-2">
             The story · ₹1 Cr · 5 years · at range midpoint
           </div>
           <div className="font-sans text-2xl font-bold">
@@ -70,7 +70,7 @@ export function DetailPanel({ selectedId }: DetailPanelProps) {
         <div className="flex flex-wrap border border-line">
           {specs.map(([label, value]) => (
             <div key={label} className="flex-1 min-w-[130px] px-4 py-3 border-r border-line last:border-r-0">
-              <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-slate block mb-[3px]">
+              <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-[3px]">
                 {label}
               </span>
               <b className="font-sans text-[14.5px] font-semibold">{value}</b>

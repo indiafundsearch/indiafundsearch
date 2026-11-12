@@ -52,7 +52,7 @@ export default function TaxPage() {
         <div className="mt-6 plot-card px-6 py-5 max-w-[820px] max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+          <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
             The short answer
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">
@@ -87,7 +87,7 @@ export default function TaxPage() {
 
       {/* P1-7 — dedicated Promoters note */}
       <div className="bg-white-warm border border-line border-l-4 border-l-bronze px-6 py-5 mt-[22px] text-[15px] text-ink-soft max-w-[860px]">
-        <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2">
+        <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2">
           Promoters — the buyback carve-out
         </div>
         <p>
@@ -108,7 +108,7 @@ export default function TaxPage() {
 
       {/* P1-8 — STT impact on hedged strategies */}
       <div id="stt-hedged" className="scroll-mt-28 bg-ink text-white-warm px-6 py-6 mt-[22px] max-w-[860px]">
-        <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-signal mb-2">
+        <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-signal mb-2">
           What the 2026 STT hike does to hedged strategies
         </div>
         <p className="text-[15.5px] text-[#c7d6ce]">

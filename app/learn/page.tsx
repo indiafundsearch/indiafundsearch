@@ -79,7 +79,7 @@ export default function LearnPage() {
         <span>Reference — the four structures, side by side</span>
       </div>
       <ComparisonTable />
-      <p className="font-mono text-[11px] text-slate tracking-[0.04em] mt-3">
+      <p className="font-mono text-[12px] text-slate tracking-[0.04em] mt-3">
         Structural comparison, simplified for conversation. Category rules per SEBI; individual schemes vary.
       </p>
 
@@ -103,21 +103,21 @@ export default function LearnPage() {
               className="plot-card block p-6 h-full relative hover:shadow-plot-hover transition-shadow group before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-bronze-soft"
             >
               <div className="flex items-baseline justify-between gap-2">
-                <span className="font-mono text-[11px] text-bronze font-semibold">
+                <span className="font-mono text-[12px] text-bronze font-semibold">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span className="font-mono text-[9.5px] tracking-[0.1em] uppercase bg-ink text-white-warm px-2 py-[3px] rounded-[2px]">
+                <span className="font-mono text-[12px] tracking-[0.1em] uppercase bg-ink text-white-warm px-2 py-[3px] rounded-[2px]">
                   {p.badge}
                 </span>
               </div>
               <h3 className="font-sans text-[19px] font-bold mt-2 group-hover:text-bronze transition-colors">
                 {p.name}
               </h3>
-              <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-slate mt-0.5">
+              <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate mt-0.5">
                 {p.tag}
               </p>
               <p className="font-serif italic text-[15px] text-ink-soft mt-3 line-clamp-3">{p.analogy}</p>
-              <div className="flex gap-2 flex-wrap mt-4 font-mono text-[10px] tracking-[0.06em] uppercase">
+              <div className="flex gap-2 flex-wrap mt-4 font-mono text-[12px] tracking-[0.06em] uppercase">
                 <span className="border border-bronze-soft text-bronze bg-bronze-wash px-2 py-1 rounded-[2px]">
                   {p.ret.split('·')[0].trim()}
                 </span>

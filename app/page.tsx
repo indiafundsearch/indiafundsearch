@@ -36,7 +36,7 @@ export default function HomePage() {
             you already have. By <em className="text-bronze italic">objective</em>, which structure
             does which job. Tap any block or bubble to open it up.
           </p>
-          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-5">
+          <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-5">
             {SITE.lineage} · {SITE.city}, {SITE.state} · Architecture, not salesmanship
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function HomePage() {
       <FadeInOnScroll as="section" className="bg-ink text-white-warm">
         <div className="mx-auto max-w-[1180px] px-[22px] py-16 grid gap-10 lg:grid-cols-[1.3fr_1fr] items-center">
           <div>
-            <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-signal mb-3.5">
+            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-signal mb-3.5">
               Now on the shelf — GIFT City
             </div>
             <h2 className="font-sans font-bold text-[clamp(26px,3.6vw,38px)] tracking-[-0.01em] leading-[1.1]">
@@ -81,7 +81,7 @@ export default function HomePage() {
             <span className="corner corner-tr" />
             <span className="corner corner-bl" />
             <span className="corner corner-br" />
-            <p className="text-signal tracking-[0.18em] uppercase text-[10px] mb-3">Plot notes</p>
+            <p className="text-signal tracking-[0.18em] uppercase text-[12px] mb-3">Plot notes</p>
             CURRENCY — US DOLLAR
             <br />
             REGULATOR — IFSCA (GIFT IFSC)
@@ -92,7 +92,7 @@ export default function HomePage() {
             <br />
             TAX — OFTEN THE CLEANEST NRI ROUTE*
             <br />
-            <span className="text-[10px] opacity-70">* FUND-SPECIFIC — VERIFY WITH YOUR CA</span>
+            <span className="text-[12px] opacity-70">* FUND-SPECIFIC — VERIFY WITH YOUR CA</span>
           </div>
         </div>
       </FadeInOnScroll>
@@ -117,7 +117,7 @@ export default function HomePage() {
                 href={articleHref(a.slug)}
                 className="plot-card block p-6 h-full hover:shadow-plot-hover transition-shadow group"
               >
-                <div className="font-mono text-[10px] tracking-[0.16em] uppercase text-bronze font-semibold">
+                <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze font-semibold">
                   {a.no} · {a.min}
                 </div>
                 <h3 className="font-sans text-xl font-bold mt-2 group-hover:text-bronze transition-colors">
@@ -138,7 +138,7 @@ export default function HomePage() {
           </Link>
           {/* The homepage is the most-crawled page on the site; these are the
               clusters that were three clicks away from it. */}
-          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-5">
+          <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-5">
             Filing taxes abroad?{' '}
             {[
               { href: '/nri', label: 'NRI corridors' },
@@ -164,7 +164,7 @@ export default function HomePage() {
           <span className="corner corner-tr" />
           <span className="corner corner-bl" />
           <span className="corner corner-br" />
-          <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-bronze mb-3">
+          <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-bronze mb-3">
             Sheet {SHEETS.fitFinder.no} — Load Calculation
           </div>
           <h2 className="font-sans font-bold text-[clamp(24px,3.2vw,34px)] tracking-[-0.01em]">
@@ -181,7 +181,7 @@ export default function HomePage() {
           >
             Run the Fit Finder →
           </Link>
-          <p className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-slate mt-4">
+          <p className="font-mono text-[12px] tracking-[0.08em] uppercase text-slate mt-4">
             No login · Results on screen · {FIT_FINDER.durationShort}
           </p>
         </div>

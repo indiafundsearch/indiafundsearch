@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
         Privacy Policy
       </h1>
-      <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-slate mt-2">
+      <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-2">
         Last updated November 2026
       </p>
 
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
           .
         </p>
 
-        <p className="font-mono text-[11px] tracking-[0.04em] text-slate mt-8 border-t border-line pt-4">
+        <p className="font-mono text-[12px] tracking-[0.04em] text-slate mt-8 border-t border-line pt-4">
           {SITE.legalEntity} · Operator of {SITE.name}
         </p>
       </div>

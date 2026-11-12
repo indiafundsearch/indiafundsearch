@@ -60,7 +60,7 @@ export function SpectrumExplorer() {
           ) : (
             <OutcomeMap selectedId={selectedId} onSelect={select} />
           )}
-          <div className="font-mono text-[11px] text-slate tracking-[0.04em] mt-3 flex justify-between flex-wrap gap-2">
+          <div className="font-mono text-[12px] text-slate tracking-[0.04em] mt-3 flex justify-between flex-wrap gap-2">
             {view === 'pos' ? (
               <>
                 <span>SCALE — POSITIONS INDICATIVE, NOT TO PRECISION</span>

@@ -14,7 +14,7 @@ export function ComparisonTable() {
               >
                 {h}
                 {COMPARISON.sub[i] && (
-                  <small className="block font-mono text-[9px] tracking-[0.1em] font-normal text-bronze-soft uppercase mt-[3px]">
+                  <small className="block font-mono text-[10.5px] tracking-[0.1em] font-normal text-bronze-soft uppercase mt-[3px]">
                     {COMPARISON.sub[i]}
                   </small>
                 )}
@@ -30,7 +30,7 @@ export function ComparisonTable() {
                   key={ci}
                   className={`px-4 py-3 border-b border-line-soft align-top ${
                     ci === 0
-                      ? 'font-mono text-[10px] tracking-[0.1em] uppercase text-slate'
+                      ? 'font-mono text-[12px] tracking-[0.1em] uppercase text-slate'
                       : 'text-[14px]'
                   }`}
                 >

@@ -13,14 +13,14 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Logo tone="paper" size={36} />
-            <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-bronze-soft mt-2">
+            <p className="font-mono text-[12px] tracking-[0.14em] uppercase text-bronze-soft mt-2">
               {SITE.initiative} · {SITE.tagline}
             </p>
             <p className="mt-4 max-w-prose text-[15px] text-[#c7d6ce] leading-relaxed">
               Every SEBI-regulated alternative, explained the way we would across a table. No
               jargon survives past the first sentence.
             </p>
-            <p className="mt-4 font-mono text-[10.5px] tracking-[0.1em] uppercase text-bronze-soft leading-relaxed">
+            <p className="mt-4 font-mono text-[12px] tracking-[0.1em] uppercase text-bronze-soft leading-relaxed">
               {SITE.lineage}
               <br />
               {SITE.city}, {SITE.state}
@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Footer" className="md:justify-self-center">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze-soft mb-3">
+            <p className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze-soft mb-3">
               Index
             </p>
             <ul className="space-y-2">
@@ -38,7 +38,7 @@ export function Footer() {
                     href={l.href}
                     className="font-sans text-[14px] text-[#c7d6ce] hover:text-white-warm transition-colors"
                   >
-                    <span className="font-mono text-[10px] text-bronze-soft mr-2">{l.no}</span>
+                    <span className="font-mono text-[12px] text-bronze-soft mr-2">{l.no}</span>
                     {l.label}
                   </Link>
                 </li>
@@ -58,7 +58,7 @@ export function Footer() {
                     href={l.href}
                     className="font-sans text-[14px] text-[#c7d6ce] hover:text-white-warm transition-colors"
                   >
-                    <span className="font-mono text-[10px] text-bronze-soft mr-2">—</span>
+                    <span className="font-mono text-[12px] text-bronze-soft mr-2">—</span>
                     {l.label}
                   </Link>
                 </li>
@@ -67,7 +67,7 @@ export function Footer() {
           </nav>
 
           <div>
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze-soft mb-3">
+            <p className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze-soft mb-3">
               Talk to the desk
             </p>
             <ul className="space-y-2 font-sans text-[14px]">
@@ -116,7 +116,7 @@ export function Footer() {
             registered office and ARN on every page. The ARN is the owner's
             placeholder until supplied — see lib/content/authors.ts. */}
         <div className="mt-12 border-t border-[rgba(252,251,248,0.15)] pt-6">
-          <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-bronze-soft leading-relaxed mb-3">
+          <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-bronze-soft leading-relaxed mb-3">
             {SITE.legalEntity}
             <br />
             CIN {SITE.cin}{PRIMARY_AUTHOR.arn && <> · AMFI ARN {PRIMARY_AUTHOR.arn}</>} · {SITE.registeredAddress}
@@ -129,7 +129,7 @@ export function Footer() {
               Full disclosures
             </Link>
           </p>
-          <p className="font-mono text-[10px] tracking-[0.06em] text-[#9db5aa] pt-3">
+          <p className="font-mono text-[12px] tracking-[0.06em] text-[#9db5aa] pt-3">
             © {new Date().getFullYear()} {SITE.name} · All rights reserved ·{' '}
             <Link href="/privacy" className="hover:text-white-warm underline underline-offset-2">
               Privacy Policy

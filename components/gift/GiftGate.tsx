@@ -72,7 +72,7 @@ export function GiftGate({ direction, curatedAsOf, groupOrder }: GiftGateProps) 
     }
     if (!products) {
       return (
-        <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-slate py-8">
+        <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate py-8">
           Loading the shelf…
         </p>
       )

@@ -36,7 +36,7 @@ export function TrcSteps({ current }: { current?: 1 | 2 | 3 }) {
                   active ? 'bg-bronze-wash border-bronze' : 'hover:shadow-plot-hover'
                 }`}
               >
-                <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-bronze font-semibold">
+                <span className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze font-semibold">
                   Step {s.n} · {s.who}
                 </span>
                 <span className="font-sans text-[16px] font-bold block mt-1 group-hover:text-bronze transition-colors">

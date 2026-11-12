@@ -74,7 +74,7 @@ export default function DisclosuresPage() {
       <div className="mt-12 max-w-[820px] space-y-10">
         {SECTIONS.map((s) => (
           <section key={s.h}>
-            <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-3 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
+            <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-3 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
               {s.h}
             </h2>
             {s.p.map((para) => (
@@ -86,7 +86,7 @@ export default function DisclosuresPage() {
         ))}
       </div>
 
-      <p className="font-mono text-[11px] tracking-[0.04em] text-slate mt-14 border-t border-line pt-4 max-w-[820px]">
+      <p className="font-mono text-[12px] tracking-[0.04em] text-slate mt-14 border-t border-line pt-4 max-w-[820px]">
         {SITE.legalEntity} · Operator of {SITE.name} ·{' '}
         <Link href="/privacy" className="text-bronze border-b border-bronze-soft hover:text-ink">
           Privacy Policy

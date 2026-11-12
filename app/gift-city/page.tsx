@@ -71,7 +71,7 @@ export default function GiftCityPage() {
           <em className="text-bronze italic">out</em> to global markets — both without the old
           friction. We currently curate products on both routes.
         </p>
-        <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-5">
+        <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-5">
           We are in Vadodara, about two hours from GIFT City itself
         </p>
         <UsPersonWarning className="mt-7 max-w-[720px]" />
@@ -84,11 +84,11 @@ export default function GiftCityPage() {
             <Link href={r.href} className="plot-card block p-8 h-full group hover:shadow-plot-hover transition-shadow max-sm:p-5">
               <span className="corner corner-tl" /><span className="corner corner-tr" />
               <span className="corner corner-bl" /><span className="corner corner-br" />
-              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal-ink font-semibold">{r.no}</div>
+              <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-signal-ink font-semibold">{r.no}</div>
               <h2 className="font-sans text-[26px] font-bold mt-2 group-hover:text-bronze transition-colors">
                 {r.title}
               </h2>
-              <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-1">{r.who}</p>
+              <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-1">{r.who}</p>
               <ul className="mt-4 space-y-0.5">
                 {r.bullets.map(([lead, rest]) => (
                   <li
@@ -100,7 +100,7 @@ export default function GiftCityPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex gap-2 flex-wrap mt-5 font-mono text-[9.5px] tracking-[0.08em]">
+              <div className="flex gap-2 flex-wrap mt-5 font-mono text-[12px] tracking-[0.08em]">
                 {r.chips.map((c) => (
                   <span key={c} className="border border-bronze-soft text-bronze bg-bronze-wash px-2 py-1 rounded-[2px]">
                     {c}
@@ -121,7 +121,7 @@ export default function GiftCityPage() {
         <div className="bg-ink text-white-warm px-9 py-9 relative max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal font-semibold">
+          <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-signal font-semibold">
             Start here — where are you tax-resident?
           </div>
           <h2 className="font-sans text-[clamp(23px,3vw,30px)] font-bold mt-2.5 max-w-[760px] leading-[1.15]">
@@ -139,7 +139,7 @@ export default function GiftCityPage() {
                 href={`/nri/${c.slug}`}
                 className="block border border-[rgba(252,251,248,0.25)] px-5 py-4 hover:bg-[rgba(252,251,248,0.08)] hover:border-signal transition-colors group"
               >
-                <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-[#9db5aa]">
+                <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-[#9db5aa]">
                   <span className="mr-1.5 text-[12px]" aria-hidden="true">{c.flag}</span>
                   Corridor {c.code}
                 </span>
@@ -174,7 +174,7 @@ export default function GiftCityPage() {
             },
           ].map((b) => (
             <div key={b.h}>
-              <h3 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2.5">{b.h}</h3>
+              <h3 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2.5">{b.h}</h3>
               <p className="font-serif text-[16.5px] text-ink-soft">{b.p}</p>
             </div>
           ))}

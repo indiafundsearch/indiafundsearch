@@ -36,14 +36,14 @@ export function Sources({
       className={`max-w-[860px] ${compact ? 'mt-4 border-t border-line-soft pt-3' : 'mt-12 border-t border-line pt-5'} ${className}`}
     >
       <h2
-        className={`font-mono uppercase text-bronze mb-3 ${compact ? 'text-[9.5px] tracking-[0.18em] text-slate' : 'text-[10px] tracking-[0.2em]'}`}
+        className={`font-mono uppercase text-bronze mb-3 ${compact ? 'text-[12px] tracking-[0.18em] text-slate' : 'text-[12px] tracking-[0.2em]'}`}
       >
         {heading}
       </h2>
       <ol className="space-y-2.5">
         {sources.map((s, i) => (
           <li key={s.url + i} className="text-[14px] leading-snug flex gap-2.5">
-            <span className="font-mono text-[11px] text-slate shrink-0 pt-[3px]">
+            <span className="font-mono text-[12px] text-slate shrink-0 pt-[3px]">
               {String(i + 1).padStart(2, '0')}
             </span>
             <span>
@@ -56,7 +56,7 @@ export function Sources({
                 {s.label}
               </a>
               {(s.issuer || s.documentNumber || s.date) && (
-                <span className="text-slate block font-mono text-[10.5px] tracking-[0.04em] mt-0.5">
+                <span className="text-slate block font-mono text-[12px] tracking-[0.04em] mt-0.5">
                   {[s.issuer, s.documentNumber, s.date].filter(Boolean).join(' · ')}
                 </span>
               )}

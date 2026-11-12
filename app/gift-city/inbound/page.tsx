@@ -20,7 +20,7 @@ export const metadata: Metadata = pageMeta({
 export default function GiftInboundPage() {
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/gift-city" className="hover:text-ink">GIFT City</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">Route A — Inbound</span>
@@ -56,7 +56,7 @@ export default function GiftInboundPage() {
       <section className="mb-10 bg-ink text-white-warm px-8 py-7 relative max-w-[860px] max-sm:px-5">
         <span className="corner corner-tl" /><span className="corner corner-tr" />
         <span className="corner corner-bl" /><span className="corner corner-br" />
-        <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal font-semibold">
+        <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-signal font-semibold">
           Before you read the shelf
         </div>
         <h2 className="font-sans text-[clamp(20px,2.6vw,26px)] font-bold mt-2 leading-[1.15] max-w-[620px]">
@@ -74,7 +74,7 @@ export default function GiftInboundPage() {
               href={`/nri/${c.slug}`}
               className="block border border-[rgba(252,251,248,0.25)] px-4 py-3.5 hover:bg-[rgba(252,251,248,0.08)] hover:border-signal transition-colors group"
             >
-              <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-[#9db5aa]">
+              <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-[#9db5aa]">
                 <span className="mr-1.5 text-[12px]" aria-hidden="true">{c.flag}</span>
                 Corridor {c.code}
               </span>

@@ -28,7 +28,7 @@ const FAQS = [
 
 function H({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2.5 mt-10 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
+    <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2.5 mt-10 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
       {children}
     </h2>
   )
@@ -46,7 +46,7 @@ export default function UsNriPficPage() {
           ]),
         ]}
       />
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/learn" className="hover:text-ink">Learn</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">US & Canadian NRIs</span>
@@ -67,7 +67,7 @@ export default function UsNriPficPage() {
         <div className="mt-6 plot-card px-6 py-5 max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+          <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
             The short answer
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">

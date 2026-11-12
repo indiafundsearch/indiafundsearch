@@ -96,7 +96,7 @@ export function GateForm({ onVerified }: GateFormProps) {
           aria-label="6-digit verification code"
           className="mt-5 w-full text-center font-mono text-[32px] tracking-[0.5em] px-3.5 py-3 border border-line rounded-[3px] bg-paper focus:outline-2 focus:outline-bronze-soft"
         />
-        {error && <p className="font-mono text-[11.5px] text-alert mt-2">{error}</p>}
+        {error && <p className="font-mono text-[12px] text-alert mt-2">{error}</p>}
         <button
           type="submit"
           disabled={busy || code.length !== 6}
@@ -128,31 +128,31 @@ export function GateForm({ onVerified }: GateFormProps) {
       </p>
       <div className="grid gap-3 sm:grid-cols-2 mt-5">
         <div className="sm:col-span-2">
-          <label htmlFor="g-name" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="g-name" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             Name <span className="text-alert">*</span>
           </label>
           <input id="g-name" type="text" required autoComplete="name" value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} className={inputCls} />
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="g-email" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="g-email" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             Email <span className="text-alert">*</span>
           </label>
           <input id="g-email" type="email" required autoComplete="email" value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} className={inputCls} />
         </div>
         <div>
-          <label htmlFor="g-phone" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="g-phone" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             Phone <span className="text-alert">*</span>
           </label>
           <input id="g-phone" type="tel" required autoComplete="tel" value={form.phone} onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))} className={inputCls} />
         </div>
         <div>
-          <label htmlFor="g-loc" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="g-loc" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             City / Country <span className="text-alert">*</span>
           </label>
           <input id="g-loc" type="text" required autoComplete="address-level2" value={form.location} onChange={(e) => setForm((f) => ({ ...f, location: e.target.value }))} className={inputCls} />
         </div>
       </div>
-      {error && <p className="font-mono text-[11.5px] text-alert mt-3">{error}</p>}
+      {error && <p className="font-mono text-[12px] text-alert mt-3">{error}</p>}
       <button
         type="submit"
         disabled={busy}
@@ -160,7 +160,7 @@ export function GateForm({ onVerified }: GateFormProps) {
       >
         {busy ? 'Sending code…' : 'Email me a code →'}
       </button>
-      <p className="font-mono text-[9.5px] tracking-[0.08em] uppercase text-slate mt-3 text-center">
+      <p className="font-mono text-[12px] tracking-[0.08em] uppercase text-slate mt-3 text-center">
         One-time verification · {`Stays valid on this device`}
       </p>
     </form>

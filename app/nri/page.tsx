@@ -61,7 +61,7 @@ export default function NriHubPage() {
             >
               <span className="corner corner-tl" /><span className="corner corner-tr" />
               <span className="corner corner-bl" /><span className="corner corner-br" />
-              <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-signal-ink font-semibold">
+              <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-signal-ink font-semibold">
                 <span className="mr-2 text-[13px]" aria-hidden="true">{c.flag}</span>
                 Corridor {c.code}
               </div>
@@ -106,7 +106,7 @@ export default function NriHubPage() {
             },
           ].map((b) => (
             <div key={b.h}>
-              <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2.5">{b.h}</h2>
+              <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2.5">{b.h}</h2>
               <p className="font-serif text-[16.5px] text-ink-soft">{b.p}</p>
             </div>
           ))}

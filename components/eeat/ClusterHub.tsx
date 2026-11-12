@@ -26,7 +26,7 @@ export function ClusterHub({
       <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,46px)] tracking-[-0.01em] leading-[1.06] max-w-[880px]">
         {title}
       </h1>
-      <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-4">
+      <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-bronze mt-4">
         {marketNote}
       </p>
       {lede.map((p) => (

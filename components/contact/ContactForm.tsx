@@ -59,25 +59,25 @@ export function ContactForm() {
       <span className="corner corner-bl" /><span className="corner corner-br" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="c-email" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="c-email" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             Email <span className="text-alert">*</span>
           </label>
           <input id="c-email" type="email" required value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} className={inputCls} />
         </div>
         <div>
-          <label htmlFor="c-phone" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="c-phone" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             Phone / WhatsApp
           </label>
           <input id="c-phone" type="tel" value={form.phone} onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))} className={inputCls} />
         </div>
         <div>
-          <label htmlFor="c-city" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="c-city" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             City
           </label>
           <input id="c-city" type="text" value={form.city} onChange={(e) => setForm((f) => ({ ...f, city: e.target.value }))} className={inputCls} />
         </div>
         <div>
-          <label htmlFor="c-interest" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="c-interest" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             What brings you here
           </label>
           <select id="c-interest" value={form.interest} onChange={(e) => setForm((f) => ({ ...f, interest: e.target.value }))} className={inputCls}>
@@ -87,7 +87,7 @@ export function ContactForm() {
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="c-msg" className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5">
+          <label htmlFor="c-msg" className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5">
             Anything specific?
           </label>
           <textarea id="c-msg" rows={4} value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} className={inputCls} />
@@ -101,7 +101,7 @@ export function ContactForm() {
         {state === 'sending' ? 'Sending…' : 'Send to the desk →'}
       </button>
       {state === 'error' && (
-        <p className="font-mono text-[11.5px] text-alert mt-2">Something went wrong — please try again, or use WhatsApp.</p>
+        <p className="font-mono text-[12px] text-alert mt-2">Something went wrong — please try again, or use WhatsApp.</p>
       )}
     </form>
   )

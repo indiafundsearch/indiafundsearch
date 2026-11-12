@@ -74,7 +74,7 @@ export default function AboutPage() {
             key={label}
             className="flex-1 min-w-[150px] px-4 py-3.5 border-r border-line last:border-r-0 max-sm:min-w-[45%] max-sm:border-b"
           >
-            <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
+            <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
             <b className="font-sans text-[14.5px] font-semibold">{value}</b>
           </div>
         ))}
@@ -99,7 +99,7 @@ export default function AboutPage() {
               {a.name}
             </Link>
           </p>
-          <p className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mt-1.5">
+          <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-1.5">
             {a.role} · The University of Manchester
           </p>
           <p className="text-[16.5px] text-ink-soft mt-3 max-w-[640px]">
@@ -126,18 +126,18 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
-      <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-6">
+      <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-bronze mt-6">
         Same risk, more returns. Less risk, same returns. — Not a promise. Arithmetic.
       </p>
 
       {/* How we are paid */}
       <div className="mt-12 bg-white-warm border border-line border-l-4 border-l-teal px-6 py-5 max-w-[860px]">
-        <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-teal mb-2">How we are paid</h2>
+        <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-teal mb-2">How we are paid</h2>
         <p className="text-[15.5px] text-ink-soft">{DISCLOSURE.commission}</p>
       </div>
 
       {/* Entity */}
-      <p className="font-mono text-[10.5px] tracking-[0.06em] uppercase text-slate leading-relaxed mt-8 max-w-[860px]">
+      <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate leading-relaxed mt-8 max-w-[860px]">
         {SITE.legalEntity} · CIN {SITE.cin}
         {a.arn && <> · AMFI ARN {a.arn}</>}
         <br />

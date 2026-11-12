@@ -36,7 +36,7 @@ No session recording, heatmaps, ad pixels or fingerprinting. Do not add any.
 | `blueprint_form_submit_success` | `/api/lead-capture` returned success for the Fit Finder form | none | Not a button click. Not a qualified lead |
 | `enquiry_form_submit_success` | Same, for the other three forms | `form_name`: `contact`, `gift_enquiry`, `corridor_access` | Not a qualified lead |
 | `gift_gate_verify_success` | The server accepted the emailed code on the `/gift-city` gate | none | Not an enquiry about a product. The visitor registered to read the section |
-| `contact_click` | A WhatsApp, email or booking link is clicked | `channel`, `placement` | **Not proof of contact.** Interest only |
+| `contact_click` | A WhatsApp, email or booking link is clicked | `channel`, `placement` (`footer`, `contact_page`, `nri_page`, `sticky_bar`, `next_step`) | **Not proof of contact.** Interest only |
 
 Keep these distinctions in every report:
 

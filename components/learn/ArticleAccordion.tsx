@@ -28,7 +28,7 @@ export function ArticleAccordion({ articles }: ArticleAccordionProps) {
           meta={a.min}
           title={
             <span className="flex items-baseline gap-4.5">
-              <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-bronze font-semibold w-[78px] shrink-0 max-sm:hidden">
+              <span className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze font-semibold w-[78px] shrink-0 max-sm:hidden">
                 {a.no}
               </span>
               <span className="min-w-0">

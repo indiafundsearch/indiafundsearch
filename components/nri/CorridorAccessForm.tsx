@@ -57,7 +57,7 @@ export function CorridorAccessForm({ country, label }: { country: string; label:
     <form onSubmit={submit} className="plot-card px-8 py-8 max-sm:px-5">
       <span className="corner corner-tl" /><span className="corner corner-tr" />
       <span className="corner corner-bl" /><span className="corner corner-br" />
-      <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+      <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
         Ask the desk
       </span>
       <p className="font-sans font-bold text-[19px] leading-snug">
@@ -72,7 +72,7 @@ export function CorridorAccessForm({ country, label }: { country: string; label:
         <div>
           <label
             htmlFor="ca-email"
-            className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5"
+            className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5"
           >
             Email <span className="text-alert">*</span>
           </label>
@@ -89,7 +89,7 @@ export function CorridorAccessForm({ country, label }: { country: string; label:
         <div>
           <label
             htmlFor="ca-phone"
-            className="font-mono text-[10px] tracking-[0.14em] uppercase text-slate block mb-1.5"
+            className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-1.5"
           >
             Phone / WhatsApp
           </label>
@@ -112,11 +112,11 @@ export function CorridorAccessForm({ country, label }: { country: string; label:
         {state === 'sending' ? 'Sending…' : 'Send me the list →'}
       </button>
       {state === 'error' && (
-        <p className="font-mono text-[11.5px] text-alert mt-2">
+        <p className="font-mono text-[12px] text-alert mt-2">
           Something went wrong — please try again, or use WhatsApp.
         </p>
       )}
-      <p className="font-mono text-[10px] tracking-[0.06em] uppercase text-slate mt-3">
+      <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate mt-3">
         One email. No newsletter, no drip sequence.
       </p>
     </form>

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function SpecList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
+      <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2 flex items-center gap-2.5 after:content-[''] after:h-px after:flex-1 after:bg-line-soft">
         {title}
       </h2>
       <ul>
@@ -90,16 +90,16 @@ export default async function ProductPage({ params }: PageProps) {
         ]}
       />
 
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/learn" className="hover:text-ink">Sheet {SHEETS.materials.no} — Materials</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">Specification {String(index + 1).padStart(2, '0')}</span>
       </nav>
 
       <header className="mb-10">
-        <div className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-bronze mb-2">
+        <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze mb-2">
           {p.tag}
-          <span className="ml-3 font-mono text-[9.5px] tracking-[0.1em] bg-ink text-white-warm px-2 py-[3px] rounded-[2px]">
+          <span className="ml-3 font-mono text-[12px] tracking-[0.1em] bg-ink text-white-warm px-2 py-[3px] rounded-[2px]">
             {p.badge}
           </span>
         </div>
@@ -113,7 +113,7 @@ export default async function ProductPage({ params }: PageProps) {
         <div className="mt-6 plot-card px-6 py-5 max-w-[820px] max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+          <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
             The short answer
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{p.what}</p>
@@ -127,7 +127,7 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="flex flex-wrap border border-line bg-white-warm mb-10">
         {specs.map(([label, value]) => (
           <div key={label} className="flex-1 min-w-[150px] px-4 py-3.5 border-r border-line last:border-r-0 max-sm:min-w-[45%] max-sm:border-b">
-            <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
+            <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
             <b className="font-sans text-[14.5px] font-semibold">{value}</b>
           </div>
         ))}
@@ -143,7 +143,7 @@ export default async function ProductPage({ params }: PageProps) {
         <aside className="space-y-6">
           {/* ₹1 Cr story */}
           <div className="bg-paper border border-line px-[22px] py-[18px]">
-            <div className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-slate mb-2">
+            <div className="font-mono text-[12px] tracking-[0.18em] uppercase text-slate mb-2">
               The story · ₹1 Cr · 5 years · at range midpoint
             </div>
             <div className="font-sans text-2xl font-bold">
@@ -155,7 +155,7 @@ export default async function ProductPage({ params }: PageProps) {
 
           {/* Taxation */}
           <div className="bg-white-warm border border-line border-l-4 border-l-teal px-5 py-4.5">
-            <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-teal mb-2">How it is taxed</h2>
+            <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-teal mb-2">How it is taxed</h2>
             <p className="text-[15px] text-ink-soft">{p.tax}</p>
             <Link href="/tax" className="inline-block mt-3 font-sans text-[12.5px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft">
               Full tax schedule →
@@ -165,7 +165,7 @@ export default async function ProductPage({ params }: PageProps) {
           {/* NRI note */}
           {p.nriNote && (
             <div className="bg-bronze-wash border border-bronze-soft border-l-4 border-l-bronze px-5 py-4.5">
-              <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mb-2">If you are an NRI</h2>
+              <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2">If you are an NRI</h2>
               <p className="text-[15px] text-ink-soft">{p.nriNote}</p>
               <UsPersonWarning className="mt-3.5" />
             </div>
@@ -177,7 +177,7 @@ export default async function ProductPage({ params }: PageProps) {
               href="/tax#stt-hedged"
               className="block bg-white-warm border border-line border-l-4 border-l-signal px-5 py-4.5 hover:bg-paper transition-colors"
             >
-              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
+              <span className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
                 Cost watch — 2026 STT hike
               </span>
               <span className="font-sans text-[14.5px] font-semibold text-ink">
@@ -192,7 +192,7 @@ export default async function ProductPage({ params }: PageProps) {
               href="/gift-city"
               className="block bg-ink text-white-warm px-5 py-5 hover:bg-ink-soft transition-colors"
             >
-              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-signal block mb-1.5">
+              <span className="font-mono text-[12px] tracking-[0.2em] uppercase text-signal block mb-1.5">
                 On our shelf now
               </span>
               <span className="font-sans font-bold text-[17px]">
@@ -277,9 +277,9 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="grid gap-4 sm:grid-cols-2 max-w-[720px]">
         {related.map((r) => (
           <Link key={r.id} href={`/learn/${r.slug}`} className="plot-card p-5 hover:shadow-plot-hover transition-shadow group">
-            <span className="font-mono text-[9.5px] tracking-[0.1em] uppercase text-slate">{r.badge}</span>
+            <span className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate">{r.badge}</span>
             <h3 className="font-sans text-[17px] font-bold mt-1 group-hover:text-bronze transition-colors">{r.name}</h3>
-            <p className="font-mono text-[10px] tracking-[0.06em] uppercase text-slate mt-0.5">{r.tag}</p>
+            <p className="font-mono text-[12px] tracking-[0.06em] uppercase text-slate mt-0.5">{r.tag}</p>
           </Link>
         ))}
       </div>

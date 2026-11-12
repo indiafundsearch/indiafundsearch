@@ -178,7 +178,7 @@ export function FitFinder() {
             )
           })}
         </div>
-        <span className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate whitespace-nowrap">
+        <span className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate whitespace-nowrap">
           {step + 1} / {FIT_QUESTIONS.length}
         </span>
       </div>
@@ -207,7 +207,7 @@ export function FitFinder() {
                 >
                   <span
                     aria-hidden
-                    className={`font-mono text-[10px] w-5 h-5 shrink-0 rounded-[3px] grid place-items-center border transition-colors max-sm:hidden ${
+                    className={`font-mono text-[12px] w-5 h-5 shrink-0 rounded-[3px] grid place-items-center border transition-colors max-sm:hidden ${
                       selected ? 'border-bronze text-bronze' : 'border-line text-slate'
                     }`}
                   >
@@ -215,7 +215,7 @@ export function FitFinder() {
                   </span>
                   <span className="flex-1">{o[1]}</span>
                   {o[2] && (
-                    <small className="font-mono text-[10.5px] text-slate font-normal tracking-[0.04em] text-right">
+                    <small className="font-mono text-[12px] text-slate font-normal tracking-[0.04em] text-right">
                       {o[2]}
                     </small>
                   )}
@@ -229,11 +229,11 @@ export function FitFinder() {
               type="button"
               onClick={() => goTo(step - 1)}
               disabled={step === 0}
-              className="font-mono text-[11px] tracking-[0.12em] uppercase text-slate hover:text-ink disabled:opacity-0 disabled:pointer-events-none transition-colors"
+              className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate hover:text-ink disabled:opacity-0 disabled:pointer-events-none transition-colors"
             >
               ← Back
             </button>
-            <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-slate max-sm:hidden">
+            <span className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate max-sm:hidden">
               Press 1–{q.opts.length} to answer
             </span>
           </div>

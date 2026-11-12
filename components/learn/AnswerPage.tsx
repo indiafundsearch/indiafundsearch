@@ -63,7 +63,7 @@ export function AnswerPage({
         ]}
       />
 
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href={hubHref} className="hover:text-ink">{hubLabel}</Link>
       </nav>
 
@@ -76,14 +76,14 @@ export function AnswerPage({
         <div className="mt-6 plot-card px-6 py-5 max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+          <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
             The short answer
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{answer.answer}</p>
         </div>
 
         {marketNote && (
-          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-4">
+          <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-bronze mt-4">
             {marketNote}
           </p>
         )}

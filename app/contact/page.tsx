@@ -26,7 +26,7 @@ export default function ContactPage() {
           answer nobody else gives you:{' '}
           <em className="text-bronze italic">&ldquo;you don&apos;t need any of this yet.&rdquo;</em>
         </p>
-        <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-4">
+        <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-4">
           {SITE.city}, {SITE.state} · {SITE.lineage} ·{' '}
           <Link href="/about" className="text-bronze border-b border-bronze-soft hover:text-ink normal-case tracking-normal">
             Who you are talking to
@@ -46,7 +46,7 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             className="block bg-ink text-white-warm px-6 py-6 hover:bg-ink-soft transition-colors"
           >
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-signal block mb-1.5">
+            <span className="font-mono text-[12px] tracking-[0.2em] uppercase text-signal block mb-1.5">
               Fastest
             </span>
             <span className="font-sans font-bold text-[18px]">WhatsApp the desk →</span>
@@ -64,7 +64,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="block plot-card px-6 py-6 hover:shadow-plot-hover transition-shadow"
             >
-              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
+              <span className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
                 Structured
               </span>
               <span className="font-sans font-bold text-[18px]">Book a conversation →</span>
@@ -80,7 +80,7 @@ export default function ContactPage() {
             href={`mailto:${CONTACT.email}`}
             className="block plot-card px-6 py-6 hover:shadow-plot-hover transition-shadow"
           >
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
+            <span className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze block mb-1.5">
               Classic
             </span>
             <span className="font-sans font-bold text-[18px]">{CONTACT.email}</span>

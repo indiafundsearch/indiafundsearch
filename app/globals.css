@@ -17,7 +17,7 @@
   --color-paper-2: #ecebe3;
   --color-ink: #013528;
   --color-ink-soft: #1f4a3c;
-  --color-slate: #587067;
+  --color-slate: #4a6158;
   --color-line: #d2d9d2;
   --color-line-soft: #e0e4de;
   --color-signal: #ff862f;
@@ -296,5 +296,40 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ── Readability and touch (November 2026 audit) ─────────────────────────── */
+
+/* Body text was running to 100-140 characters a line on desktop. Cap it near
+   the comfortable range. In the base layer, so any explicit max-w utility on
+   a paragraph still wins. */
+@layer base {
+  main p {
+    max-width: 72ch;
+  }
+  main .text-center > p,
+  main p.text-center {
+    margin-inline: auto;
+  }
+}
+
+/* Small links were under 32px tall on phones. Give them room without moving
+   the layout on desktop. */
+@media (pointer: coarse) {
+  footer a,
+  footer button,
+  nav[aria-label='Breadcrumb'] a {
+    display: inline-block;
+    padding-block: 9px;
+  }
+}
+
+/* The phone action bar is fixed to the bottom; keep the footer's last line
+   clear of it. */
+@media (max-width: 1023px) {
+  footer {
+    padding-bottom: 56px;
   }
 }

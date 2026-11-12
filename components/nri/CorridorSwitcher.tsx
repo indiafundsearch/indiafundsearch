@@ -22,7 +22,7 @@ export function CorridorSwitcher({ current }: { current?: string }) {
                 isCurrent ? 'bg-paper-2' : 'hover:shadow-plot-hover'
               }`}
             >
-              <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-slate">
+              <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate">
                 <span className="mr-1.5 text-[12px]" aria-hidden="true">{c.flag}</span>
                 Corridor {c.code}
               </span>

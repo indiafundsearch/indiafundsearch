@@ -46,7 +46,7 @@ export function GiftEnquiryForm({ product }: { product: GiftProduct }) {
 
   return (
     <form onSubmit={submit} className="mt-4 border-t border-line-soft pt-4">
-      <p className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-bronze mb-2.5">
+      <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze mb-2.5">
         Ask the desk about this product
       </p>
       <div className="grid gap-2 sm:grid-cols-[1.4fr_1fr_auto]">
@@ -74,7 +74,7 @@ export function GiftEnquiryForm({ product }: { product: GiftProduct }) {
         </button>
       </div>
       {state === 'error' && (
-        <p className="font-mono text-[11px] text-alert mt-1.5">Something went wrong — please try again.</p>
+        <p className="font-mono text-[12px] text-alert mt-1.5">Something went wrong — please try again.</p>
       )}
     </form>
   )

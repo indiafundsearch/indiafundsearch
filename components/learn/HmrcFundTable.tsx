@@ -31,7 +31,7 @@ export function HmrcFundTable() {
                 <th
                   key={h}
                   scope="col"
-                  className="bg-ink text-white-warm font-mono text-[10px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
+                  className="bg-ink text-white-warm font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
                 >
                   {h}
                 </th>
@@ -44,7 +44,7 @@ export function HmrcFundTable() {
                 <td className="px-4 py-3 text-[14.5px] align-top border-t border-line-soft font-sans font-semibold text-ink">
                   {f.parent}
                   {f.gift && (
-                    <span className="ml-2 font-mono text-[9px] tracking-[0.08em] uppercase border border-bronze-soft text-bronze bg-bronze-wash px-1.5 py-[2px] rounded-[2px] align-middle">
+                    <span className="ml-2 font-mono text-[10.5px] tracking-[0.08em] uppercase border border-bronze-soft text-bronze bg-bronze-wash px-1.5 py-[2px] rounded-[2px] align-middle">
                       GIFT / IFSC
                     </span>
                   )}
@@ -70,7 +70,7 @@ export function HmrcFundTable() {
         </table>
       </div>
 
-      <p className="font-mono text-[11px] tracking-[0.04em] text-slate mt-3">
+      <p className="font-mono text-[12px] tracking-[0.04em] text-slate mt-3">
         Source:{' '}
         <a
           href={HMRC_SOURCE}

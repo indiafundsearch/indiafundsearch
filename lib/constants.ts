@@ -118,7 +118,18 @@ export const NAV_LINKS = [
   { href: '/learn', label: 'Learn', no: '02' },
   { href: '/fit-finder', label: 'Fit Finder', no: '03' },
   { href: '/tax', label: 'Taxation', no: '04' },
-  { href: '/gift-city', label: 'GIFT City', no: '05', highlight: true },
+  {
+    href: '/nri',
+    label: 'NRI & GIFT City',
+    no: '05',
+    highlight: true,
+    // Two sections share sheet 05. The parent links to the country guides;
+    // both are one click away in the menu.
+    children: [
+      { href: '/nri', label: 'NRI country guides', note: 'Tax and access, by where you live' },
+      { href: '/gift-city', label: 'GIFT City', note: 'The fund shelf, inbound and outbound' },
+    ],
+  },
   { href: '/contact', label: 'Talk to Us', no: '06' },
 ] as const
 

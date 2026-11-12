@@ -74,7 +74,7 @@ function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable })
                 <th
                   key={h}
                   scope="col"
-                  className="bg-ink text-white-warm font-mono text-[10px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
+                  className="bg-ink text-white-warm font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
                 >
                   {h}
                 </th>
@@ -100,7 +100,7 @@ function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable })
         </table>
       </div>
       {table.note && (
-        <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[820px]">{table.note}</p>
+        <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[720px]">{table.note}</p>
       )}
     </>
   )
@@ -135,14 +135,14 @@ export default async function CorridorPage({ params }: PageProps) {
         ]}
       />
 
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/nri" className="hover:text-ink">Sheet {SHEETS.nri.no} — Corridors</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">{c.label}</span>
       </nav>
 
       <header>
-        <div className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-bronze mb-2">
+        <div className="font-mono text-[12px] tracking-[0.16em] uppercase text-bronze mb-2">
           <span className="mr-2 text-[13px]" aria-hidden="true">{c.flag}</span>
           Corridor {c.code} — for NRIs &amp; OCIs in {c.country}
         </div>
@@ -151,17 +151,17 @@ export default async function CorridorPage({ params }: PageProps) {
         </h1>
 
         {/* Answer capsule — self-contained, deliberately link-free. */}
-        <div className="mt-6 plot-card px-6 py-5 max-w-[820px] max-sm:px-5">
+        <div className="mt-6 plot-card px-6 py-5 max-w-[720px] max-sm:px-5">
           <span className="corner corner-tl" /><span className="corner corner-tr" />
           <span className="corner corner-bl" /><span className="corner corner-br" />
-          <span className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
+          <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-signal-ink font-semibold block mb-2">
             The short answer
           </span>
           <p className="font-sans text-[17.5px] leading-[1.5] text-ink">{c.capsule}</p>
         </div>
 
         {c.marketNote && (
-          <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-bronze mt-4">
+          <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-bronze mt-4">
             {c.marketNote}
           </p>
         )}
@@ -181,18 +181,18 @@ export default async function CorridorPage({ params }: PageProps) {
             key={label}
             className="flex-1 min-w-[190px] px-4 py-3.5 border-r border-line last:border-r-0 max-sm:min-w-[45%] max-sm:border-b"
           >
-            <span className="font-mono text-[9.5px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
+            <span className="font-mono text-[12px] tracking-[0.14em] uppercase text-slate block mb-[3px]">{label}</span>
             <b className="font-sans text-[14px] font-semibold leading-snug">{value}</b>
           </div>
         ))}
       </div>
 
-      <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-10 max-w-[780px]">
+      <p className="font-serif italic text-[20px] text-ink-soft border-l-[3px] border-signal pl-4 mt-10 max-w-[680px]">
         {c.hook}
       </p>
-      <p className="text-[17.5px] text-ink-soft mt-5 max-w-[780px]">{c.lede}</p>
+      <p className="text-[17.5px] text-ink-soft mt-5 max-w-[680px]">{c.lede}</p>
 
-      {c.slug === 'us' && <UsPersonWarning className="mt-7 max-w-[780px]" />}
+      {c.slug === 'us' && <UsPersonWarning className="mt-7 max-w-[680px]" />}
 
       {/* Comparison table — early, and independently extractable. */}
       <CorridorTableBlock id="comparison" table={c.table} />
@@ -203,11 +203,11 @@ export default async function CorridorPage({ params }: PageProps) {
       {/* Question-shaped sections. Collapsed for readability, but rendered into
           the DOM via native <details> so every answer stays crawlable. */}
       <H id="questions">Questions people in {c.country} actually ask</H>
-      <p className="text-[16.5px] text-slate max-w-[820px] mb-5">
+      <p className="text-[16.5px] text-slate max-w-[720px] mb-5">
         Open whichever applies to you. Each answer stands on its own, with the primary sources it
         rests on.
       </p>
-      <div className="grid gap-3 max-w-[820px]">
+      <div className="grid gap-3 max-w-[720px]">
         {c.qas.map((qa, i) => (
           <Disclosure
             key={qa.q}
@@ -233,19 +233,19 @@ export default async function CorridorPage({ params }: PageProps) {
 
       {/* Empanelment — the asset no competitor has. Owner supplies the data. */}
       <H id="who-accepts">Which houses actually accept investors in {c.country}?</H>
-      <div className="max-w-[820px]">
+      <div className="max-w-[720px]">
         <p className="text-[17px] text-ink-soft mt-3 leading-[1.62]">
           This is the question we are asked most and the one nobody publishes an answer to. Access is
           set house by house as a commercial decision, so the only useful answer is a current list —
           not a rule. We maintain one from our own empanelments rather than from public sources.
         </p>
       </div>
-      <div className="max-w-[820px] mt-5">
+      <div className="max-w-[720px] mt-5">
         <CorridorAccessForm country={c.country} label={c.label} />
       </div>
 
       {/* Mistakes — problem-shaped headings rank for problem-shaped queries. */}
-      <div className="grid gap-3 max-w-[820px] mt-3">
+      <div className="grid gap-3 max-w-[720px] mt-3">
         <Disclosure
           id="mistakes"
           meta={`${c.mistakes.length} to avoid`}
@@ -259,7 +259,7 @@ export default async function CorridorPage({ params }: PageProps) {
             {c.mistakes.map((mi, i) => (
               <li key={mi.m} className="border-l-[3px] border-l-alert/60 pl-4">
                 <h3 className="font-sans font-semibold text-[16.5px] text-ink">
-                  <span className="font-mono text-[11px] text-alert mr-2">
+                  <span className="font-mono text-[12px] text-alert mr-2">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   {mi.m}
@@ -273,7 +273,7 @@ export default async function CorridorPage({ params }: PageProps) {
 
       {/* Checklist */}
       <H id="checklist">What to do, in order</H>
-      <ul className="max-w-[820px] mt-3">
+      <ul className="max-w-[720px] mt-3">
         {c.checklist.map((item) => (
           <li
             key={item}
@@ -285,8 +285,8 @@ export default async function CorridorPage({ params }: PageProps) {
       </ul>
 
       {/* Why we cite no Indian section numbers — a genuine freshness signal. */}
-      <div className="mt-11 bg-white-warm border border-line border-l-4 border-l-teal px-5 py-4.5 max-w-[820px]">
-        <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-teal mb-2">
+      <div className="mt-11 bg-white-warm border border-line border-l-4 border-l-teal px-5 py-4.5 max-w-[720px]">
+        <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-teal mb-2">
           Why this page quotes no Indian section numbers
         </h2>
         <p className="text-[15.5px] text-ink-soft">

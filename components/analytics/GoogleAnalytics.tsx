@@ -107,7 +107,7 @@ gtag('config', '${GA_ID}', {
           className="fixed inset-x-0 bottom-0 z-[60] px-4 pb-4 max-sm:px-2 max-sm:pb-2"
         >
           <div className="mx-auto max-w-[760px] bg-white-warm border border-ink shadow-plot px-6 py-5 max-sm:px-4">
-            <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-bronze mb-1.5">
+            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze mb-1.5">
               Analytics cookies
             </p>
             <p className="text-[15px] text-ink-soft leading-[1.5]">

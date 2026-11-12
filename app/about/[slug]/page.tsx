@@ -52,7 +52,7 @@ export default async function AuthorPage({ params }: PageProps) {
         ]}
       />
 
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/about" className="hover:text-ink">About</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">{a.name}</span>
@@ -63,7 +63,7 @@ export default async function AuthorPage({ params }: PageProps) {
         <h1 className="font-sans font-bold text-[clamp(30px,4.5vw,44px)] tracking-[-0.01em] leading-[1.08]">
           {a.name}
         </h1>
-        <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-slate mt-3">
+        <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mt-3">
           {a.credential}
           {a.arn && <> · ARN {a.arn}</>}
         </p>
@@ -77,7 +77,7 @@ export default async function AuthorPage({ params }: PageProps) {
         ))}
       </div>
 
-      <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mt-12 mb-3">
+      <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mt-12 mb-3">
         Areas of expertise
       </h2>
       <ul className="max-w-[820px]">
@@ -91,7 +91,7 @@ export default async function AuthorPage({ params }: PageProps) {
         ))}
       </ul>
 
-      <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mt-12 mb-3">
+      <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mt-12 mb-3">
         Where to find {a.name.split(' ')[0]}
       </h2>
       <p className="text-[16.5px] text-ink-soft max-w-[820px]">
@@ -111,7 +111,7 @@ export default async function AuthorPage({ params }: PageProps) {
         {SITE.city}, {SITE.state}
       </p>
 
-      <h2 className="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze mt-12 mb-4">
+      <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mt-12 mb-4">
         Written on this site
       </h2>
       <div className="grid gap-2.5 sm:grid-cols-2 max-w-[880px]">

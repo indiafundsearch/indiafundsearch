@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMeta({
 export default function GiftOutboundPage() {
   return (
     <div className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
-      <nav className="font-mono text-[10.5px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
+      <nav className="font-mono text-[12px] tracking-[0.1em] uppercase text-slate mb-8" aria-label="Breadcrumb">
         <Link href="/gift-city" className="hover:text-ink">GIFT City</Link>
         <span className="mx-2">/</span>
         <span className="text-bronze">Route B — Outbound</span>

@@ -38,7 +38,7 @@ export default function NotFound() {
         ))}
       </div>
 
-      <p className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-slate mt-10">
+      <p className="font-mono text-[12px] tracking-[0.12em] uppercase text-slate mt-10">
         Or{' '}
         <Link href="/" className="text-bronze border-b border-bronze-soft hover:text-ink">
           back to the site plan
