@@ -55,7 +55,7 @@ export const UK_TAX: Answer[] = [
     faqs: [
       { q: 'How often does HMRC update the list?', a: 'Monthly. Our extract names the file date it was parsed from.' },
       { q: 'Are GIFT City funds on the list?', a: 'Six of the nineteen India-exposed parent funds in the current extract are GIFT City or IFSC funds.' },
-      { q: 'Does a fund on the list stay on it?', a: 'Not necessarily. One GIFT City share class came off the list on 31 March 2026.' },
+      { q: 'Does a fund on the list stay on it?', a: 'Not necessarily. Status can cease, as one GIFT City share class did on 31 March 2026.' },
       { q: 'Can I rely on this table?', a: 'Treat it as a signpost to HMRC\'s own file, not a substitute. Always confirm your exact share class against the current HMRC publication.' },
     ],
     related: [
