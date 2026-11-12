@@ -85,7 +85,7 @@ export const ANSWERS: Answer[] = [
     slug: 'can-nri-invest-in-pms',
     question: 'Can an NRI invest in PMS in India?',
     answer:
-      'Yes. SEBI\'s portfolio management rules contain no residency condition. The minimum is ₹50 lakh, the same as for a resident. What decides it is your bank and demat setup under FEMA, and each PMS house\'s own policy. Many decline US and Canadian residents.',
+      'Yes. SEBI\'s portfolio management rules contain no residency condition. The minimum is ₹50 lakh, as for a resident. What decides it is your bank and demat setup under FEMA, and each PMS house\'s own policy. Many decline US and Canadian residents.',
     metaTitle: "Can an NRI Invest in PMS in India? Rules & Routes",
     metaDescription:
       "SEBI sets no residency bar on PMS. The ₹50 lakh minimum, the repatriable and non-repatriable routes under FEMA, and why some houses still decline you.",
@@ -93,19 +93,19 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Does SEBI stop an NRI from investing in a PMS?',
         body: [
-          'No. We searched the consolidated portfolio management regulations for "non-resident", "NRI", "nationality" and "citizen". No hits. A manager may take you on the same terms as a resident.',
+          'No. We searched the consolidated portfolio management regulations for "non-resident", "NRI", "nationality" and "citizen": no hits. A manager may take you on a resident\'s terms.',
         ],
         points: [
           'Minimum: ₹50 lakh, per portfolio manager',
           'Accredited investors are exempt',
-          'Shares sit in your own demat account, in your name',
+          'Shares sit in your own demat account',
         ],
       },
       {
         h: 'So why do some houses still say no?',
         body: [
-          'Because of your country, not India\'s. Taking a US resident\'s money can drag the house into US securities law. Registration there is expensive and, for a foreign fund, often impossible, so most decline.',
-          'That is a commercial decision, not a legal bar. Another house may say yes.',
+          'Your country, not India. Taking a US resident\'s money can drag the house into US securities law, where registration is expensive and, for a foreign fund, often impossible.',
+          'That is a commercial decision, not a legal bar on you.',
         ],
       },
       {
@@ -122,15 +122,14 @@ export const ANSWERS: Answer[] = [
         h: 'Repatriable or non-repatriable? Decide before you invest',
         body: [
           '<b>Repatriable:</b> money and gains can go back out. Listed-share purchases run through a designated bank branch, and an individual non-resident stays under 10% of any one company.',
-          '<b>Non-repatriable:</b> treated as domestic money. Simpler, but proceeds stay in India unless you use your annual remittance allowance: up to <b>US $1 million per financial year</b> from an NRO account, with the documentation your bank asks for.',
-          'Changing later is expensive.',
+          '<b>Non-repatriable:</b> treated as domestic money. Simpler, but proceeds stay in India unless you use your annual remittance allowance: up to <b>US $1 million per financial year</b> from an NRO account, with documentation.',
         ],
       },
       {
         h: 'How is it taxed if you are an NRI?',
         body: [
-          'A PMS holds shares in your name, so every sale your manager makes is your sale, in your Indian return, that year. Tax is deducted at source; you claim any excess back by filing.',
-          'A treaty may reduce the rate. Claiming it needs a residency certificate from your own country plus an Indian information form. Where you live changes this a lot, so read your country\'s guide first.',
+          'Every sale your manager makes is your sale, in your Indian return, that year. Tax is deducted at source; you claim any excess back by filing.',
+          'A treaty may reduce the rate, on a residency certificate from your own country plus an Indian information form.',
         ],
       },
     ],
@@ -143,11 +142,11 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [SEBI_PMS, RBI_FI],
     faqs: [
-      { q: "Does SEBI stop NRIs from investing in PMS?", a: "No. The portfolio management regulations contain no residency condition." },
-      { q: "What is the minimum for an NRI?", a: "₹50 lakh, the same as for a resident, per portfolio manager." },
-      { q: "Why do some houses decline me?", a: "Your country's rules, not India's. Taking a US resident's money can pull the house into US securities law." },
-      { q: "Repatriable or non-repatriable?", a: "Decide before you invest. Repatriable money can leave India freely; non-repatriable is treated as domestic money, capped by your annual remittance allowance." },
-      { q: "How is it taxed for an NRI?", a: "Every sale the manager makes is your disposal in your Indian return that year. Tax is deducted at source. Treaty relief needs a residency certificate plus Form 41." },
+      { q: "Does SEBI stop NRIs from investing in PMS?", a: "No. The regulations contain no residency condition." },
+      { q: "What is the minimum for an NRI?", a: "₹50 lakh per portfolio manager, as for a resident." },
+      { q: "Why do some houses decline me?", a: "Mostly to stay outside US securities law." },
+      { q: "Repatriable or non-repatriable?", a: "Repatriable money can leave India freely. Non-repatriable is capped by your annual remittance allowance." },
+      { q: "How is it taxed for an NRI?", a: "Each sale is your disposal in your Indian return. Treaty relief needs a residency certificate plus Form 41." },
     ],
     reviewed: REVIEWED,
     published: PUBLISHED,
@@ -159,7 +158,7 @@ export const ANSWERS: Answer[] = [
     slug: 'are-indian-mutual-funds-pfic',
     question: 'Are Indian mutual funds PFICs?',
     answer:
-      'For a US taxpayer, almost always yes. A foreign pooled fund is treated as a corporation by default, and one earning mostly passive income is a PFIC. That means tax at the top rate plus an interest charge, and a separate Form 8621 for every fund, every year.',
+      'For a US taxpayer, almost always. A foreign pooled fund is a corporation by default, and one earning mostly passive income is a PFIC. That means tax at the top rate plus an interest charge, and a Form 8621 for every fund, every year.',
     metaTitle: "Are Indian Mutual Funds PFICs? US Taxpayer Guide",
     metaDescription:
       "Why Indian mutual funds are almost always PFICs for a US taxpayer, what the default regime costs, which election applies, and the structure that avoids it.",
@@ -173,7 +172,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Why does an Indian mutual fund get caught?',
         body: [
-          'By default. The US statute does not name Indian mutual funds. But a foreign vehicle whose investors all have limited liability is treated as a corporation for US tax unless someone elects otherwise, and nobody does for a retail Indian mutual fund.',
+          'By default, not by name. A foreign vehicle whose investors all have limited liability is treated as a corporation for US tax unless someone elects otherwise. Nobody does for a retail Indian mutual fund.',
         ],
       },
       {
@@ -185,18 +184,16 @@ export const ANSWERS: Answer[] = [
       },
       {
         h: 'Is there a way out?',
-        body: [
-          'Two elections exist. Only one is realistic for Indian funds.',
-        ],
+        body: [],
         points: [
-          '<b>QEF election.</b> Needs an annual information statement from the fund in US tax form. Indian AMCs do not produce one, so it is rarely available.',
-          '<b>Mark-to-market election.</b> Available where shares are regularly traded or redeemable at a published daily NAV, as most Indian mutual funds are. You pay tax on the paper gain each year, as ordinary income. Far better than the default.',
+          '<b>QEF election.</b> Needs an annual information statement in US tax form. Indian AMCs do not produce one, so it is rarely available.',
+          '<b>Mark-to-market election.</b> Available where shares are regularly traded or redeemable at a published daily NAV, as most Indian mutual funds are. You pay tax on the paper gain each year, as ordinary income.',
         ],
       },
       {
         h: 'What is not a PFIC?',
         body: [
-          'The rules reach foreign <em>corporations</em>. An ordinary Indian operating company, such as a bank or a manufacturer, fails both tests, so its shares are not a PFIC.',
+          'The rules reach foreign <em>corporations</em>. An ordinary Indian operating company fails both tests, so its shares are not a PFIC.',
           'So a PMS holding operating-company shares directly in your name creates no PFIC exposure. You still report the account.',
           'The exception: mutual fund units inside the mandate are PFICs. Ask for the mandate in writing.',
         ],
@@ -204,7 +201,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'I already own them and never filed anything',
         body: [
-          'The IRS streamlined filing procedures exist for people whose failure was not deliberate. Waiting does not help, because those years never closed. Take the fund statements to a US tax professional. The analysis is per fund, per year.',
+          'The IRS streamlined filing procedures exist for people whose failure was not deliberate. Take the fund statements to a US tax professional. The analysis is per fund, per year.',
         ],
       },
     ],
@@ -220,11 +217,11 @@ export const ANSWERS: Answer[] = [
       { label: 'IRS — Streamlined Filing Compliance Procedures', url: 'https://www.irs.gov/individuals/international-taxpayers/streamlined-filing-compliance-procedures' },
     ],
     faqs: [
-      { q: "Is every Indian mutual fund a PFIC?", a: "Almost always, for a US taxpayer. A foreign pooled vehicle is a corporation by default, and mostly passive income meets the PFIC test." },
-      { q: "Does a PMS avoid PFIC?", a: "Yes, where it holds operating-company shares directly in your own name. They fail both PFIC tests." },
-      { q: "Can I make a QEF election?", a: "Rarely. It requires an annual information statement in US form, which Indian AMCs do not generally produce." },
-      { q: "What about mark-to-market?", a: "Often available, because most Indian mutual funds redeem at a published daily NAV. The paper gain is taxed each year as ordinary income." },
-      { q: "I never filed Form 8621. Is it too late?", a: "No. Unfiled years remain open, so waiting does not help. The IRS streamlined procedures exist for non-wilful cases." },
+      { q: "Is every Indian mutual fund a PFIC?", a: "Almost always, for a US taxpayer." },
+      { q: "Does a PMS avoid PFIC?", a: "Yes, where it holds operating-company shares directly in your name." },
+      { q: "Can I make a QEF election?", a: "Rarely. Indian AMCs do not generally produce the annual information statement it requires." },
+      { q: "What about mark-to-market?", a: "Often, because most Indian mutual funds redeem at a published daily NAV." },
+      { q: "I never filed Form 8621. Is it too late?", a: "No. The IRS streamlined procedures exist for non-wilful cases." },
     ],
     reviewed: REVIEWED,
     published: PUBLISHED,
@@ -236,7 +233,7 @@ export const ANSWERS: Answer[] = [
     slug: 'hmrc-reporting-fund-status-india',
     question: 'Do Indian funds have HMRC reporting fund status?',
     answer:
-      'Some do. As at 4 November 2026, 19 India-domiciled or GIFT City parent funds hold HMRC reporting fund status across 71 share classes. Most Indian funds still do not. If yours does not, your profit on sale is taxed as income at up to 45% rather than as a capital gain at 24%.',
+      'Some do. As at 4 November 2026, 19 India-domiciled or GIFT City parent funds hold HMRC reporting fund status across 71 share classes. Most Indian funds do not. Without it, your profit on sale is taxed as income at up to 45%, not as a capital gain at 24%.',
     metaTitle: "HMRC Reporting Fund Status: Indian Funds & UK Tax",
     metaDescription:
       "Which India-domiciled and GIFT City funds hold HMRC reporting fund status, parsed from HMRC's own file and dated, and why status decides 24% or 45%.",
@@ -244,18 +241,18 @@ export const ANSWERS: Answer[] = [
       {
         h: 'What is reporting fund status?',
         body: [
-          'A status HMRC grants to an offshore fund that agrees to report its income to UK investors each year, whether or not it pays that income out. Funds without it are treated punitively.',
+          'A status HMRC grants to an offshore fund that agrees to report its income to UK investors each year, whether or not it pays that income out.',
         ],
       },
       {
         h: 'What happens if your fund does not have it?',
         body: [
-          'Your profit on sale is an offshore income gain, not a capital gain. It is charged to income tax at your marginal rate, up to 45%.',
+          'Your profit on sale is an offshore income gain, not a capital gain, charged to income tax at your marginal rate, up to 45%.',
         ],
         points: [
           'No capital gains annual exempt amount',
           'No dividend or savings allowance',
-          'If the investment loses money, the relief is a capital loss, which cannot be set against the income charge on one that worked',
+          'A loss is only a capital loss, which cannot be set against the income charge on a fund that worked',
         ],
       },
       {
@@ -264,8 +261,8 @@ export const ANSWERS: Answer[] = [
           'Yes. We parsed HMRC\'s published file and counted <b>19 parent funds across 71 share classes</b>, including DSP, HDFC, ICICI Prudential, Kotak and Quantum, and six GIFT City or IFSC funds. The full table is below.',
         ],
         points: [
-          '<b>Status is per share class.</b> The wrong class of a listed fund gives you nothing.',
-          '<b>Status runs from a date.</b> Most Indian entries appear only from April 2025. A longer-held investment may have been non-reporting for part of its life, which is enough to taint the disposal.',
+          '<b>Status is per share class</b>, not per fund.',
+          '<b>Status runs from a date.</b> Most Indian entries appear only from April 2025. A longer-held investment may have been non-reporting for part of its life, which taints the disposal.',
           '<b>Status can cease.</b> At least one GIFT City class came off the list on 31 March 2026.',
         ],
       },
@@ -278,14 +275,14 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Is reporting status simply better?',
         body: [
-          'Better on exit, but not free. You must declare the fund\'s reported income every year, including excess reported income it did not pay out. In an accumulating fund you can owe tax on money you have not seen.',
+          'Better on exit, but not free. You must declare the fund\'s reported income every year, including excess reported income it did not pay out.',
         ],
       },
       {
         h: 'What about a PMS rather than a fund?',
         body: [
           'A discretionary PMS is not a fund. You hold shares directly, pooled with nobody, so the offshore fund rules should not apply and your gains should be capital gains.',
-          'Two caveats. HMRC has published no guidance on managed accounts, so this is a well-supported reading, not settled law. And every trade your manager makes is your own UK disposal. Ask for UK-basis reporting.',
+          'HMRC has published no guidance on managed accounts, so this is a well-supported reading, not settled law. And every trade your manager makes is your own UK disposal. Ask for UK-basis reporting.',
         ],
       },
     ],
@@ -303,11 +300,11 @@ export const ANSWERS: Answer[] = [
       { label: 'HMRC IFM12220 — definition of an offshore fund', url: 'https://www.gov.uk/hmrc-internal-manuals/investment-funds/ifm12220' },
     ],
     faqs: [
-      { q: "Do any Indian funds hold HMRC reporting fund status?", a: "Yes. As at 4 November 2026, 19 India-domiciled or GIFT City parent funds held it across 71 share classes." },
-      { q: "What happens without reporting status?", a: "Your profit on sale is an offshore income gain, taxed as income at up to 45%, with no annual exempt amount." },
-      { q: "Is status per fund or per share class?", a: "Per share class, and from a stated date. Check the class and its dates, not the fund name." },
+      { q: "Do any Indian funds hold HMRC reporting fund status?", a: "Yes. As at 4 November 2026, 19 parent funds held it across 71 share classes." },
+      { q: "What happens without reporting status?", a: "Your profit is taxed as income at up to 45%, with no annual exempt amount." },
+      { q: "Is status per fund or per share class?", a: "Per share class, and from a stated date." },
       { q: "Can a fund lose reporting status?", a: "Yes. One GIFT City share class came off HMRC's list on 31 March 2026." },
-      { q: "Is reporting status simply better?", a: "Better on disposal, but you must declare the fund's reported income each year, including amounts not paid out." },
+      { q: "Is reporting status simply better?", a: "Better on disposal, but you must declare the fund's reported income each year, paid out or not." },
     ],
     // Moves with HMRC's monthly file: extract refreshed from the 4 Nov 2026 list.
     reviewed: 'November 2026',
@@ -320,7 +317,7 @@ export const ANSWERS: Answer[] = [
     slug: 'form-10f-for-nri',
     question: 'Form 10F for NRIs: what it is, and what changed',
     answer:
-      'Form 10F is now Form 41. India replaced its entire income tax law on 1 April 2026 and renumbered the forms. You still need it, along with a tax residency certificate, to claim treaty relief. It must be filed online. You do not need a digital signature.',
+      'Form 10F is now Form 41. India replaced its income tax law on 1 April 2026 and renumbered the forms. You still need it, with a tax residency certificate, to claim treaty relief. It is filed online, with no digital signature.',
     metaTitle: "Form 10F for NRIs: How to File Without a PAN",
     metaDescription:
       "Form 10F became Form 41 when India replaced its income tax law. What it is for, how a non-resident without a PAN files it online, and why no DSC is needed.",
@@ -329,7 +326,6 @@ export const ANSWERS: Answer[] = [
         h: 'What is the form for?',
         body: [
           'To claim a lower treaty rate on Indian income you need two documents: a tax residency certificate from your own country\'s tax authority, and an Indian information form giving your status, tax number, address abroad and the period the certificate covers.',
-          'Without both, tax is deducted at the ordinary Indian rate and you claim a refund later.',
         ],
       },
       {
@@ -376,11 +372,11 @@ export const ANSWERS: Answer[] = [
     ],
     sources: [ITA_2025],
     faqs: [
-      { q: "Is Form 10F still called Form 10F?", a: "No. It is Form 41 since India replaced its income tax law on 1 April 2026. It still accompanies your residency certificate when you claim treaty relief." },
-      { q: "Can I file it without a PAN?", a: "Yes, if you are not required to hold one. You register on the Indian e-filing portal under a separate non-resident category and receive an NR ID." },
-      { q: "Do I need an Indian digital signature?", a: "No. The non-resident login is verified by a one-time password. A digital signature applies only to PAN holders who choose that route." },
-      { q: "Can I still file on paper?", a: "No. The paper concession for non-residents without a PAN expired on 30 September 2023." },
-      { q: "What happens if I skip it?", a: "Tax is deducted at the ordinary Indian rate. You can claim the difference back by filing an Indian return." },
+      { q: "Is Form 10F still called Form 10F?", a: "No. It became Form 41 on 1 April 2026." },
+      { q: "Can I file it without a PAN?", a: "Yes, if you are not required to hold one. You register as a non-resident and receive an NR ID." },
+      { q: "Do I need an Indian digital signature?", a: "No. The non-resident login is verified by a one-time password." },
+      { q: "Can I still file on paper?", a: "No. The paper concession expired on 30 September 2023." },
+      { q: "What happens if I skip it?", a: "Tax is deducted at the ordinary Indian rate. You can claim the difference back by filing a return." },
     ],
     reviewed: REVIEWED,
     published: PUBLISHED,
@@ -392,7 +388,7 @@ export const ANSWERS: Answer[] = [
     slug: 'tax-residency-certificate-uae',
     question: 'How does a UAE resident get a TRC for Indian treaty relief?',
     answer:
-      'You apply to the UAE Federal Tax Authority through the EmaraTax portal. For the India treaty, you must have been physically in the UAE for at least 183 days in the calendar year. The UAE\'s easier 90-day domestic test does not satisfy what the India treaty asks for.',
+      'You apply to the UAE Federal Tax Authority through the EmaraTax portal. For the India treaty, you must have been physically in the UAE for at least 183 days in the calendar year. The UAE\'s easier 90-day domestic test does not satisfy the India treaty.',
     metaTitle: "Tax Residency Certificate UAE: The 183-Day Rule",
     metaDescription:
       "How a UAE resident gets a TRC for India treaty relief: the EmaraTax process, fees and timelines, and why the treaty's own 183-day test is stricter.",
@@ -406,7 +402,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'What are the UAE\'s own residency tests?',
         body: [
-          'Three routes. Any one is enough for UAE purposes.',
+          'Any one is enough for UAE purposes.',
         ],
         points: [
           'Your usual home and centre of financial and personal interests are in the UAE',
@@ -418,7 +414,7 @@ export const ANSWERS: Answer[] = [
         h: 'So why does India ask for 183 days?',
         body: [
           'The India treaty writes its own, stricter test: present in the UAE for at least <b>183 days in the calendar year</b> concerned.',
-          'That is a <b>calendar</b> year, not a rolling twelve months and not India\'s April-to-March year. And the 90-day route does not, on its own, meet the treaty test. Count days and keep the evidence.',
+          'That is a <b>calendar</b> year, not a rolling twelve months and not India\'s April-to-March year. And the 90-day route does not, on its own, meet the treaty test. Keep the evidence.',
         ],
       },
       {
@@ -427,23 +423,23 @@ export const ANSWERS: Answer[] = [
           'Through EmaraTax, the Federal Tax Authority\'s portal. Ask for the double tax agreement certificate, not the general-purpose one.',
         ],
         points: [
-          'Submission fee AED 50, plus an issuance fee that depends on whether you are registered for corporate tax',
+          'Submission fee AED 50, plus an issuance fee that depends on corporate tax registration',
           'Typically 5 to 10 business days',
-          'Not for a future period, and not for more than 12 months',
-          'For an individual, the period runs on the Gregorian calendar year',
+          'No future periods, and no more than 12 months',
+          'Individuals: the Gregorian calendar year',
         ],
       },
       {
         h: 'What else does India need?',
         body: [
-          'Form 41, formerly Form 10F, renumbered when India replaced its income tax law on 1 April 2026. It is filed online. Without a PAN, you register under a separate non-resident category and verify by one-time password. No Indian digital signature is needed.',
+          'Form 41, formerly Form 10F, renumbered when India replaced its income tax law on 1 April 2026. It is filed online. Without a PAN, you register as a non-resident and verify by one-time password, with no Indian digital signature.',
         ],
       },
       {
         h: 'The mistakes that cost people money',
         body: [],
         points: [
-          'Assuming India will accept a certificate obtained on the 90-day route',
+          'Assuming India accepts a 90-day-route certificate',
           'Counting days on the Indian tax year, not the calendar year',
           'Applying after the year has closed for a period you cannot evidence',
           'Skipping the Indian form because someone said you need a digital signature',
@@ -509,7 +505,7 @@ export const ANSWERS: Answer[] = [
         points: [
           '<b>PMS:</b> ₹50 lakh',
           '<b>AIF:</b> ₹1 crore, usually a commitment drawn down over years',
-          '<b>SIF:</b> ₹10 lakh, across all strategies of that fund at PAN level',
+          '<b>SIF:</b> ₹10 lakh, measured at PAN level',
           '<b>GIFT City restricted scheme:</b> from US $150,000',
           '<b>Mutual fund:</b> a few hundred rupees',
         ],
@@ -517,7 +513,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Why ₹50 lakh?',
         body: [
-          'A PMS runs a concentrated portfolio, which falls harder than an index and stays down longer. The floor is the regulator saying this suits people who can lose a meaningful sum without it changing their life. If it feels like a stretch, that is useful information.',
+          'A concentrated portfolio falls harder than an index and stays down longer. The floor signals it suits people who can lose a meaningful sum without it changing their life.',
         ],
       },
     ],
@@ -575,7 +571,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Will a fund actually accept you?',
         body: [
-          'Access is a commercial decision by each house, driven by your country of residence. US residents are frequently declined, because the subscription drags the fund into US securities law. UK and UAE residents face fewer obstacles, but their tax outcomes differ sharply. Read the guide for the country you file in.',
+          'Access is a commercial decision by each house, driven by your country of residence. US residents are frequently declined, because the subscription drags the fund into US securities law. UK and UAE residents face fewer obstacles, but their tax outcomes differ sharply.',
         ],
       },
     ],
@@ -597,7 +593,7 @@ export const ANSWERS: Answer[] = [
     slug: 'aif-minimum-investment',
     question: 'What is the minimum investment in an AIF?',
     answer:
-      '₹1 crore. SEBI sets it, and an AIF cannot accept less from an investor. Employees and directors of the fund or its manager can come in at ₹25 lakh, and accredited investors have no minimum. In most funds the ₹1 crore is a commitment drawn down over years, not a single cheque.',
+      '₹1 crore. SEBI sets it, and an AIF cannot accept less from an investor. Employees and directors of the fund or its manager can come in at ₹25 lakh, and accredited investors have no minimum. Usually it is a commitment drawn down over years, not a single cheque.',
     metaTitle: "AIF Minimum Investment in India: ₹1 Crore Rule",
     metaDescription:
       "The AIF minimum is ₹1 crore, usually committed and drawn down rather than paid at once. Who is exempt, the corpus floor, and why angel funds now have none.",
@@ -659,7 +655,7 @@ export const ANSWERS: Answer[] = [
     slug: 'gift-city-minimum-investment',
     question: 'What is the minimum investment in a GIFT City fund?',
     answer:
-      'It depends on the scheme type, and the numbers are in dollars. A restricted, non-retail scheme takes investors from US $150,000. A venture capital scheme from US $250,000. An IFSC portfolio management mandate from US $75,000. Retail schemes have no per-investor minimum.',
+      'It depends on the scheme type, and the numbers are in dollars. A restricted, non-retail scheme starts at US $150,000, a venture capital scheme at US $250,000 and an IFSC portfolio management mandate at US $75,000. Retail schemes have no per-investor minimum.',
     metaTitle: "GIFT City Fund Minimum Investment: IFSCA Limits",
     metaDescription:
       "The IFSCA minimum investment thresholds for GIFT City funds, by scheme type and investor class, with the governing regulation for each.",
@@ -712,9 +708,9 @@ export const ANSWERS: Answer[] = [
     faqs: [
       { q: "What is the minimum for a GIFT City restricted scheme?", a: "US $150,000, or US $40,000 for employees and directors of the manager. Capped at 1,000 investors." },
       { q: "Is there a minimum for a retail scheme?", a: "No. The US $10,000 sometimes quoted applies only to close-ended retail schemes holding more than 15% unlisted." },
-      { q: "What about a venture capital scheme?", a: "From US $250,000, or US $60,000 for employees and directors, with a maximum of 50 investors." },
-      { q: "Can an NRI invest without the remittance cap?", a: "Yes. The annual remittance cap constrains India-resident investors, not an NRI investing as a non-resident." },
-      { q: "Does SEBI accreditation carry into GIFT City?", a: "No. IFSCA runs its own accredited investor regime, and neither status carries across." },
+      { q: "What about a venture capital scheme?", a: "From US $250,000, or US $60,000 for employees and directors. Capped at 50 investors." },
+      { q: "Can an NRI invest without the remittance cap?", a: "Yes. The cap constrains India-resident investors, not non-residents." },
+      { q: "Does SEBI accreditation carry into GIFT City?", a: "No. IFSCA runs its own accredited investor regime." },
     ],
     reviewed: REVIEWED,
     published: PUBLISHED,
@@ -726,7 +722,7 @@ export const ANSWERS: Answer[] = [
     slug: 'nri-repatriation-limit',
     question: 'How much money can an NRI send out of India each year?',
     answer:
-      'Up to US $1 million per financial year from an NRO account, with documentation. Money held on a repatriable basis, in an NRE account or bought through the repatriable route, is not capped at all. Which one applies depends on a choice you made when you invested.',
+      'Up to US $1 million per financial year from an NRO account, with documentation. Money held on a repatriable basis, in an NRE account or bought through the repatriable route, is not capped. Which applies depends on a choice you made when you invested.',
     metaTitle: "NRI Repatriation Limit: The US $1 Million Rule",
     metaDescription:
       "An NRI may remit US $1 million a year from an NRO account. Money held on a repatriable basis has no cap. How the two routes differ, and when to choose.",
@@ -740,7 +736,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'When the cap does not apply',
         body: [
-          'Money held on a <b>repatriable</b> basis, or in an NRE account, is not subject to it. Capital and gains can move out without the annual ceiling. The cap limits one route, not NRIs.',
+          'Money held on a <b>repatriable</b> basis, or in an NRE account, is not subject to it.',
         ],
       },
       {
@@ -754,7 +750,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Why this needs deciding before you invest',
         body: [
-          'Changing route afterwards usually means selling and re-buying, with the tax and costs that follow. If you may want this money outside India, say so at account-opening.',
+          'Changing route afterwards usually means selling and re-buying, with the tax and costs that follow. If you may want the money outside India, say so at the start.',
         ],
       },
       {
@@ -782,7 +778,7 @@ export const ANSWERS: Answer[] = [
     slug: 'nre-vs-nro-account',
     question: 'NRE or NRO account: which one do you need?',
     answer:
-      'NRE is for money you earned abroad. It is fully repatriable and the interest is exempt from Indian tax. NRO is for money you earn in India, like rent or dividends. Its interest is taxable, and you can send out up to US $1 million a year. Most NRIs end up needing both.',
+      'NRE is for money you earned abroad. It is fully repatriable and the interest is exempt from Indian tax. NRO is for money you earn in India, like rent or dividends. Its interest is taxable, and you can send out up to US $1 million a year. Most NRIs need both.',
     metaTitle: "NRE vs NRO Account: Which One an NRI Needs",
     metaDescription:
       "NRE holds money earned abroad and is fully repatriable. NRO holds Indian income and is capped. How each is taxed, and which your investments should use.",
@@ -790,7 +786,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'The one-line difference',
         body: [
-          '<b>NRE</b> holds money you earned outside India. <b>NRO</b> holds money you earn inside India. Both are rupee accounts.',
+          'Both are rupee accounts. <b>NRE</b> holds money earned outside India, <b>NRO</b> money earned inside it.',
         ],
       },
       {
@@ -806,8 +802,8 @@ export const ANSWERS: Answer[] = [
       {
         h: 'Which one should your investments run through?',
         body: [
-          'It follows from your route. A <b>repatriable</b> investment is funded from abroad or from your NRE account, and proceeds can go back out. A <b>non-repatriable</b> one runs through NRO and is treated as domestic money.',
-          'Decide before you invest. Changing route usually means selling and re-buying, with the tax and cost that follows.',
+          'A <b>repatriable</b> investment is funded from abroad or from your NRE account, and proceeds can go back out. A <b>non-repatriable</b> one runs through NRO and is treated as domestic money.',
+          'Changing route later usually means selling and re-buying, with the tax and cost that follows.',
         ],
       },
       {
@@ -819,7 +815,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'What about FCNR?',
         body: [
-          'FCNR is a term deposit held in foreign currency, so it carries no rupee exchange risk. The interest is exempt from Indian tax, like NRE. It suits money you will need in dollars, pounds or dirhams.',
+          'FCNR is a term deposit held in foreign currency, so it carries no rupee exchange risk. The interest is exempt from Indian tax, like NRE. It suits money you will need in foreign currency.',
         ],
       },
     ],
@@ -840,7 +836,7 @@ export const ANSWERS: Answer[] = [
     slug: 'sif-minimum-investment',
     question: 'What is a SIF, and what is the minimum investment?',
     answer:
-      'A Specialised Investment Fund is SEBI\'s newest category, sitting between mutual funds and AIFs. The minimum is ₹10 lakh, measured at PAN level across every strategy of that fund. It can go long and short, but it keeps mutual-fund style rules, disclosure and tax.',
+      'A Specialised Investment Fund is SEBI\'s newest category, between mutual funds and AIFs. The minimum is ₹10 lakh, measured at PAN level across every strategy of that fund. It can go long and short, but keeps mutual-fund style rules, disclosure and tax.',
     metaTitle: "SIF Minimum Investment: ₹10 Lakh, and What a SIF Is",
     metaDescription:
       "Specialised Investment Funds start at ₹10 lakh, measured at PAN level across all strategies. How SIFs differ from mutual funds and AIFs, and the tax.",
@@ -848,7 +844,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'What is a SIF?',
         body: [
-          'A category SEBI created between a mutual fund and an AIF. It can go long the stocks it likes and short the ones it does not, which is hedge-fund technique, while keeping mutual-fund style rules, disclosure and tax treatment.',
+          'It can go long the stocks it likes and short the ones it does not, which is hedge-fund technique, while keeping mutual-fund style rules, disclosure and tax treatment.',
         ],
       },
       {
@@ -878,7 +874,7 @@ export const ANSWERS: Answer[] = [
         h: 'What should make you cautious?',
         body: [
           'The category went live in 2025, so there is no long-run evidence yet on how these strategies behave through a full Indian market cycle.',
-          'Hedged strategies trade constantly, so the securities transaction tax increase from April 2026 hits them harder than a low-churn portfolio. Ask any manager how it moved their gross-to-net.',
+          'Hedged strategies trade constantly, so the securities transaction tax increase from April 2026 hits them harder than a low-churn portfolio.',
         ],
       },
     ],
@@ -899,7 +895,7 @@ export const ANSWERS: Answer[] = [
     slug: 'pms-vs-mutual-fund',
     question: 'PMS or mutual fund: what is the real difference?',
     answer:
-      'A mutual fund gives you units of a pool. A PMS puts the actual shares in your own demat account. That changes how concentrated it can be, what you can see, and crucially who pays tax on the churn. In a PMS, that is you, every year.',
+      'A mutual fund gives you units of a pool. A PMS puts the actual shares in your own demat account. That changes how concentrated it can be, what you can see, and who pays tax on the churn. In a PMS, that is you, every year.',
     metaTitle: "PMS vs Mutual Fund: Ownership and Tax Compared",
     metaDescription:
       "A mutual fund gives you units. A PMS puts the shares in your own demat. What that changes for concentration, visibility and who pays tax on the churn.",
@@ -907,7 +903,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'The difference that drives all the others',
         body: [
-          'In a mutual fund you own <b>units of a pool</b>. In a PMS you own <b>the shares themselves</b>, in your own demat account. SEBI requires that a portfolio manager must not hold client securities in its own name.',
+          'Mutual fund: <b>units of a pool</b>. PMS: <b>the shares themselves</b>, in your own demat account. SEBI requires that a portfolio manager must not hold client securities in its own name.',
         ],
       },
       {
@@ -924,14 +920,14 @@ export const ANSWERS: Answer[] = [
       {
         h: 'The tax point people underestimate',
         body: [
-          'A mutual fund manager can trade all year and you are taxed only when you redeem. A PMS has no such wrapper. <b>Every sale the manager makes is your sale, in your return, that year.</b> A high-turnover PMS bills you tax annually even if you never withdraw a rupee.',
+          'A mutual fund manager can trade all year and you are taxed only when you redeem. A PMS has no such wrapper. <b>Every sale the manager makes is your sale, in your return, that year.</b> That holds even if you never withdraw a rupee.',
           'So two managers with identical gross returns can leave you with different money. Ask for portfolio turnover alongside performance.',
         ],
       },
       {
         h: 'When is a PMS actually the better tool?',
         body: [
-          'When you want concentration and can live with it. A manager running twenty-five positions instead of eighty can size a conviction so it moves the portfolio. That is where extra return can come from, and why the portfolio falls harder, and stays down longer, than an index.',
+          'When you want concentration and can live with it. Twenty-five positions instead of eighty lets a conviction move the portfolio. That is where extra return can come from, and why it falls harder, and stays down longer, than an index.',
           'Otherwise the mutual fund is the better answer: cheaper, more liquid and more diversified.',
         ],
       },
@@ -959,7 +955,7 @@ export const ANSWERS: Answer[] = [
     slug: 'which-amcs-accept-us-nri',
     question: 'Which Indian mutual funds accept US and Canadian NRIs?',
     answer:
-      'Only a minority of Indian AMCs accept US or Canadian residents, usually with offline paperwork and extra declarations. The list changes, so nobody should publish a stale one. The bigger question is whether to buy an Indian mutual fund at all, because for a US taxpayer it is almost certainly a PFIC.',
+      'Only a minority of Indian AMCs accept US or Canadian residents, usually with offline paperwork and extra declarations. The list changes, so nobody should publish a stale one. But for a US taxpayer an Indian mutual fund is almost certainly a PFIC, so ask first whether to buy one at all.',
     metaTitle: "Which Indian Mutual Funds Accept US NRIs?",
     metaDescription:
       "Why most Indian AMCs decline US and Canadian residents, what the ones that accept you require, and the tax reason to question the product first.",
@@ -1035,7 +1031,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'The question that actually decides it',
         body: [
-          'Where you file your taxes. India\'s IFSC exemptions were designed for investors taxed nowhere else. If your own country taxes your worldwide income, an Indian exemption simply removes the foreign tax credit you would otherwise have claimed. The saving passes to your own government.',
+          'Where you file your taxes. If your own country taxes your worldwide income, an Indian exemption simply removes the foreign tax credit you would otherwise have claimed. The saving passes to your own government.',
         ],
       },
       {
@@ -1056,7 +1052,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'The one thing to check either way',
         body: [
-          'How the vehicle is structured. For a US taxpayer, whether it is a corporation, a partnership or a trust changes your filing completely. For a UK resident, whether your share class is on HMRC\'s list changes your rate by twenty points. Neither is on a factsheet.',
+          'How the vehicle is structured. For a US taxpayer, whether it is a corporation, a partnership or a trust changes your filing completely. For a UK resident, whether your share class is on HMRC\'s list changes your rate by twenty points.',
         ],
       },
     ],
@@ -1086,7 +1082,7 @@ export const ANSWERS: Answer[] = [
       {
         h: 'The categories are strategy buckets, not risk grades',
         body: [
-          'The number is not a rating: a Category I venture fund is far riskier than a Category II private credit fund. It says what the fund may invest in and how it may operate.',
+          'A Category I venture fund is far riskier than a Category II private credit fund. The number says what a fund may invest in and how it may operate.',
         ],
       },
       {
@@ -1139,7 +1135,7 @@ export const ANSWERS: Answer[] = [
     slug: 'pms-fees-explained',
     question: 'How much does a PMS actually cost?',
     answer:
-      'Two shapes are common. A flat fee of about 2 to 2.5% a year, or a lower flat fee plus a share of profits above a hurdle. Most people assume the profit-share is cheaper. On typical terms the crossover is around a 16.7% gross return. Above that, the flat fee costs you less.',
+      'Two shapes are common: a flat fee of about 2 to 2.5% a year, or a lower flat fee plus a share of profits above a hurdle. Most people assume the profit-share is cheaper. On typical terms the crossover is around a 16.7% gross return. Above that, the flat fee costs less.',
     metaTitle: "PMS Fees in India: Flat Fee vs Profit Share",
     metaDescription:
       "What a PMS costs, worked through on ₹50 lakh: where the flat-fee and profit-share crossover sits, and the three clauses to check before you sign.",

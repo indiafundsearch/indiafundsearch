@@ -312,12 +312,12 @@ export const AUGMENT: Record<string, CorridorAugment> = {
       {
         q: "Can a UK NRI invest in Indian mutual funds?",
         a: [
-          "Yes. UK law does not stop you, but it taxes the result in one of two very different ways.",
+          "Yes. UK law does not stop you, but taxes the result in one of two very different ways.",
           "If your share class has HMRC reporting fund status, your profit on sale is a capital gain: 18% or 24% for 2026 to 2027, after a £3,000 annual exempt amount.",
           "If not, the profit is an offshore income gain, charged to income tax. The additional rate is 45% on income over £125,140.",
           "Shares you hold directly are not fund units, so their gains fall under capital gains tax.",
           "UK dividend tax is 10.75%, 35.75% or 39.35% for 2026 to 2027, after a £500 allowance. The Budget of 28 October 2026 left it unchanged and raised the rates on savings and property income by two percentage points from April 2027.",
-          "The treaty leaves gains to each country's own law. On dividends it caps Indian tax at 10% for an individual, below India's own 20%, so the relief is worth claiming.",
+          "The treaty leaves gains to each country's own law. On dividends it caps Indian tax at 10% for an individual, below India's own 20%.",
         ],
         sources: [UK.reg17, UK.cgt, UK.it, UK.div, UK.treaty, UK.budget],
       },
@@ -390,7 +390,7 @@ export const AUGMENT: Record<string, CorridorAugment> = {
       {
         q: "So should a UAE resident prefer mutual funds or shares?",
         a: [
-          "On tax alone, the treaty reading favours fund units for a settled UAE resident who will do the paperwork. If the reading holds, the Indian tax on the gain comes back. If a higher court overturns it, you pay what a share investor pays anyway: the ordinary rate, not a penalty.",
+          "On tax alone, the treaty reading favours fund units for a settled UAE resident who will do the paperwork. If it holds, the Indian tax on the gain comes back. If a higher court overturns it, you pay what a share investor pays anyway: the ordinary rate, not a penalty.",
           "Funds also avoid a yearly trickle of dividend deductions. The treaty is reported to cap Indian tax on dividends at 10%, against India's own 20%, but each claim still needs the certificate and the form.",
           "That answer is conditional: 183 days in the UAE in the calendar year, a residency certificate for the right period, and patience while the deducted tax is refunded.",
           "Shares still make sense if you want to choose companies yourself.",
