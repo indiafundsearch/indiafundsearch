@@ -2,18 +2,15 @@ import type { Corridor, CorridorQA, CorridorTable } from "./types";
 import {
   CHECK_RECORDS,
   CHECK_STATUS,
-  INDIA_RESIDENCE_QA,
   INDIA_SOURCES,
   CHECK_ADVISER,
   MISTAKE_ADVICE_LATER,
   MISTAKE_REFUND,
-  WHY_INDIA_QA,
   MISTAKE_STATUS,
   NEW_COMMON,
   RELATED_COMMON,
   SRC,
   indiaPaperworkQA,
-  indiaTaxQA,
 } from "./corridorsShared";
 
 /**
@@ -277,13 +274,10 @@ export const CORRIDORS_GULF: Corridor[] = [
           "Shares still make sense if you want to pick companies or want dividend income. Tax should not be the only reason to pick a vehicle.",
         ],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("Saudi Arabia"),
       indiaPaperworkQA(
         "For Saudi Arabia that is ZATCA's certificate for individuals, which asks for 183 days in the Kingdom, or 30 days if you own a permanent residence.",
         KSA.trc,
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       MISTAKE_ADVICE_LATER,
@@ -428,12 +422,9 @@ export const CORRIDORS_GULF: Corridor[] = [
           "Shares still make sense if you want to pick companies or want dividend income. Tax should not be the only reason to pick a vehicle.",
         ],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("Oman"),
       indiaPaperworkQA(
         "For Oman that is a certificate from its tax authorities confirming you are resident there.",
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       {
@@ -587,13 +578,10 @@ export const CORRIDORS_GULF: Corridor[] = [
           "Shares still make sense if you want to pick companies or want dividend income. Tax should not be the only reason to pick a vehicle.",
         ],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("Qatar"),
       indiaPaperworkQA(
         "For Qatar that is the General Tax Authority's residency certificate, which asks about 183 days of presence, a permanent home, or your centre of vital interests.",
         QA.trc,
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       {
@@ -725,7 +713,6 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
           "If that is right, the cautious plan is our UAE guide's: the fund position is arguable and tested only at tribunal level under other treaties, India taxes shares, and the worst case is India's ordinary rate. Have the text checked before relying on any of it.",
         ],
       },
-      WHY_INDIA_QA,
       {
         q: "What should I ask an adviser about the India–Kuwait treaty?",
         a: [
@@ -736,11 +723,9 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
           "Is there a limitation-of-benefits article, and does it reach individuals?",
         ],
       },
-      indiaTaxQA("Kuwait"),
       indiaPaperworkQA(
         "For Kuwait that is a certificate from its tax authorities confirming you are resident there.",
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       {
@@ -821,7 +806,6 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
         ],
         sources: [SRC.act2025],
       },
-      indiaTaxQA("Bahrain"),
       {
         q: "Do I still need to file anything in India?",
         a: [
@@ -840,8 +824,6 @@ export const CORRIDORS_GULF_NO_TEXT: Corridor[] = [
         ],
         sources: [BH.mea],
       },
-      WHY_INDIA_QA,
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       MISTAKE_ADVICE_LATER,

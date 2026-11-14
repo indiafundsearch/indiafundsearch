@@ -9,6 +9,10 @@ import { JsonLd } from '@/components/shared/JsonLd'
 import { FadeInOnScroll } from '@/components/shared/FadeInOnScroll'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
+import { Disclosure } from '@/components/shared/Disclosure'
+import { OpenHashDetails } from '@/components/shared/OpenHashDetails'
+import { Sources } from '@/components/eeat/Sources'
+import { INDIA_COMMON } from '@/lib/content/corridorsShared'
 
 export const metadata: Metadata = pageMeta({
   title: "NRI Investing in India: Country-by-Country Tax Guides",
@@ -117,6 +121,34 @@ export default function NriHubPage() {
           <Link href="/learn" className="font-sans text-[13px] font-medium tracking-[0.06em] uppercase text-bronze border-b-[1.5px] border-bronze-soft">
             All thirteen structures →
           </Link>
+        </div>
+
+        <div className="mt-16 max-w-[720px]">
+          <div className="dim mb-6"><span>India&apos;s side, the same wherever you live</span></div>
+          <OpenHashDetails slugs={INDIA_COMMON.map((item) => item.id)} />
+          <div className="grid gap-3">
+            {INDIA_COMMON.map((item) => (
+              <Disclosure
+                key={item.id}
+                id={item.id}
+                title={
+                  <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
+                    {item.qa.q}
+                  </h2>
+                }
+              >
+                {item.qa.a.map((para, i) => (
+                  <p
+                    key={para.slice(0, 40)}
+                    className={`text-[16.5px] text-ink-soft leading-[1.62] ${i > 0 ? 'mt-3' : ''}`}
+                  >
+                    {para.replace(/<\/?b>/g, '')}
+                  </p>
+                ))}
+                {item.qa.sources && <Sources sources={item.qa.sources} compact />}
+              </Disclosure>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16">

@@ -4,9 +4,7 @@ import {
   MISTAKE_ADVICE_LATER,
   MISTAKE_INDIAN_LOGIC,
   MISTAKE_STATUS,
-  WHY_INDIA_QA,
   SRC,
-  indiaTaxQA,
 } from "./corridorsShared";
 import { OECD_CRS, gainIllustration } from "./corridorsGulf";
 
@@ -202,7 +200,6 @@ export const AUGMENT: Record<string, CorridorAugment> = {
         ],
         sources: [US.s1297],
       },
-      WHY_INDIA_QA,
       {
         q: "Can a single Indian stock be a PFIC?",
         a: [
@@ -214,7 +211,6 @@ export const AUGMENT: Record<string, CorridorAugment> = {
         ],
         sources: [US.s1297, US.s1298],
       },
-      indiaTaxQA("the United States"),
     ],
     mistakes: [
       {
@@ -321,8 +317,6 @@ export const AUGMENT: Record<string, CorridorAugment> = {
         ],
         sources: [UK.reg17, UK.cgt, UK.it, UK.div, UK.treaty, UK.budget],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("the United Kingdom"),
     ],
     mistakes: [MISTAKE_ADVICE_LATER, MISTAKE_INDIAN_LOGIC, MISTAKE_STATUS],
     sources: [
@@ -396,8 +390,6 @@ export const AUGMENT: Record<string, CorridorAugment> = {
           "Shares still make sense if you want to choose companies yourself.",
         ],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("the UAE"),
     ],
     mistakes: [MISTAKE_ADVICE_LATER, MISTAKE_STATUS],
     sources: [UAE.cd85, OECD_CRS, SRC.act2025, SRC.form41, SRC.nrFaq, SRC.rbiAccounts],

@@ -2,20 +2,17 @@ import type { Corridor } from "./types";
 import {
   CHECK_RECORDS,
   CHECK_STATUS,
-  INDIA_RESIDENCE_QA,
   INDIA_SOURCES,
   CHECK_ADVISER,
   CHECK_PMS_REPORTING,
   MISTAKE_ADVICE_LATER,
   MISTAKE_INDIAN_LOGIC,
   MISTAKE_REFUND,
-  WHY_INDIA_QA,
   MISTAKE_STATUS,
   NEW_COMMON,
   RELATED_COMMON,
   SRC,
   indiaPaperworkQA,
-  indiaTaxQA,
 } from "./corridorsShared";
 
 /**
@@ -330,13 +327,10 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         sources: [CA.s941],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("Canada"),
       indiaPaperworkQA(
         "The Canada–India treaty gives an individual no lower Indian rate on gains or dividends, so for most Canadian residents this matters only when reclaiming over-deducted tax.",
         CA.treaty,
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       {
@@ -585,13 +579,10 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         sources: [SG.treaty],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("Singapore"),
       indiaPaperworkQA(
         "For Singapore that is a Certificate of Residence from IRAS, applied for online. IRAS says processing takes two to three weeks.",
         SG.cor,
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       {
@@ -781,13 +772,10 @@ export const CORRIDORS_ASIA_CANADA: Corridor[] = [
         ],
         sources: [HK.cor, HK.form, HK.treaty, SRC.form41],
       },
-      WHY_INDIA_QA,
-      indiaTaxQA("Hong Kong"),
       indiaPaperworkQA(
         "For Hong Kong that is a Certificate of Resident Status from the Inland Revenue Department, applied for on Form IR1314B.",
         HK.cor,
       ),
-      INDIA_RESIDENCE_QA,
     ],
     mistakes: [
       {

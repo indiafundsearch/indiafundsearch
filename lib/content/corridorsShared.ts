@@ -82,9 +82,9 @@ export const INDIA_SOURCES: Source[] = [
 ];
 
 /** What India charges first, whatever the country of residence does next. */
-export function indiaTaxQA(country: string): CorridorQA {
+export function indiaTaxQA(country?: string): CorridorQA {
   return {
-    q: `What does India tax before the money reaches me in ${country}?`,
+    q: country ? `What does India tax before the money reaches me in ${country}?` : "What does India tax before the money reaches me abroad?",
     a: [
       "India taxes the gain first.",
       "Listed Indian shares and equity mutual fund units held over twelve months: <b>12.5% on gains above ₹1.25 lakh</b> in a tax year. Sold within twelve months: <b>20%</b>. Surcharge and cess are extra.",
@@ -192,4 +192,15 @@ export const RELATED_COMMON = [
   { label: "The treaty-information form, and how to file it", href: "/learn/form-10f-for-nri" },
   { label: "NRE vs NRO account", href: "/learn/nre-vs-nro-account" },
   { label: "NRI repatriation limit", href: "/learn/nri-repatriation-limit" },
+];
+
+/**
+ * The three India-side questions that are identical for every country. They
+ * used to be repeated on all eleven guides; since November 2026 they live once,
+ * on the /nri hub, and each guide links to them by these ids.
+ */
+export const INDIA_COMMON: { id: string; short: string; qa: CorridorQA }[] = [
+  { id: "india-tax", short: "What India taxes first, and deducts at source", qa: indiaTaxQA() },
+  { id: "india-residence", short: "Whether you could still be tax-resident in India", qa: INDIA_RESIDENCE_QA },
+  { id: "rupee-exposure", short: "Whether rupee investments make sense from abroad", qa: WHY_INDIA_QA },
 ];

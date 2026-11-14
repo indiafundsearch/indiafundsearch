@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { CORRIDORS, corridorBySlug } from '@/lib/content/corridors'
+import { INDIA_COMMON } from '@/lib/content/corridorsShared'
 import type { Corridor, CorridorTable } from '@/lib/content/types'
 import { DISCLOSURE, SHEETS, whatsappHref } from '@/lib/constants'
 import { pageMeta, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
@@ -231,6 +232,25 @@ export default async function CorridorPage({ params }: PageProps) {
         ))}
       </div>
 
+      {/* India's side is the same for every country, so it lives once on the hub. */}
+      <div className="max-w-[720px] mt-6 bg-white-warm border border-line border-l-4 border-l-bronze px-5 py-4">
+        <h2 className="font-mono text-[12px] tracking-[0.2em] uppercase text-bronze mb-2">
+          India&apos;s side, the same for every country
+        </h2>
+        <ul>
+          {INDIA_COMMON.map((item) => (
+            <li key={item.id} className="py-1">
+              <Link
+                href={`/nri#${item.id}`}
+                className="font-sans text-[15.5px] font-medium text-ink border-b border-bronze-soft hover:text-bronze"
+              >
+                {item.short} →
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* Empanelment — the asset no competitor has. Owner supplies the data. */}
       <H id="who-accepts">Which houses actually accept investors in {c.country}?</H>
       <div className="max-w-[720px]">
@@ -330,7 +350,19 @@ export default async function CorridorPage({ params }: PageProps) {
 
       {c.related && <RelatedReading links={c.related} heading="Go deeper" />}
 
-      <Sources sources={c.sources} heading="Every source cited on this page" />
+      {/* Folded by default: the list runs to twenty-odd links. Still in the DOM. */}
+      <div className="max-w-[720px] mt-10">
+        <Disclosure
+          meta={`${c.sources.length} sources`}
+          title={
+            <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
+              Every source cited on this page
+            </h2>
+          }
+        >
+          <Sources sources={c.sources} compact />
+        </Disclosure>
+      </div>
 
       <DisclosureLine
         className="mt-8"
