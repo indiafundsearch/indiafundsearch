@@ -7,14 +7,10 @@ export interface TocSection {
   label: string
 }
 
-export type TocVariant = 'rail' | 'chips' | 'card'
-
 /**
- * "On this page" for the long country guides. Three presentations of the same
- * list, chosen at build time while the owner picks one:
- *   rail  — a sticky side list on desktop, a fold-out box on phones
- *   chips — a strip of jump links that sticks under the header
- *   card  — a plain numbered box near the top, nothing sticky
+ * "On this page" for the long country guides: a sticky side list on desktop
+ * that marks the current section, and a fold-out box on phones. The owner
+ * chose this over a sticky strip and a static contents box (November 2026).
  */
 function useActiveSection(ids: string[]): string | null {
   const [active, setActive] = useState<string | null>(null)
@@ -39,53 +35,9 @@ function useActiveSection(ids: string[]): string | null {
   return active
 }
 
-export function GuideToc({ sections, variant }: { sections: TocSection[]; variant: TocVariant }) {
+export function GuideToc({ sections }: { sections: TocSection[] }) {
   const active = useActiveSection(sections.map((s) => s.id))
 
-  if (variant === 'card') {
-    return (
-      <nav aria-label="On this page" className="mt-9 bg-white-warm border border-line px-6 py-5 max-w-[720px] max-sm:px-4">
-        <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze mb-3">On this page</p>
-        <ol className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
-          {sections.map((s, i) => (
-            <li key={s.id}>
-              <a href={`#${s.id}`} className="flex gap-3 py-1.5 font-sans text-[15px] font-medium text-ink hover:text-bronze">
-                <span className="font-mono text-[12px] text-bronze pt-0.5">{String(i + 1).padStart(2, '0')}</span>
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
-    )
-  }
-
-  if (variant === 'chips') {
-    return (
-      <nav
-        aria-label="On this page"
-        className="sticky top-[66px] lg:top-[111px] z-30 -mx-[22px] px-[22px] mt-8 bg-paper/95 backdrop-blur border-y border-line"
-      >
-        <ul className="flex gap-2 overflow-x-auto py-2.5 [scrollbar-width:none]">
-          {sections.map((s) => (
-            <li key={s.id} className="shrink-0">
-              <a
-                href={`#${s.id}`}
-                aria-current={active === s.id ? 'true' : undefined}
-                className={`block font-sans text-[13px] font-medium tracking-[0.04em] px-3.5 py-2 rounded-[3px] border transition-colors ${
-                  active === s.id ? 'bg-ink text-white-warm border-ink' : 'bg-white-warm text-ink border-line hover:border-bronze'
-                }`}
-              >
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )
-  }
-
-  // rail
   return (
     <>
       {/* Phones and tablets: a fold-out box. */}

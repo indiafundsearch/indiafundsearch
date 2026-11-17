@@ -12,7 +12,7 @@ import { Sources } from '@/components/eeat/Sources'
 import { RelatedReading } from '@/components/eeat/RelatedReading'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
-import { GuideToc, type TocSection, type TocVariant } from '@/components/nri/GuideToc'
+import { GuideToc, type TocSection } from '@/components/nri/GuideToc'
 import { CorridorAccessForm } from '@/components/nri/CorridorAccessForm'
 import { Disclosure } from '@/components/shared/Disclosure'
 import { TrackedContactLink } from '@/components/analytics/TrackedContactLink'
@@ -108,14 +108,6 @@ function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable })
   )
 }
 
-/**
- * Table of contents presentation. Unset means no table of contents, which is
- * what production runs until the owner picks one of the three.
- */
-const RAW_TOC = process.env.NEXT_PUBLIC_TOC_VARIANT
-const TOC_VARIANT: TocVariant | null =
-  RAW_TOC === 'rail' || RAW_TOC === 'chips' || RAW_TOC === 'card' ? RAW_TOC : null
-
 function tocSections(c: Corridor): TocSection[] {
   return [
     { id: 'comparison', label: 'How each holding is treated' },
@@ -199,11 +191,8 @@ export default async function CorridorPage({ params }: PageProps) {
         />
       </header>
 
-      {TOC_VARIANT === 'chips' && <GuideToc sections={tocSections(c)} variant="chips" />}
-      {TOC_VARIANT === 'card' && <GuideToc sections={tocSections(c)} variant="card" />}
-
-      <div className={TOC_VARIANT === 'rail' ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_230px] lg:gap-x-12' : undefined}>
-      {TOC_VARIANT === 'rail' && <GuideToc sections={tocSections(c)} variant="rail" />}
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_230px] lg:gap-x-12">
+      <GuideToc sections={tocSections(c)} />
       <div className="min-w-0">
 
       {/* At a glance */}
