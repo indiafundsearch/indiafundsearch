@@ -57,6 +57,8 @@ Day 1 — hubs and the highest-demand pages — ✅ all 10 requested 2026-11-11
 - /uk-tax/hmrc-reporting-funds-list · /nri/us · /nri/uae
 - /about · /learn/us-nri-pfic · /gift-city/how-to-invest
 
+**2026-11-17: site-wide copy and navigation update went live. Request indexing from here on reads the new version. Day 2 onward is still pending.**
+
 Day 2
 - /us-tax/pfic-tax-rate · /us-tax/form-8621-instructions
 - /us-tax/form-8621-filing-requirements · /us-tax/pfic-reporting-threshold

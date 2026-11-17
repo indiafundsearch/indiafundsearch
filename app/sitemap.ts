@@ -41,15 +41,15 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: 'weekly'
  * content actually changes; leave the rest alone.
  */
 const UPDATED = {
-  hubs: '2026-11-11', // home, learn, footer links to the tax clusters
-  products: '2026-11-11', // heading levels; capsules + quick answers 2026-10-23
-  corridors: '2026-11-11', // eight country guides added; hreflang cluster removed
-  answers: '2026-10-23', // contextual links
-  usTax: '2026-10-23',
-  ukTax: '2026-11-11', // HMRC extract refreshed from the 4 Nov 2026 file
-  giftCity: '2026-10-23',
-  articles: '2026-09-11', // capsule + FAQ
-  tax: '2026-10-23',
+  hubs: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  products: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  corridors: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  answers: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  usTax: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  ukTax: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  giftCity: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  articles: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
+  tax: '2026-11-17', // copy tightened and navigation batch, 17 Nov 2026
   about: '2026-10-23',
   legal: '2026-09-10',
 } as const
