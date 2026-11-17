@@ -12,6 +12,7 @@ import { Sources } from '@/components/eeat/Sources'
 import { RelatedReading } from '@/components/eeat/RelatedReading'
 import { UsPersonWarning } from '@/components/shared/UsPersonWarning'
 import { CorridorSwitcher } from '@/components/nri/CorridorSwitcher'
+import { GuideToc, type TocSection, type TocVariant } from '@/components/nri/GuideToc'
 import { CorridorAccessForm } from '@/components/nri/CorridorAccessForm'
 import { Disclosure } from '@/components/shared/Disclosure'
 import { TrackedContactLink } from '@/components/analytics/TrackedContactLink'
@@ -107,6 +108,29 @@ function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable })
   )
 }
 
+/**
+ * Table of contents presentation. Unset means no table of contents, which is
+ * what production runs until the owner picks one of the three.
+ */
+const RAW_TOC = process.env.NEXT_PUBLIC_TOC_VARIANT
+const TOC_VARIANT: TocVariant | null =
+  RAW_TOC === 'rail' || RAW_TOC === 'chips' || RAW_TOC === 'card' ? RAW_TOC : null
+
+function tocSections(c: Corridor): TocSection[] {
+  return [
+    { id: 'comparison', label: 'How each holding is treated' },
+    ...(c.extraTables ?? []).map((t, i) => ({
+      id: `table-${i + 2}`,
+      label: /filings/i.test(t.caption) ? 'Which filings apply' : 'A worked example',
+    })),
+    { id: 'questions', label: 'Questions and answers' },
+    { id: 'who-accepts', label: 'Who accepts you' },
+    { id: 'mistakes', label: 'Mistakes to avoid' },
+    { id: 'checklist', label: 'What to do, in order' },
+    { id: 'sources', label: 'Sources' },
+  ]
+}
+
 const COUNT_WORDS = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten']
 
 export default async function CorridorPage({ params }: PageProps) {
@@ -174,6 +198,13 @@ export default async function CorridorPage({ params }: PageProps) {
           regulatoryAsAt={c.regulatoryAsAt ?? c.reviewed}
         />
       </header>
+
+      {TOC_VARIANT === 'chips' && <GuideToc sections={tocSections(c)} variant="chips" />}
+      {TOC_VARIANT === 'card' && <GuideToc sections={tocSections(c)} variant="card" />}
+
+      <div className={TOC_VARIANT === 'rail' ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_230px] lg:gap-x-12' : undefined}>
+      {TOC_VARIANT === 'rail' && <GuideToc sections={tocSections(c)} variant="rail" />}
+      <div className="min-w-0">
 
       {/* At a glance */}
       <div className="flex flex-wrap border border-line bg-white-warm mt-9">
@@ -317,6 +348,9 @@ export default async function CorridorPage({ params }: PageProps) {
         </p>
       </div>
 
+      </div>
+      </div>
+
       <CorridorSwitcher current={c.slug} />
 
       {/* CTA */}
@@ -353,6 +387,7 @@ export default async function CorridorPage({ params }: PageProps) {
       {/* Folded by default: the list runs to twenty-odd links. Still in the DOM. */}
       <div className="max-w-[720px] mt-10">
         <Disclosure
+          id="sources"
           meta={`${c.sources.length} sources`}
           title={
             <h2 className="font-sans font-semibold text-[17.5px] leading-snug text-ink">
