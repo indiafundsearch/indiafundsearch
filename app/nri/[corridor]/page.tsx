@@ -64,43 +64,114 @@ function renderInline(text: string): React.ReactNode[] {
 }
 
 
+/**
+ * Phone presentation of the guide tables, chosen at build time while the owner
+ * picks one. Unset keeps the current behaviour (a wide table that scrolls).
+ *   cards     — each row becomes a labelled card (one DOM, CSS only)
+ *   scroll    — still a table; first column pinned, with a swipe cue
+ *   accordion — each row is a line you tap to open
+ */
+const RAW_TABLE = process.env.NEXT_PUBLIC_TABLE_VARIANT
+const TABLE_VARIANT =
+  RAW_TABLE === 'cards' || RAW_TABLE === 'scroll' || RAW_TABLE === 'accordion' ? RAW_TABLE : null
+
 function CorridorTableBlock({ id, table }: { id: string; table: CorridorTable }) {
+  const cards = TABLE_VARIANT === 'cards'
+  const scroll = TABLE_VARIANT === 'scroll'
+  const accordion = TABLE_VARIANT === 'accordion'
   return (
     <>
       <H id={id}>{table.caption}</H>
-      <div className="overflow-x-auto plot-card">
-        <table className="table w-full border-collapse min-w-[820px]">
-          <thead>
-            <tr>
-              {table.head.map((h) => (
-                <th
-                  key={h}
-                  scope="col"
-                  className="bg-ink text-white-warm font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {table.rows.map((row) => (
-              <tr key={row[0]} className="even:[&>td]:bg-paper">
-                {row.map((cell, i) => (
-                  <td
-                    key={i}
-                    className={`px-4 py-3.5 text-[14.5px] align-top border-t border-line-soft ${
-                      i === 0 ? 'font-sans font-semibold text-ink' : 'text-ink-soft'
+      {scroll && (
+        <p className="md:hidden font-mono text-[12px] tracking-[0.12em] uppercase text-bronze mb-2">
+          Swipe the table sideways →
+        </p>
+      )}
+      <div className={`relative ${accordion ? 'max-md:hidden' : ''}`}>
+        <div className={`overflow-x-auto ${cards ? 'md:plot-card' : 'plot-card'}`}>
+          <table
+            className={`table w-full border-collapse ${
+              cards ? 'md:min-w-[820px] max-md:block' : scroll ? 'min-w-[680px] md:min-w-[820px]' : 'min-w-[820px]'
+            }`}
+          >
+            <thead className={cards ? 'max-md:sr-only' : undefined}>
+              <tr>
+                {table.head.map((h) => (
+                  <th
+                    key={h}
+                    scope="col"
+                    className={`bg-ink text-white-warm font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium ${
+                      scroll ? 'first:sticky first:left-0 first:z-10' : ''
                     }`}
                   >
-                    {renderInline(cell)}
-                  </td>
+                    {h}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className={cards ? 'max-md:block' : undefined}>
+              {table.rows.map((row) => (
+                <tr
+                  key={row[0]}
+                  className={
+                    cards
+                      ? 'md:even:[&>td]:bg-paper max-md:block max-md:bg-white-warm max-md:border max-md:border-line max-md:shadow-plot max-md:mb-3 max-md:px-4 max-md:py-3.5'
+                      : 'even:[&>td]:bg-paper'
+                  }
+                >
+                  {row.map((cell, i) => (
+                    <td
+                      key={i}
+                      data-label={table.head[i]}
+                      className={`text-[14.5px] align-top ${
+                        cards
+                          ? `md:px-4 md:py-3.5 md:border-t md:border-line-soft max-md:block ${
+                              i === 0
+                                ? 'max-md:text-[16.5px] max-md:pb-2 max-md:mb-1 max-md:border-b max-md:border-line-soft'
+                                : "max-md:py-1.5 max-md:before:content-[attr(data-label)] max-md:before:block max-md:before:font-mono max-md:before:text-[12px] max-md:before:tracking-[0.12em] max-md:before:uppercase max-md:before:text-bronze"
+                            }`
+                          : 'px-4 py-3.5 border-t border-line-soft'
+                      } ${i === 0 ? 'font-sans font-semibold text-ink' : 'text-ink-soft'} ${
+                        scroll && i === 0
+                          ? 'sticky left-0 z-10 bg-white-warm max-md:w-[132px] max-md:min-w-[132px] max-md:shadow-[4px_0_6px_-4px_rgba(1,53,40,0.25)]'
+                          : ''
+                      }`}
+                    >
+                      {renderInline(cell)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {scroll && (
+          <div
+            aria-hidden
+            className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-paper to-transparent"
+          />
+        )}
       </div>
+      {accordion && (
+        <div className="md:hidden grid gap-2">
+          {table.rows.map((row) => (
+            <details key={row[0]} className="group bg-white-warm border border-line shadow-plot">
+              <summary className="flex items-center gap-3 px-4 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span className="flex-1 font-sans font-semibold text-[16px] text-ink">{renderInline(row[0])}</span>
+                <span aria-hidden className="font-mono text-ink group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <dl className="px-4 pb-4 border-t border-line-soft">
+                {row.slice(1).map((cell, i) => (
+                  <div key={i} className="pt-3">
+                    <dt className="font-mono text-[12px] tracking-[0.12em] uppercase text-bronze">{table.head[i + 1]}</dt>
+                    <dd className="text-[14.5px] text-ink-soft mt-0.5">{renderInline(cell)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </details>
+          ))}
+        </div>
+      )}
       {table.note && (
         <p className="font-serif italic text-[14.5px] text-slate mt-3 max-w-[62ch]">{table.note}</p>
       )}
