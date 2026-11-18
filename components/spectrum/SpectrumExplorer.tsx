@@ -5,6 +5,13 @@ import { SpectrumMap } from './SpectrumMap'
 import { OutcomeMap } from './OutcomeMap'
 import { ObjectiveView } from './ObjectiveView'
 import { DetailPanel } from './DetailPanel'
+import { SpectrumPhone, type SpectrumPhoneVariant } from './SpectrumPhone'
+
+/** Phone presentation of the position map, chosen at build time while the
+ *  owner picks one. Unset keeps the shrunken desktop chart. */
+const RAW_PHONE = process.env.NEXT_PUBLIC_SPECTRUM_VARIANT
+const PHONE_VARIANT: SpectrumPhoneVariant | null =
+  RAW_PHONE === 'ladder' || RAW_PHONE === 'bands' || RAW_PHONE === 'portrait' ? RAW_PHONE : null
 
 type View = 'pos' | 'out' | 'obj'
 
@@ -56,7 +63,14 @@ export function SpectrumExplorer() {
           <span className="corner corner-bl" />
           <span className="corner corner-br" />
           {view === 'pos' ? (
-            <SpectrumMap selectedId={selectedId} onSelect={select} />
+            PHONE_VARIANT ? (
+              <>
+                <div className="max-sm:hidden"><SpectrumMap selectedId={selectedId} onSelect={select} /></div>
+                <div className="sm:hidden"><SpectrumPhone variant={PHONE_VARIANT} selectedId={selectedId} onSelect={select} /></div>
+              </>
+            ) : (
+              <SpectrumMap selectedId={selectedId} onSelect={select} />
+            )
           ) : (
             <OutcomeMap selectedId={selectedId} onSelect={select} />
           )}

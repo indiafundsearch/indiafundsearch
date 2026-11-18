@@ -6,7 +6,7 @@ import type { Product } from '@/lib/content/types'
 
 /** Hand-tuned map positions (risk, liquidity) — kept separate from the
  * product spec values so the map stays legible. */
-const POS: Record<string, [number, number]> = {
+export const POS: Record<string, [number, number]> = {
   mf: [55, 92], fdplus: [15, 72], dpms: [30, 62], reit: [38, 88],
   mn: [30, 46], lssif: [48, 58], pcredit: [36, 20], gift: [60, 40],
   loaif: [76, 44], pms: [70, 66], pe: [86, 8], preipo: [82, 22], vc: [95, 4],
