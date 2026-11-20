@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { GuideToc, type TocSection } from '@/components/nri/GuideToc'
 import type { Answer } from '@/lib/content/answers'
 import { FIT_FINDER, SHEETS } from '@/lib/constants'
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
@@ -9,6 +10,9 @@ import { RelatedReading } from '@/components/eeat/RelatedReading'
 import { Disclosure } from '@/components/shared/Disclosure'
 import { autoLink } from '@/lib/content/autoLink'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
+
+const slugify = (text: string) =>
+  text.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60)
 
 /**
  * One question, one page. Deliberately not collapsible: these run about 600
@@ -50,8 +54,13 @@ export function AnswerPage({
     points: s.points ? linked.slice(offsets[i] + s.body.length, offsets[i + 1]) : undefined,
   }))
 
+  const toc: TocSection[] = [
+    ...sections.map((s) => ({ id: slugify(s.h), label: s.h.replace(/<[^>]+>/g, '') })),
+    ...(answer.faqs ? [{ id: 'common-questions', label: 'Common questions' }] : []),
+  ]
+
   return (
-    <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
+    <article className="relative mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <JsonLd
         data={[
           articleJsonLd({ title: answer.question, description: answer.answer, path }),
@@ -96,10 +105,12 @@ export function AnswerPage({
         />
       </header>
 
+      {toc.length >= 3 && <GuideToc sections={toc} placement="margin" />}
+
       <div className="max-w-[820px] article-body mt-4">
         {sections.map((s) => (
           <section key={s.h}>
-            <h2>{s.h}</h2>
+            <h2 id={slugify(s.h)}>{s.h}</h2>
             {s.body.map((p) => (
               <p key={p.slice(0, 40)} dangerouslySetInnerHTML={{ __html: p }} />
             ))}
@@ -118,7 +129,7 @@ export function AnswerPage({
 
       {answer.faqs && (
         <section className="max-w-[820px] mt-12">
-          <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] mb-4">
+          <h2 id="common-questions" className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] mb-4 scroll-mt-32">
             Common questions
           </h2>
           <div className="grid gap-3">

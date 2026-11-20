@@ -1,4 +1,5 @@
 import { AS_OF, HMRC_INDIA_FUNDS, HMRC_SOURCE, HMRC_TOTALS } from '@/lib/content/hmrcIndiaFunds'
+import { TapTable } from '@/components/shared/TapTable'
 
 /**
  * The audit table. Ungated and dated on purpose: original benchmark data is
@@ -23,51 +24,31 @@ export function HmrcFundTable() {
         most entries are recent, and one has already come off it.
       </p>
 
-      <div className="overflow-x-auto plot-card mt-6">
-        <table className="w-full border-collapse min-w-[620px]">
-          <thead>
-            <tr>
-              {['Parent fund', 'Share classes', 'Reporting from', 'Status'].map((h) => (
-                <th
-                  key={h}
-                  scope="col"
-                  className="bg-ink text-white-warm font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3 font-medium"
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {HMRC_INDIA_FUNDS.map((f) => (
-              <tr key={f.parent} className="even:[&>td]:bg-paper">
-                <td className="px-4 py-3 text-[14.5px] align-top border-t border-line-soft font-sans font-semibold text-ink">
-                  {f.parent}
-                  {f.gift && (
-                    <span className="ml-2 font-mono text-[10.5px] tracking-[0.08em] uppercase border border-bronze-soft text-bronze bg-bronze-wash px-1.5 py-[2px] rounded-[2px] align-middle">
-                      GIFT / IFSC
-                    </span>
-                  )}
-                </td>
-                <td className="px-4 py-3 text-[14.5px] align-top border-t border-line-soft text-ink-soft">
-                  {f.classes}
-                </td>
-                <td className="px-4 py-3 text-[14.5px] align-top border-t border-line-soft text-ink-soft whitespace-nowrap">
-                  {f.from}
-                </td>
-                <td className="px-4 py-3 text-[14.5px] align-top border-t border-line-soft text-ink-soft">
-                  {f.ceased ? (
-                    <span className="text-alert font-sans font-semibold">
-                      A class ceased {f.ceased}
-                    </span>
-                  ) : (
-                    'On the list'
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="mt-6">
+        <TapTable
+          head={['Parent fund', 'Share classes', 'Reporting from', 'Status']}
+          minWidth="md:min-w-[620px]"
+          rows={HMRC_INDIA_FUNDS.map((f) => ({
+            key: f.parent,
+            cells: [
+              <>
+                {f.parent}
+                {f.gift && (
+                  <span className="ml-2 font-mono text-[10.5px] tracking-[0.08em] uppercase border border-bronze-soft text-bronze bg-bronze-wash px-1.5 py-[2px] rounded-[2px] align-middle">
+                    GIFT / IFSC
+                  </span>
+                )}
+              </>,
+              f.classes,
+              f.from,
+              f.ceased ? (
+                <span className="text-alert font-sans font-semibold">A class ceased {f.ceased}</span>
+              ) : (
+                'On the list'
+              ),
+            ],
+          }))}
+        />
       </div>
 
       <p className="font-mono text-[12px] tracking-[0.04em] text-slate mt-3">

@@ -35,13 +35,41 @@ function useActiveSection(ids: string[]): string | null {
   return active
 }
 
-export function GuideToc({ sections }: { sections: TocSection[] }) {
+/**
+ * `placement="grid"`: the page provides a two-column grid and the rail takes
+ * the second column (country guides). `placement="margin"`: the rail sits in
+ * the empty right margin of an 820px text column inside a `relative` article,
+ * and only where the screen is wide enough for both (xl and up).
+ */
+export function GuideToc({ sections, placement = 'grid' }: { sections: TocSection[]; placement?: 'grid' | 'margin' }) {
+  const margin = placement === 'margin'
   const active = useActiveSection(sections.map((s) => s.id))
+
+  const rail = (railClass: string) => (
+      <nav aria-label="On this page" className={railClass}>
+      <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze mb-3">On this page</p>
+      <ol className="border-l border-line">
+        {sections.map((s) => (
+          <li key={s.id}>
+            <a
+              href={`#${s.id}`}
+              aria-current={active === s.id ? 'true' : undefined}
+              className={`block -ml-px pl-4 py-2 border-l-2 font-sans text-[14px] leading-snug transition-colors ${
+                active === s.id ? 'border-signal text-ink font-semibold' : 'border-transparent text-slate hover:text-ink'
+              }`}
+            >
+              {s.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
 
   return (
     <>
       {/* Phones and tablets: a fold-out box. */}
-      <details className="lg:hidden mt-8 bg-white-warm border border-line">
+      <details className={`${margin ? 'xl:hidden max-w-[820px]' : 'lg:hidden'} mt-8 bg-white-warm border border-line`}>
         <summary className="px-5 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between font-mono text-[12px] tracking-[0.18em] uppercase text-bronze">
           On this page
           <span aria-hidden className="text-ink">+</span>
@@ -55,24 +83,13 @@ export function GuideToc({ sections }: { sections: TocSection[] }) {
         </ol>
       </details>
       {/* Desktop: sticks beside the text and marks where you are. */}
-      <nav aria-label="On this page" className="hidden lg:block sticky top-[140px] self-start col-start-2 row-start-1 row-span-full">
-        <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-bronze mb-3">On this page</p>
-        <ol className="border-l border-line">
-          {sections.map((s) => (
-            <li key={s.id}>
-              <a
-                href={`#${s.id}`}
-                aria-current={active === s.id ? 'true' : undefined}
-                className={`block -ml-px pl-4 py-2 border-l-2 font-sans text-[14px] leading-snug transition-colors ${
-                  active === s.id ? 'border-signal text-ink font-semibold' : 'border-transparent text-slate hover:text-ink'
-                }`}
-              >
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      {margin ? (
+        <div className="hidden xl:block absolute top-0 bottom-0 right-[22px] w-[220px] pt-[88px] pointer-events-none">
+          {rail('sticky top-[140px] pointer-events-auto')}
+        </div>
+      ) : (
+        rail('hidden lg:block sticky top-[140px] self-start col-start-2 row-start-1 row-span-full')
+      )}
     </>
   )
 }

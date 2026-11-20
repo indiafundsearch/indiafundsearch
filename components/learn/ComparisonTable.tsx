@@ -1,46 +1,27 @@
-import { COMPARISON } from '@/lib/content/comparison'
+'use client'
 
-/** The four structures, side by side — PMS / AIF / MF / SIF. */
+import { COMPARISON } from '@/lib/content/comparison'
+import { TapTable } from '@/components/shared/TapTable'
+
+/** The four structures, side by side — PMS / AIF / MF / SIF. On a phone each
+ *  attribute opens to show the four structures' values, labelled. */
 export function ComparisonTable() {
   return (
-    <div className="overflow-x-auto plot-card">
-      <table className="w-full border-collapse min-w-[820px]">
-        <thead>
-          <tr>
-            {COMPARISON.head.map((h, i) => (
-              <th
-                key={i}
-                className={`font-sans text-[14px] font-bold text-left px-4 py-3.5 bg-ink text-white-warm ${i === 0 ? 'w-[170px]' : ''}`}
-              >
-                {h}
-                {COMPARISON.sub[i] && (
-                  <small className="block font-mono text-[10.5px] tracking-[0.1em] font-normal text-bronze-soft uppercase mt-[3px]">
-                    {COMPARISON.sub[i]}
-                  </small>
-                )}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {COMPARISON.rows.map((row, ri) => (
-            <tr key={ri} className="even:[&>td]:bg-paper">
-              {row.map((cell, ci) => (
-                <td
-                  key={ci}
-                  className={`px-4 py-3 border-b border-line-soft align-top ${
-                    ci === 0
-                      ? 'font-mono text-[12px] tracking-[0.1em] uppercase text-slate'
-                      : 'text-[14px]'
-                  }`}
-                >
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <TapTable
+      head={COMPARISON.head.map((h, i) => h || (i === 0 ? 'Attribute' : `Column ${i + 1}`))}
+      rows={COMPARISON.rows.map((row) => ({ key: row[0], cells: row }))}
+      openFirst
+      renderHead={(name, i) => (
+        <span className="font-sans text-[14px] font-bold normal-case tracking-normal">
+          {COMPARISON.head[i]}
+          {COMPARISON.sub[i] && (
+            <small className="block font-mono text-[10.5px] tracking-[0.1em] font-normal text-bronze-soft uppercase mt-[3px]">
+              {COMPARISON.sub[i]}
+            </small>
+          )}
+        </span>
+      )}
+      cellClass={(column) => (column === 0 ? 'md:w-[170px]' : '')}
+    />
   )
 }

@@ -335,3 +335,9 @@ body {
     padding-bottom: 56px;
   }
 }
+
+/* Article headings are jump targets for the "On this page" rail; keep them
+   clear of the sticky header when jumped to. */
+.article-body h2 {
+  scroll-margin-top: 130px;
+}

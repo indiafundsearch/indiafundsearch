@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { GuideToc, type TocSection } from '@/components/nri/GuideToc'
 import type { Article } from '@/lib/content/types'
 import { guideBySlug, guideReadingTime } from '@/lib/content/guides'
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo'
@@ -6,6 +7,9 @@ import { JsonLd } from '@/components/shared/JsonLd'
 import { AuthorByline } from '@/components/eeat/AuthorByline'
 import { DisclosureLine } from '@/components/shared/DisclosureLine'
 import { Disclosure } from '@/components/shared/Disclosure'
+
+const slugify = (text: string) =>
+  text.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60)
 
 /**
  * Standalone article page (P3-25) — gives the high-volume money keywords
@@ -16,8 +20,22 @@ export function ArticlePage({ article }: { article: Article }) {
   const path = `/learn/${article.slug}`
   const description = article.sub
 
+  // Give every <h2> in the authored body an id, and list them for the rail.
+  const toc: TocSection[] = []
+  const body = (guideBySlug(article.slug) ?? article.bodyHtml).replace(
+    /<h2(\s[^>]*)?>([\s\S]*?)<\/h2>/g,
+    (whole: string, attrs: string | undefined, inner: string) => {
+      if (attrs && /\sid=/.test(attrs)) return whole
+      const label = inner.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim()
+      const id = slugify(label) || `section-${toc.length + 1}`
+      toc.push({ id, label })
+      return `<h2${attrs ?? ''} id="${id}">${inner}</h2>`
+    },
+  )
+  if (article.faqs) toc.push({ id: 'quick-answers', label: 'Quick answers' })
+
   return (
-    <article className="mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
+    <article className="relative mx-auto max-w-[1180px] px-[22px] pt-13 pb-24 max-sm:pt-9">
       <JsonLd
         data={[
           articleJsonLd({ title: article.title, description, path }),
@@ -61,16 +79,18 @@ export function ArticlePage({ article }: { article: Article }) {
       {/* The long-form guide where one exists, otherwise the short answer. The
           two are deliberately different content: /learn shows the summary, this
           page carries the depth, so the same copy isn't served at two URLs. */}
+      {toc.length >= 3 && <GuideToc sections={toc} placement="margin" />}
+
       <div
         className="article-body max-w-[820px]"
         // In-house authored content from lib/content — not user input
-        dangerouslySetInnerHTML={{ __html: guideBySlug(article.slug) ?? article.bodyHtml }}
+        dangerouslySetInnerHTML={{ __html: body }}
       />
 
       {/* Visible FAQ. */}
       {article.faqs && (
         <section className="mt-14 max-w-[820px]">
-          <h2 className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] leading-[1.2] mb-4">
+          <h2 id="quick-answers" className="font-sans font-bold text-[clamp(20px,2.4vw,25px)] tracking-[-0.01em] leading-[1.2] mb-4 scroll-mt-32">
             Quick answers
           </h2>
           <div className="grid gap-3">

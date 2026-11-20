@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { TAX_ROWS } from '@/lib/content/tax'
+import { TapTable } from '@/components/shared/TapTable'
 
 type Mode = 'res' | 'nri'
 
@@ -32,42 +33,13 @@ export function TaxTables() {
         ))}
       </div>
 
-      <div className="overflow-x-auto plot-card">
-        <table className="w-full border-collapse min-w-[900px]">
-          <thead>
-            <tr>
-              {HEADS[mode].map((h) => (
-                <th
-                  key={h}
-                  className="font-mono text-[12px] tracking-[0.14em] uppercase text-left px-4 py-3.5 bg-ink text-white-warm font-medium"
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {TAX_ROWS[mode].map((row, ri) => (
-              <tr key={ri} className="even:[&>td]:bg-paper">
-                {row.map((cell, ci) => (
-                  <td
-                    key={ci}
-                    className={`px-4 py-[13px] border-b border-line-soft align-top ${
-                      ci === 0
-                        ? 'font-sans font-semibold text-[14px]'
-                        : ci < 4
-                          ? 'font-mono text-[13px]'
-                          : 'text-[14.5px]'
-                    }`}
-                  >
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <TapTable
+        key={mode}
+        head={HEADS[mode]}
+        rows={TAX_ROWS[mode].map((row) => ({ key: row[0], cells: row }))}
+        minWidth="md:min-w-[900px]"
+        cellClass={(column) => (column > 0 && column < 4 ? 'md:font-mono md:text-[13px]' : '')}
+      />
     </div>
   )
 }

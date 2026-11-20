@@ -55,9 +55,10 @@ export function GiftRepositoryTable({
         </p>
       )}
 
-      <div className="overflow-x-auto plot-card">
-        <table className="w-full border-collapse min-w-[880px]">
-          <thead>
+      {/* Phones: each fund is a card (name, approach, then labelled facts); tap to open the detail and enquiry form. Desktop: the table. */}
+      <div className="md:overflow-x-auto md:plot-card">
+        <table className="w-full border-collapse md:min-w-[880px] max-md:block">
+          <thead className="max-md:sr-only">
             <tr>
               {columns.map((h) => (
                 <th
@@ -69,12 +70,12 @@ export function GiftRepositoryTable({
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="max-md:block">
             {groups.map((g) => (
               <Fragment key={g.name}>
                 {/* Group banner */}
-                <tr>
-                  <td colSpan={5} className="bg-ink px-5 py-2.5">
+                <tr className="max-md:block max-md:mt-4 max-md:first:mt-0">
+                  <td colSpan={5} className="bg-ink px-5 py-2.5 max-md:block max-md:px-4">
                     <span className="inline-flex items-center gap-2.5">
                       <span className="w-2 h-2 rounded-full bg-signal inline-block" aria-hidden />
                       <span className="font-sans text-[13.5px] font-bold tracking-[0.04em] uppercase text-white-warm">
@@ -93,18 +94,19 @@ export function GiftRepositoryTable({
                       <tr
                         onClick={() => setOpenId(open ? null : p._id)}
                         aria-expanded={open}
-                        className="cursor-pointer align-top transition-colors bg-white-warm hover:bg-paper"
+                        className="cursor-pointer align-top transition-colors bg-white-warm hover:bg-paper max-md:block max-md:border max-md:border-line max-md:border-t-0 max-md:px-4 max-md:py-3.5"
                       >
-                        <td className="px-5 py-4 border-b border-line-soft font-sans font-bold text-[15.5px] min-w-[200px]">
-                          {p.name}
+                        <td className="px-5 py-4 border-b border-line-soft font-sans font-bold text-[15.5px] min-w-[200px] max-md:flex max-md:items-start max-md:gap-3 max-md:p-0 max-md:border-b-0 max-md:min-w-0 max-md:text-[16.5px]">
+                          <span className="flex-1">{p.name}</span>
+                          <span aria-hidden className={`md:hidden font-mono font-normal transition-transform ${open ? 'rotate-45' : ''}`}>+</span>
                         </td>
-                        <td className="px-5 py-4 border-b border-line-soft font-serif text-[14.5px] text-ink-soft max-w-[380px]">
+                        <td className="px-5 py-4 border-b border-line-soft font-serif text-[14.5px] text-ink-soft max-w-[380px] max-md:block max-md:p-0 max-md:pt-1.5 max-md:border-b-0 max-md:max-w-none">
                           {p.thesis}
                         </td>
-                        <td className="px-5 py-4 border-b border-line-soft font-sans font-semibold text-[14px] whitespace-nowrap">
+                        <td data-label="Structure" className="px-5 py-4 border-b border-line-soft font-sans font-semibold text-[14px] whitespace-nowrap max-md:inline-block max-md:align-top max-md:p-0 max-md:pt-3 max-md:pr-6 max-md:border-b-0 max-md:whitespace-normal max-md:before:content-[attr(data-label)] max-md:before:block max-md:before:font-mono max-md:before:text-[12px] max-md:before:tracking-[0.12em] max-md:before:uppercase max-md:before:text-bronze">
                           {p.structure}
                         </td>
-                        <td className="px-5 py-4 border-b border-line-soft font-sans font-bold text-[14.5px] whitespace-nowrap">
+                        <td data-label="Minimum" className="px-5 py-4 border-b border-line-soft font-sans font-bold text-[14.5px] whitespace-nowrap max-md:inline-block max-md:align-top max-md:p-0 max-md:pt-3 max-md:border-b-0 max-md:before:content-[attr(data-label)] max-md:before:block max-md:before:font-mono max-md:before:text-[12px] max-md:before:tracking-[0.12em] max-md:before:uppercase max-md:before:text-bronze">
                           {p.minInvestment}
                           {p.lowerMinForAccredited && (
                             <span className="text-signal-ink" title="Lower minimum for Accredited Investors — per the fund's PPM">
@@ -112,7 +114,7 @@ export function GiftRepositoryTable({
                             </span>
                           )}
                         </td>
-                        <td className="px-5 py-4 border-b border-line-soft whitespace-nowrap">
+                        <td data-label={hasAccess ? 'Access' : 'Theme'} className="px-5 py-4 border-b border-line-soft whitespace-nowrap max-md:block max-md:p-0 max-md:pt-3 max-md:border-b-0 max-md:whitespace-normal max-md:before:content-[attr(data-label)] max-md:before:block max-md:before:font-mono max-md:before:text-[12px] max-md:before:tracking-[0.12em] max-md:before:uppercase max-md:before:text-bronze">
                           {hasAccess ? (
                             p.access ? (
                               <>
@@ -134,8 +136,8 @@ export function GiftRepositoryTable({
                       </tr>
                       <AnimatePresence initial={false}>
                         {open && (
-                          <tr>
-                            <td colSpan={5} className="border-b border-line-soft p-0 bg-white-warm">
+                          <tr className="max-md:block">
+                            <td colSpan={5} className="border-b border-line-soft p-0 bg-white-warm max-md:block max-md:border max-md:border-line max-md:border-t-0">
                               <motion.div
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: 'auto', opacity: 1 }}
